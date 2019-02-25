@@ -42,7 +42,7 @@ public class NIOTest {
 
       Path f1 = Paths.get("./pom.xml");
       Path f2 = Paths.get("./1.1");
-      Path f3 = Paths.get("/home/moiseenko-s/IdeaProjects/Learning/LearningInterfaces/pom.xml");
+      Path f3 = Paths.get(homeDir+"/IdeaProjects/Learning/LearningInterfaces/pom.xml");
       boolean result = false;
 
       result = Files.isSameFile(f1, f3);
@@ -121,7 +121,20 @@ public class NIOTest {
           .sorted((p1, p2) -> p1.compareTo(p2))
           .forEach((s) -> System.out.println("\u001B[32m" + s + "\u001B[0m"));
 
-      mfu.watchService(exDir);
+      Path p1 = Paths.get("/").toRealPath();
+      Path p2 = new File("./").toPath().toRealPath();
+      Path homePath = Paths.get(homeDir);
+      Path p3 = Paths.get("/usr").toRealPath();
+      System.out.println(p1);
+      System.out.println(p2);
+      System.out.println(p1.relativize(homePath));
+      System.out.println(homePath.relativize(p2));
+      System.out.println(p3.resolve(homePath.relativize(p2)));
+
+      FileZipper fZipper = new FileZipper();
+      fZipper.zipDir("./src", "./src.zip");
+
+//      mfu.watchService(exDir);
 
     } catch (IOException ex) {
       System.err.println(ex);
