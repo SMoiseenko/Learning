@@ -1,0 +1,586 @@
+2019-01-27 14:12:26 DEBUG Runner:8 - Hello
+2019-01-27 14:14:12 DEBUG Runner:8 - Hello
+2019-01-27 14:32:40 DEBUG Runner:8 - Hello
+2019-01-27 14:59:25 DEBUG Runner:16 - java.io.FileNotFoundException: filePath (Нет такого файла или каталога)
+2019-01-27 14:59:55 DEBUG Runner:16 - java.io.FileNotFoundException: filePath (Нет такого файла или каталога)
+2019-01-27 15:00:33 DEBUG Runner:16 - java.io.FileNotFoundException: filePath (Нет такого файла или каталога)
+2019-01-27 15:01:39 DEBUG FileReader:15 - java.io.FileDescriptor@7ce6a65d
+2019-01-27 15:04:14 DEBUG Runner:14 - [B@7ce6a65d
+2019-01-27 15:06:17 DEBUG Runner:17 - [[B@7ce6a65d]
+2019-01-27 15:07:35 DEBUG Runner:17 - [-126, -118, -122, -113, 123, -126, -113, -108, -104, -104, -99, -116, -114, -96, -91, -92, -91, -89, -88, -87, -79, -80, -84, -73, -82, -70, -69, -66, -64, -69, -60, -57, -57, -64, -52, -51, -48, -46, -49, -42, -39, -39, -46, -36, -48, -13, -63, -55, -48, -38, -48, -28, -39, -21, -20, -37]
+2019-01-27 15:15:54 DEBUG Runner:17 - [-126, -118, -122, -113, 123, -126, -113, -108, -104, -104, -99, -116, -114, -96, -91, -92, -91, -89, -88, -87, -79, -80, -84, -73, -82, -70, -69, -66, -64, -69, -60, -57, -57, -64, -52, -51, -48, -46, -49, -42, -39, -39, -46, -36, -48, -13, -63, -55, -48, -38, -48, -28, -39, -21, -20, -37]
+2019-01-27 15:23:44 DEBUG Runner:17 - [-126, -118, -122, -113, 123, -126, -113, -108, -104, -104, -99, -116, -114, -96, -91, -92, -91, -89, -88, -87, -79, -80, -84, -73, -82, -70, -69, -66, -64, -69, -60, -57, -57, -64, -52, -51, -48, -46, -49, -42, -39, -39, -46, -36, -48, -13, -63, -55, -48, -38, -48, -28, -39, -21, -20, -37, 49, 10]
+2019-01-27 15:27:29 DEBUG Runner:17 - [381, 373, 377, 368, 123, 381, 368, 363, 359, 359, 354, 371, 369, 351, 346, 347, 346, 344, 343, 342, 334, 335, 339, 328, 337, 325, 324, 321, 319, 324, 315, 312, 312, 319, 307, 306, 303, 301, 304, 297, 294, 294, 301, 291, 303, 268, 318, 310, 303, 293, 303, 283, 294, 276, 275, 292, 49, 10]
+2019-01-27 15:27:47 DEBUG Runner:17 - [129, 137, 133, 142, 123, 129, 142, 147, 151, 151, 156, 139, 141, 159, 164, 163, 164, 166, 167, 168, 176, 175, 171, 182, 173, 185, 186, 189, 191, 186, 195, 198, 198, 191, 203, 204, 207, 209, 206, 213, 216, 216, 209, 219, 207, 242, 192, 200, 207, 217, 207, 227, 216, 234, 235, 218, 49, 10]
+2019-01-27 15:28:06 DEBUG Runner:17 - [385, 393, 389, 398, 123, 385, 398, 403, 407, 407, 412, 395, 397, 415, 420, 419, 420, 422, 423, 424, 432, 431, 427, 438, 429, 441, 442, 445, 447, 442, 451, 454, 454, 447, 459, 460, 463, 465, 462, 469, 472, 472, 465, 475, 463, 498, 448, 456, 463, 473, 463, 483, 472, 490, 491, 474, 49, 10]
+2019-01-27 15:28:20 DEBUG Runner:17 - [130, 138, 134, 143, 123, 130, 143, 148, 152, 152, 157, 140, 142, 160, 165, 164, 165, 167, 168, 169, 177, 176, 172, 183, 174, 186, 187, 190, 192, 187, 196, 199, 199, 192, 204, 205, 208, 210, 207, 214, 217, 217, 210, 220, 208, 243, 193, 201, 208, 218, 208, 228, 217, 235, 236, 219, 49, 10]
+2019-01-27 20:01:26 DEBUG Runner:30 - 2019-01-27
+2019-01-27 20:11:21 DEBUG Runner:26 - java.io.FileNotFoundException: src/main/resources/tempFile.txt (Нет такого файла или каталога)
+2019-01-27 20:16:53 DEBUG Runner:27 - java.io.FileNotFoundException: src/main/resources/tempFile.txt (Нет такого файла или каталога)
+2019-01-27 20:34:46 DEBUG FileReader:13 - 0
+2019-01-27 20:34:46 DEBUG FileReader:13 - 0
+2019-01-27 20:34:46 DEBUG FileReader:13 - 0
+2019-01-27 20:34:46 DEBUG FileReader:13 - 0
+2019-01-27 20:34:46 DEBUG FileReader:13 - 0
+2019-01-27 20:34:46 DEBUG FileReader:13 - 0
+2019-01-27 20:34:46 DEBUG FileReader:13 - 0
+2019-01-27 20:34:46 DEBUG FileReader:13 - 0
+2019-01-27 20:34:46 DEBUG FileReader:13 - 0
+2019-01-27 20:34:46 DEBUG FileReader:13 - 0
+2019-01-27 20:35:18 DEBUG FileReader:12 - 24
+2019-01-27 20:35:18 DEBUG FileReader:12 - 25
+2019-01-27 20:35:18 DEBUG FileReader:12 - 26
+2019-01-27 20:35:19 DEBUG FileReader:12 - 27
+2019-01-27 20:35:19 DEBUG FileReader:12 - 28
+2019-01-27 20:35:19 DEBUG FileReader:12 - 29
+2019-01-27 20:35:19 DEBUG FileReader:12 - 30
+2019-01-27 20:35:19 DEBUG FileReader:12 - 31
+2019-01-27 20:35:19 DEBUG FileReader:12 - 32
+2019-01-27 20:35:19 DEBUG FileReader:12 - 33
+2019-01-29 21:40:53 DEBUG FileReader:12 - 34
+2019-01-29 21:40:53 DEBUG FileReader:12 - 35
+2019-01-29 21:40:53 DEBUG FileReader:12 - 36
+2019-01-29 21:40:54 DEBUG FileReader:12 - 37
+2019-01-29 21:40:54 DEBUG FileReader:12 - 38
+2019-01-29 21:40:54 DEBUG FileReader:12 - 39
+2019-01-29 21:40:54 DEBUG FileReader:12 - 40
+2019-01-29 21:40:54 DEBUG FileReader:12 - 41
+2019-01-29 21:40:54 DEBUG FileReader:12 - 42
+2019-01-29 21:40:54 DEBUG FileReader:12 - 43
+2019-01-29 22:25:33 DEBUG Runner:20 - -1
+2019-01-29 23:10:24 DEBUG WorkWithFile:19 - Absolute Path:/home/s-moiseenko/Downloads/dengi-dlya-igri1.png
+2019-01-29 23:10:24 DEBUG WorkWithFile:20 - Path: /home/s-moiseenko/Downloads/dengi-dlya-igri1.png
+2019-01-29 23:13:15 DEBUG WorkWithFile:19 - Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j.properties
+2019-01-29 23:13:15 DEBUG WorkWithFile:20 - Path: src/main/resources/log4j.properties
+2019-01-29 23:14:28 DEBUG WorkWithFile:19 - Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j.properties
+2019-01-29 23:14:28 DEBUG WorkWithFile:20 - Path: src/main/resources/log4j.properties
+2019-01-29 23:14:28 DEBUG WorkWithFile:25 - File not exist!!!
+2019-01-29 23:16:27 DEBUG WorkWithFile:19 - Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j.properties
+2019-01-29 23:16:27 DEBUG WorkWithFile:20 - Path: src/main/resources/log4j.properties
+2019-01-29 23:16:27 DEBUG WorkWithFile:25 - File not exist!!!
+2019-01-29 23:18:34 DEBUG WorkWithFile:20 - Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j.properties
+2019-01-29 23:18:34 DEBUG WorkWithFile:21 - Path: src/main/resources/log4j.properties
+2019-01-29 23:18:34 DEBUG WorkWithFile:22 - Size: 710
+2019-01-29 23:18:35 DEBUG WorkWithFile:23 - Last modification: Wed Jan 09 20:12:26 MSK 2019
+2019-01-29 23:18:35 DEBUG WorkWithFile:28 - File not exist!!!
+2019-01-29 23:23:11 DEBUG WorkWithFile:21 - Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j.properties
+2019-01-29 23:23:11 DEBUG WorkWithFile:22 - Path: src/main/resources/log4j.properties
+2019-01-29 23:23:11 DEBUG WorkWithFile:23 - Size (byte): 710
+2019-01-29 23:23:11 DEBUG WorkWithFile:25 - Last modification: 9 янв. 2019 г.
+2019-01-29 23:23:11 DEBUG WorkWithFile:30 - File not exist!!!
+2019-01-29 23:24:30 DEBUG WorkWithFile:21 - Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j.properties
+2019-01-29 23:24:30 DEBUG WorkWithFile:22 - Path: src/main/resources/log4j.properties
+2019-01-29 23:24:30 DEBUG WorkWithFile:23 - Size (byte): 710
+2019-01-29 23:24:30 DEBUG WorkWithFile:25 - Last modification: среда, 9 января 2019 г.
+2019-01-29 23:24:30 DEBUG WorkWithFile:30 - File not exist!!!
+2019-01-29 23:25:52 DEBUG WorkWithFile:21 - Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j.properties
+2019-01-29 23:25:52 DEBUG WorkWithFile:22 - Path: src/main/resources/log4j.properties
+2019-01-29 23:25:52 DEBUG WorkWithFile:23 - Size (byte): 710
+2019-01-29 23:25:52 DEBUG WorkWithFile:25 - Last modification RUS: среда, 9 января 2019 г.
+2019-01-29 23:25:52 DEBUG WorkWithFile:26 - Last modification ENG: Wed Jan 09 20:12:26 MSK 2019
+2019-01-29 23:25:52 DEBUG WorkWithFile:31 - File not exist!!!
+2019-01-29 23:27:51 DEBUG WorkWithFile:21 - Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j.properties
+2019-01-29 23:27:51 DEBUG WorkWithFile:22 - Path: src/main/resources/log4j.properties
+2019-01-29 23:27:51 DEBUG WorkWithFile:23 - Size (byte): 710
+2019-01-29 23:27:51 DEBUG WorkWithFile:25 - Last modification RUS: среда, 9 января 2019 г.
+2019-01-29 23:27:51 DEBUG WorkWithFile:26 - Last modification ENG: Wed Jan 09 20:12:26 MSK 2019
+2019-01-29 23:27:51 DEBUG WorkWithFile:27 - Is access for read: true
+2019-01-29 23:27:51 DEBUG WorkWithFile:28 - Is access for write: true
+2019-01-29 23:27:51 DEBUG WorkWithFile:32 - File java not exist!!!
+2019-01-29 23:28:33 DEBUG WorkWithFile:21 - Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j.properties
+2019-01-29 23:28:33 DEBUG WorkWithFile:22 - Path: src/main/resources/log4j.properties
+2019-01-29 23:28:33 DEBUG WorkWithFile:23 - Size (byte): 710
+2019-01-29 23:28:33 DEBUG WorkWithFile:25 - Last modification RUS: среда, 9 января 2019 г.
+2019-01-29 23:28:33 DEBUG WorkWithFile:26 - Last modification ENG: Wed Jan 09 20:12:26 MSK 2019
+2019-01-29 23:28:33 DEBUG WorkWithFile:27 - Is access for read: true
+2019-01-29 23:28:33 DEBUG WorkWithFile:28 - Is access for write: true
+2019-01-29 23:28:33 DEBUG WorkWithFile:29 - Is access for execute: true
+2019-01-29 23:28:33 DEBUG WorkWithFile:33 - File java not exist!!!
+2019-01-29 23:29:19 DEBUG WorkWithFile:21 - Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j.properties
+2019-01-29 23:29:19 DEBUG WorkWithFile:22 - Path: src/main/resources/log4j.properties
+2019-01-29 23:29:19 DEBUG WorkWithFile:23 - Size (byte): 710
+2019-01-29 23:29:19 DEBUG WorkWithFile:25 - Last modification RUS: среда, 9 января 2019 г.
+2019-01-29 23:29:19 DEBUG WorkWithFile:26 - Last modification ENG: Wed Jan 09 20:12:26 MSK 2019
+2019-01-29 23:29:19 DEBUG WorkWithFile:27 - Is access for read: true
+2019-01-29 23:29:19 DEBUG WorkWithFile:28 - Is access for write: true
+2019-01-29 23:29:19 DEBUG WorkWithFile:29 - Is access for execute: false
+2019-01-29 23:29:19 DEBUG WorkWithFile:33 - File java not exist!!!
+2019-01-29 23:43:43 DEBUG WorkWithFile:21 - Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j.properties
+2019-01-29 23:43:43 DEBUG WorkWithFile:22 - Path: src/main/resources/log4j.properties
+2019-01-29 23:43:43 DEBUG WorkWithFile:23 - Size (byte): 710
+2019-01-29 23:43:43 DEBUG WorkWithFile:25 - Last modification RUS: среда, 9 января 2019 г.
+2019-01-29 23:43:43 DEBUG WorkWithFile:26 - Last modification ENG: Wed Jan 09 20:12:26 MSK 2019
+2019-01-29 23:43:43 DEBUG WorkWithFile:27 - Is access for read: true
+2019-01-29 23:43:43 DEBUG WorkWithFile:28 - Is access for write: true
+2019-01-29 23:43:43 DEBUG WorkWithFile:29 - Is access for execute: false
+2019-01-29 23:43:43 DEBUG WorkWithFile:35 - File or directory java not exist!!!
+2019-01-29 23:44:34 DEBUG WorkWithFile:21 - Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j.properties
+2019-01-29 23:44:34 DEBUG WorkWithFile:22 - Path: src/main/resources/log4j.properties
+2019-01-29 23:44:34 DEBUG WorkWithFile:23 - Size (byte): 710
+2019-01-29 23:44:34 DEBUG WorkWithFile:25 - Last modification RUS: среда, 9 января 2019 г.
+2019-01-29 23:44:34 DEBUG WorkWithFile:26 - Last modification ENG: Wed Jan 09 20:12:26 MSK 2019
+2019-01-29 23:44:34 DEBUG WorkWithFile:27 - Is access for read: true
+2019-01-29 23:44:34 DEBUG WorkWithFile:28 - Is access for write: true
+2019-01-29 23:44:34 DEBUG WorkWithFile:29 - Is access for execute: false
+2019-01-29 23:44:34 DEBUG WorkWithFile:35 - File or directory moiseenko not exist!!!
+2019-01-29 23:48:46 DEBUG WorkWithFile:21 - Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j.properties
+2019-01-29 23:48:46 DEBUG WorkWithFile:22 - Path: src/main/resources/log4j.properties
+2019-01-29 23:48:46 DEBUG WorkWithFile:23 - Size (byte): 710
+2019-01-29 23:48:46 DEBUG WorkWithFile:25 - Last modification RUS: среда, 9 января 2019 г.
+2019-01-29 23:48:46 DEBUG WorkWithFile:26 - Last modification ENG: Wed Jan 09 20:12:26 MSK 2019
+2019-01-29 23:48:46 DEBUG WorkWithFile:27 - Is access for read: true
+2019-01-29 23:48:46 DEBUG WorkWithFile:28 - Is access for write: true
+2019-01-29 23:48:46 DEBUG WorkWithFile:29 - Is access for execute: false
+2019-01-29 23:48:46 DEBUG WorkWithFile:33 - Directory "java" exist.
+2019-01-29 23:52:45 DEBUG WorkWithFile:35 - File or directory "log4j(копия).properties" not exist!!!
+2019-01-29 23:52:45 DEBUG WorkWithFile:33 - Directory "java" exist.
+2019-01-29 23:53:14 DEBUG WorkWithFile:35 - File or directory "log4j(копия).properties" not exist!!!
+2019-01-29 23:53:14 DEBUG WorkWithFile:33 - Directory "java" exist.
+2019-01-29 23:53:40 DEBUG WorkWithFile:21 - Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-29 23:53:40 DEBUG WorkWithFile:22 - Path: src/main/resources/log4j (копия).properties
+2019-01-29 23:53:40 DEBUG WorkWithFile:23 - Size (byte): 710
+2019-01-29 23:53:40 DEBUG WorkWithFile:25 - Last modification RUS: среда, 9 января 2019 г.
+2019-01-29 23:53:40 DEBUG WorkWithFile:26 - Last modification ENG: Wed Jan 09 20:12:26 MSK 2019
+2019-01-29 23:53:40 DEBUG WorkWithFile:27 - Is access for read: true
+2019-01-29 23:53:40 DEBUG WorkWithFile:28 - Is access for write: true
+2019-01-29 23:53:40 DEBUG WorkWithFile:29 - Is access for execute: true
+2019-01-29 23:53:40 DEBUG WorkWithFile:33 - Directory "java" exist.
+2019-01-29 23:56:07 DEBUG WorkWithFile:23 - Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-29 23:56:07 DEBUG WorkWithFile:24 - Path: src/main/resources/log4j (копия).properties
+2019-01-29 23:56:07 DEBUG WorkWithFile:25 - Size (byte): 710
+2019-01-29 23:56:07 DEBUG WorkWithFile:27 - Last modification RUS: среда, 9 января 2019 г.
+2019-01-29 23:56:07 DEBUG WorkWithFile:28 - Last modification ENG: Wed Jan 09 20:12:26 MSK 2019
+2019-01-29 23:56:07 DEBUG WorkWithFile:29 - Is access for read: true
+2019-01-29 23:56:07 DEBUG WorkWithFile:30 - Is access for write: true
+2019-01-29 23:56:07 DEBUG WorkWithFile:31 - Is access for execute: true
+2019-01-29 23:56:07 DEBUG WorkWithFile:32 - File deleted: true
+2019-01-29 23:56:07 DEBUG WorkWithFile:33 - File created: true
+2019-01-29 23:56:07 DEBUG WorkWithFile:37 - Directory "java" exist.
+2019-01-29 23:56:27 DEBUG WorkWithFile:23 - Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-29 23:56:27 DEBUG WorkWithFile:24 - Path: src/main/resources/log4j (копия).properties
+2019-01-29 23:56:27 DEBUG WorkWithFile:25 - Size (byte): 0
+2019-01-29 23:56:27 DEBUG WorkWithFile:27 - Last modification RUS: вторник, 29 января 2019 г.
+2019-01-29 23:56:27 DEBUG WorkWithFile:28 - Last modification ENG: Tue Jan 29 23:56:07 MSK 2019
+2019-01-29 23:56:27 DEBUG WorkWithFile:29 - Is access for read: true
+2019-01-29 23:56:27 DEBUG WorkWithFile:30 - Is access for write: true
+2019-01-29 23:56:27 DEBUG WorkWithFile:31 - Is access for execute: false
+2019-01-29 23:56:27 DEBUG WorkWithFile:32 - File deleted: true
+2019-01-29 23:56:27 DEBUG WorkWithFile:33 - File created: true
+2019-01-29 23:56:27 DEBUG WorkWithFile:37 - Directory "java" exist.
+2019-01-30 21:11:13 DEBUG WorkWithFile:23 - Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-30 21:11:13 DEBUG WorkWithFile:24 - Path: src/main/resources/log4j (копия).properties
+2019-01-30 21:11:13 DEBUG WorkWithFile:25 - Size (byte): 0
+2019-01-30 21:11:13 DEBUG WorkWithFile:27 - Last modification RUS: вторник, 29 января 2019 г.
+2019-01-30 21:11:13 DEBUG WorkWithFile:28 - Last modification ENG: Tue Jan 29 23:56:27 MSK 2019
+2019-01-30 21:11:13 DEBUG WorkWithFile:29 - Is access for read: true
+2019-01-30 21:11:13 DEBUG WorkWithFile:30 - Is access for write: true
+2019-01-30 21:11:13 DEBUG WorkWithFile:31 - Is access for execute: false
+2019-01-30 21:11:13 DEBUG WorkWithFile:32 - File deleted: true
+2019-01-30 21:11:13 DEBUG WorkWithFile:33 - File created: true
+2019-01-30 21:11:13 DEBUG WorkWithFile:37 - Directory "java" exist.
+2019-01-30 21:16:05 DEBUG WorkWithFile:23 - Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-30 21:16:05 DEBUG WorkWithFile:24 - Path: src/main/resources/log4j (копия).properties
+2019-01-30 21:16:05 DEBUG WorkWithFile:25 - Size (byte): 0
+2019-01-30 21:16:05 DEBUG WorkWithFile:27 - Last modification RUS: среда, 30 января 2019 г.
+2019-01-30 21:16:05 DEBUG WorkWithFile:28 - Last modification ENG: Wed Jan 30 21:11:13 MSK 2019
+2019-01-30 21:16:05 DEBUG WorkWithFile:29 - Is access for read: true
+2019-01-30 21:16:05 DEBUG WorkWithFile:30 - Is access for write: true
+2019-01-30 21:16:05 DEBUG WorkWithFile:31 - Is access for execute: false
+2019-01-30 21:16:05 DEBUG WorkWithFile:32 - File deleted: true
+2019-01-30 21:16:05 DEBUG WorkWithFile:33 - File created: true
+2019-01-30 21:16:05 DEBUG WorkWithFile:39 - File or directory "testfolder" not exist!!!
+2019-01-30 21:17:27 DEBUG WorkWithFile:23 - Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-30 21:17:27 DEBUG WorkWithFile:24 - Path: src/main/resources/log4j (копия).properties
+2019-01-30 21:17:27 DEBUG WorkWithFile:25 - Size (byte): 0
+2019-01-30 21:17:27 DEBUG WorkWithFile:27 - Last modification RUS: среда, 30 января 2019 г.
+2019-01-30 21:17:27 DEBUG WorkWithFile:28 - Last modification ENG: Wed Jan 30 21:16:05 MSK 2019
+2019-01-30 21:17:27 DEBUG WorkWithFile:29 - Is access for read: true
+2019-01-30 21:17:27 DEBUG WorkWithFile:30 - Is access for write: true
+2019-01-30 21:17:27 DEBUG WorkWithFile:31 - Is access for execute: false
+2019-01-30 21:17:27 DEBUG WorkWithFile:32 - File deleted: true
+2019-01-30 21:17:27 DEBUG WorkWithFile:33 - File created: true
+2019-01-30 21:17:27 DEBUG WorkWithFile:37 - Directory "testfolder" exist.
+2019-01-30 21:18:06 DEBUG WorkWithFile:23 - Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-30 21:18:06 DEBUG WorkWithFile:24 - Path: src/main/resources/log4j (копия).properties
+2019-01-30 21:18:06 DEBUG WorkWithFile:25 - Size (byte): 0
+2019-01-30 21:18:06 DEBUG WorkWithFile:27 - Last modification RUS: среда, 30 января 2019 г.
+2019-01-30 21:18:06 DEBUG WorkWithFile:28 - Last modification ENG: Wed Jan 30 21:17:27 MSK 2019
+2019-01-30 21:18:06 DEBUG WorkWithFile:29 - Is access for read: true
+2019-01-30 21:18:06 DEBUG WorkWithFile:30 - Is access for write: true
+2019-01-30 21:18:06 DEBUG WorkWithFile:31 - Is access for execute: false
+2019-01-30 21:18:06 DEBUG WorkWithFile:32 - File deleted: true
+2019-01-30 21:18:06 DEBUG WorkWithFile:33 - File created: true
+2019-01-30 21:18:06 DEBUG WorkWithFile:37 - Directory "testfolder" exist.
+2019-01-30 21:18:06 DEBUG WorkWithFile:38 - Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/testfolder
+2019-01-30 21:18:06 DEBUG WorkWithFile:39 - Path: testfolder
+2019-01-30 21:18:58 DEBUG WorkWithFile:23 - File Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-30 21:18:58 DEBUG WorkWithFile:24 - File Path: src/main/resources/log4j (копия).properties
+2019-01-30 21:18:58 DEBUG WorkWithFile:25 - File Size (byte): 0
+2019-01-30 21:18:58 DEBUG WorkWithFile:27 - File Last modification RUS: среда, 30 января 2019 г.
+2019-01-30 21:18:58 DEBUG WorkWithFile:28 - File Last modification ENG: Wed Jan 30 21:18:06 MSK 2019
+2019-01-30 21:18:58 DEBUG WorkWithFile:29 - File Is access for read: true
+2019-01-30 21:18:58 DEBUG WorkWithFile:30 - File Is access for write: true
+2019-01-30 21:18:58 DEBUG WorkWithFile:31 - File Is access for execute: false
+2019-01-30 21:18:58 DEBUG WorkWithFile:32 - File deleted: true
+2019-01-30 21:18:58 DEBUG WorkWithFile:33 - File created: true
+2019-01-30 21:18:58 DEBUG WorkWithFile:37 - Directory "testfolder" exist.
+2019-01-30 21:18:58 DEBUG WorkWithFile:38 - Dir Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/testfolder
+2019-01-30 21:18:58 DEBUG WorkWithFile:39 - Dir Path: testfolder
+2019-01-30 21:41:47 DEBUG WorkWithFile:23 - File Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-30 21:41:47 DEBUG WorkWithFile:24 - File Path: src/main/resources/log4j (копия).properties
+2019-01-30 21:41:47 DEBUG WorkWithFile:25 - File Size (byte): 0
+2019-01-30 21:41:47 DEBUG WorkWithFile:27 - File Last modification RUS: среда, 30 января 2019 г.
+2019-01-30 21:41:47 DEBUG WorkWithFile:28 - File Last modification ENG: Wed Jan 30 21:18:58 MSK 2019
+2019-01-30 21:41:47 DEBUG WorkWithFile:29 - File Is access for read: true
+2019-01-30 21:41:47 DEBUG WorkWithFile:30 - File Is access for write: true
+2019-01-30 21:41:47 DEBUG WorkWithFile:31 - File Is access for execute: false
+2019-01-30 21:41:47 DEBUG WorkWithFile:32 - File deleted: true
+2019-01-30 21:41:47 DEBUG WorkWithFile:33 - File created: true
+2019-01-30 21:41:47 DEBUG WorkWithFile:37 - Directory "testfolder" exist.
+2019-01-30 21:41:47 DEBUG WorkWithFile:38 - Dir Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/testfolder
+2019-01-30 21:41:47 DEBUG WorkWithFile:39 - Dir Path: testfolder
+2019-01-30 21:42:20 DEBUG WorkWithFile:23 - File Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-30 21:42:20 DEBUG WorkWithFile:24 - File Path: src/main/resources/log4j (копия).properties
+2019-01-30 21:42:20 DEBUG WorkWithFile:25 - File Size (byte): 0
+2019-01-30 21:42:20 DEBUG WorkWithFile:27 - File Last modification RUS: среда, 30 января 2019 г.
+2019-01-30 21:42:20 DEBUG WorkWithFile:28 - File Last modification ENG: Wed Jan 30 21:41:47 MSK 2019
+2019-01-30 21:42:20 DEBUG WorkWithFile:29 - File Is access for read: true
+2019-01-30 21:42:20 DEBUG WorkWithFile:30 - File Is access for write: true
+2019-01-30 21:42:20 DEBUG WorkWithFile:31 - File Is access for execute: false
+2019-01-30 21:42:20 DEBUG WorkWithFile:32 - File deleted: true
+2019-01-30 21:42:20 DEBUG WorkWithFile:33 - File created: true
+2019-01-30 21:42:20 DEBUG WorkWithFile:37 - Directory "testfolder" exist.
+2019-01-30 21:42:20 DEBUG WorkWithFile:38 - Dir Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/testfolder
+2019-01-30 21:42:20 DEBUG WorkWithFile:39 - Dir Path: testfolder
+2019-01-30 21:43:55 DEBUG WorkWithFile:23 - File Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-30 21:43:55 DEBUG WorkWithFile:24 - File Path: src/main/resources/log4j (копия).properties
+2019-01-30 21:43:55 DEBUG WorkWithFile:25 - File Size (byte): 0
+2019-01-30 21:43:55 DEBUG WorkWithFile:27 - File Last modification RUS: среда, 30 января 2019 г.
+2019-01-30 21:43:55 DEBUG WorkWithFile:28 - File Last modification ENG: Wed Jan 30 21:42:20 MSK 2019
+2019-01-30 21:43:55 DEBUG WorkWithFile:29 - File Is access for read: true
+2019-01-30 21:43:55 DEBUG WorkWithFile:30 - File Is access for write: true
+2019-01-30 21:43:55 DEBUG WorkWithFile:31 - File Is access for execute: false
+2019-01-30 21:43:55 DEBUG WorkWithFile:32 - File deleted: true
+2019-01-30 21:43:55 DEBUG WorkWithFile:33 - File created: true
+2019-01-30 21:43:55 DEBUG WorkWithFile:37 - Directory "testfolder" exist.
+2019-01-30 21:43:55 DEBUG WorkWithFile:38 - Dir Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/testfolder
+2019-01-30 21:43:55 DEBUG WorkWithFile:39 - Dir Path: testfolder
+2019-01-30 21:44:10 DEBUG WorkWithFile:23 - File Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-30 21:44:10 DEBUG WorkWithFile:24 - File Path: src/main/resources/log4j (копия).properties
+2019-01-30 21:44:10 DEBUG WorkWithFile:25 - File Size (byte): 0
+2019-01-30 21:44:10 DEBUG WorkWithFile:27 - File Last modification RUS: среда, 30 января 2019 г.
+2019-01-30 21:44:10 DEBUG WorkWithFile:28 - File Last modification ENG: Wed Jan 30 21:43:55 MSK 2019
+2019-01-30 21:44:10 DEBUG WorkWithFile:29 - File Is access for read: true
+2019-01-30 21:44:10 DEBUG WorkWithFile:30 - File Is access for write: true
+2019-01-30 21:44:10 DEBUG WorkWithFile:31 - File Is access for execute: false
+2019-01-30 21:44:10 DEBUG WorkWithFile:32 - File deleted: true
+2019-01-30 21:44:10 DEBUG WorkWithFile:33 - File created: true
+2019-01-30 21:44:10 DEBUG WorkWithFile:37 - Directory "testfolder" exist.
+2019-01-30 21:44:10 DEBUG WorkWithFile:38 - Dir Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/testfolder
+2019-01-30 21:44:10 DEBUG WorkWithFile:39 - Dir Path: testfolder
+2019-01-30 21:44:32 DEBUG WorkWithFile:23 - File Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-30 21:44:32 DEBUG WorkWithFile:24 - File Path: src/main/resources/log4j (копия).properties
+2019-01-30 21:44:32 DEBUG WorkWithFile:25 - File Size (byte): 0
+2019-01-30 21:44:32 DEBUG WorkWithFile:27 - File Last modification RUS: среда, 30 января 2019 г.
+2019-01-30 21:44:32 DEBUG WorkWithFile:28 - File Last modification ENG: Wed Jan 30 21:44:10 MSK 2019
+2019-01-30 21:44:32 DEBUG WorkWithFile:29 - File Is access for read: true
+2019-01-30 21:44:32 DEBUG WorkWithFile:30 - File Is access for write: true
+2019-01-30 21:44:32 DEBUG WorkWithFile:31 - File Is access for execute: false
+2019-01-30 21:44:32 DEBUG WorkWithFile:32 - File deleted: true
+2019-01-30 21:44:32 DEBUG WorkWithFile:33 - File created: true
+2019-01-30 21:44:32 DEBUG WorkWithFile:37 - Directory "testfolder" exist.
+2019-01-30 21:44:32 DEBUG WorkWithFile:38 - Dir Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/testfolder
+2019-01-30 21:44:32 DEBUG WorkWithFile:39 - Dir Path: testfolder
+2019-01-30 21:45:36 DEBUG WorkWithFile:23 - File Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-30 21:45:36 DEBUG WorkWithFile:24 - File Path: src/main/resources/log4j (копия).properties
+2019-01-30 21:45:36 DEBUG WorkWithFile:25 - File Size (byte): 0
+2019-01-30 21:45:36 DEBUG WorkWithFile:27 - File Last modification RUS: среда, 30 января 2019 г.
+2019-01-30 21:45:36 DEBUG WorkWithFile:28 - File Last modification ENG: Wed Jan 30 21:44:32 MSK 2019
+2019-01-30 21:45:36 DEBUG WorkWithFile:29 - File Is access for read: true
+2019-01-30 21:45:36 DEBUG WorkWithFile:30 - File Is access for write: true
+2019-01-30 21:45:36 DEBUG WorkWithFile:31 - File Is access for execute: false
+2019-01-30 21:45:36 DEBUG WorkWithFile:32 - File deleted: true
+2019-01-30 21:45:36 DEBUG WorkWithFile:33 - File created: true
+2019-01-30 21:45:36 DEBUG WorkWithFile:37 - Directory "testfolder" exist.
+2019-01-30 21:45:36 DEBUG WorkWithFile:38 - Dir Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/testfolder
+2019-01-30 21:45:36 DEBUG WorkWithFile:39 - Dir Path: testfolder
+2019-01-30 21:58:36 DEBUG WorkWithFile:25 - File Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-30 21:58:36 DEBUG WorkWithFile:26 - File Path: src/main/resources/log4j (копия).properties
+2019-01-30 21:58:36 DEBUG WorkWithFile:27 - File Size (byte): 0
+2019-01-30 21:58:36 DEBUG WorkWithFile:29 - File Last modification RUS: среда, 30 января 2019 г.
+2019-01-30 21:58:36 DEBUG WorkWithFile:30 - File Last modification ENG: Wed Jan 30 21:45:36 MSK 2019
+2019-01-30 21:58:36 DEBUG WorkWithFile:31 - File Is access for read: true
+2019-01-30 21:58:36 DEBUG WorkWithFile:32 - File Is access for write: true
+2019-01-30 21:58:36 DEBUG WorkWithFile:33 - File Is access for execute: false
+2019-01-30 21:58:36 DEBUG WorkWithFile:34 - File deleted: true
+2019-01-30 21:58:36 DEBUG WorkWithFile:35 - File created: true
+2019-01-30 21:58:36 DEBUG WorkWithFile:39 - Directory "testfolder" exist.
+2019-01-30 21:58:36 DEBUG WorkWithFile:40 - Dir Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/testfolder
+2019-01-30 21:58:36 DEBUG WorkWithFile:41 - Dir Path: testfolder
+2019-01-30 21:58:36 DEBUG WorkWithFile:62 - java.nio.file.NoSuchFileException: /testfolder/innerfolder
+2019-01-30 22:00:28 DEBUG WorkWithFile:25 - File Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-30 22:00:28 DEBUG WorkWithFile:26 - File Path: src/main/resources/log4j (копия).properties
+2019-01-30 22:00:28 DEBUG WorkWithFile:27 - File Size (byte): 0
+2019-01-30 22:00:28 DEBUG WorkWithFile:29 - File Last modification RUS: среда, 30 января 2019 г.
+2019-01-30 22:00:28 DEBUG WorkWithFile:30 - File Last modification ENG: Wed Jan 30 21:58:36 MSK 2019
+2019-01-30 22:00:28 DEBUG WorkWithFile:31 - File Is access for read: true
+2019-01-30 22:00:28 DEBUG WorkWithFile:32 - File Is access for write: true
+2019-01-30 22:00:28 DEBUG WorkWithFile:33 - File Is access for execute: false
+2019-01-30 22:00:28 DEBUG WorkWithFile:34 - File deleted: true
+2019-01-30 22:00:28 DEBUG WorkWithFile:35 - File created: true
+2019-01-30 22:00:28 DEBUG WorkWithFile:39 - Directory "testfolder" exist.
+2019-01-30 22:00:28 DEBUG WorkWithFile:40 - Dir Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/testfolder
+2019-01-30 22:00:28 DEBUG WorkWithFile:41 - Dir Path: testfolder
+2019-01-30 22:00:28 DEBUG WorkWithFile:62 - java.nio.file.NoSuchFileException: /testfolder/innerfolder
+2019-01-30 22:01:18 DEBUG WorkWithFile:25 - File Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-30 22:01:18 DEBUG WorkWithFile:26 - File Path: src/main/resources/log4j (копия).properties
+2019-01-30 22:01:18 DEBUG WorkWithFile:27 - File Size (byte): 0
+2019-01-30 22:01:18 DEBUG WorkWithFile:29 - File Last modification RUS: среда, 30 января 2019 г.
+2019-01-30 22:01:18 DEBUG WorkWithFile:30 - File Last modification ENG: Wed Jan 30 22:00:28 MSK 2019
+2019-01-30 22:01:18 DEBUG WorkWithFile:31 - File Is access for read: true
+2019-01-30 22:01:18 DEBUG WorkWithFile:32 - File Is access for write: true
+2019-01-30 22:01:18 DEBUG WorkWithFile:33 - File Is access for execute: false
+2019-01-30 22:01:18 DEBUG WorkWithFile:34 - File deleted: true
+2019-01-30 22:01:18 DEBUG WorkWithFile:35 - File created: true
+2019-01-30 22:01:18 DEBUG WorkWithFile:39 - Directory "testfolder" exist.
+2019-01-30 22:01:18 DEBUG WorkWithFile:40 - Dir Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/testfolder
+2019-01-30 22:01:18 DEBUG WorkWithFile:41 - Dir Path: testfolder
+2019-01-30 22:01:18 DEBUG WorkWithFile:62 - java.nio.file.FileAlreadyExistsException: testfolder/innerfolder
+2019-01-30 22:01:47 DEBUG WorkWithFile:25 - File Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-30 22:01:47 DEBUG WorkWithFile:26 - File Path: src/main/resources/log4j (копия).properties
+2019-01-30 22:01:47 DEBUG WorkWithFile:27 - File Size (byte): 0
+2019-01-30 22:01:47 DEBUG WorkWithFile:29 - File Last modification RUS: среда, 30 января 2019 г.
+2019-01-30 22:01:47 DEBUG WorkWithFile:30 - File Last modification ENG: Wed Jan 30 22:01:18 MSK 2019
+2019-01-30 22:01:47 DEBUG WorkWithFile:31 - File Is access for read: true
+2019-01-30 22:01:47 DEBUG WorkWithFile:32 - File Is access for write: true
+2019-01-30 22:01:47 DEBUG WorkWithFile:33 - File Is access for execute: false
+2019-01-30 22:01:47 DEBUG WorkWithFile:34 - File deleted: true
+2019-01-30 22:01:47 DEBUG WorkWithFile:35 - File created: true
+2019-01-30 22:01:47 DEBUG WorkWithFile:39 - Directory "testfolder" exist.
+2019-01-30 22:01:47 DEBUG WorkWithFile:40 - Dir Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/testfolder
+2019-01-30 22:01:47 DEBUG WorkWithFile:41 - Dir Path: testfolder
+2019-01-30 22:01:47 DEBUG WorkWithFile:62 - java.nio.file.FileAlreadyExistsException: testfolder/innerfolder
+2019-01-30 22:09:51 DEBUG WorkWithFile:28 - File Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-30 22:09:51 DEBUG WorkWithFile:29 - File Path: src/main/resources/log4j (копия).properties
+2019-01-30 22:09:51 DEBUG WorkWithFile:30 - File Size (byte): 0
+2019-01-30 22:09:51 DEBUG WorkWithFile:32 - File Last modification RUS: среда, 30 января 2019 г.
+2019-01-30 22:09:51 DEBUG WorkWithFile:33 - File Last modification ENG: Wed Jan 30 22:01:47 MSK 2019
+2019-01-30 22:09:51 DEBUG WorkWithFile:34 - File Is access for read: true
+2019-01-30 22:09:51 DEBUG WorkWithFile:35 - File Is access for write: true
+2019-01-30 22:09:51 DEBUG WorkWithFile:36 - File Is access for execute: false
+2019-01-30 22:09:51 DEBUG WorkWithFile:37 - File deleted: true
+2019-01-30 22:09:51 DEBUG WorkWithFile:38 - File created: true
+2019-01-30 22:09:51 DEBUG WorkWithFile:42 - Directory "testfolder" exist.
+2019-01-30 22:09:51 DEBUG WorkWithFile:43 - Dir Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/testfolder
+2019-01-30 22:09:51 DEBUG WorkWithFile:44 - Dir Path: testfolder
+2019-01-30 22:09:51 DEBUG WorkWithFile:65 - java.nio.file.DirectoryNotEmptyException: testfolder/innerfolder
+2019-01-30 22:19:22 DEBUG WorkWithFile:28 - File Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-30 22:19:22 DEBUG WorkWithFile:29 - File Path: src/main/resources/log4j (копия).properties
+2019-01-30 22:19:22 DEBUG WorkWithFile:30 - File Size (byte): 0
+2019-01-30 22:19:22 DEBUG WorkWithFile:32 - File Last modification RUS: среда, 30 января 2019 г.
+2019-01-30 22:19:22 DEBUG WorkWithFile:33 - File Last modification ENG: Wed Jan 30 22:09:51 MSK 2019
+2019-01-30 22:19:22 DEBUG WorkWithFile:34 - File Is access for read: true
+2019-01-30 22:19:22 DEBUG WorkWithFile:35 - File Is access for write: true
+2019-01-30 22:19:22 DEBUG WorkWithFile:36 - File Is access for execute: false
+2019-01-30 22:19:22 DEBUG WorkWithFile:37 - File deleted: true
+2019-01-30 22:19:22 DEBUG WorkWithFile:38 - File created: true
+2019-01-30 22:19:22 DEBUG WorkWithFile:42 - Directory "testfolder" exist.
+2019-01-30 22:19:22 DEBUG WorkWithFile:43 - Dir Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/testfolder
+2019-01-30 22:19:22 DEBUG WorkWithFile:44 - Dir Path: testfolder
+2019-01-30 22:31:18 DEBUG WorkWithFile:29 - File Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-30 22:31:18 DEBUG WorkWithFile:30 - File Path: src/main/resources/log4j (копия).properties
+2019-01-30 22:31:18 DEBUG WorkWithFile:31 - File Size (byte): 0
+2019-01-30 22:31:18 DEBUG WorkWithFile:33 - File Last modification RUS: среда, 30 января 2019 г.
+2019-01-30 22:31:18 DEBUG WorkWithFile:34 - File Last modification ENG: Wed Jan 30 22:19:22 MSK 2019
+2019-01-30 22:31:18 DEBUG WorkWithFile:35 - File Is access for read: true
+2019-01-30 22:31:18 DEBUG WorkWithFile:36 - File Is access for write: true
+2019-01-30 22:31:18 DEBUG WorkWithFile:37 - File Is access for execute: false
+2019-01-30 22:31:18 DEBUG WorkWithFile:38 - File deleted: true
+2019-01-30 22:31:18 DEBUG WorkWithFile:39 - File created: true
+2019-01-30 22:31:18 DEBUG WorkWithFile:43 - Directory "testfolder" exist.
+2019-01-30 22:31:18 DEBUG WorkWithFile:44 - Dir Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/testfolder
+2019-01-30 22:31:18 DEBUG WorkWithFile:45 - Dir Path: testfolder
+2019-01-30 22:32:26 DEBUG WorkWithFile:29 - File Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-30 22:32:26 DEBUG WorkWithFile:30 - File Path: src/main/resources/log4j (копия).properties
+2019-01-30 22:32:26 DEBUG WorkWithFile:31 - File Size (byte): 0
+2019-01-30 22:32:26 DEBUG WorkWithFile:33 - File Last modification RUS: среда, 30 января 2019 г.
+2019-01-30 22:32:26 DEBUG WorkWithFile:34 - File Last modification ENG: Wed Jan 30 22:31:18 MSK 2019
+2019-01-30 22:32:26 DEBUG WorkWithFile:35 - File Is access for read: true
+2019-01-30 22:32:26 DEBUG WorkWithFile:36 - File Is access for write: true
+2019-01-30 22:32:26 DEBUG WorkWithFile:37 - File Is access for execute: false
+2019-01-30 22:32:26 DEBUG WorkWithFile:38 - File deleted: true
+2019-01-30 22:32:26 DEBUG WorkWithFile:39 - File created: true
+2019-01-30 22:32:26 DEBUG WorkWithFile:43 - Directory "testfolder" exist.
+2019-01-30 22:32:26 DEBUG WorkWithFile:44 - Dir Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/testfolder
+2019-01-30 22:32:26 DEBUG WorkWithFile:45 - Dir Path: testfolder
+2019-01-30 22:33:43 DEBUG WorkWithFile:29 - File Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-30 22:33:43 DEBUG WorkWithFile:30 - File Path: src/main/resources/log4j (копия).properties
+2019-01-30 22:33:43 DEBUG WorkWithFile:31 - File Size (byte): 0
+2019-01-30 22:33:43 DEBUG WorkWithFile:33 - File Last modification RUS: среда, 30 января 2019 г.
+2019-01-30 22:33:43 DEBUG WorkWithFile:34 - File Last modification ENG: Wed Jan 30 22:32:26 MSK 2019
+2019-01-30 22:33:43 DEBUG WorkWithFile:35 - File Is access for read: true
+2019-01-30 22:33:43 DEBUG WorkWithFile:36 - File Is access for write: true
+2019-01-30 22:33:43 DEBUG WorkWithFile:37 - File Is access for execute: false
+2019-01-30 22:33:43 DEBUG WorkWithFile:38 - File deleted: true
+2019-01-30 22:33:43 DEBUG WorkWithFile:39 - File created: true
+2019-01-30 22:33:43 DEBUG WorkWithFile:43 - Directory "testfolder" exist.
+2019-01-30 22:33:43 DEBUG WorkWithFile:44 - Dir Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/testfolder
+2019-01-30 22:33:43 DEBUG WorkWithFile:45 - Dir Path: testfolder
+2019-01-30 22:36:13 DEBUG WorkWithFile:29 - File Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-30 22:36:13 DEBUG WorkWithFile:30 - File Path: src/main/resources/log4j (копия).properties
+2019-01-30 22:36:13 DEBUG WorkWithFile:31 - File Size (byte): 0
+2019-01-30 22:36:13 DEBUG WorkWithFile:33 - File Last modification RUS: среда, 30 января 2019 г.
+2019-01-30 22:36:13 DEBUG WorkWithFile:34 - File Last modification ENG: Wed Jan 30 22:33:43 MSK 2019
+2019-01-30 22:36:13 DEBUG WorkWithFile:35 - File Is access for read: true
+2019-01-30 22:36:13 DEBUG WorkWithFile:36 - File Is access for write: true
+2019-01-30 22:36:13 DEBUG WorkWithFile:37 - File Is access for execute: false
+2019-01-30 22:36:13 DEBUG WorkWithFile:38 - File deleted: true
+2019-01-30 22:36:13 DEBUG WorkWithFile:39 - File created: true
+2019-01-30 22:36:13 DEBUG WorkWithFile:43 - Directory "testfolder" exist.
+2019-01-30 22:36:13 DEBUG WorkWithFile:44 - Dir Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/testfolder
+2019-01-30 22:36:13 DEBUG WorkWithFile:45 - Dir Path: testfolder
+2019-01-30 22:36:57 DEBUG WorkWithFile:29 - File Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-30 22:36:57 DEBUG WorkWithFile:30 - File Path: src/main/resources/log4j (копия).properties
+2019-01-30 22:36:57 DEBUG WorkWithFile:31 - File Size (byte): 0
+2019-01-30 22:36:57 DEBUG WorkWithFile:33 - File Last modification RUS: среда, 30 января 2019 г.
+2019-01-30 22:36:57 DEBUG WorkWithFile:34 - File Last modification ENG: Wed Jan 30 22:36:13 MSK 2019
+2019-01-30 22:36:57 DEBUG WorkWithFile:35 - File Is access for read: true
+2019-01-30 22:36:57 DEBUG WorkWithFile:36 - File Is access for write: true
+2019-01-30 22:36:57 DEBUG WorkWithFile:37 - File Is access for execute: false
+2019-01-30 22:36:57 DEBUG WorkWithFile:38 - File deleted: true
+2019-01-30 22:36:57 DEBUG WorkWithFile:39 - File created: true
+2019-01-30 22:36:57 DEBUG WorkWithFile:43 - Directory "testfolder" exist.
+2019-01-30 22:36:57 DEBUG WorkWithFile:44 - Dir Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/testfolder
+2019-01-30 22:36:57 DEBUG WorkWithFile:45 - Dir Path: testfolder
+2019-01-30 22:36:57 DEBUG WorkWithFile:59 - /
+2019-01-30 22:39:54 DEBUG WorkWithFile:29 - File Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-30 22:39:54 DEBUG WorkWithFile:30 - File Path: src/main/resources/log4j (копия).properties
+2019-01-30 22:39:54 DEBUG WorkWithFile:31 - File Size (byte): 0
+2019-01-30 22:39:54 DEBUG WorkWithFile:33 - File Last modification RUS: среда, 30 января 2019 г.
+2019-01-30 22:39:54 DEBUG WorkWithFile:34 - File Last modification ENG: Wed Jan 30 22:36:57 MSK 2019
+2019-01-30 22:39:54 DEBUG WorkWithFile:35 - File Is access for read: true
+2019-01-30 22:39:54 DEBUG WorkWithFile:36 - File Is access for write: true
+2019-01-30 22:39:54 DEBUG WorkWithFile:37 - File Is access for execute: false
+2019-01-30 22:39:54 DEBUG WorkWithFile:38 - File deleted: true
+2019-01-30 22:39:54 DEBUG WorkWithFile:39 - File created: true
+2019-01-30 22:39:54 DEBUG WorkWithFile:43 - Directory "testfolder" exist.
+2019-01-30 22:39:54 DEBUG WorkWithFile:44 - Dir Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/testfolder
+2019-01-30 22:39:54 DEBUG WorkWithFile:45 - Dir Path: testfolder
+2019-01-30 22:40:31 DEBUG WorkWithFile:29 - File Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-30 22:40:31 DEBUG WorkWithFile:30 - File Path: src/main/resources/log4j (копия).properties
+2019-01-30 22:40:31 DEBUG WorkWithFile:31 - File Size (byte): 0
+2019-01-30 22:40:31 DEBUG WorkWithFile:33 - File Last modification RUS: среда, 30 января 2019 г.
+2019-01-30 22:40:31 DEBUG WorkWithFile:34 - File Last modification ENG: Wed Jan 30 22:39:54 MSK 2019
+2019-01-30 22:40:31 DEBUG WorkWithFile:35 - File Is access for read: true
+2019-01-30 22:40:31 DEBUG WorkWithFile:36 - File Is access for write: true
+2019-01-30 22:40:31 DEBUG WorkWithFile:37 - File Is access for execute: false
+2019-01-30 22:40:31 DEBUG WorkWithFile:38 - File deleted: true
+2019-01-30 22:40:31 DEBUG WorkWithFile:39 - File created: true
+2019-01-30 22:40:31 DEBUG WorkWithFile:43 - Directory "testfolder" exist.
+2019-01-30 22:40:31 DEBUG WorkWithFile:44 - Dir Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/testfolder
+2019-01-30 22:40:31 DEBUG WorkWithFile:45 - Dir Path: testfolder
+2019-01-30 22:43:04 DEBUG WorkWithFile:29 - File Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-30 22:43:04 DEBUG WorkWithFile:30 - File Path: src/main/resources/log4j (копия).properties
+2019-01-30 22:43:04 DEBUG WorkWithFile:31 - File Size (byte): 0
+2019-01-30 22:43:04 DEBUG WorkWithFile:33 - File Last modification RUS: среда, 30 января 2019 г.
+2019-01-30 22:43:04 DEBUG WorkWithFile:34 - File Last modification ENG: Wed Jan 30 22:40:31 MSK 2019
+2019-01-30 22:43:04 DEBUG WorkWithFile:35 - File Is access for read: true
+2019-01-30 22:43:04 DEBUG WorkWithFile:36 - File Is access for write: true
+2019-01-30 22:43:04 DEBUG WorkWithFile:37 - File Is access for execute: false
+2019-01-30 22:43:04 DEBUG WorkWithFile:38 - File deleted: true
+2019-01-30 22:43:04 DEBUG WorkWithFile:39 - File created: true
+2019-01-30 22:43:04 DEBUG WorkWithFile:43 - Directory "testfolder" exist.
+2019-01-30 22:43:04 DEBUG WorkWithFile:44 - Dir Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/testfolder
+2019-01-30 22:43:04 DEBUG WorkWithFile:45 - Dir Path: testfolder
+2019-01-30 22:55:00 DEBUG WorkWithFile:31 - File Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-30 22:55:00 DEBUG WorkWithFile:32 - File Path: src/main/resources/log4j (копия).properties
+2019-01-30 22:55:00 DEBUG WorkWithFile:33 - File Size (byte): 0
+2019-01-30 22:55:00 DEBUG WorkWithFile:35 - File Last modification RUS: среда, 30 января 2019 г.
+2019-01-30 22:55:00 DEBUG WorkWithFile:36 - File Last modification ENG: Wed Jan 30 22:43:04 MSK 2019
+2019-01-30 22:55:00 DEBUG WorkWithFile:37 - File Is access for read: true
+2019-01-30 22:55:00 DEBUG WorkWithFile:38 - File Is access for write: true
+2019-01-30 22:55:00 DEBUG WorkWithFile:39 - File Is access for execute: false
+2019-01-30 22:55:00 DEBUG WorkWithFile:40 - File deleted: true
+2019-01-30 22:55:00 DEBUG WorkWithFile:41 - File created: true
+2019-01-30 22:55:00 DEBUG WorkWithFile:45 - Directory "testfolder" exist.
+2019-01-30 22:55:00 DEBUG WorkWithFile:46 - Dir Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/testfolder
+2019-01-30 22:55:00 DEBUG WorkWithFile:47 - Dir Path: testfolder
+2019-01-30 23:07:07 DEBUG WorkWithFile:32 - File Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-30 23:07:07 DEBUG WorkWithFile:33 - File Path: src/main/resources/log4j (копия).properties
+2019-01-30 23:07:07 DEBUG WorkWithFile:34 - File Size (byte): 0
+2019-01-30 23:07:07 DEBUG WorkWithFile:36 - File Last modification RUS: среда, 30 января 2019 г.
+2019-01-30 23:07:07 DEBUG WorkWithFile:37 - File Last modification ENG: Wed Jan 30 22:55:00 MSK 2019
+2019-01-30 23:07:07 DEBUG WorkWithFile:38 - File Is access for read: true
+2019-01-30 23:07:07 DEBUG WorkWithFile:39 - File Is access for write: true
+2019-01-30 23:07:07 DEBUG WorkWithFile:40 - File Is access for execute: false
+2019-01-30 23:07:07 DEBUG WorkWithFile:41 - File deleted: true
+2019-01-30 23:07:07 DEBUG WorkWithFile:42 - File created: true
+2019-01-30 23:07:07 DEBUG WorkWithFile:46 - Directory "testfolder" exist.
+2019-01-30 23:07:07 DEBUG WorkWithFile:47 - Dir Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/testfolder
+2019-01-30 23:07:07 DEBUG WorkWithFile:48 - Dir Path: testfolder
+2019-01-30 23:09:34 DEBUG WorkWithFile:32 - File Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-30 23:09:34 DEBUG WorkWithFile:33 - File Path: src/main/resources/log4j (копия).properties
+2019-01-30 23:09:34 DEBUG WorkWithFile:34 - File Size (byte): 0
+2019-01-30 23:09:34 DEBUG WorkWithFile:36 - File Last modification RUS: среда, 30 января 2019 г.
+2019-01-30 23:09:34 DEBUG WorkWithFile:37 - File Last modification ENG: Wed Jan 30 23:07:07 MSK 2019
+2019-01-30 23:09:34 DEBUG WorkWithFile:38 - File Is access for read: true
+2019-01-30 23:09:34 DEBUG WorkWithFile:39 - File Is access for write: true
+2019-01-30 23:09:34 DEBUG WorkWithFile:40 - File Is access for execute: false
+2019-01-30 23:09:34 DEBUG WorkWithFile:41 - File deleted: true
+2019-01-30 23:09:34 DEBUG WorkWithFile:42 - File created: true
+2019-01-30 23:09:34 DEBUG WorkWithFile:46 - Directory "testfolder" exist.
+2019-01-30 23:09:34 DEBUG WorkWithFile:47 - Dir Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/testfolder
+2019-01-30 23:09:34 DEBUG WorkWithFile:48 - Dir Path: testfolder
+2019-01-30 23:10:15 DEBUG WorkWithFile:32 - File Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-30 23:10:15 DEBUG WorkWithFile:33 - File Path: src/main/resources/log4j (копия).properties
+2019-01-30 23:10:15 DEBUG WorkWithFile:34 - File Size (byte): 0
+2019-01-30 23:10:15 DEBUG WorkWithFile:36 - File Last modification RUS: среда, 30 января 2019 г.
+2019-01-30 23:10:15 DEBUG WorkWithFile:37 - File Last modification ENG: Wed Jan 30 23:09:34 MSK 2019
+2019-01-30 23:10:15 DEBUG WorkWithFile:38 - File Is access for read: true
+2019-01-30 23:10:15 DEBUG WorkWithFile:39 - File Is access for write: true
+2019-01-30 23:10:15 DEBUG WorkWithFile:40 - File Is access for execute: false
+2019-01-30 23:10:15 DEBUG WorkWithFile:41 - File deleted: true
+2019-01-30 23:10:15 DEBUG WorkWithFile:42 - File created: true
+2019-01-30 23:10:15 DEBUG WorkWithFile:46 - Directory "testfolder" exist.
+2019-01-30 23:10:15 DEBUG WorkWithFile:47 - Dir Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/testfolder
+2019-01-30 23:10:15 DEBUG WorkWithFile:48 - Dir Path: testfolder
+2019-01-30 23:14:02 DEBUG WorkWithFile:32 - File Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-30 23:14:02 DEBUG WorkWithFile:33 - File Path: src/main/resources/log4j (копия).properties
+2019-01-30 23:14:02 DEBUG WorkWithFile:34 - File Size (byte): 0
+2019-01-30 23:14:02 DEBUG WorkWithFile:36 - File Last modification RUS: среда, 30 января 2019 г.
+2019-01-30 23:14:02 DEBUG WorkWithFile:37 - File Last modification ENG: Wed Jan 30 23:10:15 MSK 2019
+2019-01-30 23:14:02 DEBUG WorkWithFile:38 - File Is access for read: true
+2019-01-30 23:14:02 DEBUG WorkWithFile:39 - File Is access for write: true
+2019-01-30 23:14:02 DEBUG WorkWithFile:40 - File Is access for execute: false
+2019-01-30 23:14:02 DEBUG WorkWithFile:41 - File deleted: true
+2019-01-30 23:14:02 DEBUG WorkWithFile:42 - File created: true
+2019-01-30 23:14:02 DEBUG WorkWithFile:46 - Directory "testfolder" exist.
+2019-01-30 23:14:02 DEBUG WorkWithFile:47 - Dir Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/testfolder
+2019-01-30 23:14:02 DEBUG WorkWithFile:48 - Dir Path: testfolder
+2019-01-30 23:15:01 DEBUG WorkWithFile:32 - File Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-01-30 23:15:01 DEBUG WorkWithFile:33 - File Path: src/main/resources/log4j (копия).properties
+2019-01-30 23:15:01 DEBUG WorkWithFile:34 - File Size (byte): 0
+2019-01-30 23:15:01 DEBUG WorkWithFile:36 - File Last modification RUS: среда, 30 января 2019 г.
+2019-01-30 23:15:01 DEBUG WorkWithFile:37 - File Last modification ENG: Wed Jan 30 23:14:02 MSK 2019
+2019-01-30 23:15:01 DEBUG WorkWithFile:38 - File Is access for read: true
+2019-01-30 23:15:01 DEBUG WorkWithFile:39 - File Is access for write: true
+2019-01-30 23:15:01 DEBUG WorkWithFile:40 - File Is access for execute: false
+2019-01-30 23:15:01 DEBUG WorkWithFile:41 - File deleted: true
+2019-01-30 23:15:01 DEBUG WorkWithFile:42 - File created: true
+2019-01-30 23:15:01 DEBUG WorkWithFile:46 - Directory "testfolder" exist.
+2019-01-30 23:15:01 DEBUG WorkWithFile:47 - Dir Absolute Path:/home/s-moiseenko/IdeaProjects/Learning/LearningIO/testfolder
+2019-01-30 23:15:01 DEBUG WorkWithFile:48 - Dir Path: testfolder
+2019-02-01 10:28:15 DEBUG WorkWithFile:32 - File Absolute Path:/home/moiseenko-s/IdeaProjects/Learning/LearningIO/src/main/resources/log4j (копия).properties
+2019-02-01 10:28:15 DEBUG WorkWithFile:33 - File Path: src/main/resources/log4j (копия).properties
+2019-02-01 10:28:15 DEBUG WorkWithFile:34 - File Size (byte): 0
+2019-02-01 10:28:15 DEBUG WorkWithFile:36 - File Last modification RUS: вторник, 29 января 2019 г.
+2019-02-01 10:28:15 DEBUG WorkWithFile:37 - File Last modification ENG: Tue Jan 29 23:56:27 MSK 2019
+2019-02-01 10:28:15 DEBUG WorkWithFile:38 - File Is access for read: true
+2019-02-01 10:28:15 DEBUG WorkWithFile:39 - File Is access for write: true
+2019-02-01 10:28:15 DEBUG WorkWithFile:40 - File Is access for execute: false
+2019-02-01 10:28:15 DEBUG WorkWithFile:41 - File deleted: true
+2019-02-01 10:28:15 DEBUG WorkWithFile:42 - File created: true
+2019-02-01 10:28:15 DEBUG WorkWithFile:46 - Directory "testfolder" exist.
+2019-02-01 10:28:15 DEBUG WorkWithFile:47 - Dir Absolute Path:/home/moiseenko-s/IdeaProjects/Learning/LearningIO/testfolder
+2019-02-01 10:28:15 DEBUG WorkWithFile:48 - Dir Path: testfolder
+2019-02-01 10:28:15 DEBUG WorkWithFile:88 - java.nio.file.NoSuchFileException: /home/s-moiseenko/IdeaProjects

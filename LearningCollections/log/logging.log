@@ -1,0 +1,1551 @@
+2019-02-04 09:57:31 DEBUG Runner:19 - Person{name='Ivanov', age=12}
+2019-02-04 09:57:31 DEBUG Runner:19 - Person{name='Sidorov', age=8}
+2019-02-04 09:57:31 DEBUG Runner:19 - Person{name='Petrov', age=20}
+2019-02-04 10:00:49 DEBUG Runner:19 - Person{name='Ivanov', age=12}
+2019-02-04 10:00:49 DEBUG Runner:19 - Person{name='Sidorov', age=8}
+2019-02-04 10:00:49 DEBUG Runner:19 - Person{name='Petrov', age=20}
+2019-02-04 10:00:49 DEBUG Runner:24 - myHashSet size: [Person{name='Ivanov', age=12}, Person{name='Sidorov', age=8}, Person{name='Petrov', age=20}]
+2019-02-04 10:01:06 DEBUG Runner:19 - Person{name='Ivanov', age=12}
+2019-02-04 10:01:06 DEBUG Runner:19 - Person{name='Sidorov', age=8}
+2019-02-04 10:01:06 DEBUG Runner:19 - Person{name='Petrov', age=20}
+2019-02-04 10:01:06 DEBUG Runner:24 - myHashSet size: 3
+2019-02-04 10:03:27 DEBUG Runner:17 - Is myHashSet empty: true
+2019-02-04 10:03:27 DEBUG Runner:23 - Person{name='Ivanov', age=12}
+2019-02-04 10:03:27 DEBUG Runner:23 - Person{name='Sidorov', age=8}
+2019-02-04 10:03:27 DEBUG Runner:23 - Person{name='Petrov', age=20}
+2019-02-04 10:03:27 DEBUG Runner:28 - myHashSet size: 3
+2019-02-04 10:04:03 DEBUG Runner:17 - Is myHashSet empty: true
+2019-02-04 10:04:03 DEBUG Runner:23 - Person{name='Ivanov', age=12}
+2019-02-04 10:04:03 DEBUG Runner:23 - Person{name='Sidorov', age=8}
+2019-02-04 10:04:03 DEBUG Runner:23 - Person{name='Petrov', age=20}
+2019-02-04 10:04:03 DEBUG Runner:28 - myHashSet size: 3
+2019-02-04 10:04:03 DEBUG Runner:32 - Is myHashSet empty: false
+2019-02-04 10:05:58 DEBUG Runner:17 - Is myHashSet empty: true
+2019-02-04 10:05:58 DEBUG Runner:23 - Person{name='Ivanov', age=12}
+2019-02-04 10:05:58 DEBUG Runner:23 - Person{name='Sidorov', age=8}
+2019-02-04 10:05:58 DEBUG Runner:23 - Person{name='Petrov', age=20}
+2019-02-04 10:05:58 DEBUG Runner:28 - myHashSet size: 3
+2019-02-04 10:05:58 DEBUG Runner:32 - Is myHashSet empty: false
+2019-02-04 10:05:58 DEBUG Runner:37 - Person{name='Ivanov', age=12}
+2019-02-04 10:05:58 DEBUG Runner:37 - Person{name='Sidorov', age=8}
+2019-02-04 10:11:54 DEBUG Runner:22 - Is myHashSet empty: true
+2019-02-04 10:11:54 DEBUG Runner:28 - Person{name='Ivanov', age=12}
+2019-02-04 10:11:54 DEBUG Runner:28 - Person{name='Sidorov', age=8}
+2019-02-04 10:11:54 DEBUG Runner:28 - Person{name='Petrov', age=20}
+2019-02-04 10:11:54 DEBUG Runner:33 - myHashSet size: 3
+2019-02-04 10:11:54 DEBUG Runner:37 - Is myHashSet empty: false
+2019-02-04 10:11:54 DEBUG Runner:42 - Person{name='Ivanov', age=12}
+2019-02-04 10:11:54 DEBUG Runner:42 - Person{name='Sidorov', age=8}
+2019-02-04 10:14:25 DEBUG Runner:22 - Is myHashSet empty: true
+2019-02-04 10:14:25 DEBUG Runner:28 - Person{name='Ivanov', age=12}
+2019-02-04 10:14:25 DEBUG Runner:28 - Person{name='Sidorov', age=8}
+2019-02-04 10:14:25 DEBUG Runner:28 - Person{name='Petrov', age=20}
+2019-02-04 10:14:25 DEBUG Runner:33 - myHashSet size: 3
+2019-02-04 10:14:25 DEBUG Runner:37 - Is myHashSet empty: false
+2019-02-04 10:14:25 DEBUG Runner:42 - Person{name='Ivanov', age=12}
+2019-02-04 10:14:25 DEBUG Runner:42 - Person{name='Sidorov', age=8}
+2019-02-04 10:14:25 DEBUG Runner:46 - Is myHashSet contains Sidorov: true
+2019-02-04 10:26:55 DEBUG Runner:22 - Is myHashSet empty: true
+2019-02-04 10:26:55 DEBUG Runner:28 - Person{name='Ivanov', age=12}
+2019-02-04 10:26:55 DEBUG Runner:28 - Person{name='Sidorov', age=8}
+2019-02-04 10:26:55 DEBUG Runner:28 - Person{name='Petrov', age=20}
+2019-02-04 10:26:55 DEBUG Runner:33 - myHashSet size: 3
+2019-02-04 10:26:55 DEBUG Runner:37 - Is myHashSet empty: false
+2019-02-04 10:26:55 DEBUG Runner:42 - Person{name='Ivanov', age=12}
+2019-02-04 10:26:55 DEBUG Runner:42 - Person{name='Sidorov', age=8}
+2019-02-04 10:26:55 DEBUG Runner:47 - Is myHashSet contains Sidorov: true
+2019-02-04 10:26:55 DEBUG Runner:48 - Is myHashSet contains Petrov: false
+2019-02-04 11:09:47 DEBUG Runner:22 - Is myHashSet empty: true
+2019-02-04 11:09:47 DEBUG Runner:28 - Person{name='Ivanov', age=12}
+2019-02-04 11:09:47 DEBUG Runner:28 - Person{name='Sidorov', age=8}
+2019-02-04 11:09:47 DEBUG Runner:28 - Person{name='Petrov', age=20}
+2019-02-04 11:09:47 DEBUG Runner:33 - myHashSet size: 3
+2019-02-04 11:09:47 DEBUG Runner:37 - Is myHashSet empty: false
+2019-02-04 11:09:47 DEBUG Runner:42 - Person{name='Ivanov', age=12}
+2019-02-04 11:09:47 DEBUG Runner:42 - Person{name='Sidorov', age=8}
+2019-02-04 11:09:47 DEBUG Runner:47 - Is myHashSet contains Sidorov: true
+2019-02-04 11:09:47 DEBUG Runner:48 - Is myHashSet contains Petrov: false
+2019-02-04 11:09:47 DEBUG Runner:56 - Person{name='Ivanov', age=12}
+2019-02-04 11:09:47 DEBUG Runner:56 - Person{name='Petrov', age=20}
+2019-02-04 11:09:47 DEBUG Runner:56 - Person{name='Sidorov', age=8}
+2019-02-04 11:55:30 DEBUG Runner:24 - Is myHashSet empty: true
+2019-02-04 11:55:30 DEBUG Runner:30 - Person{name='Ivanov', age=12}
+2019-02-04 11:55:30 DEBUG Runner:30 - Person{name='Sidorov', age=8}
+2019-02-04 11:55:30 DEBUG Runner:30 - Person{name='Petrov', age=20}
+2019-02-04 11:55:30 DEBUG Runner:35 - myHashSet size: 3
+2019-02-04 11:55:30 DEBUG Runner:39 - Is myHashSet empty: false
+2019-02-04 11:55:31 DEBUG Runner:44 - Person{name='Ivanov', age=12}
+2019-02-04 11:55:31 DEBUG Runner:44 - Person{name='Sidorov', age=8}
+2019-02-04 11:55:31 DEBUG Runner:49 - Is myHashSet contains Sidorov: true
+2019-02-04 11:55:31 DEBUG Runner:50 - Is myHashSet contains Petrov: false
+2019-02-04 11:55:31 DEBUG Runner:59 - Person{name='Ivanov', age=12}
+2019-02-04 11:55:31 DEBUG Runner:59 - Person{name='Petrov', age=20}
+2019-02-04 11:55:31 DEBUG Runner:59 - Person{name='Sidorov', age=8}
+2019-02-04 14:31:19 DEBUG Runner:26 - Is myHashSet empty: true
+2019-02-04 14:31:19 DEBUG Runner:35 - Person{name='Ivanov', age=12}
+2019-02-04 14:31:19 DEBUG Runner:35 - Person{name='Sidorov', age=8}
+2019-02-04 14:31:19 DEBUG Runner:35 - Person{name='Petrov', age=102}
+2019-02-04 14:31:19 DEBUG Runner:35 - Person{name='Sidorov', age=54}
+2019-02-04 14:31:19 DEBUG Runner:35 - Person{name='Petrov', age=20}
+2019-02-04 14:31:19 DEBUG Runner:35 - Person{name='Ivanov', age=68}
+2019-02-04 14:31:19 DEBUG Runner:40 - myHashSet size: 6
+2019-02-04 14:31:19 DEBUG Runner:44 - Is myHashSet empty: false
+2019-02-04 14:31:19 DEBUG Runner:49 - Person{name='Ivanov', age=12}
+2019-02-04 14:31:19 DEBUG Runner:49 - Person{name='Sidorov', age=8}
+2019-02-04 14:31:19 DEBUG Runner:49 - Person{name='Petrov', age=102}
+2019-02-04 14:31:19 DEBUG Runner:49 - Person{name='Sidorov', age=54}
+2019-02-04 14:31:19 DEBUG Runner:49 - Person{name='Ivanov', age=68}
+2019-02-04 14:31:19 DEBUG Runner:54 - Is myHashSet contains old Petrov: true
+2019-02-04 14:31:19 DEBUG Runner:55 - Is myHashSet contains young Petrov: false
+2019-02-04 14:31:19 DEBUG Runner:67 - Person{name='Ivanov', age=12}
+2019-02-04 14:31:19 DEBUG Runner:67 - Person{name='Petrov', age=20}
+2019-02-04 14:31:19 DEBUG Runner:67 - Person{name='Sidorov', age=8}
+2019-02-04 14:31:19 DEBUG Runner:67 - Person{name='Ivanov', age=68}
+2019-02-04 14:31:19 DEBUG Runner:67 - Person{name='Petrov', age=102}
+2019-02-04 14:31:19 DEBUG Runner:67 - Person{name='Sidorov', age=54}
+2019-02-04 14:31:19 DEBUG Runner:83 - Person{name='Ivanov', age=12}
+2019-02-04 14:31:19 DEBUG Runner:83 - Person{name='Ivanov', age=68}
+2019-02-04 14:31:19 DEBUG Runner:83 - Person{name='Petrov', age=20}
+2019-02-04 14:31:19 DEBUG Runner:83 - Person{name='Petrov', age=102}
+2019-02-04 14:31:19 DEBUG Runner:83 - Person{name='Sidorov', age=8}
+2019-02-04 14:31:19 DEBUG Runner:83 - Person{name='Sidorov', age=54}
+2019-02-04 14:32:24 DEBUG Runner:26 - Is myHashSet empty: true
+2019-02-04 14:32:24 DEBUG Runner:35 - Person{name='Ivanov', age=12}
+2019-02-04 14:32:24 DEBUG Runner:35 - Person{name='Sidorov', age=8}
+2019-02-04 14:32:24 DEBUG Runner:35 - Person{name='Petrov', age=102}
+2019-02-04 14:32:24 DEBUG Runner:35 - Person{name='Sidorov', age=54}
+2019-02-04 14:32:24 DEBUG Runner:35 - Person{name='Petrov', age=20}
+2019-02-04 14:32:24 DEBUG Runner:35 - Person{name='Ivanov', age=68}
+2019-02-04 14:32:24 DEBUG Runner:40 - myHashSet size: 6
+2019-02-04 14:32:24 DEBUG Runner:44 - Is myHashSet empty: false
+2019-02-04 14:32:24 DEBUG Runner:49 - Person{name='Ivanov', age=12}
+2019-02-04 14:32:24 DEBUG Runner:49 - Person{name='Sidorov', age=8}
+2019-02-04 14:32:24 DEBUG Runner:49 - Person{name='Petrov', age=102}
+2019-02-04 14:32:24 DEBUG Runner:49 - Person{name='Sidorov', age=54}
+2019-02-04 14:32:24 DEBUG Runner:49 - Person{name='Ivanov', age=68}
+2019-02-04 14:32:24 DEBUG Runner:54 - Is myHashSet contains old Petrov: true
+2019-02-04 14:32:24 DEBUG Runner:55 - Is myHashSet contains young Petrov: false
+2019-02-04 14:32:24 DEBUG Runner:67 - Person{name='Ivanov', age=12}
+2019-02-04 14:32:24 DEBUG Runner:67 - Person{name='Petrov', age=20}
+2019-02-04 14:32:24 DEBUG Runner:67 - Person{name='Sidorov', age=8}
+2019-02-04 14:32:24 DEBUG Runner:67 - Person{name='Ivanov', age=68}
+2019-02-04 14:32:24 DEBUG Runner:67 - Person{name='Petrov', age=102}
+2019-02-04 14:32:24 DEBUG Runner:67 - Person{name='Sidorov', age=54}
+2019-02-04 14:32:24 DEBUG Runner:69 - My Hash Set Size: 5
+2019-02-04 14:32:24 DEBUG Runner:84 - Person{name='Ivanov', age=12}
+2019-02-04 14:32:24 DEBUG Runner:84 - Person{name='Ivanov', age=68}
+2019-02-04 14:32:24 DEBUG Runner:84 - Person{name='Petrov', age=20}
+2019-02-04 14:32:24 DEBUG Runner:84 - Person{name='Petrov', age=102}
+2019-02-04 14:32:24 DEBUG Runner:84 - Person{name='Sidorov', age=8}
+2019-02-04 14:32:24 DEBUG Runner:84 - Person{name='Sidorov', age=54}
+2019-02-04 14:48:22 DEBUG Runner:26 - Is myHashSet empty: true
+2019-02-04 14:48:22 DEBUG Runner:35 - Person{name='Ivanov', age=12}
+2019-02-04 14:48:22 DEBUG Runner:35 - Person{name='Sidorov', age=8}
+2019-02-04 14:48:22 DEBUG Runner:35 - Person{name='Petrov', age=102}
+2019-02-04 14:48:22 DEBUG Runner:35 - Person{name='Sidorov', age=54}
+2019-02-04 14:48:22 DEBUG Runner:35 - Person{name='Petrov', age=20}
+2019-02-04 14:48:22 DEBUG Runner:35 - Person{name='Ivanov', age=68}
+2019-02-04 14:48:22 DEBUG Runner:40 - myHashSet size: 6
+2019-02-04 14:48:22 DEBUG Runner:44 - Is myHashSet empty: false
+2019-02-04 14:48:22 DEBUG Runner:49 - Person{name='Ivanov', age=12}
+2019-02-04 14:48:22 DEBUG Runner:49 - Person{name='Sidorov', age=8}
+2019-02-04 14:48:22 DEBUG Runner:49 - Person{name='Petrov', age=102}
+2019-02-04 14:48:22 DEBUG Runner:49 - Person{name='Sidorov', age=54}
+2019-02-04 14:48:22 DEBUG Runner:49 - Person{name='Ivanov', age=68}
+2019-02-04 14:48:22 DEBUG Runner:54 - Is myHashSet contains old Petrov: true
+2019-02-04 14:48:22 DEBUG Runner:55 - Is myHashSet contains young Petrov: false
+2019-02-04 14:48:22 DEBUG Runner:67 - Person{name='Ivanov', age=12}
+2019-02-04 14:48:22 DEBUG Runner:67 - Person{name='Petrov', age=20}
+2019-02-04 14:48:22 DEBUG Runner:67 - Person{name='Sidorov', age=8}
+2019-02-04 14:48:22 DEBUG Runner:67 - Person{name='Ivanov', age=68}
+2019-02-04 14:48:22 DEBUG Runner:67 - Person{name='Petrov', age=102}
+2019-02-04 14:48:22 DEBUG Runner:67 - Person{name='Sidorov', age=54}
+2019-02-04 14:48:22 DEBUG Runner:69 - My Hash Set Size: 5
+2019-02-04 14:48:22 DEBUG Runner:84 - Person{name='Ivanov', age=12}
+2019-02-04 14:48:22 DEBUG Runner:84 - Person{name='Ivanov', age=68}
+2019-02-04 14:48:22 DEBUG Runner:84 - Person{name='Petrov', age=20}
+2019-02-04 14:48:22 DEBUG Runner:84 - Person{name='Petrov', age=102}
+2019-02-04 14:48:22 DEBUG Runner:84 - Person{name='Sidorov', age=8}
+2019-02-04 14:48:22 DEBUG Runner:84 - Person{name='Sidorov', age=54}
+2019-02-04 14:48:50 DEBUG Runner:26 - Is myHashSet empty: true
+2019-02-04 14:48:50 DEBUG Runner:35 - Person{name='Ivanov', age=12}
+2019-02-04 14:48:50 DEBUG Runner:35 - Person{name='Sidorov', age=8}
+2019-02-04 14:48:50 DEBUG Runner:35 - Person{name='Petrov', age=102}
+2019-02-04 14:48:50 DEBUG Runner:35 - Person{name='Sidorov', age=54}
+2019-02-04 14:48:50 DEBUG Runner:35 - Person{name='Petrov', age=20}
+2019-02-04 14:48:50 DEBUG Runner:35 - Person{name='Ivanov', age=68}
+2019-02-04 14:48:50 DEBUG Runner:40 - myHashSet size: 6
+2019-02-04 14:48:50 DEBUG Runner:44 - Is myHashSet empty: false
+2019-02-04 14:48:50 DEBUG Runner:49 - Person{name='Ivanov', age=12}
+2019-02-04 14:48:50 DEBUG Runner:49 - Person{name='Sidorov', age=8}
+2019-02-04 14:48:50 DEBUG Runner:49 - Person{name='Petrov', age=102}
+2019-02-04 14:48:50 DEBUG Runner:49 - Person{name='Sidorov', age=54}
+2019-02-04 14:48:50 DEBUG Runner:49 - Person{name='Ivanov', age=68}
+2019-02-04 14:48:50 DEBUG Runner:54 - Is myHashSet contains old Petrov: true
+2019-02-04 14:48:50 DEBUG Runner:55 - Is myHashSet contains young Petrov: false
+2019-02-04 14:48:50 DEBUG Runner:67 - Person{name='Ivanov', age=12}
+2019-02-04 14:48:50 DEBUG Runner:67 - Person{name='Petrov', age=20}
+2019-02-04 14:48:50 DEBUG Runner:67 - Person{name='Sidorov', age=8}
+2019-02-04 14:48:50 DEBUG Runner:67 - Person{name='Ivanov', age=68}
+2019-02-04 14:48:50 DEBUG Runner:67 - Person{name='Petrov', age=102}
+2019-02-04 14:48:50 DEBUG Runner:67 - Person{name='Sidorov', age=54}
+2019-02-04 14:48:50 DEBUG Runner:69 - My Hash Set Size: 5
+2019-02-04 14:48:50 DEBUG Runner:84 - Person{name='Ivanov', age=12}
+2019-02-04 14:48:50 DEBUG Runner:84 - Person{name='Ivanov', age=68}
+2019-02-04 14:48:50 DEBUG Runner:84 - Person{name='Petrov', age=20}
+2019-02-04 14:48:50 DEBUG Runner:84 - Person{name='Petrov', age=102}
+2019-02-04 14:48:50 DEBUG Runner:84 - Person{name='Sidorov', age=8}
+2019-02-04 14:48:50 DEBUG Runner:84 - Person{name='Sidorov', age=54}
+2019-02-04 14:49:30 DEBUG Runner:26 - Is myHashSet empty: true
+2019-02-04 14:49:30 DEBUG Runner:35 - Person{name='Ivanov', age=12}
+2019-02-04 14:49:30 DEBUG Runner:35 - Person{name='Sidorov', age=8}
+2019-02-04 14:49:30 DEBUG Runner:35 - Person{name='Petrov', age=102}
+2019-02-04 14:49:30 DEBUG Runner:35 - Person{name='Sidorov', age=54}
+2019-02-04 14:49:30 DEBUG Runner:35 - Person{name='Petrov', age=20}
+2019-02-04 14:49:30 DEBUG Runner:35 - Person{name='Ivanov', age=68}
+2019-02-04 14:49:30 DEBUG Runner:40 - myHashSet size: 6
+2019-02-04 14:49:30 DEBUG Runner:44 - Is myHashSet empty: false
+2019-02-04 14:49:30 DEBUG Runner:49 - Person{name='Ivanov', age=12}
+2019-02-04 14:49:30 DEBUG Runner:49 - Person{name='Sidorov', age=8}
+2019-02-04 14:49:30 DEBUG Runner:49 - Person{name='Petrov', age=102}
+2019-02-04 14:49:30 DEBUG Runner:49 - Person{name='Sidorov', age=54}
+2019-02-04 14:49:30 DEBUG Runner:49 - Person{name='Ivanov', age=68}
+2019-02-04 14:49:30 DEBUG Runner:54 - Is myHashSet contains old Petrov: true
+2019-02-04 14:49:30 DEBUG Runner:55 - Is myHashSet contains young Petrov: false
+2019-02-04 14:49:30 DEBUG Runner:67 - Person{name='Ivanov', age=12}
+2019-02-04 14:49:30 DEBUG Runner:67 - Person{name='Petrov', age=20}
+2019-02-04 14:49:30 DEBUG Runner:67 - Person{name='Sidorov', age=8}
+2019-02-04 14:49:30 DEBUG Runner:67 - Person{name='Ivanov', age=68}
+2019-02-04 14:49:30 DEBUG Runner:67 - Person{name='Petrov', age=102}
+2019-02-04 14:49:30 DEBUG Runner:67 - Person{name='Sidorov', age=54}
+2019-02-04 14:49:30 DEBUG Runner:69 - My Hash Set Size: 5
+2019-02-04 14:49:30 DEBUG Runner:84 - Person{name='Ivanov', age=12}
+2019-02-04 14:49:30 DEBUG Runner:84 - Person{name='Ivanov', age=68}
+2019-02-04 14:49:30 DEBUG Runner:84 - Person{name='Petrov', age=20}
+2019-02-04 14:49:30 DEBUG Runner:84 - Person{name='Petrov', age=102}
+2019-02-04 14:49:30 DEBUG Runner:84 - Person{name='Sidorov', age=8}
+2019-02-04 14:49:30 DEBUG Runner:84 - Person{name='Sidorov', age=54}
+2019-02-04 14:49:30 DEBUG Runner:92 - java.lang.ClassCastException: class by.moiseenko.entity.Person cannot be cast to class java.lang.Comparable (by.moiseenko.entity.Person is in unnamed module of loader 'app'; java.lang.Comparable is in module java.base of loader 'bootstrap')
+2019-02-04 14:52:45 DEBUG Runner:26 - Is myHashSet empty: true
+2019-02-04 14:52:45 DEBUG Runner:35 - Person{name='Ivanov', age=12}
+2019-02-04 14:52:45 DEBUG Runner:35 - Person{name='Sidorov', age=8}
+2019-02-04 14:52:45 DEBUG Runner:35 - Person{name='Petrov', age=102}
+2019-02-04 14:52:45 DEBUG Runner:35 - Person{name='Sidorov', age=54}
+2019-02-04 14:52:45 DEBUG Runner:35 - Person{name='Petrov', age=20}
+2019-02-04 14:52:45 DEBUG Runner:35 - Person{name='Ivanov', age=68}
+2019-02-04 14:52:45 DEBUG Runner:40 - myHashSet size: 6
+2019-02-04 14:52:45 DEBUG Runner:44 - Is myHashSet empty: false
+2019-02-04 14:52:45 DEBUG Runner:49 - Person{name='Ivanov', age=12}
+2019-02-04 14:52:45 DEBUG Runner:49 - Person{name='Sidorov', age=8}
+2019-02-04 14:52:45 DEBUG Runner:49 - Person{name='Petrov', age=102}
+2019-02-04 14:52:45 DEBUG Runner:49 - Person{name='Sidorov', age=54}
+2019-02-04 14:52:45 DEBUG Runner:49 - Person{name='Ivanov', age=68}
+2019-02-04 14:52:45 DEBUG Runner:54 - Is myHashSet contains old Petrov: true
+2019-02-04 14:52:45 DEBUG Runner:55 - Is myHashSet contains young Petrov: false
+2019-02-04 14:52:45 DEBUG Runner:67 - Person{name='Ivanov', age=12}
+2019-02-04 14:52:45 DEBUG Runner:67 - Person{name='Petrov', age=20}
+2019-02-04 14:52:45 DEBUG Runner:67 - Person{name='Sidorov', age=8}
+2019-02-04 14:52:45 DEBUG Runner:67 - Person{name='Ivanov', age=68}
+2019-02-04 14:52:45 DEBUG Runner:67 - Person{name='Petrov', age=102}
+2019-02-04 14:52:45 DEBUG Runner:67 - Person{name='Sidorov', age=54}
+2019-02-04 14:52:45 DEBUG Runner:69 - My Hash Set Size: 5
+2019-02-04 14:52:45 DEBUG Runner:84 - Person{name='Ivanov', age=12}
+2019-02-04 14:52:45 DEBUG Runner:84 - Person{name='Ivanov', age=68}
+2019-02-04 14:52:45 DEBUG Runner:84 - Person{name='Petrov', age=20}
+2019-02-04 14:52:45 DEBUG Runner:84 - Person{name='Petrov', age=102}
+2019-02-04 14:52:45 DEBUG Runner:84 - Person{name='Sidorov', age=8}
+2019-02-04 14:52:45 DEBUG Runner:84 - Person{name='Sidorov', age=54}
+2019-02-04 14:52:45 DEBUG Runner:92 - java.lang.ClassCastException: class by.moiseenko.entity.Person cannot be cast to class java.lang.Comparable (by.moiseenko.entity.Person is in unnamed module of loader 'app'; java.lang.Comparable is in module java.base of loader 'bootstrap')
+2019-02-04 14:52:45 DEBUG Runner:97 - Person{name='Petrov', age=20}
+2019-02-04 14:55:55 DEBUG Runner:26 - Is myHashSet empty: true
+2019-02-04 14:55:55 DEBUG Runner:35 - Person{name='Ivanov', age=12}
+2019-02-04 14:55:55 DEBUG Runner:35 - Person{name='Sidorov', age=8}
+2019-02-04 14:55:55 DEBUG Runner:35 - Person{name='Petrov', age=102}
+2019-02-04 14:55:55 DEBUG Runner:35 - Person{name='Sidorov', age=54}
+2019-02-04 14:55:55 DEBUG Runner:35 - Person{name='Petrov', age=20}
+2019-02-04 14:55:55 DEBUG Runner:35 - Person{name='Ivanov', age=68}
+2019-02-04 14:55:55 DEBUG Runner:40 - myHashSet size: 6
+2019-02-04 14:55:55 DEBUG Runner:44 - Is myHashSet empty: false
+2019-02-04 14:55:55 DEBUG Runner:49 - Person{name='Ivanov', age=12}
+2019-02-04 14:55:55 DEBUG Runner:49 - Person{name='Sidorov', age=8}
+2019-02-04 14:55:55 DEBUG Runner:49 - Person{name='Petrov', age=102}
+2019-02-04 14:55:55 DEBUG Runner:49 - Person{name='Sidorov', age=54}
+2019-02-04 14:55:55 DEBUG Runner:49 - Person{name='Ivanov', age=68}
+2019-02-04 14:55:55 DEBUG Runner:54 - Is myHashSet contains old Petrov: true
+2019-02-04 14:55:55 DEBUG Runner:55 - Is myHashSet contains young Petrov: false
+2019-02-04 14:55:55 DEBUG Runner:67 - Person{name='Ivanov', age=12}
+2019-02-04 14:55:55 DEBUG Runner:67 - Person{name='Petrov', age=20}
+2019-02-04 14:55:55 DEBUG Runner:67 - Person{name='Sidorov', age=8}
+2019-02-04 14:55:55 DEBUG Runner:67 - Person{name='Ivanov', age=68}
+2019-02-04 14:55:55 DEBUG Runner:67 - Person{name='Petrov', age=102}
+2019-02-04 14:55:55 DEBUG Runner:67 - Person{name='Sidorov', age=54}
+2019-02-04 14:55:55 DEBUG Runner:69 - My Hash Set Size: 5
+2019-02-04 14:55:55 DEBUG Runner:84 - Person{name='Ivanov', age=12}
+2019-02-04 14:55:55 DEBUG Runner:84 - Person{name='Ivanov', age=68}
+2019-02-04 14:55:55 DEBUG Runner:84 - Person{name='Petrov', age=20}
+2019-02-04 14:55:55 DEBUG Runner:84 - Person{name='Petrov', age=102}
+2019-02-04 14:55:55 DEBUG Runner:84 - Person{name='Sidorov', age=8}
+2019-02-04 14:55:55 DEBUG Runner:84 - Person{name='Sidorov', age=54}
+2019-02-04 14:55:55 DEBUG Runner:92 - java.lang.ClassCastException: class by.moiseenko.entity.Person cannot be cast to class java.lang.Comparable (by.moiseenko.entity.Person is in unnamed module of loader 'app'; java.lang.Comparable is in module java.base of loader 'bootstrap')
+2019-02-04 14:55:55 DEBUG Runner:97 - Person{name='Petrov', age=20}
+2019-02-04 14:55:55 DEBUG Runner:99 - Person{name='Ivanov', age=68}
+2019-02-04 14:56:08 DEBUG Runner:26 - Is myHashSet empty: true
+2019-02-04 14:56:08 DEBUG Runner:35 - Person{name='Ivanov', age=12}
+2019-02-04 14:56:08 DEBUG Runner:35 - Person{name='Sidorov', age=8}
+2019-02-04 14:56:08 DEBUG Runner:35 - Person{name='Petrov', age=102}
+2019-02-04 14:56:08 DEBUG Runner:35 - Person{name='Sidorov', age=54}
+2019-02-04 14:56:08 DEBUG Runner:35 - Person{name='Petrov', age=20}
+2019-02-04 14:56:08 DEBUG Runner:35 - Person{name='Ivanov', age=68}
+2019-02-04 14:56:08 DEBUG Runner:40 - myHashSet size: 6
+2019-02-04 14:56:08 DEBUG Runner:44 - Is myHashSet empty: false
+2019-02-04 14:56:08 DEBUG Runner:49 - Person{name='Ivanov', age=12}
+2019-02-04 14:56:08 DEBUG Runner:49 - Person{name='Sidorov', age=8}
+2019-02-04 14:56:08 DEBUG Runner:49 - Person{name='Petrov', age=102}
+2019-02-04 14:56:08 DEBUG Runner:49 - Person{name='Sidorov', age=54}
+2019-02-04 14:56:08 DEBUG Runner:49 - Person{name='Ivanov', age=68}
+2019-02-04 14:56:08 DEBUG Runner:54 - Is myHashSet contains old Petrov: true
+2019-02-04 14:56:08 DEBUG Runner:55 - Is myHashSet contains young Petrov: false
+2019-02-04 14:56:08 DEBUG Runner:67 - Person{name='Ivanov', age=12}
+2019-02-04 14:56:08 DEBUG Runner:67 - Person{name='Petrov', age=20}
+2019-02-04 14:56:08 DEBUG Runner:67 - Person{name='Sidorov', age=8}
+2019-02-04 14:56:08 DEBUG Runner:67 - Person{name='Ivanov', age=68}
+2019-02-04 14:56:08 DEBUG Runner:67 - Person{name='Petrov', age=102}
+2019-02-04 14:56:08 DEBUG Runner:67 - Person{name='Sidorov', age=54}
+2019-02-04 14:56:08 DEBUG Runner:69 - My Hash Set Size: 5
+2019-02-04 14:56:08 DEBUG Runner:84 - Person{name='Ivanov', age=12}
+2019-02-04 14:56:08 DEBUG Runner:84 - Person{name='Ivanov', age=68}
+2019-02-04 14:56:08 DEBUG Runner:84 - Person{name='Petrov', age=20}
+2019-02-04 14:56:08 DEBUG Runner:84 - Person{name='Petrov', age=102}
+2019-02-04 14:56:08 DEBUG Runner:84 - Person{name='Sidorov', age=8}
+2019-02-04 14:56:08 DEBUG Runner:84 - Person{name='Sidorov', age=54}
+2019-02-04 14:56:08 DEBUG Runner:92 - java.lang.ClassCastException: class by.moiseenko.entity.Person cannot be cast to class java.lang.Comparable (by.moiseenko.entity.Person is in unnamed module of loader 'app'; java.lang.Comparable is in module java.base of loader 'bootstrap')
+2019-02-04 14:56:08 DEBUG Runner:97 - Person{name='Petrov', age=20}
+2019-02-04 14:56:08 DEBUG Runner:99 - Person{name='Ivanov', age=68}
+2019-02-04 15:01:57 DEBUG Runner:26 - Is myHashSet empty: true
+2019-02-04 15:01:57 DEBUG Runner:35 - Person{name='Ivanov', age=12}
+2019-02-04 15:01:57 DEBUG Runner:35 - Person{name='Sidorov', age=8}
+2019-02-04 15:01:57 DEBUG Runner:35 - Person{name='Petrov', age=102}
+2019-02-04 15:01:57 DEBUG Runner:35 - Person{name='Sidorov', age=54}
+2019-02-04 15:01:57 DEBUG Runner:35 - Person{name='Petrov', age=20}
+2019-02-04 15:01:57 DEBUG Runner:35 - Person{name='Ivanov', age=68}
+2019-02-04 15:01:57 DEBUG Runner:40 - myHashSet size: 6
+2019-02-04 15:01:57 DEBUG Runner:44 - Is myHashSet empty: false
+2019-02-04 15:01:57 DEBUG Runner:49 - Person{name='Ivanov', age=12}
+2019-02-04 15:01:57 DEBUG Runner:49 - Person{name='Sidorov', age=8}
+2019-02-04 15:01:57 DEBUG Runner:49 - Person{name='Petrov', age=102}
+2019-02-04 15:01:57 DEBUG Runner:49 - Person{name='Sidorov', age=54}
+2019-02-04 15:01:57 DEBUG Runner:49 - Person{name='Ivanov', age=68}
+2019-02-04 15:01:57 DEBUG Runner:54 - Is myHashSet contains old Petrov: true
+2019-02-04 15:01:57 DEBUG Runner:55 - Is myHashSet contains young Petrov: false
+2019-02-04 15:01:57 DEBUG Runner:67 - Person{name='Ivanov', age=12}
+2019-02-04 15:01:57 DEBUG Runner:67 - Person{name='Petrov', age=20}
+2019-02-04 15:01:57 DEBUG Runner:67 - Person{name='Sidorov', age=8}
+2019-02-04 15:01:57 DEBUG Runner:67 - Person{name='Ivanov', age=68}
+2019-02-04 15:01:57 DEBUG Runner:67 - Person{name='Petrov', age=102}
+2019-02-04 15:01:57 DEBUG Runner:67 - Person{name='Sidorov', age=54}
+2019-02-04 15:01:57 DEBUG Runner:69 - My Hash Set Size: 5
+2019-02-04 15:01:57 DEBUG Runner:84 - Person{name='Ivanov', age=12}
+2019-02-04 15:01:57 DEBUG Runner:84 - Person{name='Ivanov', age=68}
+2019-02-04 15:01:57 DEBUG Runner:84 - Person{name='Petrov', age=20}
+2019-02-04 15:01:57 DEBUG Runner:84 - Person{name='Petrov', age=102}
+2019-02-04 15:01:57 DEBUG Runner:84 - Person{name='Sidorov', age=8}
+2019-02-04 15:01:57 DEBUG Runner:84 - Person{name='Sidorov', age=54}
+2019-02-04 15:01:57 DEBUG Runner:92 - java.lang.ClassCastException: class by.moiseenko.entity.Person cannot be cast to class java.lang.Comparable (by.moiseenko.entity.Person is in unnamed module of loader 'app'; java.lang.Comparable is in module java.base of loader 'bootstrap')
+2019-02-04 15:01:57 DEBUG Runner:97 - Person{name='Petrov', age=20}
+2019-02-04 15:01:57 DEBUG Runner:99 - Person{name='Ivanov', age=68}
+2019-02-04 15:01:57 DEBUG Runner:102 - Person{name='Ivanov', age=12}
+2019-02-04 15:01:57 DEBUG Runner:103 - Person{name='Sidorov', age=54}
+2019-02-04 15:03:32 DEBUG Runner:26 - Is myHashSet empty: true
+2019-02-04 15:03:32 DEBUG Runner:35 - Person{name='Ivanov', age=12}
+2019-02-04 15:03:32 DEBUG Runner:35 - Person{name='Sidorov', age=8}
+2019-02-04 15:03:32 DEBUG Runner:35 - Person{name='Petrov', age=102}
+2019-02-04 15:03:32 DEBUG Runner:35 - Person{name='Sidorov', age=54}
+2019-02-04 15:03:32 DEBUG Runner:35 - Person{name='Petrov', age=20}
+2019-02-04 15:03:32 DEBUG Runner:35 - Person{name='Ivanov', age=68}
+2019-02-04 15:03:32 DEBUG Runner:40 - myHashSet size: 6
+2019-02-04 15:03:32 DEBUG Runner:44 - Is myHashSet empty: false
+2019-02-04 15:03:32 DEBUG Runner:49 - Person{name='Ivanov', age=12}
+2019-02-04 15:03:32 DEBUG Runner:49 - Person{name='Sidorov', age=8}
+2019-02-04 15:03:32 DEBUG Runner:49 - Person{name='Petrov', age=102}
+2019-02-04 15:03:32 DEBUG Runner:49 - Person{name='Sidorov', age=54}
+2019-02-04 15:03:32 DEBUG Runner:49 - Person{name='Ivanov', age=68}
+2019-02-04 15:03:32 DEBUG Runner:54 - Is myHashSet contains old Petrov: true
+2019-02-04 15:03:32 DEBUG Runner:55 - Is myHashSet contains young Petrov: false
+2019-02-04 15:03:32 DEBUG Runner:67 - Person{name='Ivanov', age=12}
+2019-02-04 15:03:32 DEBUG Runner:67 - Person{name='Petrov', age=20}
+2019-02-04 15:03:32 DEBUG Runner:67 - Person{name='Sidorov', age=8}
+2019-02-04 15:03:32 DEBUG Runner:67 - Person{name='Ivanov', age=68}
+2019-02-04 15:03:32 DEBUG Runner:67 - Person{name='Petrov', age=102}
+2019-02-04 15:03:32 DEBUG Runner:67 - Person{name='Sidorov', age=54}
+2019-02-04 15:03:32 DEBUG Runner:69 - My Hash Set Size: 5
+2019-02-04 15:03:32 DEBUG Runner:84 - Person{name='Ivanov', age=12}
+2019-02-04 15:03:32 DEBUG Runner:84 - Person{name='Ivanov', age=68}
+2019-02-04 15:03:32 DEBUG Runner:84 - Person{name='Petrov', age=20}
+2019-02-04 15:03:32 DEBUG Runner:84 - Person{name='Petrov', age=102}
+2019-02-04 15:03:32 DEBUG Runner:84 - Person{name='Sidorov', age=8}
+2019-02-04 15:03:32 DEBUG Runner:84 - Person{name='Sidorov', age=54}
+2019-02-04 15:03:32 DEBUG Runner:92 - java.lang.ClassCastException: class by.moiseenko.entity.Person cannot be cast to class java.lang.Comparable (by.moiseenko.entity.Person is in unnamed module of loader 'app'; java.lang.Comparable is in module java.base of loader 'bootstrap')
+2019-02-04 15:03:32 DEBUG Runner:97 - sellinResultPerson{name='Petrov', age=20}
+2019-02-04 15:03:32 DEBUG Runner:99 - floorResultPerson{name='Ivanov', age=68}
+2019-02-04 15:03:32 DEBUG Runner:102 - poolFirstResult: Person{name='Ivanov', age=12}
+2019-02-04 15:03:32 DEBUG Runner:103 - poolLastResult: Person{name='Sidorov', age=54}
+2019-02-04 15:03:57 DEBUG Runner:26 - Is myHashSet empty: true
+2019-02-04 15:03:57 DEBUG Runner:35 - Person{name='Ivanov', age=12}
+2019-02-04 15:03:57 DEBUG Runner:35 - Person{name='Sidorov', age=8}
+2019-02-04 15:03:57 DEBUG Runner:35 - Person{name='Petrov', age=102}
+2019-02-04 15:03:57 DEBUG Runner:35 - Person{name='Sidorov', age=54}
+2019-02-04 15:03:57 DEBUG Runner:35 - Person{name='Petrov', age=20}
+2019-02-04 15:03:57 DEBUG Runner:35 - Person{name='Ivanov', age=68}
+2019-02-04 15:03:57 DEBUG Runner:40 - myHashSet size: 6
+2019-02-04 15:03:57 DEBUG Runner:44 - Is myHashSet empty: false
+2019-02-04 15:03:57 DEBUG Runner:49 - Person{name='Ivanov', age=12}
+2019-02-04 15:03:57 DEBUG Runner:49 - Person{name='Sidorov', age=8}
+2019-02-04 15:03:57 DEBUG Runner:49 - Person{name='Petrov', age=102}
+2019-02-04 15:03:57 DEBUG Runner:49 - Person{name='Sidorov', age=54}
+2019-02-04 15:03:57 DEBUG Runner:49 - Person{name='Ivanov', age=68}
+2019-02-04 15:03:57 DEBUG Runner:54 - Is myHashSet contains old Petrov: true
+2019-02-04 15:03:57 DEBUG Runner:55 - Is myHashSet contains young Petrov: false
+2019-02-04 15:03:57 DEBUG Runner:67 - Person{name='Ivanov', age=12}
+2019-02-04 15:03:57 DEBUG Runner:67 - Person{name='Petrov', age=20}
+2019-02-04 15:03:57 DEBUG Runner:67 - Person{name='Sidorov', age=8}
+2019-02-04 15:03:57 DEBUG Runner:67 - Person{name='Ivanov', age=68}
+2019-02-04 15:03:57 DEBUG Runner:67 - Person{name='Petrov', age=102}
+2019-02-04 15:03:57 DEBUG Runner:67 - Person{name='Sidorov', age=54}
+2019-02-04 15:03:57 DEBUG Runner:69 - My Hash Set Size: 5
+2019-02-04 15:03:57 DEBUG Runner:84 - Person{name='Ivanov', age=12}
+2019-02-04 15:03:57 DEBUG Runner:84 - Person{name='Ivanov', age=68}
+2019-02-04 15:03:57 DEBUG Runner:84 - Person{name='Petrov', age=20}
+2019-02-04 15:03:57 DEBUG Runner:84 - Person{name='Petrov', age=102}
+2019-02-04 15:03:57 DEBUG Runner:84 - Person{name='Sidorov', age=8}
+2019-02-04 15:03:57 DEBUG Runner:84 - Person{name='Sidorov', age=54}
+2019-02-04 15:03:57 DEBUG Runner:92 - java.lang.ClassCastException: class by.moiseenko.entity.Person cannot be cast to class java.lang.Comparable (by.moiseenko.entity.Person is in unnamed module of loader 'app'; java.lang.Comparable is in module java.base of loader 'bootstrap')
+2019-02-04 15:03:57 DEBUG Runner:97 - sellinResult: Person{name='Petrov', age=20}
+2019-02-04 15:03:57 DEBUG Runner:99 - floorResult: Person{name='Ivanov', age=68}
+2019-02-04 15:03:57 DEBUG Runner:102 - poolFirstResult: Person{name='Ivanov', age=12}
+2019-02-04 15:03:57 DEBUG Runner:103 - poolLastResult: Person{name='Sidorov', age=54}
+2019-02-04 15:23:52 DEBUG SetCollection:23 - Is myHashSet empty: true
+2019-02-04 15:23:52 DEBUG SetCollection:32 - Person{name='Ivanov', age=12}
+2019-02-04 15:23:52 DEBUG SetCollection:32 - Person{name='Sidorov', age=8}
+2019-02-04 15:23:52 DEBUG SetCollection:32 - Person{name='Petrov', age=102}
+2019-02-04 15:23:52 DEBUG SetCollection:32 - Person{name='Sidorov', age=54}
+2019-02-04 15:23:52 DEBUG SetCollection:32 - Person{name='Petrov', age=20}
+2019-02-04 15:23:52 DEBUG SetCollection:32 - Person{name='Ivanov', age=68}
+2019-02-04 15:23:52 DEBUG SetCollection:37 - myHashSet size: 6
+2019-02-04 15:23:52 DEBUG SetCollection:41 - Is myHashSet empty: false
+2019-02-04 15:23:52 DEBUG SetCollection:46 - Person{name='Ivanov', age=12}
+2019-02-04 15:23:52 DEBUG SetCollection:46 - Person{name='Sidorov', age=8}
+2019-02-04 15:23:52 DEBUG SetCollection:46 - Person{name='Petrov', age=102}
+2019-02-04 15:23:52 DEBUG SetCollection:46 - Person{name='Sidorov', age=54}
+2019-02-04 15:23:52 DEBUG SetCollection:46 - Person{name='Ivanov', age=68}
+2019-02-04 15:23:52 DEBUG SetCollection:51 - Is myHashSet contains old Petrov: true
+2019-02-04 15:23:52 DEBUG SetCollection:52 - Is myHashSet contains young Petrov: false
+2019-02-04 15:23:52 DEBUG SetCollection:64 - Person{name='Ivanov', age=12}
+2019-02-04 15:23:52 DEBUG SetCollection:64 - Person{name='Petrov', age=20}
+2019-02-04 15:23:52 DEBUG SetCollection:64 - Person{name='Sidorov', age=8}
+2019-02-04 15:23:52 DEBUG SetCollection:64 - Person{name='Ivanov', age=68}
+2019-02-04 15:23:52 DEBUG SetCollection:64 - Person{name='Petrov', age=102}
+2019-02-04 15:23:52 DEBUG SetCollection:64 - Person{name='Sidorov', age=54}
+2019-02-04 15:23:52 DEBUG SetCollection:66 - My Hash Set Size: 5
+2019-02-04 15:23:52 DEBUG SetCollection:81 - Person{name='Ivanov', age=12}
+2019-02-04 15:23:52 DEBUG SetCollection:81 - Person{name='Ivanov', age=68}
+2019-02-04 15:23:52 DEBUG SetCollection:81 - Person{name='Petrov', age=20}
+2019-02-04 15:23:52 DEBUG SetCollection:81 - Person{name='Petrov', age=102}
+2019-02-04 15:23:52 DEBUG SetCollection:81 - Person{name='Sidorov', age=8}
+2019-02-04 15:23:52 DEBUG SetCollection:81 - Person{name='Sidorov', age=54}
+2019-02-04 15:23:52 DEBUG SetCollection:89 - java.lang.ClassCastException: class by.moiseenko.entity.Person cannot be cast to class java.lang.Comparable (by.moiseenko.entity.Person is in unnamed module of loader 'app'; java.lang.Comparable is in module java.base of loader 'bootstrap')
+2019-02-04 15:23:52 DEBUG SetCollection:94 - sellinResult: Person{name='Petrov', age=20}
+2019-02-04 15:23:52 DEBUG SetCollection:96 - floorResult: Person{name='Ivanov', age=68}
+2019-02-04 15:23:52 DEBUG SetCollection:99 - poolFirstResult: Person{name='Ivanov', age=12}
+2019-02-04 15:23:52 DEBUG SetCollection:100 - poolLastResult: Person{name='Sidorov', age=54}
+2019-02-04 15:23:52 DEBUG SetCollection:104 - Person{name='Sidorov', age=8}
+2019-02-04 15:23:52 DEBUG SetCollection:104 - Person{name='Petrov', age=102}
+2019-02-04 15:23:52 DEBUG SetCollection:104 - Person{name='Petrov', age=20}
+2019-02-04 15:23:52 DEBUG SetCollection:104 - Person{name='Ivanov', age=68}
+2019-02-04 15:29:03 DEBUG SetCollection:23 - Is myHashSet empty: true
+2019-02-04 15:29:03 DEBUG SetCollection:32 - Person{name='Ivanov', age=12}
+2019-02-04 15:29:03 DEBUG SetCollection:32 - Person{name='Sidorov', age=8}
+2019-02-04 15:29:03 DEBUG SetCollection:32 - Person{name='Petrov', age=102}
+2019-02-04 15:29:03 DEBUG SetCollection:32 - Person{name='Sidorov', age=54}
+2019-02-04 15:29:03 DEBUG SetCollection:32 - Person{name='Petrov', age=20}
+2019-02-04 15:29:03 DEBUG SetCollection:32 - Person{name='Ivanov', age=68}
+2019-02-04 15:29:03 DEBUG SetCollection:37 - myHashSet size: 6
+2019-02-04 15:29:03 DEBUG SetCollection:41 - Is myHashSet empty: false
+2019-02-04 15:29:03 DEBUG SetCollection:46 - Person{name='Ivanov', age=12}
+2019-02-04 15:29:03 DEBUG SetCollection:46 - Person{name='Sidorov', age=8}
+2019-02-04 15:29:03 DEBUG SetCollection:46 - Person{name='Petrov', age=102}
+2019-02-04 15:29:03 DEBUG SetCollection:46 - Person{name='Sidorov', age=54}
+2019-02-04 15:29:03 DEBUG SetCollection:46 - Person{name='Ivanov', age=68}
+2019-02-04 15:29:03 DEBUG SetCollection:51 - Is myHashSet contains old Petrov: true
+2019-02-04 15:29:03 DEBUG SetCollection:52 - Is myHashSet contains young Petrov: false
+2019-02-04 15:29:03 DEBUG SetCollection:64 - Person{name='Ivanov', age=12}
+2019-02-04 15:29:03 DEBUG SetCollection:64 - Person{name='Petrov', age=20}
+2019-02-04 15:29:03 DEBUG SetCollection:64 - Person{name='Sidorov', age=8}
+2019-02-04 15:29:03 DEBUG SetCollection:64 - Person{name='Ivanov', age=68}
+2019-02-04 15:29:03 DEBUG SetCollection:64 - Person{name='Petrov', age=102}
+2019-02-04 15:29:03 DEBUG SetCollection:64 - Person{name='Sidorov', age=54}
+2019-02-04 15:29:03 DEBUG SetCollection:66 - My Hash Set Size: 5
+2019-02-04 15:29:03 DEBUG SetCollection:81 - Person{name='Ivanov', age=12}
+2019-02-04 15:29:03 DEBUG SetCollection:81 - Person{name='Ivanov', age=68}
+2019-02-04 15:29:03 DEBUG SetCollection:81 - Person{name='Petrov', age=20}
+2019-02-04 15:29:03 DEBUG SetCollection:81 - Person{name='Petrov', age=102}
+2019-02-04 15:29:03 DEBUG SetCollection:81 - Person{name='Sidorov', age=8}
+2019-02-04 15:29:03 DEBUG SetCollection:81 - Person{name='Sidorov', age=54}
+2019-02-04 15:29:03 DEBUG SetCollection:89 - java.lang.ClassCastException: class by.moiseenko.entity.Person cannot be cast to class java.lang.Comparable (by.moiseenko.entity.Person is in unnamed module of loader 'app'; java.lang.Comparable is in module java.base of loader 'bootstrap')
+2019-02-04 15:29:03 DEBUG SetCollection:94 - sellinResult: Person{name='Petrov', age=20}
+2019-02-04 15:29:03 DEBUG SetCollection:96 - floorResult: Person{name='Ivanov', age=68}
+2019-02-04 15:29:03 DEBUG SetCollection:99 - poolFirstResult: Person{name='Ivanov', age=12}
+2019-02-04 15:29:03 DEBUG SetCollection:100 - poolLastResult: Person{name='Sidorov', age=54}
+2019-02-04 15:29:03 DEBUG SetCollection:102 - myTreeSet size after pool two time: 4
+2019-02-04 15:29:03 DEBUG SetCollection:106 - Person{name='Sidorov', age=8}
+2019-02-04 15:29:03 DEBUG SetCollection:106 - Person{name='Petrov', age=102}
+2019-02-04 15:29:03 DEBUG SetCollection:106 - Person{name='Petrov', age=20}
+2019-02-04 15:29:03 DEBUG SetCollection:106 - Person{name='Ivanov', age=68}
+2019-02-04 15:29:29 DEBUG SetCollection:23 - Is myHashSet empty: true
+2019-02-04 15:29:29 DEBUG SetCollection:32 - Person{name='Ivanov', age=12}
+2019-02-04 15:29:29 DEBUG SetCollection:32 - Person{name='Sidorov', age=8}
+2019-02-04 15:29:29 DEBUG SetCollection:32 - Person{name='Petrov', age=102}
+2019-02-04 15:29:29 DEBUG SetCollection:32 - Person{name='Sidorov', age=54}
+2019-02-04 15:29:29 DEBUG SetCollection:32 - Person{name='Petrov', age=20}
+2019-02-04 15:29:29 DEBUG SetCollection:32 - Person{name='Ivanov', age=68}
+2019-02-04 15:29:29 DEBUG SetCollection:37 - myHashSet size: 6
+2019-02-04 15:29:29 DEBUG SetCollection:41 - Is myHashSet empty: false
+2019-02-04 15:29:29 DEBUG SetCollection:46 - Person{name='Ivanov', age=12}
+2019-02-04 15:29:29 DEBUG SetCollection:46 - Person{name='Sidorov', age=8}
+2019-02-04 15:29:29 DEBUG SetCollection:46 - Person{name='Petrov', age=102}
+2019-02-04 15:29:29 DEBUG SetCollection:46 - Person{name='Sidorov', age=54}
+2019-02-04 15:29:29 DEBUG SetCollection:46 - Person{name='Ivanov', age=68}
+2019-02-04 15:29:29 DEBUG SetCollection:51 - Is myHashSet contains old Petrov: true
+2019-02-04 15:29:29 DEBUG SetCollection:52 - Is myHashSet contains young Petrov: false
+2019-02-04 15:29:29 DEBUG SetCollection:64 - Person{name='Ivanov', age=12}
+2019-02-04 15:29:29 DEBUG SetCollection:64 - Person{name='Petrov', age=20}
+2019-02-04 15:29:29 DEBUG SetCollection:64 - Person{name='Sidorov', age=8}
+2019-02-04 15:29:29 DEBUG SetCollection:64 - Person{name='Ivanov', age=68}
+2019-02-04 15:29:29 DEBUG SetCollection:64 - Person{name='Petrov', age=102}
+2019-02-04 15:29:29 DEBUG SetCollection:64 - Person{name='Sidorov', age=54}
+2019-02-04 15:29:29 DEBUG SetCollection:66 - My Hash Set Size: 5
+2019-02-04 15:29:29 DEBUG SetCollection:81 - Person{name='Ivanov', age=12}
+2019-02-04 15:29:29 DEBUG SetCollection:81 - Person{name='Ivanov', age=68}
+2019-02-04 15:29:29 DEBUG SetCollection:81 - Person{name='Petrov', age=20}
+2019-02-04 15:29:29 DEBUG SetCollection:81 - Person{name='Petrov', age=102}
+2019-02-04 15:29:29 DEBUG SetCollection:81 - Person{name='Sidorov', age=8}
+2019-02-04 15:29:29 DEBUG SetCollection:81 - Person{name='Sidorov', age=54}
+2019-02-04 15:29:29 DEBUG SetCollection:89 - java.lang.ClassCastException: class by.moiseenko.entity.Person cannot be cast to class java.lang.Comparable (by.moiseenko.entity.Person is in unnamed module of loader 'app'; java.lang.Comparable is in module java.base of loader 'bootstrap')
+2019-02-04 15:29:29 DEBUG SetCollection:94 - sellinResult: Person{name='Petrov', age=20}
+2019-02-04 15:29:29 DEBUG SetCollection:96 - floorResult: Person{name='Ivanov', age=68}
+2019-02-04 15:29:29 DEBUG SetCollection:97 - myTreeSet size before pool two time: 6
+2019-02-04 15:29:29 DEBUG SetCollection:100 - poolFirstResult: Person{name='Ivanov', age=12}
+2019-02-04 15:29:29 DEBUG SetCollection:101 - poolLastResult: Person{name='Sidorov', age=54}
+2019-02-04 15:29:29 DEBUG SetCollection:103 - myTreeSet size after pool two time: 4
+2019-02-04 15:29:29 DEBUG SetCollection:107 - Person{name='Sidorov', age=8}
+2019-02-04 15:29:29 DEBUG SetCollection:107 - Person{name='Petrov', age=102}
+2019-02-04 15:29:29 DEBUG SetCollection:107 - Person{name='Petrov', age=20}
+2019-02-04 15:29:29 DEBUG SetCollection:107 - Person{name='Ivanov', age=68}
+2019-02-04 15:59:16 DEBUG SetCollection:23 - Is myHashSet empty: true
+2019-02-04 15:59:16 DEBUG SetCollection:32 - Person{name='Ivanov', age=12}
+2019-02-04 15:59:16 DEBUG SetCollection:32 - Person{name='Sidorov', age=8}
+2019-02-04 15:59:16 DEBUG SetCollection:32 - Person{name='Petrov', age=102}
+2019-02-04 15:59:16 DEBUG SetCollection:32 - Person{name='Sidorov', age=54}
+2019-02-04 15:59:16 DEBUG SetCollection:32 - Person{name='Petrov', age=20}
+2019-02-04 15:59:16 DEBUG SetCollection:32 - Person{name='Ivanov', age=68}
+2019-02-04 15:59:16 DEBUG SetCollection:37 - myHashSet size: 6
+2019-02-04 15:59:16 DEBUG SetCollection:41 - Is myHashSet empty: false
+2019-02-04 15:59:16 DEBUG SetCollection:46 - Person{name='Ivanov', age=12}
+2019-02-04 15:59:16 DEBUG SetCollection:46 - Person{name='Sidorov', age=8}
+2019-02-04 15:59:16 DEBUG SetCollection:46 - Person{name='Petrov', age=102}
+2019-02-04 15:59:16 DEBUG SetCollection:46 - Person{name='Sidorov', age=54}
+2019-02-04 15:59:16 DEBUG SetCollection:46 - Person{name='Ivanov', age=68}
+2019-02-04 15:59:16 DEBUG SetCollection:51 - Is myHashSet contains old Petrov: true
+2019-02-04 15:59:16 DEBUG SetCollection:52 - Is myHashSet contains young Petrov: false
+2019-02-04 15:59:16 DEBUG SetCollection:64 - Person{name='Ivanov', age=12}
+2019-02-04 15:59:16 DEBUG SetCollection:64 - Person{name='Petrov', age=20}
+2019-02-04 15:59:16 DEBUG SetCollection:64 - Person{name='Sidorov', age=8}
+2019-02-04 15:59:16 DEBUG SetCollection:64 - Person{name='Ivanov', age=68}
+2019-02-04 15:59:16 DEBUG SetCollection:64 - Person{name='Petrov', age=102}
+2019-02-04 15:59:16 DEBUG SetCollection:64 - Person{name='Sidorov', age=54}
+2019-02-04 15:59:16 DEBUG SetCollection:66 - My Hash Set Size: 5
+2019-02-04 15:59:16 DEBUG SetCollection:81 - Person{name='Ivanov', age=12}
+2019-02-04 15:59:16 DEBUG SetCollection:81 - Person{name='Ivanov', age=68}
+2019-02-04 15:59:16 DEBUG SetCollection:81 - Person{name='Petrov', age=20}
+2019-02-04 15:59:16 DEBUG SetCollection:81 - Person{name='Petrov', age=102}
+2019-02-04 15:59:16 DEBUG SetCollection:81 - Person{name='Sidorov', age=8}
+2019-02-04 15:59:16 DEBUG SetCollection:81 - Person{name='Sidorov', age=54}
+2019-02-04 15:59:16 DEBUG SetCollection:89 - java.lang.ClassCastException: class by.moiseenko.entity.Person cannot be cast to class java.lang.Comparable (by.moiseenko.entity.Person is in unnamed module of loader 'app'; java.lang.Comparable is in module java.base of loader 'bootstrap')
+2019-02-04 15:59:16 DEBUG SetCollection:94 - sellinResult: Person{name='Petrov', age=20}
+2019-02-04 15:59:16 DEBUG SetCollection:96 - floorResult: Person{name='Ivanov', age=68}
+2019-02-04 15:59:16 DEBUG SetCollection:97 - myTreeSet size before pool two time: 6
+2019-02-04 15:59:16 DEBUG SetCollection:100 - poolFirstResult: Person{name='Ivanov', age=12}
+2019-02-04 15:59:16 DEBUG SetCollection:101 - poolLastResult: Person{name='Sidorov', age=54}
+2019-02-04 15:59:16 DEBUG SetCollection:103 - myTreeSet size after pool two time: 4
+2019-02-04 15:59:16 DEBUG SetCollection:109 - Person{name='Sidorov', age=54}
+2019-02-04 15:59:16 DEBUG SetCollection:109 - Person{name='Sidorov', age=8}
+2019-02-04 15:59:16 DEBUG SetCollection:109 - Person{name='Petrov', age=102}
+2019-02-04 15:59:16 DEBUG SetCollection:109 - Person{name='Petrov', age=20}
+2019-02-04 15:59:16 DEBUG SetCollection:109 - Person{name='Ivanov', age=68}
+2019-02-04 15:59:16 DEBUG SetCollection:109 - Person{name='Ivanov', age=12}
+2019-02-04 16:21:20 DEBUG SetCollection:12 - **************************SET COLLECTION*********************
+2019-02-04 16:21:20 DEBUG SetCollection:24 - Is myHashSet empty: true
+2019-02-04 16:21:20 DEBUG SetCollection:33 - Person{name='Ivanov', age=12}
+2019-02-04 16:21:20 DEBUG SetCollection:33 - Person{name='Sidorov', age=8}
+2019-02-04 16:21:20 DEBUG SetCollection:33 - Person{name='Petrov', age=102}
+2019-02-04 16:21:20 DEBUG SetCollection:33 - Person{name='Sidorov', age=54}
+2019-02-04 16:21:20 DEBUG SetCollection:33 - Person{name='Petrov', age=20}
+2019-02-04 16:21:20 DEBUG SetCollection:33 - Person{name='Ivanov', age=68}
+2019-02-04 16:21:20 DEBUG SetCollection:38 - myHashSet size: 6
+2019-02-04 16:21:20 DEBUG SetCollection:42 - Is myHashSet empty: false
+2019-02-04 16:21:20 DEBUG SetCollection:47 - Person{name='Ivanov', age=12}
+2019-02-04 16:21:20 DEBUG SetCollection:47 - Person{name='Sidorov', age=8}
+2019-02-04 16:21:20 DEBUG SetCollection:47 - Person{name='Petrov', age=102}
+2019-02-04 16:21:20 DEBUG SetCollection:47 - Person{name='Sidorov', age=54}
+2019-02-04 16:21:20 DEBUG SetCollection:47 - Person{name='Ivanov', age=68}
+2019-02-04 16:21:20 DEBUG SetCollection:52 - Is myHashSet contains old Petrov: true
+2019-02-04 16:21:20 DEBUG SetCollection:53 - Is myHashSet contains young Petrov: false
+2019-02-04 16:21:20 DEBUG SetCollection:65 - Person{name='Ivanov', age=12}
+2019-02-04 16:21:20 DEBUG SetCollection:65 - Person{name='Petrov', age=20}
+2019-02-04 16:21:20 DEBUG SetCollection:65 - Person{name='Sidorov', age=8}
+2019-02-04 16:21:20 DEBUG SetCollection:65 - Person{name='Ivanov', age=68}
+2019-02-04 16:21:20 DEBUG SetCollection:65 - Person{name='Petrov', age=102}
+2019-02-04 16:21:20 DEBUG SetCollection:65 - Person{name='Sidorov', age=54}
+2019-02-04 16:21:20 DEBUG SetCollection:67 - My Hash Set Size: 5
+2019-02-04 16:21:20 DEBUG SetCollection:82 - Person{name='Ivanov', age=12}
+2019-02-04 16:21:20 DEBUG SetCollection:82 - Person{name='Ivanov', age=68}
+2019-02-04 16:21:20 DEBUG SetCollection:82 - Person{name='Petrov', age=20}
+2019-02-04 16:21:20 DEBUG SetCollection:82 - Person{name='Petrov', age=102}
+2019-02-04 16:21:20 DEBUG SetCollection:82 - Person{name='Sidorov', age=8}
+2019-02-04 16:21:20 DEBUG SetCollection:82 - Person{name='Sidorov', age=54}
+2019-02-04 16:21:20 DEBUG SetCollection:90 - java.lang.ClassCastException: class by.moiseenko.entity.Person cannot be cast to class java.lang.Comparable (by.moiseenko.entity.Person is in unnamed module of loader 'app'; java.lang.Comparable is in module java.base of loader 'bootstrap')
+2019-02-04 16:21:20 DEBUG SetCollection:95 - sellinResult: Person{name='Petrov', age=20}
+2019-02-04 16:21:20 DEBUG SetCollection:97 - floorResult: Person{name='Ivanov', age=68}
+2019-02-04 16:21:20 DEBUG SetCollection:98 - myTreeSet size before pool two time: 6
+2019-02-04 16:21:20 DEBUG SetCollection:101 - poolFirstResult: Person{name='Ivanov', age=12}
+2019-02-04 16:21:20 DEBUG SetCollection:102 - poolLastResult: Person{name='Sidorov', age=54}
+2019-02-04 16:21:20 DEBUG SetCollection:104 - myTreeSet size after pool two time: 4
+2019-02-04 16:21:20 DEBUG SetCollection:110 - Person{name='Sidorov', age=54}
+2019-02-04 16:21:20 DEBUG SetCollection:110 - Person{name='Sidorov', age=8}
+2019-02-04 16:21:20 DEBUG SetCollection:110 - Person{name='Petrov', age=102}
+2019-02-04 16:21:20 DEBUG SetCollection:110 - Person{name='Petrov', age=20}
+2019-02-04 16:21:20 DEBUG SetCollection:110 - Person{name='Ivanov', age=68}
+2019-02-04 16:21:20 DEBUG SetCollection:110 - Person{name='Ivanov', age=12}
+2019-02-04 16:21:20 DEBUG SetCollection:113 - ****************************************************
+2019-02-04 16:40:35 DEBUG SetCollection:14 - **************************SET COLLECTION*********************
+2019-02-04 16:40:35 DEBUG SetCollection:27 - Is myHashSet empty: true
+2019-02-04 16:40:35 DEBUG SetCollection:36 - Person{name='Ivanov', age=12}
+2019-02-04 16:40:35 DEBUG SetCollection:36 - Person{name='Sidorov', age=8}
+2019-02-04 16:40:35 DEBUG SetCollection:36 - Person{name='Petrov', age=102}
+2019-02-04 16:40:35 DEBUG SetCollection:36 - Person{name='Sidorov', age=54}
+2019-02-04 16:40:35 DEBUG SetCollection:36 - Person{name='Petrov', age=20}
+2019-02-04 16:40:35 DEBUG SetCollection:36 - Person{name='Ivanov', age=68}
+2019-02-04 16:40:35 DEBUG SetCollection:41 - myHashSet size: 6
+2019-02-04 16:40:35 DEBUG SetCollection:45 - Is myHashSet empty: false
+2019-02-04 16:40:35 DEBUG SetCollection:50 - Person{name='Ivanov', age=12}
+2019-02-04 16:40:35 DEBUG SetCollection:50 - Person{name='Sidorov', age=8}
+2019-02-04 16:40:35 DEBUG SetCollection:50 - Person{name='Petrov', age=102}
+2019-02-04 16:40:35 DEBUG SetCollection:50 - Person{name='Sidorov', age=54}
+2019-02-04 16:40:35 DEBUG SetCollection:50 - Person{name='Ivanov', age=68}
+2019-02-04 16:40:35 DEBUG SetCollection:55 - Is myHashSet contains old Petrov: true
+2019-02-04 16:40:35 DEBUG SetCollection:56 - Is myHashSet contains young Petrov: false
+2019-02-04 16:40:35 DEBUG SetCollection:68 - Person{name='Ivanov', age=12}
+2019-02-04 16:40:35 DEBUG SetCollection:68 - Person{name='Petrov', age=20}
+2019-02-04 16:40:35 DEBUG SetCollection:68 - Person{name='Sidorov', age=8}
+2019-02-04 16:40:35 DEBUG SetCollection:68 - Person{name='Ivanov', age=68}
+2019-02-04 16:40:35 DEBUG SetCollection:68 - Person{name='Petrov', age=102}
+2019-02-04 16:40:35 DEBUG SetCollection:68 - Person{name='Sidorov', age=54}
+2019-02-04 16:40:35 DEBUG SetCollection:70 - My Hash Set Size: 5
+2019-02-04 16:40:35 DEBUG SetCollection:85 - Person{name='Ivanov', age=12}
+2019-02-04 16:40:35 DEBUG SetCollection:85 - Person{name='Ivanov', age=68}
+2019-02-04 16:40:35 DEBUG SetCollection:85 - Person{name='Petrov', age=20}
+2019-02-04 16:40:35 DEBUG SetCollection:85 - Person{name='Petrov', age=102}
+2019-02-04 16:40:35 DEBUG SetCollection:85 - Person{name='Sidorov', age=8}
+2019-02-04 16:40:35 DEBUG SetCollection:85 - Person{name='Sidorov', age=54}
+2019-02-04 16:40:35 DEBUG SetCollection:93 - java.lang.ClassCastException: class by.moiseenko.entity.Person cannot be cast to class java.lang.Comparable (by.moiseenko.entity.Person is in unnamed module of loader 'app'; java.lang.Comparable is in module java.base of loader 'bootstrap')
+2019-02-04 16:40:35 DEBUG SetCollection:98 - sellinResult: Person{name='Petrov', age=20}
+2019-02-04 16:40:35 DEBUG SetCollection:100 - floorResult: Person{name='Ivanov', age=68}
+2019-02-04 16:40:35 DEBUG SetCollection:101 - myTreeSet size before pool two time: 6
+2019-02-04 16:40:35 DEBUG SetCollection:104 - poolFirstResult: Person{name='Ivanov', age=12}
+2019-02-04 16:40:35 DEBUG SetCollection:105 - poolLastResult: Person{name='Sidorov', age=54}
+2019-02-04 16:40:35 DEBUG SetCollection:107 - myTreeSet size after pool two time: 4
+2019-02-04 16:40:35 DEBUG SetCollection:113 - Person{name='Sidorov', age=54}
+2019-02-04 16:40:35 DEBUG SetCollection:113 - Person{name='Sidorov', age=8}
+2019-02-04 16:40:35 DEBUG SetCollection:113 - Person{name='Petrov', age=102}
+2019-02-04 16:40:35 DEBUG SetCollection:113 - Person{name='Petrov', age=20}
+2019-02-04 16:40:35 DEBUG SetCollection:113 - Person{name='Ivanov', age=68}
+2019-02-04 16:40:35 DEBUG SetCollection:113 - Person{name='Ivanov', age=12}
+2019-02-04 16:40:35 DEBUG SetCollection:116 - *************************************************************
+2019-02-04 16:40:35 DEBUG ListCollection:12 - **************************SET COLLECTION*********************
+2019-02-04 16:40:35 DEBUG ListCollection:32 - Person{name='Ivanov', age=12}
+2019-02-04 16:40:35 DEBUG ListCollection:32 - Person{name='Ivanov', age=68}
+2019-02-04 16:40:35 DEBUG ListCollection:32 - Person{name='Petrov', age=20}
+2019-02-04 16:40:35 DEBUG ListCollection:32 - Person{name='Petrov', age=102}
+2019-02-04 16:40:35 DEBUG ListCollection:32 - Person{name='Sidorov', age=8}
+2019-02-04 16:40:35 DEBUG ListCollection:32 - Person{name='Sidorov', age=54}
+2019-02-04 16:40:35 DEBUG ListCollection:43 - *************************************************************
+2019-02-04 16:43:13 DEBUG SetCollection:14 - **************************SET COLLECTION*********************
+2019-02-04 16:43:13 DEBUG SetCollection:27 - Is myHashSet empty: true
+2019-02-04 16:43:13 DEBUG SetCollection:36 - Person{name='Ivanov', age=12}
+2019-02-04 16:43:13 DEBUG SetCollection:36 - Person{name='Sidorov', age=8}
+2019-02-04 16:43:13 DEBUG SetCollection:36 - Person{name='Petrov', age=102}
+2019-02-04 16:43:13 DEBUG SetCollection:36 - Person{name='Sidorov', age=54}
+2019-02-04 16:43:13 DEBUG SetCollection:36 - Person{name='Petrov', age=20}
+2019-02-04 16:43:13 DEBUG SetCollection:36 - Person{name='Ivanov', age=68}
+2019-02-04 16:43:13 DEBUG SetCollection:41 - myHashSet size: 6
+2019-02-04 16:43:13 DEBUG SetCollection:45 - Is myHashSet empty: false
+2019-02-04 16:43:13 DEBUG SetCollection:50 - Person{name='Ivanov', age=12}
+2019-02-04 16:43:13 DEBUG SetCollection:50 - Person{name='Sidorov', age=8}
+2019-02-04 16:43:13 DEBUG SetCollection:50 - Person{name='Petrov', age=102}
+2019-02-04 16:43:13 DEBUG SetCollection:50 - Person{name='Sidorov', age=54}
+2019-02-04 16:43:13 DEBUG SetCollection:50 - Person{name='Ivanov', age=68}
+2019-02-04 16:43:13 DEBUG SetCollection:55 - Is myHashSet contains old Petrov: true
+2019-02-04 16:43:13 DEBUG SetCollection:56 - Is myHashSet contains young Petrov: false
+2019-02-04 16:43:13 DEBUG SetCollection:68 - Person{name='Ivanov', age=12}
+2019-02-04 16:43:13 DEBUG SetCollection:68 - Person{name='Petrov', age=20}
+2019-02-04 16:43:13 DEBUG SetCollection:68 - Person{name='Sidorov', age=8}
+2019-02-04 16:43:13 DEBUG SetCollection:68 - Person{name='Ivanov', age=68}
+2019-02-04 16:43:13 DEBUG SetCollection:68 - Person{name='Petrov', age=102}
+2019-02-04 16:43:13 DEBUG SetCollection:68 - Person{name='Sidorov', age=54}
+2019-02-04 16:43:13 DEBUG SetCollection:70 - My Hash Set Size: 5
+2019-02-04 16:43:13 DEBUG SetCollection:85 - Person{name='Ivanov', age=12}
+2019-02-04 16:43:13 DEBUG SetCollection:85 - Person{name='Ivanov', age=68}
+2019-02-04 16:43:13 DEBUG SetCollection:85 - Person{name='Petrov', age=20}
+2019-02-04 16:43:13 DEBUG SetCollection:85 - Person{name='Petrov', age=102}
+2019-02-04 16:43:13 DEBUG SetCollection:85 - Person{name='Sidorov', age=8}
+2019-02-04 16:43:13 DEBUG SetCollection:85 - Person{name='Sidorov', age=54}
+2019-02-04 16:43:13 DEBUG SetCollection:93 - java.lang.ClassCastException: class by.moiseenko.entity.Person cannot be cast to class java.lang.Comparable (by.moiseenko.entity.Person is in unnamed module of loader 'app'; java.lang.Comparable is in module java.base of loader 'bootstrap')
+2019-02-04 16:43:13 DEBUG SetCollection:98 - sellinResult: Person{name='Petrov', age=20}
+2019-02-04 16:43:13 DEBUG SetCollection:100 - floorResult: Person{name='Ivanov', age=68}
+2019-02-04 16:43:13 DEBUG SetCollection:101 - myTreeSet size before pool two time: 6
+2019-02-04 16:43:13 DEBUG SetCollection:104 - poolFirstResult: Person{name='Ivanov', age=12}
+2019-02-04 16:43:13 DEBUG SetCollection:105 - poolLastResult: Person{name='Sidorov', age=54}
+2019-02-04 16:43:13 DEBUG SetCollection:107 - myTreeSet size after pool two time: 4
+2019-02-04 16:43:13 DEBUG SetCollection:113 - Person{name='Sidorov', age=54}
+2019-02-04 16:43:13 DEBUG SetCollection:113 - Person{name='Sidorov', age=8}
+2019-02-04 16:43:13 DEBUG SetCollection:113 - Person{name='Petrov', age=102}
+2019-02-04 16:43:13 DEBUG SetCollection:113 - Person{name='Petrov', age=20}
+2019-02-04 16:43:13 DEBUG SetCollection:113 - Person{name='Ivanov', age=68}
+2019-02-04 16:43:13 DEBUG SetCollection:113 - Person{name='Ivanov', age=12}
+2019-02-04 16:43:13 DEBUG SetCollection:116 - *************************************************************
+2019-02-04 16:43:13 DEBUG ListCollection:12 - **************************SET COLLECTION*********************
+2019-02-04 16:43:13 DEBUG ListCollection:32 - Person{name='Ivanov', age=12}
+2019-02-04 16:43:13 DEBUG ListCollection:32 - Person{name='Ivanov', age=68}
+2019-02-04 16:43:13 DEBUG ListCollection:32 - Person{name='Petrov', age=20}
+2019-02-04 16:43:13 DEBUG ListCollection:32 - Person{name='Petrov', age=102}
+2019-02-04 16:43:13 DEBUG ListCollection:32 - Person{name='Sidorov', age=8}
+2019-02-04 16:43:13 DEBUG ListCollection:32 - Person{name='Sidorov', age=54}
+2019-02-04 16:43:13 DEBUG ListCollection:36 - Person{name='Petrov', age=102}
+2019-02-04 16:43:13 DEBUG ListCollection:46 - *************************************************************
+2019-02-04 16:43:43 DEBUG SetCollection:14 - **************************SET COLLECTION*********************
+2019-02-04 16:43:43 DEBUG SetCollection:27 - Is myHashSet empty: true
+2019-02-04 16:43:43 DEBUG SetCollection:36 - Person{name='Ivanov', age=12}
+2019-02-04 16:43:43 DEBUG SetCollection:36 - Person{name='Sidorov', age=8}
+2019-02-04 16:43:43 DEBUG SetCollection:36 - Person{name='Petrov', age=102}
+2019-02-04 16:43:43 DEBUG SetCollection:36 - Person{name='Sidorov', age=54}
+2019-02-04 16:43:43 DEBUG SetCollection:36 - Person{name='Petrov', age=20}
+2019-02-04 16:43:43 DEBUG SetCollection:36 - Person{name='Ivanov', age=68}
+2019-02-04 16:43:43 DEBUG SetCollection:41 - myHashSet size: 6
+2019-02-04 16:43:43 DEBUG SetCollection:45 - Is myHashSet empty: false
+2019-02-04 16:43:43 DEBUG SetCollection:50 - Person{name='Ivanov', age=12}
+2019-02-04 16:43:43 DEBUG SetCollection:50 - Person{name='Sidorov', age=8}
+2019-02-04 16:43:43 DEBUG SetCollection:50 - Person{name='Petrov', age=102}
+2019-02-04 16:43:43 DEBUG SetCollection:50 - Person{name='Sidorov', age=54}
+2019-02-04 16:43:43 DEBUG SetCollection:50 - Person{name='Ivanov', age=68}
+2019-02-04 16:43:43 DEBUG SetCollection:55 - Is myHashSet contains old Petrov: true
+2019-02-04 16:43:43 DEBUG SetCollection:56 - Is myHashSet contains young Petrov: false
+2019-02-04 16:43:43 DEBUG SetCollection:68 - Person{name='Ivanov', age=12}
+2019-02-04 16:43:43 DEBUG SetCollection:68 - Person{name='Petrov', age=20}
+2019-02-04 16:43:43 DEBUG SetCollection:68 - Person{name='Sidorov', age=8}
+2019-02-04 16:43:43 DEBUG SetCollection:68 - Person{name='Ivanov', age=68}
+2019-02-04 16:43:43 DEBUG SetCollection:68 - Person{name='Petrov', age=102}
+2019-02-04 16:43:43 DEBUG SetCollection:68 - Person{name='Sidorov', age=54}
+2019-02-04 16:43:43 DEBUG SetCollection:70 - My Hash Set Size: 5
+2019-02-04 16:43:43 DEBUG SetCollection:85 - Person{name='Ivanov', age=12}
+2019-02-04 16:43:43 DEBUG SetCollection:85 - Person{name='Ivanov', age=68}
+2019-02-04 16:43:43 DEBUG SetCollection:85 - Person{name='Petrov', age=20}
+2019-02-04 16:43:43 DEBUG SetCollection:85 - Person{name='Petrov', age=102}
+2019-02-04 16:43:43 DEBUG SetCollection:85 - Person{name='Sidorov', age=8}
+2019-02-04 16:43:43 DEBUG SetCollection:85 - Person{name='Sidorov', age=54}
+2019-02-04 16:43:43 DEBUG SetCollection:93 - java.lang.ClassCastException: class by.moiseenko.entity.Person cannot be cast to class java.lang.Comparable (by.moiseenko.entity.Person is in unnamed module of loader 'app'; java.lang.Comparable is in module java.base of loader 'bootstrap')
+2019-02-04 16:43:43 DEBUG SetCollection:98 - sellinResult: Person{name='Petrov', age=20}
+2019-02-04 16:43:43 DEBUG SetCollection:100 - floorResult: Person{name='Ivanov', age=68}
+2019-02-04 16:43:43 DEBUG SetCollection:101 - myTreeSet size before pool two time: 6
+2019-02-04 16:43:43 DEBUG SetCollection:104 - poolFirstResult: Person{name='Ivanov', age=12}
+2019-02-04 16:43:43 DEBUG SetCollection:105 - poolLastResult: Person{name='Sidorov', age=54}
+2019-02-04 16:43:43 DEBUG SetCollection:107 - myTreeSet size after pool two time: 4
+2019-02-04 16:43:43 DEBUG SetCollection:113 - Person{name='Sidorov', age=54}
+2019-02-04 16:43:43 DEBUG SetCollection:113 - Person{name='Sidorov', age=8}
+2019-02-04 16:43:43 DEBUG SetCollection:113 - Person{name='Petrov', age=102}
+2019-02-04 16:43:43 DEBUG SetCollection:113 - Person{name='Petrov', age=20}
+2019-02-04 16:43:43 DEBUG SetCollection:113 - Person{name='Ivanov', age=68}
+2019-02-04 16:43:43 DEBUG SetCollection:113 - Person{name='Ivanov', age=12}
+2019-02-04 16:43:43 DEBUG SetCollection:116 - *************************************************************
+2019-02-04 16:43:43 DEBUG ListCollection:12 - **************************SET COLLECTION*********************
+2019-02-04 16:43:43 DEBUG ListCollection:32 - Person{name='Ivanov', age=12}
+2019-02-04 16:43:43 DEBUG ListCollection:32 - Person{name='Ivanov', age=68}
+2019-02-04 16:43:43 DEBUG ListCollection:32 - Person{name='Petrov', age=20}
+2019-02-04 16:43:43 DEBUG ListCollection:32 - Person{name='Petrov', age=102}
+2019-02-04 16:43:43 DEBUG ListCollection:32 - Person{name='Sidorov', age=8}
+2019-02-04 16:43:43 DEBUG ListCollection:32 - Person{name='Sidorov', age=54}
+2019-02-04 16:43:43 DEBUG ListCollection:36 - get3Element: Person{name='Petrov', age=102}
+2019-02-04 16:43:43 DEBUG ListCollection:46 - *************************************************************
+2019-02-04 16:45:49 DEBUG SetCollection:14 - **************************SET COLLECTION*********************
+2019-02-04 16:45:49 DEBUG SetCollection:27 - Is myHashSet empty: true
+2019-02-04 16:45:49 DEBUG SetCollection:36 - Person{name='Ivanov', age=12}
+2019-02-04 16:45:49 DEBUG SetCollection:36 - Person{name='Sidorov', age=8}
+2019-02-04 16:45:49 DEBUG SetCollection:36 - Person{name='Petrov', age=102}
+2019-02-04 16:45:49 DEBUG SetCollection:36 - Person{name='Sidorov', age=54}
+2019-02-04 16:45:49 DEBUG SetCollection:36 - Person{name='Petrov', age=20}
+2019-02-04 16:45:49 DEBUG SetCollection:36 - Person{name='Ivanov', age=68}
+2019-02-04 16:45:49 DEBUG SetCollection:41 - myHashSet size: 6
+2019-02-04 16:45:49 DEBUG SetCollection:45 - Is myHashSet empty: false
+2019-02-04 16:45:49 DEBUG SetCollection:50 - Person{name='Ivanov', age=12}
+2019-02-04 16:45:49 DEBUG SetCollection:50 - Person{name='Sidorov', age=8}
+2019-02-04 16:45:49 DEBUG SetCollection:50 - Person{name='Petrov', age=102}
+2019-02-04 16:45:49 DEBUG SetCollection:50 - Person{name='Sidorov', age=54}
+2019-02-04 16:45:49 DEBUG SetCollection:50 - Person{name='Ivanov', age=68}
+2019-02-04 16:45:49 DEBUG SetCollection:55 - Is myHashSet contains old Petrov: true
+2019-02-04 16:45:49 DEBUG SetCollection:56 - Is myHashSet contains young Petrov: false
+2019-02-04 16:45:49 DEBUG SetCollection:68 - Person{name='Ivanov', age=12}
+2019-02-04 16:45:49 DEBUG SetCollection:68 - Person{name='Petrov', age=20}
+2019-02-04 16:45:49 DEBUG SetCollection:68 - Person{name='Sidorov', age=8}
+2019-02-04 16:45:49 DEBUG SetCollection:68 - Person{name='Ivanov', age=68}
+2019-02-04 16:45:49 DEBUG SetCollection:68 - Person{name='Petrov', age=102}
+2019-02-04 16:45:49 DEBUG SetCollection:68 - Person{name='Sidorov', age=54}
+2019-02-04 16:45:49 DEBUG SetCollection:70 - My Hash Set Size: 5
+2019-02-04 16:45:49 DEBUG SetCollection:85 - Person{name='Ivanov', age=12}
+2019-02-04 16:45:49 DEBUG SetCollection:85 - Person{name='Ivanov', age=68}
+2019-02-04 16:45:49 DEBUG SetCollection:85 - Person{name='Petrov', age=20}
+2019-02-04 16:45:49 DEBUG SetCollection:85 - Person{name='Petrov', age=102}
+2019-02-04 16:45:49 DEBUG SetCollection:85 - Person{name='Sidorov', age=8}
+2019-02-04 16:45:49 DEBUG SetCollection:85 - Person{name='Sidorov', age=54}
+2019-02-04 16:45:49 DEBUG SetCollection:93 - java.lang.ClassCastException: class by.moiseenko.entity.Person cannot be cast to class java.lang.Comparable (by.moiseenko.entity.Person is in unnamed module of loader 'app'; java.lang.Comparable is in module java.base of loader 'bootstrap')
+2019-02-04 16:45:49 DEBUG SetCollection:98 - sellinResult: Person{name='Petrov', age=20}
+2019-02-04 16:45:49 DEBUG SetCollection:100 - floorResult: Person{name='Ivanov', age=68}
+2019-02-04 16:45:49 DEBUG SetCollection:101 - myTreeSet size before pool two time: 6
+2019-02-04 16:45:49 DEBUG SetCollection:104 - poolFirstResult: Person{name='Ivanov', age=12}
+2019-02-04 16:45:49 DEBUG SetCollection:105 - poolLastResult: Person{name='Sidorov', age=54}
+2019-02-04 16:45:49 DEBUG SetCollection:107 - myTreeSet size after pool two time: 4
+2019-02-04 16:45:49 DEBUG SetCollection:113 - Person{name='Sidorov', age=54}
+2019-02-04 16:45:49 DEBUG SetCollection:113 - Person{name='Sidorov', age=8}
+2019-02-04 16:45:49 DEBUG SetCollection:113 - Person{name='Petrov', age=102}
+2019-02-04 16:45:49 DEBUG SetCollection:113 - Person{name='Petrov', age=20}
+2019-02-04 16:45:49 DEBUG SetCollection:113 - Person{name='Ivanov', age=68}
+2019-02-04 16:45:49 DEBUG SetCollection:113 - Person{name='Ivanov', age=12}
+2019-02-04 16:45:49 DEBUG SetCollection:116 - *************************************************************
+2019-02-04 16:45:49 DEBUG ListCollection:12 - **************************SET COLLECTION*********************
+2019-02-04 16:45:49 DEBUG ListCollection:32 - Person{name='Ivanov', age=12}
+2019-02-04 16:45:49 DEBUG ListCollection:32 - Person{name='Ivanov', age=68}
+2019-02-04 16:45:49 DEBUG ListCollection:32 - Person{name='Petrov', age=20}
+2019-02-04 16:45:49 DEBUG ListCollection:32 - Person{name='Petrov', age=102}
+2019-02-04 16:45:49 DEBUG ListCollection:32 - Person{name='Sidorov', age=8}
+2019-02-04 16:45:49 DEBUG ListCollection:32 - Person{name='Sidorov', age=54}
+2019-02-04 16:45:49 DEBUG ListCollection:35 - arraySize: 6
+2019-02-04 16:45:49 DEBUG ListCollection:38 - get3Element: Person{name='Petrov', age=102}
+2019-02-04 16:45:49 DEBUG ListCollection:52 - *************************************************************
+2019-02-04 16:46:25 DEBUG SetCollection:14 - **************************SET COLLECTION*********************
+2019-02-04 16:46:25 DEBUG SetCollection:27 - Is myHashSet empty: true
+2019-02-04 16:46:25 DEBUG SetCollection:36 - Person{name='Ivanov', age=12}
+2019-02-04 16:46:25 DEBUG SetCollection:36 - Person{name='Sidorov', age=8}
+2019-02-04 16:46:25 DEBUG SetCollection:36 - Person{name='Petrov', age=102}
+2019-02-04 16:46:25 DEBUG SetCollection:36 - Person{name='Sidorov', age=54}
+2019-02-04 16:46:25 DEBUG SetCollection:36 - Person{name='Petrov', age=20}
+2019-02-04 16:46:25 DEBUG SetCollection:36 - Person{name='Ivanov', age=68}
+2019-02-04 16:46:25 DEBUG SetCollection:41 - myHashSet size: 6
+2019-02-04 16:46:25 DEBUG SetCollection:45 - Is myHashSet empty: false
+2019-02-04 16:46:25 DEBUG SetCollection:50 - Person{name='Ivanov', age=12}
+2019-02-04 16:46:25 DEBUG SetCollection:50 - Person{name='Sidorov', age=8}
+2019-02-04 16:46:25 DEBUG SetCollection:50 - Person{name='Petrov', age=102}
+2019-02-04 16:46:25 DEBUG SetCollection:50 - Person{name='Sidorov', age=54}
+2019-02-04 16:46:25 DEBUG SetCollection:50 - Person{name='Ivanov', age=68}
+2019-02-04 16:46:25 DEBUG SetCollection:55 - Is myHashSet contains old Petrov: true
+2019-02-04 16:46:25 DEBUG SetCollection:56 - Is myHashSet contains young Petrov: false
+2019-02-04 16:46:25 DEBUG SetCollection:68 - Person{name='Ivanov', age=12}
+2019-02-04 16:46:25 DEBUG SetCollection:68 - Person{name='Petrov', age=20}
+2019-02-04 16:46:25 DEBUG SetCollection:68 - Person{name='Sidorov', age=8}
+2019-02-04 16:46:25 DEBUG SetCollection:68 - Person{name='Ivanov', age=68}
+2019-02-04 16:46:25 DEBUG SetCollection:68 - Person{name='Petrov', age=102}
+2019-02-04 16:46:25 DEBUG SetCollection:68 - Person{name='Sidorov', age=54}
+2019-02-04 16:46:25 DEBUG SetCollection:70 - My Hash Set Size: 5
+2019-02-04 16:46:25 DEBUG SetCollection:85 - Person{name='Ivanov', age=12}
+2019-02-04 16:46:25 DEBUG SetCollection:85 - Person{name='Ivanov', age=68}
+2019-02-04 16:46:25 DEBUG SetCollection:85 - Person{name='Petrov', age=20}
+2019-02-04 16:46:25 DEBUG SetCollection:85 - Person{name='Petrov', age=102}
+2019-02-04 16:46:25 DEBUG SetCollection:85 - Person{name='Sidorov', age=8}
+2019-02-04 16:46:25 DEBUG SetCollection:85 - Person{name='Sidorov', age=54}
+2019-02-04 16:46:25 DEBUG SetCollection:93 - java.lang.ClassCastException: class by.moiseenko.entity.Person cannot be cast to class java.lang.Comparable (by.moiseenko.entity.Person is in unnamed module of loader 'app'; java.lang.Comparable is in module java.base of loader 'bootstrap')
+2019-02-04 16:46:25 DEBUG SetCollection:98 - sellinResult: Person{name='Petrov', age=20}
+2019-02-04 16:46:25 DEBUG SetCollection:100 - floorResult: Person{name='Ivanov', age=68}
+2019-02-04 16:46:25 DEBUG SetCollection:101 - myTreeSet size before pool two time: 6
+2019-02-04 16:46:25 DEBUG SetCollection:104 - poolFirstResult: Person{name='Ivanov', age=12}
+2019-02-04 16:46:25 DEBUG SetCollection:105 - poolLastResult: Person{name='Sidorov', age=54}
+2019-02-04 16:46:25 DEBUG SetCollection:107 - myTreeSet size after pool two time: 4
+2019-02-04 16:46:25 DEBUG SetCollection:113 - Person{name='Sidorov', age=54}
+2019-02-04 16:46:26 DEBUG SetCollection:113 - Person{name='Sidorov', age=8}
+2019-02-04 16:46:26 DEBUG SetCollection:113 - Person{name='Petrov', age=102}
+2019-02-04 16:46:26 DEBUG SetCollection:113 - Person{name='Petrov', age=20}
+2019-02-04 16:46:26 DEBUG SetCollection:113 - Person{name='Ivanov', age=68}
+2019-02-04 16:46:26 DEBUG SetCollection:113 - Person{name='Ivanov', age=12}
+2019-02-04 16:46:26 DEBUG SetCollection:116 - *************************************************************
+2019-02-04 16:46:26 DEBUG ListCollection:12 - **************************SET COLLECTION*********************
+2019-02-04 16:46:26 DEBUG ListCollection:32 - Person{name='Ivanov', age=12}
+2019-02-04 16:46:26 DEBUG ListCollection:32 - Person{name='Ivanov', age=68}
+2019-02-04 16:46:26 DEBUG ListCollection:32 - Person{name='Petrov', age=20}
+2019-02-04 16:46:26 DEBUG ListCollection:32 - Person{name='Petrov', age=102}
+2019-02-04 16:46:26 DEBUG ListCollection:32 - Person{name='Sidorov', age=8}
+2019-02-04 16:46:26 DEBUG ListCollection:32 - Person{name='Sidorov', age=54}
+2019-02-04 16:46:26 DEBUG ListCollection:35 - arraySize: 6
+2019-02-04 16:46:26 DEBUG ListCollection:38 - get3Element: Person{name='Petrov', age=102}
+2019-02-04 16:46:26 DEBUG ListCollection:44 - Person{name='Ivanov', age=12}
+2019-02-04 16:46:26 DEBUG ListCollection:44 - Person{name='Ivanov', age=68}
+2019-02-04 16:46:26 DEBUG ListCollection:44 - Person{name='Petrov', age=20}
+2019-02-04 16:46:26 DEBUG ListCollection:44 - Person{name='UnnamedPerson', age=666}
+2019-02-04 16:46:26 DEBUG ListCollection:44 - Person{name='Sidorov', age=8}
+2019-02-04 16:46:26 DEBUG ListCollection:44 - Person{name='Sidorov', age=54}
+2019-02-04 16:46:26 DEBUG ListCollection:47 - arraySize: 6
+2019-02-04 16:46:26 DEBUG ListCollection:59 - *************************************************************
+2019-02-04 16:51:22 DEBUG SetCollection:14 - **************************SET COLLECTION*********************
+2019-02-04 16:51:22 DEBUG SetCollection:27 - Is myHashSet empty: true
+2019-02-04 16:51:22 DEBUG SetCollection:36 - Person{name='Ivanov', age=12}
+2019-02-04 16:51:22 DEBUG SetCollection:36 - Person{name='Sidorov', age=8}
+2019-02-04 16:51:22 DEBUG SetCollection:36 - Person{name='Petrov', age=102}
+2019-02-04 16:51:22 DEBUG SetCollection:36 - Person{name='Sidorov', age=54}
+2019-02-04 16:51:22 DEBUG SetCollection:36 - Person{name='Petrov', age=20}
+2019-02-04 16:51:22 DEBUG SetCollection:36 - Person{name='Ivanov', age=68}
+2019-02-04 16:51:22 DEBUG SetCollection:41 - myHashSet size: 6
+2019-02-04 16:51:22 DEBUG SetCollection:45 - Is myHashSet empty: false
+2019-02-04 16:51:22 DEBUG SetCollection:50 - Person{name='Ivanov', age=12}
+2019-02-04 16:51:22 DEBUG SetCollection:50 - Person{name='Sidorov', age=8}
+2019-02-04 16:51:22 DEBUG SetCollection:50 - Person{name='Petrov', age=102}
+2019-02-04 16:51:22 DEBUG SetCollection:50 - Person{name='Sidorov', age=54}
+2019-02-04 16:51:22 DEBUG SetCollection:50 - Person{name='Ivanov', age=68}
+2019-02-04 16:51:22 DEBUG SetCollection:55 - Is myHashSet contains old Petrov: true
+2019-02-04 16:51:22 DEBUG SetCollection:56 - Is myHashSet contains young Petrov: false
+2019-02-04 16:51:22 DEBUG SetCollection:68 - Person{name='Ivanov', age=12}
+2019-02-04 16:51:22 DEBUG SetCollection:68 - Person{name='Petrov', age=20}
+2019-02-04 16:51:22 DEBUG SetCollection:68 - Person{name='Sidorov', age=8}
+2019-02-04 16:51:22 DEBUG SetCollection:68 - Person{name='Ivanov', age=68}
+2019-02-04 16:51:22 DEBUG SetCollection:68 - Person{name='Petrov', age=102}
+2019-02-04 16:51:22 DEBUG SetCollection:68 - Person{name='Sidorov', age=54}
+2019-02-04 16:51:22 DEBUG SetCollection:70 - My Hash Set Size: 5
+2019-02-04 16:51:22 DEBUG SetCollection:85 - Person{name='Ivanov', age=12}
+2019-02-04 16:51:22 DEBUG SetCollection:85 - Person{name='Ivanov', age=68}
+2019-02-04 16:51:22 DEBUG SetCollection:85 - Person{name='Petrov', age=20}
+2019-02-04 16:51:22 DEBUG SetCollection:85 - Person{name='Petrov', age=102}
+2019-02-04 16:51:22 DEBUG SetCollection:85 - Person{name='Sidorov', age=8}
+2019-02-04 16:51:22 DEBUG SetCollection:85 - Person{name='Sidorov', age=54}
+2019-02-04 16:51:22 DEBUG SetCollection:93 - java.lang.ClassCastException: class by.moiseenko.entity.Person cannot be cast to class java.lang.Comparable (by.moiseenko.entity.Person is in unnamed module of loader 'app'; java.lang.Comparable is in module java.base of loader 'bootstrap')
+2019-02-04 16:51:22 DEBUG SetCollection:98 - sellinResult: Person{name='Petrov', age=20}
+2019-02-04 16:51:22 DEBUG SetCollection:100 - floorResult: Person{name='Ivanov', age=68}
+2019-02-04 16:51:22 DEBUG SetCollection:101 - myTreeSet size before pool two time: 6
+2019-02-04 16:51:22 DEBUG SetCollection:104 - poolFirstResult: Person{name='Ivanov', age=12}
+2019-02-04 16:51:22 DEBUG SetCollection:105 - poolLastResult: Person{name='Sidorov', age=54}
+2019-02-04 16:51:22 DEBUG SetCollection:107 - myTreeSet size after pool two time: 4
+2019-02-04 16:51:22 DEBUG SetCollection:113 - Person{name='Sidorov', age=54}
+2019-02-04 16:51:22 DEBUG SetCollection:113 - Person{name='Sidorov', age=8}
+2019-02-04 16:51:22 DEBUG SetCollection:113 - Person{name='Petrov', age=102}
+2019-02-04 16:51:22 DEBUG SetCollection:113 - Person{name='Petrov', age=20}
+2019-02-04 16:51:22 DEBUG SetCollection:113 - Person{name='Ivanov', age=68}
+2019-02-04 16:51:22 DEBUG SetCollection:113 - Person{name='Ivanov', age=12}
+2019-02-04 16:51:22 DEBUG SetCollection:116 - *************************************************************
+2019-02-04 16:51:22 DEBUG ListCollection:12 - **************************SET COLLECTION*********************
+2019-02-04 16:51:22 DEBUG ListCollection:32 - Person{name='Ivanov', age=12}
+2019-02-04 16:51:22 DEBUG ListCollection:32 - Person{name='Ivanov', age=68}
+2019-02-04 16:51:22 DEBUG ListCollection:32 - Person{name='Petrov', age=20}
+2019-02-04 16:51:22 DEBUG ListCollection:32 - Person{name='Petrov', age=102}
+2019-02-04 16:51:22 DEBUG ListCollection:32 - Person{name='Sidorov', age=8}
+2019-02-04 16:51:22 DEBUG ListCollection:32 - Person{name='Sidorov', age=54}
+2019-02-04 16:51:22 DEBUG ListCollection:35 - arraySize: 6
+2019-02-04 16:51:22 DEBUG ListCollection:38 - get3Element: Person{name='Petrov', age=102}
+2019-02-04 16:51:22 DEBUG ListCollection:44 - Person{name='Ivanov', age=12}
+2019-02-04 16:51:22 DEBUG ListCollection:44 - Person{name='Ivanov', age=68}
+2019-02-04 16:51:22 DEBUG ListCollection:44 - Person{name='Petrov', age=20}
+2019-02-04 16:51:22 DEBUG ListCollection:44 - Person{name='UnnamedPerson', age=666}
+2019-02-04 16:51:22 DEBUG ListCollection:44 - Person{name='Sidorov', age=8}
+2019-02-04 16:51:22 DEBUG ListCollection:44 - Person{name='Sidorov', age=54}
+2019-02-04 16:51:22 DEBUG ListCollection:47 - arraySize: 6
+2019-02-04 16:51:22 DEBUG ListCollection:53 - Person{name='Ivanov', age=12}
+2019-02-04 16:51:22 DEBUG ListCollection:53 - Person{name='Ivanov', age=68}
+2019-02-04 16:51:22 DEBUG ListCollection:53 - Person{name='Petrov', age=20}
+2019-02-04 16:51:22 DEBUG ListCollection:53 - Person{name='Petrov', age=102}
+2019-02-04 16:51:22 DEBUG ListCollection:53 - Person{name='UnnamedPerson', age=666}
+2019-02-04 16:51:22 DEBUG ListCollection:53 - Person{name='Sidorov', age=8}
+2019-02-04 16:51:22 DEBUG ListCollection:53 - Person{name='Sidorov', age=54}
+2019-02-04 16:51:22 DEBUG ListCollection:56 - arraySize: 7
+2019-02-04 16:51:22 DEBUG ListCollection:67 - *************************************************************
+2019-02-05 14:20:18 DEBUG SetCollection:14 - **************************SET COLLECTION*********************
+2019-02-05 14:20:18 DEBUG SetCollection:27 - Is myHashSet empty: true
+2019-02-05 14:20:18 DEBUG SetCollection:36 - Person{name='Ivanov', age=12}
+2019-02-05 14:20:18 DEBUG SetCollection:36 - Person{name='Sidorov', age=8}
+2019-02-05 14:20:18 DEBUG SetCollection:36 - Person{name='Petrov', age=102}
+2019-02-05 14:20:18 DEBUG SetCollection:36 - Person{name='Sidorov', age=54}
+2019-02-05 14:20:18 DEBUG SetCollection:36 - Person{name='Petrov', age=20}
+2019-02-05 14:20:18 DEBUG SetCollection:36 - Person{name='Ivanov', age=68}
+2019-02-05 14:20:18 DEBUG SetCollection:41 - myHashSet size: 6
+2019-02-05 14:20:18 DEBUG SetCollection:45 - Is myHashSet empty: false
+2019-02-05 14:20:18 DEBUG SetCollection:50 - Person{name='Ivanov', age=12}
+2019-02-05 14:20:18 DEBUG SetCollection:50 - Person{name='Sidorov', age=8}
+2019-02-05 14:20:18 DEBUG SetCollection:50 - Person{name='Petrov', age=102}
+2019-02-05 14:20:18 DEBUG SetCollection:50 - Person{name='Sidorov', age=54}
+2019-02-05 14:20:18 DEBUG SetCollection:50 - Person{name='Ivanov', age=68}
+2019-02-05 14:20:18 DEBUG SetCollection:55 - Is myHashSet contains old Petrov: true
+2019-02-05 14:20:18 DEBUG SetCollection:56 - Is myHashSet contains young Petrov: false
+2019-02-05 14:20:18 DEBUG SetCollection:68 - Person{name='Ivanov', age=12}
+2019-02-05 14:20:18 DEBUG SetCollection:68 - Person{name='Petrov', age=20}
+2019-02-05 14:20:18 DEBUG SetCollection:68 - Person{name='Sidorov', age=8}
+2019-02-05 14:20:18 DEBUG SetCollection:68 - Person{name='Ivanov', age=68}
+2019-02-05 14:20:18 DEBUG SetCollection:68 - Person{name='Petrov', age=102}
+2019-02-05 14:20:18 DEBUG SetCollection:68 - Person{name='Sidorov', age=54}
+2019-02-05 14:20:18 DEBUG SetCollection:70 - My Hash Set Size: 5
+2019-02-05 14:20:18 DEBUG SetCollection:85 - Person{name='Ivanov', age=12}
+2019-02-05 14:20:18 DEBUG SetCollection:85 - Person{name='Ivanov', age=68}
+2019-02-05 14:20:18 DEBUG SetCollection:85 - Person{name='Petrov', age=20}
+2019-02-05 14:20:19 DEBUG SetCollection:85 - Person{name='Petrov', age=102}
+2019-02-05 14:20:19 DEBUG SetCollection:85 - Person{name='Sidorov', age=8}
+2019-02-05 14:20:19 DEBUG SetCollection:85 - Person{name='Sidorov', age=54}
+2019-02-05 14:20:19 DEBUG SetCollection:93 - java.lang.ClassCastException: class by.moiseenko.entity.Person cannot be cast to class java.lang.Comparable (by.moiseenko.entity.Person is in unnamed module of loader 'app'; java.lang.Comparable is in module java.base of loader 'bootstrap')
+2019-02-05 14:20:19 DEBUG SetCollection:98 - sellinResult: Person{name='Petrov', age=20}
+2019-02-05 14:20:19 DEBUG SetCollection:100 - floorResult: Person{name='Ivanov', age=68}
+2019-02-05 14:20:19 DEBUG SetCollection:101 - myTreeSet size before pool two time: 6
+2019-02-05 14:20:19 DEBUG SetCollection:104 - poolFirstResult: Person{name='Ivanov', age=12}
+2019-02-05 14:20:19 DEBUG SetCollection:105 - poolLastResult: Person{name='Sidorov', age=54}
+2019-02-05 14:20:19 DEBUG SetCollection:107 - myTreeSet size after pool two time: 4
+2019-02-05 14:20:19 DEBUG SetCollection:113 - Person{name='Sidorov', age=54}
+2019-02-05 14:20:19 DEBUG SetCollection:113 - Person{name='Sidorov', age=8}
+2019-02-05 14:20:19 DEBUG SetCollection:113 - Person{name='Petrov', age=102}
+2019-02-05 14:20:19 DEBUG SetCollection:113 - Person{name='Petrov', age=20}
+2019-02-05 14:20:19 DEBUG SetCollection:113 - Person{name='Ivanov', age=68}
+2019-02-05 14:20:19 DEBUG SetCollection:113 - Person{name='Ivanov', age=12}
+2019-02-05 14:20:19 DEBUG SetCollection:116 - *************************************************************
+2019-02-05 14:20:19 DEBUG ListCollection:12 - **************************SET COLLECTION*********************
+2019-02-05 14:20:19 DEBUG ListCollection:32 - Person{name='Ivanov', age=12}
+2019-02-05 14:20:19 DEBUG ListCollection:32 - Person{name='Ivanov', age=68}
+2019-02-05 14:20:19 DEBUG ListCollection:32 - Person{name='Petrov', age=20}
+2019-02-05 14:20:19 DEBUG ListCollection:32 - Person{name='Petrov', age=102}
+2019-02-05 14:20:19 DEBUG ListCollection:32 - Person{name='Sidorov', age=8}
+2019-02-05 14:20:19 DEBUG ListCollection:32 - Person{name='Sidorov', age=54}
+2019-02-05 14:20:19 DEBUG ListCollection:35 - arraySize: 6
+2019-02-05 14:20:19 DEBUG ListCollection:38 - get3Element: Person{name='Petrov', age=102}
+2019-02-05 14:20:19 DEBUG ListCollection:44 - Person{name='Ivanov', age=12}
+2019-02-05 14:20:19 DEBUG ListCollection:44 - Person{name='Ivanov', age=68}
+2019-02-05 14:20:19 DEBUG ListCollection:44 - Person{name='Petrov', age=20}
+2019-02-05 14:20:19 DEBUG ListCollection:44 - Person{name='UnnamedPerson', age=666}
+2019-02-05 14:20:19 DEBUG ListCollection:44 - Person{name='Sidorov', age=8}
+2019-02-05 14:20:19 DEBUG ListCollection:44 - Person{name='Sidorov', age=54}
+2019-02-05 14:20:19 DEBUG ListCollection:47 - arraySize: 6
+2019-02-05 14:20:19 DEBUG ListCollection:53 - Person{name='Ivanov', age=12}
+2019-02-05 14:20:19 DEBUG ListCollection:53 - Person{name='Ivanov', age=68}
+2019-02-05 14:20:19 DEBUG ListCollection:53 - Person{name='Petrov', age=20}
+2019-02-05 14:20:19 DEBUG ListCollection:53 - Person{name='Petrov', age=102}
+2019-02-05 14:20:19 DEBUG ListCollection:53 - Person{name='UnnamedPerson', age=666}
+2019-02-05 14:20:19 DEBUG ListCollection:53 - Person{name='Sidorov', age=8}
+2019-02-05 14:20:19 DEBUG ListCollection:53 - Person{name='Sidorov', age=54}
+2019-02-05 14:20:19 DEBUG ListCollection:56 - arraySize: 7
+2019-02-05 14:20:19 DEBUG ListCollection:67 - *************************************************************
+2019-02-05 14:33:39 DEBUG SetCollection:14 - **************************SET COLLECTION*********************
+2019-02-05 14:33:39 DEBUG SetCollection:27 - Is myHashSet empty: true
+2019-02-05 14:33:39 DEBUG SetCollection:36 - Person{name='Ivanov', age=12}
+2019-02-05 14:33:39 DEBUG SetCollection:36 - Person{name='Sidorov', age=8}
+2019-02-05 14:33:39 DEBUG SetCollection:36 - Person{name='Petrov', age=102}
+2019-02-05 14:33:39 DEBUG SetCollection:36 - Person{name='Sidorov', age=54}
+2019-02-05 14:33:39 DEBUG SetCollection:36 - Person{name='Petrov', age=20}
+2019-02-05 14:33:39 DEBUG SetCollection:36 - Person{name='Ivanov', age=68}
+2019-02-05 14:33:39 DEBUG SetCollection:41 - myHashSet size: 6
+2019-02-05 14:33:39 DEBUG SetCollection:45 - Is myHashSet empty: false
+2019-02-05 14:33:39 DEBUG SetCollection:50 - Person{name='Ivanov', age=12}
+2019-02-05 14:33:39 DEBUG SetCollection:50 - Person{name='Sidorov', age=8}
+2019-02-05 14:33:39 DEBUG SetCollection:50 - Person{name='Petrov', age=102}
+2019-02-05 14:33:39 DEBUG SetCollection:50 - Person{name='Sidorov', age=54}
+2019-02-05 14:33:39 DEBUG SetCollection:50 - Person{name='Ivanov', age=68}
+2019-02-05 14:33:39 DEBUG SetCollection:55 - Is myHashSet contains old Petrov: true
+2019-02-05 14:33:39 DEBUG SetCollection:56 - Is myHashSet contains young Petrov: false
+2019-02-05 14:33:39 DEBUG SetCollection:68 - Person{name='Ivanov', age=12}
+2019-02-05 14:33:39 DEBUG SetCollection:68 - Person{name='Petrov', age=20}
+2019-02-05 14:33:39 DEBUG SetCollection:68 - Person{name='Sidorov', age=8}
+2019-02-05 14:33:39 DEBUG SetCollection:68 - Person{name='Ivanov', age=68}
+2019-02-05 14:33:39 DEBUG SetCollection:68 - Person{name='Petrov', age=102}
+2019-02-05 14:33:39 DEBUG SetCollection:68 - Person{name='Sidorov', age=54}
+2019-02-05 14:33:39 DEBUG SetCollection:70 - My Hash Set Size: 5
+2019-02-05 14:33:39 DEBUG SetCollection:85 - Person{name='Ivanov', age=12}
+2019-02-05 14:33:39 DEBUG SetCollection:85 - Person{name='Ivanov', age=68}
+2019-02-05 14:33:39 DEBUG SetCollection:85 - Person{name='Petrov', age=20}
+2019-02-05 14:33:39 DEBUG SetCollection:85 - Person{name='Petrov', age=102}
+2019-02-05 14:33:39 DEBUG SetCollection:85 - Person{name='Sidorov', age=8}
+2019-02-05 14:33:39 DEBUG SetCollection:85 - Person{name='Sidorov', age=54}
+2019-02-05 14:33:39 DEBUG SetCollection:93 - java.lang.ClassCastException: class by.moiseenko.entity.Person cannot be cast to class java.lang.Comparable (by.moiseenko.entity.Person is in unnamed module of loader 'app'; java.lang.Comparable is in module java.base of loader 'bootstrap')
+2019-02-05 14:33:39 DEBUG SetCollection:98 - sellinResult: Person{name='Petrov', age=20}
+2019-02-05 14:33:39 DEBUG SetCollection:100 - floorResult: Person{name='Ivanov', age=68}
+2019-02-05 14:33:39 DEBUG SetCollection:101 - myTreeSet size before pool two time: 6
+2019-02-05 14:33:39 DEBUG SetCollection:104 - poolFirstResult: Person{name='Ivanov', age=12}
+2019-02-05 14:33:39 DEBUG SetCollection:105 - poolLastResult: Person{name='Sidorov', age=54}
+2019-02-05 14:33:39 DEBUG SetCollection:107 - myTreeSet size after pool two time: 4
+2019-02-05 14:33:39 DEBUG SetCollection:113 - Person{name='Sidorov', age=54}
+2019-02-05 14:33:39 DEBUG SetCollection:113 - Person{name='Sidorov', age=8}
+2019-02-05 14:33:39 DEBUG SetCollection:113 - Person{name='Petrov', age=102}
+2019-02-05 14:33:39 DEBUG SetCollection:113 - Person{name='Petrov', age=20}
+2019-02-05 14:33:39 DEBUG SetCollection:113 - Person{name='Ivanov', age=68}
+2019-02-05 14:33:39 DEBUG SetCollection:113 - Person{name='Ivanov', age=12}
+2019-02-05 14:33:39 DEBUG SetCollection:116 - *************************************************************
+2019-02-05 14:33:39 DEBUG ListCollection:12 - **************************LIST COLLECTION*********************
+2019-02-05 14:33:39 DEBUG ListCollection:32 - Person{name='Ivanov', age=12}
+2019-02-05 14:33:39 DEBUG ListCollection:32 - Person{name='Ivanov', age=68}
+2019-02-05 14:33:39 DEBUG ListCollection:32 - Person{name='Petrov', age=20}
+2019-02-05 14:33:39 DEBUG ListCollection:32 - Person{name='Petrov', age=102}
+2019-02-05 14:33:39 DEBUG ListCollection:32 - Person{name='Sidorov', age=8}
+2019-02-05 14:33:39 DEBUG ListCollection:32 - Person{name='Sidorov', age=54}
+2019-02-05 14:33:39 DEBUG ListCollection:35 - arraySize: 6
+2019-02-05 14:33:39 DEBUG ListCollection:38 - get3Element: Person{name='Petrov', age=102}
+2019-02-05 14:33:39 DEBUG ListCollection:44 - Person{name='Ivanov', age=12}
+2019-02-05 14:33:39 DEBUG ListCollection:44 - Person{name='Ivanov', age=68}
+2019-02-05 14:33:39 DEBUG ListCollection:44 - Person{name='Petrov', age=20}
+2019-02-05 14:33:39 DEBUG ListCollection:44 - Person{name='UnnamedPerson', age=666}
+2019-02-05 14:33:39 DEBUG ListCollection:44 - Person{name='Sidorov', age=8}
+2019-02-05 14:33:39 DEBUG ListCollection:44 - Person{name='Sidorov', age=54}
+2019-02-05 14:33:39 DEBUG ListCollection:47 - arraySize: 6
+2019-02-05 14:33:39 DEBUG ListCollection:53 - Person{name='Ivanov', age=12}
+2019-02-05 14:33:39 DEBUG ListCollection:53 - Person{name='Ivanov', age=68}
+2019-02-05 14:33:39 DEBUG ListCollection:53 - Person{name='Petrov', age=20}
+2019-02-05 14:33:39 DEBUG ListCollection:53 - Person{name='Petrov', age=102}
+2019-02-05 14:33:39 DEBUG ListCollection:53 - Person{name='UnnamedPerson', age=666}
+2019-02-05 14:33:39 DEBUG ListCollection:53 - Person{name='Sidorov', age=8}
+2019-02-05 14:33:39 DEBUG ListCollection:53 - Person{name='Sidorov', age=54}
+2019-02-05 14:33:39 DEBUG ListCollection:56 - arraySize: 7
+2019-02-05 14:33:39 DEBUG ListCollection:62 - Person{name='Ivanov', age=12}
+2019-02-05 14:33:39 DEBUG ListCollection:62 - Person{name='Ivanov', age=68}
+2019-02-05 14:33:39 DEBUG ListCollection:62 - Person{name='Petrov', age=20}
+2019-02-05 14:33:39 DEBUG ListCollection:62 - Person{name='Petrov', age=102}
+2019-02-05 14:33:39 DEBUG ListCollection:62 - Person{name='UnnamedPerson', age=666}
+2019-02-05 14:33:39 DEBUG ListCollection:62 - Person{name='Sidorov', age=8}
+2019-02-05 14:33:39 DEBUG ListCollection:65 - arraySize: 6
+2019-02-05 14:33:39 DEBUG ListCollection:76 - *************************************************************
+2019-02-05 14:37:32 DEBUG SetCollection:14 - **************************SET COLLECTION*********************
+2019-02-05 14:37:32 DEBUG SetCollection:27 - Is myHashSet empty: true
+2019-02-05 14:37:32 DEBUG SetCollection:36 - Person{name='Ivanov', age=12}
+2019-02-05 14:37:32 DEBUG SetCollection:36 - Person{name='Sidorov', age=8}
+2019-02-05 14:37:32 DEBUG SetCollection:36 - Person{name='Petrov', age=102}
+2019-02-05 14:37:32 DEBUG SetCollection:36 - Person{name='Sidorov', age=54}
+2019-02-05 14:37:32 DEBUG SetCollection:36 - Person{name='Petrov', age=20}
+2019-02-05 14:37:32 DEBUG SetCollection:36 - Person{name='Ivanov', age=68}
+2019-02-05 14:37:32 DEBUG SetCollection:41 - myHashSet size: 6
+2019-02-05 14:37:32 DEBUG SetCollection:45 - Is myHashSet empty: false
+2019-02-05 14:37:32 DEBUG SetCollection:50 - Person{name='Ivanov', age=12}
+2019-02-05 14:37:32 DEBUG SetCollection:50 - Person{name='Sidorov', age=8}
+2019-02-05 14:37:32 DEBUG SetCollection:50 - Person{name='Petrov', age=102}
+2019-02-05 14:37:32 DEBUG SetCollection:50 - Person{name='Sidorov', age=54}
+2019-02-05 14:37:32 DEBUG SetCollection:50 - Person{name='Ivanov', age=68}
+2019-02-05 14:37:32 DEBUG SetCollection:55 - Is myHashSet contains old Petrov: true
+2019-02-05 14:37:32 DEBUG SetCollection:56 - Is myHashSet contains young Petrov: false
+2019-02-05 14:37:32 DEBUG SetCollection:68 - Person{name='Ivanov', age=12}
+2019-02-05 14:37:32 DEBUG SetCollection:68 - Person{name='Petrov', age=20}
+2019-02-05 14:37:32 DEBUG SetCollection:68 - Person{name='Sidorov', age=8}
+2019-02-05 14:37:32 DEBUG SetCollection:68 - Person{name='Ivanov', age=68}
+2019-02-05 14:37:32 DEBUG SetCollection:68 - Person{name='Petrov', age=102}
+2019-02-05 14:37:32 DEBUG SetCollection:68 - Person{name='Sidorov', age=54}
+2019-02-05 14:37:32 DEBUG SetCollection:70 - My Hash Set Size: 5
+2019-02-05 14:37:32 DEBUG SetCollection:85 - Person{name='Ivanov', age=12}
+2019-02-05 14:37:32 DEBUG SetCollection:85 - Person{name='Ivanov', age=68}
+2019-02-05 14:37:32 DEBUG SetCollection:85 - Person{name='Petrov', age=20}
+2019-02-05 14:37:32 DEBUG SetCollection:85 - Person{name='Petrov', age=102}
+2019-02-05 14:37:32 DEBUG SetCollection:85 - Person{name='Sidorov', age=8}
+2019-02-05 14:37:32 DEBUG SetCollection:85 - Person{name='Sidorov', age=54}
+2019-02-05 14:37:32 DEBUG SetCollection:93 - java.lang.ClassCastException: class by.moiseenko.entity.Person cannot be cast to class java.lang.Comparable (by.moiseenko.entity.Person is in unnamed module of loader 'app'; java.lang.Comparable is in module java.base of loader 'bootstrap')
+2019-02-05 14:37:32 DEBUG SetCollection:98 - sellinResult: Person{name='Petrov', age=20}
+2019-02-05 14:37:32 DEBUG SetCollection:100 - floorResult: Person{name='Ivanov', age=68}
+2019-02-05 14:37:32 DEBUG SetCollection:101 - myTreeSet size before pool two time: 6
+2019-02-05 14:37:32 DEBUG SetCollection:104 - poolFirstResult: Person{name='Ivanov', age=12}
+2019-02-05 14:37:32 DEBUG SetCollection:105 - poolLastResult: Person{name='Sidorov', age=54}
+2019-02-05 14:37:32 DEBUG SetCollection:107 - myTreeSet size after pool two time: 4
+2019-02-05 14:37:32 DEBUG SetCollection:113 - Person{name='Sidorov', age=54}
+2019-02-05 14:37:32 DEBUG SetCollection:113 - Person{name='Sidorov', age=8}
+2019-02-05 14:37:32 DEBUG SetCollection:113 - Person{name='Petrov', age=102}
+2019-02-05 14:37:32 DEBUG SetCollection:113 - Person{name='Petrov', age=20}
+2019-02-05 14:37:32 DEBUG SetCollection:113 - Person{name='Ivanov', age=68}
+2019-02-05 14:37:32 DEBUG SetCollection:113 - Person{name='Ivanov', age=12}
+2019-02-05 14:37:32 DEBUG SetCollection:116 - *************************************************************
+2019-02-05 14:37:32 DEBUG ListCollection:12 - **************************LIST COLLECTION*********************
+2019-02-05 14:37:32 DEBUG ListCollection:66 - Person{name='Ivanov', age=12}
+2019-02-05 14:37:32 DEBUG ListCollection:66 - Person{name='Ivanov', age=68}
+2019-02-05 14:37:32 DEBUG ListCollection:66 - Person{name='Petrov', age=20}
+2019-02-05 14:37:32 DEBUG ListCollection:66 - Person{name='Petrov', age=102}
+2019-02-05 14:37:32 DEBUG ListCollection:66 - Person{name='Sidorov', age=8}
+2019-02-05 14:37:32 DEBUG ListCollection:66 - Person{name='Sidorov', age=54}
+2019-02-05 14:37:32 DEBUG ListCollection:69 - arraySize: 6
+2019-02-05 14:37:32 DEBUG ListCollection:33 - get3Element: Person{name='Petrov', age=102}
+2019-02-05 14:37:32 DEBUG ListCollection:66 - Person{name='Ivanov', age=12}
+2019-02-05 14:37:32 DEBUG ListCollection:66 - Person{name='Ivanov', age=68}
+2019-02-05 14:37:32 DEBUG ListCollection:66 - Person{name='Petrov', age=20}
+2019-02-05 14:37:32 DEBUG ListCollection:66 - Person{name='UnnamedPerson', age=666}
+2019-02-05 14:37:32 DEBUG ListCollection:66 - Person{name='Sidorov', age=8}
+2019-02-05 14:37:32 DEBUG ListCollection:66 - Person{name='Sidorov', age=54}
+2019-02-05 14:37:32 DEBUG ListCollection:69 - arraySize: 6
+2019-02-05 14:37:32 DEBUG ListCollection:66 - Person{name='Ivanov', age=12}
+2019-02-05 14:37:32 DEBUG ListCollection:66 - Person{name='Ivanov', age=68}
+2019-02-05 14:37:32 DEBUG ListCollection:66 - Person{name='Petrov', age=20}
+2019-02-05 14:37:32 DEBUG ListCollection:66 - Person{name='Petrov', age=102}
+2019-02-05 14:37:32 DEBUG ListCollection:66 - Person{name='UnnamedPerson', age=666}
+2019-02-05 14:37:32 DEBUG ListCollection:66 - Person{name='Sidorov', age=8}
+2019-02-05 14:37:32 DEBUG ListCollection:66 - Person{name='Sidorov', age=54}
+2019-02-05 14:37:32 DEBUG ListCollection:69 - arraySize: 7
+2019-02-05 14:37:32 DEBUG ListCollection:66 - Person{name='Ivanov', age=12}
+2019-02-05 14:37:32 DEBUG ListCollection:66 - Person{name='Ivanov', age=68}
+2019-02-05 14:37:32 DEBUG ListCollection:66 - Person{name='Petrov', age=20}
+2019-02-05 14:37:32 DEBUG ListCollection:66 - Person{name='Petrov', age=102}
+2019-02-05 14:37:32 DEBUG ListCollection:66 - Person{name='UnnamedPerson', age=666}
+2019-02-05 14:37:32 DEBUG ListCollection:66 - Person{name='Sidorov', age=8}
+2019-02-05 14:37:32 DEBUG ListCollection:69 - arraySize: 6
+2019-02-05 14:37:32 DEBUG ListCollection:66 - Person{name='Ivanov', age=12}
+2019-02-05 14:37:32 DEBUG ListCollection:66 - Person{name='Ivanov', age=68}
+2019-02-05 14:37:32 DEBUG ListCollection:66 - Person{name='Petrov', age=20}
+2019-02-05 14:37:32 DEBUG ListCollection:66 - Person{name='UnnamedPerson', age=666}
+2019-02-05 14:37:32 DEBUG ListCollection:66 - Person{name='Sidorov', age=8}
+2019-02-05 14:37:32 DEBUG ListCollection:69 - arraySize: 5
+2019-02-05 14:37:32 DEBUG ListCollection:60 - *************************************************************
+2019-02-05 14:38:41 DEBUG SetCollection:14 - **************************SET COLLECTION*********************
+2019-02-05 14:38:41 DEBUG SetCollection:27 - Is myHashSet empty: true
+2019-02-05 14:38:41 DEBUG SetCollection:36 - Person{name='Ivanov', age=12}
+2019-02-05 14:38:41 DEBUG SetCollection:36 - Person{name='Sidorov', age=8}
+2019-02-05 14:38:41 DEBUG SetCollection:36 - Person{name='Petrov', age=102}
+2019-02-05 14:38:41 DEBUG SetCollection:36 - Person{name='Sidorov', age=54}
+2019-02-05 14:38:41 DEBUG SetCollection:36 - Person{name='Petrov', age=20}
+2019-02-05 14:38:41 DEBUG SetCollection:36 - Person{name='Ivanov', age=68}
+2019-02-05 14:38:41 DEBUG SetCollection:41 - myHashSet size: 6
+2019-02-05 14:38:41 DEBUG SetCollection:45 - Is myHashSet empty: false
+2019-02-05 14:38:41 DEBUG SetCollection:50 - Person{name='Ivanov', age=12}
+2019-02-05 14:38:41 DEBUG SetCollection:50 - Person{name='Sidorov', age=8}
+2019-02-05 14:38:41 DEBUG SetCollection:50 - Person{name='Petrov', age=102}
+2019-02-05 14:38:41 DEBUG SetCollection:50 - Person{name='Sidorov', age=54}
+2019-02-05 14:38:41 DEBUG SetCollection:50 - Person{name='Ivanov', age=68}
+2019-02-05 14:38:41 DEBUG SetCollection:55 - Is myHashSet contains old Petrov: true
+2019-02-05 14:38:41 DEBUG SetCollection:56 - Is myHashSet contains young Petrov: false
+2019-02-05 14:38:41 DEBUG SetCollection:68 - Person{name='Ivanov', age=12}
+2019-02-05 14:38:41 DEBUG SetCollection:68 - Person{name='Petrov', age=20}
+2019-02-05 14:38:41 DEBUG SetCollection:68 - Person{name='Sidorov', age=8}
+2019-02-05 14:38:41 DEBUG SetCollection:68 - Person{name='Ivanov', age=68}
+2019-02-05 14:38:41 DEBUG SetCollection:68 - Person{name='Petrov', age=102}
+2019-02-05 14:38:41 DEBUG SetCollection:68 - Person{name='Sidorov', age=54}
+2019-02-05 14:38:41 DEBUG SetCollection:70 - My Hash Set Size: 5
+2019-02-05 14:38:41 DEBUG SetCollection:85 - Person{name='Ivanov', age=12}
+2019-02-05 14:38:41 DEBUG SetCollection:85 - Person{name='Ivanov', age=68}
+2019-02-05 14:38:41 DEBUG SetCollection:85 - Person{name='Petrov', age=20}
+2019-02-05 14:38:41 DEBUG SetCollection:85 - Person{name='Petrov', age=102}
+2019-02-05 14:38:41 DEBUG SetCollection:85 - Person{name='Sidorov', age=8}
+2019-02-05 14:38:41 DEBUG SetCollection:85 - Person{name='Sidorov', age=54}
+2019-02-05 14:38:41 DEBUG SetCollection:93 - java.lang.ClassCastException: class by.moiseenko.entity.Person cannot be cast to class java.lang.Comparable (by.moiseenko.entity.Person is in unnamed module of loader 'app'; java.lang.Comparable is in module java.base of loader 'bootstrap')
+2019-02-05 14:38:41 DEBUG SetCollection:98 - sellinResult: Person{name='Petrov', age=20}
+2019-02-05 14:38:41 DEBUG SetCollection:100 - floorResult: Person{name='Ivanov', age=68}
+2019-02-05 14:38:41 DEBUG SetCollection:101 - myTreeSet size before pool two time: 6
+2019-02-05 14:38:41 DEBUG SetCollection:104 - poolFirstResult: Person{name='Ivanov', age=12}
+2019-02-05 14:38:41 DEBUG SetCollection:105 - poolLastResult: Person{name='Sidorov', age=54}
+2019-02-05 14:38:41 DEBUG SetCollection:107 - myTreeSet size after pool two time: 4
+2019-02-05 14:38:41 DEBUG SetCollection:113 - Person{name='Sidorov', age=54}
+2019-02-05 14:38:41 DEBUG SetCollection:113 - Person{name='Sidorov', age=8}
+2019-02-05 14:38:41 DEBUG SetCollection:113 - Person{name='Petrov', age=102}
+2019-02-05 14:38:41 DEBUG SetCollection:113 - Person{name='Petrov', age=20}
+2019-02-05 14:38:41 DEBUG SetCollection:113 - Person{name='Ivanov', age=68}
+2019-02-05 14:38:41 DEBUG SetCollection:113 - Person{name='Ivanov', age=12}
+2019-02-05 14:38:41 DEBUG SetCollection:116 - *************************************************************
+2019-02-05 14:38:41 DEBUG ListCollection:12 - **************************LIST COLLECTION*********************
+2019-02-05 14:38:41 DEBUG ListCollection:67 - Person{name='Ivanov', age=12}
+2019-02-05 14:38:41 DEBUG ListCollection:67 - Person{name='Ivanov', age=68}
+2019-02-05 14:38:41 DEBUG ListCollection:67 - Person{name='Petrov', age=20}
+2019-02-05 14:38:41 DEBUG ListCollection:67 - Person{name='Petrov', age=102}
+2019-02-05 14:38:41 DEBUG ListCollection:67 - Person{name='Sidorov', age=8}
+2019-02-05 14:38:41 DEBUG ListCollection:67 - Person{name='Sidorov', age=54}
+2019-02-05 14:38:41 DEBUG ListCollection:70 - arraySize: 6
+2019-02-05 14:38:41 DEBUG ListCollection:33 - get3Element: Person{name='Petrov', age=102}
+2019-02-05 14:38:41 DEBUG ListCollection:67 - Person{name='Ivanov', age=12}
+2019-02-05 14:38:41 DEBUG ListCollection:67 - Person{name='Ivanov', age=68}
+2019-02-05 14:38:41 DEBUG ListCollection:67 - Person{name='Petrov', age=20}
+2019-02-05 14:38:41 DEBUG ListCollection:67 - Person{name='UnnamedPerson', age=666}
+2019-02-05 14:38:41 DEBUG ListCollection:67 - Person{name='Sidorov', age=8}
+2019-02-05 14:38:41 DEBUG ListCollection:67 - Person{name='Sidorov', age=54}
+2019-02-05 14:38:41 DEBUG ListCollection:70 - arraySize: 6
+2019-02-05 14:38:41 DEBUG ListCollection:67 - Person{name='Ivanov', age=12}
+2019-02-05 14:38:41 DEBUG ListCollection:67 - Person{name='Ivanov', age=68}
+2019-02-05 14:38:41 DEBUG ListCollection:67 - Person{name='Petrov', age=20}
+2019-02-05 14:38:41 DEBUG ListCollection:67 - Person{name='Petrov', age=102}
+2019-02-05 14:38:41 DEBUG ListCollection:67 - Person{name='UnnamedPerson', age=666}
+2019-02-05 14:38:41 DEBUG ListCollection:67 - Person{name='Sidorov', age=8}
+2019-02-05 14:38:41 DEBUG ListCollection:67 - Person{name='Sidorov', age=54}
+2019-02-05 14:38:41 DEBUG ListCollection:70 - arraySize: 7
+2019-02-05 14:38:41 DEBUG ListCollection:67 - Person{name='Ivanov', age=12}
+2019-02-05 14:38:41 DEBUG ListCollection:67 - Person{name='Ivanov', age=68}
+2019-02-05 14:38:41 DEBUG ListCollection:67 - Person{name='Petrov', age=20}
+2019-02-05 14:38:41 DEBUG ListCollection:67 - Person{name='Petrov', age=102}
+2019-02-05 14:38:41 DEBUG ListCollection:67 - Person{name='UnnamedPerson', age=666}
+2019-02-05 14:38:41 DEBUG ListCollection:67 - Person{name='Sidorov', age=8}
+2019-02-05 14:38:41 DEBUG ListCollection:70 - arraySize: 6
+2019-02-05 14:38:41 DEBUG ListCollection:67 - Person{name='Ivanov', age=12}
+2019-02-05 14:38:41 DEBUG ListCollection:67 - Person{name='Ivanov', age=68}
+2019-02-05 14:38:41 DEBUG ListCollection:67 - Person{name='Petrov', age=20}
+2019-02-05 14:38:41 DEBUG ListCollection:67 - Person{name='UnnamedPerson', age=666}
+2019-02-05 14:38:41 DEBUG ListCollection:67 - Person{name='Sidorov', age=8}
+2019-02-05 14:38:41 DEBUG ListCollection:70 - arraySize: 5
+2019-02-05 14:38:41 DEBUG ListCollection:61 - *************************************************************
+2019-02-05 14:39:03 DEBUG SetCollection:14 - **************************SET COLLECTION*********************
+2019-02-05 14:39:03 DEBUG SetCollection:27 - Is myHashSet empty: true
+2019-02-05 14:39:03 DEBUG SetCollection:36 - Person{name='Ivanov', age=12}
+2019-02-05 14:39:04 DEBUG SetCollection:36 - Person{name='Sidorov', age=8}
+2019-02-05 14:39:04 DEBUG SetCollection:36 - Person{name='Petrov', age=102}
+2019-02-05 14:39:04 DEBUG SetCollection:36 - Person{name='Sidorov', age=54}
+2019-02-05 14:39:04 DEBUG SetCollection:36 - Person{name='Petrov', age=20}
+2019-02-05 14:39:04 DEBUG SetCollection:36 - Person{name='Ivanov', age=68}
+2019-02-05 14:39:04 DEBUG SetCollection:41 - myHashSet size: 6
+2019-02-05 14:39:04 DEBUG SetCollection:45 - Is myHashSet empty: false
+2019-02-05 14:39:04 DEBUG SetCollection:50 - Person{name='Ivanov', age=12}
+2019-02-05 14:39:04 DEBUG SetCollection:50 - Person{name='Sidorov', age=8}
+2019-02-05 14:39:04 DEBUG SetCollection:50 - Person{name='Petrov', age=102}
+2019-02-05 14:39:04 DEBUG SetCollection:50 - Person{name='Sidorov', age=54}
+2019-02-05 14:39:04 DEBUG SetCollection:50 - Person{name='Ivanov', age=68}
+2019-02-05 14:39:04 DEBUG SetCollection:55 - Is myHashSet contains old Petrov: true
+2019-02-05 14:39:04 DEBUG SetCollection:56 - Is myHashSet contains young Petrov: false
+2019-02-05 14:39:04 DEBUG SetCollection:68 - Person{name='Ivanov', age=12}
+2019-02-05 14:39:04 DEBUG SetCollection:68 - Person{name='Petrov', age=20}
+2019-02-05 14:39:04 DEBUG SetCollection:68 - Person{name='Sidorov', age=8}
+2019-02-05 14:39:04 DEBUG SetCollection:68 - Person{name='Ivanov', age=68}
+2019-02-05 14:39:04 DEBUG SetCollection:68 - Person{name='Petrov', age=102}
+2019-02-05 14:39:04 DEBUG SetCollection:68 - Person{name='Sidorov', age=54}
+2019-02-05 14:39:04 DEBUG SetCollection:70 - My Hash Set Size: 5
+2019-02-05 14:39:04 DEBUG SetCollection:85 - Person{name='Ivanov', age=12}
+2019-02-05 14:39:04 DEBUG SetCollection:85 - Person{name='Ivanov', age=68}
+2019-02-05 14:39:04 DEBUG SetCollection:85 - Person{name='Petrov', age=20}
+2019-02-05 14:39:04 DEBUG SetCollection:85 - Person{name='Petrov', age=102}
+2019-02-05 14:39:04 DEBUG SetCollection:85 - Person{name='Sidorov', age=8}
+2019-02-05 14:39:04 DEBUG SetCollection:85 - Person{name='Sidorov', age=54}
+2019-02-05 14:39:04 DEBUG SetCollection:93 - java.lang.ClassCastException: class by.moiseenko.entity.Person cannot be cast to class java.lang.Comparable (by.moiseenko.entity.Person is in unnamed module of loader 'app'; java.lang.Comparable is in module java.base of loader 'bootstrap')
+2019-02-05 14:39:04 DEBUG SetCollection:98 - sellinResult: Person{name='Petrov', age=20}
+2019-02-05 14:39:04 DEBUG SetCollection:100 - floorResult: Person{name='Ivanov', age=68}
+2019-02-05 14:39:04 DEBUG SetCollection:101 - myTreeSet size before pool two time: 6
+2019-02-05 14:39:04 DEBUG SetCollection:104 - poolFirstResult: Person{name='Ivanov', age=12}
+2019-02-05 14:39:04 DEBUG SetCollection:105 - poolLastResult: Person{name='Sidorov', age=54}
+2019-02-05 14:39:04 DEBUG SetCollection:107 - myTreeSet size after pool two time: 4
+2019-02-05 14:39:04 DEBUG SetCollection:113 - Person{name='Sidorov', age=54}
+2019-02-05 14:39:04 DEBUG SetCollection:113 - Person{name='Sidorov', age=8}
+2019-02-05 14:39:04 DEBUG SetCollection:113 - Person{name='Petrov', age=102}
+2019-02-05 14:39:04 DEBUG SetCollection:113 - Person{name='Petrov', age=20}
+2019-02-05 14:39:04 DEBUG SetCollection:113 - Person{name='Ivanov', age=68}
+2019-02-05 14:39:04 DEBUG SetCollection:113 - Person{name='Ivanov', age=12}
+2019-02-05 14:39:04 DEBUG SetCollection:116 - *************************************************************
+2019-02-05 14:39:04 DEBUG ListCollection:12 - **************************LIST COLLECTION*********************
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='Ivanov', age=12}
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='Ivanov', age=68}
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='Petrov', age=20}
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='Petrov', age=102}
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='Sidorov', age=8}
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='Sidorov', age=54}
+2019-02-05 14:39:04 DEBUG ListCollection:74 - arraySize: 6
+2019-02-05 14:39:04 DEBUG ListCollection:33 - get3Element: Person{name='Petrov', age=102}
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='Ivanov', age=12}
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='Ivanov', age=68}
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='Petrov', age=20}
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='UnnamedPerson', age=666}
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='Sidorov', age=8}
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='Sidorov', age=54}
+2019-02-05 14:39:04 DEBUG ListCollection:74 - arraySize: 6
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='Ivanov', age=12}
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='Ivanov', age=68}
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='Petrov', age=20}
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='Petrov', age=102}
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='UnnamedPerson', age=666}
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='Sidorov', age=8}
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='Sidorov', age=54}
+2019-02-05 14:39:04 DEBUG ListCollection:74 - arraySize: 7
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='Ivanov', age=12}
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='Ivanov', age=68}
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='Petrov', age=20}
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='Petrov', age=102}
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='UnnamedPerson', age=666}
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='Sidorov', age=8}
+2019-02-05 14:39:04 DEBUG ListCollection:74 - arraySize: 6
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='Ivanov', age=12}
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='Ivanov', age=68}
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='Petrov', age=20}
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='UnnamedPerson', age=666}
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='Sidorov', age=8}
+2019-02-05 14:39:04 DEBUG ListCollection:74 - arraySize: 5
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='Ivanov', age=12}
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='Ivanov', age=68}
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='Petrov', age=20}
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='UnnamedPerson', age=666}
+2019-02-05 14:39:04 DEBUG ListCollection:71 - Person{name='Sidorov', age=8}
+2019-02-05 14:39:04 DEBUG ListCollection:74 - arraySize: 5
+2019-02-05 14:39:04 DEBUG ListCollection:65 - *************************************************************
+2019-02-05 14:48:57 DEBUG SetCollection:14 - **************************SET COLLECTION*********************
+2019-02-05 14:48:57 DEBUG SetCollection:27 - Is myHashSet empty: true
+2019-02-05 14:48:57 DEBUG SetCollection:36 - Person{name='Ivanov', age=12}
+2019-02-05 14:48:57 DEBUG SetCollection:36 - Person{name='Sidorov', age=8}
+2019-02-05 14:48:57 DEBUG SetCollection:36 - Person{name='Petrov', age=102}
+2019-02-05 14:48:57 DEBUG SetCollection:36 - Person{name='Sidorov', age=54}
+2019-02-05 14:48:57 DEBUG SetCollection:36 - Person{name='Petrov', age=20}
+2019-02-05 14:48:57 DEBUG SetCollection:36 - Person{name='Ivanov', age=68}
+2019-02-05 14:48:57 DEBUG SetCollection:41 - myHashSet size: 6
+2019-02-05 14:48:57 DEBUG SetCollection:45 - Is myHashSet empty: false
+2019-02-05 14:48:57 DEBUG SetCollection:50 - Person{name='Ivanov', age=12}
+2019-02-05 14:48:57 DEBUG SetCollection:50 - Person{name='Sidorov', age=8}
+2019-02-05 14:48:57 DEBUG SetCollection:50 - Person{name='Petrov', age=102}
+2019-02-05 14:48:57 DEBUG SetCollection:50 - Person{name='Sidorov', age=54}
+2019-02-05 14:48:57 DEBUG SetCollection:50 - Person{name='Ivanov', age=68}
+2019-02-05 14:48:57 DEBUG SetCollection:55 - Is myHashSet contains old Petrov: true
+2019-02-05 14:48:57 DEBUG SetCollection:56 - Is myHashSet contains young Petrov: false
+2019-02-05 14:48:57 DEBUG SetCollection:68 - Person{name='Ivanov', age=12}
+2019-02-05 14:48:57 DEBUG SetCollection:68 - Person{name='Petrov', age=20}
+2019-02-05 14:48:57 DEBUG SetCollection:68 - Person{name='Sidorov', age=8}
+2019-02-05 14:48:57 DEBUG SetCollection:68 - Person{name='Ivanov', age=68}
+2019-02-05 14:48:57 DEBUG SetCollection:68 - Person{name='Petrov', age=102}
+2019-02-05 14:48:57 DEBUG SetCollection:68 - Person{name='Sidorov', age=54}
+2019-02-05 14:48:57 DEBUG SetCollection:70 - My Hash Set Size: 5
+2019-02-05 14:48:57 DEBUG SetCollection:85 - Person{name='Ivanov', age=12}
+2019-02-05 14:48:57 DEBUG SetCollection:85 - Person{name='Ivanov', age=68}
+2019-02-05 14:48:57 DEBUG SetCollection:85 - Person{name='Petrov', age=20}
+2019-02-05 14:48:57 DEBUG SetCollection:85 - Person{name='Petrov', age=102}
+2019-02-05 14:48:57 DEBUG SetCollection:85 - Person{name='Sidorov', age=8}
+2019-02-05 14:48:57 DEBUG SetCollection:85 - Person{name='Sidorov', age=54}
+2019-02-05 14:48:57 DEBUG SetCollection:93 - java.lang.ClassCastException: class by.moiseenko.entity.Person cannot be cast to class java.lang.Comparable (by.moiseenko.entity.Person is in unnamed module of loader 'app'; java.lang.Comparable is in module java.base of loader 'bootstrap')
+2019-02-05 14:48:57 DEBUG SetCollection:98 - sellinResult: Person{name='Petrov', age=20}
+2019-02-05 14:48:57 DEBUG SetCollection:100 - floorResult: Person{name='Ivanov', age=68}
+2019-02-05 14:48:57 DEBUG SetCollection:101 - myTreeSet size before pool two time: 6
+2019-02-05 14:48:57 DEBUG SetCollection:104 - poolFirstResult: Person{name='Ivanov', age=12}
+2019-02-05 14:48:57 DEBUG SetCollection:105 - poolLastResult: Person{name='Sidorov', age=54}
+2019-02-05 14:48:57 DEBUG SetCollection:107 - myTreeSet size after pool two time: 4
+2019-02-05 14:48:57 DEBUG SetCollection:113 - Person{name='Sidorov', age=54}
+2019-02-05 14:48:57 DEBUG SetCollection:113 - Person{name='Sidorov', age=8}
+2019-02-05 14:48:57 DEBUG SetCollection:113 - Person{name='Petrov', age=102}
+2019-02-05 14:48:57 DEBUG SetCollection:113 - Person{name='Petrov', age=20}
+2019-02-05 14:48:57 DEBUG SetCollection:113 - Person{name='Ivanov', age=68}
+2019-02-05 14:48:57 DEBUG SetCollection:113 - Person{name='Ivanov', age=12}
+2019-02-05 14:48:57 DEBUG SetCollection:116 - *************************************************************
+2019-02-05 14:48:57 DEBUG ListCollection:12 - **************************LIST COLLECTION*********************
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='Ivanov', age=12}
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='Ivanov', age=68}
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='Petrov', age=20}
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='Petrov', age=102}
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='Sidorov', age=8}
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='Sidorov', age=54}
+2019-02-05 14:48:57 DEBUG ListCollection:74 - arraySize: 6
+2019-02-05 14:48:57 DEBUG ListCollection:33 - get3Element: Person{name='Petrov', age=102}
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='Ivanov', age=12}
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='Ivanov', age=68}
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='Petrov', age=20}
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='UnnamedPerson', age=666}
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='Sidorov', age=8}
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='Sidorov', age=54}
+2019-02-05 14:48:57 DEBUG ListCollection:74 - arraySize: 6
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='Ivanov', age=12}
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='Ivanov', age=68}
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='Petrov', age=20}
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='Petrov', age=102}
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='UnnamedPerson', age=666}
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='Sidorov', age=8}
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='Sidorov', age=54}
+2019-02-05 14:48:57 DEBUG ListCollection:74 - arraySize: 7
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='Ivanov', age=12}
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='Ivanov', age=68}
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='Petrov', age=20}
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='Petrov', age=102}
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='UnnamedPerson', age=666}
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='Sidorov', age=8}
+2019-02-05 14:48:57 DEBUG ListCollection:74 - arraySize: 6
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='Ivanov', age=12}
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='Ivanov', age=68}
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='Petrov', age=20}
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='UnnamedPerson', age=666}
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='Sidorov', age=8}
+2019-02-05 14:48:57 DEBUG ListCollection:74 - arraySize: 5
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='Ivanov', age=12}
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='Ivanov', age=68}
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='Petrov', age=20}
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='UnnamedPerson', age=666}
+2019-02-05 14:48:57 DEBUG ListCollection:71 - Person{name='Sidorov', age=8}
+2019-02-05 14:48:57 DEBUG ListCollection:74 - arraySize: 5
+2019-02-05 14:48:57 DEBUG ListCollection:65 - *************************************************************
+2019-02-05 15:38:22 DEBUG SetCollection:14 - **************************SET COLLECTION*********************
+2019-02-05 15:38:22 DEBUG SetCollection:27 - Is myHashSet empty: true
+2019-02-05 15:38:22 DEBUG SetCollection:36 - Person{name='Ivanov', age=12}
+2019-02-05 15:38:22 DEBUG SetCollection:36 - Person{name='Sidorov', age=8}
+2019-02-05 15:38:22 DEBUG SetCollection:36 - Person{name='Petrov', age=102}
+2019-02-05 15:38:22 DEBUG SetCollection:36 - Person{name='Sidorov', age=54}
+2019-02-05 15:38:22 DEBUG SetCollection:36 - Person{name='Petrov', age=20}
+2019-02-05 15:38:22 DEBUG SetCollection:36 - Person{name='Ivanov', age=68}
+2019-02-05 15:38:22 DEBUG SetCollection:41 - myHashSet size: 6
+2019-02-05 15:38:22 DEBUG SetCollection:45 - Is myHashSet empty: false
+2019-02-05 15:38:22 DEBUG SetCollection:50 - Person{name='Ivanov', age=12}
+2019-02-05 15:38:22 DEBUG SetCollection:50 - Person{name='Sidorov', age=8}
+2019-02-05 15:38:22 DEBUG SetCollection:50 - Person{name='Petrov', age=102}
+2019-02-05 15:38:22 DEBUG SetCollection:50 - Person{name='Sidorov', age=54}
+2019-02-05 15:38:22 DEBUG SetCollection:50 - Person{name='Ivanov', age=68}
+2019-02-05 15:38:22 DEBUG SetCollection:55 - Is myHashSet contains old Petrov: true
+2019-02-05 15:38:22 DEBUG SetCollection:56 - Is myHashSet contains young Petrov: false
+2019-02-05 15:38:22 DEBUG SetCollection:68 - Person{name='Ivanov', age=12}
+2019-02-05 15:38:22 DEBUG SetCollection:68 - Person{name='Petrov', age=20}
+2019-02-05 15:38:22 DEBUG SetCollection:68 - Person{name='Sidorov', age=8}
+2019-02-05 15:38:22 DEBUG SetCollection:68 - Person{name='Ivanov', age=68}
+2019-02-05 15:38:22 DEBUG SetCollection:68 - Person{name='Petrov', age=102}
+2019-02-05 15:38:22 DEBUG SetCollection:68 - Person{name='Sidorov', age=54}
+2019-02-05 15:38:22 DEBUG SetCollection:70 - My Hash Set Size: 5
+2019-02-05 15:38:22 DEBUG SetCollection:85 - Person{name='Ivanov', age=12}
+2019-02-05 15:38:22 DEBUG SetCollection:85 - Person{name='Ivanov', age=68}
+2019-02-05 15:38:22 DEBUG SetCollection:85 - Person{name='Petrov', age=20}
+2019-02-05 15:38:22 DEBUG SetCollection:85 - Person{name='Petrov', age=102}
+2019-02-05 15:38:22 DEBUG SetCollection:85 - Person{name='Sidorov', age=8}
+2019-02-05 15:38:22 DEBUG SetCollection:85 - Person{name='Sidorov', age=54}
+2019-02-05 15:38:22 DEBUG SetCollection:93 - java.lang.ClassCastException: class by.moiseenko.entity.Person cannot be cast to class java.lang.Comparable (by.moiseenko.entity.Person is in unnamed module of loader 'app'; java.lang.Comparable is in module java.base of loader 'bootstrap')
+2019-02-05 15:38:22 DEBUG SetCollection:98 - sellinResult: Person{name='Petrov', age=20}
+2019-02-05 15:38:22 DEBUG SetCollection:100 - floorResult: Person{name='Ivanov', age=68}
+2019-02-05 15:38:22 DEBUG SetCollection:101 - myTreeSet size before pool two time: 6
+2019-02-05 15:38:22 DEBUG SetCollection:104 - poolFirstResult: Person{name='Ivanov', age=12}
+2019-02-05 15:38:22 DEBUG SetCollection:105 - poolLastResult: Person{name='Sidorov', age=54}
+2019-02-05 15:38:22 DEBUG SetCollection:107 - myTreeSet size after pool two time: 4
+2019-02-05 15:38:22 DEBUG SetCollection:113 - Person{name='Sidorov', age=54}
+2019-02-05 15:38:22 DEBUG SetCollection:113 - Person{name='Sidorov', age=8}
+2019-02-05 15:38:22 DEBUG SetCollection:113 - Person{name='Petrov', age=102}
+2019-02-05 15:38:22 DEBUG SetCollection:113 - Person{name='Petrov', age=20}
+2019-02-05 15:38:22 DEBUG SetCollection:113 - Person{name='Ivanov', age=68}
+2019-02-05 15:38:22 DEBUG SetCollection:113 - Person{name='Ivanov', age=12}
+2019-02-05 15:38:22 DEBUG SetCollection:116 - *************************************************************
+2019-02-05 15:38:22 DEBUG ListCollection:13 - **************************ARRAY-LIST COLLECTION*********************
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Ivanov', age=12}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Ivanov', age=68}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Petrov', age=20}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Petrov', age=102}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Sidorov', age=8}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Sidorov', age=54}
+2019-02-05 15:38:22 DEBUG ListCollection:86 - arraySize: 6
+2019-02-05 15:38:22 DEBUG ListCollection:34 - get3Element: Person{name='Petrov', age=102}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Ivanov', age=12}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Ivanov', age=68}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Petrov', age=20}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='UnnamedPerson', age=666}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Sidorov', age=8}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Sidorov', age=54}
+2019-02-05 15:38:22 DEBUG ListCollection:86 - arraySize: 6
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Ivanov', age=12}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Ivanov', age=68}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Petrov', age=20}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Petrov', age=102}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='UnnamedPerson', age=666}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Sidorov', age=8}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Sidorov', age=54}
+2019-02-05 15:38:22 DEBUG ListCollection:86 - arraySize: 7
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Ivanov', age=12}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Ivanov', age=68}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Petrov', age=20}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Petrov', age=102}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='UnnamedPerson', age=666}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Sidorov', age=8}
+2019-02-05 15:38:22 DEBUG ListCollection:86 - arraySize: 6
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Ivanov', age=12}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Ivanov', age=68}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Petrov', age=20}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='UnnamedPerson', age=666}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Sidorov', age=8}
+2019-02-05 15:38:22 DEBUG ListCollection:86 - arraySize: 5
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Ivanov', age=12}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Ivanov', age=68}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Petrov', age=20}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='UnnamedPerson', age=666}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Sidorov', age=8}
+2019-02-05 15:38:22 DEBUG ListCollection:86 - arraySize: 5
+2019-02-05 15:38:22 DEBUG ListCollection:55 - **************************LINKED-LIST COLLECTION*********************
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Ivanov', age=12}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Ivanov', age=68}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Petrov', age=20}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Petrov', age=102}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Sidorov', age=8}
+2019-02-05 15:38:22 DEBUG ListCollection:83 - Person{name='Sidorov', age=54}
+2019-02-05 15:38:22 DEBUG ListCollection:86 - arraySize: 6
+2019-02-05 15:38:22 DEBUG ListCollection:77 - *************************************************************
