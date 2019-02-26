@@ -1,38 +1,38 @@
-15:19:23.075 [main] DEBUG by.moiseenko.util.impl.TransportCreatorImpl:32 - Transport{producer='Mazda**', model='6', action='STOP'}
-15:19:23.093 [main] DEBUG by.moiseenko.util.impl.TransportCreatorImpl:32 - Transport{producer='Toyota*', model='Corrola', action='STOP'}
-15:19:23.094 [main] DEBUG by.moiseenko.util.impl.TransportCreatorImpl:32 - Transport{producer='Vaz****', model='Kopeyka', action='STOP'}
-15:19:23.098 [main] DEBUG by.moiseenko.util.impl.TransportCreatorImpl:23 - Transport{producer='Iz*', model='Planeta 5', action='STOP'}
-15:19:23.099 [main] DEBUG by.moiseenko.util.impl.TransportCreatorImpl:23 - Transport{producer='Honda', model='CBR 600', action='STOP'}
-15:19:23.100 [main] DEBUG by.moiseenko.util.impl.TransportCreatorImpl:23 - Transport{producer='Harley-Davidson', model='Inferno', action='STOP'}
-15:19:23.104 [main] DEBUG by.moiseenko.Runner:148 - Transport{producer='Mazda**', model='6', action='STOP'}
-15:19:23.107 [main] DEBUG by.moiseenko.Runner:148 - Transport{producer='Toyota*', model='Corrola', action='STOP'}
-15:19:23.108 [main] DEBUG by.moiseenko.Runner:148 - Transport{producer='Vaz****', model='Kopeyka', action='STOP'}
-15:19:23.108 [main] DEBUG by.moiseenko.Runner:148 - Transport{producer='Iz*', model='Planeta 5', action='STOP'}
-15:19:23.109 [main] DEBUG by.moiseenko.Runner:148 - Transport{producer='Honda', model='CBR 600', action='STOP'}
-15:19:23.110 [main] DEBUG by.moiseenko.Runner:148 - Transport{producer='Harley-Davidson', model='Inferno', action='STOP'}
-15:19:23.112 [main] DEBUG by.moiseenko.util.impl.DrivableCarImpl:47 - Car MAZDA** 6 drive back.
-15:19:23.113 [main] DEBUG by.moiseenko.util.impl.DrivableCarImpl:47 - Car TOYOTA* Corrola drive back.
-15:19:23.114 [main] DEBUG by.moiseenko.util.impl.DrivableCarImpl:47 - Car VAZ**** Kopeyka drive back.
-15:19:23.115 [main] DEBUG by.moiseenko.util.impl.DrivableBikeImpl:16 - Bike IZ* Planeta 5 drive front.
-15:19:23.115 [main] DEBUG by.moiseenko.util.impl.DrivableBikeImpl:16 - Bike HONDA CBR 600 drive front.
-15:19:23.116 [main] DEBUG by.moiseenko.util.impl.DrivableBikeImpl:16 - Bike HARLEY-DAVIDSON Inferno drive front.
-15:19:23.133 [main] DEBUG by.moiseenko.util.impl.DrivableCarImpl:31 - Car MAZDA** 6 turn left.
-15:19:23.134 [main] DEBUG by.moiseenko.util.impl.DrivableCarImpl:31 - Car TOYOTA* Corrola turn left.
-15:19:23.135 [main] DEBUG by.moiseenko.util.impl.DrivableCarImpl:31 - Car VAZ**** Kopeyka turn left.
-15:19:23.137 [main] DEBUG by.moiseenko.util.impl.DrivableBikeImpl:39 - Bike IZ* Planeta 5 turn right.
-15:19:23.138 [main] DEBUG by.moiseenko.util.impl.DrivableBikeImpl:39 - Bike HONDA CBR 600 turn right.
-15:19:23.139 [main] DEBUG by.moiseenko.util.impl.DrivableBikeImpl:39 - Bike HARLEY-DAVIDSON Inferno turn right.
-15:19:23.140 [main] DEBUG by.moiseenko.Runner:148 - Transport{producer='Mazda**', model='6', action='TURN LEFT'}
-15:19:23.141 [main] DEBUG by.moiseenko.Runner:148 - Transport{producer='Toyota*', model='Corrola', action='TURN LEFT'}
-15:19:23.142 [main] DEBUG by.moiseenko.Runner:148 - Transport{producer='Vaz****', model='Kopeyka', action='TURN LEFT'}
-15:19:23.142 [main] DEBUG by.moiseenko.Runner:148 - Transport{producer='Iz*', model='Planeta 5', action='TURN RIGHT'}
-15:19:23.143 [main] DEBUG by.moiseenko.Runner:148 - Transport{producer='Honda', model='CBR 600', action='TURN RIGHT'}
-15:19:23.143 [main] DEBUG by.moiseenko.Runner:148 - Transport{producer='Harley-Davidson', model='Inferno', action='TURN RIGHT'}
-15:19:23.217 [main] DEBUG by.moiseenko.Runner:60 - Aclass{a=5}Bclass{b=7}  12  35
-15:19:23.227 [main] DEBUG by.moiseenko.Runner:67 - java.lang.IllegalArgumentException: Man too young!!! age = 15
-15:19:23.278 [main] DEBUG by.moiseenko.Runner:83 - java.lang.IllegalArgumentException: Man To old!!! age = 300
-15:19:24.793 [main] DEBUG by.moiseenko.Runner:138 - true
+19:44:46.037 [main] DEBUG by.moiseenko.util.impl.TransportCreatorImpl:32 - Transport{producer='Mazda**', model='6', action='STOP'}
+19:44:46.061 [main] DEBUG by.moiseenko.util.impl.TransportCreatorImpl:32 - Transport{producer='Toyota*', model='Corrola', action='STOP'}
+19:44:46.065 [main] DEBUG by.moiseenko.util.impl.TransportCreatorImpl:32 - Transport{producer='Vaz****', model='Kopeyka', action='STOP'}
+19:44:46.068 [main] DEBUG by.moiseenko.util.impl.TransportCreatorImpl:23 - Transport{producer='Iz*', model='Planeta 5', action='STOP'}
+19:44:46.071 [main] DEBUG by.moiseenko.util.impl.TransportCreatorImpl:23 - Transport{producer='Honda', model='CBR 600', action='STOP'}
+19:44:46.076 [main] DEBUG by.moiseenko.util.impl.TransportCreatorImpl:23 - Transport{producer='Harley-Davidson', model='Inferno', action='STOP'}
+19:44:46.077 [main] DEBUG by.moiseenko.Runner:148 - Transport{producer='Mazda**', model='6', action='STOP'}
+19:44:46.080 [main] DEBUG by.moiseenko.Runner:148 - Transport{producer='Toyota*', model='Corrola', action='STOP'}
+19:44:46.083 [main] DEBUG by.moiseenko.Runner:148 - Transport{producer='Vaz****', model='Kopeyka', action='STOP'}
+19:44:46.088 [main] DEBUG by.moiseenko.Runner:148 - Transport{producer='Iz*', model='Planeta 5', action='STOP'}
+19:44:46.089 [main] DEBUG by.moiseenko.Runner:148 - Transport{producer='Honda', model='CBR 600', action='STOP'}
+19:44:46.091 [main] DEBUG by.moiseenko.Runner:148 - Transport{producer='Harley-Davidson', model='Inferno', action='STOP'}
+19:44:46.095 [main] DEBUG by.moiseenko.util.impl.DrivableCarImpl:47 - Car MAZDA** 6 drive back.
+19:44:46.097 [main] DEBUG by.moiseenko.util.impl.DrivableCarImpl:47 - Car TOYOTA* Corrola drive back.
+19:44:46.099 [main] DEBUG by.moiseenko.util.impl.DrivableCarImpl:47 - Car VAZ**** Kopeyka drive back.
+19:44:46.100 [main] DEBUG by.moiseenko.util.impl.DrivableBikeImpl:16 - Bike IZ* Planeta 5 drive front.
+19:44:46.100 [main] DEBUG by.moiseenko.util.impl.DrivableBikeImpl:16 - Bike HONDA CBR 600 drive front.
+19:44:46.101 [main] DEBUG by.moiseenko.util.impl.DrivableBikeImpl:16 - Bike HARLEY-DAVIDSON Inferno drive front.
+19:44:46.107 [main] DEBUG by.moiseenko.util.impl.DrivableCarImpl:31 - Car MAZDA** 6 turn left.
+19:44:46.108 [main] DEBUG by.moiseenko.util.impl.DrivableCarImpl:31 - Car TOYOTA* Corrola turn left.
+19:44:46.109 [main] DEBUG by.moiseenko.util.impl.DrivableCarImpl:31 - Car VAZ**** Kopeyka turn left.
+19:44:46.111 [main] DEBUG by.moiseenko.util.impl.DrivableBikeImpl:39 - Bike IZ* Planeta 5 turn right.
+19:44:46.112 [main] DEBUG by.moiseenko.util.impl.DrivableBikeImpl:39 - Bike HONDA CBR 600 turn right.
+19:44:46.113 [main] DEBUG by.moiseenko.util.impl.DrivableBikeImpl:39 - Bike HARLEY-DAVIDSON Inferno turn right.
+19:44:46.113 [main] DEBUG by.moiseenko.Runner:148 - Transport{producer='Mazda**', model='6', action='TURN LEFT'}
+19:44:46.114 [main] DEBUG by.moiseenko.Runner:148 - Transport{producer='Toyota*', model='Corrola', action='TURN LEFT'}
+19:44:46.114 [main] DEBUG by.moiseenko.Runner:148 - Transport{producer='Vaz****', model='Kopeyka', action='TURN LEFT'}
+19:44:46.115 [main] DEBUG by.moiseenko.Runner:148 - Transport{producer='Iz*', model='Planeta 5', action='TURN RIGHT'}
+19:44:46.115 [main] DEBUG by.moiseenko.Runner:148 - Transport{producer='Honda', model='CBR 600', action='TURN RIGHT'}
+19:44:46.116 [main] DEBUG by.moiseenko.Runner:148 - Transport{producer='Harley-Davidson', model='Inferno', action='TURN RIGHT'}
+19:44:46.166 [main] DEBUG by.moiseenko.Runner:60 - Aclass{a=5}Bclass{b=7}  12  35
+19:44:46.171 [main] DEBUG by.moiseenko.Runner:67 - java.lang.IllegalArgumentException: Man too young!!! age = 15
+19:44:46.246 [main] DEBUG by.moiseenko.Runner:83 - java.lang.IllegalArgumentException: Man To old!!! age = 300
+19:44:47.806 [main] DEBUG by.moiseenko.Runner:138 - true
 Transport{producer='Iz*', model='Planeta 5', action='TURN RIGHT'}
-15:19:24.866 [main] DEBUG by.moiseenko.util.impl.NIOTest:112 - true
-15:19:24.893 [main] DEBUG by.moiseenko.util.impl.FileZipper:22 - Start zipping "./src" folder.
-15:19:24.971 [main] DEBUG by.moiseenko.util.impl.FileZipper:63 - Zipping Completed successfully.
+19:44:47.888 [main] DEBUG by.moiseenko.util.impl.NIOTest:112 - true
+19:44:47.920 [main] DEBUG by.moiseenko.util.impl.FileZipper:17 - Start zipping "./src" folder.
+19:44:47.982 [main] DEBUG by.moiseenko.util.impl.FileZipper:56 - Zipping Completed successfully.

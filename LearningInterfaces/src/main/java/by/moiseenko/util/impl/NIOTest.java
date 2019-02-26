@@ -132,8 +132,10 @@ public class NIOTest {
       System.out.println(p3.resolve(homePath.relativize(p2)));
 
       FileZipper.zipDir("./src");
-      FileZipper.unzip("./src.zip");
-      FileZipper.unzip("./src1.zip");
+      FileZipper.unzip("./src.zip", System.getProperty("user.home")+"/src");
+      File makeParentDir = new File("./1/2/3/4/5/6/7/8/9/10");
+      makeParentDir.mkdirs();
+
 
 //      mfu.watchService(exDir);
 
