@@ -3,81 +3,85 @@ package by.moiseenko.util.impl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.*;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.util.Enumeration;
 import java.util.zip.Deflater;
 import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
 import java.util.zip.ZipOutputStream;
 
 public class FileZipper {
   private static final Logger logger = LogManager.getLogger(FileZipper.class);
 
-  public void singleFileZipper(String file2Zip, String outputZipFile) throws IOException {
-    ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(outputZipFile));
-    FileInputStream fis = new FileInputStream(file2Zip);
-    zos.putNextEntry(new ZipEntry(file2Zip));
-    byte[] buffer = new byte[fis.available()];
-    fis.read(buffer);
-    zos.write(buffer);
-    zos.closeEntry();
+  public static void zipDir(String srcDir) throws IOException {
+    logger.debug(String.format("Start zipping \"%s\" folder.", srcDir));
+    Path srcPath = Paths.get(srcDir).toRealPath();
+    String outPutFile = srcDir.concat(".zip");
+    ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(outPutFile));
+
+    Files.walkFileTree(
+        srcPath,
+        new SimpleFileVisitor<>() {
+          @Override
+          public FileVisitResult visitFile(Path file, BasicFileAttributes attrs)
+              throws IOException {
+            String relativePath =
+                Paths.get(System.getProperty("user.dir")).relativize(file).toString();
+            ZipEntry zEntry = new ZipEntry(relativePath);
+            zEntry.setMethod(Deflater.DEFLATED);
+            zos.putNextEntry(zEntry);
+            InputStream is = Files.newInputStream(file, StandardOpenOption.READ);
+            int len;
+            byte[] readBytes = new byte[1024];
+            while ((len = is.read(readBytes)) > 0) {
+              zos.write(readBytes, 0, len);
+            }
+            is.close();
+            zos.closeEntry();
+
+            return FileVisitResult.CONTINUE;
+          }
+
+          @Override
+          public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs)
+              throws IOException {
+            String relativePath =
+                Paths.get(System.getProperty("user.dir")).relativize(dir).toString() + "/";
+            ZipEntry zEntry = new ZipEntry(relativePath);
+           // zEntry.setMethod(Deflater.NO_COMPRESSION);
+            zos.putNextEntry(zEntry);
+            zos.closeEntry();
+            return FileVisitResult.CONTINUE;
+          }
+        });
     zos.close();
+    logger.debug("Zipping Completed successfully.");
   }
 
-  public boolean zipDir(String srcDir, String outputFile) {
-
-    try {
-      Path srcPath = Paths.get(srcDir).toRealPath();
-      FileZipperVisitor fzv = new FileZipperVisitor(srcDir, outputFile);
-      Files.walkFileTree(srcPath, fzv);
-      fzv.getZos().close();
-      return true;
-    } catch (IOException ioe) {
-      logger.error(ioe);
-      return false;
+  public static void unzip(String file) throws IOException {
+    ZipFile zipFile = new ZipFile(file);
+    FileWriter fWriter = new FileWriter(file + ".txt");
+    Enumeration<? extends ZipEntry> zipEntryEnumeration = zipFile.entries();
+    while (zipEntryEnumeration.hasMoreElements()) {
+      ZipEntry zEntry = zipEntryEnumeration.nextElement();
+      fWriter.write(
+          zEntry.getName()
+              + "|"
+              + zEntry.getSize()
+              + "|"
+              + zEntry.getCompressedSize()
+              + "|"
+              + zEntry.getMethod()
+              + "|"
+              + Integer.toHexString((int) zEntry.getCrc())
+              + "\n");
     }
-  }
-
-  private class FileZipperVisitor extends SimpleFileVisitor<Path> {
-    private String srcDir;
-    private String outputFile;
-    private final int BUFFER = 2048;
-    private ZipOutputStream zos;
-
-    public ZipOutputStream getZos() {
-      return zos;
-    }
-
-    FileZipperVisitor(String srcDir, String outputFile) {
-      this.srcDir = srcDir;
-      this.outputFile = outputFile;
-      try {
-        zos = new ZipOutputStream(new FileOutputStream(outputFile));
-        zos.setLevel(Deflater.DEFAULT_STRATEGY);
-      } catch (FileNotFoundException fnf) {
-        logger.error(fnf);
-      }
-    }
-
-    @Override
-    public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs)
-        throws IOException {
-
-      return FileVisitResult.CONTINUE;
-    }
-
-    @Override
-    public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-      String relativePath = Paths.get(System.getProperty("user.dir")).relativize(file).toString();
-      zos.putNextEntry(new ZipEntry(relativePath));
-
-      InputStream is = Files.newInputStream(file, StandardOpenOption.READ);
-      int len;
-      byte[] readBytes = new byte[is.available()];
-      is.read(readBytes);
-      zos.write(readBytes);
-      zos.closeEntry();
-      return FileVisitResult.CONTINUE;
-    }
+    fWriter.flush();
+    fWriter.close();
   }
 }

@@ -131,8 +131,9 @@ public class NIOTest {
       System.out.println(homePath.relativize(p2));
       System.out.println(p3.resolve(homePath.relativize(p2)));
 
-      FileZipper fZipper = new FileZipper();
-      fZipper.zipDir("./src", "./src.zip");
+      FileZipper.zipDir("./src");
+      FileZipper.unzip("./src.zip");
+      FileZipper.unzip("./src1.zip");
 
 //      mfu.watchService(exDir);
 

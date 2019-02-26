@@ -15,7 +15,7 @@ public class Scanner2PrintWriter {
     try (PrintWriter fos =
             new PrintWriter(new BufferedOutputStream(new FileOutputStream(file, true), 1024));
         Scanner cis = new Scanner(System.in)) {
-//      cis.useDelimiter("");
+      //      cis.useDelimiter("");
       String readFromConsole;
       while (cis.hasNext()) {
         readFromConsole = cis.nextLine();
