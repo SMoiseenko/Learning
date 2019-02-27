@@ -277,3 +277,24 @@
 2019-01-25 13:28:21 DEBUG Runner:32 - java.lang.NullPointerException
 2019-01-25 13:28:21 DEBUG Runner:46 - [-1, -1, -1, -1, 0, 0, -1, -1, -1, 0]
 2019-01-25 13:28:21 DEBUG Runner:51 - java.lang.NegativeArraySizeException: -1
+2019-02-27 10:25:54 DEBUG Runner:25 - java.lang.ArithmeticException: / by zero
+2019-02-27 10:25:54 DEBUG Runner:32 - java.lang.NullPointerException
+2019-02-27 10:25:54 DEBUG Runner:46 - [0, -1, 0, -1, 0, 0, 0, -1, -1, 0]
+2019-02-27 10:27:23 DEBUG Runner:25 - java.lang.ArithmeticException: / by zero
+2019-02-27 10:27:23 DEBUG Runner:32 - java.lang.NullPointerException
+2019-02-27 10:27:23 DEBUG Runner:46 - [-1, -1, 0, -1, -1, 0, -1, -1, 0, -1]
+2019-02-27 10:27:23 DEBUG Runner:51 - java.lang.NegativeArraySizeException: -1
+2019-02-27 10:40:56 DEBUG Runner:26 - java.lang.ArithmeticException: / by zero
+2019-02-27 10:40:56 DEBUG Runner:33 - java.lang.NullPointerException
+2019-02-27 10:40:56 DEBUG Runner:47 - [0, 0, -1, -1, -1, -1, 0, 0, 0, 0]
+2019-02-27 10:41:47 DEBUG Runner:26 - java.lang.ArithmeticException: / by zero
+2019-02-27 10:41:47 DEBUG Runner:33 - java.lang.NullPointerException
+2019-02-27 10:41:47 DEBUG Runner:47 - [-1, -1, 0, -1, -1, -1, -1, -1, 0, 0]
+2019-02-27 10:41:47 DEBUG Runner:52 - java.lang.NegativeArraySizeException: -1
+2019-02-27 10:44:34 DEBUG Runner:26 - java.lang.ArithmeticException: / by zero
+2019-02-27 10:44:34 DEBUG Runner:33 - java.lang.NullPointerException
+2019-02-27 10:44:34 DEBUG Runner:47 - [0, 0, -1, -1, 0, 0, -1, 0, -1, 0]
+2019-02-27 10:45:53 DEBUG Runner:26 - java.lang.ArithmeticException: / by zero
+2019-02-27 10:45:53 DEBUG Runner:33 - java.lang.NullPointerException
+2019-02-27 10:45:53 DEBUG Runner:47 - [-1, -1, -1, 0, -1, -1, 0, -1, 0, -1]
+2019-02-27 10:45:53 DEBUG Runner:52 - java.lang.NegativeArraySizeException: -1
