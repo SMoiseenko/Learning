@@ -6481,3 +6481,669 @@ Decimal: 255, Hex: FF, Octal: 377.
 2019-01-21 22:04:47 DEBUG Runner:214 - |  5,450|
 2019-01-21 22:04:47 DEBUG Runner:217 - |5,450  |
 2019-01-21 22:04:47 DEBUG Runner:221 - NOW I KNOW CLASS
+2019-03-01 14:34:16 DEBUG Runner:21 - true
+2019-03-01 14:34:16 DEBUG Runner:22 - false
+2019-03-01 14:34:16 DEBUG Runner:24 - true
+2019-03-01 14:34:16 DEBUG Runner:27 - true
+2019-03-01 14:34:16 DEBUG Runner:31 - 4 Java
+2019-03-01 14:34:16 DEBUG Runner:39 - String is empty
+2019-03-01 14:34:16 DEBUG Runner:45 - String is empty or null
+2019-03-01 14:34:16 DEBUG Runner:51 - Java v.11.0.1
+2019-03-01 14:34:16 DEBUG Runner:52 - Java v.11.0.1
+2019-03-01 14:34:16 DEBUG Runner:57 - false
+2019-03-01 14:34:16 DEBUG Runner:58 - true
+2019-03-01 14:34:16 DEBUG Runner:62 - 32
+2019-03-01 14:34:16 DEBUG Runner:63 - -32
+2019-03-01 14:34:16 DEBUG Runner:64 - 0
+2019-03-01 14:34:16 DEBUG Runner:71 - true
+2019-03-01 14:34:16 DEBUG Runner:72 - false
+2019-03-01 14:34:16 DEBUG Runner:77 - Java is the best programming language !)
+2019-03-01 14:34:16 DEBUG Runner:78 - 0123-
+2019-03-01 14:34:16 DEBUG Runner:81 - 45
+2019-03-01 14:34:16 DEBUG Runner:86 - 6
+2019-03-01 14:34:16 DEBUG Runner:87 - 6
+2019-03-01 14:34:16 DEBUG Runner:88 - -1
+2019-03-01 14:34:16 DEBUG Runner:92 - 0123-JAVA IS THE BEST PROGRAMMING LANGUAGE !)
+2019-03-01 14:34:16 DEBUG Runner:93 - 0123-java is the best programming language !)
+2019-03-01 14:34:16 DEBUG Runner:96 - 0123-JAvA is the best progrAmming lAnguAge !)
+2019-03-01 14:34:16 DEBUG Runner:99 - true
+2019-03-01 14:34:16 DEBUG Runner:102 - 1
+2019-03-01 14:34:16 DEBUG Runner:103 - I
+2019-03-01 14:34:16 DEBUG Runner:113 - asd456dsa
+2019-03-01 14:34:16 DEBUG Runner:113 - 565654sdf
+2019-03-01 14:34:16 DEBUG Runner:118 - fds456565
+2019-03-01 14:34:16 DEBUG Runner:118 - asd654dsa
+2019-03-01 14:34:16 DEBUG Runner:122 - [asd456dsa, 54df, 4, fd, 565654sdf]
+2019-03-01 14:34:16 DEBUG Runner:125 - ru_RU
+2019-03-01 14:34:16 DEBUG Runner:128 - ru_RU
+2019-03-01 14:34:16 DEBUG Runner:129 - RU
+2019-03-01 14:34:16 DEBUG Runner:130 - Россия
+2019-03-01 14:34:16 DEBUG Runner:131 - ru
+2019-03-01 14:34:16 DEBUG Runner:132 - русский
+2019-03-01 14:34:17 DEBUG Runner:139 - 1 мар. 2019 г.
+2019-03-01 14:34:17 DEBUG Runner:140 - Freitag, 1. März 2019
+2019-03-01 14:34:17 DEBUG Runner:141 - 2019年3月1日
+2019-03-01 14:34:17 DEBUG Runner:144 - java.util.GregorianCalendar[time=1551440057106,areFieldsSet=true,areAllFieldsSet=true,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Minsk",offset=10800000,dstSavings=0,useDaylight=false,transitions=69,lastRule=null],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2019,MONTH=2,WEEK_OF_YEAR=9,WEEK_OF_MONTH=0,DAY_OF_MONTH=1,DAY_OF_YEAR=60,DAY_OF_WEEK=6,DAY_OF_WEEK_IN_MONTH=1,AM_PM=1,HOUR=2,HOUR_OF_DAY=14,MINUTE=34,SECOND=17,MILLISECOND=106,ZONE_OFFSET=10800000,DST_OFFSET=0]
+2019-03-01 14:34:17 DEBUG Runner:145 - gregory
+2019-03-01 14:34:17 DEBUG Runner:149 - 26 янв. 2019 г.
+2019-03-01 14:34:17 DEBUG Runner:155 - Total Memory = 15Gb
+2019-03-01 14:34:17 DEBUG Runner:156 - Linux
+2019-03-01 14:34:17 DEBUG Runner:160 - Ключ 1_RU
+2019-03-01 14:34:17 DEBUG Runner:162 - Ключ 1_BY
+2019-03-01 14:34:17 DEBUG Runner:166 - key1
+2019-03-01 14:34:17 DEBUG Runner:166 - key2
+2019-03-01 14:34:17 DEBUG Runner:166 - key3
+2019-03-01 14:34:17 DEBUG Runner:1603 - key1
+2019-03-01 14:34:17 DEBUG Runner:1603 - key2
+2019-03-01 14:34:17 DEBUG Runner:1603 - key3
+2019-03-01 14:34:17 DEBUG Runner:171 - false
+2019-03-01 14:34:17 DEBUG Runner:181 - 2154.16
+2019-03-01 14:34:17 DEBUG Runner:182 - 2 154,16₽
+2019-03-01 14:34:17 DEBUG Runner:183 - 2,154.16$
+2019-03-01 14:34:17 DEBUG Runner:186 - 2154.17€
+2019-03-01 14:34:17 DEBUG Runner:195 - This book is about 
+JAVA 8
+2019-03-01 14:34:17 DEBUG Runner:198 - This book is about 
+JAVA 8
+Decimal: 255, Hex: FF, Octal: 377.
+2019-03-01 14:34:17 DEBUG Runner:201 - Decimal: 255, Hex: FF, Octal: 377.
+2019-03-01 14:34:17 DEBUG Runner:206 - 
+02:34:17 PM 
+14:34:17 
+пт сак 01 14:34:17 MSK 2019 
+пятніца
+2019-03-01 14:34:17 DEBUG Runner:210 - |  5,450|
+2019-03-01 14:34:17 DEBUG Runner:213 - |5,450  |
+2019-03-01 14:34:17 DEBUG Runner:217 - NOW I KNOW CLASS
+2019-03-01 16:02:25 DEBUG Runner:24 - true
+2019-03-01 16:02:25 DEBUG Runner:25 - false
+2019-03-01 16:02:25 DEBUG Runner:27 - true
+2019-03-01 16:02:25 DEBUG Runner:30 - true
+2019-03-01 16:02:25 DEBUG Runner:34 - 4 Java
+2019-03-01 16:02:25 DEBUG Runner:42 - String is empty
+2019-03-01 16:02:25 DEBUG Runner:48 - String is empty or null
+2019-03-01 16:02:25 DEBUG Runner:54 - Java v.11.0.1
+2019-03-01 16:02:25 DEBUG Runner:55 - Java v.11.0.1
+2019-03-01 16:02:25 DEBUG Runner:60 - false
+2019-03-01 16:02:25 DEBUG Runner:61 - true
+2019-03-01 16:02:25 DEBUG Runner:65 - 32
+2019-03-01 16:02:25 DEBUG Runner:66 - -32
+2019-03-01 16:02:25 DEBUG Runner:67 - 0
+2019-03-01 16:02:25 DEBUG Runner:74 - true
+2019-03-01 16:02:25 DEBUG Runner:75 - false
+2019-03-01 16:02:25 DEBUG Runner:80 - Java is the best programming language !)
+2019-03-01 16:02:25 DEBUG Runner:81 - 0123-
+2019-03-01 16:02:25 DEBUG Runner:84 - 45
+2019-03-01 16:02:25 DEBUG Runner:89 - 6
+2019-03-01 16:02:25 DEBUG Runner:90 - 6
+2019-03-01 16:02:25 DEBUG Runner:91 - -1
+2019-03-01 16:02:25 DEBUG Runner:95 - 0123-JAVA IS THE BEST PROGRAMMING LANGUAGE !)
+2019-03-01 16:02:25 DEBUG Runner:96 - 0123-java is the best programming language !)
+2019-03-01 16:02:25 DEBUG Runner:99 - 0123-JAvA is the best progrAmming lAnguAge !)
+2019-03-01 16:02:25 DEBUG Runner:102 - true
+2019-03-01 16:02:25 DEBUG Runner:105 - 1
+2019-03-01 16:02:25 DEBUG Runner:106 - I
+2019-03-01 16:02:25 DEBUG Runner:116 - asd456dsa
+2019-03-01 16:02:25 DEBUG Runner:116 - 565654sdf
+2019-03-01 16:02:25 DEBUG Runner:121 - fds456565
+2019-03-01 16:02:25 DEBUG Runner:121 - asd654dsa
+2019-03-01 16:02:25 DEBUG Runner:125 - [asd456dsa, 54df, 4, fd, 565654sdf]
+2019-03-01 16:02:25 DEBUG Runner:128 - ru_RU
+2019-03-01 16:02:25 DEBUG Runner:131 - ru_RU
+2019-03-01 16:02:25 DEBUG Runner:132 - RU
+2019-03-01 16:02:25 DEBUG Runner:133 - Россия
+2019-03-01 16:02:25 DEBUG Runner:134 - ru
+2019-03-01 16:02:25 DEBUG Runner:135 - русский
+2019-03-01 16:02:25 DEBUG Runner:142 - 1 мар. 2019 г.
+2019-03-01 16:02:25 DEBUG Runner:143 - Freitag, 1. März 2019
+2019-03-01 16:02:25 DEBUG Runner:144 - 2019年3月1日
+2019-03-01 16:02:25 DEBUG Runner:147 - java.util.GregorianCalendar[time=1551445345657,areFieldsSet=true,areAllFieldsSet=true,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Minsk",offset=10800000,dstSavings=0,useDaylight=false,transitions=69,lastRule=null],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2019,MONTH=2,WEEK_OF_YEAR=9,WEEK_OF_MONTH=0,DAY_OF_MONTH=1,DAY_OF_YEAR=60,DAY_OF_WEEK=6,DAY_OF_WEEK_IN_MONTH=1,AM_PM=1,HOUR=4,HOUR_OF_DAY=16,MINUTE=2,SECOND=25,MILLISECOND=657,ZONE_OFFSET=10800000,DST_OFFSET=0]
+2019-03-01 16:02:25 DEBUG Runner:148 - gregory
+2019-03-01 16:02:25 DEBUG Runner:152 - 26 янв. 2019 г.
+2019-03-01 16:02:25 DEBUG Runner:158 - Total Memory = 15Gb
+2019-03-01 16:02:25 DEBUG Runner:159 - Linux
+2019-03-01 16:02:25 DEBUG Runner:163 - Ключ 1_RU
+2019-03-01 16:02:25 DEBUG Runner:165 - Ключ 1_BY
+2019-03-01 16:02:25 DEBUG Runner:169 - key1
+2019-03-01 16:02:25 DEBUG Runner:169 - key2
+2019-03-01 16:02:25 DEBUG Runner:169 - key3
+2019-03-01 16:02:25 DEBUG Runner:1603 - key1
+2019-03-01 16:02:25 DEBUG Runner:1603 - key2
+2019-03-01 16:02:25 DEBUG Runner:1603 - key3
+2019-03-01 16:02:25 DEBUG Runner:174 - false
+2019-03-01 16:02:25 DEBUG Runner:184 - 2154.16
+2019-03-01 16:02:25 DEBUG Runner:185 - 2 154,16₽
+2019-03-01 16:02:25 DEBUG Runner:186 - 2,154.16$
+2019-03-01 16:02:25 DEBUG Runner:189 - 2154.17€
+2019-03-01 16:02:25 DEBUG Runner:198 - This book is about 
+JAVA 8
+2019-03-01 16:02:25 DEBUG Runner:201 - This book is about 
+JAVA 8
+Decimal: 255, Hex: FF, Octal: 377.
+2019-03-01 16:02:25 DEBUG Runner:204 - Decimal: 255, Hex: FF, Octal: 377.
+2019-03-01 16:02:25 DEBUG Runner:209 - 
+04:02:25 PM 
+16:02:25 
+пт сак 01 16:02:25 MSK 2019 
+пятніца
+2019-03-01 16:02:25 DEBUG Runner:213 - |  5,450|
+2019-03-01 16:02:25 DEBUG Runner:216 - |5,450  |
+2019-03-01 16:02:25 DEBUG Runner:220 - NOW I KNOW CLASS
+2019-03-01 16:04:56 DEBUG Runner:24 - true
+2019-03-01 16:04:56 DEBUG Runner:25 - false
+2019-03-01 16:04:56 DEBUG Runner:27 - true
+2019-03-01 16:04:56 DEBUG Runner:30 - true
+2019-03-01 16:04:56 DEBUG Runner:34 - 4 Java
+2019-03-01 16:04:56 DEBUG Runner:42 - String is empty
+2019-03-01 16:04:56 DEBUG Runner:48 - String is empty or null
+2019-03-01 16:04:56 DEBUG Runner:54 - Java v.11.0.1
+2019-03-01 16:04:56 DEBUG Runner:55 - Java v.11.0.1
+2019-03-01 16:04:56 DEBUG Runner:60 - false
+2019-03-01 16:04:56 DEBUG Runner:61 - true
+2019-03-01 16:04:56 DEBUG Runner:65 - 32
+2019-03-01 16:04:56 DEBUG Runner:66 - -32
+2019-03-01 16:04:56 DEBUG Runner:67 - 0
+2019-03-01 16:04:56 DEBUG Runner:74 - true
+2019-03-01 16:04:56 DEBUG Runner:75 - false
+2019-03-01 16:04:56 DEBUG Runner:80 - Java is the best programming language !)
+2019-03-01 16:04:56 DEBUG Runner:81 - 0123-
+2019-03-01 16:04:56 DEBUG Runner:84 - 45
+2019-03-01 16:04:56 DEBUG Runner:89 - 6
+2019-03-01 16:04:56 DEBUG Runner:90 - 6
+2019-03-01 16:04:56 DEBUG Runner:91 - -1
+2019-03-01 16:04:56 DEBUG Runner:95 - 0123-JAVA IS THE BEST PROGRAMMING LANGUAGE !)
+2019-03-01 16:04:56 DEBUG Runner:96 - 0123-java is the best programming language !)
+2019-03-01 16:04:56 DEBUG Runner:99 - 0123-JAvA is the best progrAmming lAnguAge !)
+2019-03-01 16:04:56 DEBUG Runner:102 - true
+2019-03-01 16:04:56 DEBUG Runner:105 - 1
+2019-03-01 16:04:56 DEBUG Runner:106 - I
+2019-03-01 16:04:56 DEBUG Runner:116 - asd456dsa
+2019-03-01 16:04:56 DEBUG Runner:116 - 565654sdf
+2019-03-01 16:04:56 DEBUG Runner:121 - fds456565
+2019-03-01 16:04:56 DEBUG Runner:121 - asd654dsa
+2019-03-01 16:04:56 DEBUG Runner:125 - [asd456dsa, 54df, 4, fd, 565654sdf]
+2019-03-01 16:04:56 DEBUG Runner:128 - ru_RU
+2019-03-01 16:04:56 DEBUG Runner:131 - ru_RU
+2019-03-01 16:04:56 DEBUG Runner:132 - RU
+2019-03-01 16:04:56 DEBUG Runner:133 - Россия
+2019-03-01 16:04:56 DEBUG Runner:134 - ru
+2019-03-01 16:04:56 DEBUG Runner:135 - русский
+2019-03-01 16:04:56 DEBUG Runner:142 - 1 мар. 2019 г.
+2019-03-01 16:04:56 DEBUG Runner:143 - Freitag, 1. März 2019
+2019-03-01 16:04:56 DEBUG Runner:144 - 2019年3月1日
+2019-03-01 16:04:56 DEBUG Runner:147 - java.util.GregorianCalendar[time=1551445496561,areFieldsSet=true,areAllFieldsSet=true,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Minsk",offset=10800000,dstSavings=0,useDaylight=false,transitions=69,lastRule=null],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2019,MONTH=2,WEEK_OF_YEAR=9,WEEK_OF_MONTH=0,DAY_OF_MONTH=1,DAY_OF_YEAR=60,DAY_OF_WEEK=6,DAY_OF_WEEK_IN_MONTH=1,AM_PM=1,HOUR=4,HOUR_OF_DAY=16,MINUTE=4,SECOND=56,MILLISECOND=561,ZONE_OFFSET=10800000,DST_OFFSET=0]
+2019-03-01 16:04:56 DEBUG Runner:148 - gregory
+2019-03-01 16:04:56 DEBUG Runner:152 - 26 янв. 2019 г.
+2019-03-01 16:04:56 DEBUG Runner:158 - Total Memory = 15Gb
+2019-03-01 16:04:56 DEBUG Runner:159 - Linux
+2019-03-01 16:04:56 DEBUG Runner:163 - Ключ 1_RU
+2019-03-01 16:04:56 DEBUG Runner:165 - Ключ 1_BY
+2019-03-01 16:04:56 DEBUG Runner:169 - key1
+2019-03-01 16:04:56 DEBUG Runner:169 - key2
+2019-03-01 16:04:56 DEBUG Runner:169 - key3
+2019-03-01 16:04:56 DEBUG Runner:1603 - key1
+2019-03-01 16:04:56 DEBUG Runner:1603 - key2
+2019-03-01 16:04:56 DEBUG Runner:1603 - key3
+2019-03-01 16:04:56 DEBUG Runner:174 - false
+2019-03-01 16:04:56 DEBUG Runner:184 - 2154.16
+2019-03-01 16:04:56 DEBUG Runner:185 - 2 154,16₽
+2019-03-01 16:04:56 DEBUG Runner:186 - 2,154.16$
+2019-03-01 16:04:56 DEBUG Runner:189 - 2154.17€
+2019-03-01 16:04:56 DEBUG Runner:198 - This book is about 
+JAVA 8
+2019-03-01 16:04:56 DEBUG Runner:201 - This book is about 
+JAVA 8
+Decimal: 255, Hex: FF, Octal: 377.
+2019-03-01 16:04:56 DEBUG Runner:204 - Decimal: 255, Hex: FF, Octal: 377.
+2019-03-01 16:04:56 DEBUG Runner:209 - 
+04:04:56 PM 
+16:04:56 
+пт сак 01 16:04:56 MSK 2019 
+пятніца
+2019-03-01 16:04:56 DEBUG Runner:213 - |  5,450|
+2019-03-01 16:04:56 DEBUG Runner:216 - |5,450  |
+2019-03-01 16:04:56 DEBUG Runner:220 - NOW I KNOW CLASS
+2019-03-01 16:05:27 DEBUG Runner:24 - true
+2019-03-01 16:05:27 DEBUG Runner:25 - false
+2019-03-01 16:05:27 DEBUG Runner:27 - true
+2019-03-01 16:05:27 DEBUG Runner:30 - true
+2019-03-01 16:05:27 DEBUG Runner:34 - 4 Java
+2019-03-01 16:05:27 DEBUG Runner:42 - String is empty
+2019-03-01 16:05:27 DEBUG Runner:48 - String is empty or null
+2019-03-01 16:05:27 DEBUG Runner:54 - Java v.11.0.1
+2019-03-01 16:05:27 DEBUG Runner:55 - Java v.11.0.1
+2019-03-01 16:05:27 DEBUG Runner:60 - false
+2019-03-01 16:05:27 DEBUG Runner:61 - true
+2019-03-01 16:05:27 DEBUG Runner:65 - 32
+2019-03-01 16:05:27 DEBUG Runner:66 - -32
+2019-03-01 16:05:27 DEBUG Runner:67 - 0
+2019-03-01 16:05:27 DEBUG Runner:74 - true
+2019-03-01 16:05:27 DEBUG Runner:75 - false
+2019-03-01 16:05:27 DEBUG Runner:80 - Java is the best programming language !)
+2019-03-01 16:05:27 DEBUG Runner:81 - 0123-
+2019-03-01 16:05:27 DEBUG Runner:84 - 45
+2019-03-01 16:05:27 DEBUG Runner:89 - 6
+2019-03-01 16:05:27 DEBUG Runner:90 - 6
+2019-03-01 16:05:27 DEBUG Runner:91 - -1
+2019-03-01 16:05:27 DEBUG Runner:95 - 0123-JAVA IS THE BEST PROGRAMMING LANGUAGE !)
+2019-03-01 16:05:27 DEBUG Runner:96 - 0123-java is the best programming language !)
+2019-03-01 16:05:27 DEBUG Runner:99 - 0123-JAvA is the best progrAmming lAnguAge !)
+2019-03-01 16:05:27 DEBUG Runner:102 - true
+2019-03-01 16:05:27 DEBUG Runner:105 - 1
+2019-03-01 16:05:27 DEBUG Runner:106 - I
+2019-03-01 16:05:27 DEBUG Runner:116 - asd456dsa
+2019-03-01 16:05:27 DEBUG Runner:116 - 565654sdf
+2019-03-01 16:05:27 DEBUG Runner:121 - fds456565
+2019-03-01 16:05:27 DEBUG Runner:121 - asd654dsa
+2019-03-01 16:05:27 DEBUG Runner:125 - [asd456dsa, 54df, 4, fd, 565654sdf]
+2019-03-01 16:05:27 DEBUG Runner:128 - ru_RU
+2019-03-01 16:05:27 DEBUG Runner:131 - ru_RU
+2019-03-01 16:05:27 DEBUG Runner:132 - RU
+2019-03-01 16:05:27 DEBUG Runner:133 - Россия
+2019-03-01 16:05:27 DEBUG Runner:134 - ru
+2019-03-01 16:05:27 DEBUG Runner:135 - русский
+2019-03-01 16:05:28 DEBUG Runner:142 - 1 мар. 2019 г.
+2019-03-01 16:05:28 DEBUG Runner:143 - Freitag, 1. März 2019
+2019-03-01 16:05:28 DEBUG Runner:144 - 2019年3月1日
+2019-03-01 16:05:28 DEBUG Runner:147 - java.util.GregorianCalendar[time=1551445528064,areFieldsSet=true,areAllFieldsSet=true,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Minsk",offset=10800000,dstSavings=0,useDaylight=false,transitions=69,lastRule=null],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2019,MONTH=2,WEEK_OF_YEAR=9,WEEK_OF_MONTH=0,DAY_OF_MONTH=1,DAY_OF_YEAR=60,DAY_OF_WEEK=6,DAY_OF_WEEK_IN_MONTH=1,AM_PM=1,HOUR=4,HOUR_OF_DAY=16,MINUTE=5,SECOND=28,MILLISECOND=64,ZONE_OFFSET=10800000,DST_OFFSET=0]
+2019-03-01 16:05:28 DEBUG Runner:148 - gregory
+2019-03-01 16:05:28 DEBUG Runner:152 - 26 янв. 2019 г.
+2019-03-01 16:05:28 DEBUG Runner:158 - Total Memory = 15Gb
+2019-03-01 16:05:28 DEBUG Runner:159 - Linux
+2019-03-01 16:05:28 DEBUG Runner:163 - Ключ 1_RU
+2019-03-01 16:05:28 DEBUG Runner:165 - Ключ 1_BY
+2019-03-01 16:05:28 DEBUG Runner:169 - key1
+2019-03-01 16:05:28 DEBUG Runner:169 - key2
+2019-03-01 16:05:28 DEBUG Runner:169 - key3
+2019-03-01 16:05:28 DEBUG Runner:1603 - key1
+2019-03-01 16:05:28 DEBUG Runner:1603 - key2
+2019-03-01 16:05:28 DEBUG Runner:1603 - key3
+2019-03-01 16:05:28 DEBUG Runner:174 - false
+2019-03-01 16:05:28 DEBUG Runner:184 - 2154.16
+2019-03-01 16:05:28 DEBUG Runner:185 - 2 154,16₽
+2019-03-01 16:05:28 DEBUG Runner:186 - 2,154.16$
+2019-03-01 16:05:28 DEBUG Runner:189 - 2154.17€
+2019-03-01 16:05:28 DEBUG Runner:198 - This book is about 
+JAVA 8
+2019-03-01 16:05:28 DEBUG Runner:201 - This book is about 
+JAVA 8
+Decimal: 255, Hex: FF, Octal: 377.
+2019-03-01 16:05:28 DEBUG Runner:204 - Decimal: 255, Hex: FF, Octal: 377.
+2019-03-01 16:05:28 DEBUG Runner:209 - 
+04:05:28 PM 
+16:05:28 
+пт сак 01 16:05:28 MSK 2019 
+пятніца
+2019-03-01 16:05:28 DEBUG Runner:213 - |  5,450|
+2019-03-01 16:05:28 DEBUG Runner:216 - |5,450  |
+2019-03-01 16:05:28 DEBUG Runner:220 - NOW I KNOW CLASS
+2019-03-01 16:22:22 DEBUG Runner:24 - true
+2019-03-01 16:22:22 DEBUG Runner:25 - false
+2019-03-01 16:22:22 DEBUG Runner:27 - true
+2019-03-01 16:22:22 DEBUG Runner:30 - true
+2019-03-01 16:22:22 DEBUG Runner:34 - 4 Java
+2019-03-01 16:22:22 DEBUG Runner:42 - String is empty
+2019-03-01 16:22:22 DEBUG Runner:48 - String is empty or null
+2019-03-01 16:22:22 DEBUG Runner:54 - Java v.11.0.1
+2019-03-01 16:22:22 DEBUG Runner:55 - Java v.11.0.1
+2019-03-01 16:22:22 DEBUG Runner:60 - false
+2019-03-01 16:22:22 DEBUG Runner:61 - true
+2019-03-01 16:22:22 DEBUG Runner:65 - 32
+2019-03-01 16:22:22 DEBUG Runner:66 - -32
+2019-03-01 16:22:22 DEBUG Runner:67 - 0
+2019-03-01 16:22:22 DEBUG Runner:74 - true
+2019-03-01 16:22:22 DEBUG Runner:75 - false
+2019-03-01 16:22:22 DEBUG Runner:80 - Java is the best programming language !)
+2019-03-01 16:22:22 DEBUG Runner:81 - 0123-
+2019-03-01 16:22:22 DEBUG Runner:84 - 45
+2019-03-01 16:22:22 DEBUG Runner:89 - 6
+2019-03-01 16:22:22 DEBUG Runner:90 - 6
+2019-03-01 16:22:22 DEBUG Runner:91 - -1
+2019-03-01 16:22:22 DEBUG Runner:95 - 0123-JAVA IS THE BEST PROGRAMMING LANGUAGE !)
+2019-03-01 16:22:22 DEBUG Runner:96 - 0123-java is the best programming language !)
+2019-03-01 16:22:22 DEBUG Runner:99 - 0123-JAvA is the best progrAmming lAnguAge !)
+2019-03-01 16:22:22 DEBUG Runner:102 - true
+2019-03-01 16:22:22 DEBUG Runner:105 - 1
+2019-03-01 16:22:22 DEBUG Runner:106 - I
+2019-03-01 16:22:22 DEBUG Runner:116 - asd456dsa
+2019-03-01 16:22:22 DEBUG Runner:116 - 565654sdf
+2019-03-01 16:22:22 DEBUG Runner:121 - fds456565
+2019-03-01 16:22:22 DEBUG Runner:121 - asd654dsa
+2019-03-01 16:22:22 DEBUG Runner:125 - [asd456dsa, 54df, 4, fd, 565654sdf]
+2019-03-01 16:22:22 DEBUG Runner:128 - ru_RU
+2019-03-01 16:22:22 DEBUG Runner:131 - ru_RU
+2019-03-01 16:22:22 DEBUG Runner:132 - RU
+2019-03-01 16:22:22 DEBUG Runner:133 - Россия
+2019-03-01 16:22:22 DEBUG Runner:134 - ru
+2019-03-01 16:22:22 DEBUG Runner:135 - русский
+2019-03-01 16:22:22 DEBUG Runner:142 - 1 мар. 2019 г.
+2019-03-01 16:22:22 DEBUG Runner:143 - Freitag, 1. März 2019
+2019-03-01 16:22:22 DEBUG Runner:144 - 2019年3月1日
+2019-03-01 16:22:22 DEBUG Runner:147 - java.util.GregorianCalendar[time=1551446542181,areFieldsSet=true,areAllFieldsSet=true,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Minsk",offset=10800000,dstSavings=0,useDaylight=false,transitions=69,lastRule=null],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2019,MONTH=2,WEEK_OF_YEAR=9,WEEK_OF_MONTH=0,DAY_OF_MONTH=1,DAY_OF_YEAR=60,DAY_OF_WEEK=6,DAY_OF_WEEK_IN_MONTH=1,AM_PM=1,HOUR=4,HOUR_OF_DAY=16,MINUTE=22,SECOND=22,MILLISECOND=181,ZONE_OFFSET=10800000,DST_OFFSET=0]
+2019-03-01 16:22:22 DEBUG Runner:148 - gregory
+2019-03-01 16:22:22 DEBUG Runner:152 - 26 янв. 2019 г.
+2019-03-01 16:22:22 DEBUG Runner:158 - Total Memory = 15Gb
+2019-03-01 16:22:22 DEBUG Runner:159 - Linux
+2019-03-01 16:22:22 DEBUG Runner:163 - Ключ 1_RU
+2019-03-01 16:22:22 DEBUG Runner:165 - Ключ 1_BY
+2019-03-01 16:22:22 DEBUG Runner:169 - key1
+2019-03-01 16:22:22 DEBUG Runner:169 - key2
+2019-03-01 16:22:22 DEBUG Runner:169 - key3
+2019-03-01 16:22:22 DEBUG Runner:1603 - key1
+2019-03-01 16:22:22 DEBUG Runner:1603 - key2
+2019-03-01 16:22:22 DEBUG Runner:1603 - key3
+2019-03-01 16:22:22 DEBUG Runner:174 - false
+2019-03-01 16:22:22 DEBUG Runner:184 - 2154.16
+2019-03-01 16:22:22 DEBUG Runner:185 - 2 154,16₽
+2019-03-01 16:22:22 DEBUG Runner:186 - 2,154.16$
+2019-03-01 16:22:22 DEBUG Runner:189 - 2154.17€
+2019-03-01 16:22:22 DEBUG Runner:198 - This book is about 
+JAVA 8
+2019-03-01 16:22:22 DEBUG Runner:201 - This book is about 
+JAVA 8
+Decimal: 255, Hex: FF, Octal: 377.
+2019-03-01 16:22:22 DEBUG Runner:204 - Decimal: 255, Hex: FF, Octal: 377.
+2019-03-01 16:22:22 DEBUG Runner:209 - 
+04:22:22 PM 
+16:22:22 
+пт сак 01 16:22:22 MSK 2019 
+пятніца
+2019-03-01 16:22:22 DEBUG Runner:213 - |  5,450|
+2019-03-01 16:22:22 DEBUG Runner:216 - |5,450  |
+2019-03-01 16:22:22 DEBUG Runner:220 - NOW I KNOW CLASS
+2019-03-01 16:23:01 DEBUG Runner:24 - true
+2019-03-01 16:23:01 DEBUG Runner:25 - false
+2019-03-01 16:23:01 DEBUG Runner:27 - true
+2019-03-01 16:23:01 DEBUG Runner:30 - true
+2019-03-01 16:23:01 DEBUG Runner:34 - 4 Java
+2019-03-01 16:23:01 DEBUG Runner:42 - String is empty
+2019-03-01 16:23:01 DEBUG Runner:48 - String is empty or null
+2019-03-01 16:23:01 DEBUG Runner:54 - Java v.11.0.1
+2019-03-01 16:23:01 DEBUG Runner:55 - Java v.11.0.1
+2019-03-01 16:23:01 DEBUG Runner:60 - false
+2019-03-01 16:23:01 DEBUG Runner:61 - true
+2019-03-01 16:23:01 DEBUG Runner:65 - 32
+2019-03-01 16:23:01 DEBUG Runner:66 - -32
+2019-03-01 16:23:01 DEBUG Runner:67 - 0
+2019-03-01 16:23:01 DEBUG Runner:74 - true
+2019-03-01 16:23:01 DEBUG Runner:75 - false
+2019-03-01 16:23:01 DEBUG Runner:80 - Java is the best programming language !)
+2019-03-01 16:23:01 DEBUG Runner:81 - 0123-
+2019-03-01 16:23:01 DEBUG Runner:84 - 45
+2019-03-01 16:23:01 DEBUG Runner:89 - 6
+2019-03-01 16:23:01 DEBUG Runner:90 - 6
+2019-03-01 16:23:01 DEBUG Runner:91 - -1
+2019-03-01 16:23:01 DEBUG Runner:95 - 0123-JAVA IS THE BEST PROGRAMMING LANGUAGE !)
+2019-03-01 16:23:01 DEBUG Runner:96 - 0123-java is the best programming language !)
+2019-03-01 16:23:01 DEBUG Runner:99 - 0123-JAvA is the best progrAmming lAnguAge !)
+2019-03-01 16:23:01 DEBUG Runner:102 - true
+2019-03-01 16:23:01 DEBUG Runner:105 - 1
+2019-03-01 16:23:01 DEBUG Runner:106 - I
+2019-03-01 16:23:01 DEBUG Runner:116 - asd456dsa
+2019-03-01 16:23:01 DEBUG Runner:116 - 565654sdf
+2019-03-01 16:23:01 DEBUG Runner:121 - fds456565
+2019-03-01 16:23:01 DEBUG Runner:121 - asd654dsa
+2019-03-01 16:23:01 DEBUG Runner:125 - [asd456dsa, 54df, 4, fd, 565654sdf]
+2019-03-01 16:23:01 DEBUG Runner:128 - ru_RU
+2019-03-01 16:23:01 DEBUG Runner:131 - ru_RU
+2019-03-01 16:23:01 DEBUG Runner:132 - RU
+2019-03-01 16:23:01 DEBUG Runner:133 - Россия
+2019-03-01 16:23:01 DEBUG Runner:134 - ru
+2019-03-01 16:23:01 DEBUG Runner:135 - русский
+2019-03-01 16:23:01 DEBUG Runner:142 - 1 мар. 2019 г.
+2019-03-01 16:23:01 DEBUG Runner:143 - Freitag, 1. März 2019
+2019-03-01 16:23:01 DEBUG Runner:144 - 2019年3月1日
+2019-03-01 16:23:01 DEBUG Runner:147 - java.util.GregorianCalendar[time=1551446581593,areFieldsSet=true,areAllFieldsSet=true,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Minsk",offset=10800000,dstSavings=0,useDaylight=false,transitions=69,lastRule=null],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2019,MONTH=2,WEEK_OF_YEAR=9,WEEK_OF_MONTH=0,DAY_OF_MONTH=1,DAY_OF_YEAR=60,DAY_OF_WEEK=6,DAY_OF_WEEK_IN_MONTH=1,AM_PM=1,HOUR=4,HOUR_OF_DAY=16,MINUTE=23,SECOND=1,MILLISECOND=593,ZONE_OFFSET=10800000,DST_OFFSET=0]
+2019-03-01 16:23:01 DEBUG Runner:148 - gregory
+2019-03-01 16:23:01 DEBUG Runner:152 - 26 янв. 2019 г.
+2019-03-01 16:23:01 DEBUG Runner:158 - Total Memory = 15Gb
+2019-03-01 16:23:01 DEBUG Runner:159 - Linux
+2019-03-01 16:23:01 DEBUG Runner:163 - Ключ 1_RU
+2019-03-01 16:23:01 DEBUG Runner:165 - Ключ 1_BY
+2019-03-01 16:23:01 DEBUG Runner:169 - key1
+2019-03-01 16:23:01 DEBUG Runner:169 - key2
+2019-03-01 16:23:01 DEBUG Runner:169 - key3
+2019-03-01 16:23:01 DEBUG Runner:1603 - key1
+2019-03-01 16:23:01 DEBUG Runner:1603 - key2
+2019-03-01 16:23:01 DEBUG Runner:1603 - key3
+2019-03-01 16:23:01 DEBUG Runner:174 - false
+2019-03-01 16:23:01 DEBUG Runner:184 - 2154.16
+2019-03-01 16:23:01 DEBUG Runner:185 - 2 154,16₽
+2019-03-01 16:23:01 DEBUG Runner:186 - 2,154.16$
+2019-03-01 16:23:01 DEBUG Runner:189 - 2154.17€
+2019-03-01 16:23:01 DEBUG Runner:198 - This book is about 
+JAVA 8
+2019-03-01 16:23:01 DEBUG Runner:201 - This book is about 
+JAVA 8
+Decimal: 255, Hex: FF, Octal: 377.
+2019-03-01 16:23:01 DEBUG Runner:204 - Decimal: 255, Hex: FF, Octal: 377.
+2019-03-01 16:23:01 DEBUG Runner:209 - 
+04:23:01 PM 
+16:23:01 
+пт сак 01 16:23:01 MSK 2019 
+пятніца
+2019-03-01 16:23:01 DEBUG Runner:213 - |  5,450|
+2019-03-01 16:23:01 DEBUG Runner:216 - |5,450  |
+2019-03-01 16:23:01 DEBUG Runner:220 - NOW I KNOW CLASS
+2019-03-01 16:26:54 DEBUG Runner:24 - true
+2019-03-01 16:26:54 DEBUG Runner:25 - false
+2019-03-01 16:26:54 DEBUG Runner:27 - true
+2019-03-01 16:26:54 DEBUG Runner:30 - true
+2019-03-01 16:26:54 DEBUG Runner:34 - 4 Java
+2019-03-01 16:26:54 DEBUG Runner:42 - String is empty
+2019-03-01 16:26:54 DEBUG Runner:48 - String is empty or null
+2019-03-01 16:26:54 DEBUG Runner:54 - Java v.11.0.1
+2019-03-01 16:26:54 DEBUG Runner:55 - Java v.11.0.1
+2019-03-01 16:26:54 DEBUG Runner:60 - false
+2019-03-01 16:26:54 DEBUG Runner:61 - true
+2019-03-01 16:26:54 DEBUG Runner:65 - 32
+2019-03-01 16:26:54 DEBUG Runner:66 - -32
+2019-03-01 16:26:54 DEBUG Runner:67 - 0
+2019-03-01 16:26:54 DEBUG Runner:74 - true
+2019-03-01 16:26:54 DEBUG Runner:75 - false
+2019-03-01 16:26:54 DEBUG Runner:80 - Java is the best programming language !)
+2019-03-01 16:26:54 DEBUG Runner:81 - 0123-
+2019-03-01 16:26:54 DEBUG Runner:84 - 45
+2019-03-01 16:26:54 DEBUG Runner:89 - 6
+2019-03-01 16:26:54 DEBUG Runner:90 - 6
+2019-03-01 16:26:54 DEBUG Runner:91 - -1
+2019-03-01 16:26:54 DEBUG Runner:95 - 0123-JAVA IS THE BEST PROGRAMMING LANGUAGE !)
+2019-03-01 16:26:54 DEBUG Runner:96 - 0123-java is the best programming language !)
+2019-03-01 16:26:54 DEBUG Runner:99 - 0123-JAvA is the best progrAmming lAnguAge !)
+2019-03-01 16:26:54 DEBUG Runner:102 - true
+2019-03-01 16:26:54 DEBUG Runner:105 - 1
+2019-03-01 16:26:54 DEBUG Runner:106 - I
+2019-03-01 16:26:54 DEBUG Runner:116 - asd456dsa
+2019-03-01 16:26:54 DEBUG Runner:116 - 565654sdf
+2019-03-01 16:26:54 DEBUG Runner:121 - fds456565
+2019-03-01 16:26:54 DEBUG Runner:121 - asd654dsa
+2019-03-01 16:26:54 DEBUG Runner:125 - [asd456dsa, 54df, 4, fd, 565654sdf]
+2019-03-01 16:26:54 DEBUG Runner:128 - ru_RU
+2019-03-01 16:26:54 DEBUG Runner:131 - ru_RU
+2019-03-01 16:26:54 DEBUG Runner:132 - RU
+2019-03-01 16:26:54 DEBUG Runner:133 - Россия
+2019-03-01 16:26:54 DEBUG Runner:134 - ru
+2019-03-01 16:26:54 DEBUG Runner:135 - русский
+2019-03-01 16:26:54 DEBUG Runner:142 - 1 мар. 2019 г.
+2019-03-01 16:26:54 DEBUG Runner:143 - Freitag, 1. März 2019
+2019-03-01 16:26:54 DEBUG Runner:144 - 2019年3月1日
+2019-03-01 16:26:54 DEBUG Runner:147 - java.util.GregorianCalendar[time=1551446814769,areFieldsSet=true,areAllFieldsSet=true,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Minsk",offset=10800000,dstSavings=0,useDaylight=false,transitions=69,lastRule=null],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2019,MONTH=2,WEEK_OF_YEAR=9,WEEK_OF_MONTH=0,DAY_OF_MONTH=1,DAY_OF_YEAR=60,DAY_OF_WEEK=6,DAY_OF_WEEK_IN_MONTH=1,AM_PM=1,HOUR=4,HOUR_OF_DAY=16,MINUTE=26,SECOND=54,MILLISECOND=769,ZONE_OFFSET=10800000,DST_OFFSET=0]
+2019-03-01 16:26:54 DEBUG Runner:148 - gregory
+2019-03-01 16:26:54 DEBUG Runner:152 - 26 янв. 2019 г.
+2019-03-01 16:26:54 DEBUG Runner:158 - Total Memory = 15Gb
+2019-03-01 16:26:54 DEBUG Runner:159 - Linux
+2019-03-01 16:26:54 DEBUG Runner:163 - Ключ 1_RU
+2019-03-01 16:26:54 DEBUG Runner:165 - Ключ 1_BY
+2019-03-01 16:26:54 DEBUG Runner:169 - key1
+2019-03-01 16:26:54 DEBUG Runner:169 - key2
+2019-03-01 16:26:54 DEBUG Runner:169 - key3
+2019-03-01 16:26:54 DEBUG Runner:1603 - key1
+2019-03-01 16:26:54 DEBUG Runner:1603 - key2
+2019-03-01 16:26:54 DEBUG Runner:1603 - key3
+2019-03-01 16:26:54 DEBUG Runner:174 - false
+2019-03-01 16:26:54 DEBUG Runner:184 - 2154.16
+2019-03-01 16:26:54 DEBUG Runner:185 - 2 154,16₽
+2019-03-01 16:26:54 DEBUG Runner:186 - 2,154.16$
+2019-03-01 16:26:54 DEBUG Runner:189 - 2154.17€
+2019-03-01 16:26:54 DEBUG Runner:198 - This book is about 
+JAVA 8
+2019-03-01 16:26:54 DEBUG Runner:201 - This book is about 
+JAVA 8
+Decimal: 255, Hex: FF, Octal: 377.
+2019-03-01 16:26:54 DEBUG Runner:204 - Decimal: 255, Hex: FF, Octal: 377.
+2019-03-01 16:26:54 DEBUG Runner:209 - 
+04:26:54 PM 
+16:26:54 
+пт сак 01 16:26:54 MSK 2019 
+пятніца
+2019-03-01 16:26:54 DEBUG Runner:213 - |  5,450|
+2019-03-01 16:26:54 DEBUG Runner:216 - |5,450  |
+2019-03-01 16:26:54 DEBUG Runner:220 - NOW I KNOW CLASS
+2019-03-01 16:27:27 DEBUG Runner:24 - true
+2019-03-01 16:27:27 DEBUG Runner:25 - false
+2019-03-01 16:27:27 DEBUG Runner:27 - true
+2019-03-01 16:27:27 DEBUG Runner:30 - true
+2019-03-01 16:27:27 DEBUG Runner:34 - 4 Java
+2019-03-01 16:27:27 DEBUG Runner:42 - String is empty
+2019-03-01 16:27:27 DEBUG Runner:48 - String is empty or null
+2019-03-01 16:27:27 DEBUG Runner:54 - Java v.11.0.1
+2019-03-01 16:27:27 DEBUG Runner:55 - Java v.11.0.1
+2019-03-01 16:27:27 DEBUG Runner:60 - false
+2019-03-01 16:27:27 DEBUG Runner:61 - true
+2019-03-01 16:27:27 DEBUG Runner:65 - 32
+2019-03-01 16:27:27 DEBUG Runner:66 - -32
+2019-03-01 16:27:27 DEBUG Runner:67 - 0
+2019-03-01 16:27:27 DEBUG Runner:74 - true
+2019-03-01 16:27:27 DEBUG Runner:75 - false
+2019-03-01 16:27:27 DEBUG Runner:80 - Java is the best programming language !)
+2019-03-01 16:27:27 DEBUG Runner:81 - 0123-
+2019-03-01 16:27:27 DEBUG Runner:84 - 45
+2019-03-01 16:27:27 DEBUG Runner:89 - 6
+2019-03-01 16:27:27 DEBUG Runner:90 - 6
+2019-03-01 16:27:27 DEBUG Runner:91 - -1
+2019-03-01 16:27:27 DEBUG Runner:95 - 0123-JAVA IS THE BEST PROGRAMMING LANGUAGE !)
+2019-03-01 16:27:27 DEBUG Runner:96 - 0123-java is the best programming language !)
+2019-03-01 16:27:27 DEBUG Runner:99 - 0123-JAvA is the best progrAmming lAnguAge !)
+2019-03-01 16:27:27 DEBUG Runner:102 - true
+2019-03-01 16:27:27 DEBUG Runner:105 - 1
+2019-03-01 16:27:27 DEBUG Runner:106 - I
+2019-03-01 16:27:27 DEBUG Runner:116 - asd456dsa
+2019-03-01 16:27:27 DEBUG Runner:116 - 565654sdf
+2019-03-01 16:27:27 DEBUG Runner:121 - fds456565
+2019-03-01 16:27:27 DEBUG Runner:121 - asd654dsa
+2019-03-01 16:27:27 DEBUG Runner:125 - [asd456dsa, 54df, 4, fd, 565654sdf]
+2019-03-01 16:27:27 DEBUG Runner:128 - ru_RU
+2019-03-01 16:27:27 DEBUG Runner:131 - ru_RU
+2019-03-01 16:27:27 DEBUG Runner:132 - RU
+2019-03-01 16:27:27 DEBUG Runner:133 - Россия
+2019-03-01 16:27:27 DEBUG Runner:134 - ru
+2019-03-01 16:27:27 DEBUG Runner:135 - русский
+2019-03-01 16:27:27 DEBUG Runner:142 - 1 мар. 2019 г.
+2019-03-01 16:27:27 DEBUG Runner:143 - Freitag, 1. März 2019
+2019-03-01 16:27:27 DEBUG Runner:144 - 2019年3月1日
+2019-03-01 16:27:27 DEBUG Runner:147 - java.util.GregorianCalendar[time=1551446847643,areFieldsSet=true,areAllFieldsSet=true,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Minsk",offset=10800000,dstSavings=0,useDaylight=false,transitions=69,lastRule=null],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2019,MONTH=2,WEEK_OF_YEAR=9,WEEK_OF_MONTH=0,DAY_OF_MONTH=1,DAY_OF_YEAR=60,DAY_OF_WEEK=6,DAY_OF_WEEK_IN_MONTH=1,AM_PM=1,HOUR=4,HOUR_OF_DAY=16,MINUTE=27,SECOND=27,MILLISECOND=643,ZONE_OFFSET=10800000,DST_OFFSET=0]
+2019-03-01 16:27:27 DEBUG Runner:148 - gregory
+2019-03-01 16:27:27 DEBUG Runner:152 - 26 янв. 2019 г.
+2019-03-01 16:27:27 DEBUG Runner:158 - Total Memory = 15Gb
+2019-03-01 16:27:27 DEBUG Runner:159 - Linux
+2019-03-01 16:27:27 DEBUG Runner:163 - Ключ 1_RU
+2019-03-01 16:27:27 DEBUG Runner:165 - Ключ 1_BY
+2019-03-01 16:27:27 DEBUG Runner:169 - key1
+2019-03-01 16:27:27 DEBUG Runner:169 - key2
+2019-03-01 16:27:27 DEBUG Runner:169 - key3
+2019-03-01 16:27:27 DEBUG Runner:1603 - key1
+2019-03-01 16:27:27 DEBUG Runner:1603 - key2
+2019-03-01 16:27:27 DEBUG Runner:1603 - key3
+2019-03-01 16:27:27 DEBUG Runner:174 - false
+2019-03-01 16:27:27 DEBUG Runner:184 - 2154.16
+2019-03-01 16:27:27 DEBUG Runner:185 - 2 154,16₽
+2019-03-01 16:27:27 DEBUG Runner:186 - 2,154.16$
+2019-03-01 16:27:27 DEBUG Runner:189 - 2154.17€
+2019-03-01 16:27:27 DEBUG Runner:198 - This book is about 
+JAVA 8
+2019-03-01 16:27:27 DEBUG Runner:201 - This book is about 
+JAVA 8
+Decimal: 255, Hex: FF, Octal: 377.
+2019-03-01 16:27:27 DEBUG Runner:204 - Decimal: 255, Hex: FF, Octal: 377.
+2019-03-01 16:27:27 DEBUG Runner:209 - 
+04:27:27 PM 
+16:27:27 
+пт сак 01 16:27:27 MSK 2019 
+пятніца
+2019-03-01 16:27:27 DEBUG Runner:213 - |  5,450|
+2019-03-01 16:27:27 DEBUG Runner:216 - |5,450  |
+2019-03-01 16:27:27 DEBUG Runner:220 - NOW I KNOW CLASS
+2019-03-01 16:27:41 DEBUG Runner:24 - true
+2019-03-01 16:27:41 DEBUG Runner:25 - false
+2019-03-01 16:27:41 DEBUG Runner:27 - true
+2019-03-01 16:27:41 DEBUG Runner:30 - true
+2019-03-01 16:27:41 DEBUG Runner:34 - 4 Java
+2019-03-01 16:27:41 DEBUG Runner:42 - String is empty
+2019-03-01 16:27:41 DEBUG Runner:48 - String is empty or null
+2019-03-01 16:27:41 DEBUG Runner:54 - Java v.11.0.1
+2019-03-01 16:27:41 DEBUG Runner:55 - Java v.11.0.1
+2019-03-01 16:27:41 DEBUG Runner:60 - false
+2019-03-01 16:27:41 DEBUG Runner:61 - true
+2019-03-01 16:27:41 DEBUG Runner:65 - 32
+2019-03-01 16:27:41 DEBUG Runner:66 - -32
+2019-03-01 16:27:41 DEBUG Runner:67 - 0
+2019-03-01 16:27:41 DEBUG Runner:74 - true
+2019-03-01 16:27:41 DEBUG Runner:75 - false
+2019-03-01 16:27:41 DEBUG Runner:80 - Java is the best programming language !)
+2019-03-01 16:27:41 DEBUG Runner:81 - 0123-
+2019-03-01 16:27:41 DEBUG Runner:84 - 45
+2019-03-01 16:27:41 DEBUG Runner:89 - 6
+2019-03-01 16:27:41 DEBUG Runner:90 - 6
+2019-03-01 16:27:41 DEBUG Runner:91 - -1
+2019-03-01 16:27:41 DEBUG Runner:95 - 0123-JAVA IS THE BEST PROGRAMMING LANGUAGE !)
+2019-03-01 16:27:41 DEBUG Runner:96 - 0123-java is the best programming language !)
+2019-03-01 16:27:41 DEBUG Runner:99 - 0123-JAvA is the best progrAmming lAnguAge !)
+2019-03-01 16:27:41 DEBUG Runner:102 - true
+2019-03-01 16:27:41 DEBUG Runner:105 - 1
+2019-03-01 16:27:41 DEBUG Runner:106 - I
+2019-03-01 16:27:41 DEBUG Runner:116 - asd456dsa
+2019-03-01 16:27:41 DEBUG Runner:116 - 565654sdf
+2019-03-01 16:27:41 DEBUG Runner:121 - fds456565
+2019-03-01 16:27:41 DEBUG Runner:121 - asd654dsa
+2019-03-01 16:27:41 DEBUG Runner:125 - [asd456dsa, 54df, 4, fd, 565654sdf]
+2019-03-01 16:27:41 DEBUG Runner:128 - ru_RU
+2019-03-01 16:27:41 DEBUG Runner:131 - ru_RU
+2019-03-01 16:27:41 DEBUG Runner:132 - RU
+2019-03-01 16:27:41 DEBUG Runner:133 - Россия
+2019-03-01 16:27:41 DEBUG Runner:134 - ru
+2019-03-01 16:27:41 DEBUG Runner:135 - русский
+2019-03-01 16:27:41 DEBUG Runner:142 - 1 мар. 2019 г.
+2019-03-01 16:27:41 DEBUG Runner:143 - Freitag, 1. März 2019
+2019-03-01 16:27:41 DEBUG Runner:144 - 2019年3月1日
+2019-03-01 16:27:41 DEBUG Runner:147 - java.util.GregorianCalendar[time=1551446861986,areFieldsSet=true,areAllFieldsSet=true,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Minsk",offset=10800000,dstSavings=0,useDaylight=false,transitions=69,lastRule=null],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2019,MONTH=2,WEEK_OF_YEAR=9,WEEK_OF_MONTH=0,DAY_OF_MONTH=1,DAY_OF_YEAR=60,DAY_OF_WEEK=6,DAY_OF_WEEK_IN_MONTH=1,AM_PM=1,HOUR=4,HOUR_OF_DAY=16,MINUTE=27,SECOND=41,MILLISECOND=986,ZONE_OFFSET=10800000,DST_OFFSET=0]
+2019-03-01 16:27:41 DEBUG Runner:148 - gregory
+2019-03-01 16:27:41 DEBUG Runner:152 - 26 янв. 2019 г.
+2019-03-01 16:27:42 DEBUG Runner:158 - Total Memory = 15Gb
+2019-03-01 16:27:42 DEBUG Runner:159 - Linux
+2019-03-01 16:27:42 DEBUG Runner:163 - Ключ 1_RU
+2019-03-01 16:27:42 DEBUG Runner:165 - Ключ 1_BY
+2019-03-01 16:27:42 DEBUG Runner:169 - key1
+2019-03-01 16:27:42 DEBUG Runner:169 - key2
+2019-03-01 16:27:42 DEBUG Runner:169 - key3
+2019-03-01 16:27:42 DEBUG Runner:1603 - key1
+2019-03-01 16:27:42 DEBUG Runner:1603 - key2
+2019-03-01 16:27:42 DEBUG Runner:1603 - key3
+2019-03-01 16:27:42 DEBUG Runner:174 - false
+2019-03-01 16:27:42 DEBUG Runner:184 - 2154.16
+2019-03-01 16:27:42 DEBUG Runner:185 - 2 154,16₽
+2019-03-01 16:27:42 DEBUG Runner:186 - 2,154.16$
+2019-03-01 16:27:42 DEBUG Runner:189 - 2154.17€
+2019-03-01 16:27:42 DEBUG Runner:198 - This book is about 
+JAVA 8
+2019-03-01 16:27:42 DEBUG Runner:201 - This book is about 
+JAVA 8
+Decimal: 255, Hex: FF, Octal: 377.
+2019-03-01 16:27:42 DEBUG Runner:204 - Decimal: 255, Hex: FF, Octal: 377.
+2019-03-01 16:27:42 DEBUG Runner:209 - 
+04:27:41 PM 
+16:27:41 
+пт сак 01 16:27:41 MSK 2019 
+пятніца
+2019-03-01 16:27:42 DEBUG Runner:213 - |  5,450|
+2019-03-01 16:27:42 DEBUG Runner:216 - |5,450  |
+2019-03-01 16:27:42 DEBUG Runner:220 - NOW I KNOW CLASS

@@ -80,7 +80,11 @@ public class Runner {
       System.err.println(e.getCause());
     }
 
-Person chechik = new Person(48, "Yasya");ть кружки?
+
+
+
+
+Person chechik = new Person(48, "Yasya");
 
     int chechikAge = chechik.getAge();
     assert (chechikAge < 30) : "Сука он уже не моложежь";
