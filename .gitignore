@@ -1,18 +1,35 @@
 LearningStrings/\.idea/
 LearningStrings/target/
+LearningStrings/logs/
+LearningStrings/LearningStrings\.iml
+
 LearningIO/\.idea/
 LearningIO/target/
+LearningIO/logs/
+LearningIO/LearningIO\.iml
+
+
 LearningInterfaces/\.idea/
 LearningInterfaces/target/
+LearningInterfaces/logs/
+LearningInterfaces/LearningInterfaces\.iml
+LearningInterfaces/src\.zip
+LearningInterfaces/src\.zip\.txt
+LearningInterfaces/src1\.zip
+LearningInterfaces/src1\.zip\.txt
+
 LearningExceptions/\.idea/
 LearningExceptions/target/
+LearningExceptions/logs/
+LearningExceptions/LearningExceptions\.iml
+
+
 LearningCollections/\.idea/
 LearningCollections/target/
+LearningCollections/logs/
+LearningCollections/LearningCollections\.iml
 
-LearningInterfaces/src\.zip
 
-LearningInterfaces/src\.zip\.txt
 
-LearningInterfaces/src1\.zip
 
-LearningInterfaces/src1\.zip\.txt
+
