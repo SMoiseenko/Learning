@@ -16,10 +16,34 @@ public class Validator {
   private final String patternHTMLTag = "^<([a-z]+)([^<]+)*(?:>(.*)<\\/\\1>|\\s+\\/>)$";
 
   public boolean validateName(String name) {
-       return Pattern.compile(patternPassword).matcher(name).matches();
+       return Pattern.compile(patternName).matcher(name).matches();
   }
 
   public boolean validatePassword(String password){
      return Pattern.compile(patternPassword).matcher(password).matches();
+  }
+
+  public boolean validateHexValue(String hexValue){
+    return Pattern.compile(patternHexValue).matcher(hexValue).matches();
+  }
+
+  public boolean validateSlug(String slug){
+    return Pattern.compile(patternSlug).matcher(slug).matches();
+  }
+
+  public boolean validateEMail(String eMail){
+    return Pattern.compile(patternEMail).matcher(eMail).matches();
+  }
+
+  public boolean validateURL(String url){
+    return Pattern.compile(patternURL).matcher(url).matches();
+  }
+
+  public boolean validateIPAdress(String ipAddress){
+    return Pattern.compile(patternIPAdress).matcher(ipAddress).matches();
+  }
+
+  public boolean validateHTMLTag(String htmlTag){
+    return Pattern.compile(patternHTMLTag).matcher(htmlTag).matches();
   }
 }

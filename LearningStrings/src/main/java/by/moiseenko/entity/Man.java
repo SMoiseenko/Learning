@@ -1,5 +1,7 @@
 package by.moiseenko.entity;
 
+import java.io.Serializable;
+
 public class Man {
     private String name;
     private String password;

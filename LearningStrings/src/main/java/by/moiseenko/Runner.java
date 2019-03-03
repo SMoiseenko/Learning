@@ -3,8 +3,15 @@ package by.moiseenko;
 import by.moiseenko.entity.Man;
 import by.moiseenko.utils.ManCreator;
 import by.moiseenko.utils.ResourceManager;
-import org.apache.log4j.Logger;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.PropertyAccessor;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
@@ -15,7 +22,7 @@ import java.util.regex.Pattern;
 
 public class Runner {
 
-  private static final Logger logger = Logger.getLogger(Runner.class);
+  private static final Logger logger = LogManager.getLogger(Runner.class);
 
   public static void main(String[] args) {
     // String constructors
@@ -220,6 +227,15 @@ public class Runner {
     logger.debug(formatter);
 
     Man man = new ManCreator().create();
+
+    ObjectMapper om = new ObjectMapper();
+    om.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
+    try {
+     om.writeValue(new FileOutputStream("man.json"), man);
+    } catch (IOException ioe) {
+      logger.error(ioe);
+    }
+
 
   }
 }
