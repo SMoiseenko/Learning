@@ -1,17 +1,11 @@
 package by.moiseenko;
 
-import by.moiseenko.entity.Man;
-import by.moiseenko.utils.ManCreator;
+import by.moiseenko.utils.GetWeatherScheduledTask;
 import by.moiseenko.utils.ResourceManager;
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.PropertyAccessor;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import by.moiseenko.utils.ScheduledManCreatorTask;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
@@ -226,16 +220,24 @@ public class Runner {
     formatter.format("%.16S", "Now I know class java.util.Formatter");
     logger.debug(formatter);
 
-    Man man = new ManCreator().create();
+    Timer timer = new Timer();
+    GetWeatherScheduledTask weatherTask = new GetWeatherScheduledTask();
+    timer.schedule(weatherTask, 1000L);
 
-    ObjectMapper om = new ObjectMapper();
-    om.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
-    try {
-     om.writeValue(new FileOutputStream("man.json"), man);
-    } catch (IOException ioe) {
-      logger.error(ioe);
-    }
-
+//    timer.scheduleAtFixedRate(new ScheduledManCreatorTask(), 5000L, 1000L);
+//
+//    for (int i = 0; i<10; i++) {
+//
+//      try {
+//        logger.debug(new Date() + " thread id = " + Thread.currentThread().getId());
+//        Thread.sleep(2500L);
+//      } catch (InterruptedException ie) {
+//        logger.error(ie);
+//      }
+//    }
+//    timer.cancel();
+//    logger.debug("schedule canceled");
+    logger.debug("main thread stop");
 
   }
 }
