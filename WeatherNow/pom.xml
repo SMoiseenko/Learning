@@ -20,6 +20,8 @@
         <log4j.version>2.11.1</log4j.version>
         <java.version>11</java.version>
         <jackson-databind.version>2.9.8</jackson-databind.version>
+        <apache.httpcomponents.version>4.5.7</apache.httpcomponents.version>
+
     </properties>
 
     <dependencies>
@@ -39,6 +41,12 @@
             <artifactId>jackson-databind</artifactId>
             <version>${jackson-databind.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>${apache.httpcomponents.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>

@@ -44,3 +44,7 @@ LearningStrings/logs/
 LearningStrings/man\.json
 
 WeatherNow/\.idea/
+
+WeatherNow/logs/
+
+WeatherNow/target/
