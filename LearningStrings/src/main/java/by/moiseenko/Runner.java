@@ -1,6 +1,7 @@
 package by.moiseenko;
 
-import by.moiseenko.utils.GetWeatherScheduledTask;
+import by.moiseenko.utils.MyHTTPSURLConnection;
+import by.moiseenko.utils.MyURLConnection;
 import by.moiseenko.utils.ResourceManager;
 import by.moiseenko.utils.ScheduledManCreatorTask;
 import org.apache.logging.log4j.LogManager;
@@ -220,24 +221,13 @@ public class Runner {
     formatter.format("%.16S", "Now I know class java.util.Formatter");
     logger.debug(formatter);
 
-    Timer timer = new Timer();
-    GetWeatherScheduledTask weatherTask = new GetWeatherScheduledTask();
-    timer.schedule(weatherTask, 1000L);
+//
 
-//    timer.scheduleAtFixedRate(new ScheduledManCreatorTask(), 5000L, 1000L);
-//
-//    for (int i = 0; i<10; i++) {
-//
-//      try {
-//        logger.debug(new Date() + " thread id = " + Thread.currentThread().getId());
-//        Thread.sleep(2500L);
-//      } catch (InterruptedException ie) {
-//        logger.error(ie);
-//      }
-//    }
-//    timer.cancel();
-//    logger.debug("schedule canceled");
-    logger.debug("main thread stop");
+//    MyURLConnection myURLConnection = new MyURLConnection();
+//    myURLConnection.makeConnectionTo("http://s13.ru");
+
+    MyHTTPSURLConnection myHTTPSURLConnection = new MyHTTPSURLConnection();
+    myHTTPSURLConnection.makeConnection("https://www.gismeteo.by/");
 
   }
 }
