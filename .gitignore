@@ -48,3 +48,11 @@ WeatherNow/\.idea/
 WeatherNow/logs/
 
 WeatherNow/target/
+
+LearningInnerClasses/\.idea/
+
+LearningInnerClasses/logs/
+
+LearningInnerClasses/target/
+
+LearningInnerClasses/test-output/
