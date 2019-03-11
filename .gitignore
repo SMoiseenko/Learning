@@ -56,3 +56,9 @@ LearningInnerClasses/logs/
 LearningInnerClasses/target/
 
 LearningInnerClasses/test-output/
+
+LearningUnitTest/\.idea/
+
+LearningUnitTest/logs/
+
+LearningUnitTest/target/
