@@ -54,7 +54,7 @@ public class User {
     return false;
   }
 
-  public static void deleteAllUsers(){
+  public static void resetUser(){
     allUsers.clear();
     count = 0;
   }

@@ -2,7 +2,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="TEST ALL SUITES">
     <suite-files>
-        <suite-file path="testngAnnotation.xml"/>
-        <suite-file path="testngDataProvider.xml"/>
+        <suite-file path="testUserClass.xml"/>
     </suite-files>
 </suite> <!-- Default Suite -->

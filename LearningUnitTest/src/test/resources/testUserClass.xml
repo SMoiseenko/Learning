@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TEST USER CLASS SUITE">
+    <test name="USER CLASS TEST">
+        <classes>
+            <class name="by.moiseenko.entity.UserTest"/>
+        </classes>
+    </test> <!-- LearningInnerClasses -->
+</suite> <!-- Default Suite -->

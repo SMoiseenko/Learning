@@ -1,5 +1,7 @@
 package by.moiseenko.entity;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
@@ -10,48 +12,36 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserTest {
+  private static final Logger LOG = LogManager.getLogger("TestLog");
 
   @AfterMethod
-  private void deleteData() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
-    User user = new User("Vasya", 23, Sex.MALE);
-    Method method = User.class.getMethod("deleteAllUsers");
-    method.setAccessible(true);
-    method.invoke(user);
+  private void resetData() {
+    User.resetUser();
   }
 
-  @Test
-  public void testGetAllUsers() {
-    User vasya = new User("Vasya", 23, Sex.MALE);
-    User petya = new User("Petya", 44, Sex.MALE);
-    User olya = new User("Olya", 18, Sex.FEMALE);
-
-    List<User> expected = new ArrayList<>();
-    expected.add(vasya);
-    expected.add(petya);
-    expected.add(olya);
-
+  @Test(
+      dataProvider = "testGetAllUsersData",
+      dataProviderClass = DataProviderForTestUserClass.class)
+  public void testGetAllUsers(List<User> expected) {
     List<User> actual = User.getAllUsers();
+    LOG.debug(String.format("%nactual: %s%nexpected: %s", actual.toString(), expected.toString()));
     Assert.assertEquals(actual, expected);
   }
 
   @Test
-  public void testGetAllUsersBySex() {
-    User vasya = new User("Vasya", 23, Sex.MALE);
-    User petya = new User("Petya", 44, Sex.MALE);
-    User olya = new User("Olya", 18, Sex.FEMALE);
-    List<User> expectedMALE = new ArrayList<>();
-    expectedMALE.add(vasya);
-    expectedMALE.add(petya);
-
-    List<User> actual = User.getAllUsers(Sex.MALE);
-    Assert.assertEquals(actual, expectedMALE);
+  public void testGetAllUsersNPE() {
+    List<User> actual = User.getAllUsers();
+    LOG.debug("%nactual: %s", actual);
+    Assert.assertNotNull(actual);
   }
 
-  @Test
-  public void testGetAllUsers_NOT_NULL() {
-    List<User> actual = User.getAllUsers();
-    System.out.println(actual);
-    Assert.assertNotNull(actual);
+  @Test(
+      dataProvider = "testGetAllUsersDataBySex",
+      dataProviderClass = DataProviderForTestUserClass.class)
+  public void testGetAllUsersBySex(List<User> expected, Sex sex) {
+    List<User> actual = User.getAllUsers(sex);
+    LOG.debug(String.format("%nactual: %s%nexpected: %s", actual.toString(), expected.toString()));
+    Assert.assertEquals(actual, expected);
   }
 
   @Test
