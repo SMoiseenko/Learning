@@ -1,4 +1,4 @@
-package by.moiseenko;
+package by.moiseenko.test;
 
 import org.testng.TestNG;
 import org.testng.xml.Parser;

@@ -1,11 +1,14 @@
 package by.moiseenko.entity;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.annotations.DataProvider;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class DataProviderForTestUserClass {
+  private static final Logger LOG = LogManager.getLogger(DataProviderForTestUserClass.class.getName());
 
   @DataProvider
   private Object[][] testGetAllUsersData() {
@@ -17,7 +20,7 @@ public class DataProviderForTestUserClass {
     expected.add(vasya);
     expected.add(petya);
     expected.add(olya);
-
+    LOG.debug(expected);
     return new Object[][] {{expected}};
   }
 
@@ -31,6 +34,8 @@ public class DataProviderForTestUserClass {
     expectedMALE.add(petya);
     List<User> expectedFEMALE = new ArrayList<>();
     expectedFEMALE.add(olya);
+    LOG.debug(expectedFEMALE);
+    LOG.debug(expectedFEMALE);
     return new Object[][] {{expectedMALE, Sex.MALE}, {expectedFEMALE, Sex.FEMALE}};
   }
 }

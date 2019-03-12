@@ -6,13 +6,10 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
 import java.util.List;
 
 public class UserTest {
-  private static final Logger LOG = LogManager.getLogger("TestLog");
+  private static final Logger LOG = LogManager.getLogger(UserTest.class);
 
   @AfterMethod
   private void resetData() {

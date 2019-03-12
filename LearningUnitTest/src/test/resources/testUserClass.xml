@@ -3,7 +3,7 @@
 <suite name="TEST USER CLASS SUITE">
     <test name="USER CLASS TEST">
         <classes>
-            <class name="by.moiseenko.entity.UserTest"/>
+            <class name="UserTest"/>
         </classes>
     </test> <!-- LearningInnerClasses -->
 </suite> <!-- Default Suite -->

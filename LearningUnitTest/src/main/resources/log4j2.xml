@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="INFO" monitorInterval="30">
+<Configuration monitorInterval="30">
+    <Properties>
+
+    </Properties>
+
     <Appenders>
 
         <Console name="Console" target="SYSTEM_OUT">
@@ -10,13 +14,28 @@
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36}:%L - %msg%n"/>
         </RandomAccessFile>
 
+        <RandomAccessFile name="DataProviderTest" fileName="logs/dataLogs.log" immediateFlush="false" append="false">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36}:%L - %msg%n"/>
+        </RandomAccessFile>
+
     </Appenders>
+
     <Loggers>
-        <Logger name="TestLog" level="debug">
+        <!-- name - use package name to log all classes in package, full qualified class name without .class - to log one class or ANY name that you want.
+        names in config is names in LogManager.getLogger(name)
+        -->
+        <Logger name="by.moiseenko.test" level="debug">
             <AppenderRef ref="TestLog"/>
         </Logger>
-        <Root level="trace">
+
+        <Logger name="ХОЧУ ТАКОЕ ИМЯ" level="debug">
+            <AppenderRef ref="DataProviderTest"/>
+        </Logger>
+        <!-- Root logger is common and it logged ALL classes that used logging mechanism.
+        -->
+        <Root level="debug">
             <AppenderRef ref="Console"/>
         </Root>
     </Loggers>
+
 </Configuration>
