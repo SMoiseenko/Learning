@@ -11,11 +11,11 @@
         </Console>
 
         <RandomAccessFile name="TestLog" fileName="logs/testLogs.log" immediateFlush="false" append="false">
-            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36}:%L - %msg%n"/>
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36}:%L - %msg%n"/>
         </RandomAccessFile>
 
-        <RandomAccessFile name="DataProviderTest" fileName="logs/dataLogs.log" immediateFlush="false" append="false">
-            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36}:%L - %msg%n"/>
+        <RandomAccessFile name="DataProviderTest" fileName="logs/testLogsTEMP.log" immediateFlush="false" append="false">
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36}:%L - %msg%n"/>
         </RandomAccessFile>
 
     </Appenders>
@@ -24,11 +24,11 @@
         <!-- name - use package name to log all classes in package, full qualified class name without .class - to log one class or ANY name that you want.
         names in config is names in LogManager.getLogger(name)
         -->
-        <Logger name="by.moiseenko.test" level="debug">
+        <Logger name="by.moiseenko.test.entity" level="debug">
             <AppenderRef ref="TestLog"/>
         </Logger>
 
-        <Logger name="ХОЧУ ТАКОЕ ИМЯ" level="debug">
+        <Logger name="WHERE CAN BE YOUR NAME" level="debug">
             <AppenderRef ref="DataProviderTest"/>
         </Logger>
         <!-- Root logger is common and it logged ALL classes that used logging mechanism.

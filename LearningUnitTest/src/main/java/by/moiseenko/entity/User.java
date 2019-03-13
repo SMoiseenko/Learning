@@ -16,15 +16,17 @@ public class User {
   private static final Logger LOG = LogManager.getLogger(User.class);
 
   public User(String name, int age, Sex sex) {
+    if (name != null && !name.equals("") && age > 0 && sex != null) {
 
-    this.name = name;
-    this.age = age;
-    this.sex = sex;
+      this.name = name;
+      this.age = age;
+      this.sex = sex;
 
-    if (!hasUser()) {
-      count++;
-      this.id = count;
-      allUsers.put(id, this);
+      if (!hasUser()) {
+        count++;
+        this.id = count;
+        allUsers.put(id, this);
+      }
     }
   }
 
@@ -74,7 +76,7 @@ public class User {
   }
 
   public static int getHowManyUsers() {
-    return allUsers.size();
+    return getAllUsers().size();
   }
 
   public static int getHowManyUsers(Sex sex) {
