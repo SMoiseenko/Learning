@@ -3,6 +3,10 @@ package by.moiseenko.entity;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.util.*;
 
 public class User {
@@ -10,17 +14,20 @@ public class User {
   private String name;
   private int age;
   private Sex sex;
+  private String password;
+  private String privateMessage;
 
   private static int count = 0;
   private static Map<Integer, User> allUsers = new HashMap<>();
   private static final Logger LOG = LogManager.getLogger(User.class);
 
-  public User(String name, int age, Sex sex) {
+  public User(String name, int age, Sex sex, String password) {
     if (name != null && !name.equals("") && age > 0 && sex != null) {
 
       this.name = name;
       this.age = age;
       this.sex = sex;
+      this.password = passwordEncoder(password);
 
       if (!hasUser()) {
         count++;
@@ -46,9 +53,23 @@ public class User {
     return sex;
   }
 
+  public String getPassword() {
+    return password;
+  }
+
+  public void setPrivateMessage(String privateMessage) {
+    this.privateMessage = privateMessage;
+  }
+
+  public String getPrivateMessage(String password) {
+    return (this.password.equals(passwordEncoder(password))) ? privateMessage : "PASSWORD INVALID";
+  }
+
   private boolean hasUser() {
     for (User user : allUsers.values()) {
-      if (user.getName().equals(this.name) && user.getAge() == this.age && user.getSex() == this.sex) {
+      if (user.getName().equals(this.name)
+          && user.getAge() == this.age
+          && user.getSex() == this.sex) {
         this.id = user.getId();
         return true;
       }
@@ -56,7 +77,7 @@ public class User {
     return false;
   }
 
-  public static void resetUser(){
+  public static void resetUser() {
     allUsers.clear();
     count = 0;
   }
@@ -123,5 +144,30 @@ public class User {
   @Override
   public String toString() {
     return "User{" + "id=" + id + ", name='" + name + '\'' + ", age=" + age + ", sex=" + sex + '}';
+  }
+
+  private String passwordEncoder(String password) {
+    if (password != null) {
+      SecureRandom random = new SecureRandom();
+      byte[] salt = new byte[16];
+      random.nextBytes(salt);
+
+      byte[] hashedPassword = new byte[0];
+
+      try {
+        MessageDigest md = MessageDigest.getInstance("SHA-512");
+        //md.update(salt);
+        md.reset();
+        hashedPassword = md.digest(password.getBytes(StandardCharsets.UTF_8));
+      } catch (NoSuchAlgorithmException e) {
+        e.printStackTrace();
+      }
+      StringBuilder sb = new StringBuilder();
+      for (byte b : hashedPassword) {
+        sb.append(String.format("%02X", b));
+      }
+      return sb.toString();
+    }
+    return null;
   }
 }

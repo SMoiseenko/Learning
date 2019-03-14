@@ -62,19 +62,19 @@ public class DataProviderForTestUserClass {
   @DataProvider
   private Object[][] forValidateUserData() {
     initUserMap();
-    new User("", 23, Sex.MALE);
-    new User("Petya", 44, null);
-    new User("Olya", -30, Sex.FEMALE);
-    new User(null, 130, Sex.FEMALE);
+    new User("", 23, Sex.MALE, "pass");
+    new User("Petya", 44, null, "pass");
+    new User("Olya", -30, Sex.FEMALE, "pass");
+    new User(null, 130, Sex.FEMALE, "pass");
     int i = 0;
     return new Object[][] {{}};
   }
 
   private void initUserMap() {
     if (user == null || user1 == null || user2 == null) {
-      user = new User("Vasya", 23, Sex.MALE);
-      user1 = new User("Petya", 44, Sex.MALE);
-      user2 = new User("Olya", 18, Sex.FEMALE);
+      user = new User("Vasya", 23, Sex.MALE, "pass");
+      user1 = new User("Petya", 44, Sex.MALE, "pass");
+      user2 = new User("Olya", 18, Sex.FEMALE, "pass");
     }
   }
 }
