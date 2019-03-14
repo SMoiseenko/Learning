@@ -13,6 +13,7 @@ public class Runner {
     System.out.println(vasya.getPrivateMessage("pas0"));
     System.out.println(vasya.getPrivateMessage(vasyaPassword));
     FileWriter fw = new FileWriter("./vasyapass.txt", true);
+    fw.write(vasya.getSalt()+ "\n");
     fw.write(vasya.getPassword() + "\n");
     fw.flush();
     fw.close();

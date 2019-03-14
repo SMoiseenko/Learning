@@ -16,6 +16,7 @@ public class User {
   private Sex sex;
   private String password;
   private String privateMessage;
+  private String salt;
 
   private static int count = 0;
   private static Map<Integer, User> allUsers = new HashMap<>();
@@ -62,7 +63,10 @@ public class User {
   }
 
   public String getPrivateMessage(String password) {
-    return (this.password.equals(passwordEncoder(password))) ? privateMessage : "PASSWORD INVALID";
+    return (checkPassword(password)) ? privateMessage : "PASSWORD INVALID";
+  }
+  public String getSalt(){
+    return salt;
   }
 
   private boolean hasUser() {
@@ -151,23 +155,40 @@ public class User {
       SecureRandom random = new SecureRandom();
       byte[] salt = new byte[16];
       random.nextBytes(salt);
-
-      byte[] hashedPassword = new byte[0];
-
-      try {
-        MessageDigest md = MessageDigest.getInstance("SHA-512");
-        //md.update(salt);
-        md.reset();
-        hashedPassword = md.digest(password.getBytes(StandardCharsets.UTF_8));
-      } catch (NoSuchAlgorithmException e) {
-        e.printStackTrace();
-      }
-      StringBuilder sb = new StringBuilder();
-      for (byte b : hashedPassword) {
-        sb.append(String.format("%02X", b));
-      }
-      return sb.toString();
+      this.salt = byteArrayToString(salt);
+      return cryptoPass(password, this.salt);
     }
     return null;
+  }
+
+  private boolean checkPassword(String password) {
+    if (password != null) {
+      if (cryptoPass(password, this.salt).equals(this.password)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  private String cryptoPass(String password, String salt) {
+    byte[] hashedPassword = new byte[0];
+    byte[] saltArray = salt.getBytes();
+    try {
+      MessageDigest md = MessageDigest.getInstance("SHA-512");
+      md.update(saltArray);
+      hashedPassword = md.digest(password.getBytes(StandardCharsets.UTF_8));
+    } catch (NoSuchAlgorithmException e) {
+      e.printStackTrace();
+    }
+
+    return byteArrayToString(hashedPassword);
+  }
+
+  private String byteArrayToString(byte[] salt){
+    StringBuilder sb = new StringBuilder();
+    for (byte b : salt) {
+      sb.append(String.format("%02X", b));
+    }
+    return sb.toString();
   }
 }
