@@ -5,10 +5,10 @@ import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Test;
 
 public class SimpleTest {
-    private static final Logger LOG = LogManager.getLogger(SimpleTest.class.getName());
+  private static final Logger LOG = LogManager.getLogger(SimpleTest.class.getName());
 
-    @Test
-    public void simpleTest(){
-       LOG.debug("JUST FOR SMALL TESTING");
-    }
+  @Test
+  public void simpleTest() {
+    LOG.debug("JUST FOR SMALL TESTING");
+  }
 }

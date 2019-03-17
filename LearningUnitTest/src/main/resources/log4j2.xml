@@ -11,11 +11,12 @@
         </Console>
 
         <RandomAccessFile name="TestLog" fileName="logs/testLogs.log" immediateFlush="false" append="false">
-            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36}:%L - %msg%n"/>
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36}:%L - %msg%n"/>
         </RandomAccessFile>
 
-        <RandomAccessFile name="DataProviderTest" fileName="logs/testLogsTEMP.log" immediateFlush="false" append="false">
-            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36}:%L - %msg%n"/>
+        <RandomAccessFile name="DataProviderTest" fileName="logs/testLogsTEMP.log" immediateFlush="false"
+                          append="false">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36}:%L - %msg%n"/>
         </RandomAccessFile>
 
     </Appenders>

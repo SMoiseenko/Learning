@@ -1,26 +1,31 @@
 package by.moiseenko.entity;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class User {
+  private static final Logger LOG = LogManager.getLogger(User.class);
+  private static int count = 0;
+  private static Map<Integer, User> allUsers = new HashMap<>();
   private int id;
   private String name;
   private int age;
   private Sex sex;
-  private String password;
-  private String privateMessage;
-  private String salt;
+  private Password password;
+  private static final String PRIVATE_MESSAGE = "YOUR HACKED ME ;)";
 
-  private static int count = 0;
-  private static Map<Integer, User> allUsers = new HashMap<>();
-  private static final Logger LOG = LogManager.getLogger(User.class);
+  public User(){
+
+  }
 
   public User(String name, int age, Sex sex, String password) {
     if (name != null && !name.equals("") && age > 0 && sex != null) {
@@ -28,7 +33,7 @@ public class User {
       this.name = name;
       this.age = age;
       this.sex = sex;
-      this.password = passwordEncoder(password);
+      this.password = new Password(password);
 
       if (!hasUser()) {
         count++;
@@ -36,49 +41,6 @@ public class User {
         allUsers.put(id, this);
       }
     }
-  }
-
-  public int getId() {
-    return id;
-  }
-
-  public String getName() {
-    return name;
-  }
-
-  public int getAge() {
-    return age;
-  }
-
-  public Sex getSex() {
-    return sex;
-  }
-
-  public String getPassword() {
-    return password;
-  }
-
-  public void setPrivateMessage(String privateMessage) {
-    this.privateMessage = privateMessage;
-  }
-
-  public String getPrivateMessage(String password) {
-    return (checkPassword(password)) ? privateMessage : "PASSWORD INVALID";
-  }
-  public String getSalt(){
-    return salt;
-  }
-
-  private boolean hasUser() {
-    for (User user : allUsers.values()) {
-      if (user.getName().equals(this.name)
-          && user.getAge() == this.age
-          && user.getSex() == this.sex) {
-        this.id = user.getId();
-        return true;
-      }
-    }
-    return false;
   }
 
   public static void resetUser() {
@@ -132,6 +94,46 @@ public class User {
     return totalAges;
   }
 
+  public int getId() {
+    return id;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public int getAge() {
+    return age;
+  }
+
+  public Sex getSex() {
+    return sex;
+  }
+
+  public Password getPassword() {
+    return password;
+  }
+
+  public String getPrivateMessage(String password) {
+    return (this.password.checkPassword(password)) ? PRIVATE_MESSAGE : "PASSWORD INVALID";
+  }
+
+  //  public String getSalt() {
+  //    return salt;
+  //  }
+
+  private boolean hasUser() {
+    for (User user : allUsers.values()) {
+      if (user.getName().equals(this.name)
+          && user.getAge() == this.age
+          && user.getSex() == this.sex) {
+        this.id = user.getId();
+        return true;
+      }
+    }
+    return false;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
@@ -150,45 +152,79 @@ public class User {
     return "User{" + "id=" + id + ", name='" + name + '\'' + ", age=" + age + ", sex=" + sex + '}';
   }
 
-  private String passwordEncoder(String password) {
-    if (password != null) {
-      SecureRandom random = new SecureRandom();
+
+
+
+
+  public class Password {
+    private String hashedPassword;
+    private String salt;
+
+    public Password(String password) {
+      this.hashedPassword = encodePassword(password);
+    }
+
+    public String getHashedPassword() {
+      return hashedPassword;
+    }
+
+    public String getSalt() {
+      return salt;
+    }
+
+    private void generateSalt() {
+      SecureRandom secureRandom = new SecureRandom();
       byte[] salt = new byte[16];
-      random.nextBytes(salt);
-      this.salt = byteArrayToString(salt);
-      return cryptoPass(password, this.salt);
+      secureRandom.nextBytes(salt);
+      this.salt = byteArrayToHexString(salt);
     }
-    return null;
-  }
 
-  private boolean checkPassword(String password) {
-    if (password != null) {
-      if (cryptoPass(password, this.salt).equals(this.password)) {
-        return true;
+    //    private byte[] generateSalt(int size) {
+    //      SecureRandom secureRandom = new SecureRandom();
+    //      byte[] salt = new byte[size];
+    //      secureRandom.nextBytes(salt);
+    //      return salt;
+    //    }
+
+    private String encodePassword(String password) {
+      if (this.salt == null) {
+        generateSalt();
       }
-    }
-    return false;
-  }
 
-  private String cryptoPass(String password, String salt) {
-    byte[] hashedPassword = new byte[0];
-    byte[] saltArray = salt.getBytes();
-    try {
-      MessageDigest md = MessageDigest.getInstance("SHA-512");
-      md.update(saltArray);
-      hashedPassword = md.digest(password.getBytes(StandardCharsets.UTF_8));
-    } catch (NoSuchAlgorithmException e) {
-      e.printStackTrace();
+      try {
+        MessageDigest md = MessageDigest.getInstance("SHA-512");
+        md.update(hexStringToByteArray(this.salt));
+        byte[] hashedPassword = md.digest(password.getBytes(StandardCharsets.UTF_8));
+        return byteArrayToHexString(hashedPassword);
+      } catch (NoSuchAlgorithmException e) {
+        LOG.error(e);
+      }
+      return null;
     }
 
-    return byteArrayToString(hashedPassword);
+    public boolean checkPassword(String password) {
+      return this.hashedPassword.equals(encodePassword(password));
+    }
+
+    private String byteArrayToHexString(byte[] salt) {
+      StringBuilder sb = new StringBuilder();
+      for (byte b : salt) {
+        sb.append(String.format("%02X", b));
+      }
+      return sb.toString();
+    }
+
+    private byte[] hexStringToByteArray(String hexString) {
+      int len = hexString.length();
+      byte[] data = new byte[len / 2];
+      for (int i = 0; i < len; i += 2) {
+        data[i / 2] =
+            (byte)
+                ((Character.digit(hexString.charAt(i), 16) << 4)
+                    + Character.digit(hexString.charAt(i + 1), 16));
+      }
+      return data;
+    }
   }
 
-  private String byteArrayToString(byte[] salt){
-    StringBuilder sb = new StringBuilder();
-    for (byte b : salt) {
-      sb.append(String.format("%02X", b));
-    }
-    return sb.toString();
-  }
 }
