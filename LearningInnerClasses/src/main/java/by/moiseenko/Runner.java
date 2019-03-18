@@ -40,5 +40,14 @@ public class Runner {
       }
     }.isThereTheSunNow();
 
+    s12.isThereTheSunNow();
+
+
       }
+
+  static Sunny s12 = ()->{
+    LOG.debug("I AM LAMBDA"); return false;
+  };
+
+
 }
