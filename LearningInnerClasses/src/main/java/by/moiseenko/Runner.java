@@ -1,8 +1,11 @@
 package by.moiseenko;
 
+import by.moiseenko.entity.BlueRayDisk;
+import by.moiseenko.entity.Keyboard;
 import by.moiseenko.entity.Ship;
 import by.moiseenko.entity.Ship.Boart;
 import by.moiseenko.entity.StandAloneEngine;
+import by.moiseenko.utils.EventHandler;
 import by.moiseenko.utils.Sunny;
 import by.moiseenko.utils.impl.OutdoorIllumination;
 import org.apache.logging.log4j.LogManager;
@@ -28,7 +31,7 @@ public class Runner {
     StandAloneEngine standAloneEngine = new StandAloneEngine(nullShip);
     standAloneEngine.doAction();
     Sunny sunny = new OutdoorIllumination();
-    LOG.debug("Is sunny now outside:" + sunny.isThereTheSunNow() );
+    LOG.debug("Is sunny now outside:" + sunny.isThereTheSunNow());
     Ship.Boart boart = new Ship.Boart(); // create static nested class instance
     boart.tryGetOuterMessage();
 
@@ -42,12 +45,59 @@ public class Runner {
 
     s12.isThereTheSunNow();
 
+    new Thread(
+        new Runnable() {
+          @Override
+          public void run() {
+            LOG.debug("I AM NEW THREAD");
+          }
+        },
+        "ANOTHER_THREAD")
+        .start();
 
+    Thread thread = new Thread() {
+      @Override
+      public void run() {
+        Thread.currentThread().setName("THREAD");
+        super.run();
+        LOG.debug("I AM RUNNING IN NEW THREAD");
       }
+    };
+    thread.start();
 
-  static Sunny s12 = ()->{
-    LOG.debug("I AM LAMBDA"); return false;
-  };
+    Ship sh1 = new Ship() {
+      @Override
+      public void getFromEngine() {
+        LOG.debug(
+            "YO-HO-HO I AM ANONYMOUS CLASS THAT EXTENDS BY SHEEP AND I OVERWRITE HIS METHOD!!!");
+      }
+    };
 
+    ship.getFromEngine();
+    sh1.getFromEngine();
 
+    Keyboard keyboard = new Keyboard(new EventHandler() {
+      private final Logger LOG = LogManager.getLogger(Keyboard.class.getName());
+
+      @Override
+      public void execute() {
+        LOG.debug("EVENT WAS FOUND");
+      }
+    });
+    keyboard.pushKey1();
+    keyboard.pushKey2();
+    keyboard.pushKey3();
+
+    BlueRayDisk emptyDisk = new BlueRayDisk();
+    emptyDisk.printAllFilesOnTheDisk();
+    BlueRayDisk disk = new BlueRayDisk("film.avi", "music.mp3", "picture.jpeg");
+    disk.printAllFilesOnTheDisk();
+
+  }
+
+  static Sunny s12 =
+      () -> {
+        LOG.debug("I AM LAMBDA");
+        return false;
+      };
 }
