@@ -11,20 +11,21 @@ import org.apache.logging.log4j.Logger;
 public class Car {
 
   private static final Logger LOG = LogManager.getLogger(Car.class.getName());
-   public int doorQty = 4;
+   public int doorsQty = 4;
+   public static int weelsQty = 4;
 
   public Car() {
     LOG.debug("CAR CONSTRUCTOR");
   }
 
   public void publicMethod(){
-    LOG.debug("CAR PUBLIC METHOD, doorQty=4 and real:" + doorQty);
+    LOG.debug("CAR PUBLIC METHOD, doorsQty=4 and real:" + doorsQty);
   }
 
   public final void finalMethod(){
     LOG.debug("CAR FINAL METHOD");
   }
   protected void protectedMethod(){
-    LOG.debug("CAR PROTECTED METHOD");
+    LOG.debug("CAR PROTECTED METHOD, weelsQty = 4 and real:" + weelsQty);
   }
 }

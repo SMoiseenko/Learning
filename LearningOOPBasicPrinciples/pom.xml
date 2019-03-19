@@ -59,7 +59,7 @@
               <archive>
                 <manifest>
                   <mainClass>
-                    by.moiseenko.Runner
+                    by.moiseenko.entity.Runner
                   </mainClass>
                 </manifest>
               </archive>
