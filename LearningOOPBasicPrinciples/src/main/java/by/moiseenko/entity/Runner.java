@@ -28,6 +28,8 @@ public class Runner {
     btal.incapabilityTypes();
     btal.wrapperClasses();
 
+    MyArrays myArrays = new MyArrays();
+    myArrays.doAction();
 
   }
 
