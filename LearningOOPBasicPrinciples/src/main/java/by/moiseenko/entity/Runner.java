@@ -12,7 +12,8 @@ import org.apache.logging.log4j.Logger;
 public class Runner {
 
   private static final Logger LOG = LogManager.getLogger(Runner.class.getName());
-String myString = "LALALA";
+  String myString = "LALALA";
+
   public static void main(String[] args) {
     testStaticAndDynamicBinding();
     int i = 0;
@@ -21,6 +22,13 @@ String myString = "LALALA";
     }
     Runner run = new Runner();
     LOG.debug(run.myString);
+
+    BaseTypesAndLiterals btal = new BaseTypesAndLiterals();
+    btal.intLiterals();
+    btal.incapabilityTypes();
+    btal.wrapperClasses();
+
+
   }
 
   private static strictfp void divide(double x, double y) {
@@ -59,11 +67,11 @@ String myString = "LALALA";
             "Result of compare two links on Strong created by different method, but then putted to string pool : %B",
             s1 == s3));
 
-    try {
-      LOG.debug((char) System.in.read());
-    } catch (IOException e) {
-      LOG.error(e);
-    }
+//    try {
+//      LOG.debug((char) System.in.read());
+//    } catch (IOException e) {
+//      LOG.error(e);
+//    }
   }
 
   private static void doPrivateFinalAndProtectedMethods(Car car) {
