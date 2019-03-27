@@ -15,7 +15,7 @@ public class Runner {
   String myString = "LALALA";
 
   public static void main(String[] args) {
-    testStaticAndDynamicBinding();
+
     int i = 0;
     for (i = args.length-1; i >= 0; --i) {
       LOG.debug(args[i]);
@@ -23,16 +23,11 @@ public class Runner {
     Runner run = new Runner();
     LOG.debug(run.myString);
 
-    BaseTypesAndLiterals btal = new BaseTypesAndLiterals();
-    btal.intLiterals();
-    btal.incapabilityTypes();
-    btal.wrapperClasses();
+    testStaticAndDynamicBinding();
+    baseTypeExecutor();
+    arraysExecutor();
+    warriorExecutor();
 
-    MyArrays myArrays = new MyArrays("One");
-    MyArrays myArrays1 = new MyArrays("Two");
-    LOG.debug(myArrays.getInstanceName());
-    LOG.debug(myArrays1.getInstanceName());
-    myArrays.doAction();
 
   }
 
@@ -86,5 +81,29 @@ public class Runner {
     car.protectedMethod();
     LOG.debug(car.doorsQty + " dorQty direct");
     LOG.debug(car.weelsQty + " weelsQty direct");
+  }
+
+  private static void baseTypeExecutor(){
+    BaseTypesAndLiterals btal = new BaseTypesAndLiterals();
+    btal.intLiterals();
+    btal.incapabilityTypes();
+    btal.wrapperClasses();
+  }
+
+  private static void arraysExecutor(){
+    MyArrays myArrays = new MyArrays("One");
+    MyArrays myArrays1 = new MyArrays("Two");
+    LOG.debug(myArrays.getInstanceName());
+    LOG.debug(myArrays1.getInstanceName());
+    myArrays.doAction();
+  }
+
+  private static void warriorExecutor(){
+    Warrior warArcher = new Warrior("Sniper", WarSkill.ARCHER);
+    Warrior warMagician = new Warrior("Witch", WarSkill.MAGICIAN);
+    Warrior warTank = new Warrior("Sword", WarSkill.TANK);
+    LOG.debug(warArcher);
+    LOG.debug(warMagician);
+    LOG.debug(warTank);
   }
 }

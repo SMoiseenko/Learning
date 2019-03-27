@@ -14,7 +14,7 @@ public class MyArrays {
   private static final Logger LOG = LogManager.getLogger(MyArrays.class.getName());
   private final String instanceName;
 
-    public MyArrays(String instanceName) {
+  public MyArrays(String instanceName) {
     this.instanceName = instanceName;
   }
 
@@ -58,8 +58,6 @@ public class MyArrays {
     abs(toSort);
     sortArray(toSort, IntSorted.MAX);
     LOG.debug("==========");
-   ;
-
   }
 
   private void sortArray(int[] array, IntSorted sorted) {
@@ -96,8 +94,8 @@ public class MyArrays {
     }
   }
 
-  private void abs(int[] array){
-    for(int i = 0; i<=array.length -1; i++){
+  private void abs(int[] array) {
+    for (int i = 0; i <= array.length - 1; i++) {
       array[i] = Math.abs(array[i]);
     }
   }
