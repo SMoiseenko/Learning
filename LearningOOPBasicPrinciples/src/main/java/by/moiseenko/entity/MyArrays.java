@@ -12,6 +12,15 @@ import org.apache.logging.log4j.Logger;
 public class MyArrays {
 
   private static final Logger LOG = LogManager.getLogger(MyArrays.class.getName());
+  private final String instanceName;
+
+    public MyArrays(String instanceName) {
+    this.instanceName = instanceName;
+  }
+
+  public String getInstanceName() {
+    return instanceName;
+  }
 
   public void doAction() {
     int[] arInt = new int[0];

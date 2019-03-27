@@ -28,7 +28,10 @@ public class Runner {
     btal.incapabilityTypes();
     btal.wrapperClasses();
 
-    MyArrays myArrays = new MyArrays();
+    MyArrays myArrays = new MyArrays("One");
+    MyArrays myArrays1 = new MyArrays("Two");
+    LOG.debug(myArrays.getInstanceName());
+    LOG.debug(myArrays1.getInstanceName());
     myArrays.doAction();
 
   }
@@ -74,6 +77,7 @@ public class Runner {
 //    } catch (IOException e) {
 //      LOG.error(e);
 //    }
+    return;
   }
 
   private static void doPrivateFinalAndProtectedMethods(Car car) {
