@@ -1,6 +1,5 @@
 package by.moiseenko.entity;
 
-import java.io.IOException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -17,7 +16,7 @@ public class Runner {
   public static void main(String[] args) {
 
     int i = 0;
-    for (i = args.length-1; i >= 0; --i) {
+    for (i = args.length - 1; i >= 0; --i) {
       LOG.debug(args[i]);
     }
     Runner run = new Runner();
@@ -27,15 +26,14 @@ public class Runner {
     baseTypeExecutor();
     arraysExecutor();
     warriorExecutor();
-
-
+    messageGeneralizationExample();
   }
 
   private static strictfp void divide(double x, double y) {
     LOG.debug(x / y);
   }
 
-  public static void testStaticAndDynamicBinding() {
+  private static void testStaticAndDynamicBinding() {
     LOG.debug("!!!!!CAR = CAR!!!!!");
     Car car = new Car();
     doPrivateFinalAndProtectedMethods(car);
@@ -67,11 +65,11 @@ public class Runner {
             "Result of compare two links on Strong created by different method, but then putted to string pool : %B",
             s1 == s3));
 
-//    try {
-//      LOG.debug((char) System.in.read());
-//    } catch (IOException e) {
-//      LOG.error(e);
-//    }
+    //    try {
+    //      LOG.debug((char) System.in.read());
+    //    } catch (IOException e) {
+    //      LOG.error(e);
+    //    }
     return;
   }
 
@@ -81,16 +79,17 @@ public class Runner {
     car.protectedMethod();
     LOG.debug(car.doorsQty + " dorQty direct");
     LOG.debug(car.weelsQty + " weelsQty direct");
+    car.showData(5);
   }
 
-  private static void baseTypeExecutor(){
+  private static void baseTypeExecutor() {
     BaseTypesAndLiterals btal = new BaseTypesAndLiterals();
     btal.intLiterals();
     btal.incapabilityTypes();
     btal.wrapperClasses();
   }
 
-  private static void arraysExecutor(){
+  private static void arraysExecutor() {
     MyArrays myArrays = new MyArrays("One");
     MyArrays myArrays1 = new MyArrays("Two");
     LOG.debug(myArrays.getInstanceName());
@@ -98,12 +97,41 @@ public class Runner {
     myArrays.doAction();
   }
 
-  private static void warriorExecutor(){
+  private static void warriorExecutor() {
     Warrior warArcher = new Warrior("Sniper", WarSkill.ARCHER);
     Warrior warMagician = new Warrior("Witch", WarSkill.MAGICIAN);
     Warrior warTank = new Warrior("Sword", WarSkill.TANK);
     LOG.debug(warArcher);
     LOG.debug(warMagician);
     LOG.debug(warTank);
+  }
+
+  private static void messageGeneralizationExample() {
+    LOG.debug("==================================");
+
+    Message<Integer> message1 = new Message<>(100);
+    message1.printThisAndAnotherClasses(new Message<>(500));
+    message1.printThisAndAnotherClasses(new Message<>(700f));
+
+
+    Message<Float> message2 = new Message<>(33.3f);
+    Integer int1 = message1.getData();
+    Float flo1 = message2.getData();
+    Message<Number> message3 = new Message<>(555666L);
+    Message<Short> message4 = new Message<>(((short)128));
+    Message m1 = new Message<>();
+    m1 = message4;
+    Short str1 = (Short)m1.getData();
+    LOG.debug(str1);
+    m1.setData(new Float(45f));
+    m1.setData(128);
+    m1.setData(null);
+    LOG.debug(m1);
+    LOG.debug(message2);
+    if (message4 instanceof Message) LOG.debug("message4 instanceof Message: true");
+
+    MessageUtils mUtils = new MessageUtils();
+    mUtils.getDataFromMessage(message1);
+    mUtils.getDataFromMessage(message4);
   }
 }

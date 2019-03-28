@@ -28,4 +28,11 @@ public class Car {
   protected void protectedMethod(){
     LOG.debug("CAR PROTECTED METHOD, weelsQty = 4 and real:" + weelsQty);
   }
+
+  public static void showData(){
+    LOG.debug("DATA FROM STATIC METHOD WITHOUT ATTRIBUTES(MoCl)");
+  }
+  public void showData(int a){
+    LOG.debug( a + " DATA FROM NON_STATIC METHOD WITH ONE ARGUMENT(MoCl)");
+  }
 }

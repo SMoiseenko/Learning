@@ -27,4 +27,8 @@ public class MazdaCar extends Car {
   protected void protectedMethod() {
     LOG.debug("MAZDA_CAR PROTECTED METHOD, weelsQty = 3 and real:" + weelsQty);
   }
+
+  public void showData(float a){
+    LOG.debug( a + " DATA FROM NON_STATIC METHOD WITH ONE ARGUMENT(ChCl)");
+  }
 }
