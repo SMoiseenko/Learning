@@ -110,6 +110,7 @@ public class Runner {
   private static void messageGeneralizationExample() {
     LOG.debug("==================================");
 
+
     Message<Integer> message1 = new Message<>(100);
     message1.printThisAndAnotherClasses(new Message<>(500));
     message1.printThisAndAnotherClasses(new Message<>(700f));
@@ -123,7 +124,7 @@ public class Runner {
     m1 = message4;
     Short str1 = (Short) m1.getData();
     LOG.debug(str1);
-    m1.setData(new Float(45f));
+    m1.setData(45f);
     m1.setData(128);
     m1.setData(null);
     LOG.debug(m1);
@@ -133,6 +134,7 @@ public class Runner {
     MessageUtils mUtils = new MessageUtils();
     mUtils.getDataFromMessage(message1);
     mUtils.getDataFromMessage(message4);
+
 
     Payment<String, Integer> payment1 = new Payment<>("ONE HUNDRED", 100);
     LOG.debug(payment1);
