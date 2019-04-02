@@ -1,5 +1,6 @@
 package by.moiseenko.entity;
 
+import java.math.BigDecimal;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -113,15 +114,14 @@ public class Runner {
     message1.printThisAndAnotherClasses(new Message<>(500));
     message1.printThisAndAnotherClasses(new Message<>(700f));
 
-
     Message<Float> message2 = new Message<>(33.3f);
     Integer int1 = message1.getData();
     Float flo1 = message2.getData();
     Message<Number> message3 = new Message<>(555666L);
-    Message<Short> message4 = new Message<>(((short)128));
+    Message<Short> message4 = new Message<>(((short) 128));
     Message m1 = new Message<>();
     m1 = message4;
-    Short str1 = (Short)m1.getData();
+    Short str1 = (Short) m1.getData();
     LOG.debug(str1);
     m1.setData(new Float(45f));
     m1.setData(128);
@@ -133,5 +133,11 @@ public class Runner {
     MessageUtils mUtils = new MessageUtils();
     mUtils.getDataFromMessage(message1);
     mUtils.getDataFromMessage(message4);
+
+    Payment<String, Integer> payment1 = new Payment<>("ONE HUNDRED", 100);
+    LOG.debug(payment1);
+    Payment<StringBuilder, BigDecimal> payment2 =
+        new Payment<>(new StringBuilder("TEN POINT TEN"), new BigDecimal("10.10"));
+    LOG.debug(payment2);
   }
 }
