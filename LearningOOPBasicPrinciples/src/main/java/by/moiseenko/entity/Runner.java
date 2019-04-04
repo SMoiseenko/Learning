@@ -1,6 +1,7 @@
 package by.moiseenko.entity;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -110,7 +111,6 @@ public class Runner {
   private static void messageGeneralizationExample() {
     LOG.debug("==================================");
 
-
     Message<Integer> message1 = new Message<>(100);
     message1.printThisAndAnotherClasses(new Message<>(500));
     message1.printThisAndAnotherClasses(new Message<>(700f));
@@ -137,11 +137,21 @@ public class Runner {
     mUtils.getDataFromMessage(message1);
     mUtils.getDataFromMessage(message4);
 
-
     Payment<String, Integer> payment1 = new Payment<>("ONE HUNDRED", 100);
     LOG.debug(payment1);
     Payment<StringBuilder, BigDecimal> payment2 =
         new Payment<>(new StringBuilder("TEN POINT TEN"), new BigDecimal("10.10"));
     LOG.debug(payment2);
+
+    Payment payment3 = new Payment<String, BigDecimal>("SixtySix", new BigDecimal("66"));
+    payment3.setNameValue("FortyFor");
+    LOG.debug(payment3);
+    payment3.setDigitValue(LocalDate.now());
+    LOG.debug(payment3);
+    // payment3 = payment1;  but it work
+    Payment.calculate(2, 4, 6, 8, 10);
+    Payment.calculate(3, 9);
+
+    Payment.printToLOG(new String[] {"vasya", "petya", "kolia"}, new int[]{1,2,3}, new int[]{100,200,300}, new int[]{10,9,8,7,6,5} );
   }
 }
