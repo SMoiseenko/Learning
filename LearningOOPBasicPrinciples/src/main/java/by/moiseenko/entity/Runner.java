@@ -2,6 +2,9 @@ package by.moiseenko.entity;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -29,6 +32,8 @@ public class Runner {
     arraysExecutor();
     warriorExecutor();
     messageGeneralizationExample();
+    doEnum();
+    abstractClassMagic();
   }
 
   private static strictfp void divide(double x, double y) {
@@ -152,6 +157,74 @@ public class Runner {
     Payment.calculate(2, 4, 6, 8, 10);
     Payment.calculate(3, 9);
 
-    Payment.printToLOG(new String[] {"vasya", "petya", "kolia"}, new int[]{1,2,3}, new int[]{100,200,300}, new int[]{10,9,8,7,6,5} );
+    Payment.printToLOG(
+        new String[] {"vasya", "petya", "kolia"},
+        new int[] {1, 2, 3},
+        new int[] {100, 200, 300},
+        new int[] {10, 9, 8, 7, 6, 5});
   }
+
+  private static void doEnum() {
+    Season season = Season.WINTER;
+    StringBuilder sb =
+        new StringBuilder()
+            .append("\nseason.name() = ")
+            .append(season.name())
+            .append("\nseason.toString() = ")
+            .append(season.toString())
+            .append("\nseason.ordinal() = ")
+            .append(season.ordinal());
+    LOG.debug(String.valueOf(sb));
+
+    season = (season == Season.WINTER) ? Season.SUMMER : season;
+
+    LOG.debug(season);
+
+    season = Season.valueOf("AUTUMN");
+    LOG.debug(season);
+    Season[] values = Season.values();
+    String s = Arrays.toString(values);
+    LOG.debug(s);
+
+    Map<Integer, String> mapOfSeason = new HashMap<>();
+    for(Season enumValue:values){
+      Integer key = enumValue.ordinal();
+      mapOfSeason.put(key,enumValue.toString());
+    }
+    mapOfSeason.entrySet().stream()
+        .forEach(eS -> LOG.debug(String.format("<%d, %s>", eS.getKey(), eS.getValue())));
+
+
+    season = Season.WINTER;
+    while (season != Season.AUTUMN) {
+      season = season.changeSeason();
+      LOG.debug(season);
+      }
+    LOG.debug("WINTER: " + Season.WINTER.isGoodSeason());
+    LOG.debug("SUMMER: " + Season.SUMMER.isGoodSeason());
+    Season.WINTER.changeQuality();
+    LOG.debug("WINTER: " + Season.WINTER.isGoodSeason());
+
+    season = Season.WINTER;
+    LOG.debug(season);
+
+    LOG.debug(Arrays.toString(LikeEnumClass.values()));
+
+    LOG.debug(new StringBuilder().append('[').append(LikeEnumClass.AM).append(", ").append(LikeEnumClass.AM.opposite()).append(']'));
+    LOG.debug(new StringBuilder().append('[').append(LikeEnumClass.PM).append(", ").append(LikeEnumClass.PM.opposite()).append(']'));
+
+    Season autumn = Enum.valueOf(Season.class, "AUTUMN");
+    LOG.debug(autumn);
+
+    WarSkill archer = Season.valueOf(WarSkill.class, "ARCHER");
+    LOG.debug(String.format("Val = %s, key = %d", archer.name(), archer.ordinal()));
+
+  }
+
+  private static void abstractClassMagic(){
+    Bike threeWeels = Bike.createBike("Three-Weals-Bike");
+    LOG.debug(threeWeels);
+  }
+
+
 }
