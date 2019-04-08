@@ -34,6 +34,8 @@ public class Runner {
     messageGeneralizationExample();
     doEnum();
     abstractClassMagic();
+    matrixShow();
+
   }
 
   private static strictfp void divide(double x, double y) {
@@ -224,6 +226,10 @@ public class Runner {
   private static void abstractClassMagic(){
     Bike threeWeels = Bike.createBike("Three-Weals-Bike");
     LOG.debug(threeWeels);
+  }
+
+  private static void matrixShow(){
+    Matrix matrix = new Matrix(5,4);
   }
 
 
