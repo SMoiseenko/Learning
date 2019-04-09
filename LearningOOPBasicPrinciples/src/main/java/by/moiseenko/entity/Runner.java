@@ -1,5 +1,6 @@
 package by.moiseenko.entity;
 
+import by.moiseenko.utils.Impl.HouseCreatorImpl;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Arrays;
@@ -36,6 +37,12 @@ public class Runner {
     abstractClassMagic();
     matrixShow();
 
+    LOG.debug("\n*************************");
+
+    House house =
+        new HouseCreatorImpl()
+            .createHouse(10, 55.22, 3, 2, "Kleckova str.", "retail", LocalDate.of(2020, 12, 31));
+    LOG.debug(house.toString());
   }
 
   private static strictfp void divide(double x, double y) {
@@ -189,19 +196,18 @@ public class Runner {
     LOG.debug(s);
 
     Map<Integer, String> mapOfSeason = new HashMap<>();
-    for(Season enumValue:values){
+    for (Season enumValue : values) {
       Integer key = enumValue.ordinal();
-      mapOfSeason.put(key,enumValue.toString());
+      mapOfSeason.put(key, enumValue.toString());
     }
     mapOfSeason.entrySet().stream()
         .forEach(eS -> LOG.debug(String.format("<%d, %s>", eS.getKey(), eS.getValue())));
-
 
     season = Season.WINTER;
     while (season != Season.AUTUMN) {
       season = season.changeSeason();
       LOG.debug(season);
-      }
+    }
     LOG.debug("WINTER: " + Season.WINTER.isGoodSeason());
     LOG.debug("SUMMER: " + Season.SUMMER.isGoodSeason());
     Season.WINTER.changeQuality();
@@ -212,25 +218,34 @@ public class Runner {
 
     LOG.debug(Arrays.toString(LikeEnumClass.values()));
 
-    LOG.debug(new StringBuilder().append('[').append(LikeEnumClass.AM).append(", ").append(LikeEnumClass.AM.opposite()).append(']'));
-    LOG.debug(new StringBuilder().append('[').append(LikeEnumClass.PM).append(", ").append(LikeEnumClass.PM.opposite()).append(']'));
+    LOG.debug(
+        new StringBuilder()
+            .append('[')
+            .append(LikeEnumClass.AM)
+            .append(", ")
+            .append(LikeEnumClass.AM.opposite())
+            .append(']'));
+    LOG.debug(
+        new StringBuilder()
+            .append('[')
+            .append(LikeEnumClass.PM)
+            .append(", ")
+            .append(LikeEnumClass.PM.opposite())
+            .append(']'));
 
     Season autumn = Enum.valueOf(Season.class, "AUTUMN");
     LOG.debug(autumn);
 
     WarSkill archer = Season.valueOf(WarSkill.class, "ARCHER");
     LOG.debug(String.format("Val = %s, key = %d", archer.name(), archer.ordinal()));
-
   }
 
-  private static void abstractClassMagic(){
+  private static void abstractClassMagic() {
     Bike threeWeels = Bike.createBike("Three-Weals-Bike");
     LOG.debug(threeWeels);
   }
 
-  private static void matrixShow(){
-    Matrix matrix = new Matrix(5,4);
+  private static void matrixShow() {
+    Matrix matrix = new Matrix(5, 4);
   }
-
-
 }
