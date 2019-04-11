@@ -2,8 +2,11 @@ package by.moiseenko.entity;
 
 import by.moiseenko.utils.HouseParamValidator;
 import by.moiseenko.utils.Impl.HouseParamValidatorImpl;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import java.math.BigDecimal;
-import java.math.MathContext;
 import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.util.Objects;
@@ -15,7 +18,7 @@ import org.apache.logging.log4j.Logger;
  *
  * @author moiseenko-s
  */
-public abstract class House {
+public class House {
   private static final Logger LOG = LogManager.getLogger(House.class.getName());
   private static final HouseParamValidator validator = new HouseParamValidatorImpl();
 
@@ -26,6 +29,8 @@ public abstract class House {
   private int qtyRooms;
   private String street;
   private BuldingType buldingType;
+  @JsonDeserialize(using = LocalDateDeserializer.class)
+  @JsonSerialize(using = LocalDateSerializer.class)
   private LocalDate lifetime;
 
   public House() {}
@@ -54,7 +59,7 @@ public abstract class House {
 
   public void setFlatSquare(Double flatSquare) {
     BigDecimal flatSquareB = BigDecimal.valueOf(flatSquare);
-    flatSquareB = flatSquareB.round(new MathContext(2, RoundingMode.HALF_UP));
+    flatSquareB = flatSquareB.setScale(2, RoundingMode.HALF_UP);
     if (validator.validateFlatSquare(flatSquareB)) {
       this.flatSquare = flatSquareB;
     }
@@ -137,10 +142,10 @@ public abstract class House {
 
   @Override
   public String toString() {
-    return "House{"
+    return "\nHouse{"
         + "id="
         + id
-        + "flatNumber="
+        + ", flatNumber="
         + flatNumber
         + ", flatSquare="
         + flatSquare

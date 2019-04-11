@@ -38,12 +38,9 @@ public class Runner {
     matrixShow();
 
     LOG.debug("\n*************************");
-
-    House house =
-        new HouseCreatorImpl()
-            .createHouse(10, 55.22, 3, 2, "Kleckova str.", "retail", LocalDate.of(2020, 12, 31));
-    LOG.debug(house.toString());
+    houseExamples();
   }
+
 
   private static strictfp void divide(double x, double y) {
     LOG.debug(x / y);
@@ -68,7 +65,7 @@ public class Runner {
 
     String s1 = "Java"; // created in string pool
     String s2 = "Java";
-    String s3 = new String(new char[] {'J', 'a', 'v', 'a'}); // created in heap
+    String s3 = new String(new char[]{'J', 'a', 'v', 'a'}); // created in heap
     LOG.debug(
         String.format(
             "Result of compare two links on Strong created by the same method: %B", s1 == s2));
@@ -145,7 +142,9 @@ public class Runner {
     m1.setData(null);
     LOG.debug(m1);
     LOG.debug(message2);
-    if (message4 instanceof Message) LOG.debug("message4 instanceof Message: true");
+    if (message4 instanceof Message) {
+      LOG.debug("message4 instanceof Message: true");
+    }
 
     MessageUtils mUtils = new MessageUtils();
     mUtils.getDataFromMessage(message1);
@@ -167,10 +166,10 @@ public class Runner {
     Payment.calculate(3, 9);
 
     Payment.printToLOG(
-        new String[] {"vasya", "petya", "kolia"},
-        new int[] {1, 2, 3},
-        new int[] {100, 200, 300},
-        new int[] {10, 9, 8, 7, 6, 5});
+        new String[]{"vasya", "petya", "kolia"},
+        new int[]{1, 2, 3},
+        new int[]{100, 200, 300},
+        new int[]{10, 9, 8, 7, 6, 5});
   }
 
   private static void doEnum() {
@@ -247,5 +246,37 @@ public class Runner {
 
   private static void matrixShow() {
     Matrix matrix = new Matrix(5, 4);
+  }
+
+  private static void houseExamples() {
+    House house;
+    try {
+      house =
+          new HouseCreatorImpl()
+              .createHouse(10, 55.22, 3, 2, "Kleckova str.", "retail", LocalDate.of(2020, 12, 31));
+      LOG.debug(house.toString());
+    } catch (IllegalArgumentException iae){
+      LOG.error(iae);
+    }
+
+    House house1;
+
+    try {
+      house1 = new HouseCreatorImpl()
+          .createHouse(1, 100.00, 1, 3, "BLK str.", "office", LocalDate.of(2100, 3, 20));
+      LOG.debug(house1);
+    } catch (IllegalArgumentException iae){
+      LOG.error(iae);
+    }
+
+    House house3;
+    try {
+      house1 = new HouseCreatorImpl()
+          .createHouse(37, 55.66, 7, 2, "Ostrovskogo str.", "SPECIAL_PURPOSE", LocalDate.of(2025, 1, 15));
+      LOG.debug(house1);
+    } catch (IllegalArgumentException iae){
+      LOG.error(iae);
+    }
+
   }
 }
