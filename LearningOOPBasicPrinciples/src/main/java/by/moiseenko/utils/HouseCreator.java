@@ -1,10 +1,7 @@
 package by.moiseenko.utils;
 
-import by.moiseenko.entity.BuldingType;
 import by.moiseenko.entity.House;
-import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Date;
 
 /**
  * Default javadoc

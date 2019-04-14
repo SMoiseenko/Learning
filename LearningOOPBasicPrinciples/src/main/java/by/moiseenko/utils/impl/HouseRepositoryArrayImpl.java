@@ -1,4 +1,4 @@
-package by.moiseenko.utils.Impl;
+package by.moiseenko.utils.impl;
 
 import by.moiseenko.entity.House;
 import by.moiseenko.utils.HouseRepository;

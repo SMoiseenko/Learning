@@ -1,10 +1,9 @@
-package by.moiseenko.utils.Impl;
+package by.moiseenko.utils.impl;
 
 import by.moiseenko.entity.House;
 import by.moiseenko.utils.HouseRepository;
 import com.fasterxml.jackson.core.JsonParser.Feature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 import java.io.File;
 import java.io.IOException;
 import org.apache.logging.log4j.LogManager;
@@ -18,7 +17,11 @@ import org.apache.logging.log4j.Logger;
 public class HouseRepositoryJSONImpl implements HouseRepository {
 
   private static final Logger LOG = LogManager.getLogger(HouseRepositoryJSONImpl.class.getName());
-  private final String FILE_STORAGE_NAME = "house_db.json";
+  private final String FILE_STORAGE_NAME;
+
+  public HouseRepositoryJSONImpl(String FILE_STORAGE_NAME) {
+    this.FILE_STORAGE_NAME = FILE_STORAGE_NAME;
+  }
 
   @Override
   public void storeInRepo(House house) {

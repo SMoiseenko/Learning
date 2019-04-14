@@ -5,13 +5,13 @@ package by.moiseenko.entity;
  *
  * @author moiseenko-s
  */
-public enum BuldingType {
+public enum BuildingType {
   RETAIL(1),
   OFFICE(2),
   SPECIAL_PURPOSE(3);
   private long id;
 
-  BuldingType(long id) {
+  BuildingType(long id) {
     this.id = id;
   }
 

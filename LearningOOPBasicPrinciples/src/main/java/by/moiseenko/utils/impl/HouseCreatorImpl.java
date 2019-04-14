@@ -1,4 +1,4 @@
-package by.moiseenko.utils.Impl;
+package by.moiseenko.utils.impl;
 
 import by.moiseenko.entity.House;
 import by.moiseenko.utils.HouseCreator;
@@ -16,7 +16,7 @@ import org.apache.logging.log4j.Logger;
 public class HouseCreatorImpl implements HouseCreator {
 
   private static final Logger LOG = LogManager.getLogger(HouseCreatorImpl.class.getName());
-  private HouseRepository houseRepository = new HouseRepositoryJSONImpl();
+  private HouseRepository houseRepository = new HouseRepositoryJSONImpl("house_db.json");
 
   @Override
   public House createHouse(int flatNumber, Double flatSquare, int floor, int qtyRooms,
@@ -28,7 +28,7 @@ public class HouseCreatorImpl implements HouseCreator {
     house.setFloor(floor);
     house.setQtyRooms(qtyRooms);
     house.setStreet(street);
-    house.setBuldingType(buildingType);
+    house.setBuildingType(buildingType);
     house.setLifetime(lifetime);
     if (Arrays.asList(houseRepository.loadFromRepo()).contains(house)) {
       LOG.debug("Building exist!!!");

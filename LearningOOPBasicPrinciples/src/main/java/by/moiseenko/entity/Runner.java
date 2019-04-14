@@ -1,6 +1,8 @@
 package by.moiseenko.entity;
 
-import by.moiseenko.utils.Impl.HouseCreatorImpl;
+import by.moiseenko.utils.HouseUtils;
+import by.moiseenko.utils.impl.HouseCreatorImpl;
+import by.moiseenko.utils.impl.HouseUtilsImpl;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Arrays;
@@ -249,34 +251,91 @@ public class Runner {
   }
 
   private static void houseExamples() {
-    House house;
+    House house, house1, house2, house3, house4, house5, house6, house7, house8, house9;
+
     try {
       house =
           new HouseCreatorImpl()
               .createHouse(10, 55.22, 3, 2, "Kleckova str.", "retail", LocalDate.of(2020, 12, 31));
-      LOG.debug(house.toString());
-    } catch (IllegalArgumentException iae){
+//      LOG.debug(house);
+    } catch (IllegalArgumentException iae) {
       LOG.error(iae);
     }
-
-    House house1;
-
     try {
       house1 = new HouseCreatorImpl()
           .createHouse(1, 100.00, 1, 3, "BLK str.", "office", LocalDate.of(2100, 3, 20));
-      LOG.debug(house1);
-    } catch (IllegalArgumentException iae){
+//      LOG.debug(house1);
+    } catch (IllegalArgumentException iae) {
+      LOG.error(iae);
+    }
+    try {
+      house2 = new HouseCreatorImpl()
+          .createHouse(37, 55.66, 7, 2, "Ostrovskogo str.", "SPECIAL_PURPOSE",
+              LocalDate.of(2025, 1, 15));
+//      LOG.debug(house2);
+    } catch (IllegalArgumentException iae) {
+      LOG.error(iae);
+    }
+    try {
+      house3 = new HouseCreatorImpl()
+          .createHouse(12, 31.47, 3, 3, "Vilenskaya str.", "retail", LocalDate.of(2100, 6, 1));
+//      LOG.debug(house3);
+    } catch (IllegalArgumentException iae) {
+      LOG.error(iae);
+    }
+    try {
+      house4 = new HouseCreatorImpl()
+          .createHouse(66, 31.47, 85, 3, "Ozeshko str.", "retail", LocalDate.of(2050, 3, 3));
+//      LOG.debug(house4);
+    } catch (IllegalArgumentException iae) {
+      LOG.error(iae);
+    }
+    try {
+      house5 = new HouseCreatorImpl()
+          .createHouse(66, 135.14, 34, 7, "Kleckova str.", "office", LocalDate.of(2088, 4, 25));
+//      LOG.debug(house5);
+    } catch (IllegalArgumentException iae) {
+      LOG.error(iae);
+    }
+    try {
+      house6 = new HouseCreatorImpl()
+          .createHouse(5, 350.00, 15, 30, "Gorkogo str.", "office", LocalDate.of(2088, 4, 25));
+//      LOG.debug(house6);
+    } catch (IllegalArgumentException iae) {
+      LOG.error(iae);
+    }
+    try {
+      house7 = new HouseCreatorImpl()
+          .createHouse(26, 35.14, 1, 4, "BLK str.", "retail", LocalDate.of(2088, 4, 25));
+//      LOG.debug(house7);
+    } catch (IllegalArgumentException iae) {
+      LOG.error(iae);
+    }
+    try {
+      house8 = new HouseCreatorImpl()
+          .createHouse(76, 333.33, 85, 20, "Lidskaya str.", "special_purpose",
+              LocalDate.of(2088, 4, 25));
+//      LOG.debug(house8);
+    } catch (IllegalArgumentException iae) {
+      LOG.error(iae);
+    }
+    try {
+      house9 = new HouseCreatorImpl()
+          .createHouse(158, 140.40, 26, 1, "Olshanka str.", "nonono", LocalDate.of(2088, 4, 25));
+//      LOG.debug(house9);
+    } catch (IllegalArgumentException iae) {
       LOG.error(iae);
     }
 
-    House house3;
-    try {
-      house1 = new HouseCreatorImpl()
-          .createHouse(37, 55.66, 7, 2, "Ostrovskogo str.", "SPECIAL_PURPOSE", LocalDate.of(2025, 1, 15));
-      LOG.debug(house1);
-    } catch (IllegalArgumentException iae){
-      LOG.error(iae);
-    }
+    HouseUtils houseUtils = new HouseUtilsImpl(HouseRepoType.JSON, "house_db.json ");
+    House[] result = houseUtils.houseArrayWithRoomsQty(30);
+    LOG.debug(Arrays.toString(result));
+
+    result = houseUtils.houseArrayWithRoomsQtyOnFloorsInterval(3, 50, 100);
+    LOG.debug(Arrays.toString(result));
+
+    result = houseUtils.houseArrayWithFlatSquareMoreThan(300.00);
+    LOG.debug(Arrays.toString(result));
 
   }
 }

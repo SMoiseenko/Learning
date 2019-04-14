@@ -1,7 +1,7 @@
 package by.moiseenko.entity;
 
 import by.moiseenko.utils.HouseParamValidator;
-import by.moiseenko.utils.Impl.HouseParamValidatorImpl;
+import by.moiseenko.utils.impl.HouseParamValidatorImpl;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
@@ -19,6 +19,7 @@ import org.apache.logging.log4j.Logger;
  * @author moiseenko-s
  */
 public class House {
+
   private static final Logger LOG = LogManager.getLogger(House.class.getName());
   private static final HouseParamValidator validator = new HouseParamValidatorImpl();
 
@@ -28,12 +29,13 @@ public class House {
   private int floor;
   private int qtyRooms;
   private String street;
-  private BuldingType buldingType;
+  private BuildingType buildingType;
   @JsonDeserialize(using = LocalDateDeserializer.class)
   @JsonSerialize(using = LocalDateSerializer.class)
   private LocalDate lifetime;
 
-  public House() {}
+  public House() {
+  }
 
   public long getId() {
     return id;
@@ -95,16 +97,14 @@ public class House {
     }
   }
 
-  public BuldingType getBuldingType() {
-    return buldingType;
+  public BuildingType getBuildingType() {
+    return buildingType;
   }
 
-  public void setBuldingType(BuldingType buldingType) {
-    this.buldingType = buldingType;
-  }
-
-  public void setBuldingType(String buildingType){
-    this.buldingType = Enum.valueOf(BuldingType.class, buildingType.toUpperCase());
+  public void setBuildingType(String buildingType) {
+    if (validator.validateBuildingType(buildingType)) {
+      this.buildingType = Enum.valueOf(BuildingType.class, buildingType.toUpperCase());
+    }
   }
 
   public LocalDate getLifetime() {
@@ -131,13 +131,13 @@ public class House {
         && qtyRooms == house.qtyRooms
         && Objects.equals(flatSquare, house.flatSquare)
         && Objects.equals(street, house.street)
-        && buldingType == house.buldingType
+        && buildingType == house.buildingType
         && Objects.equals(lifetime, house.lifetime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(flatNumber, flatSquare, floor, qtyRooms, street, buldingType, lifetime);
+    return Objects.hash(flatNumber, flatSquare, floor, qtyRooms, street, buildingType, lifetime);
   }
 
   @Override
@@ -156,8 +156,8 @@ public class House {
         + ", street='"
         + street
         + '\''
-        + ", buldingType="
-        + buldingType
+        + ", buildingType="
+        + buildingType
         + ", lifetime="
         + lifetime
         + '}';

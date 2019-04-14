@@ -1,9 +1,6 @@
 package by.moiseenko.utils;
 
-import by.moiseenko.entity.BuldingType;
 import by.moiseenko.entity.House;
-import java.math.BigDecimal;
-import java.util.Date;
 
 /**
  * Default javadoc
@@ -12,5 +9,10 @@ import java.util.Date;
  */
 public interface HouseUtils {
 
+  House[] houseArrayWithRoomsQty(int roomsQty);
+
+  House[] houseArrayWithRoomsQtyOnFloorsInterval(int roomsQty, int fromFloor, int tillFloor);
+
+  House[] houseArrayWithFlatSquareMoreThan(Double square);
 
 }

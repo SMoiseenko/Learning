@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "flatNumber": 66,
+    "flatSquare": 31.47,
+    "floor": 85,
+    "qtyRooms": 3,
+    "street": "Ozeshko str.",
+    "buildingType": "RETAIL",
+    "lifetime": [
+      2050,
+      3,
+      3
+    ]
+  }
+]

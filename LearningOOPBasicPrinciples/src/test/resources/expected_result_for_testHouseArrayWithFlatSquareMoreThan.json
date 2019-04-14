@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "flatNumber": 5,
+    "flatSquare": 350.00,
+    "floor": 15,
+    "qtyRooms": 30,
+    "street": "Gorkogo str.",
+    "buildingType": "OFFICE",
+    "lifetime": [
+      2088,
+      4,
+      25
+    ]
+  },
+   {
+    "id": 2,
+    "flatNumber": 76,
+    "flatSquare": 333.33,
+    "floor": 85,
+    "qtyRooms": 20,
+    "street": "Lidskaya str.",
+    "buildingType": "SPECIAL_PURPOSE",
+    "lifetime": [
+      2088,
+      4,
+      25
+    ]
+  }
+]
