@@ -16,4 +16,8 @@ public class ClassA {
     LOG.debug(name);
   }
 
+  public static void sayStaticName(){
+    LOG.debug("STATIC METHOD CLASS-A");
+  }
+
 }
