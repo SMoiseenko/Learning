@@ -327,7 +327,7 @@ public class Runner {
       LOG.error(iae);
     }
 
-    HouseUtils houseUtils = new HouseUtilsImpl(HouseRepoType.JSON, "house_db.json ");
+    HouseUtils houseUtils = new HouseUtilsImpl(HouseRepoType.JSON, "house_db.json");
     House[] result = houseUtils.houseArrayWithRoomsQty(30);
     LOG.debug(Arrays.toString(result));
 
