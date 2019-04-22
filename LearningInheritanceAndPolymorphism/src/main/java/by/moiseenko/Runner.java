@@ -9,8 +9,11 @@ import by.moiseenko.entity.Point1D;
 import by.moiseenko.entity.Point2D;
 import by.moiseenko.entity.Point3D;
 import by.moiseenko.entity.PointReport;
+import java.util.ArrayList;
+import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.spi.ObjectThreadContextMap;
 
 /**
  * Default javadoc
@@ -22,6 +25,7 @@ public class Runner {
   private static final int VAL = 10;
   private static final Logger LOG = LogManager.getLogger(Runner.class.getName());
 
+  //@SuppressWarnings(value = "unchecked")
   public static void main(String[] args) {
     ClassA classA = new ClassA();
     classA.sayName(NAME);
@@ -60,5 +64,43 @@ public class Runner {
     d.printReport(p2);
     Point1D p3 = new Point3D(3, 4, 5);
     d.printReport(p3);
-  }
+
+    Class<Number> cnumb = Number.class;
+
+    List rawList = new ArrayList();
+    rawList.add(1);
+    rawList.add("LIST");
+    String i1 = (String)rawList.get(0);
+    Integer i2 = (Integer)rawList.get(1);
+
+    List<? extends Object> simpleList = rawList;
+    String o1 = (String)simpleList.get(0);
+    Integer o2 = (Integer)simpleList.get(1);
+
+
+    List<? super Point1D> wilcardList = new ArrayList();
+    wilcardList.add(new Point3D());
+    wilcardList.add(new Point1D(1));
+    for(Object s: wilcardList ){
+      System.out.println("s");
+    }
+    Object blabla = wilcardList.get(1);
+
+    List<? super Number> nList = new ArrayList<>();
+
+
+
+    List<? extends Point1D> wilcardExtedsList = new ArrayList<>();
+
+    List<Object> objectList = new ArrayList<>();
+    List<Integer> integerList = new ArrayList<>();
+
+   // classA.superMethod(integerList);
+    classA.superMethod(objectList);
+   // classA.extendMethod(objectList);
+    classA.extendMethod(integerList);
+
+
+
+   }
 }
