@@ -5,12 +5,16 @@ import by.moiseenko.entity.ClassB;
 import by.moiseenko.entity.ClassC;
 import by.moiseenko.entity.Dumb;
 import by.moiseenko.entity.Dumber;
+import by.moiseenko.entity.Man;
+import by.moiseenko.entity.MyAbstractClass;
+import by.moiseenko.entity.Passport;
 import by.moiseenko.entity.Point1D;
 import by.moiseenko.entity.Point2D;
 import by.moiseenko.entity.Point3D;
 import by.moiseenko.entity.PointReport;
 import java.util.ArrayList;
 import java.util.List;
+import by.moiseenko.utils.ManService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.spi.ObjectThreadContextMap;
@@ -103,4 +107,39 @@ public class Runner {
 
 
    }
+
+    MyAbstractClass myAbstractClass =
+        new MyAbstractClass() {
+          @Override
+          public void sayHello() {
+            LOG.debug("HELLO FROM ANONIMUS CLASS");
+          }
+        };
+
+    myAbstractClass.sayHello();
+    MyAbstractClass.sayStatic();
+    Passport passport = new Passport(178500L);
+
+    Man man = new Man(1, "Siarhei", 32, passport);
+    LOG.debug(man);
+    ManService manService = new ManService();
+    manService.manHardChanger(man);
+    LOG.debug("MAN AFTER METHOD");
+    LOG.debug(man);
+    Man man1 = new Man(12, "Waswas", 18, new Passport(1253L));
+    man1 = null;
+    //
+
+    try {
+      for(int i = 0; i< 10; i++){
+        System.out.println("try finallization");
+        System.runFinalization();
+        Thread.sleep(1000);
+      }
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+    System.gc();
+
+  }
 }
