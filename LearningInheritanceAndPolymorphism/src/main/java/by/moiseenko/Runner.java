@@ -12,12 +12,11 @@ import by.moiseenko.entity.Point1D;
 import by.moiseenko.entity.Point2D;
 import by.moiseenko.entity.Point3D;
 import by.moiseenko.entity.PointReport;
+import by.moiseenko.utils.ManService;
 import java.util.ArrayList;
 import java.util.List;
-import by.moiseenko.utils.ManService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.spi.ObjectThreadContextMap;
 
 /**
  * Default javadoc
@@ -92,8 +91,6 @@ public class Runner {
 
     List<? super Number> nList = new ArrayList<>();
 
-
-
     List<? extends Point1D> wilcardExtedsList = new ArrayList<>();
 
     List<Object> objectList = new ArrayList<>();
@@ -103,10 +100,6 @@ public class Runner {
     classA.superMethod(objectList);
    // classA.extendMethod(objectList);
     classA.extendMethod(integerList);
-
-
-
-   }
 
     MyAbstractClass myAbstractClass =
         new MyAbstractClass() {
@@ -127,7 +120,7 @@ public class Runner {
     LOG.debug("MAN AFTER METHOD");
     LOG.debug(man);
     Man man1 = new Man(12, "Waswas", 18, new Passport(1253L));
-    man1 = null;
+  man1 = null;
     //
 
     try {
