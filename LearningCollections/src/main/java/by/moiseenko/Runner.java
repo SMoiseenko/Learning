@@ -1,21 +1,16 @@
 package by.moiseenko;
 
 import by.moiseenko.entity.ListCollection;
-import by.moiseenko.entity.Person;
 import by.moiseenko.entity.SetCollection;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Runner {
-    private static final Logger logger = Logger.getLogger(Runner.class);
+  private static final Logger LOG = LogManager.getLogger(Runner.class.getName());
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-
-
-        SetCollection.doAction();
-        ListCollection.doAction();
-
-    }
-
-
+    SetCollection.doAction();
+    ListCollection.doAction();
+  }
 }

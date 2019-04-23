@@ -1,42 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration monitorInterval="30">
-    <Properties>
-
-    </Properties>
-
-    <Appenders>
-
-        <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36}:%L - %msg%n"/>
-        </Console>
-
-        <RandomAccessFile name="TestLog" fileName="logs/testLogs.log" immediateFlush="false" append="false">
-            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36}:%L - %msg%n"/>
-        </RandomAccessFile>
-
-        <RandomAccessFile name="DataProviderTest" fileName="logs/testLogsTEMP.log" immediateFlush="false"
-                          append="false">
-            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36}:%L - %msg%n"/>
-        </RandomAccessFile>
-
-    </Appenders>
-
-    <Loggers>
-        <!-- name - use package name to log all classes in package, full qualified class name without .class - to log one class or ANY name that you want.
-        names in config is names in LogManager.getLogger(name)
-        -->
-        <Logger name="by.moiseenko.test.entity" level="debug">
-            <AppenderRef ref="TestLog"/>
-        </Logger>
-
-        <Logger name="WHERE CAN BE YOUR NAME" level="debug">
-            <AppenderRef ref="DataProviderTest"/>
-        </Logger>
-        <!-- Root logger is common and it logged ALL classes that used logging mechanism.
-        -->
-        <Root level="debug">
-            <AppenderRef ref="Console"/>
-        </Root>
-    </Loggers>
-
+  <Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout
+        pattern="%highlight{%d{HH:mm:ss.SSS} [%t] %-5level %logger{36}:%L - %msg%n}{FATAL=red blink, ERROR=red, WARN=yellow bold, INFO=black, DEBUG=green bold, TRACE=blue}"/>
+    </Console>
+    <!--
+    <File name="MyFile" fileName="logs/all.log" immediateFlush="false" append="true">
+      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36}:%L - %msg%n"/>
+    </File>
+    -->
+  </Appenders>
+  <Loggers>
+    <Root level="debug">
+      <AppenderRef ref="Console"/>
+    </Root>
+  </Loggers>
 </Configuration>
