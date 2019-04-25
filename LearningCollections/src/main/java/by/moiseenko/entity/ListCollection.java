@@ -3,13 +3,19 @@ package by.moiseenko.entity;
 import by.moiseenko.utils.PersonAgeComparator;
 import by.moiseenko.utils.PersonCreator;
 import by.moiseenko.utils.PersonMegaComparator;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.PriorityQueue;
+import java.util.Queue;
+import java.util.Stack;
+import java.util.Vector;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -131,6 +137,18 @@ public class ListCollection {
     oneHundredPersonsList.sort(new PersonMegaComparator(PersonEnum.AGE, false));
     showAllElementsAndSize(oneHundredPersonsList);
 
+    LOG.debug("*****COLLECTION ELEMENTS THAT NOT OVERWRITE EQUALS AND HASHCODE******");
+    List<DefaultEqualClass> list1 =
+        List.of(
+            new DefaultEqualClass(1, "A"),
+            new DefaultEqualClass(2, "B"),
+            new DefaultEqualClass(3, "C"));
+    DefaultEqualClass testInstance = new DefaultEqualClass(2, "B");
+    showAllElementsAndSize(list1);
+    LOG.debug(
+        String.format(
+            "%nWill%n%s%nconsist%n%s%n%b", list1, testInstance, list1.contains(testInstance)));
+
     LOG.debug("**************************LINKED-LIST COLLECTION*********************");
 
     LinkedList<Person> myLinkedList = new LinkedList<>();
@@ -149,14 +167,82 @@ public class ListCollection {
     LOG.debug(getLastElement);
 
     LOG.debug("*************************************************************");
+    LinkedList<Character> characters = new LinkedList<>();
+    for (int i = 0x41; i < 0x5B; i++) {
+      characters.add((char) i);
+    }
+
+    for (int i = 0x7A; i > 0x60; i--) {
+      characters.addFirst((char) i);
+    }
+    showAllElementsAndSize(characters);
+
+    LOG.debug("********************Descending Iterator**********************");
+    Iterator<Character> charIterator = characters.descendingIterator();
+    while (charIterator.hasNext()) {
+      LOG.debug(charIterator.next());
+    }
+    LOG.debug("****************GO BACK WITH LIST ITERATOR********************");
+    ListIterator<Character> characterListIterator = characters.listIterator(10);
+    while (characterListIterator.hasPrevious()) {
+      LOG.debug(characterListIterator.previous());
+    }
+    LOG.debug("*************************************************************");
+    // FIFO = queue
+    LOG.debug(characters.poll());
+    LOG.debug(characters.pollLast());
+    LOG.debug(characters.peek());
+    LOG.debug(characters.peekLast());
+
+    while (characters.size() != 0) {
+      LOG.debug(characters.poll());
+    }
+    LOG.debug(characters.poll());
+
+    LOG.debug("**********************PRIORITY QUEUE**********************");
+    PriorityQueue<Person> personPriorityQueue =
+        new PriorityQueue<>(new PersonMegaComparator(PersonEnum.AGE, true));
+    List<Person> personListForPriorityQueue = pc.generatePersonsList(30);
+    for (Person p : personListForPriorityQueue) {
+      personPriorityQueue.add(p);
+    }
+    while (personPriorityQueue.size() != 0) {
+      LOG.debug(personPriorityQueue.size() + " -=- " + personPriorityQueue.poll());
+    }
+    LOG.debug("**********************Vector**********************");
+    Vector<Integer> vector = new Vector<>();
+    for (int i = 0; i <= 10; i++) {
+      vector.add(Integer.valueOf(i));
+    }
+    showAllElementsAndSize(vector);
+
+    LOG.debug("**********************Stack**********************");
+    Stack<Integer> stack = new Stack<>();
+    for (int i = 0; i <= 10; i++) {
+      stack.add(Integer.valueOf(i));
+    }
+    while (stack.size() != 0) {
+      LOG.debug(stack.pop());
+    }
+
+    LOG.debug("**********************Linked List like Queue**********************");
+    Queue<Person> personQueue = new LinkedList<>();
+    personQueue.addAll(pc.generatePersonsList(10));
+    personQueue.offer(new Person("asdd", 10));
+    personQueue.offer(null);
+    while (personQueue.size() != 0) {
+      LOG.debug(personQueue.poll());
+    }
+
+
   }
 
-  private static <T extends Person> void showAllElementsAndSize(List<T> myArrayList) {
-    Iterator<T> myListIterator = myArrayList.listIterator();
+  private static <T> void showAllElementsAndSize(Collection<T> collection) {
+    Iterator<T> myListIterator = collection.iterator();
     while (myListIterator.hasNext()) {
       LOG.debug(myListIterator.next());
     }
-    int arraySize = myArrayList.size();
+    int arraySize = collection.size();
     LOG.debug("arraySize: " + arraySize);
   }
 }
