@@ -2,6 +2,7 @@ package by.moiseenko;
 
 import by.moiseenko.entity.ListCollection;
 import by.moiseenko.entity.SetCollection;
+import by.moiseenko.utils.NetworkUserExamples;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -12,5 +13,6 @@ public class Runner {
 
     SetCollection.doAction();
     ListCollection.doAction();
+    NetworkUserExamples.showMustGoOn(true);
   }
 }
