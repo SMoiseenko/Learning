@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>DEFAULT DB_CONNECTOR PROPERTIES</comment>
+<entry key="db.driver">com.mysql.jdbc.Driver</entry>
+<entry key="db.user">root</entry>
+<entry key="db.password">pass</entry>
+<entry key="db.poolsize">5</entry>
+<entry key="db.url">jdbc:mysql://127.0.0.1:3306/testDB</entry>
+</properties>
