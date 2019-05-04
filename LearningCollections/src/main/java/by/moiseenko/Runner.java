@@ -1,9 +1,11 @@
 package by.moiseenko;
 
+import by.moiseenko.entity.CollectionsClassExample;
 import by.moiseenko.entity.ListCollection;
 import by.moiseenko.entity.MapCollection;
 import by.moiseenko.entity.SetCollection;
 import by.moiseenko.utils.NetworkUserExamples;
+import by.moiseenko.utils.SomeExercise;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -15,6 +17,10 @@ public class Runner {
     SetCollection.doAction(false);
     ListCollection.doAction(false);
     NetworkUserExamples.showMustGoOn(false);
-    MapCollection.doAction(true);
+    MapCollection.doAction(false);
+    CollectionsClassExample.doAction(false);
+
+    SomeExercise.readFromFileToArrayAndReverseIt("src/main/resources/fredie.txt");
+    SomeExercise.numbersInStack();
   }
 }
