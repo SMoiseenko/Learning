@@ -20,11 +20,12 @@ public class SomeExercise {
   private static final Logger LOG = LogManager.getLogger(SomeExercise.class.getName());
 
   public static void readFromFileToArrayAndReverseIt(String filePath) {
-    if (new File(filePath).exists()) {
+    File file = new File(System.getProperty("user.home") + filePath);
+    if (file.exists()) {
       List<String> textList = new ArrayList<>();
       Scanner scanner = null;
       try {
-        scanner = new Scanner(new File(filePath));
+        scanner = new Scanner(file);
       } catch (FileNotFoundException e) {
         LOG.error(e);
       }
@@ -56,11 +57,10 @@ public class SomeExercise {
       }
       int result = 0;
       int stackSize = stack.size();
-      for(int i = 0; i< stackSize; i++){
-        result += stack.pop()*Math.pow(10,i);
-       }
+      for (int i = 0; i < stackSize; i++) {
+        result += stack.pop() * Math.pow(10, i);
+      }
       LOG.debug(result);
-     }
-
+    }
   }
 }
