@@ -20,7 +20,7 @@ public class Runner {
     MapCollection.doAction(false);
     CollectionsClassExample.doAction(false);
 
-    SomeExercise.readFromFileToArrayAndReverseIt("src/main/resources/fredie.txt");
+    SomeExercise.readFromFileToArrayAndReverseIt("/IdeaProjects/Learning/LearningCollections/src/main/resources/fredie.txt");
     SomeExercise.numbersInStack();
   }
 }
