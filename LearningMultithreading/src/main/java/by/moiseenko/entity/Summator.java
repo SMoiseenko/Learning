@@ -29,9 +29,6 @@ public class Summator extends Thread {
   public void run() {
     LOG.debug(summ(a));
     LOG.debug(Thread.currentThread().getThreadGroup());
-//    if (!Thread.currentThread().isInterrupted()) {
-//      Thread.currentThread().interrupt();
-//    }
   }
 }
 
