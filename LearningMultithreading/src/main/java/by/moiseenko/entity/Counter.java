@@ -1,5 +1,6 @@
 package by.moiseenko.entity;
 
+import java.util.concurrent.TimeUnit;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -12,17 +13,26 @@ public class Counter {
 
   private static final Logger LOG = LogManager.getLogger(Counter.class.getName());
 
-  private static int count = 0;
+  private int count = 0;
 
-  public static void increaseCounter(){
-    count+=5;
+  public synchronized void increaseCounter() {
+    int tempcount = this.count;
+
+    try {
+      Thread.sleep(10L);
+    } catch (InterruptedException e) {
+      LOG.error(e);
+    }
+    this.count = ++tempcount;
+    LOG.debug(count);
   }
 
-  public static void decreaseCounter(){
-    count-=5;
+  public void decreaseCounter() {
+    count--;
+    LOG.debug(count);
   }
 
-  public static int getCount() {
+  public int getCount() {
     return count;
   }
 }
