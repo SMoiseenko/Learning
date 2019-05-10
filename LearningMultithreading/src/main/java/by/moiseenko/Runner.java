@@ -18,9 +18,10 @@ public class Runner {
     SomeCodeExample.doActionSecond(false);
     SomeCodeExample.doActionThird(false);
     SomeCodeExample.doActionFourth(false);
-    SomeCodeExample.doActionFifth(false);
+    SomeCodeExample.doActionFifth(true);
     SomeCodeExample.doActionSixth(false);
-    SomeCodeExample.doActionSeventh(true);
+    SomeCodeExample.doActionSeventh(false);
+    SomeCodeExample.doActionEighth(true);
 
     // END IS HERE
   }

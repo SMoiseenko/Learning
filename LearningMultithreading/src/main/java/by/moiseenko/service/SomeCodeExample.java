@@ -2,10 +2,13 @@ package by.moiseenko.service;
 
 import by.moiseenko.entity.Counter;
 import by.moiseenko.entity.InterruptedThread;
+import by.moiseenko.entity.MyThreadFactory;
 import by.moiseenko.entity.Summator;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -212,16 +215,74 @@ public class SomeCodeExample {
 
       int a1 = integerGeneric.summ(10, 40);
       LOG.debug(a1);
-      String s1 = stringGeneric.summ("10","40");
+      String s1 = stringGeneric.summ("10", "40");
       LOG.debug(s1);
 
       EmptyMethod emptyMethod = new TestClass("hello", "world");
       emptyMethod.doThis();
 
-
-
-
+      EmptyMethod em1 = method("A", "B");
+      em1.doThis();
     }
+  }
+
+  public static void doActionEighth(boolean isActive) {
+    if (isActive) {
+
+      ExecutorService executorService =
+          Executors.newFixedThreadPool(4);
+      List<Callable<Integer>> taskList =
+          Arrays.asList(
+              () -> {
+                LOG.debug("FIRST TASK");
+                return 10;
+              },
+              () -> {
+                LOG.debug("SECOND TASK");
+                return 20;
+              },
+              () -> {
+                LOG.debug("THIRD TASK");
+                return 30;
+              },
+              () -> {
+                LOG.debug("FOURTH TASK");
+                return 40;
+              },
+              () -> {
+                LOG.debug("FIFTH TASK");
+                TimeUnit.SECONDS.sleep(10);
+                return 50;
+              });
+      List<Future<Integer>> futureList = null;
+      try {
+        futureList = executorService.invokeAll(taskList);
+      } catch (InterruptedException e) {
+        LOG.error(e);
+      }
+
+      for (Future<Integer> fI : futureList) {
+        try {
+          if (fI != null) {
+            LOG.debug(fI.get(20, TimeUnit.SECONDS));
+          }
+        } catch (InterruptedException | ExecutionException | TimeoutException e) {
+          LOG.error(e);
+        }
+
+        executorService = Executors.newFixedThreadPool(1);
+        executorService.submit(()->LOG.debug("I WAS RUN ONES AGAIN"));
+
+      }
+    }
+  }
+
+  private static EmptyMethod method(String a, String b) {
+    return () -> {
+      String result;
+      result = a + "-=-" + b;
+      LOG.debug(result);
+    };
   }
 }
 
@@ -231,7 +292,7 @@ interface VoidMethod {
 }
 
 @FunctionalInterface
-interface EmptyMethod{
+interface EmptyMethod {
   void doThis();
 }
 
@@ -250,7 +311,7 @@ interface Generic<T> {
   T summ(T a, T b);
 }
 
-class TestClass implements EmptyMethod{
+class TestClass implements EmptyMethod {
 
   private String a;
   private String b;
@@ -266,5 +327,3 @@ class TestClass implements EmptyMethod{
     System.out.println(b);
   }
 }
-
-
