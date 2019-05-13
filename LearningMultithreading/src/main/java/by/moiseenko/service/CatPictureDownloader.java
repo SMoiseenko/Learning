@@ -10,6 +10,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.URL;
+import java.util.Scanner;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import javax.net.ssl.HttpsURLConnection;
@@ -33,7 +34,7 @@ public class CatPictureDownloader {
     File dir2Save = new File(System.getProperty("user.home") + File.separator + folderName);
 
     if (dir2Save.exists()) {
-      deleteDirectory (dir2Save);
+      deleteDirectory(dir2Save);
     }
     dir2Save.mkdir();
 
@@ -83,8 +84,7 @@ public class CatPictureDownloader {
       String fileName = fromURL.substring(fromURL.lastIndexOf('/') + 1, fromURL.length());
       String absolutlePath = dir2Save.getAbsolutePath() + File.separator + fileName;
       InputStream is = httpsURLConnection.getInputStream();
-      OutputStream os =
-          new FileOutputStream(absolutlePath);
+      OutputStream os = new FileOutputStream(absolutlePath);
 
       final int BUFFER_SIZE = 1024;
       int wasRead = 0;
@@ -106,7 +106,8 @@ public class CatPictureDownloader {
       downloadToHDD(catLink.getFile(), dir2Save);
     };
   }
-  private static void deleteDirectory (File file) {
+
+  private static void deleteDirectory(File file) {
     if (file.isDirectory()) {
       File[] entries = file.listFiles();
       if (entries != null) {
@@ -117,6 +118,15 @@ public class CatPictureDownloader {
     }
     if (!file.delete()) {
       LOG.error("Failed to delete " + file);
+    }
+  }
+
+  public static void giveMeSomeCats(boolean isActive) {
+    if (isActive) {
+      System.out.println("Enter number of pictures, that you want to download:");
+      Scanner scanner = new Scanner(System.in);
+      int qty = scanner.nextInt();
+      downloadSomeCatsTo(qty, "Downloads/Cats/");
     }
   }
 }

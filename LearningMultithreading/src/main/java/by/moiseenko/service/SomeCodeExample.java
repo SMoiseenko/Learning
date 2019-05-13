@@ -1,18 +1,28 @@
 package by.moiseenko.service;
 
+import static by.moiseenko.service.ConcurrentUtils.sleep;
+import static by.moiseenko.service.ConcurrentUtils.stop;
+
 import by.moiseenko.entity.Counter;
 import by.moiseenko.entity.InterruptedThread;
 import by.moiseenko.entity.Summator;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.stream.IntStream;
 import javax.net.ssl.HttpsURLConnection;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -224,7 +234,77 @@ public class SomeCodeExample {
   }
 
   public static void doActionEighth(boolean isActive) {
-    if (isActive) {}
+    if (isActive) {
+      List<String> resultList = new ArrayList<>();
+      ExecutorService executorService = Executors.newWorkStealingPool();
+      List<Callable<String>> taskList =
+          Arrays.asList(
+              () -> {
+                TimeUnit.SECONDS.sleep(1);
+                return "Task 01";
+              },
+              () -> {
+                TimeUnit.SECONDS.sleep(2);
+                return "Task 02";
+              },
+              () -> {
+                TimeUnit.SECONDS.sleep(3);
+                return "Task 03";
+              },
+              () -> {
+                TimeUnit.SECONDS.sleep(4);
+                return "Task 04";
+              },
+              () -> {
+                TimeUnit.SECONDS.sleep(5);
+                return "Task 05";
+              });
+
+      List<Future<String>> futureList = new ArrayList<>();
+      try {
+        futureList = executorService.invokeAll(taskList);
+        for (Future<String> fs : futureList) {
+          resultList.add(fs.get().toLowerCase());
+        }
+      } catch (InterruptedException | ExecutionException e) {
+        LOG.error(e);
+      }
+      LOG.debug(resultList);
+    }
+  }
+
+  public static void doActionNinth(boolean isActive) {
+    if (isActive) {
+      Runnable task =
+          () -> LOG.debug(LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH-mm-ss")));
+
+      ScheduledExecutorService scheduledExecutorService =
+          Executors.newSingleThreadScheduledExecutor();
+      scheduledExecutorService.scheduleAtFixedRate(task, 10L, 5L, TimeUnit.SECONDS);
+    }
+  }
+
+  public static void doActionTenth(boolean isActive) {
+    if (isActive) {
+      ExecutorService executorService = Executors.newFixedThreadPool(1000);
+      LOG.debug(z);
+      Runnable task =
+          () -> {
+        sleep(1);
+            count();
+            LOG.debug(z);
+          };
+
+      IntStream.range(0,1000).forEach(i -> executorService.submit(task));
+      stop(executorService);
+      count();
+      LOG.debug(z);
+
+    }
+  }
+
+  private static  synchronized void count() {
+    z = z + 1;
   }
 
   private static EmptyMethod method(String a, String b) {

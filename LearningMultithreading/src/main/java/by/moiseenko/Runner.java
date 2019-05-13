@@ -24,11 +24,9 @@ public class Runner {
     SomeCodeExample.doActionSixth(false);
     SomeCodeExample.doActionSeventh(false);
     SomeCodeExample.doActionEighth(false);
-
-    System.out.println("Enter number of pictures, that you want to download:");
-    Scanner scanner = new Scanner(System.in);
-    int qty = scanner.nextInt();
-    CatPictureDownloader.downloadSomeCatsTo(qty, "Downloads/Cats/");
+    SomeCodeExample.doActionNinth(false);
+    SomeCodeExample.doActionTenth(true);
+    CatPictureDownloader.giveMeSomeCats(false);
 
 
 
