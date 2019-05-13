@@ -6,6 +6,7 @@ import static by.moiseenko.service.ConcurrentUtils.stop;
 import by.moiseenko.entity.Counter;
 import by.moiseenko.entity.InterruptedThread;
 import by.moiseenko.entity.Summator;
+import by.moiseenko.entity.SyncAlphabetList;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -20,8 +21,10 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.concurrent.locks.ReentrantLock;
 import java.util.stream.IntStream;
 import javax.net.ssl.HttpsURLConnection;
 import org.apache.logging.log4j.LogManager;
@@ -37,6 +40,8 @@ public class SomeCodeExample {
   private static final Logger LOG = LogManager.getLogger(SomeCodeExample.class.getName());
 
   private static int z = 10;
+
+  private static ReentrantLock lock = new ReentrantLock();
 
   public static void doActionFirst(boolean isAction) {
     if (isAction) {
@@ -286,24 +291,85 @@ public class SomeCodeExample {
 
   public static void doActionTenth(boolean isActive) {
     if (isActive) {
-      ExecutorService executorService = Executors.newFixedThreadPool(1000);
+      ExecutorService executorService = Executors.newFixedThreadPool(2);
       LOG.debug(z);
       Runnable task =
           () -> {
-        sleep(1);
-            count();
-            LOG.debug(z);
+            lock.lock();
+            try {
+              count();
+            } finally {
+              lock.unlock();
+            }
+            //            LOG.debug(z);
           };
 
-      IntStream.range(0,1000).forEach(i -> executorService.submit(task));
+      IntStream.range(0, 10000).forEach(i -> executorService.submit(task));
       stop(executorService);
       count();
       LOG.debug(z);
-
     }
   }
 
-  private static  synchronized void count() {
+  public static void doActionEleventh(boolean isActive) {
+    if (isActive) {
+      SyncAlphabetList syncAlphabetList = new SyncAlphabetList();
+      ExecutorService executorService = Executors.newFixedThreadPool(2);
+      Runnable tack1 =
+          () -> {
+            for (char c = '\u0041'; c < '\u005B'; c++) {
+              syncAlphabetList.addChar(c);
+            }
+          };
+      Runnable task2 =
+          () -> {
+            LOG.info(syncAlphabetList.toString());
+          };
+
+      executorService.submit(tack1);
+      executorService.submit(task2);
+      executorService.submit(task2);
+
+      stop(executorService);
+    }
+  }
+
+  public static void doActionTwelfth(boolean isAction) {
+    if (isAction) {
+      Semaphore semaphore = new Semaphore(2);
+      ExecutorService executorService = Executors.newFixedThreadPool(10);
+      Runnable task =
+          () -> {
+            try {
+              if (semaphore.tryAcquire(3, TimeUnit.SECONDS)) {
+                LOG.debug("LOCKED");
+                sleep(2);
+                semaphore.release();
+                LOG.debug("UNLOCKED");
+
+              } else {
+                LOG.debug(" WAS NOT LOCKED");
+              }
+
+            } catch (InterruptedException e) {
+              LOG.error(e);
+            }
+          };
+
+      IntStream.range(0, 10).forEach(i -> executorService.submit(task));
+
+      stop(executorService);
+
+      new Thread(
+              () -> {
+                sleep(3);
+                Thread.currentThread().interrupt();
+              })
+          .start();
+    }
+  }
+
+  private static void count() {
     z = z + 1;
   }
 
