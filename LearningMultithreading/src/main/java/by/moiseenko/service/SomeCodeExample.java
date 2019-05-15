@@ -5,9 +5,9 @@ import static by.moiseenko.service.ConcurrentUtils.stop;
 
 import by.moiseenko.entity.Counter;
 import by.moiseenko.entity.CrudeOil;
-import by.moiseenko.entity.CrudeOilAtomic;
 import by.moiseenko.entity.InterruptedThread;
 import by.moiseenko.entity.PriceDisplay;
+import by.moiseenko.entity.Resource;
 import by.moiseenko.entity.Summator;
 import by.moiseenko.entity.SyncAlphabetList;
 import java.io.BufferedReader;
@@ -27,7 +27,6 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.stream.IntStream;
 import javax.net.ssl.HttpsURLConnection;
@@ -379,13 +378,28 @@ public class SomeCodeExample {
       CrudeOil crudeOil = new CrudeOil("OIL-THREAD", 50);
       crudeOil.start();
 
-      for(int i = 1; i<10+1; i++){
+      for (int i = 1; i < 10 + 1; i++) {
         new PriceDisplay(crudeOil, i).start();
       }
+    }
+  }
 
+  public static void doActionFourteenth(boolean isActive) {
+    if (isActive) {
+      Resource res = new Resource("data/res.txt");
+      ThreadResourceWriter thr1 = new ThreadResourceWriter(res, "FIRST");
+      ThreadResourceWriter thr2 = new ThreadResourceWriter(res, "SECOND");
 
-
-
+      try{
+        thr2.start();
+        thr1.start();
+        thr1.join();
+        thr2.join();
+      } catch (InterruptedException ie){
+        LOG.debug(ie);
+      } finally{
+        res.close();
+      }
     }
   }
 
@@ -399,47 +413,5 @@ public class SomeCodeExample {
       result = a + "-=-" + b;
       LOG.debug(result);
     };
-  }
-}
-
-@FunctionalInterface
-interface VoidMethod {
-  void doSomething(String s);
-}
-
-@FunctionalInterface
-interface EmptyMethod {
-  void doThis();
-}
-
-@FunctionalInterface
-interface ReturnedMethod {
-  String doSomthing(String a, String b);
-}
-
-@FunctionalInterface
-interface Calculator {
-  int calc(int x, int y);
-}
-
-@FunctionalInterface
-interface Generic<T> {
-  T summ(T a, T b);
-}
-
-class TestClass implements EmptyMethod {
-
-  private String a;
-  private String b;
-
-  public TestClass(String a, String b) {
-    this.a = a;
-    this.b = b;
-  }
-
-  @Override
-  public void doThis() {
-    System.out.println(a);
-    System.out.println(b);
   }
 }
