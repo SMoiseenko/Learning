@@ -3,9 +3,12 @@ package by.moiseenko.service;
 import static by.moiseenko.service.ConcurrentUtils.sleep;
 import static by.moiseenko.service.ConcurrentUtils.stop;
 
+import by.moiseenko.entity.Car;
 import by.moiseenko.entity.Counter;
 import by.moiseenko.entity.CrudeOil;
 import by.moiseenko.entity.InterruptedThread;
+import by.moiseenko.entity.ParkingLot;
+import by.moiseenko.entity.ParkingZone;
 import by.moiseenko.entity.Payment;
 import by.moiseenko.entity.PriceDisplay;
 import by.moiseenko.entity.Resource;
@@ -18,7 +21,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Callable;
@@ -439,41 +444,66 @@ public class SomeCodeExample {
   public static void doActionSixteenth(boolean isAction) {
     if (isAction) {
       final BlockingQueue<String> blockingQueue = new ArrayBlockingQueue<>(5);
-     Thread t1 = new Thread(
-          () -> {
-            for (int i = 0; i < 20; i++) {
-              try {
-//                Thread.sleep((long) (Math.random() * 1000));
-                blockingQueue.put(String.valueOf(i));
-                LOG.debug("Element " + i + " added!");
-              } catch (InterruptedException ie) {
-                LOG.error(ie);
-              }
-            }
-          });
-     Thread t2 = new Thread(
-          () -> {
-            for (int i = 0; i < 17; i++) {
-              String element;
-              try {
-                element = blockingQueue.take();
-                LOG.debug("Taken " + element);
-                Thread.sleep((long) (Math.random() * 500));
-              } catch (InterruptedException ie) {
-                LOG.error(ie);
-              }
-            }
-          });
-     try{
-       t1.start();
-       t2.start();
-       t1.join();
-       t2.join();
-     }catch (InterruptedException ie){
-       LOG.error(ie);
-     }
-     LOG.debug(blockingQueue);
+      Thread t1 =
+          new Thread(
+              () -> {
+                for (int i = 0; i < 20; i++) {
+                  try {
+                    //                Thread.sleep((long) (Math.random() * 1000));
+                    blockingQueue.put(String.valueOf(i));
+                    LOG.debug("Element " + i + " added!");
+                  } catch (InterruptedException ie) {
+                    LOG.error(ie);
+                  }
+                }
+              });
+      Thread t2 =
+          new Thread(
+              () -> {
+                for (int i = 0; i < 17; i++) {
+                  String element;
+                  try {
+                    element = blockingQueue.take();
+                    LOG.debug("Taken " + element);
+                    Thread.sleep((long) (Math.random() * 500));
+                  } catch (InterruptedException ie) {
+                    LOG.error(ie);
+                  }
+                }
+              });
+      try {
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+      } catch (InterruptedException ie) {
+        LOG.error(ie);
+      }
+      LOG.debug(blockingQueue);
     }
+  }
+
+  public static void doActionSeventeenth(boolean isAction) {
+    if (isAction) {
+      Queue<ParkingLot> parkingLots =
+          new LinkedList<>(
+              Arrays.asList(
+                  new ParkingLot("ONE"),
+                  new ParkingLot("TWO"),
+                  new ParkingLot("THREE"),
+                  new ParkingLot("FOUR"),
+                  new ParkingLot("FIVE")));
+      ParkingZone parkingZone = new ParkingZone(parkingLots);
+
+      for (int i = 1; i < 20; i++){
+        new Car(String.valueOf(i), parkingZone).start();
+      }
+
+
+
+    }
+
+
   }
 
   private static void count() {
