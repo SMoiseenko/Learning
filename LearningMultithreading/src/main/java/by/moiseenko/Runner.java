@@ -29,7 +29,9 @@ public class Runner {
     SomeCodeExample.doActionEleventh(false);
     SomeCodeExample.doActionTwelfth(false);
     SomeCodeExample.doActionThirteenth(false);
-    SomeCodeExample.doActionFourteenth(true);
+    SomeCodeExample.doActionFourteenth(false);
+    SomeCodeExample.doActionFifteenth(false);
+    SomeCodeExample.doActionSixteenth(true);
     CatPictureDownloader.giveMeSomeCats(false);
 
 

@@ -6,6 +6,7 @@ import static by.moiseenko.service.ConcurrentUtils.stop;
 import by.moiseenko.entity.Counter;
 import by.moiseenko.entity.CrudeOil;
 import by.moiseenko.entity.InterruptedThread;
+import by.moiseenko.entity.Payment;
 import by.moiseenko.entity.PriceDisplay;
 import by.moiseenko.entity.Resource;
 import by.moiseenko.entity.Summator;
@@ -18,6 +19,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -390,16 +393,86 @@ public class SomeCodeExample {
       ThreadResourceWriter thr1 = new ThreadResourceWriter(res, "FIRST");
       ThreadResourceWriter thr2 = new ThreadResourceWriter(res, "SECOND");
 
-      try{
+      try {
         thr2.start();
         thr1.start();
         thr1.join();
         thr2.join();
-      } catch (InterruptedException ie){
+      } catch (InterruptedException ie) {
         LOG.debug(ie);
-      } finally{
+      } finally {
         res.close();
       }
+    }
+  }
+
+  public static void doActionFifteenth(boolean isActive) {
+    if (isActive) {
+      final Payment payment = new Payment();
+      Runnable task =
+          () -> {
+            payment.doPayment();
+          };
+      Thread thread = new Thread(task);
+      thread.start();
+      try {
+        Thread.sleep(200);
+      } catch (InterruptedException e) {
+        LOG.error(e);
+      }
+      synchronized (payment) {
+        LOG.debug("Init amount: ");
+        payment.initAmount();
+        payment.notify();
+      }
+      synchronized (payment) {
+        try {
+          payment.wait(1_000);
+        } catch (InterruptedException e) {
+          LOG.error(e);
+        }
+        LOG.debug("OK");
+      }
+    }
+  }
+
+  public static void doActionSixteenth(boolean isAction) {
+    if (isAction) {
+      final BlockingQueue<String> blockingQueue = new ArrayBlockingQueue<>(5);
+     Thread t1 = new Thread(
+          () -> {
+            for (int i = 0; i < 20; i++) {
+              try {
+//                Thread.sleep((long) (Math.random() * 1000));
+                blockingQueue.put(String.valueOf(i));
+                LOG.debug("Element " + i + " added!");
+              } catch (InterruptedException ie) {
+                LOG.error(ie);
+              }
+            }
+          });
+     Thread t2 = new Thread(
+          () -> {
+            for (int i = 0; i < 17; i++) {
+              String element;
+              try {
+                element = blockingQueue.take();
+                LOG.debug("Taken " + element);
+                Thread.sleep((long) (Math.random() * 500));
+              } catch (InterruptedException ie) {
+                LOG.error(ie);
+              }
+            }
+          });
+     try{
+       t1.start();
+       t2.start();
+       t1.join();
+       t2.join();
+     }catch (InterruptedException ie){
+       LOG.error(ie);
+     }
+     LOG.debug(blockingQueue);
     }
   }
 
