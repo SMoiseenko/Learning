@@ -35,8 +35,10 @@ public class Runner {
     SomeCodeExample.doActionSixteenth(false);
     SomeCodeExample.doActionSeventeenth(false);
     SomeCodeExample.doActionEighteenth(false);
+
+
     CatPictureDownloader.giveMeSomeCats(false);
-    new LelyLicBinAnalyzer().analyze();
+//    new LelyLicBinAnalyzer().analyze();
 
 
 

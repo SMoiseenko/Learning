@@ -14,12 +14,11 @@ public class LelyLicBinAnalyzer {
   private static final Logger LOG = LogManager.getLogger(LelyLicBinAnalyzer.class.getName());
 
   public void analyze() {
-    byte[] mass = readFile();
-    for (int a = 32; a >0 ; a--) {
-      for (byte i : mass) {
-        i *= -1;
-        i -= (61 - a);
-        System.out.printf("%c ", i);
+    int[] mass = byteToInt(readFile());
+    for (int a = 32; a > 31; a--) {
+      for (int i : mass) {
+      if (i != 0xc3){
+        System.out.printf("%02x ", i);}
       }
       System.out.println();
     }
@@ -34,6 +33,14 @@ public class LelyLicBinAnalyzer {
       result = array;
     } catch (IOException io) {
       LOG.error(io);
+    }
+    return result;
+  }
+
+  private int[] byteToInt(byte[] array) {
+    int[] result = new int[array.length];
+    for (int i = 0; i < array.length; i++) {
+      result[i] = (array[i] < 0) ? 256 + array[i] : array[i];
     }
     return result;
   }
