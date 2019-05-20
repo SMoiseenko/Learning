@@ -3,6 +3,8 @@ package by.moiseenko.service;
 import static by.moiseenko.service.ConcurrentUtils.sleep;
 import static by.moiseenko.service.ConcurrentUtils.stop;
 
+import by.moiseenko.entity.Auction;
+import by.moiseenko.entity.Bid;
 import by.moiseenko.entity.Car;
 import by.moiseenko.entity.Counter;
 import by.moiseenko.entity.CrudeOil;
@@ -24,6 +26,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.Random;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Callable;
@@ -495,15 +498,21 @@ public class SomeCodeExample {
                   new ParkingLot("FIVE")));
       ParkingZone parkingZone = new ParkingZone(parkingLots);
 
-      for (int i = 1; i < 20; i++){
+      for (int i = 1; i < 20; i++) {
         new Car(String.valueOf(i), parkingZone).start();
       }
-
-
-
     }
+  }
 
-
+  public static void doActionEighteenth(boolean isActive) {
+    if (isActive) {
+      Auction auction = new Auction();
+      for (int i = 0; i < Auction.BIDS_NUMBER; i++) {
+        Bid bid = new Bid(i, new Random().nextInt(100), auction);
+        auction.addBid(bid);
+        bid.start();
+      }
+    }
   }
 
   private static void count() {

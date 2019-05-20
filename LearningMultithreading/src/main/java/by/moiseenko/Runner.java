@@ -1,6 +1,7 @@
 package by.moiseenko;
 
 import by.moiseenko.service.CatPictureDownloader;
+import by.moiseenko.service.LelyLicBinAnalyzer;
 import by.moiseenko.service.SomeCodeExample;
 import java.util.Scanner;
 import org.apache.logging.log4j.LogManager;
@@ -32,8 +33,10 @@ public class Runner {
     SomeCodeExample.doActionFourteenth(false);
     SomeCodeExample.doActionFifteenth(false);
     SomeCodeExample.doActionSixteenth(false);
-    SomeCodeExample.doActionSeventeenth(true);
+    SomeCodeExample.doActionSeventeenth(false);
+    SomeCodeExample.doActionEighteenth(false);
     CatPictureDownloader.giveMeSomeCats(false);
+    new LelyLicBinAnalyzer().analyze();
 
 
 
