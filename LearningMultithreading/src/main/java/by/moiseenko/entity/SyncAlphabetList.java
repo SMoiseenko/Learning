@@ -1,7 +1,5 @@
 package by.moiseenko.entity;
 
-import static by.moiseenko.service.ConcurrentUtils.sleep;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -37,7 +35,7 @@ public class SyncAlphabetList {
     } finally {
       lock.writeLock().unlock();
     }
-//    sleep(1);
+    //    sleep(1);
   }
 
   @Override
@@ -54,6 +52,6 @@ public class SyncAlphabetList {
     } finally {
       lock.readLock().unlock();
     }
-   return sb.toString();
+    return sb.toString();
   }
 }

@@ -11,7 +11,7 @@ import org.apache.logging.log4j.Logger;
  *
  * @author s-moiseenko
  */
-public class InterruptedThread extends Thread{
+public class InterruptedThread extends Thread {
 
   private static final Logger LOG = LogManager.getLogger(InterruptedThread.class.getName());
 
@@ -23,11 +23,11 @@ public class InterruptedThread extends Thread{
   public void run() {
 
     LocalDateTime start = LocalDateTime.now();
-    while(!isInterrupted()){
-      try{
+    while (!isInterrupted()) {
+      try {
         TimeUnit.SECONDS.sleep(1);
         LOG.debug(ChronoUnit.SECONDS.between(start, LocalDateTime.now()));
-      } catch (InterruptedException ie){
+      } catch (InterruptedException ie) {
         LOG.error(ie);
         interrupt();
       }

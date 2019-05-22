@@ -25,7 +25,6 @@ public class Bid extends Thread {
     this.price = price;
     this.auction = auction;
     this.barrier = auction.getBarrier();
-
   }
 
   public int getNumber() {
@@ -41,7 +40,7 @@ public class Bid extends Thread {
     try {
       LOG.debug("Client " + number + " specifies a price:" + price);
       Thread.sleep(new Random().nextInt(3000));
-      int bidQty = new Random().nextInt(4)+1;
+      int bidQty = new Random().nextInt(4) + 1;
       for (int i = 0; i < bidQty; i++) {
         int delta = new Random().nextInt(50);
         price += delta;

@@ -31,7 +31,7 @@ public class CrudeOilAtomic extends Thread {
         Thread.sleep(rnd.nextInt(500));
         price.addAndGet(rnd.nextInt(100));
         LOG.debug(price);
-        Thread.sleep(rnd.nextInt(500 ));
+        Thread.sleep(rnd.nextInt(500));
         price.addAndGet(rnd.nextInt(100));
         LOG.debug(price);
       } catch (InterruptedException ie) {

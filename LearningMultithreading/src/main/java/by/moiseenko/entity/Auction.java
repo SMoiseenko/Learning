@@ -41,7 +41,7 @@ public class Auction {
     return bids.add(bid);
   }
 
-  public Bid getWinner() throws AuctionNotFinishException{
+  public Bid getWinner() throws AuctionNotFinishException {
     if (winner != null) {
       return winner;
     } else throw new AuctionNotFinishException();

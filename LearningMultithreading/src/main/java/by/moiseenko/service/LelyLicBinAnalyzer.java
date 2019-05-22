@@ -17,8 +17,9 @@ public class LelyLicBinAnalyzer {
     int[] mass = byteToInt(readFile());
     for (int a = 32; a > 31; a--) {
       for (int i : mass) {
-      if (i != 0xc3){
-        System.out.printf("%02x ", i);}
+        if (i != 0xc3) {
+          System.out.printf("%02x ", i);
+        }
       }
       System.out.println();
     }

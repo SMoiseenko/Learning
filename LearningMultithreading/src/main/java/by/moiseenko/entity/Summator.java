@@ -31,4 +31,3 @@ public class Summator extends Thread {
     LOG.debug(Thread.currentThread().getThreadGroup());
   }
 }
-

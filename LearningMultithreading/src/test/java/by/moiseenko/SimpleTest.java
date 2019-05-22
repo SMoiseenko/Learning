@@ -13,10 +13,9 @@ import org.testng.annotations.Test;
 public class SimpleTest {
 
   private static final Logger LOG = LogManager.getLogger(SimpleTest.class.getName());
-@Test
-  public void simpleTest(){
-  Assert.assertEquals(1,1);
-}
 
+  @Test
+  public void simpleTest() {
+    Assert.assertEquals(1, 1);
+  }
 }
-

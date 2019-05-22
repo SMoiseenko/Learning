@@ -1,7 +1,6 @@
 package by.moiseenko.entity;
 
 import by.moiseenko.exception.ResourceException;
-import java.util.Random;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -19,13 +18,12 @@ public class Car extends Thread {
   public Car(String name, ParkingZone parkingZone) {
     super(name);
     this.parkingZone = parkingZone;
-
   }
 
   @Override
   public void run() {
     ParkingLot parkingLot = null;
-    LOG.debug("Car \""+getName() + "\" come.");
+    LOG.debug("Car \"" + getName() + "\" come.");
     try {
       parkingLot = parkingZone.getResource(CAR_CAN_WAIT);
       LOG.debug("Car \"" + getName() + "\" parked at " + parkingLot.getLotNumber() + " lot.");

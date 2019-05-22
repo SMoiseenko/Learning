@@ -6,16 +6,22 @@ import static by.moiseenko.service.ConcurrentUtils.stop;
 import by.moiseenko.entity.Auction;
 import by.moiseenko.entity.Bid;
 import by.moiseenko.entity.Car;
+import by.moiseenko.entity.Consumer;
 import by.moiseenko.entity.Counter;
 import by.moiseenko.entity.CrudeOil;
 import by.moiseenko.entity.InterruptedThread;
+import by.moiseenko.entity.Item;
 import by.moiseenko.entity.ParkingLot;
 import by.moiseenko.entity.ParkingZone;
 import by.moiseenko.entity.Payment;
 import by.moiseenko.entity.PriceDisplay;
+import by.moiseenko.entity.Producer;
 import by.moiseenko.entity.Resource;
+import by.moiseenko.entity.Student;
 import by.moiseenko.entity.Summator;
 import by.moiseenko.entity.SyncAlphabetList;
+import by.moiseenko.entity.Task;
+import by.moiseenko.entity.Tutor;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -512,6 +518,47 @@ public class SomeCodeExample {
         auction.addBid(bid);
         bid.start();
       }
+    }
+  }
+
+  public static void doActionNineteenth(boolean isAction) {
+    if (isAction) {
+      final int NUMBER_TASK_1 = 5;
+      Student studentOne = new Student(111, NUMBER_TASK_1);
+      for (int i = 0; i < NUMBER_TASK_1; i++) {
+        studentOne.addTask(new Task("Task# " + i));
+      }
+      final int NUMBER_TASK_2 = 7;
+      Student studentTwo = new Student(222, NUMBER_TASK_2);
+      for (int i = 0; i < NUMBER_TASK_2; i++) {
+        studentTwo.addTask(new Task("Task# " + i));
+      }
+
+      List<Student> studentList = Arrays.asList(studentOne, studentTwo);
+
+      Tutor tutor = new Tutor(studentList);
+
+      studentOne.start();
+      studentTwo.start();
+
+      try {
+        TimeUnit.SECONDS.sleep(5L);
+      } catch (InterruptedException e) {
+        LOG.error(e);
+      }
+
+      tutor.start();
+    }
+  }
+
+  public static void doActionTwentieth(boolean isActive) {
+    if (isActive) {
+      final Integer itemId = 1;
+      Item itemOne = new Item(itemId, 300);
+      Item itemTwo = new Item(itemId, 250);
+
+      new Thread(new Producer("BIOCOM TECHNOLOGY", itemOne)).start();
+      new Thread(new Consumer("PROGRESS VERTELISHKI", itemTwo)).start();
     }
   }
 

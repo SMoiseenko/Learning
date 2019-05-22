@@ -19,7 +19,7 @@ public class Resource {
 
   public Resource(String fileName) {
     File file = new File(fileName);
-    if (!file.exists()) new File(fileName.substring(0,fileName.lastIndexOf("/"))).mkdirs();
+    if (!file.exists()) new File(fileName.substring(0, fileName.lastIndexOf("/"))).mkdirs();
 
     try {
       this.fileWriter = new FileWriter(file, false);
@@ -28,13 +28,13 @@ public class Resource {
     }
   }
 
-  public  boolean write(String message, int i) {
+  public boolean write(String message, int i) {
     if (fileWriter != null) {
       try {
-        synchronized (fileWriter){
-        fileWriter.append(message+i);
-        TimeUnit.MILLISECONDS.sleep((long)(Math.random()*50));
-        fileWriter.append("->" + i + " ");
+        synchronized (fileWriter) {
+          fileWriter.append(message + i);
+          TimeUnit.MILLISECONDS.sleep((long) (Math.random() * 50));
+          fileWriter.append("->" + i + " ");
         }
         return true;
       } catch (IOException | InterruptedException e) {
@@ -45,7 +45,7 @@ public class Resource {
     } else return false;
   }
 
-  public void close(){
+  public void close() {
     try {
       fileWriter.close();
     } catch (IOException e) {

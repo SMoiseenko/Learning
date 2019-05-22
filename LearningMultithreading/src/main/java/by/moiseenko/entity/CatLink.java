@@ -2,7 +2,6 @@ package by.moiseenko.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
-import java.util.StringJoiner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -14,6 +13,7 @@ import org.apache.logging.log4j.Logger;
 public class CatLink {
 
   private static final Logger LOG = LogManager.getLogger(CatLink.class.getName());
+
   @JsonProperty("file")
   private String file;
 
@@ -48,8 +48,6 @@ public class CatLink {
 
   @Override
   public String toString() {
-    return "CatLink{" +
-        "file='" + file + '\'' +
-        '}';
+    return "CatLink{" + "file='" + file + '\'' + '}';
   }
 }

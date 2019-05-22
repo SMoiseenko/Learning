@@ -1,6 +1,5 @@
 package by.moiseenko.entity;
 
-import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -27,11 +26,11 @@ public class ParkingLot {
     this.lotNumber = lotNumber;
   }
 
-  public void using(int stayOnLot){
-    try{
+  public void using(int stayOnLot) {
+    try {
       TimeUnit.SECONDS.sleep((long) stayOnLot);
-    } catch (InterruptedException ie){
-      LOG.debug("Car was stealed, parking lot empty now ; )" +ie);
+    } catch (InterruptedException ie) {
+      LOG.debug("Car was stealed, parking lot empty now ; )" + ie);
     }
   }
 }

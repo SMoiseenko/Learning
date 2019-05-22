@@ -8,7 +8,7 @@ import org.apache.logging.log4j.Logger;
  *
  * @author s-moiseenko
  */
-public class AuctionNotFinishException extends Exception{
+public class AuctionNotFinishException extends Exception {
   private static final Logger LOG = LogManager.getLogger(AuctionNotFinishException.class.getName());
 
   public AuctionNotFinishException() {

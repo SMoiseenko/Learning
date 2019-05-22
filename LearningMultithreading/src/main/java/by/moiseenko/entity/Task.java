@@ -1,0 +1,46 @@
+package by.moiseenko.entity;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+/**
+ * Default javadoc
+ *
+ * @author moiseenko-s
+ */
+public class Task {
+  private static final Logger LOG = LogManager.getLogger(Task.class.getName());
+
+  private String content;
+  private String answer;
+  private int mark;
+
+  @org.jetbrains.annotations.Contract(pure = true)
+  public Task(String content) {
+    this.content = content;
+  }
+
+  public String getContent() {
+    return content;
+  }
+
+  public void setContent(String content) {
+    this.content = content;
+  }
+
+  public String getAnswer() {
+    return answer;
+  }
+
+  public void setAnswer(String answer) {
+    this.answer = answer;
+  }
+
+  public int getMark() {
+    return mark;
+  }
+
+  public void setMark(int mark) {
+    this.mark = mark;
+  }
+}

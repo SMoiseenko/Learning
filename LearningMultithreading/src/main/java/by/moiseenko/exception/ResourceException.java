@@ -8,7 +8,7 @@ import org.apache.logging.log4j.Logger;
  *
  * @author s-moiseenko
  */
-public class ResourceException extends Exception{
+public class ResourceException extends Exception {
   private static final Logger LOG = LogManager.getLogger(ResourceException.class.getName());
 
   public ResourceException() {
