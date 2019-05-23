@@ -561,6 +561,27 @@ public class SomeCodeExample {
       new Thread(new Consumer("PROGRESS VERTELISHKI", itemTwo)).start();
     }
   }
+  public static void doActionTwentyFirst(boolean isAction){
+    if(isAction){
+
+      Item item = new Item(1,100);
+      ItemService itemService = new ItemService(item);
+      Runnable taskOne = ()-> {
+        itemService.getItem();
+      };
+
+      Runnable taskTwo = () -> {
+        Integer idItem = new Random().nextInt(10);
+        Integer number = new Random().nextInt(100);
+        itemService.setItem(new Item(idItem, number));
+      };
+
+      for (int i = 0; i< 10; i++){
+        new Thread(taskOne).start();
+        new Thread(taskTwo).start();
+      }
+    }
+  }
 
   private static void count() {
     z = z + 1;

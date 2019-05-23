@@ -27,4 +27,12 @@ public class Item {
   public Integer getNumber() {
     return number;
   }
+
+  @Override
+  public String toString() {
+    return "Item{" +
+        "idItem=" + idItem +
+        ", number=" + number +
+        '}';
+  }
 }
