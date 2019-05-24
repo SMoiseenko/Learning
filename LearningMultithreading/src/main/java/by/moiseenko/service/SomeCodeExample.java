@@ -9,6 +9,7 @@ import by.moiseenko.entity.Car;
 import by.moiseenko.entity.Consumer;
 import by.moiseenko.entity.Counter;
 import by.moiseenko.entity.CrudeOil;
+import by.moiseenko.entity.Goods;
 import by.moiseenko.entity.InterruptedThread;
 import by.moiseenko.entity.Item;
 import by.moiseenko.entity.ParkingLot;
@@ -17,11 +18,14 @@ import by.moiseenko.entity.Payment;
 import by.moiseenko.entity.PriceDisplay;
 import by.moiseenko.entity.Producer;
 import by.moiseenko.entity.Resource;
+import by.moiseenko.entity.Shop;
 import by.moiseenko.entity.Student;
 import by.moiseenko.entity.Summator;
 import by.moiseenko.entity.SyncAlphabetList;
 import by.moiseenko.entity.Task;
+import by.moiseenko.entity.Truck;
 import by.moiseenko.entity.Tutor;
+import by.moiseenko.entity.Warehouse;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -29,6 +33,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -40,10 +45,12 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.Phaser;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.stream.IntStream;
 import javax.net.ssl.HttpsURLConnection;
@@ -561,26 +568,112 @@ public class SomeCodeExample {
       new Thread(new Consumer("PROGRESS VERTELISHKI", itemTwo)).start();
     }
   }
-  public static void doActionTwentyFirst(boolean isAction){
-    if(isAction){
 
-      Item item = new Item(1,100);
+  public static void doActionTwentyFirst(boolean isAction) {
+    if (isAction) {
+
+      Item item = new Item(1, 100);
       ItemService itemService = new ItemService(item);
-      Runnable taskOne = ()-> {
-        itemService.getItem();
-      };
+      Runnable taskOne =
+          () -> {
+            itemService.getItem();
+          };
 
-      Runnable taskTwo = () -> {
-        Integer idItem = new Random().nextInt(10);
-        Integer number = new Random().nextInt(100);
-        itemService.setItem(new Item(idItem, number));
-      };
+      Runnable taskTwo =
+          () -> {
+            Integer idItem = new Random().nextInt(10);
+            Integer number = new Random().nextInt(100);
+            itemService.setItem(new Item(idItem, number));
+          };
 
-      for (int i = 0; i< 10; i++){
+      for (int i = 0; i < 10; i++) {
         new Thread(taskOne).start();
         new Thread(taskTwo).start();
       }
     }
+  }
+
+  public static void doActionTwentySecond(boolean isAction) {
+    if (isAction) {
+      Goods[] goods = new Goods[20];
+      for (int i = 0; i < goods.length; i++) {
+        goods[i] = new Goods(i + 1);
+      }
+
+      List<Goods> listGoods = Arrays.asList(goods);
+
+      Warehouse warehouseA = Warehouse.createWarehouse(listGoods.size(), listGoods);
+      Warehouse warehouseB = Warehouse.createWarehouse(listGoods.size());
+
+      Phaser phaser = new Phaser();
+      phaser.register();
+      int currentPhase;
+
+      Thread truck1 = new Thread(new Truck(phaser, "ONE", 5, warehouseA, warehouseB));
+      Thread truck2 = new Thread(new Truck(phaser, "TWO", 4, warehouseA, warehouseB));
+      Thread truck3 = new Thread(new Truck(phaser, "THREE", 6, warehouseA, warehouseB));
+
+      inventoryWarehouse(warehouseA, "warehouse A");
+      inventoryWarehouse(warehouseB, "warehouse B");
+
+      truck1.start();
+      truck2.start();
+      truck3.start();
+
+      currentPhase = phaser.getPhase();
+      phaser.arriveAndAwaitAdvance();
+      LOG.debug("All trucks are loaded, phase " + currentPhase + " end.");
+
+      currentPhase = phaser.getPhase();
+      phaser.arriveAndAwaitAdvance();
+      LOG.debug("All trucks  are finished their trip, phase " + currentPhase + " end.");
+
+      currentPhase = phaser.getPhase();
+      phaser.arriveAndAwaitAdvance();
+      LOG.debug("All trucks are unloaded, phase " + currentPhase + " end.");
+
+      phaser.arriveAndDeregister();
+      if(phaser.isTerminated()){
+        LOG.debug("ALL PHASES ARE FINISHED !!!");
+      }
+
+      inventoryWarehouse(warehouseA, "warehouse A");
+      inventoryWarehouse(warehouseB, "warehouse B");
+    }
+  }
+
+  public static void doActionTwentyThird(boolean isActive){
+    if(isActive){
+
+      ReentrantLock lock = new ReentrantLock();
+      Shop shop = new Shop(lock);
+      Buyer buyer = new Buyer(shop);
+      Provider provider = new Provider(shop, buyer);
+      buyer.start();
+      provider.start();
+
+
+
+
+    }
+  }
+
+  private static void inventoryWarehouse(Warehouse warehouse, String warehouseName) {
+    Iterator<Goods> iterator = warehouse.iterator();
+    StringBuilder sb =
+        new StringBuilder()
+            .append("Goods on warehouse ")
+            .append(warehouseName)
+            .append('\n')
+            .append('[');
+
+    while (iterator.hasNext()) {
+      sb.append(iterator.next().getRegistrationNumber()).append(' ');
+    }
+
+    sb.deleteCharAt(sb.length()-1);
+    sb.append(']');
+    LOG.debug(sb.toString());
   }
 
   private static void count() {
