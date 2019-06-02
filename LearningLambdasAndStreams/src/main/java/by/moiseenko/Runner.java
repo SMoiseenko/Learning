@@ -1,11 +1,10 @@
 package by.moiseenko;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import by.moiseenko.entity.Button;
+import by.moiseenko.utils.Handler;
 import java.util.Arrays;
-import java.util.Scanner;
+import java.util.Comparator;
+import java.util.function.Predicate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,130 +15,37 @@ import org.apache.logging.log4j.Logger;
  */
 public class Runner {
   private static final Logger LOG = LogManager.getLogger(Runner.class.getName());
-  private static final String htmlFile =
-      "/home/moiseenko-s/Downloads/temp/book/03.Java Collections Framework.html";
-  private static final String fileAppender = "_new";
+  private static int i = 1;
 
   public static void main(String[] args) {
 
-    File[] fileArray = getHtmlArray();
-    StringBuilder sb;
-    for (File file : fileArray) {
-      sb = scanFile(file);
-      writeToFile(sb, file);
-    }
-  }
+    Predicate<String> predicate = x -> x.length() >= 5 + i;
+    LOG.debug(predicate.test("hello"));
+    LOG.debug(predicate.test("big string"));
+    i++;
 
-  private static StringBuilder scanFile(File file) {
-    StringBuilder sb = new StringBuilder();
-    boolean impotentLine = true;
-    int paragraph = Integer.valueOf(file.getName().substring(0, 2));
-    String line;
+    Handler action1 = (x) -> System.out.println(x + " pushed. Bomb activated");
+    Handler action2 = (x) -> System.out.println(x + " pushed. Bomb disarmed");
 
-    sb.append("<!DOCTYPE html>\n")
-        .append("<html>\n")
-        .append("<head>\n")
-        .append("<meta charset=\"UTF-8\">\n")
-        .append("<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\"/>\n");
+    Button but1 = new Button("ACTIVATE");
+    Button but2 = new Button("DISARMED");
+    Button but3 = new Button("WAIT");
+    Button but4 = new Button("DESTROY");
+    but1.click(action1);
+    but2.click(action2);
+    but3.click(
+        new Handler() {
+          @Override
+          public void onClick(String buttonName) {
+            System.out.println(buttonName + " pushed. Bomb slept");
+          }
+        });
+    but4.click((x) -> System.out.println(x + " pushed. Bomb destroyed"));
 
-    try (Scanner scanner = new Scanner(file)) {
-      while (scanner.hasNextLine()) {
-        line = scanner.nextLine();
+    String[] stringArray = new String[]{"a","B","A","b"};
+    Arrays.sort(stringArray, String::compareToIgnoreCase);
+    LOG.debug(Arrays.toString(stringArray));
 
-        if (line.matches("([\\s\\t]*)(<Task>)([\\s\\t]*)")) {
-          continue;
-        }
 
-        if (line.matches("([\\s\\t]*)(</Task>)([\\s\\t]*)")) {
-          continue;
-        }
-
-        if (line.matches("([\\s\\t]*)(</Article>)([\\s\\t]*)")) {
-          continue;
-        }
-
-        if (line.matches("([\\s\\t]*)")) {
-          continue;
-        }
-
-        if (line.matches("([\\s\\t]*)(<Genre>).*(</Genre>)([\\s\\t]*)")) {
-          if (impotentLine) {
-            String temp =
-                paragraph + ". " + line.substring(line.indexOf('>') + 1, line.lastIndexOf('<'));
-            line =
-                "<title>"
-                    + temp
-                    + "</title>\n"
-                    + "</head>\n"
-                    + "<body>\n"
-                    + "<h1>"
-                    + temp
-                    + "</h1>";
-            impotentLine = false;
-          } else continue;
-        }
-
-        if (line.matches("([\\s\\t]*)(<Article>).*")) {
-          line = line.substring(line.indexOf('>') + 1);
-        }
-
-        if (line.matches("([\\s\\t]*)(img width=100%).*")) {
-          line =
-              "<img src=\"pictures/"
-                  + line.substring(line.lastIndexOf('/') + 1, line.lastIndexOf('>'))
-                  + "\">";
-        }
-
-        if (line.matches("([\\s\\t]*)(<Title>).*(</Title>)([\\s\\t]*)")) {
-          line =
-              "<h2>"
-                  + paragraph
-                  + '.'
-                  + line.substring(line.indexOf('>') + 1, line.lastIndexOf('<'))
-                  + "</h2>";
-        }
-
-        //        if (line.startsWith("<h2>") && line.endsWith("</p>")) {
-        //          line = line.replace("</p>", "</h2>");
-        //        }
-
-        line = line.trim();
-
-        if (!line.startsWith("<h1>") && !line.startsWith("<h2>") && !line.startsWith("<title>")) {
-          line = "<p>" + line + "</p>";
-        }
-        sb.append(line);
-        if (scanner.hasNextLine()) {
-          sb.append("\n");
-        }
-      }
-    } catch (IOException ioe) {
-      LOG.error(ioe);
-    }
-    return sb.append("</body>").append("</html>");
-  }
-
-  private static void writeToFile(StringBuilder text, File file) {
-    String fileName =
-        file.getAbsolutePath()
-            .substring(0, file.getAbsolutePath().lastIndexOf('.'))
-            .concat(fileAppender)
-            .concat(file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf('.')));
-
-    try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName))) {
-      bufferedWriter.write(text.toString());
-    } catch (IOException ioe) {
-      LOG.error(ioe);
-    }
-  }
-
-  private static File[] getHtmlArray() {
-    File pathToDir = new File(htmlFile.substring(0, htmlFile.lastIndexOf('/')));
-    File[] htmlArray =
-        pathToDir.listFiles(
-            pathname ->
-                pathname.getName().endsWith(".html") && !pathname.getName().endsWith("_new.html"));
-    Arrays.sort(htmlArray, (o1, o2) -> o1.getName().compareToIgnoreCase(o2.getName()));
-    return htmlArray;
   }
 }
