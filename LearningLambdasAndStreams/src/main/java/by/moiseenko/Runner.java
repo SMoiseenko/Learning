@@ -1,10 +1,15 @@
 package by.moiseenko;
 
 import by.moiseenko.entity.Button;
+import by.moiseenko.entity.TheMan;
 import by.moiseenko.utils.Handler;
+import by.moiseenko.utils.TheManCreator;
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
+import java.util.List;
+import java.util.Random;
 import java.util.function.Predicate;
+import java.util.stream.IntStream;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -18,11 +23,10 @@ public class Runner {
   private static int i = 1;
 
   public static void main(String[] args) {
-
+    i++;
     Predicate<String> predicate = x -> x.length() >= 5 + i;
     LOG.debug(predicate.test("hello"));
     LOG.debug(predicate.test("big string"));
-    i++;
 
     Handler action1 = (x) -> System.out.println(x + " pushed. Bomb activated");
     Handler action2 = (x) -> System.out.println(x + " pushed. Bomb disarmed");
@@ -42,10 +46,28 @@ public class Runner {
         });
     but4.click((x) -> System.out.println(x + " pushed. Bomb destroyed"));
 
-    String[] stringArray = new String[]{"a","B","A","b"};
-    Arrays.sort(stringArray, String::compareToIgnoreCase);
-    LOG.debug(Arrays.toString(stringArray));
+    List<String> stringArray = Arrays.asList("C", "B", "A", "b");
+    stringArray.sort(String::compareToIgnoreCase);
+    stringArray.forEach(LOG::debug);
 
+    List<Integer> intList = new ArrayList<>();
+    IntStream.range(0, 10).forEach(i -> intList.add(new Random().nextInt(100)));
+    intList.forEach(LOG::debug);
+    int sum = sumWithPredicate(intList, i -> i % 2 == 0);
+    LOG.debug(sum);
 
+    TheManCreator creator = TheMan::new;
+    TheMan man = creator.create("PETYA");
+    LOG.debug(man.getName());
+  }
+
+  public static int sumWithPredicate(List<Integer> intList, Predicate<Integer> predicate) {
+    int summ = 0;
+    for (Integer i : intList) {
+      if (predicate.test(i)) {
+        summ += i;
+      }
+    }
+    return summ;
   }
 }
