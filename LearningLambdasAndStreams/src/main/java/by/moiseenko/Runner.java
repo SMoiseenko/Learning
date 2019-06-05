@@ -109,7 +109,20 @@ public class Runner {
 //      LOG.debug("***");
       List<Person> personList = createPersonList();
       personList.stream().filter(p->p.getAge()>=18).sorted(Comparator.comparing(Person::getName)).skip(0).limit(10).forEach(LOG::debug);
-      LOG.debug(personList.stream().filter(p->p.getSex()==Sex.MALE && p.getAge()<-50).mapToInt(Person::getAge).average().orElse(0));
+      LOG.debug("***");
+      LOG.debug(personList.stream().filter(p->p.getSex()==Sex.MALE && p.getAge()>=18).mapToInt(Person::getAge).average().orElse(Double.NaN));
+      LOG.debug("***");
+      personList.stream().filter(p->p.getAge()<18).map(p->new Person(p.getName(), 0, p.getSex())).forEach(LOG::debug);
+      LOG.debug("***");
+      personList.stream().sorted(Comparator.comparing(Person::getAge)).forEach(LOG::debug);
+      LOG.debug("***");
+      long mans = personList.stream().filter(p->p.getSex()==Sex.MALE).count();
+      LOG.debug(mans);
+      LOG.debug("***");
+      boolean ffTears = personList.stream().anyMatch(p->p.getAge()==55);
+      LOG.debug(ffTears);
+      LOG.debug("***");
+      LOG.debug(personList.stream().max((p1, p2)-> Integer.compare(p1.getName().length(), p2.getName().length())));
 
     }
   }

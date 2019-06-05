@@ -9,7 +9,7 @@ import org.apache.logging.log4j.Logger;
  *
  * @author moiseenko-s
  */
-public class Person {
+public class Person implements Cloneable {
   private static final Logger LOG = LogManager.getLogger(Person.class.getName());
 
   private String name;
@@ -37,6 +37,18 @@ public class Person {
     return sex;
   }
 
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public void setAge(int age) {
+    this.age = age;
+  }
+
+  public void setSex(Sex sex) {
+    this.sex = sex;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -52,6 +64,11 @@ public class Person {
   @Override
   public int hashCode() {
     return Objects.hash(name, age, sex);
+  }
+
+  @Override
+  protected Object clone() throws CloneNotSupportedException {
+    return super.clone();
   }
 
   @Override
