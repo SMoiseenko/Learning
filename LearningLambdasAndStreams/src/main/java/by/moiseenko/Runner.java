@@ -13,10 +13,13 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.Random;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
+import java.util.stream.Collector;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 import org.apache.logging.log4j.LogManager;
@@ -105,25 +108,77 @@ public class Runner {
       // sorted
       intList.stream().sorted(Comparator.reverseOrder()).limit(10).forEach(LOG::debug);
       LOG.debug("***");
-//      textStream.forEach(LOG::debug);
-//      LOG.debug("***");
+      //      textStream.forEach(LOG::debug);
+      //      LOG.debug("***");
       List<Person> personList = createPersonList();
-      personList.stream().filter(p->p.getAge()>=18).sorted(Comparator.comparing(Person::getName)).skip(0).limit(10).forEach(LOG::debug);
+      personList.stream()
+          .filter(p -> p.getAge() >= 18)
+          .sorted(Comparator.comparing(Person::getName))
+          .skip(0)
+          .limit(10)
+          .forEach(LOG::debug);
       LOG.debug("***");
-      LOG.debug(personList.stream().filter(p->p.getSex()==Sex.MALE && p.getAge()>=18).mapToInt(Person::getAge).average().orElse(Double.NaN));
+      LOG.debug(
+          personList.stream()
+              .filter(p -> p.getSex() == Sex.MALE && p.getAge() >= 18)
+              .mapToInt(Person::getAge)
+              .average()
+              .orElse(Double.NaN));
       LOG.debug("***");
-      personList.stream().filter(p->p.getAge()<18).map(p->new Person(p.getName(), 0, p.getSex())).forEach(LOG::debug);
+      personList.stream()
+          .filter(p -> p.getAge() < 18)
+          .map(p -> new Person(p.getName(), 0, p.getSex()))
+          .forEach(LOG::debug);
       LOG.debug("***");
       personList.stream().sorted(Comparator.comparing(Person::getAge)).forEach(LOG::debug);
       LOG.debug("***");
-      long mans = personList.stream().filter(p->p.getSex()==Sex.MALE).count();
+      long mans = personList.stream().filter(p -> p.getSex() == Sex.MALE).count();
       LOG.debug(mans);
       LOG.debug("***");
-      boolean ffTears = personList.stream().anyMatch(p->p.getAge()==55);
+      boolean ffTears = personList.stream().anyMatch(p -> p.getAge() == 55);
       LOG.debug(ffTears);
       LOG.debug("***");
-      LOG.debug(personList.stream().max((p1, p2)-> Integer.compare(p1.getName().length(), p2.getName().length())));
-
+      LOG.debug(
+          personList.stream()
+              .max((p1, p2) -> Integer.compare(p1.getName().length(), p2.getName().length())));
+      LOG.debug("***");
+      personList.stream()
+          .map(Person::getName)
+          .map(p -> String.valueOf(p.charAt(0)))
+          .sorted()
+          .forEach(LOG::debug);
+      LOG.debug("***");
+      Collector<String, LinkedHashMap<String, Integer>, LinkedHashMap<String, Integer>> toMap =
+          Collector.of(
+              LinkedHashMap::new,
+              (s, i) -> {
+                if (s.containsKey(i)) {
+                  s.replace(i, s.get(i) + 1);
+                } else {
+                  s.put(i, 1);
+                }
+              },
+              (m1, m2) -> {
+                m1.putAll(m2);
+                return m1;
+              });
+      LinkedHashMap<String, Integer> result =
+          personList.stream()
+              .map(Person::getName)
+              .map(p -> String.valueOf(p.charAt(0)))
+              .sorted()
+              .collect(toMap);
+      for (Entry<String, Integer> entry : result.entrySet()) {
+        LOG.debug("[ " + entry.getKey() + " - " + entry.getValue() + " ]");
+      }
+      LOG.debug("***");
+      personList.stream().takeWhile(p->p.getName().length()<=6).forEach(LOG::debug);
+      LOG.debug("***");
+      LOG.debug(
+          personList.stream()
+              .map(Person::getName)
+              .sorted()
+              .reduce("All people names:\n", (n1, n2) -> n1 + n2+", "));
     }
   }
 
