@@ -13,13 +13,14 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Random;
 import java.util.function.Predicate;
 import java.util.stream.Collector;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 import org.apache.logging.log4j.LogManager;
@@ -168,17 +169,50 @@ public class Runner {
               .map(p -> String.valueOf(p.charAt(0)))
               .sorted()
               .collect(toMap);
-      for (Entry<String, Integer> entry : result.entrySet()) {
-        LOG.debug("[ " + entry.getKey() + " - " + entry.getValue() + " ]");
-      }
+      //      for (Entry<String, Integer> entry : result.entrySet()) {
+      //        LOG.debug("[ " + entry.getKey() + " - " + entry.getValue() + " ]");
+      //      }
+      printPersonNameMap(result);
       LOG.debug("***");
-      personList.stream().takeWhile(p->p.getName().length()<=6).forEach(LOG::debug);
+      personList.stream().takeWhile(p -> p.getName().length() <= 6).forEach(LOG::debug);
       LOG.debug("***");
       LOG.debug(
           personList.stream()
               .map(Person::getName)
               .sorted()
-              .reduce("All people names:\n", (n1, n2) -> n1 + n2+", "));
+              .reduce("All people names:\n", (n1, n2) -> n1 + n2 + ", "));
+      LOG.debug("***");
+      Map<Sex, List<Person>> sexPersonMap =
+          personList.stream().collect(Collectors.groupingBy(Person::getSex));
+      for (Entry<Sex, List<Person>> entry : sexPersonMap.entrySet()) {
+        LOG.debug(
+            entry.getKey()
+                + " - "
+                + entry.getValue().stream().map(Person::toString).collect(Collectors.joining(";")));
+        LOG.debug("***");
+        Map<String, Long> mapapap =
+            personList.stream()
+                .collect(
+                    Collectors.groupingBy(
+                        p -> String.valueOf(p.getName().toUpperCase().charAt(0)),
+                        Collectors.counting()));
+
+        printPersonNameMap(mapapap);
+        LOG.debug("***");
+        int[] parArray = new int[30];
+        var rnd = new Random();
+        Arrays.parallelSetAll(parArray, i -> -50 + rnd.nextInt(101));
+        LOG.debug(Arrays.toString(parArray));
+        Arrays.parallelSort(parArray);
+        LOG.debug(Arrays.toString(parArray));
+        LOG.debug("***");
+      }
+    }
+  }
+
+  private static void printPersonNameMap(Map<String, ? extends Number> map) {
+    for (Entry<String, ? extends Number> entry : map.entrySet()) {
+      LOG.debug("[ " + entry.getKey() + " - " + entry.getValue() + " ]");
     }
   }
 
