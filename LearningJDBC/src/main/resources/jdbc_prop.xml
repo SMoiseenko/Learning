@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+  <comment>DEFAULT DB_CONNECTOR PROPERTIES</comment>
+  <entry key="db.url">jdbc:mysql://localhost:3306/learning_jdbc</entry>
+  <entry key="db.user">user</entry>
+  <entry key="db.password">12345678</entry>
+</properties>
