@@ -1,4 +1,4 @@
-package by.moiseenko.jdbc;
+package by.moiseenko.jdbc.impl;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,12 +16,12 @@ import org.apache.logging.log4j.Logger;
  *
  * @author moiseenko-s
  */
-public class JDBConnector {
+public class DataSource {
 
-  private static final Logger LOG = LogManager.getLogger(JDBConnector.class.getName());
+  private static final Logger LOG = LogManager.getLogger(DataSource.class.getName());
   private String propertyPath;
 
-  public JDBConnector(String propertyPath) {
+  public DataSource(String propertyPath) {
     this.propertyPath = propertyPath;
   }
 
