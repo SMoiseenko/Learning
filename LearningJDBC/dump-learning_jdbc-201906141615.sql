@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `learning_jdbc` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `learning_jdbc`;
 -- MySQL dump 10.13  Distrib 8.0.16, for Linux (x86_64)
 --
 -- Host: localhost    Database: learning_jdbc
@@ -9,7 +7,7 @@ USE `learning_jdbc`;
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
- SET NAMES utf8 ;
+ SET NAMES utf8mb4 ;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -33,7 +31,7 @@ CREATE TABLE `persons` (
   `date_of_birth` date NOT NULL,
   `salary` decimal(10,0) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +40,7 @@ CREATE TABLE `persons` (
 
 LOCK TABLES `persons` WRITE;
 /*!40000 ALTER TABLE `persons` DISABLE KEYS */;
-INSERT INTO `persons` VALUES (1,'vasya','vas123','Vasiliy','Sidorov','1985-03-10',550);
+INSERT INTO `persons` VALUES (1,'vasya','vas123','Vasiliy','Sidorov','1985-03-10',880),(2,'vasya','vas123','Vasiliy','Sidorov','1985-03-10',550);
 /*!40000 ALTER TABLE `persons` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -70,10 +68,6 @@ LOCK TABLES `products` WRITE;
 INSERT INTO `products` VALUES (2,'Кефир',2203),(3,'Vodka',2666),(4,'Пивас',2114),(5,'Молоко',2105),(6,'Кефир',2203),(7,'Vodka',2666),(8,'Пивас',2114),(9,'Молоко',2105),(10,'Кефир',2203),(11,'Vodka',2666),(12,'Пивас',2114),(13,'Молоко',1105),(14,'Кефир',1203),(15,'Vodka',1666),(16,'Пивас',1114),(17,'Молоко',1105),(18,'Кефир',1203),(19,'Vodka',1666),(20,'Пивас',1114),(21,'Молоко',1105),(22,'Кефир',1203),(23,'Vodka',1666),(24,'Пивас',1114);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping events for database 'learning_jdbc'
---
 
 --
 -- Dumping routines for database 'learning_jdbc'
@@ -120,4 +114,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-06-13 16:37:36
+-- Dump completed on 2019-06-14 16:15:58

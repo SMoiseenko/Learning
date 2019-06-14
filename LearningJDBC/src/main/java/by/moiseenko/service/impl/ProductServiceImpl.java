@@ -23,7 +23,12 @@ public class ProductServiceImpl implements ProductService {
 
   @Override
   public void addProductToDB(Product product) {
-    String sqlQuery = "INSERT learning_jdbc.products (ProductName, Price) VALUES ('"+product.getProductName()+"', "+product.getPrice()+")";
+    String sqlQuery =
+        "INSERT learning_jdbc.products (ProductName, Price) VALUES ('"
+            + product.getProductName()
+            + "', "
+            + product.getPrice()
+            + ")";
     try {
       cruDbySQL.executeUpdate(sqlQuery);
     } catch (SQLException e) {

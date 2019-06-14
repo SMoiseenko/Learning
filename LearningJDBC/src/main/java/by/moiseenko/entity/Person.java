@@ -2,7 +2,6 @@ package by.moiseenko.entity;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.chrono.ChronoLocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Objects;
@@ -25,8 +24,7 @@ public class Person {
   private int age;
   private BigDecimal salary;
 
-  public Person() {
-  }
+  public Person() {}
 
   public Person(
       String login,
@@ -92,7 +90,7 @@ public class Person {
   }
 
   public int getAge() {
-    return (int)ChronoUnit.YEARS.between(LocalDate.now(), dateOfBirth);
+    return (int) ChronoUnit.YEARS.between(dateOfBirth, LocalDate.now());
   }
 
   public BigDecimal getSalary() {
