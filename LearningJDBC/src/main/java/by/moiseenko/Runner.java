@@ -54,7 +54,7 @@ public class Runner {
         LOG.error(sqlE);
       }
 
-      Product product_pivas = new Product("Пивас", 114);
+      Product product_pivas = new Product("Пивас", new BigDecimal(114));
       ProductService productService = new ProductServiceImpl(crudbySQL);
       productService.addProductToDB(product_pivas);
 
@@ -91,7 +91,7 @@ public class Runner {
       p1.setSalary(new BigDecimal(880));
       personDao.updatePerson(1, p1);
       personDao.deleteDuplicatesBySQLProcedure();
-      LOG.debug(personDao.findPerson("vasya", "vas123"));
+      LOG.debug(personDao.findPerson(5));
       LOG.debug("\n"+
           personDao.getAllPersons().stream()
               .map(Person::toString)
