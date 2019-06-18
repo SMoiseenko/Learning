@@ -24,10 +24,10 @@ public class PersonDaoImpl implements PersonDao {
   private static final String SQL_CREATE =
       "INSERT INTO learning_jdbc.persons (login, password, first_name, last_name, date_of_birth, salary)VALUES (?,?,?,?,?,?)";
   private static final String SQL_SELECT =
-      "SELECT * FROM learning_jdbc.persons WHERE login = ? AND password = ?";
+      "SELECT * FROM learning_jdbc.persons WHERE id = ?";
   private static final String SQL_UPDATE =
       "UPDATE learning_jdbc.persons SET login=?, password=?, first_name=?, last_name=?, date_of_birth=?, salary=? WHERE id =?";
-  private static final String SQL_DELETE = "";
+  private static final String SQL_DELETE = "DELETE FROM learning_jdbc.persons WHERE id = ?";
   private DataSource ds;
 
   public PersonDaoImpl(DataSource ds) {
@@ -35,7 +35,7 @@ public class PersonDaoImpl implements PersonDao {
   }
 
   @Override
-  public long createPerson(Person person) {
+  public long savePerson(Person person) {
     long createdId = -1;
     if (person != null) {
       try (Connection conn = ds.getConnection(); ) {
@@ -58,12 +58,11 @@ public class PersonDaoImpl implements PersonDao {
   }
 
   @Override
-  public Person retrievePerson(String login, String password) {
+  public Person findPerson(long id) {
     Person person = null;
     try (Connection conn = ds.getConnection()) {
       PreparedStatement ps = conn.prepareStatement(SQL_SELECT);
-      ps.setString(1, login);
-      ps.setString(2, password);
+      ps.setLong(1, id);
       ResultSet rs = ps.executeQuery();
       while (rs.next()) {
         person = new Person();

@@ -1,5 +1,6 @@
 package by.moiseenko.entity;
 
+import java.math.BigDecimal;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,9 +14,14 @@ public class Product {
 
   private long id;
   private String productName;
-  private int price;
+  private BigDecimal price;
+  private Person person;
 
-  public Product(String productName, int price) {
+  public Product(){
+
+  }
+
+  public Product(String productName, BigDecimal price) {
     this.productName = productName;
     this.price = price;
   }
@@ -36,12 +42,20 @@ public class Product {
     this.productName = productName;
   }
 
-  public int getPrice() {
+  public BigDecimal getPrice() {
     return price;
   }
 
-  public void setPrice(int price) {
+  public void setPrice(BigDecimal price) {
     this.price = price;
+  }
+
+  public Person getPerson() {
+    return person;
+  }
+
+  public void setPerson(Person person) {
+    this.person = person;
   }
 
   @Override

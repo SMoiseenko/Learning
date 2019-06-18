@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,6 +25,7 @@ public class Person {
   private LocalDate dateOfBirth;
   private int age;
   private BigDecimal salary;
+  private List<Product> productList;
 
   public Person() {}
 
@@ -39,6 +42,16 @@ public class Person {
     this.lastName = lastName;
     this.dateOfBirth = LocalDate.parse(dateOfBirth, DateTimeFormatter.ofPattern("d.M.y"));
     this.salary = BigDecimal.valueOf(Long.parseLong(salary));
+    this.productList = new ArrayList<>();
+  }
+
+  public void addProduct(Product product) {
+    product.setPerson(this);
+    productList.add(product);
+  }
+
+  public void deleteProduct(Product product) {
+    productList.remove(product);
   }
 
   public void setId(long id) {
@@ -99,6 +112,10 @@ public class Person {
 
   public void setSalary(BigDecimal salary) {
     this.salary = salary;
+  }
+
+  public List<Product> getProductList() {
+    return productList;
   }
 
   @Override

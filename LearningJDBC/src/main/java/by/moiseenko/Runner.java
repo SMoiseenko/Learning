@@ -14,7 +14,6 @@ import by.moiseenko.service.impl.PersonServiceImpl;
 import by.moiseenko.service.impl.ProductServiceImpl;
 import java.math.BigDecimal;
 import java.sql.SQLException;
-import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -88,11 +87,11 @@ public class Runner {
     if (isActive){
       PersonDao personDao = new PersonDaoImpl(new DataSource(mySQL_prop));
       Person p1 = new Person("vasya", "vas123", "Vasiliy", "Sidorov", "10.03.1985", "550");
-      personDao.createPerson(p1);
+      personDao.savePerson(p1);
       p1.setSalary(new BigDecimal(880));
       personDao.updatePerson(1, p1);
       personDao.deleteDuplicatesBySQLProcedure();
-      LOG.debug(personDao.retrievePerson("vasya", "vas123"));
+      LOG.debug(personDao.findPerson("vasya", "vas123"));
       LOG.debug("\n"+
           personDao.getAllPersons().stream()
               .map(Person::toString)

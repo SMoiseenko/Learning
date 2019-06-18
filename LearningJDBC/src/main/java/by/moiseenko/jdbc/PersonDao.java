@@ -19,9 +19,9 @@ public interface PersonDao {
 
   List<Person> getAllPersons();
 
-  long createPerson(Person person);
+  long savePerson(Person person);
 
-  Person retrievePerson(String login, String password);
+  Person findPerson(long id);
 
   long updatePerson(long id, Person person);
 

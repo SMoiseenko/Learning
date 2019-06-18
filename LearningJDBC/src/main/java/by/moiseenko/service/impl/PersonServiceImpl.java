@@ -22,12 +22,12 @@ public class PersonServiceImpl implements PersonService {
 
   @Override
   public long createPerson(Person person) {
-    return personDao.createPerson(person);
+    return personDao.savePerson(person);
   }
 
   @Override
   public Person retrievePerson(String login, String password) {
-    return personDao.retrievePerson(login, password);
+    return personDao.findPerson(login, password);
   }
 
   @Override

@@ -52,10 +52,13 @@ DROP TABLE IF EXISTS `products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `products` (
-  `Id` int(11) NOT NULL AUTO_INCREMENT,
-  `ProductName` varchar(20) DEFAULT NULL,
-  `Price` int(11) DEFAULT NULL,
-  PRIMARY KEY (`Id`)
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `product_name` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `price` decimal(8,2) DEFAULT NULL,
+  `person_id` bigint(20) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `products_FK` (`person_id`),
+  CONSTRAINT `products_FK` FOREIGN KEY (`person_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -65,7 +68,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (2,'Кефир',2203),(3,'Vodka',2666),(4,'Пивас',2114),(5,'Молоко',2105),(6,'Кефир',2203),(7,'Vodka',2666),(8,'Пивас',2114),(9,'Молоко',2105),(10,'Кефир',2203),(11,'Vodka',2666),(12,'Пивас',2114),(13,'Молоко',1105),(14,'Кефир',1203),(15,'Vodka',1666),(16,'Пивас',1114),(17,'Молоко',1105),(18,'Кефир',1203),(19,'Vodka',1666),(20,'Пивас',1114),(21,'Молоко',1105),(22,'Кефир',1203),(23,'Vodka',1666),(24,'Пивас',1114);
+INSERT INTO `products` VALUES (2,'Кефир',2203.00,6),(3,'Vodka',2666.00,6),(4,'Пивас',2114.00,6),(5,'Молоко',2105.00,6),(6,'Кефир',2203.00,6),(7,'Vodka',2666.00,6),(8,'Пивас',2114.00,6),(9,'Молоко',2105.00,6),(10,'Кефир',2203.00,6),(11,'Vodka',2666.00,6),(12,'Пивас',2114.00,6),(13,'Молоко',1105.00,6),(14,'Кефир',1203.00,6),(15,'Vodka',1666.00,6),(16,'Пивас',1114.00,6),(17,'Молоко',1105.00,6),(18,'Кефир',1203.00,6),(19,'Vodka',1666.00,6),(20,'Пивас',1114.00,6),(21,'Молоко',1105.00,6),(22,'Кефир',1203.00,6),(23,'Vodka',1666.00,6),(24,'Пивас',1114.00,6);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -114,4 +117,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-06-18 15:59:24
+-- Dump completed on 2019-06-18 23:15:20
