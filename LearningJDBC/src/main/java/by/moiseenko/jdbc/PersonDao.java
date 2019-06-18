@@ -16,12 +16,14 @@ import org.apache.logging.log4j.Logger;
  * @author moiseenko-s
  */
 public interface PersonDao {
+
   List<Person> getAllPersons();
-  void createPerson(Person person);
+
+  long createPerson(Person person);
 
   Person retrievePerson(String login, String password);
 
-  void updatePerson(long id, Person person);
+  long updatePerson(long id, Person person);
 
   void deletePerson(long id);
 

@@ -21,13 +21,13 @@ public class PersonDaoImpl implements PersonDao {
 
   private static final Logger LOG = LogManager.getLogger(PersonDaoImpl.class.getName());
 
-  private static final String sqlCreate =
+  private static final String SQL_CREATE =
       "INSERT INTO learning_jdbc.persons (login, password, first_name, last_name, date_of_birth, salary)VALUES (?,?,?,?,?,?)";
-  private static final String sqlSelect =
+  private static final String SQL_SELECT =
       "SELECT * FROM learning_jdbc.persons WHERE login = ? AND password = ?";
-  private static final String sqlUpdate =
+  private static final String SQL_UPDATE =
       "UPDATE learning_jdbc.persons SET login=?, password=?, first_name=?, last_name=?, date_of_birth=?, salary=? WHERE id =?";
-  private static final String sqlDelete = "";
+  private static final String SQL_DELETE = "";
   private DataSource ds;
 
   public PersonDaoImpl(DataSource ds) {
@@ -35,24 +35,33 @@ public class PersonDaoImpl implements PersonDao {
   }
 
   @Override
-  public void createPerson(Person person) {
+  public long createPerson(Person person) {
+    long createdId = -1;
     if (person != null) {
       try (Connection conn = ds.getConnection(); ) {
-        PreparedStatement ps = conn.prepareStatement(sqlCreate);
+        PreparedStatement ps =
+            conn.prepareStatement(SQL_CREATE, PreparedStatement.RETURN_GENERATED_KEYS);
         prepareStatementForCreateUpdate(person, ps);
-        int update = ps.executeUpdate();
-        LOG.debug(update + " was added.");
+        int rawsAdded = ps.executeUpdate();
+        LOG.debug(rawsAdded + " was added.");
+        ResultSet rs = ps.getGeneratedKeys();
+        while (rs != null && rs.next()) {
+          createdId = rs.getLong(1);
+          LOG.debug(createdId + " Id was generated.");
+        }
       } catch (SQLException sqlE) {
         LOG.error(sqlE);
       }
-    } else throw new IllegalArgumentException();
+    }
+    if (createdId != -1) return createdId;
+    else throw new IllegalArgumentException();
   }
 
   @Override
   public Person retrievePerson(String login, String password) {
     Person person = null;
     try (Connection conn = ds.getConnection()) {
-      PreparedStatement ps = conn.prepareStatement(sqlSelect);
+      PreparedStatement ps = conn.prepareStatement(SQL_SELECT);
       ps.setString(1, login);
       ps.setString(2, password);
       ResultSet rs = ps.executeQuery();
@@ -68,16 +77,24 @@ public class PersonDaoImpl implements PersonDao {
   }
 
   @Override
-  public void updatePerson(long id, Person person) {
+  public long updatePerson(long id, Person person) {
+    long updatedID = -1;
     if (person != null) {
       try (Connection conn = ds.getConnection()) {
-        PreparedStatement ps = conn.prepareStatement(sqlUpdate);
+        PreparedStatement ps =
+            conn.prepareStatement(SQL_UPDATE, PreparedStatement.RETURN_GENERATED_KEYS);
         prepareStatementForCreateUpdate(person, ps);
         ps.setLong(7, id);
+        ResultSet rs = ps.getGeneratedKeys();
+        while(rs!= null && rs.next()){
+          updatedID = rs.getLong(1);
+        }
       } catch (SQLException sqlE) {
         LOG.error(sqlE);
       }
     }
+    if (updatedID != -1) return updatedID;
+    else throw new IllegalArgumentException();
   }
 
   @Override
@@ -103,11 +120,11 @@ public class PersonDaoImpl implements PersonDao {
 
   @Override
   public void deletePerson(long id) {
-    try(Connection conn = ds.getConnection()){
-      PreparedStatement ps = conn.prepareStatement(sqlDelete);
+    try (Connection conn = ds.getConnection()) {
+      PreparedStatement ps = conn.prepareStatement(SQL_DELETE);
       int raws = ps.executeUpdate();
       LOG.debug(raws + " was deleted.");
-    }catch (SQLException sqlE){
+    } catch (SQLException sqlE) {
       LOG.error(sqlE);
     }
   }

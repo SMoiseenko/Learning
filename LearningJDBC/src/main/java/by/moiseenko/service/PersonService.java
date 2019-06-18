@@ -8,5 +8,11 @@ import by.moiseenko.entity.Person;
  * @author moiseenko-s
  */
 public interface PersonService {
-  Person createPerson();
+  long createPerson(Person person);
+
+  Person retrievePerson(String login, String password);
+
+  long updatePerson(long id, Person person);
+
+  void deletePerson(long id);
 }

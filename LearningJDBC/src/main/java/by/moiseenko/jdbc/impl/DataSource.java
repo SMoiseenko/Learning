@@ -25,13 +25,13 @@ public class DataSource {
     this.propertyPath = propertyPath;
   }
 
-  static {
-    try {
-      Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
-    } catch (Exception e) {
-      LOG.error(e);
-    }
-  }
+//  static {
+//    try {
+//      Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
+//    } catch (Exception e) {
+//      LOG.error(e);
+//    }
+//  }
 
   public Connection getConnection() throws SQLException {
     Properties prop = new Properties();

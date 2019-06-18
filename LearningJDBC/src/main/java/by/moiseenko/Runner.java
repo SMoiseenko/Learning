@@ -1,12 +1,16 @@
 package by.moiseenko;
 
+import by.moiseenko.controller.PersonController;
+import by.moiseenko.controller.impl.PersonControllerImpl;
 import by.moiseenko.entity.Person;
 import by.moiseenko.entity.Product;
 import by.moiseenko.jdbc.PersonDao;
 import by.moiseenko.jdbc.impl.CRUDbySQL;
 import by.moiseenko.jdbc.impl.DataSource;
 import by.moiseenko.jdbc.impl.PersonDaoImpl;
+import by.moiseenko.service.PersonService;
 import by.moiseenko.service.ProductService;
+import by.moiseenko.service.impl.PersonServiceImpl;
 import by.moiseenko.service.impl.ProductServiceImpl;
 import java.math.BigDecimal;
 import java.sql.SQLException;
@@ -27,18 +31,12 @@ public class Runner {
 
   public static void main(String[] args) {
     someExamples(false);
-    PersonDao personDao = new PersonDaoImpl(new DataSource(mySQL_prop));
-    Person p1 = new Person("vasya", "vas123", "Vasiliy", "Sidorov", "10.03.1985", "550");
-    personDao.createPerson(p1);
-    p1.setSalary(new BigDecimal(880));
-    personDao.updatePerson(1, p1);
-    personDao.deleteDuplicatesBySQLProcedure();
-    LOG.debug(personDao.retrievePerson("vasya", "vas123"));
-    LOG.debug("\n"+
-        personDao.getAllPersons().stream()
-            .map(Person::toString)
-            .reduce((per1, per2) -> per1.concat("\n").concat(per2))
-            .get());
+    tempCode(false);
+
+    DataSource dataSource = new DataSource(mySQL_prop);
+    PersonDao personDao = new PersonDaoImpl(dataSource);
+    PersonService personService = new PersonServiceImpl(personDao);
+    PersonController personController = new PersonControllerImpl(personService);
   }
 
   private static void someExamples(boolean isActive) {
@@ -84,6 +82,22 @@ public class Runner {
       } catch (SQLException sqlE) {
         LOG.error(sqlE);
       }
+    }
+  }
+  private  static void tempCode(boolean isActive){
+    if (isActive){
+      PersonDao personDao = new PersonDaoImpl(new DataSource(mySQL_prop));
+      Person p1 = new Person("vasya", "vas123", "Vasiliy", "Sidorov", "10.03.1985", "550");
+      personDao.createPerson(p1);
+      p1.setSalary(new BigDecimal(880));
+      personDao.updatePerson(1, p1);
+      personDao.deleteDuplicatesBySQLProcedure();
+      LOG.debug(personDao.retrievePerson("vasya", "vas123"));
+      LOG.debug("\n"+
+          personDao.getAllPersons().stream()
+              .map(Person::toString)
+              .reduce((per1, per2) -> per1.concat("\n").concat(per2))
+              .get());
     }
   }
 }
