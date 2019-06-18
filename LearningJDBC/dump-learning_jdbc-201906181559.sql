@@ -31,7 +31,7 @@ CREATE TABLE `persons` (
   `date_of_birth` date NOT NULL,
   `salary` decimal(10,0) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `persons` (
 
 LOCK TABLES `persons` WRITE;
 /*!40000 ALTER TABLE `persons` DISABLE KEYS */;
-INSERT INTO `persons` VALUES (1,'vasya','vas123','Vasiliy','Sidorov','1985-03-10',880),(2,'vasya','vas123','Vasiliy','Sidorov','1985-03-10',550);
+INSERT INTO `persons` VALUES (1,'vasya','vas123','Vasiliy','Sidorov','1985-03-10',880),(2,'vasya','vas123','Vasiliy','Sidorov','1985-03-10',550),(4,'megabrain','pass','Albert','Einstain','1879-03-14',3500),(5,'стасямба','1стасололо6','Станистав','Кину Где Попало','1986-09-14',500),(6,'terminator','t800','Arnold','Shvarcnigger','1948-03-24',1350);
 /*!40000 ALTER TABLE `persons` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -114,4 +114,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-06-14 16:15:58
+-- Dump completed on 2019-06-18 15:59:24
