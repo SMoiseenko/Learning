@@ -5,15 +5,18 @@ import by.moiseenko.controller.impl.PersonControllerImpl;
 import by.moiseenko.entity.Person;
 import by.moiseenko.entity.Product;
 import by.moiseenko.jdbc.PersonDao;
+import by.moiseenko.jdbc.ProductDao;
 import by.moiseenko.jdbc.impl.CRUDbySQL;
 import by.moiseenko.jdbc.impl.DataSource;
 import by.moiseenko.jdbc.impl.PersonDaoImpl;
+import by.moiseenko.jdbc.impl.ProductDaoImpl;
 import by.moiseenko.service.PersonService;
 import by.moiseenko.service.ProductService;
 import by.moiseenko.service.impl.PersonServiceImpl;
 import by.moiseenko.service.impl.ProductServiceImpl;
 import java.math.BigDecimal;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -33,9 +36,13 @@ public class Runner {
     tempCode(false);
 
     DataSource dataSource = new DataSource(mySQL_prop);
-    PersonDao personDao = new PersonDaoImpl(dataSource);
-    PersonService personService = new PersonServiceImpl(personDao);
-    PersonController personController = new PersonControllerImpl(personService);
+    //    PersonDao personDao = new PersonDaoImpl(dataSource);
+    //    PersonService personService = new PersonServiceImpl(personDao);
+    //    PersonController personController = new PersonControllerImpl(personService);
+    ProductDao productDao = new ProductDaoImpl(dataSource);
+  productDao.createProduct(new Product("Milk", new BigDecimal(1.15)));
+  LOG.debug(productDao.findProduct(28));
+
   }
 
   private static void someExamples(boolean isActive) {
@@ -86,7 +93,7 @@ public class Runner {
   private  static void tempCode(boolean isActive){
     if (isActive){
       PersonDao personDao = new PersonDaoImpl(new DataSource(mySQL_prop));
-      Person p1 = new Person("vasya", "vas123", "Vasiliy", "Sidorov", "10.03.1985", "550");
+      Person p1 = new Person("vasya", "vas123", "Vasiliy", "Sidorov", LocalDate.parse("10.03.1985"), new BigDecimal(550));
       personDao.savePerson(p1);
       p1.setSalary(new BigDecimal(880));
       personDao.updatePerson(1, p1);

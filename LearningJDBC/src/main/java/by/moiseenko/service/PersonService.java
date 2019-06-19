@@ -10,7 +10,7 @@ import by.moiseenko.entity.Person;
 public interface PersonService {
   long createPerson(Person person);
 
-  Person retrievePerson(String login, String password);
+  Person retrievePerson(long id);
 
   long updatePerson(long id, Person person);
 

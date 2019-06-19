@@ -26,8 +26,8 @@ public class PersonServiceImpl implements PersonService {
   }
 
   @Override
-  public Person retrievePerson(String login, String password) {
-    return personDao.findPerson(login, password);
+  public Person retrievePerson(long id) {
+    return personDao.findPerson(id);
   }
 
   @Override

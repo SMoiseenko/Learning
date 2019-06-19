@@ -23,15 +23,15 @@ DROP TABLE IF EXISTS `persons`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `persons` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `login` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `first_name` varchar(255) NOT NULL,
-  `last_name` varchar(255) NOT NULL,
-  `date_of_birth` date NOT NULL,
-  `salary` decimal(10,0) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+  `person_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `person_login` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `person_password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `person_first_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `person_last_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `person_date_of_birth` date NOT NULL,
+  `peron_salary` decimal(8,2) NOT NULL,
+  PRIMARY KEY (`person_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `persons` (
 
 LOCK TABLES `persons` WRITE;
 /*!40000 ALTER TABLE `persons` DISABLE KEYS */;
-INSERT INTO `persons` VALUES (1,'vasya','vas123','Vasiliy','Sidorov','1985-03-10',880),(2,'vasya','vas123','Vasiliy','Sidorov','1985-03-10',550),(4,'megabrain','pass','Albert','Einstain','1879-03-14',3500),(5,'стасямба','1стасололо6','Станистав','Кину Где Попало','1986-09-14',500),(6,'terminator','t800','Arnold','Shvarcnigger','1948-03-24',1350);
+INSERT INTO `persons` VALUES (1,'vasya','vas123','Vasiliy','Sidorov','1985-03-10',880.00),(2,'vasya','vas123','Vasiliy','Sidorov','1985-03-10',550.00),(4,'megabrain','pass','Albert','Einstain','1879-03-14',3500.00),(5,'стасямба','1стасололо6','Станистав','Кину Где Попало','1986-09-14',500.00);
 /*!40000 ALTER TABLE `persons` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -52,14 +52,14 @@ DROP TABLE IF EXISTS `products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `products` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `product_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `product_name` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `price` decimal(8,2) DEFAULT NULL,
-  `person_id` bigint(20) NOT NULL,
-  PRIMARY KEY (`id`),
+  `product_price` decimal(8,2) DEFAULT NULL,
+  `person_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`product_id`),
   KEY `products_FK` (`person_id`),
-  CONSTRAINT `products_FK` FOREIGN KEY (`person_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+  CONSTRAINT `products_FK` FOREIGN KEY (`person_id`) REFERENCES `persons` (`person_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,7 +68,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (2,'Кефир',2203.00,6),(3,'Vodka',2666.00,6),(4,'Пивас',2114.00,6),(5,'Молоко',2105.00,6),(6,'Кефир',2203.00,6),(7,'Vodka',2666.00,6),(8,'Пивас',2114.00,6),(9,'Молоко',2105.00,6),(10,'Кефир',2203.00,6),(11,'Vodka',2666.00,6),(12,'Пивас',2114.00,6),(13,'Молоко',1105.00,6),(14,'Кефир',1203.00,6),(15,'Vodka',1666.00,6),(16,'Пивас',1114.00,6),(17,'Молоко',1105.00,6),(18,'Кефир',1203.00,6),(19,'Vodka',1666.00,6),(20,'Пивас',1114.00,6),(21,'Молоко',1105.00,6),(22,'Кефир',1203.00,6),(23,'Vodka',1666.00,6),(24,'Пивас',1114.00,6);
+INSERT INTO `products` VALUES (25,'молоко',1.25,NULL),(27,'молоко',1.25,NULL),(28,'Milk',1.15,NULL),(29,'Milk',1.15,NULL),(30,'Milk',1.15,NULL);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -117,4 +117,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-06-18 23:15:20
+-- Dump completed on 2019-06-19 16:41:20

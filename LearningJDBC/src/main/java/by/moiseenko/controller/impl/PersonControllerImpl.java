@@ -58,7 +58,7 @@ public class PersonControllerImpl implements PersonController {
           System.out.println("Enter salary:");
           person.setSalary(new BigDecimal(scanner.next()));
           long personId = personService.createPerson(person);
-          System.out.println(personService.retrievePerson(person.getLogin(), person.getPassword()) + " was created.");
+          System.out.println(personService.retrievePerson(person.getId()) + " was created.");
           break;
         case 2:
           break;

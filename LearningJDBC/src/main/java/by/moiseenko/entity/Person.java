@@ -34,14 +34,14 @@ public class Person {
       String password,
       String firstName,
       String lastName,
-      String dateOfBirth,
-      String salary) {
+      LocalDate dateOfBirth,
+      BigDecimal salary) {
     this.login = login;
     this.password = password;
     this.firstName = firstName;
     this.lastName = lastName;
-    this.dateOfBirth = LocalDate.parse(dateOfBirth, DateTimeFormatter.ofPattern("d.M.y"));
-    this.salary = BigDecimal.valueOf(Long.parseLong(salary));
+    this.dateOfBirth = dateOfBirth;
+    this.salary = salary;
     this.productList = new ArrayList<>();
   }
 
