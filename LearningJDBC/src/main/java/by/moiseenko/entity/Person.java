@@ -2,7 +2,6 @@ package by.moiseenko.entity;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,35 +22,28 @@ public class Person {
   private String firstName;
   private String lastName;
   private LocalDate dateOfBirth;
-  private int age;
+  private int age; // needed???
   private BigDecimal salary;
   private List<Product> productList;
 
   public Person() {}
 
-  public Person(
-      String login,
-      String password,
-      String firstName,
-      String lastName,
-      LocalDate dateOfBirth,
-      BigDecimal salary) {
-    this.login = login;
-    this.password = password;
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.dateOfBirth = dateOfBirth;
-    this.salary = salary;
-    this.productList = new ArrayList<>();
-  }
-
   public void addProduct(Product product) {
+    if (productList == null) {
+      productList = new ArrayList<>();
+    }
     product.setPerson(this);
     productList.add(product);
   }
 
+  public List<Product> getProductList() {
+    return (productList != null) ? productList : new ArrayList<>();
+  }
+
   public void deleteProduct(Product product) {
-    productList.remove(product);
+    if (productList != null) {
+      productList.remove(product);
+    }
   }
 
   public void setId(long id) {
@@ -112,10 +104,6 @@ public class Person {
 
   public void setSalary(BigDecimal salary) {
     this.salary = salary;
-  }
-
-  public List<Product> getProductList() {
-    return productList;
   }
 
   @Override

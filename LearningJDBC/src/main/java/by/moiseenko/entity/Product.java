@@ -1,6 +1,7 @@
 package by.moiseenko.entity;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -17,14 +18,7 @@ public class Product {
   private BigDecimal price;
   private Person person;
 
-  public Product(){
-
-  }
-
-  public Product(String productName, BigDecimal price) {
-    this.productName = productName;
-    this.price = price;
-  }
+  public Product() {}
 
   public long getId() {
     return id;
@@ -56,6 +50,26 @@ public class Product {
 
   public void setPerson(Person person) {
     this.person = person;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Product product = (Product) o;
+    return id == product.id
+        && productName.equals(product.productName)
+        && price.equals(product.price)
+        && Objects.equals(person, product.person);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, productName, price, person);
   }
 
   @Override

@@ -31,7 +31,7 @@ public interface PersonDao {
     Logger LOG = LogManager.getLogger(PersonDao.class.getName());
     DataSource ds = new DataSource(Runner.mySQL_prop);
     try(Connection conn = ds.getConnection()){
-      CallableStatement cs = conn.prepareCall("CALL delete_dublicates()");
+      CallableStatement cs = conn.prepareCall("{CALL delete_dublicates_from_persons()}");
       cs.execute();
       LOG.debug("Procedure execute success!");
     }catch (SQLException sqlE){

@@ -21,24 +21,26 @@ public class PersonDaoImpl implements PersonDao {
 
   private static final Logger LOG = LogManager.getLogger(PersonDaoImpl.class.getName());
 
-  private static final String SQL_CREATE =
-      "INSERT INTO learning_jdbc.persons (login, password, first_name, last_name, date_of_birth, salary)VALUES (?,?,?,?,?,?)";
-  private static final String SQL_SELECT =
-      "SELECT * FROM learning_jdbc.persons WHERE id = ?";
-  private static final String SQL_UPDATE =
-      "UPDATE learning_jdbc.persons SET login=?, password=?, first_name=?, last_name=?, date_of_birth=?, salary=? WHERE id =?";
-  private static final String SQL_DELETE = "DELETE FROM learning_jdbc.persons WHERE id = ?";
-  private DataSource ds;
+  private DataSource dataSource;
 
-  public PersonDaoImpl(DataSource ds) {
-    this.ds = ds;
+  private static final String SQL_CREATE =
+      "INSERT INTO learning_jdbc.persons (person_login, person_password, person_first_name, person_last_name, person_date_of_birth, person_salary)VALUES (?,?,?,?,?,?)";
+  private static final String SQL_SELECT =
+      "SELECT * FROM learning_jdbc.persons WHERE person_id = ?";
+  private static final String SQL_UPDATE =
+      "UPDATE learning_jdbc.persons SET person_login=?, person_password=?, person_first_name=?, person_last_name=?, person_date_of_birth=?, person_salary=? WHERE person_id =?";
+  private static final String SQL_DELETE = "DELETE FROM learning_jdbc.persons WHERE person_id = ?";
+
+
+  public PersonDaoImpl(DataSource dataSource) {
+    this.dataSource = dataSource;
   }
 
   @Override
   public long savePerson(Person person) {
     long createdId = -1;
     if (person != null) {
-      try (Connection conn = ds.getConnection(); ) {
+      try (Connection conn = dataSource.getConnection(); ) {
         PreparedStatement ps =
             conn.prepareStatement(SQL_CREATE, PreparedStatement.RETURN_GENERATED_KEYS);
         prepareStatementForCreateUpdate(person, ps);
@@ -60,7 +62,7 @@ public class PersonDaoImpl implements PersonDao {
   @Override
   public Person findPerson(long id) {
     Person person = null;
-    try (Connection conn = ds.getConnection()) {
+    try (Connection conn = dataSource.getConnection()) {
       PreparedStatement ps = conn.prepareStatement(SQL_SELECT);
       ps.setLong(1, id);
       ResultSet rs = ps.executeQuery();
@@ -79,7 +81,7 @@ public class PersonDaoImpl implements PersonDao {
   public long updatePerson(long id, Person person) {
     long updatedID = -1;
     if (person != null) {
-      try (Connection conn = ds.getConnection()) {
+      try (Connection conn = dataSource.getConnection()) {
         PreparedStatement ps =
             conn.prepareStatement(SQL_UPDATE, PreparedStatement.RETURN_GENERATED_KEYS);
         prepareStatementForCreateUpdate(person, ps);
@@ -100,7 +102,7 @@ public class PersonDaoImpl implements PersonDao {
   public List<Person> getAllPersons() {
     List<Person> personList = null;
     Person person = null;
-    try (Connection conn = ds.getConnection()) {
+    try (Connection conn = dataSource.getConnection()) {
       PreparedStatement ps = conn.prepareStatement("SELECT * FROM learning_jdbc.persons");
       ResultSet rs = ps.executeQuery();
       while (rs.next()) {
@@ -119,7 +121,7 @@ public class PersonDaoImpl implements PersonDao {
 
   @Override
   public void deletePerson(long id) {
-    try (Connection conn = ds.getConnection()) {
+    try (Connection conn = dataSource.getConnection()) {
       PreparedStatement ps = conn.prepareStatement(SQL_DELETE);
       int raws = ps.executeUpdate();
       LOG.debug(raws + " was deleted.");
@@ -139,12 +141,12 @@ public class PersonDaoImpl implements PersonDao {
   }
 
   private void mapPersonFromResultSet(Person person, ResultSet resultSet) throws SQLException {
-    person.setId(resultSet.getLong("id"));
-    person.setLogin(resultSet.getString("login"));
-    person.setPassword(resultSet.getString("password"));
-    person.setFirstName(resultSet.getString("first_name"));
-    person.setLastName(resultSet.getString("last_name"));
-    person.setDateOfBirth(resultSet.getDate("date_of_birth").toLocalDate());
-    person.setSalary(resultSet.getBigDecimal("salary"));
+    person.setId(resultSet.getLong("person_id"));
+    person.setLogin(resultSet.getString("person_login"));
+    person.setPassword(resultSet.getString("person_password"));
+    person.setFirstName(resultSet.getString("person_first_name"));
+    person.setLastName(resultSet.getString("person_last_name"));
+    person.setDateOfBirth(resultSet.getDate("person_date_of_birth").toLocalDate());
+    person.setSalary(resultSet.getBigDecimal("person_salary"));
   }
 }

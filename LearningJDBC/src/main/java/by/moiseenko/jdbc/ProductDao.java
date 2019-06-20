@@ -19,7 +19,7 @@ public interface ProductDao {
 
   Product findProduct(long id);
 
-  long updateProduct(Product product);
+  int updateProduct(Product product);
 
   void deleteProduct(long id);
 }

@@ -1,7 +1,5 @@
 package by.moiseenko;
 
-import by.moiseenko.controller.PersonController;
-import by.moiseenko.controller.impl.PersonControllerImpl;
 import by.moiseenko.entity.Person;
 import by.moiseenko.entity.Product;
 import by.moiseenko.jdbc.PersonDao;
@@ -10,12 +8,13 @@ import by.moiseenko.jdbc.impl.CRUDbySQL;
 import by.moiseenko.jdbc.impl.DataSource;
 import by.moiseenko.jdbc.impl.PersonDaoImpl;
 import by.moiseenko.jdbc.impl.ProductDaoImpl;
-import by.moiseenko.service.PersonService;
 import by.moiseenko.service.ProductService;
-import by.moiseenko.service.impl.PersonServiceImpl;
 import by.moiseenko.service.impl.ProductServiceImpl;
 import java.math.BigDecimal;
+import java.sql.CallableStatement;
+import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.Types;
 import java.time.LocalDate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -40,8 +39,8 @@ public class Runner {
     //    PersonService personService = new PersonServiceImpl(personDao);
     //    PersonController personController = new PersonControllerImpl(personService);
     ProductDao productDao = new ProductDaoImpl(dataSource);
-  productDao.createProduct(new Product("Milk", new BigDecimal(1.15)));
-  LOG.debug(productDao.findProduct(28));
+    PersonDao personDao = new PersonDaoImpl(dataSource);
+
 
   }
 
@@ -61,7 +60,10 @@ public class Runner {
         LOG.error(sqlE);
       }
 
-      Product product_pivas = new Product("Пивас", new BigDecimal(114));
+      Product product_pivas = new Product();
+      product_pivas.setProductName("Пивас");
+      product_pivas.setPrice(new BigDecimal(114));
+
       ProductService productService = new ProductServiceImpl(crudbySQL);
       productService.addProductToDB(product_pivas);
 
@@ -90,20 +92,45 @@ public class Runner {
       }
     }
   }
-  private  static void tempCode(boolean isActive){
-    if (isActive){
+
+  private static void tempCode(boolean isActive) {
+    if (isActive) {
       PersonDao personDao = new PersonDaoImpl(new DataSource(mySQL_prop));
-      Person p1 = new Person("vasya", "vas123", "Vasiliy", "Sidorov", LocalDate.parse("10.03.1985"), new BigDecimal(550));
+      Person p1 = new Person();
+      p1.setLogin("vasya");
+      p1.setPassword("vas123");
+      p1.setFirstName("Vasiliy");
+      p1.setLastName("Sidorov");
+      p1.setDateOfBirth(LocalDate.parse("10.03.1985"));
+      p1.setSalary(new BigDecimal(550));
+
       personDao.savePerson(p1);
       p1.setSalary(new BigDecimal(880));
       personDao.updatePerson(1, p1);
       personDao.deleteDuplicatesBySQLProcedure();
       LOG.debug(personDao.findPerson(5));
-      LOG.debug("\n"+
-          personDao.getAllPersons().stream()
-              .map(Person::toString)
-              .reduce((per1, per2) -> per1.concat("\n").concat(per2))
-              .get());
+      LOG.debug(
+          "\n"
+              + personDao.getAllPersons().stream()
+                  .map(Person::toString)
+                  .reduce((per1, per2) -> per1.concat("\n").concat(per2))
+                  .get());
+    }
+  }
+  private  void callableStatementExample(boolean isActive){
+    if(isActive){
+      DataSource dataSource = new DataSource(mySQL_prop);
+      try(Connection connection = dataSource.getConnection()){
+        CallableStatement callableStatement =
+            connection.prepareCall("{call get_most_expensive_product_from_products(?,?)}");
+        callableStatement.registerOutParameter(1, Types.VARCHAR);
+        callableStatement.registerOutParameter(2, Types.DECIMAL);
+        callableStatement.execute();
+        LOG.debug(callableStatement.getString("o_producr_name"));
+        LOG.debug(callableStatement.getBigDecimal(2));
+      }catch (SQLException sqlE){
+        LOG.error(sqlE);
+      }
     }
   }
 }
