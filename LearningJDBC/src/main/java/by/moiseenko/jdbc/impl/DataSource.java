@@ -16,24 +16,13 @@ import org.apache.logging.log4j.Logger;
  *
  * @author moiseenko-s
  */
-public class DataSource {
+public final class DataSource {
 
   private static final Logger LOG = LogManager.getLogger(DataSource.class.getName());
-  private String propertyPath;
+  private Connection connection;
+  private static DataSource instance;
 
-  public DataSource(String propertyPath) {
-    this.propertyPath = propertyPath;
-  }
-
-//  static {
-//    try {
-//      Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
-//    } catch (Exception e) {
-//      LOG.error(e);
-//    }
-//  }
-
-  public Connection getConnection() throws SQLException {
+  private DataSource(String propertyPath) {
     Properties prop = new Properties();
     try (InputStream is = Files.newInputStream(Path.of(propertyPath))) {
       prop.loadFromXML(is);
@@ -44,6 +33,30 @@ public class DataSource {
     String user = prop.getProperty("db.user");
     String password = prop.getProperty("db.password");
 
-    return DriverManager.getConnection(url, user, password);
+    try {
+      this.connection = DriverManager.getConnection(url, user, password);
+//      this.connection.setAutoCommit(false);
+    } catch (SQLException sqlE) {
+      LOG.error("Database Connection Creation Failed : " + sqlE);
+    }
+  }
+
+  public static DataSource getInstance(String propertyPath){
+    if (instance == null) {
+      instance = new DataSource(propertyPath);
+    } else {
+      try {
+        if (instance.getConnection().isClosed()){
+          instance = new DataSource(propertyPath);
+        }
+      } catch (SQLException sqlE) {
+        LOG.error(sqlE);
+      }
+    }
+    return instance;
+  }
+
+  public Connection getConnection() {
+     return connection;
   }
 }

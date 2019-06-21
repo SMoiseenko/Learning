@@ -29,7 +29,7 @@ public interface PersonDao {
 
   default void deleteDuplicatesBySQLProcedure(){
     Logger LOG = LogManager.getLogger(PersonDao.class.getName());
-    DataSource ds = new DataSource(Runner.mySQL_prop);
+    DataSource ds = DataSource.getInstance(Runner.mySQL_prop);
     try(Connection conn = ds.getConnection()){
       CallableStatement cs = conn.prepareCall("{CALL delete_dublicates_from_persons()}");
       cs.execute();

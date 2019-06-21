@@ -16,6 +16,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Types;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -32,9 +33,9 @@ public class Runner {
 
   public static void main(String[] args) {
     someExamples(false);
-    tempCode(false);
+    tempCode(true);
 
-    DataSource dataSource = new DataSource(mySQL_prop);
+    DataSource dataSource = DataSource.getInstance(mySQL_prop);
     //    PersonDao personDao = new PersonDaoImpl(dataSource);
     //    PersonService personService = new PersonServiceImpl(personDao);
     //    PersonController personController = new PersonControllerImpl(personService);
@@ -46,7 +47,7 @@ public class Runner {
 
   private static void someExamples(boolean isActive) {
     if (isActive) {
-      CRUDbySQL crudbySQL = new CRUDbySQL(new DataSource(mySQL_prop));
+      CRUDbySQL crudbySQL = new CRUDbySQL(DataSource.getInstance(mySQL_prop));
       try {
         crudbySQL.executeUpdate(
             "CREATE TABLE products (Id INT PRIMARY KEY AUTO_INCREMENT, ProductName VARCHAR(20), Price INT)");
@@ -95,18 +96,20 @@ public class Runner {
 
   private static void tempCode(boolean isActive) {
     if (isActive) {
-      PersonDao personDao = new PersonDaoImpl(new DataSource(mySQL_prop));
+      PersonDao personDao = new PersonDaoImpl(DataSource.getInstance(mySQL_prop));
       Person p1 = new Person();
       p1.setLogin("vasya");
       p1.setPassword("vas123");
       p1.setFirstName("Vasiliy");
       p1.setLastName("Sidorov");
-      p1.setDateOfBirth(LocalDate.parse("10.03.1985"));
+      p1.setDateOfBirth(LocalDate.parse("10.03.1985", DateTimeFormatter.ofPattern("d.M.y")));
       p1.setSalary(new BigDecimal(550));
 
       personDao.savePerson(p1);
       p1.setSalary(new BigDecimal(880));
+
       personDao.updatePerson(1, p1);
+
       personDao.deleteDuplicatesBySQLProcedure();
       LOG.debug(personDao.findPerson(5));
       LOG.debug(
@@ -119,7 +122,7 @@ public class Runner {
   }
   private  void callableStatementExample(boolean isActive){
     if(isActive){
-      DataSource dataSource = new DataSource(mySQL_prop);
+      DataSource dataSource = DataSource.getInstance(mySQL_prop);
       try(Connection connection = dataSource.getConnection()){
         CallableStatement callableStatement =
             connection.prepareCall("{call get_most_expensive_product_from_products(?,?)}");
