@@ -1,7 +1,7 @@
 package by.moiseenko.service.impl;
 
-import by.moiseenko.entity.Product;
-import by.moiseenko.jdbc.impl.CRUDbySQL;
+import by.moiseenko.model.Product;
+import by.moiseenko.repository.impl.CRUDbySQL;
 import by.moiseenko.service.ProductService;
 import java.sql.SQLException;
 import org.apache.logging.log4j.LogManager;

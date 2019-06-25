@@ -5,9 +5,10 @@ package by.moiseenko.controller;
  *
  * @author moiseenko-s
  */
-public interface PersonController {
+public interface ProgramController {
   void createPerson();
   void updatePerson();
   void retrievePerson();
   void deletePerson();
+
 }

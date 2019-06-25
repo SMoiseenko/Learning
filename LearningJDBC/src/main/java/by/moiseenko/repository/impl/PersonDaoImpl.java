@@ -1,7 +1,7 @@
-package by.moiseenko.jdbc.impl;
+package by.moiseenko.repository.impl;
 
-import by.moiseenko.entity.Person;
-import by.moiseenko.jdbc.PersonDao;
+import by.moiseenko.model.Person;
+import by.moiseenko.repository.PersonDao;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -21,7 +21,7 @@ public class PersonDaoImpl implements PersonDao {
 
   private static final Logger LOG = LogManager.getLogger(PersonDaoImpl.class.getName());
 
-  private DataSource dataSource;
+  private ConnectorDB connectorDB;
 
   private static final String SQL_CREATE =
       "INSERT INTO learning_jdbc.persons (person_login, person_password, person_first_name, person_last_name, person_date_of_birth, person_salary)VALUES (?,?,?,?,?,?)";
@@ -32,15 +32,15 @@ public class PersonDaoImpl implements PersonDao {
   private static final String SQL_DELETE = "DELETE FROM learning_jdbc.persons WHERE person_id = ?";
 
 
-  public PersonDaoImpl(DataSource dataSource) {
-    this.dataSource = dataSource;
+  public PersonDaoImpl(ConnectorDB connectorDB) {
+    this.connectorDB = connectorDB;
   }
 
   @Override
   public long savePerson(Person person) {
     long createdId = -1;
     if (person != null) {
-      try (Connection conn = dataSource.getConnection(); ) {
+      try (Connection conn = connectorDB.getConnection(); ) {
         PreparedStatement ps =
             conn.prepareStatement(SQL_CREATE, PreparedStatement.RETURN_GENERATED_KEYS);
         prepareStatementForCreateUpdate(person, ps);
@@ -62,7 +62,7 @@ public class PersonDaoImpl implements PersonDao {
   @Override
   public Person findPerson(long id) {
     Person person = null;
-    try (Connection conn = dataSource.getConnection()) {
+    try (Connection conn = connectorDB.getConnection()) {
       PreparedStatement ps = conn.prepareStatement(SQL_SELECT);
       ps.setLong(1, id);
       ResultSet rs = ps.executeQuery();
@@ -81,7 +81,7 @@ public class PersonDaoImpl implements PersonDao {
   public long updatePerson(long id, Person person) {
     long updatedID = -1;
     if (person != null) {
-      try (Connection conn = dataSource.getConnection()) {
+      try (Connection conn = connectorDB.getConnection()) {
         PreparedStatement ps =
             conn.prepareStatement(SQL_UPDATE, PreparedStatement.RETURN_GENERATED_KEYS);
         prepareStatementForCreateUpdate(person, ps);
@@ -102,7 +102,7 @@ public class PersonDaoImpl implements PersonDao {
   public List<Person> getAllPersons() {
     List<Person> personList = null;
     Person person = null;
-    try (Connection conn = dataSource.getConnection()) {
+    try (Connection conn = connectorDB.getConnection()) {
       PreparedStatement ps = conn.prepareStatement("SELECT * FROM learning_jdbc.persons");
       ResultSet rs = ps.executeQuery();
       while (rs.next()) {
@@ -121,7 +121,7 @@ public class PersonDaoImpl implements PersonDao {
 
   @Override
   public void deletePerson(long id) {
-    try (Connection conn = dataSource.getConnection()) {
+    try (Connection conn = connectorDB.getConnection()) {
       PreparedStatement ps = conn.prepareStatement(SQL_DELETE);
       int raws = ps.executeUpdate();
       LOG.debug(raws + " was deleted.");
@@ -141,7 +141,7 @@ public class PersonDaoImpl implements PersonDao {
   }
 
   private void mapPersonFromResultSet(Person person, ResultSet resultSet) throws SQLException {
-    person.setId(resultSet.getLong("person_id"));
+    person.setId(resultSet.getBigDecimal("person_id").longValue());
     person.setLogin(resultSet.getString("person_login"));
     person.setPassword(resultSet.getString("person_password"));
     person.setFirstName(resultSet.getString("person_first_name"));

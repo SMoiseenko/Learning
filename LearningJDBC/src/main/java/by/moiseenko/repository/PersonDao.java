@@ -1,8 +1,8 @@
-package by.moiseenko.jdbc;
+package by.moiseenko.repository;
 
 import by.moiseenko.Runner;
-import by.moiseenko.entity.Person;
-import by.moiseenko.jdbc.impl.DataSource;
+import by.moiseenko.model.Person;
+import by.moiseenko.repository.impl.ConnectorDB;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -29,7 +29,7 @@ public interface PersonDao {
 
   default void deleteDuplicatesBySQLProcedure(){
     Logger LOG = LogManager.getLogger(PersonDao.class.getName());
-    DataSource ds = DataSource.getInstance(Runner.mySQL_prop);
+    ConnectorDB ds = ConnectorDB.getInstance(Runner.mySQL_prop);
     try(Connection conn = ds.getConnection()){
       CallableStatement cs = conn.prepareCall("{CALL delete_dublicates_from_persons()}");
       cs.execute();

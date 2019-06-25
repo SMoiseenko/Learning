@@ -1,4 +1,4 @@
-package by.moiseenko.entity;
+package by.moiseenko.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -14,9 +14,9 @@ import org.apache.logging.log4j.Logger;
  *
  * @author moiseenko-s
  */
-public class Person {
+public class Person  extends Entity{
   private static final Logger LOG = LogManager.getLogger(Person.class.getName());
-  private long id;
+
   private String login;
   private String password;
   private String firstName;
@@ -44,14 +44,6 @@ public class Person {
     if (productList != null) {
       productList.remove(product);
     }
-  }
-
-  public void setId(long id) {
-    this.id = id;
-  }
-
-  public long getId() {
-    return id;
   }
 
   public String getLogin() {
@@ -111,21 +103,27 @@ public class Person {
     if (this == o) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (!(o instanceof Person)) {
+      return false;
+    }
+    if (!super.equals(o)) {
       return false;
     }
     Person person = (Person) o;
-    return login.equals(person.login)
-        && password.equals(person.password)
-        && firstName.equals(person.firstName)
-        && lastName.equals(person.lastName)
-        && dateOfBirth.equals(person.dateOfBirth)
-        && salary.equals(person.salary);
+    return getAge() == person.getAge() &&
+        Objects.equals(getLogin(), person.getLogin()) &&
+        Objects.equals(getPassword(), person.getPassword()) &&
+        Objects.equals(getFirstName(), person.getFirstName()) &&
+        Objects.equals(getLastName(), person.getLastName()) &&
+        Objects.equals(getDateOfBirth(), person.getDateOfBirth()) &&
+        Objects.equals(getSalary(), person.getSalary()) &&
+        Objects.equals(getProductList(), person.getProductList());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(login, password, firstName, lastName, dateOfBirth, salary);
+    return Objects.hash(super.hashCode(), getLogin(), getPassword(), getFirstName(), getLastName(),
+        getDateOfBirth(), getAge(), getSalary(), getProductList());
   }
 
   @Override

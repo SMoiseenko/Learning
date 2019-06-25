@@ -1,4 +1,4 @@
-package by.moiseenko.entity;
+package by.moiseenko.model;
 
 import java.math.BigDecimal;
 import java.util.Objects;
@@ -10,23 +10,13 @@ import org.apache.logging.log4j.Logger;
  *
  * @author moiseenko-s
  */
-public class Product {
-  private static final Logger LOG = LogManager.getLogger(Product.class.getName());
+public class Product extends Entity {
 
-  private long id;
   private String productName;
   private BigDecimal price;
   private Person person;
 
   public Product() {}
-
-  public long getId() {
-    return id;
-  }
-
-  public void setId(long id) {
-    this.id = id;
-  }
 
   public String getProductName() {
     return productName;
@@ -57,19 +47,21 @@ public class Product {
     if (this == o) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (!(o instanceof Product)) {
+      return false;
+    }
+    if (!super.equals(o)) {
       return false;
     }
     Product product = (Product) o;
-    return id == product.id
-        && productName.equals(product.productName)
-        && price.equals(product.price)
-        && Objects.equals(person, product.person);
+    return Objects.equals(getProductName(), product.getProductName()) &&
+        Objects.equals(getPrice(), product.getPrice()) &&
+        Objects.equals(getPerson(), product.getPerson());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, productName, price, person);
+    return Objects.hash(super.hashCode(), getProductName(), getPrice(), getPerson());
   }
 
   @Override

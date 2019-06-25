@@ -1,6 +1,7 @@
 package by.moiseenko.service;
 
-import by.moiseenko.entity.Person;
+import by.moiseenko.model.Person;
+import java.util.List;
 
 /**
  * Default javadoc
@@ -8,9 +9,12 @@ import by.moiseenko.entity.Person;
  * @author moiseenko-s
  */
 public interface PersonService {
+
+  List<Person> getAllPersons();
+
   long createPerson(Person person);
 
-  Person retrievePerson(long id);
+  Person findPerson(long id);
 
   long updatePerson(long id, Person person);
 

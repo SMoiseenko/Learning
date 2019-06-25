@@ -1,14 +1,18 @@
 package by.moiseenko;
 
-import by.moiseenko.entity.Person;
-import by.moiseenko.entity.Product;
-import by.moiseenko.jdbc.PersonDao;
-import by.moiseenko.jdbc.ProductDao;
-import by.moiseenko.jdbc.impl.CRUDbySQL;
-import by.moiseenko.jdbc.impl.DataSource;
-import by.moiseenko.jdbc.impl.PersonDaoImpl;
-import by.moiseenko.jdbc.impl.ProductDaoImpl;
+import by.moiseenko.controller.ProgramController;
+import by.moiseenko.controller.impl.ProgramControllerImpl;
+import by.moiseenko.model.Person;
+import by.moiseenko.model.Product;
+import by.moiseenko.repository.PersonDao;
+import by.moiseenko.repository.ProductDao;
+import by.moiseenko.repository.impl.CRUDbySQL;
+import by.moiseenko.repository.impl.ConnectorDB;
+import by.moiseenko.repository.impl.PersonDaoImpl;
+import by.moiseenko.repository.impl.ProductDaoImpl;
+import by.moiseenko.service.PersonService;
 import by.moiseenko.service.ProductService;
+import by.moiseenko.service.impl.PersonServiceImpl;
 import by.moiseenko.service.impl.ProductServiceImpl;
 import java.math.BigDecimal;
 import java.sql.CallableStatement;
@@ -28,26 +32,26 @@ import org.apache.logging.log4j.Logger;
 public class Runner {
 
   private static final Logger LOG = LogManager.getLogger(Runner.class.getName());
-  public static String mySQL_prop =
-      "/home/moiseenko-s/IdeaProjects/Learning/LearningJDBC/src/main/resources/jdbc_prop.xml";
+  public static String mySQL_prop = System.getProperty("user.home")+
+      "/IdeaProjects/Learning/LearningJDBC/src/main/resources/jdbc_prop.xml";
 
   public static void main(String[] args) {
     someExamples(false);
-    tempCode(true);
+    tempCode(false);
 
-    DataSource dataSource = DataSource.getInstance(mySQL_prop);
-    //    PersonDao personDao = new PersonDaoImpl(dataSource);
-    //    PersonService personService = new PersonServiceImpl(personDao);
-    //    PersonController personController = new PersonControllerImpl(personService);
-    ProductDao productDao = new ProductDaoImpl(dataSource);
-    PersonDao personDao = new PersonDaoImpl(dataSource);
+    ConnectorDB connectorDB = ConnectorDB.getInstance(mySQL_prop);
+    PersonDao personDao = new PersonDaoImpl(connectorDB);
+    PersonService personService = new PersonServiceImpl(personDao);
+    ProgramController personController = new ProgramControllerImpl(personService);
+    ProductDao productDao = new ProductDaoImpl(connectorDB);
+
 
 
   }
 
   private static void someExamples(boolean isActive) {
     if (isActive) {
-      CRUDbySQL crudbySQL = new CRUDbySQL(DataSource.getInstance(mySQL_prop));
+      CRUDbySQL crudbySQL = new CRUDbySQL(ConnectorDB.getInstance(mySQL_prop));
       try {
         crudbySQL.executeUpdate(
             "CREATE TABLE products (Id INT PRIMARY KEY AUTO_INCREMENT, ProductName VARCHAR(20), Price INT)");
@@ -96,7 +100,7 @@ public class Runner {
 
   private static void tempCode(boolean isActive) {
     if (isActive) {
-      PersonDao personDao = new PersonDaoImpl(DataSource.getInstance(mySQL_prop));
+      PersonDao personDao = new PersonDaoImpl(ConnectorDB.getInstance(mySQL_prop));
       Person p1 = new Person();
       p1.setLogin("vasya");
       p1.setPassword("vas123");
@@ -122,8 +126,8 @@ public class Runner {
   }
   private  void callableStatementExample(boolean isActive){
     if(isActive){
-      DataSource dataSource = DataSource.getInstance(mySQL_prop);
-      try(Connection connection = dataSource.getConnection()){
+      ConnectorDB connectorDB = ConnectorDB.getInstance(mySQL_prop);
+      try(Connection connection = connectorDB.getConnection()){
         CallableStatement callableStatement =
             connection.prepareCall("{call get_most_expensive_product_from_products(?,?)}");
         callableStatement.registerOutParameter(1, Types.VARCHAR);

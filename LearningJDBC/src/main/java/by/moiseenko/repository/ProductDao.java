@@ -1,7 +1,7 @@
-package by.moiseenko.jdbc;
+package by.moiseenko.repository;
 
-import by.moiseenko.entity.Person;
-import by.moiseenko.entity.Product;
+import by.moiseenko.model.Person;
+import by.moiseenko.model.Product;
 import java.util.List;
 
 /**

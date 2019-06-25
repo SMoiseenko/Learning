@@ -1,8 +1,9 @@
 package by.moiseenko.service.impl;
 
-import by.moiseenko.entity.Person;
-import by.moiseenko.jdbc.PersonDao;
+import by.moiseenko.model.Person;
+import by.moiseenko.repository.PersonDao;
 import by.moiseenko.service.PersonService;
+import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -21,12 +22,17 @@ public class PersonServiceImpl implements PersonService {
   }
 
   @Override
+  public List<Person> getAllPersons() {
+    return personDao.getAllPersons();
+  }
+
+  @Override
   public long createPerson(Person person) {
     return personDao.savePerson(person);
   }
 
   @Override
-  public Person retrievePerson(long id) {
+  public Person findPerson(long id) {
     return personDao.findPerson(id);
   }
 

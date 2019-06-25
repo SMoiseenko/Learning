@@ -1,8 +1,8 @@
-package by.moiseenko.jdbc.impl;
+package by.moiseenko.repository.impl;
 
-import by.moiseenko.entity.Person;
-import by.moiseenko.entity.Product;
-import by.moiseenko.jdbc.ProductDao;
+import by.moiseenko.model.Person;
+import by.moiseenko.model.Product;
+import by.moiseenko.repository.ProductDao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -22,7 +22,7 @@ public class ProductDaoImpl implements ProductDao {
 
   private static final Logger LOG = LogManager.getLogger(ProductDaoImpl.class.getName());
 
-  private DataSource dataSource;
+  private ConnectorDB connectorDB;
 
   private static final String SQL_SELECT = "SELECT * FROM products WHERE `product_id` = ?";
   private static final String SQL_SELECT_ALL = "SELECT * FROM products";
@@ -34,14 +34,14 @@ public class ProductDaoImpl implements ProductDao {
       "INSERT  INTO products (`product_name`, `product_price`, `person_id`) VALUES (?,?,?)";
   private static final String SQL_DELETE = "";
 
-  public ProductDaoImpl(DataSource dataSource) {
-    this.dataSource = dataSource;
+  public ProductDaoImpl(ConnectorDB connectorDB) {
+    this.connectorDB = connectorDB;
   }
 
   @Override
   public List<Product> getAllProducts() {
     List<Product> result = new ArrayList<>();
-    try (Connection connection = dataSource.getConnection()) {
+    try (Connection connection = connectorDB.getConnection()) {
       PreparedStatement preparedStatement = connection.prepareStatement(SQL_SELECT_ALL);
       ResultSet resultSet = preparedStatement.executeQuery();
       Product product = null;
@@ -58,7 +58,7 @@ public class ProductDaoImpl implements ProductDao {
   @Override
   public List<Product> getAllPersonProducts(Person person) {
     List<Product> result = new ArrayList<>();
-    try (Connection connection = dataSource.getConnection()) {
+    try (Connection connection = connectorDB.getConnection()) {
       PreparedStatement preparedStatement = connection.prepareStatement(SQL_SELECT_ALL_FOR_USER);
       preparedStatement.setLong(1, person.getId());
       ResultSet resultSet = preparedStatement.executeQuery();
@@ -76,7 +76,7 @@ public class ProductDaoImpl implements ProductDao {
   @Override
   public long createProduct(Product product) {
     long result = -1;
-    try (Connection connection = dataSource.getConnection()) {
+    try (Connection connection = connectorDB.getConnection()) {
       PreparedStatement preparedStatement = connection.prepareStatement(SQL_CREATE, PreparedStatement.RETURN_GENERATED_KEYS);
      preparedStatementForProduct(preparedStatement, product);
       preparedStatement.executeUpdate();
@@ -93,7 +93,7 @@ public class ProductDaoImpl implements ProductDao {
   @Override
   public Product findProduct(long id) {
     Product result = null;
-    try (Connection connection = dataSource.getConnection()) {
+    try (Connection connection = connectorDB.getConnection()) {
       PreparedStatement preparedStatement = connection.prepareStatement(SQL_SELECT);
       preparedStatement.setLong(1, id);
       ResultSet resultSet = preparedStatement.executeQuery();
@@ -109,7 +109,7 @@ public class ProductDaoImpl implements ProductDao {
   @Override
   public int updateProduct(Product product) {
     int result = -1;
-    try (Connection connection = dataSource.getConnection()) {
+    try (Connection connection = connectorDB.getConnection()) {
       PreparedStatement preparedStatement = connection.prepareStatement(SQL_UPDATE);
       preparedStatementForProduct(preparedStatement, product);
       preparedStatement.setLong(4, product.getId());

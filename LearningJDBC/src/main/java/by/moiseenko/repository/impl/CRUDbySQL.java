@@ -1,4 +1,4 @@
-package by.moiseenko.jdbc.impl;
+package by.moiseenko.repository.impl;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -14,15 +14,15 @@ import org.apache.logging.log4j.Logger;
  */
 public class CRUDbySQL {
   private static final Logger LOG = LogManager.getLogger(CRUDbySQL.class.getName());
-  private DataSource dataSource;
+  private ConnectorDB connectorDB;
 
-  public CRUDbySQL(DataSource dataSource) {
-    this.dataSource = dataSource;
+  public CRUDbySQL(ConnectorDB connectorDB) {
+    this.connectorDB = connectorDB;
   }
 
   public void executeUpdate(String sqlQuery) throws SQLException {
-    if (dataSource != null) {
-      try (Connection connection = dataSource.getConnection()) {
+    if (connectorDB != null) {
+      try (Connection connection = connectorDB.getConnection()) {
         Statement statement = connection.createStatement();
         int res = statement.executeUpdate(sqlQuery);
         LOG.debug(res + " Added/deleted/updated raws.");
@@ -33,8 +33,8 @@ public class CRUDbySQL {
   }
 
   public void executeQuery(String sqlQuery) throws SQLException {
-    if (dataSource != null) {
-      try (Connection connection = dataSource.getConnection()) {
+    if (connectorDB != null) {
+      try (Connection connection = connectorDB.getConnection()) {
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(sqlQuery);
         StringBuilder sb;

@@ -1,11 +1,12 @@
 package by.moiseenko.controller.impl;
 
-import by.moiseenko.controller.PersonController;
-import by.moiseenko.entity.Person;
+import by.moiseenko.controller.ProgramController;
+import by.moiseenko.model.Person;
 import by.moiseenko.service.PersonService;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Scanner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,12 +16,12 @@ import org.apache.logging.log4j.Logger;
  *
  * @author moiseenko-s
  */
-public class PersonControllerImpl implements PersonController {
+public class ProgramControllerImpl implements ProgramController {
 
-  private static final Logger LOG = LogManager.getLogger(PersonControllerImpl.class.getName());
+  private static final Logger LOG = LogManager.getLogger(ProgramControllerImpl.class.getName());
   private PersonService personService;
 
-  public PersonControllerImpl(PersonService personService) {
+  public ProgramControllerImpl(PersonService personService) {
     this.personService = personService;
     start();
   }
@@ -58,7 +59,7 @@ public class PersonControllerImpl implements PersonController {
           System.out.println("Enter salary:");
           person.setSalary(new BigDecimal(scanner.next()));
           long personId = personService.createPerson(person);
-          System.out.println(personService.retrievePerson(person.getId()) + " was created.");
+          System.out.println(personService.findPerson(personId) + " was created.");
           break;
         case 2:
           break;
@@ -67,6 +68,9 @@ public class PersonControllerImpl implements PersonController {
         case 4:
           break;
         case 5:
+          List<Person> personList = personService.getAllPersons();
+          personList.forEach(System.out::println);
+          System.out.println("Total raw/s = "+ personList.size());
           break;
         case 0:
           System.exit(0);

@@ -1,4 +1,4 @@
-package by.moiseenko.jdbc.impl;
+package by.moiseenko.repository.impl;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,13 +16,25 @@ import org.apache.logging.log4j.Logger;
  *
  * @author moiseenko-s
  */
-public final class DataSource {
+public final class ConnectorDB {
 
-  private static final Logger LOG = LogManager.getLogger(DataSource.class.getName());
-  private Connection connection;
-  private static DataSource instance;
+  private static final Logger LOG = LogManager.getLogger(ConnectorDB.class.getName());
+  private final String propertyPath;
+  private static ConnectorDB instance;
 
-  private DataSource(String propertyPath) {
+  private ConnectorDB(String propertyPath) {
+    this.propertyPath = propertyPath;
+  }
+
+  public static ConnectorDB getInstance(String propertyPath) {
+    if (instance == null) {
+      instance = new ConnectorDB(propertyPath);
+    }
+    return instance;
+  }
+
+  public Connection getConnection() {
+    Connection connection = null;
     Properties prop = new Properties();
     try (InputStream is = Files.newInputStream(Path.of(propertyPath))) {
       prop.loadFromXML(is);
@@ -34,29 +46,11 @@ public final class DataSource {
     String password = prop.getProperty("db.password");
 
     try {
-      this.connection = DriverManager.getConnection(url, user, password);
-//      this.connection.setAutoCommit(false);
+      connection = DriverManager.getConnection(url, user, password);
+      //      this.connection.setAutoCommit(false);
     } catch (SQLException sqlE) {
       LOG.error("Database Connection Creation Failed : " + sqlE);
     }
-  }
-
-  public static DataSource getInstance(String propertyPath){
-    if (instance == null) {
-      instance = new DataSource(propertyPath);
-    } else {
-      try {
-        if (instance.getConnection().isClosed()){
-          instance = new DataSource(propertyPath);
-        }
-      } catch (SQLException sqlE) {
-        LOG.error(sqlE);
-      }
-    }
-    return instance;
-  }
-
-  public Connection getConnection() {
-     return connection;
+    return connection;
   }
 }

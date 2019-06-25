@@ -1,6 +1,6 @@
 package by.moiseenko.service;
 
-import by.moiseenko.entity.Product;
+import by.moiseenko.model.Product;
 
 /**
  * Default javadoc
