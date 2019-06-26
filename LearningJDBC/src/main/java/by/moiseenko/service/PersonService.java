@@ -16,6 +16,8 @@ public interface PersonService {
 
   Person findPerson(long id);
 
+  Person loginInSystem(String login, String password);
+
   long updatePerson(long id, Person person);
 
   void deletePerson(long id);

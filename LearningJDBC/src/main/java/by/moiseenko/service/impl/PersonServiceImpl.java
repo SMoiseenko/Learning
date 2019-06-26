@@ -4,6 +4,7 @@ import by.moiseenko.model.Person;
 import by.moiseenko.repository.PersonDao;
 import by.moiseenko.service.PersonService;
 import java.util.List;
+import java.util.stream.Collectors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -24,6 +25,22 @@ public class PersonServiceImpl implements PersonService {
   @Override
   public List<Person> getAllPersons() {
     return personDao.getAllPersons();
+  }
+
+  @Override
+  public Person loginInSystem(String login, String password) {
+    List<Person> personList = getAllPersons();
+    return personList.stream()
+        .filter(p -> p.getLogin().equals(login) && p.getPassword().equals(password))
+        .collect(
+            Collectors.collectingAndThen(
+                Collectors.toList(),
+                list -> {
+                  if (list.size() != 1) {
+                    throw new IllegalArgumentException("Wrong login or password");
+                  }
+                  return list.get(0);
+                }));
   }
 
   @Override

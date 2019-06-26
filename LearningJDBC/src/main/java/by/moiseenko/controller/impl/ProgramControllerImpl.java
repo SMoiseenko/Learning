@@ -20,6 +20,7 @@ public class ProgramControllerImpl implements ProgramController {
 
   private static final Logger LOG = LogManager.getLogger(ProgramControllerImpl.class.getName());
   private PersonService personService;
+  private Person loggedPerson;
 
   public ProgramControllerImpl(PersonService personService) {
     this.personService = personService;
@@ -62,6 +63,19 @@ public class ProgramControllerImpl implements ProgramController {
           System.out.println(personService.findPerson(personId) + " was created.");
           break;
         case 2:
+          scanner.nextLine();
+          System.out.println("Enter login:");
+          String login = (scanner.nextLine());
+          System.out.println("Enter password:");
+          String password = (scanner.nextLine());
+
+          try{
+            loggedPerson = personService.loginInSystem(login, password);
+            System.out.println(loggedPerson);
+          } catch (IllegalArgumentException iae){
+            LOG.error(iae);
+          }
+
           break;
         case 3:
           break;
