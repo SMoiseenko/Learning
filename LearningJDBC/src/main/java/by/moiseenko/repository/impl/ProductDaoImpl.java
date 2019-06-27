@@ -3,6 +3,7 @@ package by.moiseenko.repository.impl;
 import by.moiseenko.model.Person;
 import by.moiseenko.model.Product;
 import by.moiseenko.repository.ProductDao;
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -55,23 +56,6 @@ public class ProductDaoImpl implements ProductDao {
     return result;
   }
 
-  @Override
-  public List<Product> getAllPersonProducts(Person person) {
-    List<Product> result = new ArrayList<>();
-    try (Connection connection = connectorDB.getConnection()) {
-      PreparedStatement preparedStatement = connection.prepareStatement(SQL_SELECT_ALL_FOR_USER);
-      preparedStatement.setLong(1, person.getId());
-      ResultSet resultSet = preparedStatement.executeQuery();
-      Product product = null;
-      while (resultSet != null && resultSet.next()) {
-        product = mapProduct(resultSet);
-        result.add(product);
-      }
-    } catch (SQLException sqlE) {
-      LOG.error(sqlE);
-    }
-    return result;
-  }
 
   @Override
   public long createProduct(Product product) {
@@ -126,11 +110,11 @@ public class ProductDaoImpl implements ProductDao {
 
   private Product mapProduct(ResultSet resultSet) throws SQLException {
     Product product = new Product();
-    product.setId(resultSet.getInt("product_id"));
+    product.setId(resultSet.getBigDecimal("product_id").longValue());
     product.setProductName(resultSet.getString("product_name"));
     product.setPrice(resultSet.getBigDecimal("product_price"));
     long personId;
-    if ((personId = resultSet.getLong("person_id")) != 0) {
+    if ((personId = resultSet.getBigDecimal("person_id").longValue()) != 0) {
       product.setPerson(new Person());
       product.getPerson().setId(personId);
     }
@@ -140,8 +124,8 @@ public class ProductDaoImpl implements ProductDao {
   private void preparedStatementForProduct(PreparedStatement preparedStatement, Product product) throws SQLException{
     preparedStatement.setString(1, product.getProductName());
     preparedStatement.setBigDecimal(2, product.getPrice());
-    if(product.getPerson()!= null){
-      preparedStatement.setLong(3, product.getPerson().getId());
+    if(product.getPerson() != null){
+      preparedStatement.setBigDecimal(3, new BigDecimal(product.getPerson().getId()));
     } else  {
       preparedStatement.setNull(3, Types.BIGINT);
     }

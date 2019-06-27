@@ -22,7 +22,6 @@ public class Person  extends Entity{
   private String firstName;
   private String lastName;
   private LocalDate dateOfBirth;
-  private int age; // needed???
   private BigDecimal salary;
   private List<Product> productList;
 
@@ -44,6 +43,10 @@ public class Person  extends Entity{
     if (productList != null) {
       productList.remove(product);
     }
+  }
+
+  public void setProductList(List<Product> productList) {
+    this.productList = productList;
   }
 
   public String getLogin() {

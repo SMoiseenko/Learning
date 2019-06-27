@@ -74,6 +74,11 @@ public class Product extends Entity {
         + '\''
         + ", price="
         + price
+        + ", person='"
+        + person.getFirstName()
+        + ' '
+        +person.getLastName()
+        + '\''
         + '}';
   }
 }

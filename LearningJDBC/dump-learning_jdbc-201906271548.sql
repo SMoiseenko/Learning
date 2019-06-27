@@ -31,7 +31,7 @@ CREATE TABLE `persons` (
   `person_date_of_birth` date NOT NULL,
   `person_salary` decimal(8,2) NOT NULL,
   PRIMARY KEY (`person_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `persons` (
 
 LOCK TABLES `persons` WRITE;
 /*!40000 ALTER TABLE `persons` DISABLE KEYS */;
-INSERT INTO `persons` VALUES (1,'vasya','vas123','Vasiliy','Sidorov','1985-03-10',880.00),(2,'vasya','vas123','Vasiliy','Sidorov','1985-03-10',550.00),(4,'megabrain','pass','Albert','Einstain','1879-03-14',3500.00),(5,'стасямба','1стасололо6','Станистав','Кину Где Попало','1986-09-14',500.00),(10,'Siarhei','pas324','Siarhei','Melez','1965-07-02',320.00),(11,'sequoya','seq345','Sequoya','The Three','0001-01-01',50000.00),(12,'astronaut','lely','Astronaut','A5 Naebali','2019-05-15',1.00),(13,'juno','j159','Lely','Juno','2010-03-15',357.00);
+INSERT INTO `persons` VALUES (1,'vasya','vas123','Vasiliy','Sidorov','1985-03-10',880.00),(2,'vasya','vas123','Vasiliy','Sidorov','1985-03-10',550.00),(4,'megabrain','pass','Albert','Einstain','1879-03-14',3500.00),(5,'стасямба','1стасололо6','Станистав','Кину Где Попало','1986-09-14',500.00),(10,'Siarhei','pas324','Siarhei','Melez','1965-07-02',320.00),(11,'sequoya','seq345','Sequoya','The Three','0001-01-01',50000.00),(12,'astronaut','lely','Astronaut','A5 Naebali','2019-05-15',1.00),(13,'juno','j159','Lely','Juno','2010-03-15',357.00),(14,'test','test','TEST','USER','2000-01-01',0.00);
 /*!40000 ALTER TABLE `persons` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -59,7 +59,7 @@ CREATE TABLE `products` (
   PRIMARY KEY (`product_id`),
   KEY `products_FK` (`person_id`),
   CONSTRAINT `products_FK` FOREIGN KEY (`person_id`) REFERENCES `persons` (`person_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,7 +68,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (25,'молоко',1.25,NULL),(27,'молоко',1.25,NULL),(28,'Milk',1.15,NULL),(29,'Milk',1.15,NULL),(30,'КАРТОШКА',1.15,5);
+INSERT INTO `products` VALUES (25,'молоко',1.25,4),(27,'молоко',1.25,4),(28,'Milk',1.15,4),(29,'Milk',1.15,4),(30,'КАРТОШКА',1.15,5),(31,'PC',1530.00,13),(32,'Iphone',43.00,13),(33,'Soup',7.50,13),(34,'LapTop',789.00,13),(35,'Bread',5.00,13),(36,'Lamp',3.20,13),(37,'TV',769.00,13),(38,'VHC Tape',1.00,13),(39,'Cd',32.00,13),(40,'mleco',5.00,13),(41,'Тетрадь',1.20,13);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -168,4 +168,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-06-25 22:13:56
+-- Dump completed on 2019-06-27 15:48:49

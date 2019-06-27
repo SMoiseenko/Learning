@@ -41,9 +41,11 @@ public class Runner {
 
     ConnectorDB connectorDB = ConnectorDB.getInstance(mySQL_prop);
     PersonDao personDao = new PersonDaoImpl(connectorDB);
-    PersonService personService = new PersonServiceImpl(personDao);
-    ProgramController personController = new ProgramControllerImpl(personService);
     ProductDao productDao = new ProductDaoImpl(connectorDB);
+    PersonService personService = new PersonServiceImpl(personDao);
+    ProductService productService = new ProductServiceImpl(productDao);
+    ProgramController personController = new ProgramControllerImpl(personService, productService);
+
 
 
 
@@ -69,7 +71,7 @@ public class Runner {
       product_pivas.setProductName("Пивас");
       product_pivas.setPrice(new BigDecimal(114));
 
-      ProductService productService = new ProductServiceImpl(crudbySQL);
+      ProductService productService = new ProductServiceImpl(new ProductDaoImpl(ConnectorDB.getInstance(mySQL_prop)));
       productService.addProductToDB(product_pivas);
 
       try {

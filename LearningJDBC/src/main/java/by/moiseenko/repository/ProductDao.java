@@ -13,8 +13,6 @@ public interface ProductDao {
 
   List<Product> getAllProducts();
 
-  List<Product> getAllPersonProducts(Person person);
-
   long createProduct(Product product);
 
   Product findProduct(long id);
