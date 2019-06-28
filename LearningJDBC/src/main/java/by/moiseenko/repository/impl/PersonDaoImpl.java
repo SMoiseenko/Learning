@@ -21,28 +21,29 @@ public class PersonDaoImpl implements PersonDao {
 
   private static final Logger LOG = LogManager.getLogger(PersonDaoImpl.class.getName());
 
-  private ConnectorDB connectorDB;
+  private Connection connection;
 
-  private static final String SQL_CREATE =
+  public static final String SQL_CREATE_INTO_PERSON =
       "INSERT INTO learning_jdbc.persons (person_login, person_password, person_first_name, person_last_name, person_date_of_birth, person_salary)VALUES (?,?,?,?,?,?)";
-  private static final String SQL_SELECT =
+  public static final String SQL_SELECT_FROM_PERSON =
       "SELECT * FROM learning_jdbc.persons WHERE person_id = ?";
-  private static final String SQL_UPDATE =
+  public static final String SQL_SELECT_ALL_FROM = "SELECT * FROM learning_jdbc.persons";
+  public static final String SQL_UPDATE_INTO_PERSON =
       "UPDATE learning_jdbc.persons SET person_login=?, person_password=?, person_first_name=?, person_last_name=?, person_date_of_birth=?, person_salary=? WHERE person_id =?";
-  private static final String SQL_DELETE = "DELETE FROM learning_jdbc.persons WHERE person_id = ?";
+  public static final String SQL_DELETE_FROM_PERSON =
+      "DELETE FROM learning_jdbc.persons WHERE person_id = ?";
 
-
-  public PersonDaoImpl(ConnectorDB connectorDB) {
-    this.connectorDB = connectorDB;
+  public PersonDaoImpl(Connection connection) {
+    this.connection = connection;
   }
 
   @Override
-  public long savePerson(Person person) {
+  public long createPerson(Person person) throws SQLException{
     long createdId = -1;
     if (person != null) {
-      try (Connection conn = connectorDB.getConnection(); ) {
-        PreparedStatement ps =
-            conn.prepareStatement(SQL_CREATE, PreparedStatement.RETURN_GENERATED_KEYS);
+      try (PreparedStatement ps =
+          connection.prepareStatement(
+              SQL_CREATE_INTO_PERSON, PreparedStatement.RETURN_GENERATED_KEYS)) {
         prepareStatementForCreateUpdate(person, ps);
         int rawsAdded = ps.executeUpdate();
         LOG.debug(rawsAdded + " was added.");
@@ -52,80 +53,74 @@ public class PersonDaoImpl implements PersonDao {
           LOG.debug(createdId + " Id was generated.");
         }
       } catch (SQLException sqlE) {
-        LOG.error(sqlE);
+        connection.rollback();
+        connection.setAutoCommit(true);
+       // LOG.error("Can't store person into DB. " + sqlE);
+        throw  sqlE;
       }
     }
-    if (createdId != -1) return createdId;
-    else throw new IllegalArgumentException();
+    return createdId;
   }
 
   @Override
-  public Person findPerson(long id) {
+  public Person findPerson(long id) throws  SQLException{
     Person person = null;
-    try (Connection conn = connectorDB.getConnection()) {
-      PreparedStatement ps = conn.prepareStatement(SQL_SELECT);
+    try (PreparedStatement ps = connection.prepareStatement(SQL_SELECT_FROM_PERSON)) {
       ps.setLong(1, id);
       ResultSet rs = ps.executeQuery();
       while (rs.next()) {
-        person = new Person();
-        mapPersonFromResultSet(person, rs);
+        person = mapPersonFromResultSet(rs);
       }
     } catch (SQLException sqlE) {
-      LOG.error(sqlE);
+      connection.rollback();
+      connection.setAutoCommit(true);
+      LOG.error("Can't find product into DB. " + sqlE);
     }
-    if (person != null) return person;
-    else throw new IllegalArgumentException("WRONG LOGIN OR PASSWORD");
+    return person;
   }
 
   @Override
-  public long updatePerson(long id, Person person) {
-    long updatedID = -1;
+  public int updatePerson(Person person) throws  SQLException{
+    int result = -1;
     if (person != null) {
-      try (Connection conn = connectorDB.getConnection()) {
-        PreparedStatement ps =
-            conn.prepareStatement(SQL_UPDATE, PreparedStatement.RETURN_GENERATED_KEYS);
+      try (PreparedStatement ps = connection.prepareStatement(SQL_UPDATE_INTO_PERSON)) {
         prepareStatementForCreateUpdate(person, ps);
-        ps.setLong(7, id);
-        ResultSet rs = ps.getGeneratedKeys();
-        while(rs!= null && rs.next()){
-          updatedID = rs.getLong(1);
-        }
+        ps.setLong(7, person.getId());
+        result = ps.executeUpdate();
+
       } catch (SQLException sqlE) {
-        LOG.error(sqlE);
+        connection.rollback();
+        connection.setAutoCommit(true);
+        LOG.error("Can't update person into DB. " + sqlE);
       }
     }
-    if (updatedID != -1) return updatedID;
-    else throw new IllegalArgumentException();
+    return result;
   }
 
   @Override
-  public List<Person> getAllPersons() {
-    List<Person> personList = null;
-    Person person = null;
-    try (Connection conn = connectorDB.getConnection()) {
-      PreparedStatement ps = conn.prepareStatement("SELECT * FROM learning_jdbc.persons");
+  public List<Person> getAllPersons() throws SQLException {
+    List<Person> personList = new ArrayList<>();
+    try (PreparedStatement ps = connection.prepareStatement(SQL_SELECT_ALL_FROM)) {
       ResultSet rs = ps.executeQuery();
       while (rs.next()) {
-        if (personList == null) personList = new ArrayList<>();
-        person = new Person();
-        mapPersonFromResultSet(person, rs);
-        personList.add(person);
+        personList.add(mapPersonFromResultSet(rs));
       }
     } catch (SQLException sqlE) {
+      connection.rollback();
+      connection.setAutoCommit(true);
       LOG.error(sqlE);
     }
-    if (personList != null) {
-      return personList;
-    } else throw new IllegalArgumentException("DATABASE IS EMPTY");
+    return personList;
   }
 
   @Override
-  public void deletePerson(long id) {
-    try (Connection conn = connectorDB.getConnection()) {
-      PreparedStatement ps = conn.prepareStatement(SQL_DELETE);
+  public void deletePerson(long id) throws SQLException{
+    try (PreparedStatement ps = connection.prepareStatement(SQL_DELETE_FROM_PERSON)) {
       int raws = ps.executeUpdate();
       LOG.debug(raws + " was deleted.");
     } catch (SQLException sqlE) {
+      connection.rollback();
+      connection.setAutoCommit(true);
       LOG.error(sqlE);
     }
   }
@@ -140,7 +135,8 @@ public class PersonDaoImpl implements PersonDao {
     ps.setBigDecimal(6, person.getSalary());
   }
 
-  private void mapPersonFromResultSet(Person person, ResultSet resultSet) throws SQLException {
+  private Person mapPersonFromResultSet(ResultSet resultSet) throws SQLException {
+    Person person = new Person();
     person.setId(resultSet.getBigDecimal("person_id").longValue());
     person.setLogin(resultSet.getString("person_login"));
     person.setPassword(resultSet.getString("person_password"));
@@ -148,5 +144,6 @@ public class PersonDaoImpl implements PersonDao {
     person.setLastName(resultSet.getString("person_last_name"));
     person.setDateOfBirth(resultSet.getDate("person_date_of_birth").toLocalDate());
     person.setSalary(resultSet.getBigDecimal("person_salary"));
+    return person;
   }
 }

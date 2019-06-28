@@ -1,8 +1,6 @@
 package by.moiseenko.model;
 
 import java.util.Objects;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 /**
  * Default javadoc
@@ -11,10 +9,9 @@ import org.apache.logging.log4j.Logger;
  */
 public class Entity {
 
-protected long id;
+  protected long id;
 
-  public Entity() {
-  }
+  public Entity() {}
 
   public long getId() {
     return id;

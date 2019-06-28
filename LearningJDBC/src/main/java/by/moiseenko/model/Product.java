@@ -2,8 +2,6 @@ package by.moiseenko.model;
 
 import java.math.BigDecimal;
 import java.util.Objects;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 /**
  * Default javadoc
@@ -54,9 +52,9 @@ public class Product extends Entity {
       return false;
     }
     Product product = (Product) o;
-    return Objects.equals(getProductName(), product.getProductName()) &&
-        Objects.equals(getPrice(), product.getPrice()) &&
-        Objects.equals(getPerson(), product.getPerson());
+    return Objects.equals(getProductName(), product.getProductName())
+        && Objects.equals(getPrice(), product.getPrice())
+        && Objects.equals(getPerson(), product.getPerson());
   }
 
   @Override
@@ -77,7 +75,7 @@ public class Product extends Entity {
         + ", person='"
         + person.getFirstName()
         + ' '
-        +person.getLastName()
+        + person.getLastName()
         + '\''
         + '}';
   }

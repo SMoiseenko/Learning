@@ -1,6 +1,5 @@
 package by.moiseenko.repository;
 
-import by.moiseenko.model.Person;
 import by.moiseenko.model.Product;
 import java.util.List;
 

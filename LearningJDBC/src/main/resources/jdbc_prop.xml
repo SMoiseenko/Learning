@@ -5,4 +5,7 @@
   <entry key="db.url">jdbc:mysql://localhost:3306/learning_jdbc</entry>
   <entry key="db.user">user</entry>
   <entry key="db.password">12345678</entry>
+  <entry key="db.maxTotal">8</entry>
+  <entry key="db.minIdle">0</entry>
+  <entry key="db.maxIdle">8</entry>
 </properties>

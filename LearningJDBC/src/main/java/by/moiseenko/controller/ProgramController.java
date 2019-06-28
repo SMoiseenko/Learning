@@ -7,8 +7,10 @@ package by.moiseenko.controller;
  */
 public interface ProgramController {
   void createPerson();
-  void updatePerson();
-  void retrievePerson();
-  void deletePerson();
 
+  void updatePerson();
+
+  void retrievePerson();
+
+  void deletePerson();
 }

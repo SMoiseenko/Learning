@@ -14,7 +14,7 @@ import org.apache.logging.log4j.Logger;
  *
  * @author moiseenko-s
  */
-public class Person  extends Entity{
+public class Person extends Entity {
   private static final Logger LOG = LogManager.getLogger(Person.class.getName());
 
   private String login;
@@ -113,20 +113,28 @@ public class Person  extends Entity{
       return false;
     }
     Person person = (Person) o;
-    return getAge() == person.getAge() &&
-        Objects.equals(getLogin(), person.getLogin()) &&
-        Objects.equals(getPassword(), person.getPassword()) &&
-        Objects.equals(getFirstName(), person.getFirstName()) &&
-        Objects.equals(getLastName(), person.getLastName()) &&
-        Objects.equals(getDateOfBirth(), person.getDateOfBirth()) &&
-        Objects.equals(getSalary(), person.getSalary()) &&
-        Objects.equals(getProductList(), person.getProductList());
+    return getAge() == person.getAge()
+        && Objects.equals(getLogin(), person.getLogin())
+        && Objects.equals(getPassword(), person.getPassword())
+        && Objects.equals(getFirstName(), person.getFirstName())
+        && Objects.equals(getLastName(), person.getLastName())
+        && Objects.equals(getDateOfBirth(), person.getDateOfBirth())
+        && Objects.equals(getSalary(), person.getSalary())
+        && Objects.equals(getProductList(), person.getProductList());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode(), getLogin(), getPassword(), getFirstName(), getLastName(),
-        getDateOfBirth(), getAge(), getSalary(), getProductList());
+    return Objects.hash(
+        super.hashCode(),
+        getLogin(),
+        getPassword(),
+        getFirstName(),
+        getLastName(),
+        getDateOfBirth(),
+        getAge(),
+        getSalary(),
+        getProductList());
   }
 
   @Override

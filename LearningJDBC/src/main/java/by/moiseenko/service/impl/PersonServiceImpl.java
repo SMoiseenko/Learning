@@ -2,7 +2,12 @@ package by.moiseenko.service.impl;
 
 import by.moiseenko.model.Person;
 import by.moiseenko.repository.PersonDao;
+import by.moiseenko.repository.impl.ApacheConnectionPool;
+import by.moiseenko.repository.impl.PersonDaoImpl;
 import by.moiseenko.service.PersonService;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.apache.logging.log4j.LogManager;
@@ -16,15 +21,22 @@ import org.apache.logging.log4j.Logger;
 public class PersonServiceImpl implements PersonService {
 
   private static final Logger LOG = LogManager.getLogger(PersonServiceImpl.class.getName());
-  private PersonDao personDao;
 
-  public PersonServiceImpl(PersonDao personDao) {
-    this.personDao = personDao;
-  }
+  public PersonServiceImpl() {}
 
   @Override
   public List<Person> getAllPersons() {
-    return personDao.getAllPersons();
+    List<Person> result = new ArrayList<>();
+    try (Connection connection = ApacheConnectionPool.getConnection()) {
+      connection.setAutoCommit(false);
+      PersonDao personDao = new PersonDaoImpl(connection);
+      result = personDao.getAllPersons();
+      connection.commit();
+      connection.setAutoCommit(true);
+    } catch (SQLException sqlE) {
+      LOG.error("Problem with connection to DB. " + sqlE);
+    }
+    return result;
   }
 
   @Override
@@ -45,21 +57,29 @@ public class PersonServiceImpl implements PersonService {
 
   @Override
   public long createPerson(Person person) {
-    return personDao.savePerson(person);
+    long generatedID = -1;
+    try(Connection connection = ApacheConnectionPool.getConnection()){
+      connection.setAutoCommit(false);
+      PersonDao personDao = new PersonDaoImpl(connection);
+      generatedID = personDao.createPerson(person);
+      connection.commit();
+      connection.setAutoCommit(true);
+    }catch (SQLException sqlE){
+      LOG.error("Problem with connection to DB. " + sqlE);
+    }
+    return generatedID;
   }
 
   @Override
   public Person findPerson(long id) {
-    return personDao.findPerson(id);
+    return null;
   }
 
   @Override
-  public long updatePerson(long id, Person person) {
-    return personDao.updatePerson(id, person);
+  public int updatePerson(Person person) {
+    return -1;
   }
 
   @Override
-  public void deletePerson(long id) {
-    personDao.deletePerson(id);
-  }
+  public void deletePerson(long id) {}
 }

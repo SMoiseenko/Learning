@@ -17,25 +17,25 @@ import org.apache.logging.log4j.Logger;
  */
 public interface PersonDao {
 
-  List<Person> getAllPersons();
+  List<Person> getAllPersons() throws SQLException;
 
-  long savePerson(Person person);
+  long createPerson(Person person) throws SQLException;
 
-  Person findPerson(long id);
+  Person findPerson(long id) throws SQLException;
 
-  long updatePerson(long id, Person person);
+  int updatePerson(Person person)throws SQLException;
 
-  void deletePerson(long id);
+  void deletePerson(long id) throws SQLException;
 
-  default void deleteDuplicatesBySQLProcedure(){
+  default void deleteDuplicatesBySQLProcedure() {
     Logger LOG = LogManager.getLogger(PersonDao.class.getName());
     ConnectorDB ds = ConnectorDB.getInstance(Runner.mySQL_prop);
-    try(Connection conn = ds.getConnection()){
+    try (Connection conn = ds.getConnection()) {
       CallableStatement cs = conn.prepareCall("{CALL delete_dublicates_from_persons()}");
       cs.execute();
       LOG.debug("Procedure execute success!");
-    }catch (SQLException sqlE){
-     LOG.error(sqlE);
+    } catch (SQLException sqlE) {
+      LOG.error(sqlE);
     }
   }
 }

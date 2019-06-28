@@ -23,53 +23,51 @@ public class ProductDaoImpl implements ProductDao {
 
   private static final Logger LOG = LogManager.getLogger(ProductDaoImpl.class.getName());
 
-  private ConnectorDB connectorDB;
+  private Connection connection;
 
-  private static final String SQL_SELECT = "SELECT * FROM products WHERE `product_id` = ?";
-  private static final String SQL_SELECT_ALL = "SELECT * FROM products";
-  private static final String SQL_SELECT_ALL_FOR_USER =
-      "SELECT * FROM products WHERE person_id = ?";
-  private static final String SQL_UPDATE =
-      "UPDATE products SET `product_name` = ?, `product_price` = ?, `person_id` = ? WHERE `product_id` = ?";
-  private static final String SQL_CREATE =
-      "INSERT  INTO products (`product_name`, `product_price`, `person_id`) VALUES (?,?,?)";
-  private static final String SQL_DELETE = "";
+  public static final String SQL_SELECT_FROM_PRODUCTS =
+      "SELECT * FROM learning_jdbc.products WHERE `product_id` = ?";
+  public static final String SQL_SELECT_ALL_FROM_PRODUCTS = "SELECT * FROM learning_jdbc.products";
+  public static final String SQL_UPDATE_INTO_PRODUCTS =
+      "UPDATE learning_jdbc.products SET `product_name` = ?, `product_price` = ?, `person_id` = ? WHERE `product_id` = ?";
+  public static final String SQL_CREATE_INTO_PRODUCTS =
+      "INSERT  INTO learning_jdbc.products (`product_name`, `product_price`, `person_id`) VALUES (?,?,?)";
+  public static final String SQL_DELETE_FROM_PRODUCTS =
+      "DELETE FROM learning_jdbc.products WHERE product_id = ?";
 
-  public ProductDaoImpl(ConnectorDB connectorDB) {
-    this.connectorDB = connectorDB;
+  public ProductDaoImpl(Connection connection) {
+    this.connection = connection;
   }
 
   @Override
   public List<Product> getAllProducts() {
     List<Product> result = new ArrayList<>();
-    try (Connection connection = connectorDB.getConnection()) {
-      PreparedStatement preparedStatement = connection.prepareStatement(SQL_SELECT_ALL);
+    try (PreparedStatement preparedStatement =
+        connection.prepareStatement(SQL_SELECT_ALL_FROM_PRODUCTS)) {
       ResultSet resultSet = preparedStatement.executeQuery();
-      Product product = null;
       while (resultSet != null && resultSet.next()) {
-        product = mapProduct(resultSet);
-        result.add(product);
+        result.add(mapProduct(resultSet));
       }
     } catch (SQLException sqlE) {
-      LOG.error(sqlE);
+      LOG.error("Can't get all products from DB. " + sqlE);
     }
     return result;
   }
 
-
   @Override
   public long createProduct(Product product) {
     long result = -1;
-    try (Connection connection = connectorDB.getConnection()) {
-      PreparedStatement preparedStatement = connection.prepareStatement(SQL_CREATE, PreparedStatement.RETURN_GENERATED_KEYS);
-     preparedStatementForProduct(preparedStatement, product);
+    try (PreparedStatement preparedStatement =
+        connection.prepareStatement(
+            SQL_CREATE_INTO_PRODUCTS, PreparedStatement.RETURN_GENERATED_KEYS)) {
+      preparedStatementForProduct(preparedStatement, product);
       preparedStatement.executeUpdate();
       ResultSet resultSet = preparedStatement.getGeneratedKeys();
-      while(resultSet!= null && resultSet.next()){
-        result = resultSet.getLong(1);
+      while (resultSet != null && resultSet.next()) {
+        result = resultSet.getBigDecimal(1).longValue();
       }
     } catch (SQLException sqlE) {
-      LOG.error(sqlE);
+      LOG.error("Cant store product into DB. " + sqlE);
     }
     return result;
   }
@@ -77,15 +75,15 @@ public class ProductDaoImpl implements ProductDao {
   @Override
   public Product findProduct(long id) {
     Product result = null;
-    try (Connection connection = connectorDB.getConnection()) {
-      PreparedStatement preparedStatement = connection.prepareStatement(SQL_SELECT);
+    try (PreparedStatement preparedStatement =
+        connection.prepareStatement(SQL_SELECT_FROM_PRODUCTS)) {
       preparedStatement.setLong(1, id);
       ResultSet resultSet = preparedStatement.executeQuery();
       while (resultSet != null && resultSet.next()) {
         result = mapProduct(resultSet);
       }
     } catch (SQLException sqlE) {
-      LOG.debug(sqlE);
+      LOG.error("Can't find product into DB. " + sqlE);
     }
     return result;
   }
@@ -93,20 +91,27 @@ public class ProductDaoImpl implements ProductDao {
   @Override
   public int updateProduct(Product product) {
     int result = -1;
-    try (Connection connection = connectorDB.getConnection()) {
-      PreparedStatement preparedStatement = connection.prepareStatement(SQL_UPDATE);
+    try (PreparedStatement preparedStatement =
+        connection.prepareStatement(SQL_UPDATE_INTO_PRODUCTS)) {
       preparedStatementForProduct(preparedStatement, product);
       preparedStatement.setLong(4, product.getId());
       result = preparedStatement.executeUpdate();
-
+      LOG.debug(result + " product was updated.");
     } catch (SQLException sqlE) {
-      LOG.error(sqlE);
+      LOG.error("Can't update product into DB. " + sqlE);
     }
     return result;
   }
 
   @Override
-  public void deleteProduct(long id) {}
+  public void deleteProduct(long id) {
+    try (PreparedStatement preparedStatement =
+        connection.prepareStatement(SQL_DELETE_FROM_PRODUCTS)) {
+      preparedStatement.setBigDecimal(1, new BigDecimal(id));
+    } catch (SQLException sqlE) {
+      LOG.error("Can't delete user with id = " + id + ";" + sqlE);
+    }
+  }
 
   private Product mapProduct(ResultSet resultSet) throws SQLException {
     Product product = new Product();
@@ -121,12 +126,13 @@ public class ProductDaoImpl implements ProductDao {
     return product;
   }
 
-  private void preparedStatementForProduct(PreparedStatement preparedStatement, Product product) throws SQLException{
+  private void preparedStatementForProduct(PreparedStatement preparedStatement, Product product)
+      throws SQLException {
     preparedStatement.setString(1, product.getProductName());
     preparedStatement.setBigDecimal(2, product.getPrice());
-    if(product.getPerson() != null){
+    if (product.getPerson() != null) {
       preparedStatement.setBigDecimal(3, new BigDecimal(product.getPerson().getId()));
-    } else  {
+    } else {
       preparedStatement.setNull(3, Types.BIGINT);
     }
   }

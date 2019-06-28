@@ -2,9 +2,7 @@ package by.moiseenko.service.impl;
 
 import by.moiseenko.model.Product;
 import by.moiseenko.repository.ProductDao;
-import by.moiseenko.repository.impl.CRUDbySQL;
 import by.moiseenko.service.ProductService;
-import java.sql.SQLException;
 import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -39,12 +37,8 @@ public class ProductServiceImpl implements ProductService {
   }
 
   @Override
-  public void updateProduct(Product product) {
-
-  }
+  public void updateProduct(Product product) {}
 
   @Override
-  public void deleteProduct() {
-
-  }
+  public void deleteProduct() {}
 }
