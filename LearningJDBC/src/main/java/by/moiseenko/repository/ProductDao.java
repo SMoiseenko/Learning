@@ -1,6 +1,7 @@
 package by.moiseenko.repository;
 
 import by.moiseenko.model.Product;
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -20,4 +21,8 @@ public interface ProductDao {
   int updateProduct(Product product) throws SQLException;
 
   void deleteProduct(long id) throws SQLException;
+
+  void setConnection(Connection connection);
+
+
 }

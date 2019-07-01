@@ -35,11 +35,6 @@ public class PersonDaoImpl implements PersonDao {
       "DELETE FROM learning_jdbc.persons WHERE person_id = ?";
 
   public PersonDaoImpl() {
-
-  }
-
-  public void setConnection(Connection connection) {
-    this.connection = connection;
   }
 
   @Override
@@ -135,6 +130,11 @@ public class PersonDaoImpl implements PersonDao {
       connection.setAutoCommit(true);
       LOG.error(sqlE);
     }
+  }
+
+  @Override
+  public void setConnection(Connection connection) {
+    this.connection = connection;
   }
 
   private void prepareStatementForCreateUpdate(Person person, PreparedStatement ps)

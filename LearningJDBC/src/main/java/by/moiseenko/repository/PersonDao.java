@@ -27,6 +27,8 @@ public interface PersonDao {
 
   void deletePerson(long id) throws SQLException;
 
+  void setConnection(Connection connection);
+
   default void deleteDuplicatesBySQLProcedure() {
     Logger LOG = LogManager.getLogger(PersonDao.class.getName());
     ConnectorDB ds = ConnectorDB.getInstance(Runner.mySQL_prop);

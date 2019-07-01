@@ -3,7 +3,6 @@ package by.moiseenko.service.impl;
 import by.moiseenko.model.Person;
 import by.moiseenko.repository.PersonDao;
 import by.moiseenko.repository.impl.ApacheConnectionPool;
-import by.moiseenko.repository.impl.PersonDaoImpl;
 import by.moiseenko.service.PersonService;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -25,20 +24,24 @@ public class PersonServiceImpl implements PersonService {
   private PersonDao personDao;
 
   public PersonServiceImpl(PersonDao personDao) {
+
     this.personDao = personDao;
   }
 
   @Override
-  //add validation person + exception if not valid
+  // add validation person + exception if not valid
   public List<Person> getAllPersons() {
     List<Person> result = null;
     try (Connection connection = ApacheConnectionPool.getConnection()) {
       result = new ArrayList<>();
       connection.setAutoCommit(false);
+      LOG.debug("set autocommit false");
       personDao.setConnection(connection);
       result = personDao.getAllPersons();
       connection.commit();
+      LOG.debug("commit query");
       connection.setAutoCommit(true);
+      LOG.debug("set autocommit true");
     } catch (SQLException sqlE) {
       LOG.error("Problem with connection to DB. " + sqlE);
     }
@@ -64,13 +67,13 @@ public class PersonServiceImpl implements PersonService {
   @Override
   public long createPerson(Person person) {
     long generatedID = -1;
-    try(Connection connection = ApacheConnectionPool.getConnection()){
+    try (Connection connection = ApacheConnectionPool.getConnection()) {
       connection.setAutoCommit(false);
-//      PersonDao personDao = new PersonDaoImpl(connection);
+      personDao.setConnection(connection);
       generatedID = personDao.createPerson(person);
       connection.commit();
       connection.setAutoCommit(true);
-    }catch (SQLException sqlE){
+    } catch (SQLException sqlE) {
       LOG.error("Problem with connection to DB. " + sqlE);
     }
     return generatedID;
@@ -78,7 +81,17 @@ public class PersonServiceImpl implements PersonService {
 
   @Override
   public Person findPerson(long id) {
-    return null;
+    Person person = null;
+    try(Connection connection = ApacheConnectionPool.getConnection()){
+      connection.setAutoCommit(false);
+      personDao.setConnection(connection);
+      person = personDao.findPerson(id);
+      connection.commit();
+      connection.setAutoCommit(true);
+    }catch (SQLException sqlE){
+      LOG.error(sqlE);
+    }
+    return person;
   }
 
   @Override

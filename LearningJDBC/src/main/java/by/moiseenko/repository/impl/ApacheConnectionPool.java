@@ -1,5 +1,6 @@
 package by.moiseenko.repository.impl;
 
+import by.moiseenko.repository.PersonDao;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -42,4 +43,6 @@ public class ApacheConnectionPool {
   public static Connection getConnection() throws SQLException {
     return ds.getConnection();
   }
+
+
 }

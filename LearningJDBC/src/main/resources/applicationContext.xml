@@ -3,35 +3,30 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-  <bean id="apacheConnectionPoolBean"
-    class="by.moiseenko.repository.impl.ApacheConnectionPool"
-    factory-method="getConnection">
-  </bean>
+
 
   <bean id="personDaoBean"
     class="by.moiseenko.repository.impl.PersonDaoImpl">
-    <constructor-arg ref="apacheConnectionPoolBean"/>
   </bean>
 
-  <bean id="productDaoBean"
-    class="by.moiseenko.repository.impl.ProductDaoImpl">
-    <constructor-arg ref="apacheConnectionPoolBean"/>
-  </bean>
+    <bean id="productDaoBean"
+      class="by.moiseenko.repository.impl.ProductDaoImpl">
+    </bean>
 
-  <bean id="productServiceBean"
-    class="by.moiseenko.service.impl.ProductServiceImpl">
-    <constructor-arg ref="productDaoBean"/>
-  </bean>
+    <bean id="productServiceBean"
+      class="by.moiseenko.service.impl.ProductServiceImpl">
+      <constructor-arg ref="productDaoBean"/>
+    </bean>
 
   <bean id="personServiceBean"
     class="by.moiseenko.service.impl.PersonServiceImpl">
-    <constructor-arg ref="personDaoBean"/>
+   <constructor-arg ref="personDaoBean"/>
   </bean>
 
-  <bean id="programControllerBean"
-    class="by.moiseenko.controller.impl.ProgramControllerImpl">
-  <constructor-arg ref="personServiceBean"/>
-  <constructor-arg ref="productServiceBean"/>
-  </bean>
+    <bean id="programControllerBean"
+      class="by.moiseenko.controller.impl.ProgramControllerImpl">
+    <constructor-arg ref="personServiceBean"/>
+    <constructor-arg ref="productServiceBean"/>
+    </bean>
 
 </beans>
