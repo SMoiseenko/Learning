@@ -1,12 +1,8 @@
 package by.moiseenko;
 
-import by.moiseenko.model.Person;
-import by.moiseenko.service.impl.PersonServiceImpl;
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 /**
  * Default javadoc
@@ -20,15 +16,9 @@ public class Runner {
       System.getProperty("user.home")
           + "/IdeaProjects/Learning/LearningJDBC/src/main/resources/jdbc_prop.xml";
 
-  public static void main(String[] args) {
-    Person person = new Person();
-    person.setFirstName("sdgsg");
-    person.setLastName("sdgjhserargh");
-    person.setSalary(new BigDecimal(-100));
-    person.setLogin("lgogog");
-    person.setPassword("12345678");
-    person.setDateOfBirth(LocalDate.parse("20.03.1987", DateTimeFormatter.ofPattern("d.M.y")));
-    new PersonServiceImpl().createPerson(person);
+  public static void main(String[] args) throws Exception {
+    FileSystemXmlApplicationContext context =
+        new FileSystemXmlApplicationContext("/src/main/resources/applicationContext.xml");
+    context.close();
   }
-
 }

@@ -2,6 +2,7 @@ package by.moiseenko.repository.impl;
 
 import by.moiseenko.model.Person;
 import by.moiseenko.repository.PersonDao;
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -33,14 +34,18 @@ public class PersonDaoImpl implements PersonDao {
   public static final String SQL_DELETE_FROM_PERSON =
       "DELETE FROM learning_jdbc.persons WHERE person_id = ?";
 
-  public PersonDaoImpl(Connection connection) {
+  public PersonDaoImpl() {
+
+  }
+
+  public void setConnection(Connection connection) {
     this.connection = connection;
   }
 
   @Override
-  public long createPerson(Person person) throws SQLException{
+  public long createPerson(Person person) throws SQLException {
     long createdId = -1;
-    if (person != null) {
+    if (person != null) { // needed??? if yes - reaction?
       try (PreparedStatement ps =
           connection.prepareStatement(
               SQL_CREATE_INTO_PERSON, PreparedStatement.RETURN_GENERATED_KEYS)) {
@@ -49,49 +54,54 @@ public class PersonDaoImpl implements PersonDao {
         LOG.debug(rawsAdded + " was added.");
         ResultSet rs = ps.getGeneratedKeys();
         while (rs != null && rs.next()) {
-          createdId = rs.getLong(1);
+          createdId = rs.getBigDecimal(1).longValue();
           LOG.debug(createdId + " Id was generated.");
         }
       } catch (SQLException sqlE) {
         connection.rollback();
         connection.setAutoCommit(true);
-       // LOG.error("Can't store person into DB. " + sqlE);
-        throw  sqlE;
+        throw sqlE;
       }
     }
     return createdId;
   }
 
   @Override
-  public Person findPerson(long id) throws  SQLException{
+  public Person findPerson(long id) throws SQLException {
     Person person = null;
     try (PreparedStatement ps = connection.prepareStatement(SQL_SELECT_FROM_PERSON)) {
       ps.setLong(1, id);
       ResultSet rs = ps.executeQuery();
       while (rs.next()) {
-        person = mapPersonFromResultSet(rs);
+        person = personMapper(rs);
       }
     } catch (SQLException sqlE) {
       connection.rollback();
       connection.setAutoCommit(true);
-      LOG.error("Can't find product into DB. " + sqlE);
+      throw sqlE;
+    }
+    if (person != null) {
+      LOG.debug(
+          String.format(
+              "%d %s %s was found.", person.getId(), person.getFirstName(), person.getLastName()));
     }
     return person;
   }
 
   @Override
-  public int updatePerson(Person person) throws  SQLException{
+  public int updatePerson(Person person) throws SQLException {
     int result = -1;
     if (person != null) {
       try (PreparedStatement ps = connection.prepareStatement(SQL_UPDATE_INTO_PERSON)) {
         prepareStatementForCreateUpdate(person, ps);
-        ps.setLong(7, person.getId());
+        ps.setBigDecimal(7, new BigDecimal(person.getId()));
         result = ps.executeUpdate();
+        LOG.debug(result + " was updated.");
 
       } catch (SQLException sqlE) {
         connection.rollback();
         connection.setAutoCommit(true);
-        LOG.error("Can't update person into DB. " + sqlE);
+        throw sqlE;
       }
     }
     return result;
@@ -99,11 +109,12 @@ public class PersonDaoImpl implements PersonDao {
 
   @Override
   public List<Person> getAllPersons() throws SQLException {
-    List<Person> personList = new ArrayList<>();
+    List<Person> personList = null;
     try (PreparedStatement ps = connection.prepareStatement(SQL_SELECT_ALL_FROM)) {
+      personList = new ArrayList<>();
       ResultSet rs = ps.executeQuery();
       while (rs.next()) {
-        personList.add(mapPersonFromResultSet(rs));
+        personList.add(personMapper(rs));
       }
     } catch (SQLException sqlE) {
       connection.rollback();
@@ -114,8 +125,9 @@ public class PersonDaoImpl implements PersonDao {
   }
 
   @Override
-  public void deletePerson(long id) throws SQLException{
+  public void deletePerson(long id) throws SQLException {
     try (PreparedStatement ps = connection.prepareStatement(SQL_DELETE_FROM_PERSON)) {
+      ps.setBigDecimal(1, new BigDecimal(id));
       int raws = ps.executeUpdate();
       LOG.debug(raws + " was deleted.");
     } catch (SQLException sqlE) {
@@ -135,7 +147,7 @@ public class PersonDaoImpl implements PersonDao {
     ps.setBigDecimal(6, person.getSalary());
   }
 
-  private Person mapPersonFromResultSet(ResultSet resultSet) throws SQLException {
+  private Person personMapper(ResultSet resultSet) throws SQLException {
     Person person = new Person();
     person.setId(resultSet.getBigDecimal("person_id").longValue());
     person.setLogin(resultSet.getString("person_login"));

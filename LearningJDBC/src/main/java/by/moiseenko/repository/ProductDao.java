@@ -1,6 +1,7 @@
 package by.moiseenko.repository;
 
 import by.moiseenko.model.Product;
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -10,13 +11,13 @@ import java.util.List;
  */
 public interface ProductDao {
 
-  List<Product> getAllProducts();
+  List<Product> getAllProducts() throws SQLException;
 
-  long createProduct(Product product);
+  long createProduct(Product product) throws SQLException;
 
-  Product findProduct(long id);
+  Product findProduct(long id) throws SQLException;
 
-  int updateProduct(Product product);
+  int updateProduct(Product product) throws SQLException;
 
-  void deleteProduct(long id);
+  void deleteProduct(long id) throws SQLException;
 }

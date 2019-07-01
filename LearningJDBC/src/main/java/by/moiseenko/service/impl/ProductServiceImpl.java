@@ -23,6 +23,7 @@ public class ProductServiceImpl implements ProductService {
 
   @Override
   public long addProductToDB(Product product) {
+
     return productDao.createProduct(product);
   }
 

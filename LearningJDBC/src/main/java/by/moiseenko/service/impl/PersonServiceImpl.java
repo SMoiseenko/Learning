@@ -22,14 +22,20 @@ public class PersonServiceImpl implements PersonService {
 
   private static final Logger LOG = LogManager.getLogger(PersonServiceImpl.class.getName());
 
-  public PersonServiceImpl() {}
+  private PersonDao personDao;
+
+  public PersonServiceImpl(PersonDao personDao) {
+    this.personDao = personDao;
+  }
 
   @Override
+  //add validation person + exception if not valid
   public List<Person> getAllPersons() {
-    List<Person> result = new ArrayList<>();
+    List<Person> result = null;
     try (Connection connection = ApacheConnectionPool.getConnection()) {
+      result = new ArrayList<>();
       connection.setAutoCommit(false);
-      PersonDao personDao = new PersonDaoImpl(connection);
+      personDao.setConnection(connection);
       result = personDao.getAllPersons();
       connection.commit();
       connection.setAutoCommit(true);
@@ -60,7 +66,7 @@ public class PersonServiceImpl implements PersonService {
     long generatedID = -1;
     try(Connection connection = ApacheConnectionPool.getConnection()){
       connection.setAutoCommit(false);
-      PersonDao personDao = new PersonDaoImpl(connection);
+//      PersonDao personDao = new PersonDaoImpl(connection);
       generatedID = personDao.createPerson(person);
       connection.commit();
       connection.setAutoCommit(true);

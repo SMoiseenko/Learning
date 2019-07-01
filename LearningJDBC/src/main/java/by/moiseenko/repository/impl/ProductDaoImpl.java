@@ -40,56 +40,50 @@ public class ProductDaoImpl implements ProductDao {
   }
 
   @Override
-  public List<Product> getAllProducts() {
-    List<Product> result = new ArrayList<>();
-    try (PreparedStatement preparedStatement =
-        connection.prepareStatement(SQL_SELECT_ALL_FROM_PRODUCTS)) {
-      ResultSet resultSet = preparedStatement.executeQuery();
-      while (resultSet != null && resultSet.next()) {
-        result.add(mapProduct(resultSet));
-      }
-    } catch (SQLException sqlE) {
-      LOG.error("Can't get all products from DB. " + sqlE);
-    }
-    return result;
-  }
-
-  @Override
-  public long createProduct(Product product) {
-    long result = -1;
+  public long createProduct(Product product) throws SQLException {
+    long createdId = -1;
     try (PreparedStatement preparedStatement =
         connection.prepareStatement(
             SQL_CREATE_INTO_PRODUCTS, PreparedStatement.RETURN_GENERATED_KEYS)) {
       preparedStatementForProduct(preparedStatement, product);
-      preparedStatement.executeUpdate();
+      int rawsAdded = preparedStatement.executeUpdate();
+      LOG.debug(rawsAdded + " was added.");
       ResultSet resultSet = preparedStatement.getGeneratedKeys();
       while (resultSet != null && resultSet.next()) {
-        result = resultSet.getBigDecimal(1).longValue();
+        createdId = resultSet.getBigDecimal(1).longValue();
+        LOG.debug(createdId + " Id was generated.");
       }
     } catch (SQLException sqlE) {
-      LOG.error("Cant store product into DB. " + sqlE);
+      connection.rollback();
+      connection.setAutoCommit(true);
+      throw sqlE;
     }
-    return result;
+    return createdId;
   }
 
   @Override
-  public Product findProduct(long id) {
+  public Product findProduct(long id) throws SQLException {
     Product result = null;
     try (PreparedStatement preparedStatement =
         connection.prepareStatement(SQL_SELECT_FROM_PRODUCTS)) {
       preparedStatement.setLong(1, id);
       ResultSet resultSet = preparedStatement.executeQuery();
       while (resultSet != null && resultSet.next()) {
-        result = mapProduct(resultSet);
+        result = productMapper(resultSet);
       }
     } catch (SQLException sqlE) {
-      LOG.error("Can't find product into DB. " + sqlE);
+      connection.rollback();
+      connection.setAutoCommit(true);
+      throw sqlE;
+    }
+    if (result != null) {
+      LOG.debug(String.format("%d %s was found", result.getId(), result.getProductName()));
     }
     return result;
   }
 
   @Override
-  public int updateProduct(Product product) {
+  public int updateProduct(Product product) throws SQLException {
     int result = -1;
     try (PreparedStatement preparedStatement =
         connection.prepareStatement(SQL_UPDATE_INTO_PRODUCTS)) {
@@ -98,22 +92,46 @@ public class ProductDaoImpl implements ProductDao {
       result = preparedStatement.executeUpdate();
       LOG.debug(result + " product was updated.");
     } catch (SQLException sqlE) {
-      LOG.error("Can't update product into DB. " + sqlE);
+      connection.rollback();
+      connection.setAutoCommit(true);
+      throw sqlE;
     }
     return result;
   }
 
   @Override
-  public void deleteProduct(long id) {
+  public List<Product> getAllProducts() throws SQLException {
+    List<Product> result = null;
+    try (PreparedStatement preparedStatement =
+        connection.prepareStatement(SQL_SELECT_ALL_FROM_PRODUCTS)) {
+      result = new ArrayList<>();
+      ResultSet resultSet = preparedStatement.executeQuery();
+      while (resultSet != null && resultSet.next()) {
+        result.add(productMapper(resultSet));
+      }
+    } catch (SQLException sqlE) {
+      connection.rollback();
+      connection.setAutoCommit(true);
+      throw sqlE;
+    }
+    return result;
+  }
+
+  @Override
+  public void deleteProduct(long id) throws SQLException {
     try (PreparedStatement preparedStatement =
         connection.prepareStatement(SQL_DELETE_FROM_PRODUCTS)) {
       preparedStatement.setBigDecimal(1, new BigDecimal(id));
+      int raws = preparedStatement.executeUpdate();
+      LOG.debug(raws + " was deleted.");
     } catch (SQLException sqlE) {
-      LOG.error("Can't delete user with id = " + id + ";" + sqlE);
+      connection.rollback();
+      connection.setAutoCommit(true);
+      throw sqlE;
     }
   }
 
-  private Product mapProduct(ResultSet resultSet) throws SQLException {
+  private Product productMapper(ResultSet resultSet) throws SQLException {
     Product product = new Product();
     product.setId(resultSet.getBigDecimal("product_id").longValue());
     product.setProductName(resultSet.getString("product_name"));
