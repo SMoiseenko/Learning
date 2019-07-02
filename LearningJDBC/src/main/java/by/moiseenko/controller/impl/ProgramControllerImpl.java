@@ -95,13 +95,14 @@ public class ProgramControllerImpl implements ProgramController {
             "Welcome %S %S.\n", loggedPerson.getFirstName(), loggedPerson.getLastName());
         System.out.println(
             "Chose what you want to do:"
-                + "\n1. Create product"
+                + "\n1. Create product."
                 + "\n2. Show all user products."
-                + "\n3. Update product info"
-                + "\n4. Delete product"
-                + "\n5. Update account"
-                + "\n6. Delete account"
-                + "\n0. Log out");
+                + "\n3. Show user info."
+                + "\n4. Update product info."
+                + "\n5. Delete product."
+                + "\n6. Update account."
+                + "\n7. Delete account."
+                + "\n0. Log out.");
         point = scanner.nextInt();
         switch (point) {
           case 1:
@@ -111,19 +112,33 @@ public class ProgramControllerImpl implements ProgramController {
             product.setProductName(scanner.nextLine());
             System.out.println("Enter product price:");
             product.setPrice(new BigDecimal(scanner.next()));
+
             product.setPerson(loggedPerson);
+
             long productID = productService.addProductToDB(product);
-            product = productService.findProductById(productID);
-            product.setPerson(personService.findPerson(product.getPerson().getId()));
-            LOG.debug(product + " was created");
-            loggedPerson.addProduct(product);
+            LOG.debug(productID + " was created");
+
             break;
           case 2:
+            System.out.println("**********");
             if (loggedPerson.getProductList().size() == 0) {
               System.out.println("No any product");
             } else {
               loggedPerson.getProductList().forEach(System.out::println);
             }
+            System.out.println("**********");
+            break;
+          case 3:
+            System.out.println("**********");
+            System.out.println(loggedPerson);
+            System.out.println("**********");
+            break;
+          case 7:
+            personService.deletePerson(loggedPerson.getId());
+            System.out.println("**********");
+            System.out.println(String.format("%s %s was deleted.", loggedPerson.getFirstName(), loggedPerson.getLastName()));
+            System.out.println("**********");
+            loggedPerson = null;
             break;
           case 0:
             loggedPerson = null;

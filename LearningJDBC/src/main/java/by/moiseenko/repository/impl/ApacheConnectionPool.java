@@ -44,5 +44,4 @@ public class ApacheConnectionPool {
     return ds.getConnection();
   }
 
-
 }

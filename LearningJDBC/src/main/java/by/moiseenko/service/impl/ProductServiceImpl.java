@@ -1,10 +1,11 @@
 package by.moiseenko.service.impl;
 
-import by.moiseenko.model.Person;
 import by.moiseenko.model.Product;
+import by.moiseenko.repository.PersonDao;
 import by.moiseenko.repository.ProductDao;
 import by.moiseenko.repository.impl.ApacheConnectionPool;
 import by.moiseenko.service.ProductService;
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
@@ -20,28 +21,49 @@ public class ProductServiceImpl implements ProductService {
 
   private static final Logger LOG = LogManager.getLogger(ProductServiceImpl.class.getName());
   private ProductDao productDao;
+  private PersonDao personDao;
 
-  public ProductServiceImpl(ProductDao productDao) {
+  public ProductServiceImpl(ProductDao productDao, PersonDao personDao) {
     this.productDao = productDao;
+    this.personDao = personDao;
   }
 
   @Override
   public long addProductToDB(Product product) {
-    try(Connection connection = ApacheConnectionPool.getConnection()){
-      productDao.setConnection(connection);
+    long generatedId = -1;
+    try (Connection connection = ApacheConnectionPool.getConnection()) {
       connection.setAutoCommit(false);
-
-
-    }catch (SQLException sqlE){
+      productDao.setConnection(connection);
+      personDao.setConnection(connection);
+      generatedId = productDao.createProduct(product);
+      product.setId(generatedId);
+      BigDecimal personSalary = product.getPerson().getSalary();
+      personSalary = personSalary.add(product.getPrice());
+      product.getPerson().setSalary(personSalary);
+      product.getPerson().addProduct(product);
+      personDao.updatePerson(product.getPerson());
+      connection.commit();
+      connection.setAutoCommit(true);
+    } catch (SQLException sqlE) {
       LOG.debug(sqlE);
     }
 
-    return -1;
+    return generatedId;
   }
 
   @Override
   public List<Product> getAllProducts() {
-    return null;
+    List<Product> productList = null;
+    try (Connection connection = ApacheConnectionPool.getConnection()) {
+      connection.setAutoCommit(false);
+      productDao.setConnection(connection);
+      productList = productDao.getAllProducts();
+      connection.commit();
+      connection.setAutoCommit(true);
+    } catch (SQLException sqlE) {
+      LOG.debug(sqlE);
+    }
+    return productList;
   }
 
   @Override

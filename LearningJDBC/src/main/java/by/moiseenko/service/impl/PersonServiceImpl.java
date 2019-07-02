@@ -3,6 +3,7 @@ package by.moiseenko.service.impl;
 import by.moiseenko.model.Person;
 import by.moiseenko.repository.PersonDao;
 import by.moiseenko.repository.impl.ApacheConnectionPool;
+import by.moiseenko.service.PasswordCrypt;
 import by.moiseenko.service.PersonService;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -22,10 +23,11 @@ public class PersonServiceImpl implements PersonService {
   private static final Logger LOG = LogManager.getLogger(PersonServiceImpl.class.getName());
 
   private PersonDao personDao;
+  private PasswordCrypt passwordCrypt;
 
-  public PersonServiceImpl(PersonDao personDao) {
-
+  public PersonServiceImpl(PersonDao personDao, PasswordCrypt passwordCrypt) {
     this.personDao = personDao;
+    this.passwordCrypt = passwordCrypt;
   }
 
   @Override
@@ -52,7 +54,7 @@ public class PersonServiceImpl implements PersonService {
   public Person loginInSystem(String login, String password) {
     List<Person> personList = getAllPersons();
     return personList.stream()
-        .filter(p -> p.getLogin().equals(login) && p.getPassword().equals(password))
+        .filter(p -> p.getLogin().equals(login) && passwordCrypt.verifyHash(password, p.getPassword()))
         .collect(
             Collectors.collectingAndThen(
                 Collectors.toList(),
@@ -67,6 +69,7 @@ public class PersonServiceImpl implements PersonService {
   @Override
   public long createPerson(Person person) {
     long generatedID = -1;
+    person.setPassword(passwordCrypt.hash(person.getPassword()));
     try (Connection connection = ApacheConnectionPool.getConnection()) {
       connection.setAutoCommit(false);
       personDao.setConnection(connection);
@@ -96,9 +99,29 @@ public class PersonServiceImpl implements PersonService {
 
   @Override
   public int updatePerson(Person person) {
-    return -1;
+    int updatedRaws = -1;
+    try(Connection connection = ApacheConnectionPool.getConnection()){
+      connection.setAutoCommit(false);
+      personDao.setConnection(connection);
+      updatedRaws = personDao.updatePerson(person);
+      connection.commit();
+      connection.setAutoCommit(true);
+    } catch (SQLException sqlE){
+      LOG.error(sqlE);
+    }
+    return updatedRaws;
   }
 
   @Override
-  public void deletePerson(long id) {}
+  public void deletePerson(long id) {
+    try(Connection connection = ApacheConnectionPool.getConnection()){
+      connection.setAutoCommit(false);
+      personDao.setConnection(connection);
+      personDao.deletePerson(id);
+      connection.commit();
+      connection.setAutoCommit(true);
+    } catch (SQLException sqlE){
+      LOG.error(sqlE);
+    }
+  }
 }

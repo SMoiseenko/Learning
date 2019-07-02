@@ -35,8 +35,7 @@ public class ProductDaoImpl implements ProductDao {
   public static final String SQL_DELETE_FROM_PRODUCTS =
       "DELETE FROM learning_jdbc.products WHERE product_id = ?";
 
-  public ProductDaoImpl(){
-  }
+  public ProductDaoImpl() {}
 
   @Override
   public long createProduct(Product product) throws SQLException {
@@ -132,7 +131,7 @@ public class ProductDaoImpl implements ProductDao {
 
   @Override
   public void setConnection(Connection connection) {
-
+    this.connection = connection;
   }
 
   private Product productMapper(ResultSet resultSet) throws SQLException {

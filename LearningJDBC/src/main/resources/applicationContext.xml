@@ -9,18 +9,26 @@
     class="by.moiseenko.repository.impl.PersonDaoImpl">
   </bean>
 
+  <bean id="passwordCryptBean"
+    class="by.moiseenko.service.impl.PasswordCryptImpl">
+    <constructor-arg value="5"/>
+  </bean>
+
+
     <bean id="productDaoBean"
       class="by.moiseenko.repository.impl.ProductDaoImpl">
     </bean>
 
     <bean id="productServiceBean"
       class="by.moiseenko.service.impl.ProductServiceImpl">
+      <constructor-arg ref="personDaoBean"/>
       <constructor-arg ref="productDaoBean"/>
     </bean>
 
   <bean id="personServiceBean"
     class="by.moiseenko.service.impl.PersonServiceImpl">
    <constructor-arg ref="personDaoBean"/>
+    <constructor-arg ref="passwordCryptBean"/>
   </bean>
 
     <bean id="programControllerBean"
