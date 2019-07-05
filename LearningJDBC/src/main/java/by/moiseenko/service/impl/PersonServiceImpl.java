@@ -106,6 +106,7 @@ public class PersonServiceImpl implements PersonService {
     try(Connection connection = connectionPool.getConnection()){
       connection.setAutoCommit(false);
       personDao.setConnection(connection);
+      person.setPassword(passwordCrypt.hash(person.getPassword()));
       updatedRaws = personDao.updatePerson(person);
       connection.commit();
       connection.setAutoCommit(true);

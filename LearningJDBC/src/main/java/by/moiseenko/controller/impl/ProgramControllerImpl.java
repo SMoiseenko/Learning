@@ -177,6 +177,30 @@ public class ProgramControllerImpl implements ProgramController {
               System.out.println("**********");
               break;
             case 6:
+              scanner.nextLine();
+              System.out.println("Enter person login");
+              String newData;
+              if (!(newData = scanner.nextLine()).equals("")) {
+                loggedPerson.setLogin(newData);
+              }
+              System.out.println("Enter person password:");
+              if (!(newData = scanner.nextLine()).equals("")) {
+                loggedPerson.setPassword(newData);
+              }
+              System.out.println("Enter person first name:");
+              if (!(newData = scanner.nextLine()).equals("")) {
+                loggedPerson.setFirstName(newData);
+              }
+              System.out.println("Enter person last name:");
+              if (!(newData = scanner.nextLine()).equals("")) {
+                loggedPerson.setLastName(newData);
+              }
+              System.out.println("Enter person day of birth:");
+              if (!(newData = scanner.nextLine()).equals("")) {
+                loggedPerson.setDateOfBirth(LocalDate.parse(newData, DateTimeFormatter.ofPattern("d.M.y")));
+              }
+              int updatedRaws = personService.updatePerson(loggedPerson);
+              LOG.debug(updatedRaws + " was updated");
               break;
             case 7:
               personService.deletePerson(loggedPerson.getId());
@@ -256,6 +280,63 @@ public class ProgramControllerImpl implements ProgramController {
           System.out.println("**********");
           productService.getAllProducts().forEach(System.out::println);
           System.out.println("**********");
+          break;
+        case 3:
+          System.out.println("**********");
+          personService.getAllPersons().forEach(System.out::println);
+          System.out.println("Enter user ID that you want to update:");
+          Person person = personService.findPerson(scanner.nextInt());
+          scanner.nextLine();
+          System.out.println("Enter person login");
+          String newData;
+          if (!(newData = scanner.nextLine()).equals("")) {
+            person.setLogin(newData);
+          }
+          System.out.println("Enter person password:");
+          if (!(newData = scanner.nextLine()).equals("")) {
+            person.setPassword(newData);
+          }
+          System.out.println("Enter person first name:");
+          if (!(newData = scanner.nextLine()).equals("")) {
+            person.setFirstName(newData);
+          }
+          System.out.println("Enter person last name:");
+          if (!(newData = scanner.nextLine()).equals("")) {
+            person.setLastName(newData);
+          }
+          System.out.println("Enter person day of birth:");
+          if (!(newData = scanner.nextLine()).equals("")) {
+            person.setDateOfBirth(LocalDate.parse(newData, DateTimeFormatter.ofPattern("d.M.y")));
+          }
+          int updatedRaws = personService.updatePerson(person);
+          LOG.debug(updatedRaws + " was updated");
+          break;
+        case 4:
+          System.out.println("**********");
+          productService.getAllProducts().forEach(System.out::println);
+          System.out.println("Enter user ID that you want to update:");
+          Product product = productService.findProductById(scanner.nextInt());
+          scanner.nextLine();
+          System.out.println("Enter product name");
+          if (!(newData = scanner.nextLine()).equals("")) {
+            product.setProductName(newData);
+          }
+          productService.updateProduct(product);
+          break;
+        case 5:
+          System.out.println("**********");
+          personService.getAllPersons().forEach(System.out::println);
+          System.out.println("Enter user ID that you want to delete:");
+          personService.deletePerson(scanner.nextInt());
+          break;
+        case 6:
+          System.out.println("**********");
+          productService.getAllProducts().forEach(System.out::println);
+          System.out.println("Enter user ID that you want to delete:");
+          productService.deleteProduct(scanner.nextInt());
+
+          break;
+
         case 0:
           loginAsAdmin = false;
           break;
