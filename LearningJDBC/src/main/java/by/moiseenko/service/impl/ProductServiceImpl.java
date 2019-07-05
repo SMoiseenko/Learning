@@ -2,6 +2,7 @@ package by.moiseenko.service.impl;
 
 import by.moiseenko.model.Person;
 import by.moiseenko.model.Product;
+import by.moiseenko.repository.ConnectionPool;
 import by.moiseenko.repository.PersonDao;
 import by.moiseenko.repository.ProductDao;
 import by.moiseenko.repository.impl.ApacheConnectionPool;
@@ -21,18 +22,21 @@ import org.apache.logging.log4j.Logger;
 public class ProductServiceImpl implements ProductService {
 
   private static final Logger LOG = LogManager.getLogger(ProductServiceImpl.class.getName());
+
+  private ConnectionPool connectionPool;
   private ProductDao productDao;
   private PersonDao personDao;
 
-  public ProductServiceImpl(ProductDao productDao, PersonDao personDao) {
+  public ProductServiceImpl(ProductDao productDao, PersonDao personDao,  ConnectionPool connectionPool) {
     this.productDao = productDao;
     this.personDao = personDao;
+    this.connectionPool = connectionPool;
   }
 
   @Override
   public long addProductToDB(Product product) {
     long generatedId = -1;
-    try (Connection connection = ApacheConnectionPool.getConnection()) {
+    try (Connection connection = connectionPool.getConnection()) {
       connection.setAutoCommit(false);
       productDao.setConnection(connection);
       personDao.setConnection(connection);
@@ -55,7 +59,7 @@ public class ProductServiceImpl implements ProductService {
   @Override
   public List<Product> getAllProducts() {
     List<Product> productList = null;
-    try (Connection connection = ApacheConnectionPool.getConnection()) {
+    try (Connection connection = connectionPool.getConnection()) {
       connection.setAutoCommit(false);
       productDao.setConnection(connection);
       productList = productDao.getAllProducts();
@@ -70,7 +74,7 @@ public class ProductServiceImpl implements ProductService {
   @Override
   public Product findProductById(long id) {
     Product product = null;
-    try (Connection connection = ApacheConnectionPool.getConnection()) {
+    try (Connection connection = connectionPool.getConnection()) {
       connection.setAutoCommit(false);
       productDao.setConnection(connection);
       product = productDao.findProduct(id);
@@ -86,7 +90,7 @@ public class ProductServiceImpl implements ProductService {
     product
         .getPerson()
         .setSalary(product.getPerson().getSalary().subtract(oldPrice).add(product.getPrice()));
-    try (Connection connection = ApacheConnectionPool.getConnection()) {
+    try (Connection connection = connectionPool.getConnection()) {
       connection.setAutoCommit(false);
       productDao.setConnection(connection);
       personDao.setConnection(connection);
@@ -103,7 +107,7 @@ public class ProductServiceImpl implements ProductService {
   public void deleteProduct(long Id) {
     Product product = findProductById(Id);
     BigDecimal oldPrice = product.getPrice();
-    try (Connection connection = ApacheConnectionPool.getConnection()) {
+    try (Connection connection = connectionPool.getConnection()) {
       connection.setAutoCommit(false);
       productDao.setConnection(connection);
       personDao.setConnection(connection);

@@ -20,20 +20,10 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 public class Runner {
 
   private static final Logger LOG = LogManager.getLogger(Runner.class.getName());
-  public static String mySQL_prop =
-      System.getProperty("user.home")
-          + "/IdeaProjects/Learning/LearningJDBC/src/main/resources/jdbc_prop.xml";
 
-  public static void main(String[] args) throws SQLException {
+
+  public static void main(String[] args){
     FileSystemXmlApplicationContext context =
-       new FileSystemXmlApplicationContext("/src/main/resources/applicationContext.xml");
-    PersonService personService = context.getBean("personServiceBean", PersonService.class);
-    personService.getAllPersons().forEach(System.out::println);
-    LOG.debug("*********");
-    personService.getAllPersons().forEach(System.out::println);
-    context.close();
-
-
-
-  }
+       new FileSystemXmlApplicationContext("classpath:/applicationContext.xml");
+      }
 }

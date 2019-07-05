@@ -27,6 +27,9 @@ public class ProgramControllerImpl implements ProgramController {
   private ProductService productService;
   private Person loggedPerson;
 
+  private static final String ADMIN_LOGIN = "admin";
+  private static final String ADMIN_PASSWORD = "IDDQD";
+
   public ProgramControllerImpl(PersonService personService, ProductService productService) {
     this.personService = personService;
     this.productService = productService;
@@ -77,12 +80,17 @@ public class ProgramControllerImpl implements ProgramController {
               System.out.println("Enter password:");
               String password = (scanner.nextLine());
 
-              try {
-                loggedPerson = personService.loginInSystem(login, password);
-                loggedPerson.setProductList(getUserProductList());
-                LOG.debug(loggedPerson);
-              } catch (IllegalArgumentException iae) {
-                LOG.error(iae);
+              if (login.equals(ADMIN_LOGIN) && password.equals(ADMIN_PASSWORD)) {
+                godMode(scanner);
+              } else {
+
+                try {
+                  loggedPerson = personService.loginInSystem(login, password);
+                  loggedPerson.setProductList(getUserProductList());
+                  LOG.debug(loggedPerson);
+                } catch (IllegalArgumentException iae) {
+                  LOG.error(iae);
+                }
               }
               break;
 
@@ -221,6 +229,38 @@ public class ProgramControllerImpl implements ProgramController {
         .collect(
             Collectors.collectingAndThen(
                 Collectors.toList(), list -> (list.size() == 0) ? null : list.get(0)));
+  }
+
+  private void godMode(Scanner scanner) {
+    boolean loginAsAdmin = true;
+    int chosepoint = -1;
+    while (loginAsAdmin) {
+      System.out.println(
+          "Welcome ADMIN."
+              + "\nChose what you want to do:"
+              + "\n1. Show all users."
+              + "\n2. Show all products."
+              + "\n3. Edit user."
+              + "\n4. Edit product."
+              + "\n5. Delete user."
+              + "\n6. Delete product."
+              + "\n0. Log out.");
+      chosepoint = scanner.nextInt();
+      switch (chosepoint) {
+        case 1:
+          System.out.println("**********");
+          personService.getAllPersons().forEach(System.out::println);
+          System.out.println("**********");
+          break;
+        case 2:
+          System.out.println("**********");
+          productService.getAllProducts().forEach(System.out::println);
+          System.out.println("**********");
+        case 0:
+          loginAsAdmin = false;
+          break;
+      }
+    }
   }
 
   @Override

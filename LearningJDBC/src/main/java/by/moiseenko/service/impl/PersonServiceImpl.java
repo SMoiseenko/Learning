@@ -1,6 +1,7 @@
 package by.moiseenko.service.impl;
 
 import by.moiseenko.model.Person;
+import by.moiseenko.repository.ConnectionPool;
 import by.moiseenko.repository.PersonDao;
 import by.moiseenko.repository.impl.ApacheConnectionPool;
 import by.moiseenko.service.PasswordCrypt;
@@ -22,19 +23,21 @@ public class PersonServiceImpl implements PersonService {
 
   private static final Logger LOG = LogManager.getLogger(PersonServiceImpl.class.getName());
 
+  private ConnectionPool connectionPool;
   private PersonDao personDao;
   private PasswordCrypt passwordCrypt;
 
-  public PersonServiceImpl(PersonDao personDao, PasswordCrypt passwordCrypt) {
+  public PersonServiceImpl(PersonDao personDao, PasswordCrypt passwordCrypt, ConnectionPool connectionPool) {
     this.personDao = personDao;
     this.passwordCrypt = passwordCrypt;
+    this.connectionPool = connectionPool;
   }
 
   @Override
   // add validation person + exception if not valid
   public List<Person> getAllPersons() {
     List<Person> result = null;
-    try (Connection connection = ApacheConnectionPool.getConnection()) {
+    try (Connection connection = connectionPool.getConnection()) {
       result = new ArrayList<>();
       connection.setAutoCommit(false);
       LOG.debug("set autocommit false");
@@ -70,7 +73,7 @@ public class PersonServiceImpl implements PersonService {
   public long createPerson(Person person) {
     long generatedID = -1;
     person.setPassword(passwordCrypt.hash(person.getPassword()));
-    try (Connection connection = ApacheConnectionPool.getConnection()) {
+    try (Connection connection = connectionPool.getConnection()) {
       connection.setAutoCommit(false);
       personDao.setConnection(connection);
       generatedID = personDao.createPerson(person);
@@ -85,7 +88,7 @@ public class PersonServiceImpl implements PersonService {
   @Override
   public Person findPerson(long id) {
     Person person = null;
-    try(Connection connection = ApacheConnectionPool.getConnection()){
+    try(Connection connection = connectionPool.getConnection()){
       connection.setAutoCommit(false);
       personDao.setConnection(connection);
       person = personDao.findPerson(id);
@@ -100,7 +103,7 @@ public class PersonServiceImpl implements PersonService {
   @Override
   public int updatePerson(Person person) {
     int updatedRaws = -1;
-    try(Connection connection = ApacheConnectionPool.getConnection()){
+    try(Connection connection = connectionPool.getConnection()){
       connection.setAutoCommit(false);
       personDao.setConnection(connection);
       updatedRaws = personDao.updatePerson(person);
@@ -114,7 +117,7 @@ public class PersonServiceImpl implements PersonService {
 
   @Override
   public void deletePerson(long id) {
-    try(Connection connection = ApacheConnectionPool.getConnection()){
+    try(Connection connection = connectionPool.getConnection()){
       connection.setAutoCommit(false);
       personDao.setConnection(connection);
       personDao.deletePerson(id);

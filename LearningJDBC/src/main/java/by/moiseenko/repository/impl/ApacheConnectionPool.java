@@ -1,6 +1,6 @@
 package by.moiseenko.repository.impl;
 
-import by.moiseenko.repository.PersonDao;
+import by.moiseenko.repository.ConnectionPool;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,20 +16,28 @@ import org.apache.logging.log4j.Logger;
  *
  * @author moiseenko-s
  */
-public class ApacheConnectionPool {
+public class ApacheConnectionPool implements ConnectionPool {
   private static final Logger LOG = LogManager.getLogger(ApacheConnectionPool.class.getName());
-  public static final String MYSQL_PROP =
-      System.getProperty("user.home")
-          + "/IdeaProjects/Learning/LearningJDBC/src/main/resources/jdbc_prop.xml";
-  private static BasicDataSource ds = new BasicDataSource();
+  private String mysqlProp;
+  private BasicDataSource ds;
 
-  static {
+  public ApacheConnectionPool(String mysqlProp) {
+    this.mysqlProp = System.getProperty("user.home")+mysqlProp;
+    init();
+  }
+
+  public Connection getConnection() throws SQLException {
+    return ds.getConnection();
+  }
+
+  private void init(){
     Properties properties = new Properties();
-    try (InputStream is = new FileInputStream(MYSQL_PROP)) {
+    try (InputStream is = new FileInputStream(mysqlProp)) {
       properties.loadFromXML(is);
     } catch (IOException ioE) {
       LOG.error("Property not found. " + ioE);
     }
+    ds = new BasicDataSource();
     ds.setUrl(properties.getProperty("db.url"));
     ds.setUsername(properties.getProperty("db.user"));
     ds.setPassword(properties.getProperty("db.password"));
@@ -37,11 +45,4 @@ public class ApacheConnectionPool {
     ds.setMaxIdle(Integer.parseInt(properties.getProperty("db.maxIdle")));
     ds.setMaxTotal(Integer.parseInt(properties.getProperty("db.maxTotal")));
   }
-
-  private ApacheConnectionPool() {}
-
-  public static Connection getConnection() throws SQLException {
-    return ds.getConnection();
-  }
-
 }

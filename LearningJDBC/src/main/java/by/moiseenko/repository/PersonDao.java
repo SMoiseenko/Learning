@@ -31,7 +31,7 @@ public interface PersonDao {
 
   default void deleteDuplicatesBySQLProcedure() {
     Logger LOG = LogManager.getLogger(PersonDao.class.getName());
-    ConnectorDB ds = ConnectorDB.getInstance(Runner.mySQL_prop);
+    ConnectorDB ds = ConnectorDB.getInstance(System.getProperty("user.home")+"/IdeaProjects/Learning/LearningJDBC/src/main/resources/jdbc_prop.xml");
     try (Connection conn = ds.getConnection()) {
       CallableStatement cs = conn.prepareCall("{CALL delete_dublicates_from_persons()}");
       cs.execute();
