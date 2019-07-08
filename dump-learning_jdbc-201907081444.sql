@@ -16,6 +16,81 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `AUTHORS`
+--
+
+DROP TABLE IF EXISTS `AUTHORS`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `AUTHORS` (
+  `author_id` int(11) NOT NULL AUTO_INCREMENT,
+  `author_name` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`author_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `AUTHORS`
+--
+
+LOCK TABLES `AUTHORS` WRITE;
+/*!40000 ALTER TABLE `AUTHORS` DISABLE KEYS */;
+INSERT INTO `AUTHORS` VALUES (1,'Автор А'),(2,'Автор Б'),(3,'Автор С'),(4,'Автор Д');
+/*!40000 ALTER TABLE `AUTHORS` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `BOOKS`
+--
+
+DROP TABLE IF EXISTS `BOOKS`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `BOOKS` (
+  `book_id` int(11) NOT NULL AUTO_INCREMENT,
+  `book_name` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`book_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `BOOKS`
+--
+
+LOCK TABLES `BOOKS` WRITE;
+/*!40000 ALTER TABLE `BOOKS` DISABLE KEYS */;
+INSERT INTO `BOOKS` VALUES (1,'Книга Первая'),(2,'Книга Вторая'),(3,'Книга Третья'),(4,'Книга Четвертая');
+/*!40000 ALTER TABLE `BOOKS` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `BOOKS_AUTHORS`
+--
+
+DROP TABLE IF EXISTS `BOOKS_AUTHORS`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `BOOKS_AUTHORS` (
+  `book_id` int(11) NOT NULL,
+  `author_id` int(11) NOT NULL,
+  PRIMARY KEY (`book_id`,`author_id`),
+  KEY `author_id` (`author_id`),
+  CONSTRAINT `BOOKS_AUTHORS_ibfk_1` FOREIGN KEY (`book_id`) REFERENCES `BOOKS` (`book_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `BOOKS_AUTHORS_ibfk_2` FOREIGN KEY (`author_id`) REFERENCES `AUTHORS` (`author_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `BOOKS_AUTHORS`
+--
+
+LOCK TABLES `BOOKS_AUTHORS` WRITE;
+/*!40000 ALTER TABLE `BOOKS_AUTHORS` DISABLE KEYS */;
+INSERT INTO `BOOKS_AUTHORS` VALUES (1,1),(3,1),(1,2),(2,2),(4,2),(1,3),(3,3),(1,4),(3,4),(4,4);
+/*!40000 ALTER TABLE `BOOKS_AUTHORS` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `persons`
 --
 
@@ -30,7 +105,8 @@ CREATE TABLE `persons` (
   `person_last_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `person_date_of_birth` date NOT NULL,
   `person_salary` decimal(8,2) NOT NULL,
-  PRIMARY KEY (`person_id`)
+  PRIMARY KEY (`person_id`),
+  UNIQUE KEY `person_login` (`person_login`)
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -40,7 +116,7 @@ CREATE TABLE `persons` (
 
 LOCK TABLES `persons` WRITE;
 /*!40000 ALTER TABLE `persons` DISABLE KEYS */;
-INSERT INTO `persons` VALUES (1,'vasya','vas123','Vasiliy','Sidorov','1985-03-10',880.00),(2,'vasya','vas123','Vasiliy','Sidorov','1985-03-10',550.00),(4,'megabrain','pass','Albert','Einstain','1879-03-14',3500.00),(5,'стасямба','1стасололо6','Станистав','Кину Где Попало','1986-09-14',500.00),(10,'Siarhei','pas324','Siarhei','Melez','1965-07-02',320.00),(11,'sequoya','seq345','Sequoya','The Three','0001-01-01',50000.00),(12,'astronaut','lely','Astronaut','A5 Naebali','2019-05-15',1.00),(13,'juno','j159','Lely','Juno','2010-03-15',357.00),(19,'test','test','TEST','TeSt','1900-01-01',0.00);
+INSERT INTO `persons` VALUES (4,'megabrain','$2a$05$hXr8rQb6TUhm49Cwncf/6OeCtR7W6wW/FQEmnTnUpTrsXIby8VNnO','Albert','Einstain','1879-03-14',3500.00),(5,'стасямба','$2a$05$UNL9A1RftCTFV6LTD3xn7O8i1n3hJBliZS3ZcY/JRnqkFzqP7A8iu','Станистав','Кину Где Попало','1986-09-14',500.00),(10,'Siarhei','$2a$05$jyGrPd26X0oSUwAkS0Oc4upM/FG39jGpukcbqZYW4HjNH9L/ciMsy','Siarhei','Melez','1965-07-02',320.00),(11,'sequoya','$2a$05$KWnIcxKVHOrCTscNRCwSaukfgJW0w5ghbKV08ixXs3W5vfjTRQuOC','Sequoya','The Three','0001-01-01',50000.00),(12,'astronaut','$2a$05$PSQldTmCUzgTjmggL5l0t.iadQMLoT1DLW2Ut1GCvSXMFj/zN9Gdu','Astronaut','A5 Naebali','2019-05-15',1.00),(13,'juno','$2a$05$Y1JgFJ0GtpYVywIiVJe4TuVMXX8EbbnMPw20Fv6O8BpAl.LGlald.','Lely','Juno','2010-03-15',357.00),(18,'Hash','$2a$05$KrCR5qqxntc.JO/kqAAbt.ejGbQ2pdLUpstDubqjz3SM/WMT5W9de','Hash','User','1965-02-21',0.00),(19,'test','$2a$05$FwOH5H2OLR.qENy9YvW6p.MnIUSvvY1ZT8XL.l4wCIj6JrBHZlWG.','TeSt','tEsT','1985-06-19',0.00);
 /*!40000 ALTER TABLE `persons` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -59,7 +135,7 @@ CREATE TABLE `products` (
   PRIMARY KEY (`product_id`),
   KEY `products_FK` (`person_id`),
   CONSTRAINT `products_FK` FOREIGN KEY (`person_id`) REFERENCES `persons` (`person_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,45 +144,13 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (25,'молоко',1.25,NULL),(27,'молоко',1.25,NULL),(28,'Milk',1.15,NULL),(29,'Milk',1.15,NULL),(30,'КАРТОШКА',1.15,5);
+INSERT INTO `products` VALUES (25,'молоко',1.25,4),(27,'молоко',1.25,4),(28,'Milk',1.15,4),(29,'Milk',1.15,4),(30,'КАРТОШКА',1.15,5),(31,'PC',1530.00,13),(32,'Iphone',43.00,13),(33,'Soup',7.50,13),(34,'LapTop',789.00,13),(35,'Bread',5.00,13),(36,'Lamp',3.20,13),(37,'TV',769.00,13),(38,'VHC Tape',1.00,13),(39,'Cd',32.00,13),(40,'mleco',5.00,13),(41,'Тетрадь',1.20,13);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
 -- Dumping routines for database 'learning_jdbc'
 --
-/*!50003 DROP PROCEDURE IF EXISTS `delete_dublicates` */;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_dublicates`()
-BEGIN
-DROP TABLE IF EXISTS `persons_tmp`;
-CREATE TABLE `persons_tmp`(
-`id` bigint NOT NULL AUTO_INCREMENT,
-`login` varchar(255) NOT NULL,
-`password` varchar(255) NOT NULL,
-`first_name` varchar(255) NOT NULL,
-`last_name` varchar(255) NOT NULL,
-`date_of_birth` date NOT NULL,
-`salary` decimal(10,0) NOT NULL,
-PRIMARY KEY (`id`)
-);
-INSERT IGNORE INTO `persons_tmp` (`login`, `password`, `first_name`, `last_name`, `date_of_birth`, `salary`) SELECT DISTINCT `login`, `password`, `first_name`, `last_name`, `date_of_birth`, `salary` FROM `persons`;
-DROP TABLE `persons`;
-ALTER TABLE `persons_tmp` RENAME TO `persons`;
-END ;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `delete_dublicates_from_persons` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -120,17 +164,17 @@ DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_dublicates_from_persons`()
 BEGIN
 DROP TABLE IF EXISTS `persons_tmp`;
-CREATE TABLE `persons_tmp`(
-`id` bigint NOT NULL AUTO_INCREMENT,
-`login` varchar(255) NOT NULL,
-`password` varchar(255) NOT NULL,
-`first_name` varchar(255) NOT NULL,
-`last_name` varchar(255) NOT NULL,
-`date_of_birth` date NOT NULL,
-`salary` decimal(10,0) NOT NULL,
-PRIMARY KEY (`id`)
-);
-INSERT IGNORE INTO `persons_tmp` (`login`, `password`, `first_name`, `last_name`, `date_of_birth`, `salary`) SELECT DISTINCT `login`, `password`, `first_name`, `last_name`, `date_of_birth`, `salary` FROM `persons`;
+CREATE TABLE `persons_tmp` (
+  `person_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `person_login` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `person_password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `person_first_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `person_last_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `person_date_of_birth` date NOT NULL,
+  `person_salary` decimal(8,2) NOT NULL,
+  PRIMARY KEY (`person_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+INSERT IGNORE INTO `persons_tmp` (`person_login`, `person_password`, `person_first_name`, `person_last_name`, `person_date_of_birth`, `person_salary`) SELECT DISTINCT `person_login`, `person_password`, `person_first_name`, `person_last_name`, `person_date_of_birth`, `person_salary` FROM `persons`;
 DROP TABLE `persons`;
 ALTER TABLE `persons_tmp` RENAME TO `persons`;
 END ;;
@@ -168,4 +212,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-07-01 23:50:14
+-- Dump completed on 2019-07-08 14:44:32
