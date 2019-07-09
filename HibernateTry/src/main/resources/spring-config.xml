@@ -4,10 +4,5 @@
   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
   <bean id="hibernateSessionBean"
-  class="by.moiseenko.utils.HibernateSessionFactoryUtil"/>
-
-  <bean class="by.moiseenko.repository.impl.PersonDAOImpl" id="personDAOBean">
-    <constructor-arg ref="hibernateSessionBean"/>
-  </bean>
-
+    class="by.moiseenko.utils.HibernateSessionFactoryUtil"/>
 </beans>

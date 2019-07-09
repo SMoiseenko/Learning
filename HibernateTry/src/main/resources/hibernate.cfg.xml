@@ -8,11 +8,14 @@
     <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
     <property name="connection.username">user</property>
     <property name="connection.password">12345678</property>
-    <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
-    <mapping class="by.moiseenko.entity.Person"/>
-    <mapping class="by.moiseenko.entity.Product"/>
 
+    <property name="connection.pool_size">1</property>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+    <!--
+   <mapping class="by.moiseenko.entity.Person"/>
+   <mapping class="by.moiseenko.entity.Product"/>
+-->
     <!-- DB schema will be updated if needed -->
-    <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
-  </session-factory>
-</hibernate-configuration>
+    <!--  <property name="hibernate.hbm2ddl.auto">create</property>-->
+   </session-factory>
+ </hibernate-configuration>

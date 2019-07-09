@@ -1,15 +1,20 @@
 package by.moiseenko.entity;
 
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.hibernate.annotations.NamedQueries;
 import org.hibernate.annotations.NamedQuery;
 
@@ -21,18 +26,20 @@ import org.hibernate.annotations.NamedQuery;
 @Entity
 @Table(name = "AUTHORS")
 @NamedQueries({
-    @NamedQuery(name = "select_all_authors", query = "from Author"),
-    @NamedQuery(name = "select_first", query = "SELECT name from Author")})
-public class Author {
-  private static final Logger LOG = LogManager.getLogger(Author.class.getName());
+  @NamedQuery(name = "select_all_authors", query = "from Author"),
+  @NamedQuery(name = "select_first", query = "SELECT name from Author")
+})
+public class Author implements Serializable {
+
   private int id;
   private String name;
+  private Country countryOfBorn;
   private Set<Book> booksSet;
 
   public Author() {}
 
   @Id
-  @Column(name = "author_id")
+  @Column(name = "author_id", updatable = false)
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   public int getId() {
     return id;
@@ -51,12 +58,43 @@ public class Author {
     this.name = name;
   }
 
+  @Enumerated(value = EnumType.STRING)
+  @Column(name = "county_id")
+  public Country getCountryOfBorn() {
+    return countryOfBorn;
+  }
+
+  public void setCountryOfBorn(Country countryOfBorn) {
+    this.countryOfBorn = countryOfBorn;
+  }
+
+  @ManyToMany(cascade = {
+      CascadeType.PERSIST,
+      CascadeType.MERGE
+  })
+  @JoinTable(
+      name = "BOOKS_AUTHORS",
+      joinColumns = @JoinColumn(name = "author_id"),
+      inverseJoinColumns = @JoinColumn(name = "book_id"))
   public Set<Book> getBooksSet() {
     return booksSet;
   }
 
   public void setBooksSet(Set<Book> booksSet) {
     this.booksSet = booksSet;
+  }
+
+  @Override
+  public String toString() {
+    return "Author{"
+        + "id="
+        + id
+        + ", name='"
+        + name
+        + '\''
+        + ", countryOfBorn="
+        + countryOfBorn
+        + '}';
   }
 
   @Override
@@ -68,18 +106,13 @@ public class Author {
       return false;
     }
     Author author = (Author) o;
-    return id == author.id
-        && Objects.equals(name, author.name)
-        && Objects.equals(booksSet, author.booksSet);
+    return id == author.id &&
+        Objects.equals(name, author.name) &&
+        countryOfBorn == author.countryOfBorn;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, booksSet);
-  }
-
-  @Override
-  public String toString() {
-    return "Author{" + "id=" + id + ", name='" + name + '\'' + ", booksSet=" + booksSet + '}';
+    return Objects.hash(id, name, countryOfBorn);
   }
 }
