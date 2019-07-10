@@ -12,6 +12,10 @@
     <property name="connection.pool_size">1</property>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
 
+    <mapping class="by.moiseenko.entity.Author"/>
+    <mapping class="by.moiseenko.entity.Book"/>
+    <mapping class="by.moiseenko.entity.YearOfPublish"/>
+
     <!-- DB schema will be updated if needed -->
     <!--  <property name="hibernate.hbm2ddl.auto">create</property>-->
    </session-factory>
