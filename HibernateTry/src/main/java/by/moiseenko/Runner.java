@@ -1,3 +1,7 @@
+package by.moiseenko;
+
+import by.moiseenko.configuration.SpringConfig;
+import by.moiseenko.configuration.WebConfig;
 import by.moiseenko.entity.Author;
 import by.moiseenko.entity.Book;
 import by.moiseenko.entity.Country;
@@ -12,7 +16,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
  * Default javadoc
@@ -25,8 +30,7 @@ public class Runner {
 
   public static void main(String[] args) {
     //
-    ClassPathXmlApplicationContext context =
-        new ClassPathXmlApplicationContext("spring-config.xml");
+    ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
     MySessionFactory sessionFactory =
         context.getBean("hibernateSessionBean", HibernateSessionFactoryUtil.class);
 
@@ -59,6 +63,5 @@ public class Runner {
     transaction.commit();
     session.close();
 
-    context.close();
   }
 }

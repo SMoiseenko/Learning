@@ -41,4 +41,12 @@ public class HibernateSessionFactoryUtil implements MySessionFactory {
     }
     return sessionFactory;
   }
+
+  public void doInit(){
+    System.out.println("Session factory bean initialized");
+  }
+
+  public void doDestroy(){
+    System.out.println("Session factory bean destroyed");
+  }
 }

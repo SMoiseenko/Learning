@@ -10,4 +10,7 @@ import org.hibernate.SessionFactory;
 public interface MySessionFactory {
   SessionFactory getSessionFactory();
 
+  void doInit();
+
+  void doDestroy();
 }
