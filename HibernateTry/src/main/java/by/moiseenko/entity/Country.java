@@ -16,10 +16,7 @@ public enum Country {
   USA,
   POLAND;
 
-
   Country() {
-
-
 
   }
 }

@@ -30,13 +30,13 @@ public class AuthorDAOImpl implements AuthorDAO {
   }
 
   @Override
-  public Author createAuthor(Author author) {
+  public void createAuthor(Author author) {
     Session session = sessionFactory.getSessionFactory().openSession();
     Transaction tx = session.beginTransaction();
-    Author savedAuthor = (Author) session.save(author);
+    session.save(author);
     tx.commit();
     session.close();
-    return savedAuthor;
+
   }
 
   @Override

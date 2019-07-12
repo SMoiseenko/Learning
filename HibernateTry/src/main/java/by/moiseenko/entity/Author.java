@@ -60,7 +60,7 @@ public class Author implements Serializable {
   }
 
   @Enumerated(value = EnumType.STRING)
-  @Column(name = "county_id")
+  @Column(name = "country")
   public Country getCountryOfBorn() {
     return countryOfBorn;
   }

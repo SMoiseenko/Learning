@@ -10,7 +10,7 @@ import java.util.Set;
  */
 public interface AuthorDAO {
 
-  Author createAuthor(Author author);
+  void createAuthor(Author author);
 
   Set<Author> getAllAuthors();
 

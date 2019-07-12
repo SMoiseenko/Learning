@@ -15,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * Default javadoc
@@ -49,14 +50,15 @@ public class AuthorControllerImpl implements AuthorController {
   public String createAuthor(Model model) {
     Set<Country> countrySet = new HashSet<>(Arrays.asList(Country.values()));
     model.addAttribute("countrySet", countrySet);
-    model.addAttribute("new Author", new Author());
     return "createAuthor";
   }
 
   @PostMapping(value = "/createNewAuthor")
-  public String createAuthorNew(@ModelAttribute Author author) {
-    author = authorService.create(author);
-    LOG.debug(author);
+  public String createNewAuthor(@RequestParam("name") String name, @RequestParam("countryOfBorn") String countryOfBorn) {
+    Author author = new Author();
+    author.setName(name);
+    author.setCountryOfBorn(Enum.valueOf(Country.class, countryOfBorn));
+    authorService.create(author);
     return "redirect:/allAuthors";
   }
 }

@@ -28,8 +28,7 @@
             </h1>
         </div>
         <div class="raw">
-            <form action="${pageContext.request.contextPath}/createNewAuthor" method="post" >
-
+            <form action="${pageContext.request.contextPath}/createNewAuthor" method="post">
                 <div class="form-group">
                     <label for="name"><b>Name</b></label>
                     <input id="name" class="form-control" type="text" name="name" required>

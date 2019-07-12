@@ -27,8 +27,8 @@ public class AuthorServiceImpl implements AuthorService {
   }
 
   @Override
-  public Author create(Author author) {
-    return authorDAO.createAuthor(author);
+  public void create(Author author) {
+    authorDAO.createAuthor(author);
   }
 
   @Override

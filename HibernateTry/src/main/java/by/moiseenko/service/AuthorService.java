@@ -9,7 +9,7 @@ import java.util.Set;
  * @author moiseenko-s
  */
 public interface AuthorService {
-  Author create(Author author);
+  void create(Author author);
 
   Set<Author> getAllAuthors();
 }

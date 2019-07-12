@@ -20,7 +20,7 @@
 </head>
 <body>
 <div class="container">
-    <div class="row align-items-center" style="height: 100%">
+    <div class="row align-items-center">
         <div class="col">
             <div class="row">
                 <div class="col">
