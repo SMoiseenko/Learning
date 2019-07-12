@@ -10,12 +10,14 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.mapping.Property;
+import org.springframework.stereotype.Component;
 
 /**
  * Default javadoc
  *
  * @author s-moiseenko
  */
+@Component
 public class HibernateSessionFactoryUtil implements MySessionFactory {
 
   private static final Logger LOG =
@@ -43,13 +45,5 @@ public class HibernateSessionFactoryUtil implements MySessionFactory {
       sessionFactory = configuration.buildSessionFactory(builder.build());
     }
     return sessionFactory;
-  }
-
-  public void doInit(){
-    System.out.println("Session factory bean initialized");
-  }
-
-  public void doDestroy(){
-    System.out.println("Session factory bean destroyed");
   }
 }

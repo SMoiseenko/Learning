@@ -5,6 +5,7 @@ import by.moiseenko.utils.MySessionFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -13,10 +14,11 @@ import org.springframework.context.annotation.Configuration;
  * @author moiseenko-s
  */
 @Configuration
+@ComponentScan(basePackages = {"by.moiseenko.utils"})
 public class SpringConfig {
 
-  @Bean(name = "hibernateSessionBean", initMethod = "doInit")
-  public MySessionFactory mySessionFactory() {
-    return new HibernateSessionFactoryUtil();
-  }
+//  @Bean(name = "hibernateSessionBean", initMethod = "doInit")
+//  public MySessionFactory mySessionFactory() {
+//    return new HibernateSessionFactoryUtil();
+//  }
 }
