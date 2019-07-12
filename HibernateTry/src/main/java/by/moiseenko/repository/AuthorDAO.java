@@ -1,6 +1,7 @@
-package by.moiseenko.repository.impl;
+package by.moiseenko.repository;
 
 import by.moiseenko.entity.Author;
+import java.util.Set;
 
 /**
  * Default javadoc
@@ -10,5 +11,8 @@ import by.moiseenko.entity.Author;
 public interface AuthorDAO {
 
   Author createAuthor(Author author);
+
+  Set<Author> getAllAuthors();
+
 
 }

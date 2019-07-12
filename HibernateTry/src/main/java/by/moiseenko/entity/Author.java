@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -68,10 +69,9 @@ public class Author implements Serializable {
     this.countryOfBorn = countryOfBorn;
   }
 
-  @ManyToMany(cascade = {
-      CascadeType.PERSIST,
-      CascadeType.MERGE
-  })
+  @ManyToMany(
+      fetch = FetchType.EAGER,
+      cascade = {CascadeType.PERSIST, CascadeType.MERGE})
   @JoinTable(
       name = "BOOKS_AUTHORS",
       joinColumns = @JoinColumn(name = "author_id"),
@@ -106,9 +106,9 @@ public class Author implements Serializable {
       return false;
     }
     Author author = (Author) o;
-    return id == author.id &&
-        Objects.equals(name, author.name) &&
-        countryOfBorn == author.countryOfBorn;
+    return id == author.id
+        && Objects.equals(name, author.name)
+        && countryOfBorn == author.countryOfBorn;
   }
 
   @Override
