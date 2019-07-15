@@ -34,6 +34,7 @@ public class AuthorDAOImpl implements AuthorDAO {
     Session session = sessionFactory.getSessionFactory().openSession();
     Transaction tx = session.beginTransaction();
     session.save(author);
+    LOG.warn(author.getId());
     tx.commit();
     session.close();
 
