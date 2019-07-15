@@ -3,7 +3,7 @@ package by.moiseenko.service.impl;
 import by.moiseenko.entity.Author;
 import by.moiseenko.repository.AuthorDAO;
 import by.moiseenko.service.AuthorService;
-import java.util.Set;
+import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +32,17 @@ public class AuthorServiceImpl implements AuthorService {
   }
 
   @Override
-  public Set<Author> getAllAuthors() {
+  public List<Author> getAllAuthors() {
     return authorDAO.getAllAuthors();
+  }
+
+  @Override
+  public Author getAuthorById(int id) {
+    return authorDAO.findAuthorById(id);
+  }
+
+  @Override
+  public void updateAuthor(Author author) {
+    authorDAO.updateAuthor(author);
   }
 }

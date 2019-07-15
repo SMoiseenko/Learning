@@ -1,6 +1,7 @@
 package by.moiseenko.entity;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -10,7 +11,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -27,7 +27,7 @@ public class Book implements Serializable {
   private int id;
   private String name;
   private YearOfPublish yearOfPublish;
-  private Set<Author> authorsSet;
+  private List<Author> authorsList;
 
   public Book() {}
 
@@ -61,13 +61,13 @@ public class Book implements Serializable {
     this.yearOfPublish = yearOfPublish;
   }
 
-  @ManyToMany(mappedBy = "booksSet")
-  public Set<Author> getAuthorsSet() {
-    return authorsSet;
+  @ManyToMany(mappedBy = "booksList")
+  public List<Author> getAuthorsList() {
+    return authorsList;
   }
 
-  public void setAuthorsSet(Set<Author> authorsSet) {
-    this.authorsSet = authorsSet;
+  public void setAuthorsList(List<Author> authorsList) {
+    this.authorsList = authorsList;
   }
 
   @Override

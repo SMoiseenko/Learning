@@ -6,8 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+         pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,12 +16,20 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
           crossorigin="anonymous">
     <link href="resources/css/my_style.css" rel="stylesheet">
+    <style>
+        html, body {
+            height:100%;
+        }
+        .container{
+            height: 100%;
+        }
+    </style>
     <title>Main Page</title>
 </head>
 <body>
 <div class="container">
-    <div class="row align-items-center">
-        <div class="col">
+    <div class="row h-100">
+        <div class="col-sm-12 my-auto">
             <div class="row">
                 <div class="col">
                     <a href="${pageContext.request.contextPath}/createNewAuthor">

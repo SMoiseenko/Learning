@@ -24,11 +24,11 @@ DROP TABLE IF EXISTS `AUTHORS`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `AUTHORS` (
   `author_id` int(11) NOT NULL AUTO_INCREMENT,
-  `county_id` varchar(255) DEFAULT NULL,
+  `country` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `author_name` varchar(50) NOT NULL,
   PRIMARY KEY (`author_id`),
   UNIQUE KEY `UK_ogdellk5116267dnt2obfjrkq` (`author_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `AUTHORS` (
 
 LOCK TABLES `AUTHORS` WRITE;
 /*!40000 ALTER TABLE `AUTHORS` DISABLE KEYS */;
-INSERT INTO `AUTHORS` VALUES (8,'BELARUS','Yanka Kupala'),(9,'USA','Mark Twain');
+INSERT INTO `AUTHORS` VALUES (8,'BELARUS','Yanka Kupala'),(9,'USA','Mark Twain'),(11,'RUSSIA','Александр Пушкин');
 /*!40000 ALTER TABLE `AUTHORS` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -241,4 +241,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-07-12 16:47:38
+-- Dump completed on 2019-07-15 15:59:06
