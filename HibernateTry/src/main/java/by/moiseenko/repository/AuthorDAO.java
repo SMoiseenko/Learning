@@ -1,6 +1,7 @@
 package by.moiseenko.repository;
 
 import by.moiseenko.entity.Author;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -12,7 +13,9 @@ public interface AuthorDAO {
 
   void createAuthor(Author author);
 
-  Set<Author> getAllAuthors();
+  List<Author> getAllAuthors();
 
+  Author findAuthorById(int id);
 
+  void updateAuthor(Author author);
 }

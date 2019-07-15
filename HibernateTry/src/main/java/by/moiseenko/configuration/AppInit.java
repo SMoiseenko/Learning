@@ -1,8 +1,6 @@
 package by.moiseenko.configuration;
 
-import javax.servlet.Filter;
-import org.springframework.web.filter.CharacterEncodingFilter;
-import org.springframework.web.filter.HiddenHttpMethodFilter;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
@@ -26,14 +24,11 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
   protected String[] getServletMappings() {
     return new String[] {"/"};
   }
-
-  @Override
+@Override
   protected Filter[] getServletFilters() {
     CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
     characterEncodingFilter.setEncoding("UTF-8");
     characterEncodingFilter.setForceEncoding(true);
-
-    HiddenHttpMethodFilter httpMethodFilter = new HiddenHttpMethodFilter();
-    return new Filter[] {characterEncodingFilter, httpMethodFilter};
+    return new Filter[] {characterEncodingFilter};
   }
 }

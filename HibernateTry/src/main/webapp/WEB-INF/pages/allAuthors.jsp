@@ -6,8 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+         pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +16,11 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
           crossorigin="anonymous">
     <link href="resources/css/my_style.css" rel="stylesheet">
+    <style>
+        th {
+            text-align: center;
+        }
+    </style>
     <title>All Authors</title>
 </head>
 <body>
@@ -25,7 +30,7 @@
             <h1 style="text-align: center">Table of All Authors</h1>
         </div>
     </div>
-    <table class="table table-striped table-bordered table-dark">
+    <table class="table table-bordered table-dark table-hover">
         <thead>
         <tr>
             <th scope="col">Id</th>
@@ -36,10 +41,10 @@
         </thead>
         <c:forEach items="${authorSet}" var="authors">
             <tr>
-                <td>${authors.id} </td>
+                <td><a href="${pageContext.request.contextPath}/editAuthor?id=${authors.id}">${authors.id}</a></td>
                 <td>${authors.name}</td>
                 <td>${authors.countryOfBorn}</td>
-                <td><c:forEach items="${authors.booksSet}"
+                <td><c:forEach items="${authors.booksList}"
                                var="books">${books.name}, ${books.yearOfPublish.year}
                     <br></c:forEach>
                 </td>

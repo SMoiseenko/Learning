@@ -1,8 +1,8 @@
 package by.moiseenko.entity;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -35,7 +35,7 @@ public class Author implements Serializable {
   private int id;
   private String name;
   private Country countryOfBorn;
-  private Set<Book> booksSet;
+  private List<Book> booksList;
 
   public Author() {}
 
@@ -76,12 +76,12 @@ public class Author implements Serializable {
       name = "BOOKS_AUTHORS",
       joinColumns = @JoinColumn(name = "author_id"),
       inverseJoinColumns = @JoinColumn(name = "book_id"))
-  public Set<Book> getBooksSet() {
-    return booksSet;
+  public List<Book> getBooksList() {
+    return booksList;
   }
 
-  public void setBooksSet(Set<Book> booksSet) {
-    this.booksSet = booksSet;
+  public void setBooksList(List<Book> booksSet) {
+    this.booksList = booksSet;
   }
 
   @Override

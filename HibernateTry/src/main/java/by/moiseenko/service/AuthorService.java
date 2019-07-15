@@ -1,6 +1,7 @@
 package by.moiseenko.service;
 
 import by.moiseenko.entity.Author;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -9,7 +10,12 @@ import java.util.Set;
  * @author moiseenko-s
  */
 public interface AuthorService {
+
   void create(Author author);
 
-  Set<Author> getAllAuthors();
+  List<Author> getAllAuthors();
+
+  Author getAuthorById(int id);
+
+  void updateAuthor(Author author);
 }
