@@ -15,8 +15,9 @@
     <mapping class="by.moiseenko.entity.Author"/>
     <mapping class="by.moiseenko.entity.Book"/>
     <mapping class="by.moiseenko.entity.YearOfPublish"/>
+    <mapping class="by.moiseenko.entity.Country"/>
 
     <!-- DB schema will be updated if needed -->
     <!--  <property name="hibernate.hbm2ddl.auto">create</property>-->
-   </session-factory>
- </hibernate-configuration>
+  </session-factory>
+</hibernate-configuration>

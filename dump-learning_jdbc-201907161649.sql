@@ -24,10 +24,12 @@ DROP TABLE IF EXISTS `AUTHORS`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `AUTHORS` (
   `author_id` int(11) NOT NULL AUTO_INCREMENT,
-  `country` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `author_name` varchar(50) NOT NULL,
+  `country_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`author_id`),
-  UNIQUE KEY `UK_ogdellk5116267dnt2obfjrkq` (`author_name`)
+  UNIQUE KEY `UK_ogdellk5116267dnt2obfjrkq` (`author_name`),
+  KEY `AUTHORS_FK` (`country_id`),
+  CONSTRAINT `AUTHORS_FK` FOREIGN KEY (`country_id`) REFERENCES `COUNTRY_OF_BORN` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -37,7 +39,7 @@ CREATE TABLE `AUTHORS` (
 
 LOCK TABLES `AUTHORS` WRITE;
 /*!40000 ALTER TABLE `AUTHORS` DISABLE KEYS */;
-INSERT INTO `AUTHORS` VALUES (8,'BELARUS','Yanka Kupala'),(9,'USA','Mark Twain'),(11,'RUSSIA','Александр Пушкин');
+INSERT INTO `AUTHORS` VALUES (8,'Янка Купала',12),(9,'Mark Twain',15),(11,'Александр Пушкин',13);
 /*!40000 ALTER TABLE `AUTHORS` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -93,6 +95,30 @@ LOCK TABLES `BOOKS_AUTHORS` WRITE;
 /*!40000 ALTER TABLE `BOOKS_AUTHORS` DISABLE KEYS */;
 INSERT INTO `BOOKS_AUTHORS` VALUES (8,3),(8,4);
 /*!40000 ALTER TABLE `BOOKS_AUTHORS` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `COUNTRY_OF_BORN`
+--
+
+DROP TABLE IF EXISTS `COUNTRY_OF_BORN`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `COUNTRY_OF_BORN` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `country` varchar(30) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `COUNTRY_OF_BORN`
+--
+
+LOCK TABLES `COUNTRY_OF_BORN` WRITE;
+/*!40000 ALTER TABLE `COUNTRY_OF_BORN` DISABLE KEYS */;
+INSERT INTO `COUNTRY_OF_BORN` VALUES (12,'Беларусь'),(13,'Россия'),(14,'Великобритания'),(15,'США'),(16,'Польша'),(17,'Греция'),(18,'Канада'),(19,'Франция'),(20,'Испания'),(21,'Куба'),(22,'Литва');
+/*!40000 ALTER TABLE `COUNTRY_OF_BORN` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -241,4 +267,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-07-15 15:59:06
+-- Dump completed on 2019-07-16 16:49:55

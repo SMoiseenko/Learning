@@ -15,7 +15,7 @@
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
           crossorigin="anonymous">
-    <link href="resources/css/my_style.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/css/my_style.css" rel="stylesheet">
     <style>
         th {
             text-align: center;
@@ -39,11 +39,13 @@
             <th scope="col">Books</th>
         </tr>
         </thead>
-        <c:forEach items="${authorSet}" var="authors">
+        <c:forEach items="${authorList}" var="authors">
             <tr>
-                <td><a href="${pageContext.request.contextPath}/editAuthor?id=${authors.id}">${authors.id}</a></td>
+                <td>
+                    <a href="${pageContext.request.contextPath}/editAuthor/${authors.id}">${authors.id}</a>
+                </td>
                 <td>${authors.name}</td>
-                <td>${authors.countryOfBorn}</td>
+                <td>${authors.countryOfBorn.name}</td>
                 <td><c:forEach items="${authors.booksList}"
                                var="books">${books.name}, ${books.yearOfPublish.year}
                     <br></c:forEach>

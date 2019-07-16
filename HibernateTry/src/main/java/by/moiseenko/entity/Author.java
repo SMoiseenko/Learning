@@ -6,8 +6,6 @@ import java.util.Objects;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import org.hibernate.annotations.NamedQueries;
 import org.hibernate.annotations.NamedQuery;
@@ -59,8 +58,8 @@ public class Author implements Serializable {
     this.name = name;
   }
 
-  @Enumerated(value = EnumType.STRING)
-  @Column(name = "country")
+  @ManyToOne(cascade = CascadeType.ALL)
+  @JoinColumn(name = "country_id")
   public Country getCountryOfBorn() {
     return countryOfBorn;
   }
@@ -85,19 +84,6 @@ public class Author implements Serializable {
   }
 
   @Override
-  public String toString() {
-    return "Author{"
-        + "id="
-        + id
-        + ", name='"
-        + name
-        + '\''
-        + ", countryOfBorn="
-        + countryOfBorn
-        + '}';
-  }
-
-  @Override
   public boolean equals(Object o) {
     if (this == o) {
       return true;
@@ -114,5 +100,18 @@ public class Author implements Serializable {
   @Override
   public int hashCode() {
     return Objects.hash(id, name, countryOfBorn);
+  }
+
+  @Override
+  public String toString() {
+    return "Author{"
+        + "id="
+        + id
+        + ", name='"
+        + name
+        + '\''
+        + ", countryOfBorn="
+        + countryOfBorn
+        + '}';
   }
 }

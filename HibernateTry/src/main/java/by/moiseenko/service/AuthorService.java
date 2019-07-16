@@ -2,7 +2,6 @@ package by.moiseenko.service;
 
 import by.moiseenko.entity.Author;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Default javadoc
@@ -18,4 +17,6 @@ public interface AuthorService {
   Author getAuthorById(int id);
 
   void updateAuthor(Author author);
+
+  void deleteAuthor(Author author);
 }

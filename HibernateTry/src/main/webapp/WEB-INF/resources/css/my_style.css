@@ -1,9 +1,11 @@
 body {
   background-color: darkgray;
 }
-button{
+
+button {
   margin: 5px;
 }
-div.container{
+
+div.container {
   margin-top: 10px;
 }

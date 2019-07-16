@@ -45,4 +45,9 @@ public class AuthorServiceImpl implements AuthorService {
   public void updateAuthor(Author author) {
     authorDAO.updateAuthor(author);
   }
+
+  @Override
+  public void deleteAuthor(Author author) {
+    authorDAO.deleteAuthor(author);
+  }
 }

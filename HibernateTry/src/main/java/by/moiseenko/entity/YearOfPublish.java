@@ -1,7 +1,6 @@
 package by.moiseenko.entity;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.time.Year;
 import java.util.Objects;
 import javax.persistence.Column;
@@ -26,7 +25,7 @@ public class YearOfPublish implements Serializable {
   public YearOfPublish() {}
 
   @Id
-  @Column(name = "id", updatable =  false)
+  @Column(name = "id", updatable = false)
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   public int getId() {
     return id;

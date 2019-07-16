@@ -3,7 +3,6 @@ package by.moiseenko.entity;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -79,9 +78,9 @@ public class Book implements Serializable {
       return false;
     }
     Book book = (Book) o;
-    return id == book.id &&
-        Objects.equals(name, book.name) &&
-        Objects.equals(yearOfPublish, book.yearOfPublish);
+    return id == book.id
+        && Objects.equals(name, book.name)
+        && Objects.equals(yearOfPublish, book.yearOfPublish);
   }
 
   @Override

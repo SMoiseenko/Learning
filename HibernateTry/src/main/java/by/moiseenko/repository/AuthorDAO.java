@@ -2,7 +2,6 @@ package by.moiseenko.repository;
 
 import by.moiseenko.entity.Author;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Default javadoc
@@ -18,4 +17,6 @@ public interface AuthorDAO {
   Author findAuthorById(int id);
 
   void updateAuthor(Author author);
+
+  void deleteAuthor(Author author);
 }

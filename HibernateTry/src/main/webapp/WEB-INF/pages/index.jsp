@@ -15,12 +15,13 @@
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
           crossorigin="anonymous">
-    <link href="resources/css/my_style.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/css/my_style.css" rel="stylesheet">
     <style>
         html, body {
-            height:100%;
+            height: 100%;
         }
-        .container{
+
+        .container {
             height: 100%;
         }
     </style>

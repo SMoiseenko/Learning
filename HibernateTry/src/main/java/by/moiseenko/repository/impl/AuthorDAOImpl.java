@@ -33,7 +33,6 @@ public class AuthorDAOImpl implements AuthorDAO {
     Session session = sessionFactory.getSessionFactory().openSession();
     Transaction tx = session.beginTransaction();
     session.save(author);
-    LOG.warn(author.getId());
     tx.commit();
     session.close();
   }
@@ -55,13 +54,20 @@ public class AuthorDAOImpl implements AuthorDAO {
   }
 
   @Override
-  public void updateAuthor(Author updateAuthor) {
+  public void updateAuthor(Author author) {
     Session session = sessionFactory.getSessionFactory().openSession();
     Transaction tx = session.beginTransaction();
-    Author storedAuthor = session.get(Author.class, updateAuthor.getId());
-    storedAuthor.setName(updateAuthor.getName());
-    storedAuthor.setCountryOfBorn(updateAuthor.getCountryOfBorn());
-    session.update(storedAuthor);
+    session.update(author);
+    tx.commit();
+    session.close();
+  }
+
+  @Override
+  public void deleteAuthor(Author author) {
+    Session session = sessionFactory.getSessionFactory().openSession();
+    Transaction tx = session.beginTransaction();
+    session.load(author, author.getId());
+    session.delete(author);
     tx.commit();
     session.close();
   }
