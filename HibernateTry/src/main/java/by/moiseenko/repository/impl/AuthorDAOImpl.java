@@ -46,7 +46,7 @@ public class AuthorDAOImpl implements AuthorDAO {
   }
 
   @Override
-  public Author findAuthorById(int id) {
+  public Author findAuthorById(Long id) {
     Session session = sessionFactory.getSessionFactory().openSession();
     Author result = session.get(Author.class, id);
     session.close();

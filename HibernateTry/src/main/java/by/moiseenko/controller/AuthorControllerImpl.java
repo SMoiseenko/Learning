@@ -54,36 +54,29 @@ public class AuthorControllerImpl{
   @GetMapping("/createNewAuthor")
   public String createAuthor(Model model) {
     List<Country> countrySet = countryService.getAlCountries();
-    model.addAttribute("countrySet", countrySet);
+    model.addAttribute("countryList", countrySet);
+    model.addAttribute("newAuthor", new Author());
     return "createAuthor";
   }
 
   @PostMapping(value = "/createNewAuthor")
-  public String createNewAuthor(
-      @RequestParam("name") String name, @RequestParam("countryOfBorn") String countryOfBorn) {
-    Author author = new Author();
-    author.setName(name);
-    Country newCountry = new Country();
-    newCountry.setName(countryOfBorn);
-    author.setCountryOfBorn(newCountry);
+  public String createNewAuthor(@ModelAttribute("newAuthor")Author author) {
     authorService.create(author);
     return "redirect:/allAuthors";
   }
 
   @GetMapping("/editAuthor/{author_id}")
-  public String getAuthorById(@PathVariable("author_id") int id, Model model) {
-    model.addAttribute("author", authorService.getAuthorById(id));
+  public String getAuthorById(@PathVariable("author_id") Long id, Model model) {
+    model.addAttribute("editedAuthor", authorService.getAuthorById(id));
     model.addAttribute("countryList", countryService.getAlCountries());
     return "editAuthor";
   }
 
   @RequestMapping(value = "/updateAuthor", method = RequestMethod.POST)
-  public ModelAndView updateAuthor(
-      @ModelAttribute("author") Author author) {
-    ModelAndView mav = new ModelAndView();
+  public String updateAuthor(
+      @ModelAttribute("editedAuthor") Author author) {
     authorService.updateAuthor(author);
-    mav.setViewName("redirect:/allAuthors");
-    return mav;
+    return "redirect:/allAuthors";
   }
 
 

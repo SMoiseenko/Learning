@@ -3,9 +3,6 @@ package by.moiseenko.entity;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
@@ -15,23 +12,12 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "COUNTRY_OF_BORN")
-public class Country {
+public class Country extends by.moiseenko.entity.Entity {
 
-  private int id;
+  private static final long serialVersionUID = -6017042695623844090L;
   private String name;
 
   public Country() {}
-
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "id", updatable = false)
-  public int getId() {
-    return id;
-  }
-
-  public void setId(int id) {
-    this.id = id;
-  }
 
   @Column(name = "country")
   public String getName() {
@@ -51,7 +37,7 @@ public class Country {
       return false;
     }
     Country country = (Country) o;
-    return id == country.id && Objects.equals(name, country.name);
+    return Objects.equals(id, country.id) && Objects.equals(name, country.name);
   }
 
   @Override

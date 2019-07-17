@@ -14,7 +14,7 @@ public interface AuthorDAO {
 
   List<Author> getAllAuthors();
 
-  Author findAuthorById(int id);
+  Author findAuthorById(Long id);
 
   void updateAuthor(Author author);
 

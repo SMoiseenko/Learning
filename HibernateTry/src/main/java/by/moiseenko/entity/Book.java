@@ -21,25 +21,14 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "BOOKS")
-public class Book implements Serializable {
+public class Book extends by.moiseenko.entity.Entity {
 
-  private int id;
+  private static final long serialVersionUID = 3781414159550984179L;
   private String name;
   private YearOfPublish yearOfPublish;
   private List<Author> authorsList;
 
   public Book() {}
-
-  @Id
-  @Column(name = "book_id", updatable = false)
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  public int getId() {
-    return id;
-  }
-
-  public void setId(int id) {
-    this.id = id;
-  }
 
   @Column(name = "book_name")
   public String getName() {
@@ -78,7 +67,7 @@ public class Book implements Serializable {
       return false;
     }
     Book book = (Book) o;
-    return id == book.id
+    return Objects.equals(id, book.id)
         && Objects.equals(name, book.name)
         && Objects.equals(yearOfPublish, book.yearOfPublish);
   }

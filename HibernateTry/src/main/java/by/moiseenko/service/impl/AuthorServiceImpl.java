@@ -37,7 +37,7 @@ public class AuthorServiceImpl implements AuthorService {
   }
 
   @Override
-  public Author getAuthorById(int id) {
+  public Author getAuthorById(Long id) {
     return authorDAO.findAuthorById(id);
   }
 

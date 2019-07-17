@@ -1,15 +1,11 @@
 package by.moiseenko.entity;
 
-import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
@@ -29,25 +25,15 @@ import org.hibernate.annotations.NamedQuery;
   @NamedQuery(name = "select_all_authors", query = "from Author"),
   @NamedQuery(name = "select_first", query = "SELECT name from Author")
 })
-public class Author implements Serializable {
+public class Author extends by.moiseenko.entity.Entity {
 
-  private int id;
+
+  private static final long serialVersionUID = 2768094500886182765L;
   private String name;
   private Country countryOfBorn;
   private List<Book> booksList;
 
   public Author() {}
-
-  @Id
-  @Column(name = "author_id", updatable = false)
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  public int getId() {
-    return id;
-  }
-
-  public void setId(int id) {
-    this.id = id;
-  }
 
   @Column(name = "author_name", length = 50, unique = true, nullable = false)
   public String getName() {
@@ -91,10 +77,13 @@ public class Author implements Serializable {
     if (!(o instanceof Author)) {
       return false;
     }
+    if (!super.equals(o)) {
+      return false;
+    }
     Author author = (Author) o;
-    return id == author.id
+    return Objects.equals(id, author.id)
         && Objects.equals(name, author.name)
-        && countryOfBorn == author.countryOfBorn;
+        && Objects.equals(countryOfBorn, author.countryOfBorn);
   }
 
   @Override

@@ -24,29 +24,28 @@
 <div class="container">
     <div class="raw">
         <div class="col">
-            <h1> Edit author ${author.name}</h1>
+            <h1> Edit author ${editedAuthor.name}</h1>
         </div>
     </div>
     <div class="raw">
         <div class="col">
             <form:form action="${pageContext.request.contextPath}/updateAuthor" method="post"
-                       modelAttribute="author">
+                       modelAttribute="editedAuthor">
                 <div class="form-group">
-                    <form:label for="id" path="id"><b>Id</b></form:label>
-                    <form:input id="id" class="form-control" path="id" type="text"
-                                value="${author.id}" readonly="true"/>
+                    <form:label path="id"><b>Id</b></form:label>
+                    <form:input class="form-control" path="id" type="text"
+                                value="${editedAuthor.id}" readonly="true"/>
                 </div>
                 <div class="form-group">
-                    <form:label for="name" path="name"><b>Name</b></form:label>
-                    <form:input id="name" class="form-control" path="name" type="text"
-                                value="${author.name}"/>
+                    <form:label path="name"><b>Name</b></form:label>
+                    <form:input class="form-control" path="name" type="text"
+                                value="${editedAuthor.name}"/>
                 </div>
                 <div class="form-group">
-                    <form:label for="country" path="countryOfBorn"><b>Country Of Born</b></form:label>
-                    <form:select class="form-control" id="country" path="countryOfBorn" name="countryOfBorn">
-
+                    <form:label path="countryOfBorn"><b>Country</b></form:label>
+                    <form:select class="form-control" path="countryOfBorn.name">
                         <c:forEach items="${countryList}" var="country">
-                            <option value="${country}" ${country.equals(author.countryOfBorn)?'selected':''}>${country.name}</option>
+                            <option>${country.name}</option>
                         </c:forEach>
                     </form:select>
                 </div>

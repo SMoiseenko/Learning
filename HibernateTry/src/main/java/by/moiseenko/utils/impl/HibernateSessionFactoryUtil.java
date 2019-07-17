@@ -3,6 +3,7 @@ package by.moiseenko.utils.impl;
 import by.moiseenko.entity.Author;
 import by.moiseenko.entity.Book;
 import by.moiseenko.entity.Country;
+import by.moiseenko.entity.Entity;
 import by.moiseenko.entity.YearOfPublish;
 import by.moiseenko.utils.MySessionFactory;
 import org.apache.logging.log4j.LogManager;

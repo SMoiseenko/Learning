@@ -23,14 +23,14 @@ DROP TABLE IF EXISTS `AUTHORS`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `AUTHORS` (
-  `author_id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `author_name` varchar(50) NOT NULL,
-  `country_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`author_id`),
+  `country_id` bigint(20) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`),
   UNIQUE KEY `UK_ogdellk5116267dnt2obfjrkq` (`author_name`),
-  KEY `AUTHORS_FK` (`country_id`),
+  KEY `FKfte2t0d5op66difynuhvbp75j` (`country_id`),
   CONSTRAINT `AUTHORS_FK` FOREIGN KEY (`country_id`) REFERENCES `COUNTRY_OF_BORN` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `AUTHORS` (
 
 LOCK TABLES `AUTHORS` WRITE;
 /*!40000 ALTER TABLE `AUTHORS` DISABLE KEYS */;
-INSERT INTO `AUTHORS` VALUES (8,'Янка Купала',12),(9,'Mark Twain',15),(11,'Александр Пушкин',13);
+INSERT INTO `AUTHORS` VALUES (8,'Янка Купала',12),(9,'Mark Twain',25),(11,'Александр Пушкин',13),(12,'Толстой Лев',29),(13,'Новы Аутар',26),(14,'Кастусь Калиновский',27);
 /*!40000 ALTER TABLE `AUTHORS` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -51,10 +51,10 @@ DROP TABLE IF EXISTS `BOOKS`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `BOOKS` (
-  `book_id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `book_name` varchar(255) DEFAULT NULL,
-  `year_id` int(11) NOT NULL,
-  PRIMARY KEY (`book_id`),
+  `year_id` bigint(20) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
   KEY `FK23htqd19v9349eg691lhyucku` (`year_id`),
   CONSTRAINT `FK23htqd19v9349eg691lhyucku` FOREIGN KEY (`year_id`) REFERENCES `YEAR_OF_PUBLISHING` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
@@ -78,12 +78,12 @@ DROP TABLE IF EXISTS `BOOKS_AUTHORS`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `BOOKS_AUTHORS` (
-  `author_id` int(11) NOT NULL,
-  `book_id` int(11) NOT NULL,
+  `author_id` bigint(20) unsigned NOT NULL,
+  `book_id` bigint(20) unsigned NOT NULL,
   PRIMARY KEY (`author_id`,`book_id`),
   KEY `FKlv0rb74ptedc413s6q5x8ot6q` (`book_id`),
-  CONSTRAINT `FKlv0rb74ptedc413s6q5x8ot6q` FOREIGN KEY (`book_id`) REFERENCES `BOOKS` (`book_id`),
-  CONSTRAINT `FKonl00c15or6jem4gavf5u5kg8` FOREIGN KEY (`author_id`) REFERENCES `AUTHORS` (`author_id`)
+  CONSTRAINT `FKlv0rb74ptedc413s6q5x8ot6q` FOREIGN KEY (`book_id`) REFERENCES `BOOKS` (`id`),
+  CONSTRAINT `FKonl00c15or6jem4gavf5u5kg8` FOREIGN KEY (`author_id`) REFERENCES `AUTHORS` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -105,10 +105,10 @@ DROP TABLE IF EXISTS `COUNTRY_OF_BORN`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `COUNTRY_OF_BORN` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `country` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -117,7 +117,7 @@ CREATE TABLE `COUNTRY_OF_BORN` (
 
 LOCK TABLES `COUNTRY_OF_BORN` WRITE;
 /*!40000 ALTER TABLE `COUNTRY_OF_BORN` DISABLE KEYS */;
-INSERT INTO `COUNTRY_OF_BORN` VALUES (12,'Беларусь'),(13,'Россия'),(14,'Великобритания'),(15,'США'),(16,'Польша'),(17,'Греция'),(18,'Канада'),(19,'Франция'),(20,'Испания'),(21,'Куба'),(22,'Литва');
+INSERT INTO `COUNTRY_OF_BORN` VALUES (12,'Беларусь'),(13,'Россия'),(14,'Великобритания'),(15,'США'),(16,'Польша'),(17,'Греция'),(18,'Канада'),(19,'Франция'),(20,'Испания'),(21,'Куба'),(22,'Литва'),(23,'Country{id=13, name=\'Россия\'}'),(24,'Ямайка'),(25,'Ямайка'),(26,'Беларусь'),(27,'Литва'),(28,'Country{id=13, name=\'Россия\'}'),(29,'Россия');
 /*!40000 ALTER TABLE `COUNTRY_OF_BORN` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -129,7 +129,7 @@ DROP TABLE IF EXISTS `YEAR_OF_PUBLISHING`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `YEAR_OF_PUBLISHING` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `year` tinyblob,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
@@ -267,4 +267,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-07-16 16:49:55
+-- Dump completed on 2019-07-17 16:47:31
