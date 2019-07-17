@@ -19,7 +19,7 @@ public class Country extends by.moiseenko.entity.Entity {
 
   public Country() {}
 
-  @Column(name = "country")
+  @Column(name = "country",length = 30, unique = true, nullable = false)
   public String getName() {
     return name;
   }

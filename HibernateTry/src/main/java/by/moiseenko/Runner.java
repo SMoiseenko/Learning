@@ -1,13 +1,13 @@
 package by.moiseenko;
 
 import by.moiseenko.configuration.SpringConfig;
-import by.moiseenko.entity.Author;
-import by.moiseenko.entity.Country;
-import by.moiseenko.service.AuthorService;
-import by.moiseenko.service.impl.AuthorServiceImpl;
+import by.moiseenko.utils.MySessionFactory;
+import by.moiseenko.utils.impl.HibernateSessionFactoryUtil;
 import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.hibernate.Session;
+import org.hibernate.type.StringType;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -23,13 +23,17 @@ public class Runner {
   public static void main(String[] args) {
     //
     ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
-    AuthorService authorService = context.getBean(AuthorServiceImpl.class);
-    Author markTwain = authorService.getAuthorById(9L);
-    Country jamaika = new Country();
-    jamaika.setName("Ямайка");
-    markTwain.setCountryOfBorn(jamaika);
-    authorService.updateAuthor(markTwain);
-    List<Author> authorList = authorService.getAllAuthors();
-    authorList.forEach(LOG::debug);
+    MySessionFactory sessionFactory = context.getBean(HibernateSessionFactoryUtil.class);
+    Session session = sessionFactory.getSessionFactory().openSession();
+    List<Object[]> queryResult =
+        session
+            .createSQLQuery("Select author_name from AUTHORS")
+            .addScalar("author_name", StringType.INSTANCE)
+            .list();
+    for (Object[] o : queryResult) {
+      String authorName = (String) o[0];
+      LOG.debug(authorName);
+    }
+    session.close();
   }
 }

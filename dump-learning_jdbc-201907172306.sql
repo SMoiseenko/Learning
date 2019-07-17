@@ -7,6 +7,10 @@
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+DROP DATABASE IF EXISTS learning_jdbc;
+CREATE DATABASE learning_jdbc;
+USE learning_jdbc;
+
  SET NAMES utf8mb4 ;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
@@ -30,7 +34,7 @@ CREATE TABLE `AUTHORS` (
   UNIQUE KEY `UK_ogdellk5116267dnt2obfjrkq` (`author_name`),
   KEY `FKfte2t0d5op66difynuhvbp75j` (`country_id`),
   CONSTRAINT `AUTHORS_FK` FOREIGN KEY (`country_id`) REFERENCES `COUNTRY_OF_BORN` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +43,7 @@ CREATE TABLE `AUTHORS` (
 
 LOCK TABLES `AUTHORS` WRITE;
 /*!40000 ALTER TABLE `AUTHORS` DISABLE KEYS */;
-INSERT INTO `AUTHORS` VALUES (8,'Янка Купала',12),(9,'Mark Twain',25),(11,'Александр Пушкин',13),(12,'Толстой Лев',29),(13,'Новы Аутар',26),(14,'Кастусь Калиновский',27);
+INSERT INTO `AUTHORS` VALUES (8,'Янка Купала',16),(9,'Mark Twain',15),(11,'Александр Пушкин',13),(12,'Толстой Лев',13),(14,'Кастусь Калиновский',22),(17,'Достоевский',13);
 /*!40000 ALTER TABLE `AUTHORS` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -107,8 +111,9 @@ DROP TABLE IF EXISTS `COUNTRY_OF_BORN`;
 CREATE TABLE `COUNTRY_OF_BORN` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `country` varchar(30) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `COUNTRY_OF_BORN_UNIQ_NAME` (`country`)
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -117,7 +122,7 @@ CREATE TABLE `COUNTRY_OF_BORN` (
 
 LOCK TABLES `COUNTRY_OF_BORN` WRITE;
 /*!40000 ALTER TABLE `COUNTRY_OF_BORN` DISABLE KEYS */;
-INSERT INTO `COUNTRY_OF_BORN` VALUES (12,'Беларусь'),(13,'Россия'),(14,'Великобритания'),(15,'США'),(16,'Польша'),(17,'Греция'),(18,'Канада'),(19,'Франция'),(20,'Испания'),(21,'Куба'),(22,'Литва'),(23,'Country{id=13, name=\'Россия\'}'),(24,'Ямайка'),(25,'Ямайка'),(26,'Беларусь'),(27,'Литва'),(28,'Country{id=13, name=\'Россия\'}'),(29,'Россия');
+INSERT INTO `COUNTRY_OF_BORN` VALUES (14,'Великобритания'),(17,'Греция'),(20,'Испания'),(18,'Канада'),(21,'Куба'),(22,'Литва'),(16,'Польша'),(13,'Россия'),(15,'США'),(19,'Франция');
 /*!40000 ALTER TABLE `COUNTRY_OF_BORN` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -206,6 +211,40 @@ UNLOCK TABLES;
 --
 -- Dumping routines for database 'learning_jdbc'
 --
+/*!50003 DROP PROCEDURE IF EXISTS `delete_dublicates` */;
+ALTER DATABASE `learning_jdbc` CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_dublicates`()
+BEGIN
+DROP TABLE IF EXISTS `persons_tmp`;
+CREATE TABLE `persons_tmp`(
+`id` bigint NOT NULL AUTO_INCREMENT,
+`login` varchar(255) NOT NULL,
+`password` varchar(255) NOT NULL,
+`first_name` varchar(255) NOT NULL,
+`last_name` varchar(255) NOT NULL,
+`date_of_birth` date NOT NULL,
+`salary` decimal(10,0) NOT NULL,
+PRIMARY KEY (`id`)
+);
+INSERT IGNORE INTO `persons_tmp` (`login`, `password`, `first_name`, `last_name`, `date_of_birth`, `salary`) SELECT DISTINCT `login`, `password`, `first_name`, `last_name`, `date_of_birth`, `salary` FROM `persons`;
+DROP TABLE `persons`;
+ALTER TABLE `persons_tmp` RENAME TO `persons`;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+ALTER DATABASE `learning_jdbc` CHARACTER SET utf8 COLLATE utf8_general_ci ;
 /*!50003 DROP PROCEDURE IF EXISTS `delete_dublicates_from_persons` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -267,4 +306,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-07-17 16:47:31
+-- Dump completed on 2019-07-17 23:06:46

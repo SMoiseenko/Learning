@@ -22,41 +22,47 @@
 </head>
 <body>
 <div class="container">
-    <div class="raw">
+    <div class="row">
         <div class="col">
             <h1> Edit author ${editedAuthor.name}</h1>
         </div>
     </div>
-    <div class="raw">
+    <div class="row">
         <div class="col">
             <form:form action="${pageContext.request.contextPath}/updateAuthor" method="post"
-                       modelAttribute="editedAuthor">
-                <div class="form-group">
-                    <form:label path="id"><b>Id</b></form:label>
-                    <form:input class="form-control" path="id" type="text"
-                                value="${editedAuthor.id}" readonly="true"/>
-                </div>
-                <div class="form-group">
-                    <form:label path="name"><b>Name</b></form:label>
-                    <form:input class="form-control" path="name" type="text"
-                                value="${editedAuthor.name}"/>
-                </div>
-                <div class="form-group">
-                    <form:label path="countryOfBorn"><b>Country</b></form:label>
-                    <form:select class="form-control" path="countryOfBorn.name">
-                        <c:forEach items="${countryList}" var="country">
-                            <option>${country.name}</option>
-                        </c:forEach>
-                    </form:select>
-                </div>
-                <input class="btn btn-warning" type="submit" value="Update"/>
-
-            </form:form>
+                    modelAttribute="editedAuthor">
+            <div class="form-group">
+                <form:label path="id"><b>Id</b></form:label>
+                <form:input class="form-control" path="id" type="text"
+                            value="${editedAuthor.id}" readonly="true"/>
+            </div>
+            <div class="form-group">
+                <form:label path="name"><b>Name</b></form:label>
+                <form:input class="form-control" path="name" type="text"
+                            value="${editedAuthor.name}"/>
+            </div>
+            <div class="form-group">
+                <form:label path="countryOfBorn"><b>Country</b></form:label>
+                <form:select class="form-control" path="countryOfBorn.id">
+                    <c:forEach items="${countryList}" var="country">
+                        <option value="${country.id}">${country.name}</option>
+                    </c:forEach>
+                </form:select>
+            </div>
         </div>
     </div>
-
-
+    <div class="row">
+        <div class="col-auto">
+            <input class="btn btn-warning" type="submit" value="Update"/>
+            </form:form>
+        </div>
+        <div class="col-auto">
+            <a href="${pageContext.request.contextPath}/deleteAuthor/${editedAuthor.id}">
+                <button type="button" class="btn btn-danger">Delete ${editedAuthor.name}
+                </button>
+            </a>
+        </div>
+    </div>
 </div>
-
 </body>
 </html>

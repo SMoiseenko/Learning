@@ -61,6 +61,8 @@ public class AuthorControllerImpl{
 
   @PostMapping(value = "/createNewAuthor")
   public String createNewAuthor(@ModelAttribute("newAuthor")Author author) {
+    Country country = countryService.findCountryById(author.getCountryOfBorn().getId());
+    author.setCountryOfBorn(country);
     authorService.create(author);
     return "redirect:/allAuthors";
   }
@@ -75,7 +77,17 @@ public class AuthorControllerImpl{
   @RequestMapping(value = "/updateAuthor", method = RequestMethod.POST)
   public String updateAuthor(
       @ModelAttribute("editedAuthor") Author author) {
+    Country country = countryService.findCountryById(author.getCountryOfBorn().getId());
+    author = authorService.getAuthorById(author.getId());
+    author.setCountryOfBorn(country);
     authorService.updateAuthor(author);
+    return "redirect:/allAuthors";
+  }
+
+  @GetMapping(value = "/deleteAuthor/{id}")
+  public String deleteAuthor(@PathVariable("id") Long id){
+    Author author = authorService.getAuthorById(id);
+    authorService.deleteAuthor(author);
     return "redirect:/allAuthors";
   }
 

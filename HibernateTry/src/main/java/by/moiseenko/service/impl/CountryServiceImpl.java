@@ -45,4 +45,9 @@ public class CountryServiceImpl implements CountryService {
   public void deleteCountry(Country country) {
     countryDAO.deleteCountry(country);
   }
+
+  @Override
+  public Country findCountryById(Long id) {
+    return countryDAO.findCountryById(id);
+  }
 }

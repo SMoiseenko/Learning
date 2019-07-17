@@ -42,9 +42,9 @@
                 <div class="form-group">
 
                     <form:label path="countryOfBorn"><b>Country</b></form:label>
-                    <form:select class="form-control" path="countryOfBorn.name">
+                    <form:select class="form-control" path="countryOfBorn.id">
                         <c:forEach items="${countryList}" var="country">
-                            <option>${country.name}</option>
+                            <option value="${country.id}">${country.name}</option>
                         </c:forEach>
                     </form:select>
                 </div>
