@@ -1,11 +1,15 @@
+html{
+  height: 100%;
+}
 body {
   background-color: darkgray;
+  height: 100%;
 }
 
 button {
   margin: 5px;
 }
 
-div.container {
-  margin-top: 10px;
+.container {
+  height: 92%;
 }

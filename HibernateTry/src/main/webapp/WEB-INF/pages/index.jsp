@@ -11,21 +11,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-          crossorigin="anonymous">
-    <link href="${pageContext.request.contextPath}/resources/css/my_style.css" rel="stylesheet">
-    <style>
-        html, body {
-            height: 100%;
-        }
-
-        .container {
-            height: 100%;
-        }
-    </style>
     <title>Main Page</title>
+    <%@ include file="fragments/style.jsp" %>
 </head>
 <body>
 <div class="container">
@@ -42,7 +29,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <a href="">
+                    <a href="${pageContext.request.contextPath}/newBook">
                         <button type="button" class="btn btn-warning btn-lg btn-block">Publish New
                             Book
                         </button>
@@ -61,5 +48,6 @@
         </div>
     </div>
 </div>
+<%@include file="fragments/footer.jsp" %>
 </body>
 </html>

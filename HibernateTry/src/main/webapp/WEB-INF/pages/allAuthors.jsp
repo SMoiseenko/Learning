@@ -11,26 +11,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-          crossorigin="anonymous">
-    <link href="${pageContext.request.contextPath}/resources/css/my_style.css" rel="stylesheet">
+    <title>All Authors</title>
+    <%@include file="fragments/style.jsp"%>
     <style>
         th {
             text-align: center;
         }
     </style>
-    <title>All Authors</title>
 </head>
 <body>
 <div class="container">
-    <div class="raw">
-        <div class="col">
-            <h1 style="text-align: center">Table of All Authors</h1>
-        </div>
-    </div>
-    <table class="table table-bordered table-dark table-hover">
+    <%@include file="fragments/navbar.jsp" %>
+    <h1 style="text-align: center">Table of All Authors</h1>
+        <table class="table table-bordered table-dark table-hover">
         <thead>
         <tr>
             <th scope="col">Id</th>
@@ -47,12 +40,13 @@
                 <td>${authors.name}</td>
                 <td>${authors.countryOfBorn.name}</td>
                 <td><c:forEach items="${authors.booksList}"
-                               var="books">${books.name}, ${books.yearOfPublish.year}
+                               var="books">${books.name}, ${books.yearOfPublish.year.year}
                     <br></c:forEach>
                 </td>
             </tr>
         </c:forEach>
     </table>
 </div>
+<%@ include file="fragments/footer.jsp"%>
 </body>
 </html>

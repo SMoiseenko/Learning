@@ -13,15 +13,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-          crossorigin="anonymous">
-    <link href="${pageContext.request.contextPath}/resources/css/my_style.css" rel="stylesheet">
     <title>Edit Author</title>
+    <%@include file="fragments/style.jsp" %>
 </head>
 <body>
 <div class="container">
+    <%@include file="fragments/navbar.jsp" %>
     <div class="row">
         <div class="col">
             <h1> Edit author ${editedAuthor.name}</h1>
@@ -53,7 +50,7 @@
     </div>
     <div class="row">
         <div class="col-auto">
-            <input class="btn btn-warning" type="submit" value="Update"/>
+            <button class="btn btn-warning" type="submit">Update</button>
             </form:form>
         </div>
         <div class="col-auto">
@@ -64,5 +61,6 @@
         </div>
     </div>
 </div>
+<%@include file="fragments/footer.jsp" %>
 </body>
 </html>

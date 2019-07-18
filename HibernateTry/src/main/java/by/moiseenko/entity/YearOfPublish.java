@@ -1,5 +1,6 @@
 package by.moiseenko.entity;
 
+import java.time.LocalDate;
 import java.time.Year;
 import java.util.Objects;
 import javax.persistence.Column;
@@ -16,16 +17,16 @@ import javax.persistence.Table;
 public class YearOfPublish extends by.moiseenko.entity.Entity {
 
   private static final long serialVersionUID = -3019836780165173941L;
-  private Year year;
+  private LocalDate year;
 
   public YearOfPublish() {}
 
   @Column(name = "year")
-  public Year getYear() {
+  public LocalDate getYear() {
     return year;
   }
 
-  public void setYear(Year year) {
+  public void setYear(LocalDate year) {
     this.year = year;
   }
 
@@ -48,6 +49,6 @@ public class YearOfPublish extends by.moiseenko.entity.Entity {
 
   @Override
   public String toString() {
-    return "YearOfPublish{" + "id=" + id + ", year=" + year + '}';
+    return "YearOfPublish{" + "id=" + id + ", year=" + year.getYear() + '}';
   }
 }

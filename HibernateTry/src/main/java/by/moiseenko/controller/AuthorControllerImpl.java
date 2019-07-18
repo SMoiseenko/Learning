@@ -1,11 +1,12 @@
 package by.moiseenko.controller;
 
 import by.moiseenko.entity.Author;
+import by.moiseenko.entity.Book;
 import by.moiseenko.entity.Country;
 import by.moiseenko.service.AuthorService;
 import by.moiseenko.service.CountryService;
-import java.util.Arrays;
-import java.util.HashSet;
+import java.time.format.DateTimeFormatterBuilder;
+import java.time.temporal.ChronoField;
 import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,8 +19,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Default javadoc
@@ -27,7 +26,7 @@ import org.springframework.web.servlet.ModelAndView;
  * @author moiseenko-s
  */
 @Controller
-public class AuthorControllerImpl{
+public class AuthorControllerImpl {
 
   private static final Logger LOG = LogManager.getLogger(AuthorControllerImpl.class.getName());
 
@@ -60,7 +59,7 @@ public class AuthorControllerImpl{
   }
 
   @PostMapping(value = "/createNewAuthor")
-  public String createNewAuthor(@ModelAttribute("newAuthor")Author author) {
+  public String createNewAuthor(@ModelAttribute("newAuthor") Author author) {
     Country country = countryService.findCountryById(author.getCountryOfBorn().getId());
     author.setCountryOfBorn(country);
     authorService.create(author);
@@ -75,8 +74,7 @@ public class AuthorControllerImpl{
   }
 
   @RequestMapping(value = "/updateAuthor", method = RequestMethod.POST)
-  public String updateAuthor(
-      @ModelAttribute("editedAuthor") Author author) {
+  public String updateAuthor(@ModelAttribute("editedAuthor") Author author) {
     Country country = countryService.findCountryById(author.getCountryOfBorn().getId());
     author = authorService.getAuthorById(author.getId());
     author.setCountryOfBorn(country);
@@ -85,11 +83,30 @@ public class AuthorControllerImpl{
   }
 
   @GetMapping(value = "/deleteAuthor/{id}")
-  public String deleteAuthor(@PathVariable("id") Long id){
+  public String deleteAuthor(@PathVariable("id") Long id) {
     Author author = authorService.getAuthorById(id);
     authorService.deleteAuthor(author);
     return "redirect:/allAuthors";
   }
 
+  @GetMapping("/newBook")
+  public String newBook(Model model) {
+    Book book = new Book();
+    List<Author> authorsList = authorService.getAllAuthors();
+    model.addAttribute("newBook", book);
+    model.addAttribute("authorsList", authorsList);
+    model.addAttribute(
+        "localDateTimeFormatter",
+        new DateTimeFormatterBuilder()
+            .appendPattern("yyyy")
+            .parseDefaulting(ChronoField.MONTH_OF_YEAR, 1)
+            .parseDefaulting(ChronoField.DAY_OF_MONTH, 1)
+            .toFormatter());
+    return "createNewBook";
+  }
 
+  @PostMapping("/publicNewBook")
+  public String publicNewBook(@ModelAttribute("newBook") Book book) {
+    return "redirect:/allAuthors";
+  }
 }

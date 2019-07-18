@@ -12,31 +12,32 @@
 <%@ taglib prefix="input" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="label" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="firm" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-          crossorigin="anonymous">
-    <link href="${pageContext.request.contextPath}/resources/css/my_style.css" rel="stylesheet">
     <title>Create Author</title>
+    <%@ include file="fragments/style.jsp" %>
 </head>
 <body>
 <div class="container">
-    <div class="raw">
+    <%@include file="fragments/navbar.jsp" %>
+
+    <div class="row">
         <div class="col">
             <h1 style="text-align: center">
                 Help new Author born again
             </h1>
         </div>
-        <div class="raw">
-            <form:form action="${pageContext.request.contextPath}/createNewAuthor" method="post" modelAttribute="newAuthor">
+    </div>
+    <div class="row">
+        <div class="col">
+            <form:form action="${pageContext.request.contextPath}/createNewAuthor" method="post"
+                       modelAttribute="newAuthor">
                 <div class="form-group">
                     <form:label path="name"><b>Name</b></form:label>
-                    <form:input path="name" class="form-control" type="text" required="true" />
+                    <form:input path="name" class="form-control" type="text" required="true"/>
                 </div>
 
                 <div class="form-group">
@@ -55,5 +56,6 @@
         </div>
     </div>
 </div>
+<jsp:include page="fragments/footer.jsp"/>
 </body>
 </html>

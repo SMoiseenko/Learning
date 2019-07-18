@@ -9,9 +9,8 @@
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 DROP DATABASE IF EXISTS learning_jdbc;
 CREATE DATABASE learning_jdbc;
-USE learning_jdbc;
-
- SET NAMES utf8mb4 ;
+USE learning_jdbc; 
+SET NAMES utf8mb4 ;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -43,7 +42,7 @@ CREATE TABLE `AUTHORS` (
 
 LOCK TABLES `AUTHORS` WRITE;
 /*!40000 ALTER TABLE `AUTHORS` DISABLE KEYS */;
-INSERT INTO `AUTHORS` VALUES (8,'Янка Купала',16),(9,'Mark Twain',15),(11,'Александр Пушкин',13),(12,'Толстой Лев',13),(14,'Кастусь Калиновский',22),(17,'Достоевский',13);
+INSERT INTO `AUTHORS` VALUES (8,'Янка Купала',16),(9,'Mark Twain',15),(11,'Александр Пушкин',13),(12,'Толстой Лев',13),(14,'Кастусь Калиновский',19),(17,'Достоевский',13);
 /*!40000 ALTER TABLE `AUTHORS` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -135,7 +134,7 @@ DROP TABLE IF EXISTS `YEAR_OF_PUBLISHING`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `YEAR_OF_PUBLISHING` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `year` tinyblob,
+  `year` date DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -146,7 +145,7 @@ CREATE TABLE `YEAR_OF_PUBLISHING` (
 
 LOCK TABLES `YEAR_OF_PUBLISHING` WRITE;
 /*!40000 ALTER TABLE `YEAR_OF_PUBLISHING` DISABLE KEYS */;
-INSERT INTO `YEAR_OF_PUBLISHING` VALUES (3,_binary '�\�\0sr\0\rjava.time.Ser�]��\"H�\0\0xpw\0\0�x');
+INSERT INTO `YEAR_OF_PUBLISHING` VALUES (3,'1945-01-01');
 /*!40000 ALTER TABLE `YEAR_OF_PUBLISHING` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -306,4 +305,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-07-17 23:06:46
+-- Dump completed on 2019-07-18 16:42:24
