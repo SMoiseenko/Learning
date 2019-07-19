@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <nav class="navbar navbar-light" style="background-color: darkslategrey">
-    <a href="${pageContext.request.contextPath}/">
+    <a class="navbar-brand mx-auto" href="${pageContext.request.contextPath}/">
         <button class="btn btn-success" type="button">Go to main page</button>
     </a>
 </nav>

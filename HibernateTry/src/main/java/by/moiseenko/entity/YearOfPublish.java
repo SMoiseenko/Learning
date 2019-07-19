@@ -6,6 +6,7 @@ import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * Default javadoc
@@ -17,11 +18,12 @@ import javax.persistence.Table;
 public class YearOfPublish extends by.moiseenko.entity.Entity {
 
   private static final long serialVersionUID = -3019836780165173941L;
+  @DateTimeFormat(pattern = "yyyy-MM-dd")
   private LocalDate year;
 
   public YearOfPublish() {}
 
-  @Column(name = "year")
+  @Column(name = "year", unique = true)
   public LocalDate getYear() {
     return year;
   }

@@ -56,7 +56,7 @@ public class Author extends by.moiseenko.entity.Entity {
 
   @ManyToMany(
       fetch = FetchType.EAGER,
-      cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+      cascade = CascadeType.ALL)
   @JoinTable(
       name = "BOOKS_AUTHORS",
       joinColumns = @JoinColumn(name = "author_id"),

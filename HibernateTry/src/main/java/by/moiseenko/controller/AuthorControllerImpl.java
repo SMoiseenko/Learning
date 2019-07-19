@@ -93,20 +93,15 @@ public class AuthorControllerImpl {
   public String newBook(Model model) {
     Book book = new Book();
     List<Author> authorsList = authorService.getAllAuthors();
+    authorsList.forEach(a->a.setCountryOfBorn(null));
     model.addAttribute("newBook", book);
     model.addAttribute("authorsList", authorsList);
-    model.addAttribute(
-        "localDateTimeFormatter",
-        new DateTimeFormatterBuilder()
-            .appendPattern("yyyy")
-            .parseDefaulting(ChronoField.MONTH_OF_YEAR, 1)
-            .parseDefaulting(ChronoField.DAY_OF_MONTH, 1)
-            .toFormatter());
     return "createNewBook";
   }
 
   @PostMapping("/publicNewBook")
   public String publicNewBook(@ModelAttribute("newBook") Book book) {
+    LOG.debug(book);
     return "redirect:/allAuthors";
   }
 }

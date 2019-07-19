@@ -1,14 +1,13 @@
-<%@ page import="java.time.LocalDate" %>
-<%@ page import="java.time.format.DateTimeFormatterBuilder" %>
-<%@ page import="java.time.temporal.ChronoField" %><%--
-  Created by IntelliJ IDEA.
-  User: moiseenko-s
-  Date: 18.07.19
-  Time: 9:29
-  To change this template use File | Settings | File Templates.
+<%--
+Created by IntelliJ IDEA.
+User: moiseenko-s
+Date: 18.07.19
+Time: 9:29
+To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Create new book</title>
@@ -33,13 +32,24 @@
                 </div>
                 <div class="form-group">
                     <form:label path="yearOfPublish.year"><b>Year Of Publish</b></form:label>
-                    <form:input path="yearOfPublish.year" class="form-control" type="date" />
+                    <form:input path="yearOfPublish.year" class="form-control" type="date"/>
                 </div>
                 <div class="form-group">
-                    <form:label path=""><b>Chose Authors</b></form:label>
-                    <form:select path="authorsList"
+                    <form:label path="authorsList"><b>Chose Author(s):</b></form:label>
+                    <form:select class="form-control" path="authorsList">
+                        <c:forEach items="${authorsList}" var="author">
+                            <option value="${author}">${author.name}</option>
+                        </c:forEach>
+                    </form:select>
                 </div>
-
+                <div class="row">
+                    <div class="col-auto">
+                        <button class="btn btn-success" type="submit">Publish</button>
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-warning" type="reset">Reset form</button>
+                    </div>
+                </div>
             </form:form>
         </div>
     </div>

@@ -1,49 +1,113 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="utf-8">
-    <title>TEST PAGE</title>
-    <style>
+    <head>
+        <meta charset="utf-8">
+        <title>TEST PAGE</title>
+        <style>
         body {background-color: grey}
-    </style>
-    <script>
+        </style>
+        <script>
         function updateTextInput(val) {
-          document.getElementById('textInput').value=val; 
+        document.getElementById('textInput').value=val;
         }
-    </script>
-</head>
-<body>
-    <div>
-    <form method="post" autocomplete="off" action="http://localhost:8080/login.php">
+        </script>
+    </head>
+    <body>
         <div>
-    <label for="text1"><mark>LOGIN</mark></label>
-    <input name="login" id="text1" autofocus type="text" placeholder="Enter login here" />
-</div>
-    <div>
-        <label for="text2"><ins>PASSWORD</ins></label>
-    <input name="password" id="text2" type = "password" autocomplete="on" placeholder="Enter password here" />
-    </div>
-    <div>
-        <label for="radio1">Agree</label>
-        <input type="radio" id="radio1" name="agree" required="true" />
-    </div>
-    <div>
-        <label for="number1">Age</label>
-        <input type="number" id="number1" name="numberField" list="bestNumberList" min="0" max="100" step="5" style="width:20%" />
-    </div>
-    <div>
-        <label for="range1">Price</label>
-        <input type="range" id = "range1" name="range" min= "0" max="100" step="2" onchange="updateTextInput(this.value);">
-        <input type="text" id="textInput" value="">
-    <div>
-    <button type="submit">"Войти"</button>
-     </div>
-</form>
-<datalist id="bestNumberList">
-    <option value="10">десять</option>
-    <option value="20">двадцать</option>
-    <option value="60">шестьдесят</option>
- </datalist>
-</div>
-</body>
+            <form novalidate="true" method="post" autocomplete="off" action="http://localhost:8080/login.php">
+                <div>
+                    <fieldset>
+                        <legend>Text info</legend>
+                        <label for="text1"><mark>LOGIN</mark></label><br/>
+                        <input name="login" id="text1" autofocus type="text" placeholder="Enter login here" /><br/>
+                        <label for="text2"><ins>PASSWORD</ins></label><br/>
+                        <input name="password" id="text2" type = "password" autocomplete="on" placeholder="Enter password here" /><br/>
+                        <label for="telnum1"><i>Tel number:</i></label><br/>
+                        <input type="tel" name="phoneNumber" id="telnum1" placeholder="(xxx)-xxx-xxxx"/><br/>
+                        <label for="email1">E-mail:</label><br/>
+                        <input type="email" name="email" id="email1"/><br/>
+                        <lable for="url1">URL:</lable><br/>
+                        <input type="url" name="url" id="url1"/><br/>
+                    </fieldset>
+                </div>
+                <div>
+                    <label for="radio1">Agree</label>
+                    <input type="radio" id="radio1" name="agree" required="true" value="true" />
+                    <label for="radio2"><span style="margin-left: 5%; color:red">Идите лесом</span></label>
+                    <input type="radio" id = "radio2" name="agree" required="true" value="false" checked="true">
+                </div>
+                <div>
+                    <label for="number1">Age</label>
+                    <input type="number" id="number1" name="numberField" list="bestNumberList" min="0" max="100" step="5" style="width:20%" />
+                </div>
+                <div>
+                    <label for="age2">Date of born</label>
+                    <input type="date" name="dayofborn" id="age2">
+                </div>
+                <div>
+                    <label for="range1">Price</label>
+                    <input type="range" id = "range1" name="range" min= "0" max="100" step="2" onchange="updateTextInput(this.value);">
+                    <input type="text" id="textInput" value="">
+                </div>
+                <div>
+                    <lable for="multselect1">Choose car/s</lable>
+                    <select type="select" name="multicars" id="multselect1" multiple="true">
+                        <optgroup label="Mazda">
+                            <option value="6">6GG</option>
+                            <option value="RX-8">RX8 1gen</option>
+                            <option value="CX-7">CX7 2gen</option>
+                        </optgroup>
+                        <optgroup label="Opel">
+                            <option value="Astra">Astra 1.7</option>
+                            <option value="Omega">Omega 2.3</option>
+                            <option value="Tigra">Tigra 1.8</option>
+                        </optgroup>
+                        <optgroup label="Audi">
+                            <option value="TT">TT turbo</option>
+                            <option value="A8">A8 long</option>
+                            <option value="R8">R8 v10</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div>
+                    <label for="meal1">Первое</label>
+                    <input type="checkbox" name="firstmeal" id="meal1">
+                    <label for="meal2">Второе</label>
+                    <input type="checkbox" name="secondmeal" id="meal2">
+                    <label for="meal3">Компот</label>
+                    <input type="checkbox" name="kompot" id="meal3">
+                </div>
+                <div>
+                    <label for="textarea1">Немного о себе</label>
+                    <textarea name="about" id="textarea1" rows="5" cols="50" maxlength="255" ></textarea>
+                </div>
+                <div>
+                    <label for="color1">Chose your favorite color:</label>
+                    <input type="color" name="favcolor" id="color1" list="favcolorlist">
+                </div>
+                <div>
+                    <button type="submit">"Войти"</button>
+                </div>
+            </form>
+            <form enctype="multipart/form-data" method="post" action="http://localhost:8080/file.html">
+                <div>
+                    <label for="filesnder1">Выбярыце файлы для адпрауки</label>
+                    <input type="file" name="file" id="filesnder1" multiple="true">
+                </div>
+                <div>
+                    <input type="submit" value="Send нах"/>
+                </div>
+            </form>
+            <datalist id="favcolorlist">
+            <option value="#fffb00"></option>
+            <option value="#01fb00"></option>
+            <option value="#724389"></option>
+            </datalist>
+            <datalist id="bestNumberList">
+            <option value="10">десять</option>
+            <option value="20">двадцать</option>
+            <option value="60">шестьдесят</option>
+            </datalist>
+        </div>
+    </body>
 </html>
