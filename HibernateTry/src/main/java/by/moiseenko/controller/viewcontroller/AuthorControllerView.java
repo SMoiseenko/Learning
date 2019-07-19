@@ -1,12 +1,11 @@
-package by.moiseenko.controller;
+package by.moiseenko.controller.viewcontroller;
 
 import by.moiseenko.entity.Author;
-import by.moiseenko.entity.Book;
 import by.moiseenko.entity.Country;
+import by.moiseenko.entity.modelentity.BookModel;
 import by.moiseenko.service.AuthorService;
+import by.moiseenko.service.BookService;
 import by.moiseenko.service.CountryService;
-import java.time.format.DateTimeFormatterBuilder;
-import java.time.temporal.ChronoField;
 import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -26,17 +25,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author moiseenko-s
  */
 @Controller
-public class AuthorControllerImpl {
+public class AuthorControllerView {
 
-  private static final Logger LOG = LogManager.getLogger(AuthorControllerImpl.class.getName());
+  private static final Logger LOG = LogManager.getLogger(AuthorControllerView.class.getName());
 
   private AuthorService authorService;
   private CountryService countryService;
+  private BookService bookService;
 
   @Autowired
-  public AuthorControllerImpl(AuthorService authorService, CountryService countryService) {
+  public AuthorControllerView(
+      AuthorService authorService, CountryService countryService, BookService bookService) {
     this.authorService = authorService;
     this.countryService = countryService;
+    this.bookService = bookService;
   }
 
   @GetMapping("/allAuthors")
@@ -91,17 +93,17 @@ public class AuthorControllerImpl {
 
   @GetMapping("/newBook")
   public String newBook(Model model) {
-    Book book = new Book();
+    BookModel book = new BookModel();
     List<Author> authorsList = authorService.getAllAuthors();
-    authorsList.forEach(a->a.setCountryOfBorn(null));
+    authorsList.forEach(a -> a.setCountryOfBorn(null));
     model.addAttribute("newBook", book);
-    model.addAttribute("authorsList", authorsList);
+    model.addAttribute("allAuthors", authorsList);
     return "createNewBook";
   }
 
   @PostMapping("/publicNewBook")
-  public String publicNewBook(@ModelAttribute("newBook") Book book) {
-    LOG.debug(book);
+  public String publicNewBook(@ModelAttribute("newBook") BookModel bookModel) {
+    bookService.createBook(bookModel);
     return "redirect:/allAuthors";
   }
 }

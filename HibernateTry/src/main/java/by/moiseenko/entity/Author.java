@@ -1,5 +1,6 @@
 package by.moiseenko.entity;
 
+import com.fasterxml.jackson.annotation.JsonRootName;
 import java.util.List;
 import java.util.Objects;
 import javax.persistence.CascadeType;
@@ -21,12 +22,8 @@ import org.hibernate.annotations.NamedQuery;
  */
 @Entity
 @Table(name = "AUTHORS")
-@NamedQueries({
-  @NamedQuery(name = "select_all_authors", query = "from Author"),
-  @NamedQuery(name = "select_first", query = "SELECT name from Author")
-})
+@JsonRootName(value = "author")
 public class Author extends by.moiseenko.entity.Entity {
-
 
   private static final long serialVersionUID = 2768094500886182765L;
   private String name;
@@ -34,6 +31,10 @@ public class Author extends by.moiseenko.entity.Entity {
   private List<Book> booksList;
 
   public Author() {}
+
+  public Author(Long id){
+    super(id);
+  }
 
   @Column(name = "author_name", length = 50, unique = true, nullable = false)
   public String getName() {

@@ -18,7 +18,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EnableWebMvc
 @ComponentScan(
     basePackages = {
-      "by.moiseenko.controller",
+      "by.moiseenko.controller.*",
       "by.moiseenko.repository.impl",
       "by.moiseenko.service.impl"
     })

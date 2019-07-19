@@ -1,5 +1,6 @@
 package by.moiseenko.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
@@ -26,6 +27,7 @@ public class Book extends by.moiseenko.entity.Entity {
   private static final long serialVersionUID = 3781414159550984179L;
   private String name;
   private YearOfPublish yearOfPublish;
+  @JsonIgnore
   private List<Author> authorsList;
 
   public Book() {}

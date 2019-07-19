@@ -31,16 +31,17 @@ To change this template use File | Settings | File Templates.
                                 placeholder="Enter book title"/>
                 </div>
                 <div class="form-group">
-                    <form:label path="yearOfPublish.year"><b>Year Of Publish</b></form:label>
-                    <form:input path="yearOfPublish.year" class="form-control" type="date"/>
+                    <form:label path="yearOfPublish"><b>Year Of Publish</b></form:label>
+                    <form:input path="yearOfPublish" class="form-control" type="date"/>
                 </div>
                 <div class="form-group">
-                    <form:label path="authorsList"><b>Chose Author(s):</b></form:label>
-                    <form:select class="form-control" path="authorsList">
-                        <c:forEach items="${authorsList}" var="author">
-                            <option value="${author}">${author.name}</option>
+                    <form:label path="listAuthorsId"><b>Chose Author(s):</b></form:label>
+                    <form:select class="form-control" path="listAuthorsId">
+                        <c:forEach items="${allAuthors}" var="author">
+                            <option value="${author.id}">${author.name}</option>
                         </c:forEach>
                     </form:select>
+
                 </div>
                 <div class="row">
                     <div class="col-auto">

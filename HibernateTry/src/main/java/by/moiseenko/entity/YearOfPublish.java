@@ -23,6 +23,10 @@ public class YearOfPublish extends by.moiseenko.entity.Entity {
 
   public YearOfPublish() {}
 
+  public YearOfPublish(LocalDate year) {
+    this.year = year;
+  }
+
   @Column(name = "year", unique = true)
   public LocalDate getYear() {
     return year;

@@ -19,6 +19,10 @@ public abstract class Entity implements Serializable {
 
   public Entity() {}
 
+  public Entity(Long id) {
+    this.id = id;
+  }
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id", updatable = false)
