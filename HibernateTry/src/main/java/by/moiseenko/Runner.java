@@ -30,6 +30,7 @@ public class Runner {
 
   private static final Logger LOG = LogManager.getLogger(Runner.class.getName());
 
+
   public static void main(String[] args) {
     //
     ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
@@ -37,29 +38,16 @@ public class Runner {
     Transaction tx = null;
     try (Session session = sessionFactory.getSessionFactory().openSession()) {
       tx = session.beginTransaction();
-      Book newBook = new Book();
-      newBook.setName("Twin authors book");
-
-      LocalDate dateOfPublish = LocalDate.parse("1935-01-01");
-      YearOfPublish yearOfPublish = null;
-      Query query = session.createQuery("from YearOfPublish where year =:mydate", YearOfPublish.class);
-      query.setParameter("mydate", dateOfPublish);
-      List<YearOfPublish> yearOfPublishList = query.getResultList();
-     if(yearOfPublishList.size()==1){
-        yearOfPublish = yearOfPublishList.get(0);
-     } else {
-       yearOfPublish = new YearOfPublish();
-       yearOfPublish.setYear(dateOfPublish);
-       session.saveOrUpdate(yearOfPublish);
-     }
-
-      newBook.setYearOfPublish(yearOfPublish);
-
-      Author author8 = session.load(Author.class, 8L);
-      Author author13 = session.load(Author.class, 11L);
-      author8.getBooksList().add(newBook);
-      author13.getBooksList().add(newBook);
-
+      LocalDate thisDate = LocalDate.parse("1987-03-20");
+      boolean sortBy = true;
+      String sort = sortBy ? "ASC":"DESC";
+      Query select = session.createQuery("select y.year From YearOfPublish y where year<:paramName order by y.year "+ sort);
+      select.setParameter("paramName", thisDate);
+      List<LocalDate> result = select.getResultList();
+      result.forEach(LOG::debug);
+      Query qtyBooksQuery = session.createQuery("select count(b.id) from Book b");
+      Long qtyBooks =(Long)qtyBooksQuery.getSingleResult();
+      LOG.debug(qtyBooks + " raws in Books table");
       tx.commit();
     } catch (HibernateException he){
       LOG.error(he);

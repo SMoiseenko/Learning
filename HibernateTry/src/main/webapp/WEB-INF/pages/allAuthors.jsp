@@ -12,7 +12,17 @@
 <html>
 <head>
     <title>All Authors</title>
-    <%@include file="fragments/style.jsp"%>
+    <%@include file="fragments/style.jsp" %>
+    <script type="text/javascript"
+            src="${pageContext.request.contextPath}/resources/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript"
+            src="${pageContext.request.contextPath}/resources/js/popper.min.js"></script>
+    <script type="text/javascript"
+            src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
+    <script type="text/javascript"
+            src="${pageContext.request.contextPath}/resources/js/mdb.min.js" defer></script>
+    <script type="text/javascript"
+            src="${pageContext.request.contextPath}/resources/js/addons/datatables.min.js"></script>
     <style>
         th {
             text-align: center;
@@ -23,16 +33,17 @@
 <div class="container">
     <%@include file="fragments/navbar.jsp" %>
     <h1 style="text-align: center">Table of All Authors</h1>
-        <table class="table table-bordered table-dark table-hover">
+    <table class="table table-striped table-bordered table-sm" id="tableAllAuthors">
         <thead>
         <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Name</th>
-            <th scope="col">Country Of Birth</th>
-            <th scope="col">Books</th>
+            <th class="th-sm">Id</th>
+            <th class="th-sm">Name</th>
+            <th class="th-sm">Country Of Birth</th>
+            <th class="th-sm">Books</th>
         </tr>
         </thead>
         <c:forEach items="${authorList}" var="authors">
+            <tbody>
             <tr>
                 <td>
                     <a href="${pageContext.request.contextPath}/editAuthor/${authors.id}">${authors.id}</a>
@@ -44,9 +55,27 @@
                     <br></c:forEach>
                 </td>
             </tr>
+            </tbody>
         </c:forEach>
+        <tfoot>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Country Of Birth</th>
+            <th>Books</th>
+        </tr>
+        </tfoot>
     </table>
 </div>
-<%@ include file="fragments/footer.jsp"%>
+<%@ include file="fragments/footer.jsp" %>
+<script>
+  $(document).ready(function () {
+    $('#tableAllAuthors').DataTable({
+      "scrollY": "200px",
+      "scrollCollapse": true,
+    });
+    $('.dataTables_length').addClass('bs-select');
+  });
+</script>
 </body>
 </html>
