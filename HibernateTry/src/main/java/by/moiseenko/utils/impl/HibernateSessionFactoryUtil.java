@@ -47,4 +47,9 @@ public class HibernateSessionFactoryUtil implements MySessionFactory {
     }
     return sessionFactory;
   }
+
+  @Override
+  public void shutdown() {
+    getSessionFactory().close();
+  }
 }

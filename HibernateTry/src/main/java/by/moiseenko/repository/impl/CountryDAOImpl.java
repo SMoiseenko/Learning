@@ -9,6 +9,7 @@ import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -23,7 +24,8 @@ public class CountryDAOImpl implements CountryDAO {
   private MySessionFactory sessionFactory;
 
   @Autowired
-  public CountryDAOImpl(MySessionFactory sessionFactory) {
+  public CountryDAOImpl(
+      @Qualifier("hibernateSessionFactoryJBoss") MySessionFactory sessionFactory) {
     this.sessionFactory = sessionFactory;
   }
 

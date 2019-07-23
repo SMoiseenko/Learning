@@ -9,6 +9,7 @@ import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -24,7 +25,8 @@ public class AuthorDAOImpl implements AuthorDAO {
   private MySessionFactory sessionFactory;
 
   @Autowired
-  public AuthorDAOImpl(MySessionFactory sessionFactory) {
+  public AuthorDAOImpl(
+      @Qualifier("hibernateSessionFactoryJBoss") MySessionFactory sessionFactory) {
     this.sessionFactory = sessionFactory;
   }
 

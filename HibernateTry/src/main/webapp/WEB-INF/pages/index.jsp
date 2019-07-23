@@ -13,37 +13,41 @@
 <head>
     <title>Main Page</title>
     <%@ include file="fragments/style.jsp" %>
+    <style>
+        .row {
+            width: 45%;
+            margin: 1%
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-    <div class="row h-100">
-        <div class="col-sm-12 my-auto">
-            <div class="row">
-                <div class="col">
-                    <a href="${pageContext.request.contextPath}/createNewAuthor">
-                        <button type="button" class="btn btn-success btn-lg btn-block">Create New
-                            Author
-                        </button>
-                    </a>
-                </div>
+<div style="height: 100vh">
+    <div class="flex-center flex-column">
+        <div class="row">
+            <div class="col">
+                <a href="${pageContext.request.contextPath}/createNewAuthor">
+                    <button type="button" class="btn btn-success btn-lg btn-block">Create New
+                        Author
+                    </button>
+                </a>
             </div>
-            <div class="row">
-                <div class="col">
-                    <a href="${pageContext.request.contextPath}/newBook">
-                        <button type="button" class="btn btn-warning btn-lg btn-block">Publish New
-                            Book
-                        </button>
-                    </a>
-                </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a href="${pageContext.request.contextPath}/newBook">
+                    <button type="button" class="btn btn-warning btn-lg btn-block">Publish New
+                        Book
+                    </button>
+                </a>
             </div>
-            <div class="row">
-                <div class="col">
-                    <a href="${pageContext.request.contextPath}/allAuthors">
-                        <button type="button" class="btn btn-primary btn-lg btn-block">See All
-                            Authors
-                        </button>
-                    </a>
-                </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a href="${pageContext.request.contextPath}/allAuthors">
+                    <button type="button" class="btn btn-primary btn-lg btn-block">See All
+                        Authors
+                    </button>
+                </a>
             </div>
         </div>
     </div>
