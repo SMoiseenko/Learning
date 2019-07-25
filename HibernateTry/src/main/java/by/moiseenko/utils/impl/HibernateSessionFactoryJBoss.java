@@ -21,23 +21,24 @@ public class HibernateSessionFactoryJBoss implements MySessionFactory {
 
   private SessionFactory sessionFactory = buildSessionFactory();
 
-  private  SessionFactory buildSessionFactory(){
-    final StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure().build();
-    try{
+  private SessionFactory buildSessionFactory() {
+    final StandardServiceRegistry registry =
+        new StandardServiceRegistryBuilder().configure().build();
+    try {
       sessionFactory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
-    } catch (Exception e){
+    } catch (Exception e) {
       StandardServiceRegistryBuilder.destroy(registry);
-      throw  new ExceptionInInitializerError("Initial SessionFactory faild" + e);
+      throw new ExceptionInInitializerError("Initial SessionFactory faild" + e);
     }
     return sessionFactory;
   }
 
   @Override
-  public  SessionFactory getSessionFactory() {
+  public SessionFactory getSessionFactory() {
     return sessionFactory;
   }
 
-  public void shutdown(){
+  public void shutdown() {
     getSessionFactory().close();
   }
 }

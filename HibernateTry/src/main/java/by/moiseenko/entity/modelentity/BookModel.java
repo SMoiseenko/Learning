@@ -16,9 +16,7 @@ public class BookModel {
   private String yearOfPublish;
   private List<String> listAuthorsId;
 
-  public BookModel() {
-  }
-
+  public BookModel() {}
 
   public String getName() {
     return name;
@@ -46,10 +44,15 @@ public class BookModel {
 
   @Override
   public String toString() {
-    return "BookModel{" +
-        "name='" + name + '\'' +
-        ", yearOfPublish='" + yearOfPublish + '\'' +
-        ", listAuthorsId=" + listAuthorsId +
-        '}';
+    return "BookModel{"
+        + "name='"
+        + name
+        + '\''
+        + ", yearOfPublish='"
+        + yearOfPublish
+        + '\''
+        + ", listAuthorsId="
+        + listAuthorsId
+        + '}';
   }
 }

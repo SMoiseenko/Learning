@@ -1,15 +1,11 @@
 package by.moiseenko.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
@@ -27,8 +23,7 @@ public class Book extends by.moiseenko.entity.Entity {
   private static final long serialVersionUID = 3781414159550984179L;
   private String name;
   private YearOfPublish yearOfPublish;
-  @JsonIgnore
-  private List<Author> authorsList;
+  @JsonIgnore private List<Author> authorsList;
 
   public Book() {}
 

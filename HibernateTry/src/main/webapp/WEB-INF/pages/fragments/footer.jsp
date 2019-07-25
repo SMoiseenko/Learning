@@ -5,9 +5,7 @@
   Time: 9:31
   To change this template use File | Settings | File Templates.
 --%>
-<footer class="footer">
-    <div class="container">
-        <hr>
-        <p>&copy; S.Moiseenko 2019</p>
+<footer class="page-footer font-small stylish-color-dark">
+    <div class="footer-copyright text-center py-3"> &copy; S.Moiseenko 2019
     </div>
 </footer>

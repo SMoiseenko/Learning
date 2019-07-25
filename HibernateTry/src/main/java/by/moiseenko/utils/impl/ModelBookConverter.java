@@ -1,4 +1,4 @@
-package by.moiseenko.utils;
+package by.moiseenko.utils.impl;
 
 import by.moiseenko.entity.Author;
 import by.moiseenko.entity.Book;

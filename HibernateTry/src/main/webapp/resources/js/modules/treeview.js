@@ -27,13 +27,15 @@
         var $pointer = $this.children('.fa-angle-right');
         $this.toggleClass('open');
         $pointer.toggleClass('down');
-        !$target.hasClass('active') ? $target.addClass('active').slideDown() : $target.removeClass('active').slideUp();
+        !$target.hasClass('active') ? $target.addClass('active').slideDown()
+            : $target.removeClass('active').slideUp();
         return false;
       });
       $elements.off('click');
       $elements.on('click', function () {
         var $this = $(this);
-        $this.hasClass('opened') ? $this.removeClass('opened') : ($elements.removeClass('opened'), $this.addClass('opened'));
+        $this.hasClass('opened') ? $this.removeClass('opened')
+            : ($elements.removeClass('opened'), $this.addClass('opened'));
       });
     }
 
@@ -53,14 +55,16 @@
         $pointerPlus.addClass('fa-minus-circle');
         $pointerMinus.removeClass('fa-minus-circle');
         $pointerMinus.addClass('fa-plus-circle');
-        !$target.hasClass('active') ? $target.addClass('active').slideDown() : $target.removeClass('active').slideUp();
+        !$target.hasClass('active') ? $target.addClass('active').slideDown()
+            : $target.removeClass('active').slideUp();
       });
 
       _$elements.off('click');
 
       _$elements.on('click', function () {
         var $this = $(this);
-        $this.hasClass('opened') ? _$elements.removeClass('opened') : (_$elements.removeClass('opened'), $this.addClass('opened'));
+        $this.hasClass('opened') ? _$elements.removeClass('opened')
+            : (_$elements.removeClass('opened'), $this.addClass('opened'));
       });
     }
   };

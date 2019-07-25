@@ -25,8 +25,7 @@ public class AuthorDAOImpl implements AuthorDAO {
   private MySessionFactory sessionFactory;
 
   @Autowired
-  public AuthorDAOImpl(
-      @Qualifier("hibernateSessionFactoryJBoss") MySessionFactory sessionFactory) {
+  public AuthorDAOImpl(@Qualifier("hibernateSessionFactoryJBoss") MySessionFactory sessionFactory) {
     this.sessionFactory = sessionFactory;
   }
 

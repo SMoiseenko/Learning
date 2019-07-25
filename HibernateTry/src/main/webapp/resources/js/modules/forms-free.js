@@ -3,16 +3,19 @@
 var _this = void 0;
 
 (function ($) {
-  var inputSelector = "".concat(['text', 'password', 'email', 'url', 'tel', 'number', 'search', 'search-md'].map(function (selector) {
-    return "input[type=".concat(selector, "]");
-  }).join(', '), ", textarea");
+  var inputSelector = "".concat(
+      ['text', 'password', 'email', 'url', 'tel', 'number', 'search',
+        'search-md'].map(function (selector) {
+        return "input[type=".concat(selector, "]");
+      }).join(', '), ", textarea");
   var textAreaSelector = '.materialize-textarea';
 
   var updateTextFields = function updateTextFields($input) {
     var $labelAndIcon = $input.siblings('label, i');
     var hasValue = $input.val().length;
     var hasPlaceholder = $input.attr('placeholder');
-    var addOrRemove = "".concat(hasValue || hasPlaceholder ? 'add' : 'remove', "Class");
+    var addOrRemove = "".concat(hasValue || hasPlaceholder ? 'add' : 'remove',
+        "Class");
     $labelAndIcon[addOrRemove]('active');
   };
 
@@ -62,7 +65,8 @@ var _this = void 0;
       $hiddenDiv.html(content); // When textarea is hidden, width goes crazy.
       // Approximate with half of window size
 
-      $hiddenDiv.css('width', $textarea.is(':visible') ? $textarea.width() : $(window).width() / 2);
+      $hiddenDiv.css('width',
+          $textarea.is(':visible') ? $textarea.width() : $(window).width() / 2);
       $textarea.css('height', $hiddenDiv.height());
     }
   };
@@ -103,15 +107,16 @@ var _this = void 0;
 
     if ($formReset.is('form')) {
       var $formInputs = $formReset.find(inputSelector);
-      $formInputs.removeClass('valid').removeClass('invalid').each(function (index, input) {
-        var $this = $(input);
-        var noDefaultValue = !$this.val();
-        var noPlaceholder = !$this.attr('placeholder');
+      $formInputs.removeClass('valid').removeClass('invalid').each(
+          function (index, input) {
+            var $this = $(input);
+            var noDefaultValue = !$this.val();
+            var noPlaceholder = !$this.attr('placeholder');
 
-        if (noDefaultValue && noPlaceholder) {
-          $this.siblings('label, i').removeClass('active');
-        }
-      });
+            if (noDefaultValue && noPlaceholder) {
+              $this.siblings('label, i').removeClass('active');
+            }
+          });
       $formReset.find('select.initialized').each(function (index, select) {
         var $select = $(select);
         var $visibleInput = $select.siblings('input.select-dropdown');

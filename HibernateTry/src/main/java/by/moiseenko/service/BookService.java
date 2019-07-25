@@ -10,6 +10,5 @@ import by.moiseenko.entity.modelentity.BookModel;
  */
 public interface BookService {
 
-  Book createBook (BookModel bookModel);
-
+  Book createBook(BookModel bookModel);
 }

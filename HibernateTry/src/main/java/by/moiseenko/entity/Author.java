@@ -12,8 +12,6 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import org.hibernate.annotations.NamedQueries;
-import org.hibernate.annotations.NamedQuery;
 
 /**
  * Default javadoc
@@ -32,7 +30,7 @@ public class Author extends by.moiseenko.entity.Entity {
 
   public Author() {}
 
-  public Author(Long id){
+  public Author(Long id) {
     super(id);
   }
 
@@ -55,9 +53,7 @@ public class Author extends by.moiseenko.entity.Entity {
     this.countryOfBorn = countryOfBorn;
   }
 
-  @ManyToMany(
-      fetch = FetchType.EAGER,
-      cascade = CascadeType.ALL)
+  @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
   @JoinTable(
       name = "BOOKS_AUTHORS",
       joinColumns = @JoinColumn(name = "author_id"),

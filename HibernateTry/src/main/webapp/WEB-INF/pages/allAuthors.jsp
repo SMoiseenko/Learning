@@ -11,6 +11,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>All Authors</title>
     <%@include file="fragments/style.jsp" %>
     <script type="text/javascript"
@@ -33,7 +36,8 @@
 <div class="container">
     <%@include file="fragments/navbar.jsp" %>
     <h1 style="text-align: center">Table of All Authors</h1>
-    <table class="table table-striped table-bordered table-sm" id="tableAllAuthors">
+    <table class="table table-striped table-bordered table-sm" id="tableAllAuthors"
+           style="width: 100%">
         <thead>
         <tr>
             <th class="th-sm">Id</th>
@@ -42,8 +46,8 @@
             <th class="th-sm">Books</th>
         </tr>
         </thead>
+        <tbody>
         <c:forEach items="${authorList}" var="authors">
-            <tbody>
             <tr>
                 <td>
                     <a href="${pageContext.request.contextPath}/editAuthor/${authors.id}">${authors.id}</a>
@@ -55,8 +59,8 @@
                     <br></c:forEach>
                 </td>
             </tr>
-            </tbody>
         </c:forEach>
+        </tbody>
         <tfoot>
         <tr>
             <th>Id</th>
@@ -66,8 +70,9 @@
         </tr>
         </tfoot>
     </table>
+    <%@ include file="fragments/footer.jsp" %>
 </div>
-<%@ include file="fragments/footer.jsp" %>
+
 <script>
   $(document).ready(function () {
     $('#tableAllAuthors').DataTable({
