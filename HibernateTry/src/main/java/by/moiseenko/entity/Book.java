@@ -1,6 +1,7 @@
 package by.moiseenko.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Objects;
 import javax.persistence.CascadeType;
@@ -23,6 +24,7 @@ public class Book extends by.moiseenko.entity.Entity {
   private static final long serialVersionUID = 3781414159550984179L;
   private String name;
   private YearOfPublish yearOfPublish;
+  private BigDecimal price;
   @JsonIgnore private List<Author> authorsList;
 
   public Book() {}
@@ -46,6 +48,20 @@ public class Book extends by.moiseenko.entity.Entity {
     this.yearOfPublish = yearOfPublish;
   }
 
+  @Column(
+      name = "price",
+      nullable = false,
+      length = 10,
+      precision = 2,
+      columnDefinition = "decimal(10,2) DEFAULT '0.00'")
+  public BigDecimal getPrice() {
+    return price;
+  }
+
+  public void setPrice(BigDecimal price) {
+    this.price = price;
+  }
+
   @ManyToMany(mappedBy = "booksList")
   public List<Author> getAuthorsList() {
     return authorsList;
@@ -66,12 +82,13 @@ public class Book extends by.moiseenko.entity.Entity {
     Book book = (Book) o;
     return Objects.equals(id, book.id)
         && Objects.equals(name, book.name)
-        && Objects.equals(yearOfPublish, book.yearOfPublish);
+        && Objects.equals(yearOfPublish, book.yearOfPublish)
+        && Objects.equals(price, book.price);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, yearOfPublish);
+    return Objects.hash(id, name, yearOfPublish, price);
   }
 
   @Override
@@ -84,6 +101,8 @@ public class Book extends by.moiseenko.entity.Entity {
         + '\''
         + ", yearOfPublish="
         + yearOfPublish
+        + ", price="
+        + price
         + '}';
   }
 }

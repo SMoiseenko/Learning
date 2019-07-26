@@ -21,7 +21,8 @@
     </style>
 </head>
 <body>
-<div style="height: 100vh">
+<div class="bg">
+<div style="height: 94.4vh">
     <div class="flex-center flex-column">
         <div class="row">
             <div class="col">
@@ -53,6 +54,6 @@
     </div>
     <%@include file="fragments/footer.jsp" %>
 </div>
-
+</div>
 </body>
 </html>

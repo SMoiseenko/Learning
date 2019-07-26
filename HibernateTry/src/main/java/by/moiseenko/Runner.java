@@ -1,17 +1,12 @@
 package by.moiseenko;
 
 import by.moiseenko.configuration.SpringConfig;
-import by.moiseenko.entity.Book;
-import by.moiseenko.entity.YearOfPublish;
 import by.moiseenko.repository.impl.CriteriaExamples;
 import by.moiseenko.repository.impl.QueryExamples;
 import by.moiseenko.utils.MySessionFactory;
 import by.moiseenko.utils.impl.HibernateSessionFactoryUtil;
-import java.time.LocalDate;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
@@ -45,33 +40,38 @@ public class Runner {
     QueryExamples queryExamples = context.getBean(QueryExamples.class);
     CriteriaExamples criteriaExamples = context.getBean(CriteriaExamples.class);
 
-    Session session = sessionFactory.getSessionFactory().openSession();
+    BigDecimal maxPrice = new BigDecimal("1000.00");
+    criteriaExamples.bookWithPriceLess(maxPrice).forEach(System.out::println);
+    LOG.debug("************");
+    Long minPopulation = 1_000_000_000L;
+    queryExamples.getCountriesWithPopulationsMore(minPopulation).forEach(c->System.out.println(ANSI_CYAN+c+ANSI_RESET));
 
-    LocalDate thisDate = LocalDate.parse("1987-03-20");
-    boolean sortBy = true;
-    List<LocalDate> result = queryExamples.findDatesLessThan(session, thisDate, sortBy);
-    result.forEach(d -> System.out.println(ANSI_BLUE + d + ANSI_RESET));
-
-    Long qtyBooks = queryExamples.calculateRawsInTable(session, Book.class);
-    System.out.println(ANSI_BLUE + qtyBooks + " raws in Books table by HQL" + ANSI_RESET);
-
-    LocalDate fromDate = LocalDate.parse("1950-01-01");
-    LocalDate tillDate = LocalDate.parse("1959-12-31");
-
-    Map<String, LocalDate> bookYearMap =
-        queryExamples.returnMapBookYearBetweenTwoDates(session, fromDate, tillDate);
-    Set<Entry<String, LocalDate>> entrySet = bookYearMap.entrySet();
-    entrySet.forEach(
-        es ->
-            System.out.printf(
-                (ANSI_PURPLE + "KEY = %s, VALUE = %s\n" + ANSI_RESET), es.getKey(), es.getValue()));
-
-    Map<String, YearOfPublish> bookYearOfPublishMap =
-        criteriaExamples.getMapBookYearOfPublishBetween(session, fromDate, tillDate);
-    Set<Entry<String, YearOfPublish>> entrySet1 = bookYearOfPublishMap.entrySet();
-    entrySet1.forEach(
-        o ->
-            System.out.printf(
-                ANSI_BLUE + "BOOK = %s, YEAR = %S\n", o.getKey(), o.getValue() + ANSI_RESET));
+    //    LocalDate thisDate = LocalDate.parse("1987-03-20");
+    //    boolean sortBy = true;
+    //    List<LocalDate> result = queryExamples.findDatesLessThan(thisDate, sortBy);
+    //    result.forEach(d -> System.out.println(ANSI_BLUE + d + ANSI_RESET));
+    //
+    //    Long qtyBooks = queryExamples.calculateRawsInTable(Book.class);
+    //    System.out.println(ANSI_BLUE + qtyBooks + " raws in Books table by HQL" + ANSI_RESET);
+    //
+    //    LocalDate fromDate = LocalDate.parse("1950-01-01");
+    //    LocalDate tillDate = LocalDate.parse("1959-12-31");
+    //
+    //    Map<String, LocalDate> bookYearMap =
+    //        queryExamples.returnMapBookYearBetweenTwoDates( fromDate, tillDate);
+    //    Set<Entry<String, LocalDate>> entrySet = bookYearMap.entrySet();
+    //    entrySet.forEach(
+    //        es ->
+    //            System.out.printf(
+    //                (ANSI_PURPLE + "KEY = %s, VALUE = %s\n" + ANSI_RESET), es.getKey(),
+    // es.getValue()));
+    //
+    //    Map<String, YearOfPublish> bookYearOfPublishMap =
+    //        criteriaExamples.getMapBookYearOfPublishBetween( fromDate, tillDate);
+    //    Set<Entry<String, YearOfPublish>> entrySet1 = bookYearOfPublishMap.entrySet();
+    //    entrySet1.forEach(
+    //        o ->
+    //            System.out.printf(
+    //                ANSI_BLUE + "BOOK = %s, YEAR = %S\n", o.getKey(), o.getValue() + ANSI_RESET));
   }
 }

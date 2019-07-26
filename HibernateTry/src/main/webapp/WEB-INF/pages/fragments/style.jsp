@@ -8,6 +8,6 @@
 <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/resources/css/mdb.min.css" rel="stylesheet">
-<%--<link href="${pageContext.request.contextPath}/resources/css/my_style.css" rel="stylesheet">--%>
+<link href="${pageContext.request.contextPath}/resources/css/my_style.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/resources/css/addons/datatables.min.css"
       rel="stylesheet">
