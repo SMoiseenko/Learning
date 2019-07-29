@@ -22,6 +22,10 @@ public class Country extends by.moiseenko.entity.Entity {
 
   public Country() {}
 
+  public Country(String name) {
+    this.name = name;
+  }
+
   @Column(name = "country", length = 30, unique = true, nullable = false)
   public String getName() {
     return name;
@@ -61,6 +65,6 @@ public class Country extends by.moiseenko.entity.Entity {
 
   @Override
   public String toString() {
-    return "Country{" + "id=" + id + "name=" + name + ", population=" + population + '}';
+    return "Country{" + "id=" + id + ", name=" + name + ", population=" + population + '}';
   }
 }

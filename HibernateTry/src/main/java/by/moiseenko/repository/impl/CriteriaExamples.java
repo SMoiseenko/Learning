@@ -54,12 +54,14 @@ public class CriteriaExamples {
   }
 
   public List<Book> bookWithPriceLess(BigDecimal maxPrice) {
-
-    return openSession()
+    Session session = openSession();
+    List<Book> result = session
         .createCriteria(Book.class)
         .add(Restrictions.le("price", maxPrice))
         .addOrder(Order.desc("price"))
         .list();
+    session.close();
+    return result;
   }
 
   private Session openSession() {

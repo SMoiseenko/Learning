@@ -41,7 +41,7 @@ public class AuthorDAOImpl implements AuthorDAO {
   @Override
   public List<Author> getAllAuthors() {
     Session session = sessionFactory.getSessionFactory().openSession();
-    List<Author> result = session.createQuery("from Author", Author.class).list();
+    List<Author> result = session.createQuery("select a from Author a left join fetch a.countryOfBorn left join fetch a.booksList", Author.class).list();
     session.close();
     return result;
   }
@@ -49,7 +49,7 @@ public class AuthorDAOImpl implements AuthorDAO {
   @Override
   public Author findAuthorById(Long id) {
     Session session = sessionFactory.getSessionFactory().openSession();
-    Author result = session.get(Author.class, id);
+    Author result = (Author) session.createQuery("select a from Author a left join fetch a.countryOfBorn where a.id =: idParam").setParameter("idParam", id).uniqueResult();
     session.close();
     return result;
   }

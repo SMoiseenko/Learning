@@ -43,7 +43,7 @@ public class Author extends by.moiseenko.entity.Entity {
     this.name = name;
   }
 
-  @ManyToOne(cascade = CascadeType.ALL)
+  @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
   @JoinColumn(name = "country_id")
   public Country getCountryOfBorn() {
     return countryOfBorn;
@@ -53,7 +53,7 @@ public class Author extends by.moiseenko.entity.Entity {
     this.countryOfBorn = countryOfBorn;
   }
 
-  @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+  @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
   @JoinTable(
       name = "BOOKS_AUTHORS",
       joinColumns = @JoinColumn(name = "author_id"),

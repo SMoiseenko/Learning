@@ -1,12 +1,16 @@
 package by.moiseenko.repository.impl;
 
+import by.moiseenko.entity.Author;
 import by.moiseenko.entity.Country;
 import by.moiseenko.entity.Entity;
 import by.moiseenko.utils.MySessionFactory;
 import java.time.LocalDate;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import javax.persistence.Query;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -14,6 +18,7 @@ import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import org.springframework.util.Assert;
 
 /**
  * Default javadoc
@@ -63,10 +68,22 @@ public class QueryExamples {
   }
 
   public List<Country> getCountriesWithPopulationsMore(Long minPopulation){
-    return openSession().createNamedQuery("selectWithPopulationsMoreThan",Country.class).setParameter("minPop", minPopulation).list();
+    Session session = openSession();
+    List<Country> result = session.createNamedQuery("selectWithPopulationsMoreThan",Country.class).setParameter("minPop", minPopulation).list();
+    session.close();
+    return result;
+  }
+
+  public Set<Author> getAuthorsFromCountry(Country country){
+    Assert.notNull(country, country.toString());
+    Session session = openSession();
+    List<Author> authorList = session.createQuery("FROM Author a left join fetch a.countryOfBorn WHERE a.countryOfBorn.name=: countryName order by a.id", Author.class).setParameter("countryName", country.getName()).list();
+    session.close();
+    return new LinkedHashSet<>(authorList);
   }
 
   private Session openSession() {
     return sessionFactory.getSessionFactory().openSession();
   }
+
 }

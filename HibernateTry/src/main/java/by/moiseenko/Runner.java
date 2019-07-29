@@ -1,12 +1,18 @@
 package by.moiseenko;
 
 import by.moiseenko.configuration.SpringConfig;
+import by.moiseenko.entity.Author;
+import by.moiseenko.entity.Country;
+import by.moiseenko.repository.AuthorDAO;
+import by.moiseenko.repository.impl.AuthorDAOImpl;
 import by.moiseenko.repository.impl.CriteriaExamples;
 import by.moiseenko.repository.impl.QueryExamples;
 import by.moiseenko.utils.MySessionFactory;
 import by.moiseenko.utils.impl.HibernateSessionFactoryUtil;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.List;
+import java.util.Set;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
@@ -45,6 +51,13 @@ public class Runner {
     LOG.debug("************");
     Long minPopulation = 1_000_000_000L;
     queryExamples.getCountriesWithPopulationsMore(minPopulation).forEach(c->System.out.println(ANSI_CYAN+c+ANSI_RESET));
+
+    Set<Author> authorsFromCountry = queryExamples.getAuthorsFromCountry(new Country("Russia"));
+    authorsFromCountry.forEach(c->System.out.println(ANSI_YELLOW+c+ANSI_RESET));
+
+    AuthorDAO authorDAO = context.getBean(AuthorDAOImpl.class);
+    List<Author> authorListWithCountries = authorDAO.getAllAuthors();
+    authorListWithCountries.forEach(a-> System.out.println(a.getId() + " - " + a.getName() + " - " + a.getCountryOfBorn().getName()));
 
     //    LocalDate thisDate = LocalDate.parse("1987-03-20");
     //    boolean sortBy = true;
