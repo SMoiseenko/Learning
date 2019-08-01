@@ -28,7 +28,7 @@ public class HibernateSessionFactoryJBoss implements MySessionFactory {
       sessionFactory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
     } catch (Exception e) {
       StandardServiceRegistryBuilder.destroy(registry);
-      throw new ExceptionInInitializerError("Initial SessionFactory faild" + e);
+      throw new ExceptionInInitializerError("Initial SessionFactory failed" + e);
     }
     return sessionFactory;
   }

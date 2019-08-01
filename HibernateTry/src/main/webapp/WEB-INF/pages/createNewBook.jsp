@@ -35,6 +35,10 @@ To change this template use File | Settings | File Templates.
                     <form:input path="yearOfPublish" class="form-control" type="date"/>
                 </div>
                 <div class="form-group">
+                    <form:label path="price"><b>Price, BYN</b></form:label>
+                    <form:input path="price" class="form-control" type="number" min="0.01" max = "2000" step="0.01"/>
+                </div>
+                <div class="form-group">
                     <form:label path="listAuthorsId"><b>Chose Author(s):</b></form:label>
                     <form:select class="form-control" path="listAuthorsId">
                         <c:forEach items="${allAuthors}" var="author">

@@ -4,6 +4,7 @@ import by.moiseenko.entity.Author;
 import by.moiseenko.entity.Book;
 import by.moiseenko.entity.YearOfPublish;
 import by.moiseenko.entity.modelentity.BookModel;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +29,7 @@ public class ModelBookConverter {
     List<Author> authors = new ArrayList<>();
     bookModel.getListAuthorsId().forEach((id) -> authors.add(new Author(Long.valueOf(id))));
     book.setAuthorsList(authors);
+    book.setPrice(new BigDecimal(bookModel.getPrice()));
     return book;
   }
 }

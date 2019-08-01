@@ -14,6 +14,7 @@ public class BookModel {
 
   private String name;
   private String yearOfPublish;
+  private String price;
   private List<String> listAuthorsId;
 
   public BookModel() {}
@@ -34,6 +35,14 @@ public class BookModel {
     this.yearOfPublish = yearOfPublish;
   }
 
+  public String getPrice() {
+    return price;
+  }
+
+  public void setPrice(String price) {
+    this.price = price;
+  }
+
   public List<String> getListAuthorsId() {
     return listAuthorsId;
   }
@@ -50,6 +59,9 @@ public class BookModel {
         + '\''
         + ", yearOfPublish='"
         + yearOfPublish
+        + '\''
+        + ", price='"
+        + price
         + '\''
         + ", listAuthorsId="
         + listAuthorsId

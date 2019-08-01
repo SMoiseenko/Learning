@@ -6,6 +6,7 @@ import by.moiseenko.entity.Country;
 import by.moiseenko.repository.AuthorDAO;
 import by.moiseenko.repository.impl.AuthorDAOImpl;
 import by.moiseenko.repository.impl.CriteriaExamples;
+import by.moiseenko.repository.impl.JPACriteriaExample;
 import by.moiseenko.repository.impl.QueryExamples;
 import by.moiseenko.utils.MySessionFactory;
 import by.moiseenko.utils.impl.HibernateSessionFactoryUtil;
@@ -45,6 +46,7 @@ public class Runner {
     MySessionFactory sessionFactory = context.getBean(HibernateSessionFactoryUtil.class);
     QueryExamples queryExamples = context.getBean(QueryExamples.class);
     CriteriaExamples criteriaExamples = context.getBean(CriteriaExamples.class);
+    JPACriteriaExample jpaCriteriaExample = context.getBean(JPACriteriaExample.class);
 
     BigDecimal maxPrice = new BigDecimal("1000.00");
     criteriaExamples.bookWithPriceLess(maxPrice).forEach(System.out::println);
@@ -58,6 +60,10 @@ public class Runner {
     AuthorDAO authorDAO = context.getBean(AuthorDAOImpl.class);
     List<Author> authorListWithCountries = authorDAO.getAllAuthors();
     authorListWithCountries.forEach(a-> System.out.println(a.getId() + " - " + a.getName() + " - " + a.getCountryOfBorn().getName()));
+
+    jpaCriteriaExample
+        .getAllCountries()
+        .forEach(s -> System.out.println(ANSI_CYAN + s.getName() + ANSI_RESET));
 
     //    LocalDate thisDate = LocalDate.parse("1987-03-20");
     //    boolean sortBy = true;

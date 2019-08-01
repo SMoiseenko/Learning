@@ -3,6 +3,7 @@ package by.moiseenko.entity;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import java.util.List;
 import java.util.Objects;
+import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -43,7 +44,7 @@ public class Author extends by.moiseenko.entity.Entity {
     this.name = name;
   }
 
-  @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+  @ManyToOne(optional = false, cascade = CascadeType.ALL)
   @JoinColumn(name = "country_id")
   public Country getCountryOfBorn() {
     return countryOfBorn;
@@ -53,7 +54,7 @@ public class Author extends by.moiseenko.entity.Entity {
     this.countryOfBorn = countryOfBorn;
   }
 
-  @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+  @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
   @JoinTable(
       name = "BOOKS_AUTHORS",
       joinColumns = @JoinColumn(name = "author_id"),

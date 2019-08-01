@@ -41,7 +41,7 @@ public class AuthorDAOImpl implements AuthorDAO {
   @Override
   public List<Author> getAllAuthors() {
     Session session = sessionFactory.getSessionFactory().openSession();
-    List<Author> result = session.createQuery("select a from Author a left join fetch a.countryOfBorn left join fetch a.booksList", Author.class).list();
+    List<Author> result = session.createQuery("select distinct a from Author a left join fetch a.countryOfBorn left join fetch a.booksList", Author.class).list();
     session.close();
     return result;
   }

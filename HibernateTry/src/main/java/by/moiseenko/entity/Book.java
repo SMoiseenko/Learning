@@ -38,7 +38,7 @@ public class Book extends by.moiseenko.entity.Entity {
     this.name = name;
   }
 
-  @ManyToOne(optional = false, cascade = CascadeType.ALL)
+  @ManyToOne
   @JoinColumn(name = "year_id")
   public YearOfPublish getYearOfPublish() {
     return yearOfPublish;
