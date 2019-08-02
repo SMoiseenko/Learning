@@ -7,6 +7,9 @@
   <groupId>by.moiseenko</groupId>
   <artifactId>HibernateTry</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <name>Hibernate Try</name>
+  <description>Small example of web project with spring anf hibernate</description>
+  <url>https://github.com/S/Moiseenko</url>
   <packaging>war</packaging>
 
   <properties>
@@ -22,7 +25,7 @@
     <spring.version>5.1.8.RELEASE</spring.version>
     <hibernate.version>5.4.3.Final</hibernate.version>
     <jstl.version>1.2</jstl.version>
-    <jackson.version>2.9.9</jackson.version>
+     <jackson.version>2.9.9.2</jackson.version>
 
   </properties>
   <dependencies>
