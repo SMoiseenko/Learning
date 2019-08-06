@@ -22,19 +22,20 @@ public class Runner {
 
   public static void main(String[] args) throws Exception {
     final SocketExample se = new SocketExample();
-    new Thread(
-            () -> {
-              try {
-                se.serverSide("WTF???");
-              } catch (IOException e) {
-                e.printStackTrace();
-              }
-            })
-        .start();
+    //    new Thread(
+    //            () -> {
+    //              try {
+    //                se.serverSide("WTF???");
+    //              } catch (IOException e) {
+    //                e.printStackTrace();
+    //              }
+    //            })
+    //        .start();
 
     new Thread(
             () -> {
               try {
+                System.out.println("You can send 5 messages.");
                 se.clientSide();
               } catch (IOException e) {
                 e.printStackTrace();
