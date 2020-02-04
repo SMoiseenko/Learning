@@ -1,22 +1,25 @@
-package by.moiseenko.fabric_method;
+package by.moiseenko;
 
 import by.moiseenko.fabric_method.creator.AmericanStyleCoffeeShop;
 import by.moiseenko.fabric_method.creator.CoffeeShop;
 import by.moiseenko.fabric_method.product.CoffeeType;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * Default javadoc
  *
- * @author moiseenko-s
+ * @author s-moiseenko
  */
-public class Runner {
+public class TestFabricMethod {
 
-  private static final Logger LOG = LogManager.getLogger(Runner.class.getName());
+  @Test
+  void testFabricMethod() {
 
-  public static void main(String[] args) {
     CoffeeShop americanStyleCS = new AmericanStyleCoffeeShop();
     americanStyleCS.sellCoffee(CoffeeType.ESPRESSO);//
+    Assertions.assertEquals(1, 1);
   }
+
+
 }
