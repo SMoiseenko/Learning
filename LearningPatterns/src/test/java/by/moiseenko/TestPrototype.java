@@ -2,10 +2,10 @@ package by.moiseenko;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import by.moiseenko.prototype.Dog;
-import by.moiseenko.prototype.Gender;
-import by.moiseenko.prototype.Rabbit;
-import by.moiseenko.prototype.RabbitBuilder;
+import by.moiseenko.creational.prototype.Dog;
+import by.moiseenko.creational.prototype.Gender;
+import by.moiseenko.creational.prototype.Rabbit;
+import by.moiseenko.creational.prototype.RabbitBuilder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
@@ -65,11 +65,11 @@ public class TestPrototype {
     rabbitBuilder.setCharacteristic("15");
     Rabbit rabbit = rabbitBuilder.makeRabbit();
 
-    Rabbit rabbitOld = (Rabbit)rabbit.clone();
+    Rabbit rabbitOld = (Rabbit) rabbit.clone();
     rabbitOld.setAge(99);
 
     LOG.debug("Yang rabbit: " + rabbit);
     LOG.debug("Old rabbit: " + rabbitOld);
-    assertEquals(1,1);
+    assertEquals(1, 1);
   }
 }

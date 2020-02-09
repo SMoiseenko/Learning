@@ -1,8 +1,8 @@
 package by.moiseenko;
 
-import by.moiseenko.fabric_method.creator.AmericanStyleCoffeeShop;
-import by.moiseenko.fabric_method.creator.CoffeeShop;
-import by.moiseenko.fabric_method.product.CoffeeType;
+import by.moiseenko.creational.fabric_method.creator.AmericanStyleCoffeeShop;
+import by.moiseenko.creational.fabric_method.creator.CoffeeShop;
+import by.moiseenko.creational.fabric_method.product.CoffeeType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

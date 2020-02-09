@@ -1,10 +1,10 @@
 package by.moiseenko;
 
-import by.moiseenko.builder.CookDirector;
-import by.moiseenko.builder.HotDog;
-import by.moiseenko.builder.HotDogCook;
-import by.moiseenko.builder.Salad;
-import by.moiseenko.builder.SaladCook;
+import by.moiseenko.creational.builder.CookDirector;
+import by.moiseenko.creational.builder.HotDog;
+import by.moiseenko.creational.builder.HotDogCook;
+import by.moiseenko.creational.builder.Salad;
+import by.moiseenko.creational.builder.SaladCook;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
@@ -32,7 +32,7 @@ public class TestBuilder {
     HotDogCook hdCook = new HotDogCook();
     HotDog hotDog = director.makeHotDog(hdCook);
     LOG.debug(hotDog.toString());
-    Assertions.assertEquals(1,1);
+    Assertions.assertEquals(1, 1);
   }
 
 

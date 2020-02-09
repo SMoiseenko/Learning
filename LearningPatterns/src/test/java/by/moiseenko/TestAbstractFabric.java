@@ -1,7 +1,7 @@
 package by.moiseenko;
 
-import by.moiseenko.abstract_fabric.creator.Kitchener;
-import by.moiseenko.abstract_fabric.creator.VeganKitchener;
+import by.moiseenko.creational.abstract_fabric.creator.Kitchener;
+import by.moiseenko.creational.abstract_fabric.creator.VeganKitchener;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -13,10 +13,10 @@ import org.junit.jupiter.api.Test;
 public class TestAbstractFabric {
 
   @Test
-  void testAbstractFabric(){
+  void testAbstractFabric() {
     Kitchener kitchener = new VeganKitchener();
     kitchener.getTypeOfCook().prepareFood(kitchener.getFood());
-    Assertions.assertEquals(1,1);
+    Assertions.assertEquals(1, 1);
   }
 
 }
