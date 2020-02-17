@@ -7,11 +7,11 @@ package by.moiseenko.behavioral.command;
  */
 public abstract class Command {
 
- protected String param;
+  protected String param;
   protected Executor executor;
   protected String textBackup;
 
-  public Command(Executor executor,String param) {
+  public Command(Executor executor, String param) {
     this.param = param;
     this.executor = executor;
   }
@@ -20,7 +20,7 @@ public abstract class Command {
     textBackup = executor.getText();
   }
 
-  protected void restoreBackup(){
+  protected void restoreBackup() {
     executor.setText(textBackup);
   }
 

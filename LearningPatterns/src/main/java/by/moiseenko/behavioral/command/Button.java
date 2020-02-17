@@ -20,4 +20,5 @@ public class Button {
   public void push(){
     command.execute();
   }
+
 }
