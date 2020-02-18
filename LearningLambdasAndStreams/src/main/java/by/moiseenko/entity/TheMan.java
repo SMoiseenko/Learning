@@ -10,7 +10,7 @@ import org.apache.logging.log4j.Logger;
  *
  * @author moiseenko-s
  */
-public class TheMan implements Name, Person {
+public class TheMan implements Name, Person, Comparable<TheMan> {
 
   private static final Logger LOG = LogManager.getLogger(TheMan.class.getName());
   private String name;
@@ -20,7 +20,19 @@ public class TheMan implements Name, Person {
   }
 
   @Override
+  public int compareTo(TheMan o) {
+    return this.name.compareTo(o.name);
+  }
+
+  @Override
   public String getName() {
     return Person.super.getName();
+  }
+
+  @Override
+  public String toString() {
+    return "TheMan{" +
+        "name='" + name + '\'' +
+        '}';
   }
 }
