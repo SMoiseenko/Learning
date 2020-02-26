@@ -26,7 +26,11 @@ public class TheMan implements Name, Person, Comparable<TheMan> {
 
   @Override
   public String getName() {
-    return Person.super.getName();
+    return this.name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
   }
 
   @Override
