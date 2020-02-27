@@ -14,10 +14,11 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-    <mcp.version>3.8.0</mcp.version>
-    <testng.version>6.14.3</testng.version>
-    <log4j.version>2.11.1</log4j.version>
-    <java.version>11</java.version>
+    <mcp.version>3.8.1</mcp.version>
+    <msp.version>3.0.0-M4</msp.version>
+    <junit.version>5.6.0</junit.version>
+    <log4j.version>2.13.0</log4j.version>
+    <java.version>13</java.version>
   <!--
   <jackson.version>2.10.0</jackson.version>
   -->
@@ -30,9 +31,9 @@
       <version>${log4j.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.testng</groupId>
-      <artifactId>testng</artifactId>
-      <version>${testng.version}</version>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
     <!--
@@ -56,34 +57,22 @@
         <version>${mcp.version}</version>
         <configuration>
           <release>${java.version}</release>
+          <compilerArgs>
+            <arg>--enable-preview</arg>
+          </compilerArgs>
           <source>${java.version}</source>
           <target>${java.version}</target>
         </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-            <configuration>
-              <archive>
-                <manifest>
-                  <mainClass>
-                    by.moiseenko.Runner
-                  </mainClass>
-                </manifest>
-              </archive>
-              <descriptorRefs>
-                <descriptorRef>jar-with-dependencies</descriptorRef>
-              </descriptorRefs>
-            </configuration>
-          </execution>
-        </executions>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${msp.version}</version>
+        <configuration>
+          <argLine>--enable-preview</argLine>
+        </configuration>
       </plugin>
+
     </plugins>
   </build>
 
