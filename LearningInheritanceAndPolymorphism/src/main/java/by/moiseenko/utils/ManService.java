@@ -16,7 +16,7 @@ public class ManService {
 public void manHardChanger(Man man){
 
   try {
-    man = (Man)man.clone();
+    man = man.clone();
     man.setPassport((Passport) man.getPassport().clone());
   } catch (CloneNotSupportedException e) {
     e.printStackTrace();

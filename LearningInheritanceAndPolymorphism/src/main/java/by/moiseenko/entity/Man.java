@@ -9,7 +9,7 @@ import org.apache.logging.log4j.Logger;
  *
  * @author s-moiseenko
  */
-public class Man implements Cloneable{
+public class Man implements Cloneable {
 
   private static final Logger LOG = LogManager.getLogger(Man.class.getName());
 
@@ -66,10 +66,10 @@ public class Man implements Cloneable{
       return false;
     }
     Man man = (Man) o;
-    return getId() == man.getId() &&
-        getAge() == man.getAge() &&
-        getName().equals(man.getName()) &&
-        getPassport().equals(man.getPassport());
+    return getId() == man.getId()
+        && getAge() == man.getAge()
+        && getName().equals(man.getName())
+        && getPassport().equals(man.getPassport());
   }
 
   @Override
@@ -79,17 +79,22 @@ public class Man implements Cloneable{
 
   @Override
   public String toString() {
-    return "Man{" +
-        "id=" + id +
-        ", name='" + name + '\'' +
-        ", age=" + age +
-        ", passport=" + passport +
-        '}';
+    return getClass().getName()
+        + "{id="
+        + id
+        + ", name='"
+        + name
+        + '\''
+        + ", age="
+        + age
+        + ", passport="
+        + passport
+        + '}';
   }
 
   @Override
-  public Object clone() throws CloneNotSupportedException {
-    return super.clone();
+  public Man clone() throws CloneNotSupportedException {
+    return (Man)super.clone();
   }
 
   @Override
