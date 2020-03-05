@@ -9,7 +9,7 @@ import org.apache.logging.log4j.Logger;
  *
  * @author s-moiseenko
  */
-public class Man implements Cloneable {
+public class Man implements Cloneable, Mannable {
 
   private static final Logger LOG = LogManager.getLogger(Man.class.getName());
 
