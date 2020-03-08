@@ -35,4 +35,11 @@ public class Car {
   public void showData(int a){
     LOG.debug( a + " DATA FROM NON_STATIC METHOD WITH ONE ARGUMENT(MoCl)");
   }
+
+  @Override
+  public String toString() {
+    return "Car{" +
+        "doorsQty=" + doorsQty +
+        '}';
+  }
 }

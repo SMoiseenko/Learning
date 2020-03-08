@@ -135,7 +135,7 @@ public class Runner {
     Message<Short> message4 = new Message<>(((short) 128));
     Message m1 = new Message<>();
     Message<? super Float> m2 = new Message<Float>();
-    m2.setData(new Float(45f));
+    m2.setData(45f);
     m1 = message4;
     Short str1 = (Short) m1.getData();
     LOG.debug(str1);
