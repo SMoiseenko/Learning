@@ -16,11 +16,11 @@ public class DivideByZero {
     }
   }
 
-  public static void testMyExeption(int i) throws MyException {
-    throw new MyException("/TestMyExeption", i);
+  public static void testMyException(int i) throws MyException {
+    throw new MyException("/TestMyException", i);
   }
 
-  public static void testMyRuntimeExeption() {
+  public static void testMyRuntimeException() {
     throw new MyRuntimeException("/Text", new NullPointerException());
   }
 

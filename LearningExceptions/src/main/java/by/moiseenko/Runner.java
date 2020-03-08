@@ -3,13 +3,13 @@ package by.moiseenko;
 import by.moiseenko.entity.Person;
 import by.moiseenko.myException.MyException;
 import by.moiseenko.myException.MyRuntimeException;
-import org.apache.log4j.Logger;
-
 import java.util.Arrays;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Runner {
   private static StringBuilder nullString;
-  private static final Logger logger = Logger.getLogger(Runner.class);
+  private static final Logger logger = LogManager.getLogger(Runner.class);
 
   public static void main(String[] args) {
     int a = 1;
@@ -60,13 +60,13 @@ public class Runner {
     }
     System.out.println("***********************");
     try {
-      DivideByZero.testMyExeption(666);
+      DivideByZero.testMyException(666);
     } catch (MyException e) {
       e.printStackTrace();
     }
     System.out.println("***********************");
     try {
-      DivideByZero.testMyRuntimeExeption();
+      DivideByZero.testMyRuntimeException();
     } catch (MyRuntimeException e) {
       e.printStackTrace();
     }
