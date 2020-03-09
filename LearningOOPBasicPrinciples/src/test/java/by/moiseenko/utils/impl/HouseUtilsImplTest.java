@@ -6,8 +6,12 @@ import by.moiseenko.entity.HouseRepoType;
 import by.moiseenko.entity.MazdaCar;
 import by.moiseenko.entity.ParamClass;
 import by.moiseenko.utils.HouseUtils;
+import com.sun.jdi.IntegerType;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
+import java.util.function.Predicate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
@@ -71,7 +75,16 @@ public class HouseUtilsImplTest {
     mazdaCarList.replaceAll(c->new MazdaCar());
     mazdaCarList.forEach(LOG::debug);
     ParamClass.findByPredicate((ArrayList<? extends MazdaCar>) mazdaCarList, (car)->car.doorsQty==5);
+  }
 
+  @Test
+  void testCharSec(){
+    String[] strArray = {"Hello", "Seldom", "Night"};
 
+    Predicate<CharSequence> predicate = (o)->'S'==o.charAt(0);
+
+    Assertions.assertEquals(
+        'S', ParamClass.findChar(Arrays.asList(strArray), predicate));
   }
 }
+
