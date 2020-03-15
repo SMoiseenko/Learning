@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Configuration;
     })
 public class SpringConfig {
 
-  //  @Bean(name = "hibernateSessionBean", initMethod = "doInit")
+  //  @Bean(name = "hibernateSessionBean", initMethod = "getSessionFactory")
   //  public MySessionFactory mySessionFactory() {
   //    return new HibernateSessionFactoryUtil();
   //  }

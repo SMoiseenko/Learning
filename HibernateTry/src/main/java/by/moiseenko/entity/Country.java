@@ -13,7 +13,7 @@ import javax.persistence.Table;
  */
 @NamedQuery(name = "selectWithPopulationsMoreThan", query = "from Country c where c.population >=:minPop")
 @Entity
-@Table(name = "COUNTRY_OF_BORN")
+@Table(name = "country_of_born")
 public class Country extends by.moiseenko.entity.Entity {
 
   private static final long serialVersionUID = -6017042695623844090L;
@@ -35,7 +35,7 @@ public class Country extends by.moiseenko.entity.Entity {
     this.name = name;
   }
 
-  @Column(name = "population", columnDefinition = "bigint(20) unsigned DEFAULT '0'", nullable = false)
+ @Column(name = "population", columnDefinition = "bigint(20) unsigned DEFAULT '0'", nullable = false)
   public long getPopulation() {
     return population;
   }
@@ -55,16 +55,16 @@ public class Country extends by.moiseenko.entity.Entity {
     Country country = (Country) o;
     return Objects.equals(id, country.id)
         && Objects.equals(name, country.name)
-        && Objects.equals(population, country.population);
+      && Objects.equals(population, country.population);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, population);
+    return Objects.hash(id, name/*, population*/);
   }
 
   @Override
   public String toString() {
-    return "Country{" + "id=" + id + ", name=" + name + ", population=" + population + '}';
+    return "Country{" + "id=" + id + ", name=" + name + ", population=" + population +'}';
   }
 }
