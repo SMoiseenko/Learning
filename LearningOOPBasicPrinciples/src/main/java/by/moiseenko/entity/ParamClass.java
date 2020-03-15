@@ -33,13 +33,27 @@ public class ParamClass<T> {
     }
   }
 
-  public static void findByPredicate(ArrayList<? extends MazdaCar> carList,
-      Predicate<? super MazdaCar> filter) {
+  public static void findByPredicate(
+      ArrayList<? extends MazdaCar> carList, Predicate<? super MazdaCar> filter) {
     for (MazdaCar car : carList) {
       if (filter.test(car)) {
         LOG.debug(car);
       }
     }
+  }
+
+  public static char findChar(
+      List<? extends CharSequence> list, Predicate<? super CharSequence> filter) {
+    char result = 0;
+    for (CharSequence cs : list) {
+
+      if (filter.test(cs)) {
+        LOG.debug(cs);
+        result = cs.charAt(0);
+      }
+    }
+
+    return result;
   }
 
   public static <Z> List<Z> sortCollection(List<Z> list, Predicate<? super Z> filter) {
@@ -50,13 +64,10 @@ public class ParamClass<T> {
       }
     }
     return result;
-
   }
 
   @Override
   public String toString() {
-    return "ParamClass{" +
-        "param=" + param +
-        '}';
+    return "ParamClass{" + "param=" + param + '}';
   }
 }
