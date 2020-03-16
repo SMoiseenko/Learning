@@ -86,5 +86,10 @@ public class HouseUtilsImplTest {
     Assertions.assertEquals(
         'S', ParamClass.findChar(Arrays.asList(strArray), predicate));
   }
+
+  @Test
+  void testCalcSheets(){
+    Assertions.assertEquals(401, ParamClass.calcSheets(1095));
+  }
 }
 

@@ -56,6 +56,16 @@ public class ParamClass<T> {
     return result;
   }
 
+  public static int calcSheets(int qty){
+    int result = 0;
+    int page = 1;
+    while (result < qty) {
+      result += String.valueOf(page++).length();
+    } ;
+
+    return page-1;
+  }
+
   public static <Z> List<Z> sortCollection(List<Z> list, Predicate<? super Z> filter) {
     List<Z> result = new ArrayList<>();
     for (Z el : list) {
