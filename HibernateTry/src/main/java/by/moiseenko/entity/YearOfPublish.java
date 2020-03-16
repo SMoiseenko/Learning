@@ -12,7 +12,7 @@ import javax.persistence.Table;
  * @author moiseenko-s
  */
 @Entity
-@Table(name = "YEAR_OF_PUBLISHING")
+@Table(name = "year_of_publishing")
 public class YearOfPublish extends by.moiseenko.entity.Entity {
 
   private static final long serialVersionUID = -3019836780165173941L;

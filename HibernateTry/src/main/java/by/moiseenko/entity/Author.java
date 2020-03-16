@@ -20,7 +20,7 @@ import javax.persistence.Table;
  * @author moiseenko-s
  */
 @Entity
-@Table(name = "AUTHORS")
+@Table(name = "authors")
 @JsonRootName(value = "author")
 public class Author extends by.moiseenko.entity.Entity {
 
@@ -56,7 +56,7 @@ public class Author extends by.moiseenko.entity.Entity {
 
   @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
   @JoinTable(
-      name = "BOOKS_AUTHORS",
+      name = "books_authors",
       joinColumns = @JoinColumn(name = "author_id"),
       inverseJoinColumns = @JoinColumn(name = "book_id"))
   public List<Book> getBooksList() {

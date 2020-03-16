@@ -18,7 +18,7 @@ import javax.persistence.Table;
  * @author moiseenko-s
  */
 @Entity
-@Table(name = "BOOKS")
+@Table(name = "books")
 public class Book extends by.moiseenko.entity.Entity {
 
   private static final long serialVersionUID = 3781414159550984179L;

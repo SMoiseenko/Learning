@@ -4,13 +4,13 @@
   "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
   <session-factory>
-    <property name="connection.url">jdbc:mysql://localhost:3306/learning_jdbc</property>
-    <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-    <property name="connection.username">user</property>
-    <property name="connection.password">12345678</property>
+    <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/my_databases</property>
+    <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+    <property name="hibernate.connection.username">s_moiseenko</property>
+    <property name="hibernate.connection.password">12345678</property>
 
-    <property name="connection.pool_size">1</property>
-    <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+    <property name="connection.pool_size">5</property>
+    <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL10Dialect</property>
     <!--<property name="hibernate.hbm2ddl.auto">update</property>-->
 
     <mapping class="by.moiseenko.entity.Author"/>
