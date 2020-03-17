@@ -82,7 +82,7 @@ public class SetCollection {
 
       Comparator<Person> myComparator =
           new PersonNameComparator().thenComparing(new PersonAgeComparator());
-      NavigableSet<Person> myTreeSet = new TreeSet<>(myComparator);
+      NavigableSet<Person> myTreeSet = new TreeSet<>(Comparator.comparing(Person::getName).thenComparing(Person::getAge));
 
       myTreeSet.add(youngIvanov);
       myTreeSet.add(youngPetrov);
