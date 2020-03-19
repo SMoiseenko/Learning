@@ -19,10 +19,8 @@
     <junit.version>5.6.0</junit.version>
     <log4j.version>2.13.0</log4j.version>
     <java.version>13</java.version>
+    <jackson.version>2.10.3</jackson.version>
 
-    <!--
-    <jackson.version>2.10.0</jackson.version>
-    -->
   </properties>
   <dependencies>
     <dependency>
@@ -36,6 +34,12 @@
       <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>${jackson.version}</version>
+    </dependency>
+
   </dependencies>
   <build>
     <plugins>
