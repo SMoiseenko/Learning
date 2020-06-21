@@ -1,17 +1,21 @@
+/*
 package by.moiseenko.entity;
 
 import java.util.Objects;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+*/
 /**
  * Default javadoc
  *
  * @author moiseenko-s
- */
-@XmlType(name = "abonent")
+ *//*
+
+@XmlRootElement(name = "abonent")
 public class Abonent {
   private static final Logger LOG = LogManager.getLogger(Abonent.class.getName());
 
@@ -113,3 +117,4 @@ public class Abonent {
         '}';
   }
 }
+*/

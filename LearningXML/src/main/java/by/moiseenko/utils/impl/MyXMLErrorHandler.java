@@ -1,9 +1,8 @@
 package by.moiseenko.utils.impl;
 
-import java.io.File;
-import java.io.IOException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.stereotype.Component;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -13,6 +12,7 @@ import org.xml.sax.helpers.DefaultHandler;
  *
  * @author moiseenko-s
  */
+@Component
 public class MyXMLErrorHandler extends DefaultHandler {
 
   private static final Logger LOG = LogManager.getLogger(MyXMLErrorHandler.class.getName());

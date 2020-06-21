@@ -11,8 +11,10 @@ import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
 
 /**
  * Default javadoc
@@ -24,6 +26,13 @@ public class ValidatorSAXImpl implements ValidatorSAX {
 
   private static final Logger LOG = LogManager.getLogger(ValidatorSAXImpl.class.getName());
 
+  private  DefaultHandler xmlErrorHandler;
+
+  @Autowired
+  public ValidatorSAXImpl(DefaultHandler xmlErrorHandler) {
+    this.xmlErrorHandler = xmlErrorHandler;
+  }
+
   @Override
   public void validateXMLbyXSD(String xml, String xsd) {
     Schema schema = null;
@@ -33,7 +42,7 @@ public class ValidatorSAXImpl implements ValidatorSAX {
       SAXParserFactory spf = SAXParserFactory.newInstance();
       spf.setSchema(schema);
       SAXParser parser = spf.newSAXParser();
-      parser.parse(xml, new MyXMLErrorHandler());
+      parser.parse(xml, xmlErrorHandler);
       System.out.println(xml + " is valid");
     } catch (ParserConfigurationException e) {
       LOG.error(xml + " config error:" + e.getMessage());

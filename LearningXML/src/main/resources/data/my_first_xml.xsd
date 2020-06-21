@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-  targetNamespace="http://myXML.com"
-  xmlns:tns="http://myXML.com"
+  targetNamespace="http://moiseenko.by/entity/abonent"
   elementFormDefault="qualified">
   <element name="abonents">
     <complexType>
       <sequence>
-        <element name="abonent" maxOccurs="unbounded" minOccurs="0" type="tns:Abonent"/>
+        <element name="abonent" maxOccurs="unbounded" minOccurs="0">
+          <complexType>
+            <sequence>
+              <element type="string" name="id"/>
+              <element type="string" name="first_name"/>
+              <element type="string" name="last_name"/>
+              <element type="string" name="email"/>
+              <element type="string" name="gender"/>
+              <element type="string" name="ip_address"/>
+            </sequence>
+          </complexType>
+        </element>
       </sequence>
     </complexType>
   </element>
-  <complexType name="Abonent">
-    <sequence>
-      <element type="string" name="id"/>
-      <element type="string" name="first_name"/>
-      <element type="string" name="last_name"/>
-      <element type="string" name="email"/>
-      <element type="string" name="gender"/>
-      <element type="string" name="ip_address"/>
-    </sequence>
-  </complexType>
 </schema>
