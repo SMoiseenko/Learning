@@ -12,6 +12,7 @@ import javax.xml.validation.SchemaFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -29,7 +30,7 @@ public class ValidatorSAXImpl implements ValidatorSAX {
   private  DefaultHandler xmlErrorHandler;
 
   @Autowired
-  public ValidatorSAXImpl(DefaultHandler xmlErrorHandler) {
+  public ValidatorSAXImpl(@Qualifier("myXMLErrorHandler") DefaultHandler xmlErrorHandler) {
     this.xmlErrorHandler = xmlErrorHandler;
   }
 

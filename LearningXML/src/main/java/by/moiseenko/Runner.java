@@ -4,6 +4,7 @@ import by.moiseenko.config.SpringContextConfig;
 //import by.moiseenko.entity.Abonent;
 //import by.moiseenko.entity.Abonents;
 import by.moiseenko.utils.ValidatorSAX;
+import by.moiseenko.utils.impl.SAXGeoTagParser;
 import java.io.StringWriter;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -18,33 +19,16 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class Runner {
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Exception{
     ApplicationContext context = new AnnotationConfigApplicationContext(SpringContextConfig.class);
     ValidatorSAX validatorSAX = context.getBean(ValidatorSAX.class);
     validatorSAX.validateXMLbyXSD("src/main/resources/data/my_first_xml.xml",
         "src/main/resources/data/my_first_xml.xsd");
 
-    /*Abonent a1 = new Abonent();
-    a1.setId("1");
-    a1.setFirstName("Andrea");
-    a1.setLastName("Nikolete");
-    a1.setGender("FEMALE");
-    a1.setIp_address("127.0.0.1");
-    a1.setEmail("a.nikolete@gmail.com");
+    SAXGeoTagParser myParser = context.getBean(SAXGeoTagParser.class);
+    myParser.parseXML("/home/s-moiseenko/Downloads/AMAZFIT/2019_08_16_19_13_23.gpx");
+    myParser.printResult();
 
-    Abonents abonents = new Abonents();
-    abonents.addAbonent(a1);
-
-    try {
-      JAXBContext jaxbContext = JAXBContext.newInstance(Abonents.class, Abonent.class);
-      Marshaller marshaller = jaxbContext.createMarshaller();
-      StringWriter sw = new StringWriter();
-      marshaller.marshal(abonents, sw);
-      System.out.println(sw.toString());
-
-    } catch (JAXBException e) {
-      e.printStackTrace();
-    }*/
 
   }
 }
