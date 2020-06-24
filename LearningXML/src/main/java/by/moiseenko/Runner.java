@@ -6,11 +6,10 @@ import by.moiseenko.config.SpringContextConfig;
 import by.moiseenko.entity.Abonent;
 import by.moiseenko.entity.Abonents;
 import by.moiseenko.utils.ValidatorSAX;
-import by.moiseenko.utils.saxhandlers.MyXMLErrorHandler;
-import by.moiseenko.utils.saxhandlers.SAXAbonentHandler;
-import java.io.File;
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
+import java.io.StringWriter;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -31,6 +30,9 @@ public class Runner {
     SAXParserFactory factory = SAXParserFactory.newInstance();
     SAXParser parser = factory.newSAXParser();
     parser.parse(new File("src/main/resources/data/my_first_xml.xml"), abonentHandler);
+    SAXGeoTagParser myParser = context.getBean(SAXGeoTagParser.class);
+    myParser.parseXML("/home/s-moiseenko/Downloads/AMAZFIT/2019_08_16_19_13_23.gpx");
+    myParser.printResult();
 
 
     abonentHandler.getAllAbonents().forEach((x)->System.out.println(x.toString()));
