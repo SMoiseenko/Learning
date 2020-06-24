@@ -25,7 +25,7 @@ public class SAXGeoTagParser {
 
   private static final Logger LOG = LogManager.getLogger(SAXGeoTagParser.class.getName());
 
-  private GeoTagHandler geoTagHandler;
+  private final GeoTagHandler geoTagHandler;
 
   @Autowired
   public SAXGeoTagParser(@Qualifier("geoTagHandler") GeoTagHandler geoTagHandler) {
@@ -36,6 +36,7 @@ public class SAXGeoTagParser {
   public void parseXML(String path) throws ParserConfigurationException, SAXException, IOException {
     File xmlFile = new File(path);
     SAXParserFactory factory = SAXParserFactory.newInstance();
+    factory.setNamespaceAware(true);
     SAXParser parser = factory.newSAXParser();
     parser.parse(xmlFile, geoTagHandler);
   }
@@ -43,9 +44,10 @@ public class SAXGeoTagParser {
   public void printResult() {
     if (geoTagHandler.getGeoTags() == null) {
       LOG.debug("You must use parser first");
-    }
+    } else{
     String result = geoTagHandler.getGeoTags().stream().map(Objects::toString)
         .collect(Collectors.joining(",", "[", "]"));
     LOG.debug(result);
+  }
   }
 }

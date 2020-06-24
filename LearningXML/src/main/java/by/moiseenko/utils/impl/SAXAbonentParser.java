@@ -25,7 +25,7 @@ import org.xml.sax.helpers.DefaultHandler;
 public class SAXAbonentParser {
   private static final Logger LOG = LogManager.getLogger(SAXAbonentParser.class.getName());
 
-  private SAXAbonentHandler abonentHandler;
+  private final SAXAbonentHandler abonentHandler;
 
   @Autowired
   public SAXAbonentParser(@Qualifier("SAXAbonentHandler") SAXAbonentHandler abonentHandler) {
