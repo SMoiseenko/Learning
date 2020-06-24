@@ -3,11 +3,14 @@ package by.moiseenko;
 import by.moiseenko.config.SpringContextConfig;
 //import by.moiseenko.entity.Abonent;
 //import by.moiseenko.entity.Abonents;
+import by.moiseenko.entity.Abonent;
+import by.moiseenko.entity.Abonents;
 import by.moiseenko.utils.ValidatorSAX;
-import java.io.StringWriter;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
+import by.moiseenko.utils.saxhandlers.MyXMLErrorHandler;
+import by.moiseenko.utils.saxhandlers.SAXAbonentHandler;
+import java.io.File;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -18,33 +21,19 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class Runner {
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Exception {
     ApplicationContext context = new AnnotationConfigApplicationContext(SpringContextConfig.class);
     ValidatorSAX validatorSAX = context.getBean(ValidatorSAX.class);
     validatorSAX.validateXMLbyXSD("src/main/resources/data/my_first_xml.xml",
         "src/main/resources/data/my_first_xml.xsd");
 
-    /*Abonent a1 = new Abonent();
-    a1.setId("1");
-    a1.setFirstName("Andrea");
-    a1.setLastName("Nikolete");
-    a1.setGender("FEMALE");
-    a1.setIp_address("127.0.0.1");
-    a1.setEmail("a.nikolete@gmail.com");
+    SAXAbonentHandler abonentHandler = context.getBean(SAXAbonentHandler.class);
+    SAXParserFactory factory = SAXParserFactory.newInstance();
+    SAXParser parser = factory.newSAXParser();
+    parser.parse(new File("src/main/resources/data/my_first_xml.xml"), abonentHandler);
 
-    Abonents abonents = new Abonents();
-    abonents.addAbonent(a1);
 
-    try {
-      JAXBContext jaxbContext = JAXBContext.newInstance(Abonents.class, Abonent.class);
-      Marshaller marshaller = jaxbContext.createMarshaller();
-      StringWriter sw = new StringWriter();
-      marshaller.marshal(abonents, sw);
-      System.out.println(sw.toString());
-
-    } catch (JAXBException e) {
-      e.printStackTrace();
-    }*/
+    abonentHandler.getAllAbonents().forEach((x)->System.out.println(x.toString()));
 
   }
 }

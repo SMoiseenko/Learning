@@ -1,38 +1,38 @@
-/*
 package by.moiseenko.entity;
 
 import java.util.Objects;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-*/
 /**
  * Default javadoc
  *
  * @author moiseenko-s
- *//*
+ */
 
-@XmlRootElement(name = "abonent")
+
 public class Abonent {
+
   private static final Logger LOG = LogManager.getLogger(Abonent.class.getName());
 
-  @XmlElement(name = "id")
   private String id;
-  @XmlElement(name = "first_name")
   private String firstName;
-  @XmlElement(name = "last_name")
   private String lastName;
-  @XmlElement(name = "email")
   private String email;
-  @XmlElement(name = "gender")
   private String gender;
-  @XmlElement(name = "email")
   private String ip_address;
 
   public Abonent() {
+  }
+
+  public Abonent(String id, String firstName, String lastName, String email, String gender,
+      String ip_address) {
+    this.id = id;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.email = email;
+    this.gender = gender;
+    this.ip_address = ip_address;
   }
 
   public String getId() {
@@ -117,4 +117,3 @@ public class Abonent {
         '}';
   }
 }
-*/

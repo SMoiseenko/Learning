@@ -1,5 +1,6 @@
-package by.moiseenko.utils.impl;
+package by.moiseenko.utils.saxhandlers;
 
+import javax.security.sasl.SaslException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Component;
@@ -20,20 +21,25 @@ public class MyXMLErrorHandler extends DefaultHandler {
   @Override
   public void warning(SAXParseException e) throws SAXException {
     System.out.println(getLineAddress(e) + " - " + e.getMessage());
+    throw e;
 
   }
 
   @Override
   public void error(SAXParseException e) throws SAXException {
     System.out.println(getLineAddress(e) + " - " + e.getMessage());
+    throw e;
   }
 
   @Override
   public void fatalError(SAXParseException e) throws SAXException {
     System.out.println(getLineAddress(e) + " - " + e.getMessage());
+    throw e;
   }
 
   private String getLineAddress(SAXParseException e){
     return e.getLineNumber() + ":" + e.getColumnNumber();
   }
+
+
 }

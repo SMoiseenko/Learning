@@ -1,6 +1,7 @@
 package by.moiseenko.utils.impl;
 
 import by.moiseenko.utils.ValidatorSAX;
+import by.moiseenko.utils.saxhandlers.MyXMLErrorHandler;
 import java.io.File;
 import java.io.IOException;
 import javax.xml.XMLConstants;
@@ -14,6 +15,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
 import org.xml.sax.helpers.DefaultHandler;
 
 /**
@@ -26,10 +28,10 @@ public class ValidatorSAXImpl implements ValidatorSAX {
 
   private static final Logger LOG = LogManager.getLogger(ValidatorSAXImpl.class.getName());
 
-  private  DefaultHandler xmlErrorHandler;
+  private MyXMLErrorHandler xmlErrorHandler;
 
   @Autowired
-  public ValidatorSAXImpl(DefaultHandler xmlErrorHandler) {
+  public ValidatorSAXImpl(MyXMLErrorHandler xmlErrorHandler) {
     this.xmlErrorHandler = xmlErrorHandler;
   }
 
@@ -40,9 +42,15 @@ public class ValidatorSAXImpl implements ValidatorSAX {
     try{
       schema = factory.newSchema(new File(xsd));
       SAXParserFactory spf = SAXParserFactory.newInstance();
+      spf.setNamespaceAware(true);
       spf.setSchema(schema);
       SAXParser parser = spf.newSAXParser();
-      parser.parse(xml, xmlErrorHandler);
+      parser.parse(xml, new DefaultHandler(){
+        @Override
+        public void error(SAXParseException e) throws SAXException {
+          throw e;
+        }
+      });
       System.out.println(xml + " is valid");
     } catch (ParserConfigurationException e) {
       LOG.error(xml + " config error:" + e.getMessage());

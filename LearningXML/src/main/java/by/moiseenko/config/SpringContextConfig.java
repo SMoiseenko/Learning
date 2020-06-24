@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
  * @author moiseenko-s
  */
 @Configuration
-@ComponentScan(basePackages = {"by.moiseenko.utils.impl"})
+@ComponentScan(basePackages = {"by.moiseenko.utils"})
 public class SpringContextConfig {
   private static final Logger LOG = LogManager.getLogger(SpringContextConfig.class.getName());
 

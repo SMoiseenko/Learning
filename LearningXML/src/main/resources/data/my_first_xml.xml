@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<abonents xmlns="http://moiseenko.by/entity/abonent">
+<abonents xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="my_first_xml.xsd">
   <abonent>
     <id>1</id>
     <first_name>Isadore</first_name>
