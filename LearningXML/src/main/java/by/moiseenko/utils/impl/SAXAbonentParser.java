@@ -1,10 +1,10 @@
 package by.moiseenko.utils.impl;
 
-import by.moiseenko.utils.saxhandlers.GeoTagHandler;
+import by.moiseenko.entity.Abonent;
+import by.moiseenko.utils.saxhandlers.SAXAbonentHandler;
 import java.io.File;
 import java.io.IOException;
-import java.util.Objects;
-import java.util.stream.Collectors;
+import java.util.List;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -14,38 +14,33 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
 
 /**
  * Default javadoc
  *
- * @author s-moiseenko
+ * @author moiseenko-s
  */
 @Component
-public class SAXGeoTagParser {
+public class SAXAbonentParser {
+  private static final Logger LOG = LogManager.getLogger(SAXAbonentParser.class.getName());
 
-  private static final Logger LOG = LogManager.getLogger(SAXGeoTagParser.class.getName());
-
-  private GeoTagHandler geoTagHandler;
+  private SAXAbonentHandler abonentHandler;
 
   @Autowired
-  public SAXGeoTagParser(@Qualifier("geoTagHandler") GeoTagHandler geoTagHandler) {
-    this.geoTagHandler = geoTagHandler;
+  public SAXAbonentParser(@Qualifier("SAXAbonentHandler") SAXAbonentHandler abonentHandler) {
+    this.abonentHandler = abonentHandler;
   }
-
 
   public void parseXML(String path) throws ParserConfigurationException, SAXException, IOException {
     File xmlFile = new File(path);
     SAXParserFactory factory = SAXParserFactory.newInstance();
     SAXParser parser = factory.newSAXParser();
-    parser.parse(xmlFile, geoTagHandler);
-  }
+    parser.parse(xmlFile, abonentHandler);
+   }
 
-  public void printResult() {
-    if (geoTagHandler.getGeoTags() == null) {
-      LOG.debug("You must use parser first");
-    }
-    String result = geoTagHandler.getGeoTags().stream().map(Objects::toString)
-        .collect(Collectors.joining(",", "[", "]"));
-    LOG.debug(result);
-  }
+   public List<Abonent> getAbonentsList(){
+     return abonentHandler.getAllAbonents();
+   }
+
 }

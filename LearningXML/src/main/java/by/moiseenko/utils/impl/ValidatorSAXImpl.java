@@ -32,13 +32,14 @@ public class ValidatorSAXImpl implements ValidatorSAX {
   private MyXMLErrorHandler xmlErrorHandler;
 
   @Autowired
-  public ValidatorSAXImpl(@Qualifier("myXMLErrorHandler") DefaultHandler xmlErrorHandler) {
+  public ValidatorSAXImpl(@Qualifier("myXMLErrorHandler") MyXMLErrorHandler xmlErrorHandler) {
     this.xmlErrorHandler = xmlErrorHandler;
   }
 
   @Override
-  public void validateXMLbyXSD(String xml, String xsd) {
+  public boolean validateXMLbyXSD(String xml, String xsd) {
     Schema schema = null;
+    boolean result = false;
     SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
     try{
       schema = factory.newSchema(new File(xsd));
@@ -52,6 +53,7 @@ public class ValidatorSAXImpl implements ValidatorSAX {
           throw e;
         }
       });
+      result = true;
       System.out.println(xml + " is valid");
     } catch (ParserConfigurationException e) {
       LOG.error(xml + " config error:" + e.getMessage());
@@ -60,5 +62,6 @@ public class ValidatorSAXImpl implements ValidatorSAX {
     } catch (IOException e) {
       LOG.error("I/O error:" + e.getMessage());
     }
+    return result;
   }
 }

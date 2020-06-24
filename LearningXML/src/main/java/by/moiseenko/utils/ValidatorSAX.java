@@ -6,5 +6,5 @@ package by.moiseenko.utils;
  * @author moiseenko-s
  */
 public interface ValidatorSAX {
-  void validateXMLbyXSD(String xml, String xsd);
+  boolean validateXMLbyXSD(String xml, String xsd);
 }

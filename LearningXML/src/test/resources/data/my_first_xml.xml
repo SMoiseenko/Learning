@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<abonents xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="my_first_xml.xsd">
+  <abonent>
+    <id>1</id>
+    <first_name>Isadore</first_name>
+    <last_name>Mation</last_name>
+    <email>imation0@soundcloud.com</email>
+    <gender>Male</gender>
+    <ip_address>124.197.150.248</ip_address>
+  </abonent>
+</abonents>
