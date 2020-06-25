@@ -1,6 +1,5 @@
 package by.moiseenko.entity;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import org.apache.logging.log4j.LogManager;
@@ -26,9 +25,9 @@ public class RunGeoTag {
   public RunGeoTag(String lat, String lon, String hR, String ele, String time) {
     this.lat = Double.parseDouble(lat);
     this.lon = Double.parseDouble(lon);
-    this.hR = (hR==null||hR.isEmpty())?0:Integer.parseInt(hR);
-    this.ele = (ele==null||ele.isEmpty())?0.0d:Double.parseDouble(ele);
-    this.time = LocalDateTime.parse(time, DateTimeFormatter.ISO_INSTANT);
+    this.hR = (hR == null || hR.isEmpty()) ? 0 : Integer.parseInt(hR);
+    this.ele = (ele == null || ele.isEmpty()) ? 0.0d : Double.parseDouble(ele);
+    this.time = LocalDateTime.parse(time, DateTimeFormatter.ISO_DATE_TIME);
 
   }
 
@@ -56,16 +55,61 @@ public class RunGeoTag {
     this.hR = hR;
   }
 
-  public double getElev() {
+  public double getEle() {
     return ele;
   }
 
-  public void setElev(double ele) {
+  public void setEle(double ele) {
     this.ele = ele;
   }
 
-  public String getCoordinate(){
-    return "[" + lat + ", " + lon + "]";
+  public LocalDateTime getTime() {
+    return time;
+  }
+
+  public void setTime(LocalDateTime time) {
+    this.time = time;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (!(o instanceof RunGeoTag)) {
+      return false;
+    }
+
+    RunGeoTag runGeoTag = (RunGeoTag) o;
+
+    if (Double.compare(runGeoTag.getLat(), getLat()) != 0) {
+      return false;
+    }
+    if (Double.compare(runGeoTag.getLon(), getLon()) != 0) {
+      return false;
+    }
+    if (gethR() != runGeoTag.gethR()) {
+      return false;
+    }
+    if (Double.compare(runGeoTag.getEle(), getEle()) != 0) {
+      return false;
+    }
+    return getTime().equals(runGeoTag.getTime());
+  }
+
+  @Override
+  public int hashCode() {
+    int result;
+    long temp;
+    temp = Double.doubleToLongBits(getLat());
+    result = (int) (temp ^ (temp >>> 32));
+    temp = Double.doubleToLongBits(getLon());
+    result = 31 * result + (int) (temp ^ (temp >>> 32));
+    result = 31 * result + gethR();
+    temp = Double.doubleToLongBits(getEle());
+    result = 31 * result + (int) (temp ^ (temp >>> 32));
+    result = 31 * result + getTime().hashCode();
+    return result;
   }
 
   @Override

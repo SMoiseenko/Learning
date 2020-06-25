@@ -45,9 +45,13 @@ public class GeoTagHandler extends DefaultHandler {
       if (geoTags == null) {
         geoTags = new ArrayList<>();
       }
-      if (lat != null && lon != null && time != null) {
-        geoTags.add(new RunGeoTag(lat, lon, hR, ele, time));
+//      if (lat != null && lon != null && time != null) {
+//        geoTags.add(new RunGeoTag(lat, lon, hR, ele, time));
+//      }
+      if (ele == null) {
+        ele = "-10028";
       }
+      geoTags.add(new RunGeoTag(lat, lon, hR, ele, time));
       lat = lon = hR = ele = time = null;
     }
   }
@@ -65,7 +69,7 @@ public class GeoTagHandler extends DefaultHandler {
         ele = info;
       }
       if (curElem.equals("time")){
-        time = info.replace(".000", "").trim();
+        time = info.substring(0, info.length() - 1);
       }
 
     }

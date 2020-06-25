@@ -50,4 +50,8 @@ public class SAXGeoTagParser {
     LOG.debug(result);
   }
   }
+
+  public GeoTagHandler getGeoTagHandler(){
+    return geoTagHandler;
+  }
 }
