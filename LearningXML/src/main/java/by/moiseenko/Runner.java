@@ -3,22 +3,8 @@ package by.moiseenko;
 import by.moiseenko.config.SpringContextConfig;
 //import by.moiseenko.entity.Abonent;
 //import by.moiseenko.entity.Abonents;
-import by.moiseenko.entity.Abonent;
-import by.moiseenko.entity.Abonents;
-import by.moiseenko.utils.GetGeoTagInfoForGraphics;
-import by.moiseenko.utils.ValidatorSAX;
-import by.moiseenko.utils.impl.GetGeoTagInfoForGraphicsImpl;
-import by.moiseenko.utils.impl.InterpolateWrongValues;
-import by.moiseenko.utils.impl.SAXGeoTagParser;
-import by.moiseenko.utils.saxhandlers.SAXAbonentHandler;
-import java.io.File;
-import java.io.StringWriter;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.SchemaOutputResolver;
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
+import by.moiseenko.utils.sax.GetGeoTagInfoForGraphics;
+import by.moiseenko.utils.sax.impl.GetGeoTagInfoForGraphicsImpl;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -37,6 +23,9 @@ public class Runner {
     tagInfo.init(PATH2XML);
     System.out.println(tagInfo.getCoordinates());
     System.out.println(tagInfo.getElevations());
+    System.out.println(tagInfo.getMinElevations());
+    System.out.println(tagInfo.getMaxElevations());
+
 
   }
 }

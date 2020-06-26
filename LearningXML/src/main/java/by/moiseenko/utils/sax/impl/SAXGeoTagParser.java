@@ -1,6 +1,6 @@
-package by.moiseenko.utils.impl;
+package by.moiseenko.utils.sax.impl;
 
-import by.moiseenko.utils.saxhandlers.GeoTagHandler;
+import by.moiseenko.utils.sax.saxhandlers.GeoTagHandler;
 import java.io.File;
 import java.io.IOException;
 import java.util.Objects;

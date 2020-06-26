@@ -1,7 +1,7 @@
-package by.moiseenko.utils.impl;
+package by.moiseenko.utils.sax.impl;
 
 import by.moiseenko.entity.Abonent;
-import by.moiseenko.utils.saxhandlers.SAXAbonentHandler;
+import by.moiseenko.utils.sax.saxhandlers.SAXAbonentHandler;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
@@ -14,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.xml.sax.SAXException;
-import org.xml.sax.helpers.DefaultHandler;
 
 /**
  * Default javadoc

@@ -1,7 +1,7 @@
-package by.moiseenko.utils.impl;
+package by.moiseenko.utils.sax.impl;
 
 import by.moiseenko.entity.RunGeoTag;
-import by.moiseenko.utils.RunGeoTagAnalyzer;
+import by.moiseenko.utils.sax.RunGeoTagAnalyzer;
 import java.time.Duration;
 import java.util.List;
 import org.apache.logging.log4j.LogManager;

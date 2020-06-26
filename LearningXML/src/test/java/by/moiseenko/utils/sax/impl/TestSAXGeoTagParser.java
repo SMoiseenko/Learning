@@ -1,10 +1,9 @@
-package by.moiseenko.utils.impl;
+package by.moiseenko.utils.sax.impl;
 
 import by.moiseenko.config.SpringContextConfig;
 import java.io.IOException;
 import javax.xml.parsers.ParserConfigurationException;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;

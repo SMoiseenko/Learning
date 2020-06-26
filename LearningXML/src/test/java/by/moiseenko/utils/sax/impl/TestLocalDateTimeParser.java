@@ -1,4 +1,4 @@
-package by.moiseenko.utils.impl;
+package by.moiseenko.utils.sax.impl;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;

@@ -1,4 +1,4 @@
-package by.moiseenko.utils;
+package by.moiseenko.utils.sax;
 
 import java.io.IOException;
 import javax.xml.parsers.ParserConfigurationException;
@@ -15,6 +15,8 @@ public interface GetGeoTagInfoForGraphics {
   String getCoordinates();
   String getElevations();
   String getHeartRates();
+  double getMinElevations();
+  double getMaxElevations();
 
 
 }

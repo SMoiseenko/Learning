@@ -1,10 +1,9 @@
-package by.moiseenko.utils.impl;
+package by.moiseenko.utils.sax.impl;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import by.moiseenko.config.SpringContextConfig;
 import by.moiseenko.entity.Abonent;
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;

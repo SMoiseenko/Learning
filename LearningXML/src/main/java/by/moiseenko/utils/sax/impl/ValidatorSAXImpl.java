@@ -1,7 +1,7 @@
-package by.moiseenko.utils.impl;
+package by.moiseenko.utils.sax.impl;
 
-import by.moiseenko.utils.ValidatorSAX;
-import by.moiseenko.utils.saxhandlers.MyXMLErrorHandler;
+import by.moiseenko.utils.sax.ValidatorSAX;
+import by.moiseenko.utils.sax.saxhandlers.MyXMLErrorHandler;
 import java.io.File;
 import java.io.IOException;
 import javax.xml.XMLConstants;

@@ -1,4 +1,4 @@
-package by.moiseenko.utils.saxhandlers;
+package by.moiseenko.utils.sax.saxhandlers;
 
 import by.moiseenko.entity.RunGeoTag;
 import java.util.ArrayList;

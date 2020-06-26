@@ -1,9 +1,9 @@
-package by.moiseenko.utils.impl;
+package by.moiseenko.utils.sax.impl;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import by.moiseenko.config.SpringContextConfig;
-import by.moiseenko.utils.ValidatorSAX;
+import by.moiseenko.utils.sax.ValidatorSAX;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;

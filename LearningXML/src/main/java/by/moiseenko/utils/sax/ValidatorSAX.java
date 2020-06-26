@@ -1,4 +1,4 @@
-package by.moiseenko.utils;
+package by.moiseenko.utils.sax;
 
 /**
  * Default javadoc
