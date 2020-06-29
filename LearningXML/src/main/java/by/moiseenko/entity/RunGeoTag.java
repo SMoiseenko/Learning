@@ -1,7 +1,9 @@
 package by.moiseenko.entity;
 
 import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -27,7 +29,7 @@ public class RunGeoTag {
     this.lon = Double.parseDouble(lon);
     this.hR = (hR == null || hR.isEmpty()) ? 0 : Integer.parseInt(hR);
     this.ele = (ele == null || ele.isEmpty()) ? 0.0d : Double.parseDouble(ele);
-    this.time = LocalDateTime.parse(time, DateTimeFormatter.ISO_DATE_TIME);
+    this.time = (time == null || time.isEmpty())?LocalDateTime.ofEpochSecond(0,0, ZoneOffset.UTC):LocalDateTime.parse(time, DateTimeFormatter.ISO_DATE_TIME);
 
   }
 
@@ -79,43 +81,23 @@ public class RunGeoTag {
     if (!(o instanceof RunGeoTag)) {
       return false;
     }
-
     RunGeoTag runGeoTag = (RunGeoTag) o;
-
-    if (Double.compare(runGeoTag.getLat(), getLat()) != 0) {
-      return false;
-    }
-    if (Double.compare(runGeoTag.getLon(), getLon()) != 0) {
-      return false;
-    }
-    if (gethR() != runGeoTag.gethR()) {
-      return false;
-    }
-    if (Double.compare(runGeoTag.getEle(), getEle()) != 0) {
-      return false;
-    }
-    return getTime().equals(runGeoTag.getTime());
+    return Double.compare(runGeoTag.getLat(), getLat()) == 0 &&
+        Double.compare(runGeoTag.getLon(), getLon()) == 0 &&
+        gethR() == runGeoTag.gethR() &&
+        Double.compare(runGeoTag.getEle(), getEle()) == 0 &&
+        getTime().equals(runGeoTag.getTime());
   }
 
   @Override
   public int hashCode() {
-    int result;
-    long temp;
-    temp = Double.doubleToLongBits(getLat());
-    result = (int) (temp ^ (temp >>> 32));
-    temp = Double.doubleToLongBits(getLon());
-    result = 31 * result + (int) (temp ^ (temp >>> 32));
-    result = 31 * result + gethR();
-    temp = Double.doubleToLongBits(getEle());
-    result = 31 * result + (int) (temp ^ (temp >>> 32));
-    result = 31 * result + getTime().hashCode();
-    return result;
+    return Objects.hash(getLat(), getLon(), gethR(), getEle(), getTime());
   }
 
   @Override
   public String toString() {
     return "RunGeoTag{" +
-        "time:" + time +
+        "time:" + time.format(DateTimeFormatter.ISO_DATE_TIME) +
         ", lat:" + lat +
         ", lon:" + lon +
         ", hR:" + hR +
