@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All Customers Info</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/mdb.min.css" rel="stylesheet">
+  <link href="/css/addons/datatables2.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div id="header"></div>
+<div th:switch="${allInfo}" class="container" style="max-width: 98%">
+  <h2 class="h2 mb-2 text-center" th:case="null">No customers yet!</h2>
+  <div th:case="*">
+    <h2 class="h2 mb-2 text-center">All Customers Table</h2>
+  </div>
+  <div class="table-responsive">
+    <table id="allCustomers" class="table table-bordered table-striped" cellspacing="0"
+           width="100%">
+      <thead class="blue white-text">
+      <tr>
+        <th class="th-sm">Id</th>
+        <th class="th-sm">Movex Code</th>
+        <th class="th-sm">Short Name</th>
+        <th class="th-sm">Full Name</th>
+        <th class="th-sm">Russian Name</th>
+        <th class="th-sm">T4C Version</th>
+        <th class="th-sm">Windows Version</th>
+        <th class="th-sm">SQL Version</th>
+        <th class="th-sm">License Type</th>
+        <th class="th-sm">Robots Qty.</th>
+        <th class="th-sm">Service Contract</th>
+        <th class="th-sm">Internet Access</th>
+        <th class="th-sm">Comment</th>
+        <!--
+          <th class="th-sm">TV ID</th>
+          <th class="th-sm">TV PWD</th>
+          <th class="th-sm">Win Login</th>
+          <th class="th-sm">Win PWD</th>
+          -->
+      </tr>
+      </thead>
+     <tbody>
+      <tr th:each="info : ${allInfo}">
+        <td><a th:href="@{/edit/{id}(id = ${info.id})}" th:text="${info.id}"></a></td>
+        <td th:text="${info.movexCode}"></td>
+        <td th:text="${info.shortName}"></td>
+        <td th:text="${info.fullName}"></td>
+        <td th:text="${info.rusName}"></td>
+        <td th:text="${info.t4cVersion}"></td>
+        <td th:text="${info.windowsVersion}"></td>
+        <td th:text="${info.sqlVersion}"></td>
+        <td th:text="${info.t4cLicenseType}"></td>
+        <td th:text="${info.robotsQty}"></td>
+        <td th:text="${info.serviceContract}"></td>
+        <td th:text="${info.inetAccess}"></td>
+        <td th:text="${info.comment}"></td>
+<!---/*
+        <td th:text="${info.tvId}"></td>
+        <td th:text="${info.tvPwd}"></td>
+        <td th:text="${info.winLogin}"></td>
+        <td th:text="${info.winPwd}"></td>
+*/--->
+      </tr>
+      </tbody>
+
+      <tfoot>
+      <tr>
+        <th>Movex Code
+        </th>
+        <th>Short Name
+        </th>
+        <th>Full Name
+        </th>
+        <th>Russian Name
+        </th>
+        <th>T4C Version
+        </th>
+        <th>Windows Version
+        </th>
+        <th>License Type
+        </th>
+        <th>Robots Qty.
+        </th>
+        <th>Service Contract
+        </th>
+        <th>Internet Access
+        </th>
+      </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/addons/datatables2.min.js"></script>
+<script type="text/javascript" src="/js/popper.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/mdb.min.js"></script>
+<script type="text/javascript" src="/js/myscript/insertheader.js"></script>
+<script type="text/javascript" src="/js/myscript/datatable4allinfo.js"></script>
+</body>
+</html>

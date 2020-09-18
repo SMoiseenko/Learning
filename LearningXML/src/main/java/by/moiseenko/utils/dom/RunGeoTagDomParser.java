@@ -1,6 +1,7 @@
 package by.moiseenko.utils.dom;
 
 import by.moiseenko.entity.RunGeoTag;
+import by.moiseenko.utils.MyGeoTagParser;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
@@ -26,7 +27,7 @@ import org.xml.sax.SAXException;
  * @author moiseenko-s
  */
 @Component
-public class RunGeoTagDomParser {
+public class RunGeoTagDomParser implements MyGeoTagParser {
 
   private static final Logger LOG = LogManager.getLogger(RunGeoTagDomParser.class.getName());
 
@@ -55,16 +56,20 @@ public class RunGeoTagDomParser {
             case "ele" -> ele = childNodes.item(k).getFirstChild().getNodeValue().replace("\n", "")
                 .trim();
             case "extensions" -> {
-              if (childNodes.item(k).hasChildNodes())
-                if (childNodes.item(k).getChildNodes().item(1).hasChildNodes())
-                  if (childNodes.item(k).getChildNodes().item(1).getChildNodes().item(1)
-                      .hasChildNodes())
-                    hr = childNodes.item(1).getChildNodes().item(1).getChildNodes().item(0)
-                        .getNodeValue();
+              if (childNodes.item(k).hasChildNodes()) {
+                if (childNodes.item(k).getChildNodes().item(1).hasChildNodes()) {
+                  if (childNodes.item(k).getChildNodes().item(1).getChildNodes().item(1) != null && childNodes.item(k).getChildNodes().item(1).getChildNodes().item(1)
+                      .hasChildNodes()) {
+                    hr = childNodes.item(k).getChildNodes().item(1).getChildNodes().item(1)
+                        .getFirstChild().getNodeValue();
+                  }
+                }
+              }
             }
           }
         }
         geoTagList.add(new RunGeoTag(lat, lon, hr, ele, time));
+       // hr = "0";
 
       }
     }

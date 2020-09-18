@@ -3,7 +3,6 @@ package by.moiseenko.utils.dom;
 import static org.junit.jupiter.api.Assertions.*;
 
 import by.moiseenko.config.SpringContextConfig;
-import by.moiseenko.utils.sax.impl.TestLocalDateTimeParser;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Test;
@@ -14,9 +13,9 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @ContextConfiguration(classes = {SpringContextConfig.class})
 @ExtendWith(SpringExtension.class)
-class RunGeoTagDomParserTest {
+class TestRunGeoTagDomParser {
 
-  private static final Logger LOG = LogManager.getLogger(RunGeoTagDomParserTest.class.getName());
+  private static final Logger LOG = LogManager.getLogger(TestRunGeoTagDomParser.class.getName());
 
   @Autowired
   private RunGeoTagDomParser parser;

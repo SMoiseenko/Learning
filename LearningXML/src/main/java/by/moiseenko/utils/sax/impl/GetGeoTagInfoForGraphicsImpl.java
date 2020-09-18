@@ -3,7 +3,6 @@ package by.moiseenko.utils.sax.impl;
 import by.moiseenko.entity.RunGeoTag;
 import by.moiseenko.utils.sax.GetGeoTagInfoForGraphics;
 import java.io.IOException;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
@@ -39,7 +38,7 @@ public class GetGeoTagInfoForGraphicsImpl implements GetGeoTagInfoForGraphics {
 
   @Override
   public void init(String path) throws IOException, SAXException, ParserConfigurationException {
-  parser.parseXML(path);
+  parser.parse(path);
   runGeoTagList = parser.getGeoTagHandler().getGeoTags();
   }
 
