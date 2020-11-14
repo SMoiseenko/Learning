@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All Customers</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- MDBootstrap Datatables  -->
+  <link href="css/addons/datatables2.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="header"></div>
+<div th:switch="${customerList}" class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-12 col-md-auto">
+      <h2 class="mb-3" th:case="null">No customers yet!</h2>
+      <div th:case="*">
+        <h2 class="mb-3">All Customers Table</h2>
+      </div>
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table id="allCustomers" class="table table-bordered">
+      <thead class="blue white-text">
+      <tr>
+        <th class="th-sm">Movex Code</th>
+        <th class="th-sm">Short Name</th>
+        <th class="th-sm">Full Name</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="customer : ${customerList}">
+        <td th:text="${customer.movexCode}"></td>
+        <td th:text="${customer.shortName}"></td>
+        <td th:text="${customer.fullName}"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/addons/datatables2.min.js"></script>
+<script type="text/javascript" src="js/popper.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/mdb.min.js"></script>
+<script type="text/javascript">
+  $(function () {
+    $("#header").load("header.html");
+  });
+  $(document).ready(function () {
+    $('#allCustomers').DataTable();
+  });
+</script>
+</body>
+</html>

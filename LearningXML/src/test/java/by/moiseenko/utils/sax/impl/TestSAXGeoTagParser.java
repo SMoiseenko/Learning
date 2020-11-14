@@ -25,7 +25,7 @@ private SAXGeoTagParser parser;
   @Test
   void printResult() {
     try {
-      parser.parseXML(PATH);
+      parser.parse(PATH);
     } catch (ParserConfigurationException | IOException | SAXException e) {
       e.printStackTrace();
     }

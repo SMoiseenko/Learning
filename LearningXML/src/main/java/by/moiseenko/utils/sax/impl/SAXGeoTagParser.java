@@ -1,8 +1,11 @@
 package by.moiseenko.utils.sax.impl;
 
+import by.moiseenko.entity.RunGeoTag;
+import by.moiseenko.utils.MyGeoTagParser;
 import by.moiseenko.utils.sax.saxhandlers.GeoTagHandler;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 import javax.xml.parsers.ParserConfigurationException;
@@ -21,7 +24,7 @@ import org.xml.sax.SAXException;
  * @author s-moiseenko
  */
 @Component
-public class SAXGeoTagParser {
+public class SAXGeoTagParser implements MyGeoTagParser {
 
   private static final Logger LOG = LogManager.getLogger(SAXGeoTagParser.class.getName());
 
@@ -33,7 +36,7 @@ public class SAXGeoTagParser {
   }
 
 
-  public void parseXML(String path) throws ParserConfigurationException, SAXException, IOException {
+  public void parse(String path) throws ParserConfigurationException, SAXException, IOException {
     File xmlFile = new File(path);
     SAXParserFactory factory = SAXParserFactory.newInstance();
     factory.setNamespaceAware(true);
@@ -53,5 +56,10 @@ public class SAXGeoTagParser {
 
   public GeoTagHandler getGeoTagHandler(){
     return geoTagHandler;
+  }
+
+  @Override
+  public List<RunGeoTag> getGeoTagList() {
+    return geoTagHandler.getGeoTags();
   }
 }

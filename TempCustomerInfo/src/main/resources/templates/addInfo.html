@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Customer Info</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/mdb.min.css" rel="stylesheet">
+
+  <link href="/css/style.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div id="header"></div>
+<div class="container">
+  <h2 class="h2 mb-2 text-center">New Customer</h2>
+
+
+  <form class="text-center border border-light p-5" action="#" th:action="@{/addInfo}"
+        th:object="${info}" method="post">
+    <label for="movexCode">Movex Code</label>
+    <input type="text" id="movexCode" th:field="*{movexCode}" class="form-control mb-4"
+           placeholder="Movex Code">
+    <label for="shortName">Short Name</label>
+    <input type="text" id="shortName" th:field="*{shortName}" class="form-control mb-4"
+           placeholder="Short Name">
+    <label for="fullName">Full Name</label>
+    <input type="text" id="fullName" th:field="*{fullName}" class="form-control mb-4"
+           placeholder="Full Name">
+    <label for="rusName">Russian Name</label>
+    <input type="text" id="rusName" th:field="*{rusName}" class="form-control mb-4"
+           placeholder="Russian Name">
+    <label for="t4cVersion">T4C Version</label>
+    <input type="text" id="t4cVersion" th:field="*{t4cVersion}" class="form-control mb-4"
+           placeholder="T4C Version">
+    <label for="windowsVersion">Windows version</label>
+    <select class="browser-default custom-select mb-4" th:field="*{windowsVersion}"
+            id="windowsVersion">
+      <option value="Windows Server 2003 Standard">Windows Server 2003 Standard</option>
+      <option value="Windows Server 2008 Standard">Windows Server 2008 Standard</option>
+      <option value="Windows Server 2008 R2 Standard">Windows Server 2008 R2 Standard</option>
+      <option value="Windows Server 2012 R2 Standard">Windows Server 2012 R2 Standard</option>
+      <option value="Windows Server 2016 Standard">Windows Server 2016 Standard</option>
+      <option value="Windows Server 2019 Standard">Windows Server 2019 Standard</option>
+      <option value="Windows 7 Professional">Windows 7 Professional</option>
+      <option value="Windows 7 Ultimate">Windows 7 Ultimate</option>
+      <option value="Windows 8 Pro">Windows 8 Pro</option>
+      <option value="Windows 8.1 Pro">Windows 8.1 Pro</option>
+      <option value="Windows 10 Pro">Windows 10 Pro</option>
+    </select>
+    <label for="sqlVersion">SQL version</label>
+    <select class="browser-default custom-select mb-4" th:field="*{sqlVersion}" id="sqlVersion">
+      <option value="Microsoft SQL Server 2008 R2 (SP2)">Microsoft SQL Server 2008 R2 (SP2)</option>
+      <option value="Microsoft SQL Server 2014">Microsoft SQL Server 2014</option>
+      <option value="Microsoft SQL Server 2017">Microsoft SQL Server 2017</option>
+    </select>
+    <label for="tvId">TV Id</label>
+    <input type="text" id="tvId" th:field="*{tvId}" class="form-control mb-4"
+           placeholder="TV Id">
+    <label for="tvPwd">TV Pwd</label>
+    <input type="text" id="tvPwd" th:field="*{tvPwd}" class="form-control mb-4"
+           placeholder="TV Pwd">
+    <label for="winLogin">Windows Login</label>
+    <input type="text" id="winLogin" th:field="*{winLogin}" class="form-control mb-4"
+           placeholder="Windows Login">
+    <label for="winPwd">Windows Pwd</label>
+    <input type="text" id="winPwd" th:field="*{winPwd}" class="form-control mb-4"
+           placeholder="Windows Pwd">
+    <label for="licenseType">Farm License Type</label>
+    <select class="browser-default custom-select mb-4" th:field="*{t4cLicenseType}"
+            id="licenseType">
+      <option value="Farm">Farm</option>
+      <option value="Farm No Maintenance">Farm No Maintenance</option>
+    </select>
+    <label for="robotsQty">Robots Qty.</label>
+    <input type="number" id="robotsQty" th:field="*{robotsQty}" class="form-control mb-4"
+           placeholder="Robots Qty.">
+    <div class="custom-control custom-checkbox mb-4">
+      <input type="checkbox" class="custom-control-input" id="serviceContract"
+             th:field="*{serviceContract}">
+      <label class="custom-control-label" for="serviceContract">Service Contract</label>
+    </div>
+    <div class="custom-control custom-checkbox mb-4">
+      <input type="checkbox" class="custom-control-input" id="inetAccess" th:field="*{inetAccess}">
+      <label class="custom-control-label" for="inetAccess">Internet Access</label>
+    </div>
+    <div class="form-group">
+      <label for="comment">Comment</label>
+      <textarea class="form-control rounded-0" id="comment" rows="3" th:field="*{comment}"
+                placeholder="Comment"></textarea>
+    </div>
+    <button class="btn btn-info btn-block" type="submit">Add Info</button>
+  </form>
+</div>
+
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/popper.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/mdb.min.js"></script>
+<script type="text/javascript" src="/js/myscript/insertheader.js"></script>
+</body>
+</html>
