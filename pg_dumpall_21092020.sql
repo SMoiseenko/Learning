@@ -35,8 +35,8 @@ ALTER ROLE s_moiseenko WITH NOSUPERUSER INHERIT NOCREATEROLE CREATEDB LOGIN NORE
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 12.3 (Ubuntu 12.3-1.pgdg18.04+1)
--- Dumped by pg_dump version 12.3 (Ubuntu 12.3-1.pgdg18.04+1)
+-- Dumped from database version 12.4 (Ubuntu 12.4-0ubuntu0.20.04.1)
+-- Dumped by pg_dump version 12.4 (Ubuntu 12.4-0ubuntu0.20.04.1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -61,8 +61,8 @@ SET row_security = off;
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 12.3 (Ubuntu 12.3-1.pgdg18.04+1)
--- Dumped by pg_dump version 12.3 (Ubuntu 12.3-1.pgdg18.04+1)
+-- Dumped from database version 12.4 (Ubuntu 12.4-0ubuntu0.20.04.1)
+-- Dumped by pg_dump version 12.4 (Ubuntu 12.4-0ubuntu0.20.04.1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -1429,6 +1429,222 @@ SELECT pg_catalog.lo_create('25350');
 ALTER LARGE OBJECT 25350 OWNER TO s_moiseenko;
 
 --
+-- Name: 25351; Type: BLOB; Schema: -; Owner: s_moiseenko
+--
+
+SELECT pg_catalog.lo_create('25351');
+
+
+ALTER LARGE OBJECT 25351 OWNER TO s_moiseenko;
+
+--
+-- Name: 25352; Type: BLOB; Schema: -; Owner: s_moiseenko
+--
+
+SELECT pg_catalog.lo_create('25352');
+
+
+ALTER LARGE OBJECT 25352 OWNER TO s_moiseenko;
+
+--
+-- Name: 25353; Type: BLOB; Schema: -; Owner: s_moiseenko
+--
+
+SELECT pg_catalog.lo_create('25353');
+
+
+ALTER LARGE OBJECT 25353 OWNER TO s_moiseenko;
+
+--
+-- Name: 25354; Type: BLOB; Schema: -; Owner: s_moiseenko
+--
+
+SELECT pg_catalog.lo_create('25354');
+
+
+ALTER LARGE OBJECT 25354 OWNER TO s_moiseenko;
+
+--
+-- Name: 25355; Type: BLOB; Schema: -; Owner: s_moiseenko
+--
+
+SELECT pg_catalog.lo_create('25355');
+
+
+ALTER LARGE OBJECT 25355 OWNER TO s_moiseenko;
+
+--
+-- Name: 25356; Type: BLOB; Schema: -; Owner: s_moiseenko
+--
+
+SELECT pg_catalog.lo_create('25356');
+
+
+ALTER LARGE OBJECT 25356 OWNER TO s_moiseenko;
+
+--
+-- Name: 25357; Type: BLOB; Schema: -; Owner: s_moiseenko
+--
+
+SELECT pg_catalog.lo_create('25357');
+
+
+ALTER LARGE OBJECT 25357 OWNER TO s_moiseenko;
+
+--
+-- Name: 25358; Type: BLOB; Schema: -; Owner: s_moiseenko
+--
+
+SELECT pg_catalog.lo_create('25358');
+
+
+ALTER LARGE OBJECT 25358 OWNER TO s_moiseenko;
+
+--
+-- Name: 25359; Type: BLOB; Schema: -; Owner: s_moiseenko
+--
+
+SELECT pg_catalog.lo_create('25359');
+
+
+ALTER LARGE OBJECT 25359 OWNER TO s_moiseenko;
+
+--
+-- Name: 25360; Type: BLOB; Schema: -; Owner: s_moiseenko
+--
+
+SELECT pg_catalog.lo_create('25360');
+
+
+ALTER LARGE OBJECT 25360 OWNER TO s_moiseenko;
+
+--
+-- Name: 25361; Type: BLOB; Schema: -; Owner: s_moiseenko
+--
+
+SELECT pg_catalog.lo_create('25361');
+
+
+ALTER LARGE OBJECT 25361 OWNER TO s_moiseenko;
+
+--
+-- Name: 25362; Type: BLOB; Schema: -; Owner: s_moiseenko
+--
+
+SELECT pg_catalog.lo_create('25362');
+
+
+ALTER LARGE OBJECT 25362 OWNER TO s_moiseenko;
+
+--
+-- Name: 25363; Type: BLOB; Schema: -; Owner: s_moiseenko
+--
+
+SELECT pg_catalog.lo_create('25363');
+
+
+ALTER LARGE OBJECT 25363 OWNER TO s_moiseenko;
+
+--
+-- Name: 25364; Type: BLOB; Schema: -; Owner: s_moiseenko
+--
+
+SELECT pg_catalog.lo_create('25364');
+
+
+ALTER LARGE OBJECT 25364 OWNER TO s_moiseenko;
+
+--
+-- Name: 25365; Type: BLOB; Schema: -; Owner: s_moiseenko
+--
+
+SELECT pg_catalog.lo_create('25365');
+
+
+ALTER LARGE OBJECT 25365 OWNER TO s_moiseenko;
+
+--
+-- Name: 25366; Type: BLOB; Schema: -; Owner: s_moiseenko
+--
+
+SELECT pg_catalog.lo_create('25366');
+
+
+ALTER LARGE OBJECT 25366 OWNER TO s_moiseenko;
+
+--
+-- Name: 25367; Type: BLOB; Schema: -; Owner: s_moiseenko
+--
+
+SELECT pg_catalog.lo_create('25367');
+
+
+ALTER LARGE OBJECT 25367 OWNER TO s_moiseenko;
+
+--
+-- Name: 25368; Type: BLOB; Schema: -; Owner: s_moiseenko
+--
+
+SELECT pg_catalog.lo_create('25368');
+
+
+ALTER LARGE OBJECT 25368 OWNER TO s_moiseenko;
+
+--
+-- Name: 25369; Type: BLOB; Schema: -; Owner: s_moiseenko
+--
+
+SELECT pg_catalog.lo_create('25369');
+
+
+ALTER LARGE OBJECT 25369 OWNER TO s_moiseenko;
+
+--
+-- Name: 25370; Type: BLOB; Schema: -; Owner: s_moiseenko
+--
+
+SELECT pg_catalog.lo_create('25370');
+
+
+ALTER LARGE OBJECT 25370 OWNER TO s_moiseenko;
+
+--
+-- Name: 25371; Type: BLOB; Schema: -; Owner: s_moiseenko
+--
+
+SELECT pg_catalog.lo_create('25371');
+
+
+ALTER LARGE OBJECT 25371 OWNER TO s_moiseenko;
+
+--
+-- Name: 25372; Type: BLOB; Schema: -; Owner: s_moiseenko
+--
+
+SELECT pg_catalog.lo_create('25372');
+
+
+ALTER LARGE OBJECT 25372 OWNER TO s_moiseenko;
+
+--
+-- Name: 25373; Type: BLOB; Schema: -; Owner: s_moiseenko
+--
+
+SELECT pg_catalog.lo_create('25373');
+
+
+ALTER LARGE OBJECT 25373 OWNER TO s_moiseenko;
+
+--
+-- Name: 33561; Type: BLOB; Schema: -; Owner: s_moiseenko
+--
+
+SELECT pg_catalog.lo_create('33561');
+
+
+ALTER LARGE OBJECT 33561 OWNER TO s_moiseenko;
+
+--
 -- Data for Name: customer; Type: TABLE DATA; Schema: customers_info; Owner: s_moiseenko
 --
 
@@ -2758,26 +2974,21 @@ COPY temp_customer_info.all_info (id, full_name, inet_access, movex_code, robots
 21	SPK Agrokombinat Snov	t	0730000020	10		t	SNV	Microsoft SQL Server 2008 R2 (SP2)	Farm	3.12.8.2					Windows Server 2008 R2 Standard	17118
 2	PKUP Sovhoz Smorgonskiy	t	0730000002	4	ПКУП "Совхоз Сморгонский"	f	SMR	Microsoft SQL Server 2008 R2 (SP2)	Farm	3.10.0.6					Windows Server 2008 Standard	17099
 22	U.O. Belorusskaya Gosudarstvennaya	f	0730000021	1		f	GRK	Microsoft SQL Server 2008 R2 (SP2)	Farm	3.7.0.15					Windows 7 Professional	17119
-23	SP OOO Belita	t	0730000023	2		t	BTA	Microsoft SQL Server 2008 R2 (SP2)	Farm	3.10.0.8					Windows 7 Professional	17120
-7	SPK Progress-Vertelishki	t	0730000009	16	СПК Прогресс-Вертелишки	t	PRG	Microsoft SQL Server 2008 R2 (SP2)	Farm	3.12.8.2					Windows Server 2008 R2 Standard	17104
-8	SPK Nesvizhskie Ostrovki	t	0730000010	6	ОАО Несвижские островки	t	NVZ	Microsoft SQL Server 2008 R2 (SP2)	Farm No Maintenance	3.5.0.11					Windows Server 2008 R2 Standard	17105
 5	UP Vitebskoblgaz	t	0730000005	12	СХП "Мазоловогаз", А3Next 	t	MZL-A3NEXT	Microsoft SQL Server 2008 R2 (SP2)	Farm	3.12.8.2					Windows Server 2008 R2 Standard	17102
 13	UP Vitebskoblgaz	t	0730000005	4	СХП "Мазоловогаз", А4	t	MZL-A4	Microsoft SQL Server 2014	Farm	3.12.8.2					Windows 7 Professional	17110
 24	UP Agrokombinat Zhdanovichi	t	0730000024	11		t		Microsoft SQL Server 2008 R2 (SP2)	Farm	3.12.8.2					Windows Server 2008 R2 Standard	17121
-17	GPU NP Belovezhskaya Puscha	t	0730000016	6		t	DBV	Microsoft SQL Server 2008 R2 (SP2)	Farm	3.12.8.2					Windows Server 2008 R2 Standard	17114
+18	OAO Alexanderijskoe	f	0730000017	16	ОАО "Александрийское"	t	AXR	Microsoft SQL Server 2008 R2 (SP2)	Farm	3.12.8.2					Windows Server 2012 R2 Standard	25363
 25	OOO Tarasovo	f	0730000025	6		f		Microsoft SQL Server 2008 R2 (SP2)	Farm	3.7.0.17					Windows Server 2008 R2 Standard	17122
 26	ZAO "1 Maja"	f	0730000026	3		f		Microsoft SQL Server 2008 R2 (SP2)	Farm	3.7.0.15					Windows 7 Professional	17123
 9	SPK Gorodeya	f	0730000011	4	ОАО "Городея", A3Next	t	GRD-A3NEXT	Microsoft SQL Server 2014	Farm	3.12.8.2					Windows 10 Pro	17106
-11	GPU NP Pripyatskij	f	0730000013	6		f	LSK	Microsoft SQL Server 2008 R2 (SP2)	Farm	3.7.0.17					Windows Server 2003 Standard	17108
-10	SHP Vydreya	f	0730000012	6		f	VDR	Microsoft SQL Server 2008 R2 (SP2)	Farm	3.7.0.17					Windows Server 2008 R2 Standard	17107
-1	Vladimir Korsun	t	0730000000	2	ОАО Соколовщина	t	SKL	Microsoft SQL Server 2008 R2 (SP2)	Farm	3.7.0.17					Windows 10 Pro	17098
+7	SPK Progress-Vertelishki	t	0730000009	16	СПК "Прогресс-Вертелишки"	t	PRG	Microsoft SQL Server 2008 R2 (SP2)	Farm	3.12.8.2					Windows Server 2008 R2 Standard	25359
+12	OAO Turovschina	f	0730000014	6	ОАО "Туровщина", МТФ "Новая Казаргать"	f	TRV	Microsoft SQL Server 2008 R2 (SP2)	Farm	3.7.0.17					Windows Server 2008 R2 Standard	25356
+16	RUP Minskenergo fil. Lebedevo	t	0730000015	12	РУП "Минскэнерго" (филиал Агрофирма "Лебедево" РУП "Минскэнерго")	t	LBD	Microsoft SQL Server 2017	Farm	3.12.8.2					Windows Server 2019 Standard	25357
+10	SHP Vydreya	f	0730000012	6	УП Витебское отделение белорусской железной дороги СХП Выдрея МТФ "Чиковщина"	f	VDR	Microsoft SQL Server 2008 R2 (SP2)	Farm	3.7.0.17					Windows Server 2008 R2 Standard	25354
 14	Jsc Lepelskij molochnokons. kombinat	f	0730000006	6	ОАО "Лепельский молочноконсервный комбинат", A4, Старый Лепель	t	LPL-A4	Microsoft SQL Server 2008 R2 (SP2)	Farm	3.2.7.19					Windows Server 2008 R2 Standard	17111
 6	Jsc Lepelskij molochnokons. kombinat	t	0730000006	12	ОАО "Лепельский молочноконсервный комбинат", A3Next, Юрковщина	t	LPL-A3NEXT	Microsoft SQL Server 2014	Farm	3.12.8.2					Windows Server 2016 Standard	17103
 15	SPK Gorodeya	f	0730000011	4	ОАО "Грордея", A4	t	GRD-A4	Microsoft SQL Server 2008 R2 (SP2)	Farm	3.12.8.2					Windows Server 2008 R2 Standard	17112
-18	OAO Alexanderijskoe	f	0730000017	16		t	AXR	Microsoft SQL Server 2016	Farm	3.12.8.2					Windows Server 2012 R2 Standard	17115
-16	RUP Minskenergo fil. Lebedevo	t	0730000015	12		t	LBD	Microsoft SQL Server 2017	Farm	3.12.8.2					Windows Server 2019 Standard	17113
-19	RUP Vitebskenergo	t	0730000018	6		t	VEN	Microsoft SQL Server 2008 R2 (SP2)	Farm	3.7.0.17					Windows Server 2008 R2 Standard	17116
-20	KUP Minskaya Ovoschnaya Fabrika	t	0730000019	16		t	MOF	Microsoft SQL Server 2008 R2 (SP2)	Farm	3.12.8.2					Windows Server 2008 R2 Standard	17117
+8	SPK Nesvizhskie Ostrovki	t	0730000010	6	ОАО "Несвижские островки"	t	NVZ	Microsoft SQL Server 2008 R2 (SP2)	Farm No Maintenance	3.5.0.11					Windows Server 2008 R2 Standard	25360
 28	OAO "Dorors"	t	0730000028	6		t		Microsoft SQL Server 2014	Farm	3.12.8.2					Windows Server 2008 R2 Standard	17125
 29	CHUP "ASB Pervaja Vesna"	f	0730000029	4		f		Microsoft SQL Server 2008 R2 (SP2)	Farm	3.11.0.8					Windows 7 Professional	17126
 30	OAO "Kuhchitsy"	t	0730000030	2		t		Microsoft SQL Server 2014	Farm	3.12.8.2					Windows 7 Professional	17127
@@ -2787,16 +2998,18 @@ COPY temp_customer_info.all_info (id, full_name, inet_access, movex_code, robots
 34	OAO "Octayabrskaya Revolucia"	f	0730000034	2		t		Microsoft SQL Server 2008 R2 (SP2)	Farm	3.2.7.19					Windows 7 Professional	17131
 35	OAO "Kosino"	t	0730000035	4		t		Microsoft SQL Server 2008 R2 (SP2)	Farm	3.2.7.19					Windows Server 2008 R2 Standard	17132
 37	GP "ZhodinoAgroPlemElita"	f	0730000037	1		f		Microsoft SQL Server 2008 R2 (SP2)	Farm	3.3.1.21					Windows 7 Professional	17134
-38	OAO "Jushevichi"	f	0730000038	6		t		Microsoft SQL Server 2008 R2 (SP2)	Farm	3.8.0.16					Windows Server 2008 R2 Standard	17135
 39	OAO "Gritskevichi"	t	0730000039	6		t		Microsoft SQL Server 2014	Farm	3.12.8.2					Windows Server 2012 R2 Standard	17136
 41	SHP "Velikopolje", KUP "Minsktrans"	f	0730000041	8		t		Microsoft SQL Server 2008 R2 (SP2)	Farm	3.2.7.19					Windows Server 2008 R2 Standard	17138
-43	UP "Mingaz"	f	0730000043	10		f		Microsoft SQL Server 2008 R2 (SP2)	Farm No Maintenance	3.4.0.11					Windows 7 Professional	17140
 27	RUP "MTZ	f	0730000027	3		t		Microsoft SQL Server 2008 R2 (SP2)	Farm	3.10.0.6					Windows 7 Professional	25347
 4	SPK Khotily	t	0730000004	12	ОАО "Хотилы Агро"	t	HTL	Microsoft SQL Server 2008 R2 (SP2)	Farm	3.12.8.2					Windows Server 2008 R2 Standard	25345
-36	OAO "Vilejskij Kombikormovyj Zavod"	t	0730000036	2	ОАО "Вилейский Комбикормовый Завод"	t	VKZ	Microsoft SQL Server 2008 R2 (SP2)	Farm	3.7.0.17	1563006208				Windows 7 Professional	25346
+38	OAO "Jushevichi"	t	0730000038	6		t		Microsoft SQL Server 2008 R2 (SP2)	Farm	3.12.8.2					Windows Server 2008 R2 Standard	25373
 40	SHP Voshod	t	0730000040	10		f		Microsoft SQL Server 2008 R2 (SP2)	Farm	3.10.0.9					Windows Server 2008 R2 Standard	25348
 42	OAO "Lipovtsy"	f	0730000042	2		f		Microsoft SQL Server 2014	Farm	3.6.0.11					Windows 7 Professional	25349
-12	OAO Turovschina	f	0730000014	6		f	TRV	Microsoft SQL Server 2008 R2 (SP2)	Farm	3.7.0.17					Windows Server 2008 R2 Standard	25350
+19	RUP Vitebskenergo	t	0730000018	6	Филиал "Весна-энерго"РУП "Витебскэнерго"	t	VEN	Microsoft SQL Server 2008 R2 (SP2)	Farm	3.7.0.17					Windows Server 2008 R2 Standard	25371
+43	UP "Mingaz"	t	0730000043	10		t		Microsoft SQL Server 2008 R2 (SP2)	Farm	3.12.8.2					Windows 7 Professional	25352
+17	GPU NP Belovezhskaya Puscha	t	0730000016	6	Сельскохозяйственное унитарное предприятие "ВМК-АГРО"	t	DBV	Microsoft SQL Server 2008 R2 (SP2)	Farm	3.12.8.2					Windows Server 2008 R2 Standard	25370
+23	SP OOO Belita	t	0730000023	2		t	BTA	Microsoft SQL Server 2014	Farm	3.12.8.2					Windows 10 Pro	33561
+36	OAO "Vilejskij Kombikormovyj Zavod"	t	0730000036	2	ОАО "Вилейский Комбикормовый Завод"	t	VKZ	Microsoft SQL Server 2008 R2 (SP2)	Farm	3.12.8.2	1563006208				Windows 7 Professional	25372
 45	OAO " Gluboskij Myaskombinat"	t	0730000045	2		t		Microsoft SQL Server 2014	Farm	3.12.8.2					Windows 7 Ultimate	17142
 46	OAO "Novoselki Luchaj"	t	0730000046	12		t		Microsoft SQL Server 2008 R2 (SP2)	Farm	3.12.8.2					Windows Server 2008 R2 Standard	17143
 47	OAO "Poloydkij Molochnyj Kombinat"	f	0730000047	2		t		Microsoft SQL Server 2008 R2 (SP2)	Farm	3.7.0.17					Windows 7 Professional	17144
@@ -2811,6 +3024,9 @@ COPY temp_customer_info.all_info (id, full_name, inet_access, movex_code, robots
 56	OAO "Azot-Agro"	f	0730000058	8		t		Microsoft SQL Server 2014	Farm	3.5.0.11					Windows Server 2012 R2 Standard	17153
 44	OAO "Kaganets"	t	0730000044	3		t		Microsoft SQL Server 2014	Farm	3.12.8.2					Windows 8.1 Pro	17141
 3	SPK Kommunar-Agro	f	0730000003	2	СПК "Коммунар-агро"	f	KNR	Microsoft SQL Server 2008 R2 (SP2)	Farm	3.2.0.63					Windows 7 Professional	25344
+11	GPU NP Pripyatskij	f	0730000013	6	СХК "Лясковичи"	f	LSK	Microsoft SQL Server 2008 R2 (SP2)	Farm	3.7.0.17					Windows Server 2003 Standard	25361
+20	KUP Minskaya Ovoschnaya Fabrika	t	0730000019	16	КУП "Минская овощная фабрика"	t	MOF	Microsoft SQL Server 2008 R2 (SP2)	Farm	3.12.8.2					Windows Server 2008 R2 Standard	25364
+1	Vladimir Korsun	t	0730000000	2	ОАО "Соколовщина"	t	SKL	Microsoft SQL Server 2008 R2 (SP2)	Farm	3.12.8.2					Windows 10 Pro	25369
 \.
 
 
@@ -3139,6 +3355,96 @@ SELECT pg_catalog.lo_close(0);
 
 SELECT pg_catalog.lo_open('25350', 131072);
 SELECT pg_catalog.lowrite(0, '\x444220436f72727570742c206669727374206e65656420636f6e7461637420746f204c656c79');
+SELECT pg_catalog.lo_close(0);
+
+SELECT pg_catalog.lo_open('25351', 131072);
+SELECT pg_catalog.lowrite(0, '\x576879206e6f206d61696e74656e616e63653f204e656564206120736572766572206d6f7265207468616e203120796561722e0d0a32382e30372e3230323020776173207570646174656420746f20332e372e302e31370d0a32392e30372e3230323020776173207570646174656420746f20332e31322e302e38');
+SELECT pg_catalog.lo_close(0);
+
+SELECT pg_catalog.lo_open('25352', 131072);
+SELECT pg_catalog.lowrite(0, '\x576879206e6f206d61696e74656e616e63653f204e656564206120736572766572206d6f7265207468616e203120796561722e0d0a32382e30372e3230323020776173207570646174656420746f20332e372e302e31370d0a32392e30372e3230323020776173207570646174656420746f20332e31322e302e38');
+SELECT pg_catalog.lo_close(0);
+
+SELECT pg_catalog.lo_open('25353', 131072);
+SELECT pg_catalog.lowrite(0, '\x33302e30372e323032302077617320757064617465642066726f6d20332e372e302e313720746f20332e31322e382e32');
+SELECT pg_catalog.lo_close(0);
+
+SELECT pg_catalog.lo_open('25354', 131072);
+SELECT pg_catalog.lowrite(0, '\x4e6f205365727669636520436f6e7472616374');
+SELECT pg_catalog.lo_close(0);
+
+SELECT pg_catalog.lo_open('25355', 131072);
+SELECT pg_catalog.lowrite(0, '\x4641524d204e4f5420574f524b');
+SELECT pg_catalog.lo_close(0);
+
+SELECT pg_catalog.lo_open('25356', 131072);
+SELECT pg_catalog.lowrite(0, '\x444220436f72727570742c206669727374206e65656420636f6e7461637420746f204c656c790d0a57494c4c2044495341424c452046524f4d20535550504f5254');
+SELECT pg_catalog.lo_close(0);
+
+SELECT pg_catalog.lo_open('25357', 131072);
+SELECT pg_catalog.lo_close(0);
+
+SELECT pg_catalog.lo_open('25358', 131072);
+SELECT pg_catalog.lowrite(0, '\x33302e30372e323032302077617320757064617465642066726f6d20332e372e302e313720746f20332e31322e382e32');
+SELECT pg_catalog.lo_close(0);
+
+SELECT pg_catalog.lo_open('25359', 131072);
+SELECT pg_catalog.lo_close(0);
+
+SELECT pg_catalog.lo_open('25360', 131072);
+SELECT pg_catalog.lowrite(0, '\x574859204661726d4e6f4d61696e74656e616e63653f3f3f');
+SELECT pg_catalog.lo_close(0);
+
+SELECT pg_catalog.lo_open('25361', 131072);
+SELECT pg_catalog.lowrite(0, '\x4641524d204e4f5420574f524b');
+SELECT pg_catalog.lo_close(0);
+
+SELECT pg_catalog.lo_open('25362', 131072);
+SELECT pg_catalog.lo_close(0);
+
+SELECT pg_catalog.lo_open('25363', 131072);
+SELECT pg_catalog.lo_close(0);
+
+SELECT pg_catalog.lo_open('25364', 131072);
+SELECT pg_catalog.lo_close(0);
+
+SELECT pg_catalog.lo_open('25365', 131072);
+SELECT pg_catalog.lo_close(0);
+
+SELECT pg_catalog.lo_open('25366', 131072);
+SELECT pg_catalog.lowrite(0, '\x54727920746f20757067726164652033302e30372e323032302e205570677261646520737475636b206174206261636b75702073746167652e204d61796265206e6565642068656c702e');
+SELECT pg_catalog.lo_close(0);
+
+SELECT pg_catalog.lo_open('25367', 131072);
+SELECT pg_catalog.lowrite(0, '\x33302e30372e32303230207570677261646520746f20332e31312063616e742066696e6973682062656361757365206f6620444220757067726164652070726f626c656d2e20576173207772697474656e206c657474657220746f2074737320737570706f72742e');
+SELECT pg_catalog.lo_close(0);
+
+SELECT pg_catalog.lo_open('25368', 131072);
+SELECT pg_catalog.lowrite(0, '\x536572766572206e6f7420776f726b203b28');
+SELECT pg_catalog.lo_close(0);
+
+SELECT pg_catalog.lo_open('25369', 131072);
+SELECT pg_catalog.lowrite(0, '\x33302e30372e323032302077617320757064617465642066726f6d20332e372e302e313720746f20332e31322e382e320d0a4d6179626520626574746572207265696e7374616c6c20543443');
+SELECT pg_catalog.lo_close(0);
+
+SELECT pg_catalog.lo_open('25370', 131072);
+SELECT pg_catalog.lowrite(0, '\x4e65656420746f207265696e7374616c6c2077696e2073657276657220746f207836342076657273696f6e2e204d617920626520626574746572207265696e7374616c6c205434432e');
+SELECT pg_catalog.lo_close(0);
+
+SELECT pg_catalog.lo_open('25371', 131072);
+SELECT pg_catalog.lowrite(0, '\x426164207365727665722e2042657474657220746f2075706461746520696e2074696d65206f662076697369742e');
+SELECT pg_catalog.lo_close(0);
+
+SELECT pg_catalog.lo_open('25372', 131072);
+SELECT pg_catalog.lowrite(0, '\x312e20d09fd0bed0bfd18bd182d0bad0b020d0bed0b1d0bdd0bed0b2d0b8d182d18c20d18120d0b2d0b5d180d181d0b8d0b820332e372e302e31372e0d0a322e205761732075706461746564207375636365737366756c6c7920332e372e302e3137202d20332e31322e382e322061742030362e30382e323032302e0d0a332e204d61792062652062657474657220746f207265696e7374616c205434432e');
+SELECT pg_catalog.lo_close(0);
+
+SELECT pg_catalog.lo_open('25373', 131072);
+SELECT pg_catalog.lowrite(0, '\x33302e30372e32303230207570677261646520746f20332e31312063616e742066696e6973682062656361757365206f6620444220757067726164652070726f626c656d2e20576173207772697474656e206c657474657220746f2074737320737570706f72742e0d0a30352e30382e3230323020776173207570677261646520746f20332e31322e382e322062792074346320737570706f72742e');
+SELECT pg_catalog.lo_close(0);
+
+SELECT pg_catalog.lo_open('33561', 131072);
+SELECT pg_catalog.lowrite(0, '\x54727920746f20757067726164652033302e30372e323032302e205570677261646520737475636b206174206261636b75702073746167652e204d61796265206e6565642068656c702e0d0a32352e30382e323032302077617320757067726164656420746f20332e31322e382e3220616e64207265696e7374616c6c65642e');
 SELECT pg_catalog.lo_close(0);
 
 COMMIT;
@@ -3602,8 +3908,8 @@ GRANT ALL ON TABLE mywebprojectdb.users_roles TO s_moiseenko;
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 12.3 (Ubuntu 12.3-1.pgdg18.04+1)
--- Dumped by pg_dump version 12.3 (Ubuntu 12.3-1.pgdg18.04+1)
+-- Dumped from database version 12.4 (Ubuntu 12.4-0ubuntu0.20.04.1)
+-- Dumped by pg_dump version 12.4 (Ubuntu 12.4-0ubuntu0.20.04.1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
