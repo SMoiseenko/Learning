@@ -1,0 +1,5 @@
+Interesting info:
+1. Customer data - no any history, only last info that ever recieved.
+2. DownTime Data - maybe interesting. Consist form fault astronaut codes.
+3. AstronautData - data from robots, sudh as firmware, serial number, and some not understanding information.
+4. FarmData - data from t4c about milkings, avg. milkings, total produces and othes.

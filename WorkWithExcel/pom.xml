@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>by.moiseenko</groupId>
+  <artifactId>WorkWithExcel</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>WorkWithExcel</name>
+  <description>Work with Apache POI lib and excel format</description>
+  <url>https://github.com/S/Moiseenko</url>
+
+  <properties>
+    <java.version>15</java.version>
+    <mcp.version>3.8.1</mcp.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <log4j.version>2.14.0</log4j.version>
+    <apachePOI.version>5.0.0</apachePOI.version>
+
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>${log4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi</artifactId>
+      <version>${apachePOI.version}</version>
+    </dependency>
+
+  </dependencies>
+  <build>
+    <plugins>
+    <plugin>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>${mcp.version}</version>
+      <configuration>
+        <release>${java.version}</release>
+        <source>${java.version}</source>
+        <target>${java.version}</target>
+      </configuration>
+    </plugin>
+    </plugins>
+  </build>
+
+</project>
