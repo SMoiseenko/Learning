@@ -1,11 +1,10 @@
 package by.moiseenko.BelarusLelyData.entity.entityFromJson;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.EqualsAndHashCode;
+import by.moiseenko.BelarusLelyData.utils.customJsonParser.RowLelyParser;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.SuperBuilder;
 
 /**
  * Default javadoc
@@ -13,16 +12,13 @@ import lombok.ToString;
  * @author moiseenko-s
  */
 @Getter
-@Setter
-@EqualsAndHashCode
+@SuperBuilder
 @ToString
-@NoArgsConstructor
+@JsonDeserialize(using = RowLelyParser.class)
 
 public abstract class RowLelyFromJson {
 
-  @JsonProperty("LceMovexCode")
   protected String lceMovexCode;// to abstract class
-  @JsonProperty("LceName")
   protected String lceName;// to abstract class
   protected String sfdcustomermovexcode;// to abstract class
 

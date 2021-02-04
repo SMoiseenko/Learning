@@ -1,12 +1,9 @@
 package by.moiseenko.BelarusLelyData.entity.entityFromJson.lelyEntityFromJson;
 
 import by.moiseenko.BelarusLelyData.entity.entityFromJson.RowLelyFromJson;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.SuperBuilder;
 
 /**
  * Default javadoc
@@ -14,49 +11,29 @@ import lombok.ToString;
  * @author moiseenko-s
  */
 @Getter
-@Setter
-@NoArgsConstructor
-@EqualsAndHashCode(callSuper = true)
+@SuperBuilder
 @ToString(callSuper = true)
-
 public class CustomerDataLelyFromJson extends RowLelyFromJson {
 
-  private String sfdfarmlicense;
-  private String sfdcurrentversion;
-  private int sfdnrrobots;
-  private String sfdfarmname;
-  private String sfdregion;
-  @JsonProperty("RobotAvg")
-  private double robotAvg;
-  @JsonProperty("RobotSum")
-  private int robotSum;
-  @JsonProperty("LicenseType")
-  private String licenseType;
-  @JsonProperty("WindowsOS")
-  private String windowsOS;
-  @JsonProperty("SqlDB")
-  private String sqlDB;
-  @JsonProperty("DownloadSpeed")
-  private double downloadSpeed;
-  @JsonProperty("UploadSpeed")
-  private double uploadSpeed;
-  @JsonProperty("NrOfCosmix")
-  private int nrOfCosmix;
-  @JsonProperty("NrOfGrazeway")
-  private Object nrOfGrazeway;
-  @JsonProperty("HaveVector")
-  private boolean haveVector;
-  @JsonProperty("HaveQwesLD")
-  private boolean haveQwesLD;
-  @JsonProperty("HaveQwesISOLD")
-  private boolean haveQwesISOLD;
-  @JsonProperty("HaveQwesISOLDReceiver")
-  private boolean haveQwesISOLDReceiver;
-  @JsonProperty("HaveQwesLDN")
-  private boolean haveQwesLDN;
-  @JsonProperty("UseInherd")
-  private boolean useInherd;
-  @JsonProperty("SqlDatabaseSizeInMB")
-  private double sqlDatabaseSizeInMB;
-
+  private final String sfdfarmlicense;
+  private final String sfdcurrentversion;
+  private final int sfdnrrobots;
+  private final String sfdfarmname;
+  private final String sfdregion;
+  private final double robotAvg;
+  private final int robotSum;
+  private final String licenseType;
+  private final String windowsOS;
+  private final String sqlDB;
+  private final double downloadSpeed;
+  private final double uploadSpeed;
+  private final int nrOfCosmix;
+  private final Object nrOfGrazeway;
+  private final boolean haveVector;
+  private final boolean haveQwesLD;
+  private final boolean haveQwesISOLD;
+  private final boolean haveQwesISOLDReceiver;
+  private final boolean haveQwesLDN;
+  private final boolean useInherd;
+  private final double sqlDatabaseSizeInMB;
 }

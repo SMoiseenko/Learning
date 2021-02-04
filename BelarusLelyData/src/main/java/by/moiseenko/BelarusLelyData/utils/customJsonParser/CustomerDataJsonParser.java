@@ -4,7 +4,6 @@ import by.moiseenko.BelarusLelyData.entity.CustomerData;
 import by.moiseenko.BelarusLelyData.entity.LSO;
 import by.moiseenko.BelarusLelyData.entity.LicenseType;
 import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -27,7 +26,7 @@ public class CustomerDataJsonParser extends StdDeserializer<CustomerData> {
 
   @Override
   public CustomerData deserialize(JsonParser jsonParser,
-      DeserializationContext deserializationContext) throws IOException, JsonProcessingException {
+      DeserializationContext deserializationContext) throws IOException {
     JsonNode node = jsonParser.getCodec().readTree(jsonParser);
     Long id = 1L;
 

@@ -13,16 +13,8 @@ import java.io.IOException;
 public class RootLelyJsonDeserializer {
 
 
-  public RootLelyFromJson deserialize(String fileName) {
+  public RootLelyFromJson deserialize(String fileName) throws IOException {
     ObjectMapper op = new ObjectMapper();
-    RootLelyFromJson result = null;
-    try {
-      result = op.readValue(new File(fileName), RootLelyFromJson.class);
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-
-    return result;
+    return op.readValue(new File(fileName), RootLelyFromJson.class);
   }
-
 }

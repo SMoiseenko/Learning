@@ -1,11 +1,9 @@
 package by.moiseenko.BelarusLelyData.entity.entityFromJson.lelyEntityFromJson;
 
 import by.moiseenko.BelarusLelyData.entity.entityFromJson.RowLelyFromJson;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.ToString;
+import lombok.experimental.SuperBuilder;
 
 /**
  * Default javadoc
@@ -13,59 +11,35 @@ import lombok.Setter;
  * @author moiseenko-s
  */
 @Getter
-@Setter
-@NoArgsConstructor
-@EqualsAndHashCode(callSuper = true)
+@SuperBuilder
+@ToString(callSuper = true)
 public class FarmDataLelyFromJson extends RowLelyFromJson {
 
-  private String sfdfarmlicense;
-  private int sfdid;
-  private String sfdfarmname;
-  private String hhicreateddate;
-  @JsonProperty("TotalMilkProduction")
-  private double totalMilkProduction;
-  @JsonProperty("MilkProductionCowDay")
-  private double milkProductionCowDay;
-  @JsonProperty("NumberOfRefusals")
-  private double numberOfRefusals;
-  @JsonProperty("NumberOfFailures")
-  private double numberOfFailures;
-  @JsonProperty("NumberOfVisit")
-  private double numberOfVisit;
-  @JsonProperty("NumberMilkingsCowDay")
-  private double numberMilkingsCowDay;
-  @JsonProperty("Milkspeed")
-  private double milkspeed;
-  @JsonProperty("NumberOfConnectionAttempts")
-  private double numberOfConnectionAttempts;
-  @JsonProperty("AmountOfMilkSeparated")
-  private double amountOfMilkSeparated;
-  @JsonProperty("NumberOfCowsMilkSeparation")
-  private double numberOfCowsMilkSeparation;
-  @JsonProperty("KgConcentratesFed")
-  private double kgConcentratesFed;
-  @JsonProperty("KgRestFeedConcentrates")
-  private double kgRestFeedConcentrates;
-  @JsonProperty("KgConcentratesper100KgMilk")
-  private double kgConcentratesper100KgMilk;
-  @JsonProperty("KgConcentrates")
-  private double kgConcentrates;
-  @JsonProperty("KgConcentratesLactationdays")
-  private double kgConcentratesLactationdays;
-  @JsonProperty("AverageBoxtimeVisit")
-  private String averageBoxtimeVisit;
-  @JsonProperty("RuminationActivity")
-  private double ruminationActivity;
-  @JsonProperty("AverageFatIndication")
-  private double averageFatIndication;
-  @JsonProperty("AverageProteinIndication")
-  private double averageProteinIndication;
-  @JsonProperty("AverageFatProteinRatio")
-  private double averageFatProteinRatio;
-  @JsonProperty("RestFeedConc")
-  private double restFeedConc;
-  @JsonProperty("Freemilktime")
-  private double freemilktime;
-  @JsonProperty("Treatmenttime")
-  private String treatmenttime;
+  private final String sfdfarmlicense;
+  private final int sfdid;
+  private final String sfdfarmname;
+  private final String hhicreateddate;
+  private final double totalMilkProduction;
+  private final double milkProductionCowDay;
+  private final double numberOfRefusals;
+  private final double numberOfFailures;
+  private final double numberOfVisit;
+  private final double numberMilkingsCowDay;
+  private final double milkspeed;
+  private final double numberOfConnectionAttempts;
+  private final double amountOfMilkSeparated;
+  private final double numberOfCowsMilkSeparation;
+  private final double kgConcentratesFed;
+  private final double kgRestFeedConcentrates;
+  private final double kgConcentratesper100KgMilk;
+  private final double kgConcentrates;
+  private final double kgConcentratesLactationdays;
+  private final String averageBoxtimeVisit;
+  private final double ruminationActivity;
+  private final double averageFatIndication;
+  private final double averageProteinIndication;
+  private final double averageFatProteinRatio;
+  private final double restFeedConc;
+  private final double freemilktime;
+  private final String treatmenttime;
 }
