@@ -1,4 +1,4 @@
-package by.moiseenko.BelarusLelyData.utils;
+package by.moiseenko.BelarusLelyData.utils.customJsonParser;
 
 import by.moiseenko.BelarusLelyData.entity.CustomerData;
 import by.moiseenko.BelarusLelyData.entity.LSO;
@@ -11,17 +11,17 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.io.IOException;
 
-public class CustomerDataJSONParser extends StdDeserializer<CustomerData> {
+public class CustomerDataJsonParser extends StdDeserializer<CustomerData> {
 
-  protected CustomerDataJSONParser(Class<?> vc) {
+  protected CustomerDataJsonParser(Class<?> vc) {
     super(vc);
   }
 
-  protected CustomerDataJSONParser(JavaType valueType) {
+  protected CustomerDataJsonParser(JavaType valueType) {
     super(valueType);
   }
 
-  protected CustomerDataJSONParser(StdDeserializer<?> src) {
+  protected CustomerDataJsonParser(StdDeserializer<?> src) {
     super(src);
   }
 
@@ -29,12 +29,12 @@ public class CustomerDataJSONParser extends StdDeserializer<CustomerData> {
   public CustomerData deserialize(JsonParser jsonParser,
       DeserializationContext deserializationContext) throws IOException, JsonProcessingException {
     JsonNode node = jsonParser.getCodec().readTree(jsonParser);
-    Long id = Long.valueOf(1);
-    String movexCode = node.get("name");
-    LSO lso;
-    String engName;
-    LicenseType licenseType;
-    String t4CVersion;
-    return new CustomerData(id, );
+    Long id = 1L;
+
+    String movexCode = node.get("sfdfarmname").asText();
+    String engName = node.get("sfdfasfdcustomermovexcodermname").asText();
+    String t4CVersion = node.get("sfdcurrentversion").asText();
+    return new CustomerData(id, movexCode, new LSO("", "", ""), engName, new LicenseType("FARM"),
+        t4CVersion);
   }
 }

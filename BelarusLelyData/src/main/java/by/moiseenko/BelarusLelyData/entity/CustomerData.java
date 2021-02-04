@@ -1,6 +1,6 @@
 package by.moiseenko.BelarusLelyData.entity;
 
-import by.moiseenko.BelarusLelyData.utils.CustomerDataJSONParser;
+import by.moiseenko.BelarusLelyData.utils.customJsonParser.CustomerDataJsonParser;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -15,8 +15,9 @@ import lombok.ToString;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonDeserialize(using = CustomerDataJSONParser.class)
+@JsonDeserialize(using = CustomerDataJsonParser.class)
 public class CustomerData {
+
   private Long id;
   private String movexCode;
   private LSO lso;
