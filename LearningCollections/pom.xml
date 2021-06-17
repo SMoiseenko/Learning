@@ -15,8 +15,8 @@
     <mcp.version>3.8.1</mcp.version>
     <msp.version>3.0.0-M4</msp.version>
     <junit.version>5.6.0</junit.version>
-    <log4j.version>2.13.0</log4j.version>
-    <jackson.version>2.12.1</jackson.version>
+    <log4j.version>2.13.2</log4j.version>
+    <jackson.version>2.10.1</jackson.version>
 
   </properties>
 
