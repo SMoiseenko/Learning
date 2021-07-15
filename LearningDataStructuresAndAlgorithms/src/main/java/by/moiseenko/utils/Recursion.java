@@ -1,5 +1,7 @@
 package by.moiseenko.utils;
 
+import java.util.Arrays;
+
 public class Recursion {
 
   public int squareSplit(int width, int height) {
@@ -11,7 +13,20 @@ public class Recursion {
   }
 
   public long factorial(int i) {
-    return i == 0 ? 1 : i* factorial(i - 1);
+    return i == 0 ? 1 : i * factorial(i - 1);
+  }
+
+  public long sumOfArray(int[] arr) {
+    return (arr.length == 1) ? arr[0] : arr[0] + sumOfArray(Arrays.copyOfRange(arr, 1, arr.length));
+  }
+
+  public int countOfArray(int[] arr) {
+    return (arr.length == 0) ? 0 : 1 + countOfArray(Arrays.copyOfRange(arr, 1, arr.length));
+  }
+
+  public int maxOfArray(int[]arr){
+    return 0;
+    //if a[1] -> a1 max; if a[1,2] -> 1>2?1:2
   }
 
 }
