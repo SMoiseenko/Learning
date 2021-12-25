@@ -15,7 +15,7 @@
     <java.version>15</java.version>
     <mcp.version>3.8.1</mcp.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <log4j.version>2.14.0</log4j.version>
+    <log4j.version>2.17.0</log4j.version>
     <apachePOI.version>5.0.0</apachePOI.version>
 
   </properties>
