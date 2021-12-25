@@ -18,7 +18,7 @@
     <mcp.version>3.8.1</mcp.version>
     <mwp.version>3.2.3</mwp.version>
     <testng.version>6.14.3</testng.version>
-    <log4j.version>2.13.2</log4j.version>
+    <log4j.version>2.17.0</log4j.version>
     <java.version>13</java.version>
     <servlet.version>4.0.1</servlet.version>
     <postgresql.version>42.2.11</postgresql.version>
