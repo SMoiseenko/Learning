@@ -1,6 +1,7 @@
 package by.moiseenko.utils;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Default javadoc
@@ -21,6 +22,14 @@ public class ArrayUtils {
       } else return mid;
     }
     return -1;
+  }
+
+  public <T> int fillRawArray(List<T> list, T  obj){
+    int result = 0;
+    for (int res = 0; res<list.size();res++, result ++){
+      list.set(res, obj);
+    }
+    return result;
   }
 
 }

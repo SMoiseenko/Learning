@@ -15,7 +15,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <mcp.version>3.8.1</mcp.version>
 
-    <java.version>15</java.version>
+    <java.version>17</java.version>
     <junit.version>5.7.1</junit.version>
     <log4j.version>2.17.1</log4j.version>
 

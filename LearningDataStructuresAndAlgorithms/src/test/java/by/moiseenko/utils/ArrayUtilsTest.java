@@ -2,6 +2,10 @@ package by.moiseenko.utils;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -29,5 +33,13 @@ class ArrayUtilsTest {
   @MethodSource("dateProvider")
   void binarySearchParameterized(int[] arr, int i, int result) {
     assertEquals(result, arrayUtils.binarySearch(arr, i), "Regular binary search should work.");
+  }
+
+  @Test
+  void fillRawArray() {
+    assertEquals(3,
+        arrayUtils.fillRawArray(Stream.of("One", "Two", "Three").collect(Collectors.toList()),
+            "Four"));
+
   }
 }
