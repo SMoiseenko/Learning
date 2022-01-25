@@ -1,0 +1,12 @@
+30, 31, true
+30, 41, false
+40, 50, true
+40, 51, false
+39, 50, false
+50, 39, false
+40, 39, true
+49, 48, true
+50, 40, true
+50, 51, false
+35, 36, true
+35, 45, false

@@ -1,0 +1,6 @@
+120, -1, true
+-1, 120, true
+2, 120, false
+-1, 100, false
+-2, -2, false
+120, 120, false

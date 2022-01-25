@@ -1,0 +1,22 @@
+#!/bin/bash
+> missingChar.csv
+> frontBack.csv
+> front3.csv
+> backAround.csv
+> or35.csv
+> front22.csv
+> startHi.csv
+> icyHot.csv
+> in1020.csv
+> hasTeen.csv
+> loneTeen.csv
+> delDel.csv
+> mixStart.csv
+> startOz.csv
+> intMax.csv
+> close10.csv
+> in3050.csv
+> max1020.csv
+> stringE.csv
+> lastDigit.csv
+> endUp.csv

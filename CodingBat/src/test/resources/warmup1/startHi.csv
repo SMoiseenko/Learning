@@ -1,0 +1,8 @@
+"hi there", true
+"hi", true
+"hello hi", false
+"he", false
+"h", false
+"", false
+"ho hi", false
+"hi ho", true

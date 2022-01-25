@@ -1,0 +1,8 @@
+str, n, expected
+"Miracle", 2, "Mrce"
+"abcdefg", 2, "aceg"
+"abcdefg", 3, "adg"
+"Chocolate", 3, "Cca"
+"Chocolates", 3, "Ccas"
+"Chocolates", 4, "Coe"
+"Chocolates", 100, "C"
