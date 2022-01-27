@@ -1,67 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-
-  <groupId>by.moiseenko</groupId>
-  <artifactId>CodingBat</artifactId>
-  <version>1.0-SNAPSHOT</version>
-
-  <name>Tasks from CodingBat</name>
-  <url>https://github.com/S/Moiseenko</url>
-
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <mcp.version>3.9.0</mcp.version>
-    <msp.version>3.0.0-M5</msp.version>
-
-    <java.version>17</java.version>
-    <junit.version>5.8.2</junit.version>
-    <log4j.version>2.17.1</log4j.version>
-
-
-  </properties>
-
-  <dependencies>
-    <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-core</artifactId>
-      <version>${log4j.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter</artifactId>
-      <version>${junit.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.jetbrains</groupId>
-      <artifactId>annotations</artifactId>
-      <version>RELEASE</version>
-      <scope>compile</scope>
-    </dependency>
-  </dependencies>
-
-  <build>
-    <plugins>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>${mcp.version}</version>
-        <configuration>
-          <release>${java.version}</release>
-          <source>${java.version}</source>
-          <target>${java.version}</target>
-          <compilerArgs>--enable-preview</compilerArgs>
-        </configuration>
-      </plugin>
-      <plugin>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>${msp.version}</version>
-        <configuration>
-          <argLine>--enable-preview</argLine>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-</project>
+<?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">  <modelVersion>4.0.0</modelVersion>  <groupId>by.moiseenko</groupId>  <artifactId>CodingBat</artifactId>  <version>1.0-SNAPSHOT</version>  <name>Tasks from CodingBat</name>  <url>https://github.com/S/Moiseenko</url>  <properties>    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>    <mcp.version>3.9.0</mcp.version>    <msp.version>3.0.0-M5</msp.version>    <java.version>17</java.version>    <junit.version>5.8.2</junit.version>    <log4j.version>2.17.1</log4j.version>  </properties>  <dependencies>    <dependency>      <groupId>org.apache.logging.log4j</groupId>      <artifactId>log4j-core</artifactId>      <version>${log4j.version}</version>    </dependency>    <dependency>      <groupId>org.junit.jupiter</groupId>      <artifactId>junit-jupiter</artifactId>      <version>${junit.version}</version>      <scope>test</scope>    </dependency>  </dependencies>  <build>    <plugins>      <plugin>        <artifactId>maven-compiler-plugin</artifactId>        <version>${mcp.version}</version>        <configuration>          <release>${java.version}</release>          <source>${java.version}</source>          <target>${java.version}</target>          <compilerArgs>--enable-preview</compilerArgs>        </configuration>      </plugin>      <plugin>        <artifactId>maven-surefire-plugin</artifactId>        <version>${msp.version}</version>        <configuration>          <argLine>--enable-preview</argLine>        </configuration>      </plugin>    </plugins>  </build></project>
