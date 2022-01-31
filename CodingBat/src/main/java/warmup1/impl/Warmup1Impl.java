@@ -3,7 +3,7 @@ package warmup1.impl;
 import warmup1.Warmup1;
 
 /**
- * Default javadoc
+ * My Implementation of Warmup1 interfaces from CodingBat.com
  *
  * @author moiseenko-s
  */

@@ -1,0 +1,7 @@
+"Chocolate", 2, "ChoCho"
+"Chocolate", 3, "ChoChoCho"
+"Abc", 3, "AbcAbcAbc"
+"Ab", 4, "AbAbAbAb"
+"A", 4, "AAAA"
+"", 4, ""
+"Abc", 0, ""

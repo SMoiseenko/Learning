@@ -1,0 +1,10 @@
+"xxcaazz", "xxbaaz", 3
+"abc", "abc", 2
+"abc", "axc", 0
+"hello", "he", 1
+"he", "hello", 1
+"h", "hello", 0
+"", "hello", 0
+"aabbccdd", "abbbxxd", 1
+"aaxxaaxx", "iaxxai", 3
+"iaxxai", "aaxxaaxx", 3

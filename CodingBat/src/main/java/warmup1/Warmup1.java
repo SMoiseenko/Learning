@@ -1,7 +1,7 @@
 package warmup1;
 
 /**
- Simple warmup problems to get started (solutions available).
+ * Simple warmup problems to get started (solutions available).
  */
 public interface Warmup1 {
 

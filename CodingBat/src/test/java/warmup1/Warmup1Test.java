@@ -2,47 +2,28 @@ package warmup1;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.stream.Stream;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.MethodSource;
 import warmup1.impl.Warmup1Impl;
 
+/**
+ * Change implementation in void() method to your.
+ */
+
 class Warmup1Test {
+
   private static Warmup1 w;
 
   @BeforeAll
-  static void init(){
+  static void init() {
     w = new Warmup1Impl();
   }
 
-  private static Object[][] sleepInDataProvider() {
-    return new Object[][]{
-        {false, false, true},
-        {true, false, false},
-        {false, true, true},
-        {true, true, true},
-    };
-  }
-
-  private static Stream<Arguments> sumDoubleDataProvider(){
-    return Stream.of(
-        Arguments.of(1,2,3),
-        Arguments.of(3,2,5),
-        Arguments.of(2,2,8),
-        Arguments.of(-1,0,-1),
-        Arguments.of(3,3,12),
-        Arguments.of(0,0,0),
-        Arguments.of(0,1,1),
-        Arguments.of(3,4,7)
-    );
-  }
-
   @ParameterizedTest(name = "{index} => weekday={0}, vacation={1}, expected={2}")
-  @MethodSource("sleepInDataProvider")
+  @MethodSource("warmup1.dataprovider.Warmup1TestDataProvider#sleepInDataProvider")
   void sleepIn(boolean weekday, boolean vacation, boolean expected) {
     assertEquals(expected, w.sleepIn(weekday, vacation));
   }
@@ -54,7 +35,7 @@ class Warmup1Test {
   }
 
   @ParameterizedTest(name = "{displayName} => a={0}, b={1}, expected={2}")
-  @MethodSource("sumDoubleDataProvider")
+  @MethodSource("warmup1.dataprovider.Warmup1TestDataProvider#sumDoubleDataProvider")
   void sumDouble(int a, int b, int expected) {
     assertEquals(expected, w.sumDouble(a, b));
   }

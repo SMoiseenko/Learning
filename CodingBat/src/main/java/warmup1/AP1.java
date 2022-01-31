@@ -58,9 +58,10 @@ public interface AP1 {
    * return whichever is larger. We'll say that the second half begins at index length/2. The array
    * length will be at least 2. To practice decomposition, write a separate helper method {@code int
    * average(int[] scores, int start, int end)} { which computes the average of the elements between
-   * indexes start..end. Call your helper method twice to implement {@code scoresAverage()} Write your
-   * helper method after your {@code scoresAverage()}method in the JavaBat text area. Normally you would
-   * compute averages with doubles, but here we use ints so the expected results are exact.
+   * indexes start..end. Call your helper method twice to implement {@code scoresAverage()} Write
+   * your helper method after your {@code scoresAverage()}method in the JavaBat text area. Normally
+   * you would compute averages with doubles, but here we use ints so the expected results are
+   * exact.
    * <p>
    * <b>Example:</b>
    * <p>
@@ -104,8 +105,8 @@ public interface AP1 {
 
   /**
    * Given an array of strings, return a new List (e.g. an ArrayList) where all the strings of the
-   * given length are omitted. See {@code wordsWithout()}below which is more difficult because it uses
-   * arrays.
+   * given length are omitted. See {@code wordsWithout()}below which is more difficult because it
+   * uses arrays.
    * <p>
    * <b>Example:</b>
    * <p>
@@ -123,9 +124,7 @@ public interface AP1 {
    * <p>
    * <b>Example:</b>
    * <p>
-   * hasOne(10) → true}
-   * hasOne(22) → false}
-   * hasOne(220) → false}
+   * hasOne(10) → true} hasOne(22) → false} hasOne(220) → false}
    */
   boolean hasOne(int n);
 
@@ -164,8 +163,8 @@ public interface AP1 {
   /**
    * We'll say that a positive int n is "endy" if it is in the range 0..10 or 90..100 (inclusive).
    * Given an array of positive ints, return a new array of length "count" containing the first endy
-   * numbers from the original array. Decompose out a separate {@code isEndy(int n)} method to test if a
-   * number is endy. The original array will contain at least "count" endy numbers.
+   * numbers from the original array. Decompose out a separate {@code isEndy(int n)} method to test
+   * if a number is endy. The original array will contain at least "count" endy numbers.
    * <p>
    * <b>Example:</b>
    * <p>
@@ -229,8 +228,8 @@ public interface AP1 {
    * Given two arrays, A and B, of non-negative int scores. A "special" score is one which is a
    * multiple of 10, such as 40 or 90. Return the sum of largest special score in A and the largest
    * special score in B. To practice decomposition, write a separate helper method which finds the
-   * largest special score in an array. Write your helper method after your {@code scoresSpecial()} method
-   * in the JavaBat text area.
+   * largest special score in an array. Write your helper method after your {@code scoresSpecial()}
+   * method in the JavaBat text area.
    * <p>
    * <b>Example:</b>
    * <p>
