@@ -1,0 +1,6 @@
+"abc", "cat", "abcat"
+"dog", "cat", "dogcat"
+"abc", "", "abc"
+"", "cat", "cat"
+"pig", "g", "pig"
+"pig", "doggy", "pigdoggy"

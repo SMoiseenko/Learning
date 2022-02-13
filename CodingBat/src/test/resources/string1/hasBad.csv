@@ -1,0 +1,10 @@
+"badxx", true
+"xbadxx", true
+"xxbadxx", false
+"code", false
+"bad", true
+"ba", false
+"xba", false
+"xbad", true
+"", false
+"badyy", true
