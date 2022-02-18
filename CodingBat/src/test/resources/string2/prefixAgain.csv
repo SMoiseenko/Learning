@@ -1,0 +1,12 @@
+"abXYabc", 1, true
+"abXYabc", 2, true
+"abXYabc", 3, false
+"xyzxyxyxy", 2, true
+"xyzxyxyxy", 3, false
+"Hi12345Hi6789Hi10", 1, true
+"Hi12345Hi6789Hi10", 2, true
+"Hi12345Hi6789Hi10", 3, true
+"Hi12345Hi6789Hi10", 4, false
+"a", 1, false
+"aa", 1, true
+"ab", 1, false

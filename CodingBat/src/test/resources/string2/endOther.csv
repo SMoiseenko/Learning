@@ -1,0 +1,14 @@
+"Hiabc", "abc", true
+"AbC", "HiaBc", true
+"abc", "abXabc", true
+"Hiabc", "abcd", false
+"Hiabc", "bc", true
+"Hiabcx", "bc", false
+"abc", "abc", true
+"xyz", "12xyz", true
+"yz", "12xz", false
+"Z", "12xz", true
+"12", "12", true
+"abcXYZ", "abcDEF", false
+"ab", "ab12", false
+"ab", "12ab", true

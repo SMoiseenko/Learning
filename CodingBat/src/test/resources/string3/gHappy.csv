@@ -1,0 +1,12 @@
+"xxggxx", true
+"xxgxx", false
+"xxggyygxx", false
+"g", false
+"gg", true
+"", true
+"xxgggxyz", true
+"xxgggxyg", false
+"xxgggxygg", true
+"mgm", false
+"mggm", true
+"yyygggxyy", true

@@ -1,0 +1,8 @@
+"Hello", 3, "llollollo"
+"Hello", 2, "lolo"
+"Hello", 1, "o"
+"Hello", 0, ""
+"abc", 3, "abcabcabc"
+"1234", 2, "3434"
+"1234", 3, "234234234"
+"", 0, ""

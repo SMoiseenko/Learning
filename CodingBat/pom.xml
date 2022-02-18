@@ -22,6 +22,23 @@
 
   </properties>
 
+  <dependencies>
+
+    <dependency>
+      <artifactId>log4j-core</artifactId>
+      <groupId>org.apache.logging.log4j</groupId>
+      <version>${log4j.version}</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>junit-jupiter-params</artifactId>
+      <groupId>org.junit.jupiter</groupId>
+      <scope>test</scope>
+      <version>${junit.version}</version>
+    </dependency>
+
+  </dependencies>
+
   <build>
     <plugins>
 
@@ -43,20 +60,5 @@
     </plugins>
   </build>
 
-  <dependencies>
 
-    <dependency>
-      <artifactId>log4j-core</artifactId>
-      <groupId>org.apache.logging.log4j</groupId>
-      <version>${log4j.version}</version>
-    </dependency>
-
-    <dependency>
-      <artifactId>junit-jupiter-params</artifactId>
-      <groupId>org.junit.jupiter</groupId>
-      <scope>test</scope>
-      <version>${junit.version}</version>
-    </dependency>
-
-  </dependencies>
 </project>

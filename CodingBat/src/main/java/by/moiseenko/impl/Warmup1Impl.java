@@ -64,11 +64,11 @@ public class Warmup1Impl implements Warmup1 {
     if (str.isEmpty()) {
       return str;
     }
-    char[] strarr = str.toCharArray();
-    char temp = strarr[strarr.length - 1];
-    strarr[strarr.length - 1] = strarr[0];
-    strarr[0] = temp;
-    return new String(strarr);
+    char[] strArr = str.toCharArray();
+    char temp = strArr[strArr.length - 1];
+    strArr[strArr.length - 1] = strArr[0];
+    strArr[0] = temp;
+    return new String(strArr);
   }
 
   @Override
@@ -205,8 +205,8 @@ public class Warmup1Impl implements Warmup1 {
   @Override
   public boolean stringE(String str) {
     int eQty = 0;
-    char[] strarr = str.toCharArray();
-    for (char c : strarr) {
+    char[] strArr = str.toCharArray();
+    for (char c : strArr) {
       if (c == 'e') {
         eQty++;
       }

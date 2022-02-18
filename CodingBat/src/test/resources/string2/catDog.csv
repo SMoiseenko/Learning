@@ -1,0 +1,13 @@
+"catdog", true
+"catcat", false
+"1cat1cadodog", true
+"catxxdogxxxdog", false
+"catxdogxdogxcat", true
+"catxdogxdogxca", false
+"dogdogcat", false
+"dogogcat", true
+"dog", false
+"cat", false
+"ca", true
+"c", true
+"", true

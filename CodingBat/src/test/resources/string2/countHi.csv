@@ -1,0 +1,9 @@
+"abc hi ho", 1
+"ABChi hi", 2
+"hihi", 2
+"hiHIhi", 2
+"", 0
+"h", 0
+"hi", 1
+"Hi is no HI on ahI", 0
+"hiho not HOHIhi", 2

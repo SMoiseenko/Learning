@@ -1,0 +1,12 @@
+"abcXXXabc", 1
+"xxxabyyyycd", 3
+"a", 0
+"", 0
+"XXXabc", 1
+"XXXXabc", 2
+"XXXXXabc", 3
+"222abyyycdXXX", 3
+"abYYYabXXXXXab", 4
+"abYYXabXXYXXab", 0
+"abYYXabXXYXXab", 0
+"122abhhh2", 1
