@@ -1,116 +1,184 @@
 package by.moiseenko;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.jupiter.api.Test;
+import by.moiseenko.impl.Array1Impl;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 
+/**
+ * Change implementation in init() method to your.
+ */
 class Array1Test {
 
-  @Test
-  void firstLast6() {
+  private static Array1 a1;
+
+  @BeforeAll
+  private static void init() {
+    a1 = new Array1Impl();
   }
 
-  @Test
-  void sameFirstLast() {
+
+  @ParameterizedTest
+  @MethodSource("by.moiseenko.dataprovider.Array1TestDataProvider#firstLast6DataProvider")
+  void firstLast6(int[] nums, boolean expected) {
+    assertEquals(expected, a1.firstLast6(nums));
   }
 
-  @Test
-  void makePi() {
+  @ParameterizedTest
+  @MethodSource("by.moiseenko.dataprovider.Array1TestDataProvider#sameFirstLastDataProvider")
+  void sameFirstLast(int[] nums, boolean expected) {
+    assertEquals(expected, a1.sameFirstLast(nums));
   }
 
-  @Test
-  void commonEnd() {
+  @ParameterizedTest
+  @MethodSource("by.moiseenko.dataprovider.Array1TestDataProvider#makePiDataProvider")
+  void makePi(int[] expected) {
+    assertEquals(expected, a1.makePi());
   }
 
-  @Test
-  void sum3() {
+  @ParameterizedTest
+  @MethodSource("by.moiseenko.dataprovider.Array1TestDataProvider#commonEndDataProvider")
+  void commonEnd(int[] a, int[] b, boolean expected) {
+    assertEquals(expected, a1.commonEnd(a, b));
   }
 
-  @Test
-  void rotateLeft3() {
+  @ParameterizedTest
+  @MethodSource("by.moiseenko.dataprovider.Array1TestDataProvider#sum3DataProvider")
+  void sum3(int[] nums, int expected) {
+    assertEquals(expected, a1.sum3(nums));
   }
 
-  @Test
-  void reverse3() {
+  @ParameterizedTest
+  @MethodSource("by.moiseenko.dataprovider.Array1TestDataProvider#rotateLeft3DataProvider")
+  void rotateLeft3(int[] nums, int[] expected) {
+    assertEquals(expected, a1.rotateLeft3(nums));
   }
 
-  @Test
-  void maxEnd3() {
+  @ParameterizedTest
+  @MethodSource("by.moiseenko.dataprovider.Array1TestDataProvider#reverse3DataProvider")
+  void reverse3(int[] nums, int[] expected) {
+    assertEquals(expected, a1.reverse3(nums));
   }
 
-  @Test
-  void sum2() {
+  @ParameterizedTest
+  @MethodSource("by.moiseenko.dataprovider.Array1TestDataProvider#maxEnd3DataProvider")
+  void maxEnd3(int[] nums, int[] expected) {
+    assertEquals(expected, a1.maxEnd3(nums));
   }
 
-  @Test
-  void middleWay() {
+  @ParameterizedTest
+  @MethodSource("by.moiseenko.dataprovider.Array1TestDataProvider#sum2DataProvider")
+  void sum2(int[] nums, int expected) {
+    assertEquals(expected, a1.sum2(nums));
   }
 
-  @Test
-  void makeEnds() {
+  @ParameterizedTest
+  @MethodSource("by.moiseenko.dataprovider.Array1TestDataProvider#middleWayDataProvider")
+  void middleWay(int[] a, int[] b, int[] expected) {
+    assertEquals(expected, a1.middleWay(a, b));
   }
 
-  @Test
-  void has23() {
+  @ParameterizedTest
+  @MethodSource("by.moiseenko.dataprovider.Array1TestDataProvider#makeEndsDataProvider")
+  void makeEnds(int[] nums, int[] expected) {
+    assertEquals(expected, a1.makeEnds(nums));
   }
 
-  @Test
-  void no23() {
+  @ParameterizedTest
+  @MethodSource("by.moiseenko.dataprovider.Array1TestDataProvider#has23DataProvider")
+  void has23(int[] nums, boolean expected) {
+    assertEquals(expected, a1.has23(nums));
   }
 
-  @Test
-  void makeLast() {
+  @ParameterizedTest
+  @MethodSource("by.moiseenko.dataprovider.Array1TestDataProvider#no23DataProvider")
+  void no23(int[] nums, boolean expected) {
+    assertEquals(expected, a1.no23(nums));
   }
 
-  @Test
-  void double23() {
+  @ParameterizedTest
+  @MethodSource("by.moiseenko.dataprovider.Array1TestDataProvider#makeLastDataProvider")
+  void makeLast(int[] nums, int[] expected) {
+    assertEquals(expected, a1.makeLast(nums));
   }
 
-  @Test
-  void fix23() {
+  @ParameterizedTest
+  @MethodSource("by.moiseenko.dataprovider.Array1TestDataProvider#double23DataProvider")
+  void double23(int[] nums, boolean expected) {
+    assertEquals(expected, a1.double23(nums));
   }
 
-  @Test
-  void start1() {
+  @ParameterizedTest
+  @MethodSource("by.moiseenko.dataprovider.Array1TestDataProvider#fix23DataProvider")
+  void fix23(int[] nums, int[] expected) {
+    assertEquals(expected, a1.fix23(nums));
   }
 
-  @Test
-  void biggerTwo() {
+  @ParameterizedTest
+  @MethodSource("by.moiseenko.dataprovider.Array1TestDataProvider#start1DataProvider")
+  void start1(int[] a, int[] b, int expected) {
+    assertEquals(expected, a1.start1(a, b));
   }
 
-  @Test
-  void makeMiddle() {
+  @ParameterizedTest
+  @MethodSource("by.moiseenko.dataprovider.Array1TestDataProvider#biggerTwoDataProvider")
+  void biggerTwo(int[] a, int[] b, int[] expected) {
+    assertEquals(expected, a1.biggerTwo(a, b));
   }
 
-  @Test
-  void plusTwo() {
+  @ParameterizedTest
+  @MethodSource("by.moiseenko.dataprovider.Array1TestDataProvider#makeMiddleDataProvider")
+  void makeMiddle(int[] nums, int[] expected) {
+    assertEquals(expected, a1.makeMiddle(nums));
   }
 
-  @Test
-  void swapEnds() {
+  @ParameterizedTest
+  @MethodSource("by.moiseenko.dataprovider.Array1TestDataProvider#plusTwoDataProvider")
+  void plusTwo(int[] a, int[] b, int[] expected) {
+    assertEquals(expected, a1.plusTwo(a, b));
   }
 
-  @Test
-  void midThree() {
+  @ParameterizedTest
+  @MethodSource("by.moiseenko.dataprovider.Array1TestDataProvider#swapEndsDataProvider")
+  void swapEnds(int[] nums, int[] expected) {
+    assertEquals(expected, a1.swapEnds(nums));
   }
 
-  @Test
-  void maxTriple() {
+  @ParameterizedTest
+  @MethodSource("by.moiseenko.dataprovider.Array1TestDataProvider#midThreeDataProvider")
+  void midThree(int[] nums, int[] expected) {
+    assertEquals(expected, a1.midThree(nums));
   }
 
-  @Test
-  void frontPiece() {
+  @ParameterizedTest
+  @MethodSource("by.moiseenko.dataprovider.Array1TestDataProvider#maxTripleDataProvider")
+  void maxTriple(int[] nums, int expected) {
+    assertEquals(expected, a1.maxTriple(nums));
   }
 
-  @Test
-  void unlucky1() {
+  @ParameterizedTest
+  @MethodSource("by.moiseenko.dataprovider.Array1TestDataProvider#frontPieceDataProvider")
+  void frontPiece(int[] nums, int[] expected) {
+    assertEquals(expected, a1.frontPiece(nums));
   }
 
-  @Test
-  void make2() {
+  @ParameterizedTest
+  @MethodSource("by.moiseenko.dataprovider.Array1TestDataProvider#unlucky1DataProvider")
+  void unlucky1(int[] nums, boolean expected) {
+    assertEquals(expected, a1.unlucky1(nums));
   }
 
-  @Test
-  void front11() {
+  @ParameterizedTest
+  @MethodSource("by.moiseenko.dataprovider.Array1TestDataProvider#make2DataProvider")
+  void make2(int[] a, int[] b, int[] expected) {
+    assertEquals(expected, a1.make2(a, b));
+  }
+
+  @ParameterizedTest
+  @MethodSource("by.moiseenko.dataprovider.Array1TestDataProvider#front11DataProvider")
+  void front11(int[] a, int[] b, int[] expected) {
+    assertEquals(expected, a1.front11(a, b));
   }
 }

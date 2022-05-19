@@ -4,6 +4,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+/**
+ * Change implementation in init() method to your.
+ */
 class Recursion2Test {
 
   @Test
