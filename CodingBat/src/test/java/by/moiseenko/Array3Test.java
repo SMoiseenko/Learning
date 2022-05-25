@@ -20,55 +20,55 @@ class Array3Test {
   }
 
   @ParameterizedTest
-  @MethodSource("by.moiseenko.dataprovider.Array3TestDataProvider#maxSpan")
+  @MethodSource("by.moiseenko.dataprovider.Array3TestDataProvider#maxSpanDataProvider")
   void maxSpan(int[] nums, int expected) {
     assertEquals(expected, a3.maxSpan(nums));
   }
 
   @ParameterizedTest
-  @MethodSource("by.moiseenko.dataprovider.Array3TestDataProvider#fix34")
+  @MethodSource("by.moiseenko.dataprovider.Array3TestDataProvider#fix34DataProvider")
   void fix34(int[] nums, int[] expected) {
     assertEquals(expected, a3.fix34(nums));
   }
 
   @ParameterizedTest
-  @MethodSource("by.moiseenko.dataprovider.Array3TestDataProvider#fix45")
+  @MethodSource("by.moiseenko.dataprovider.Array3TestDataProvider#fix45DataProvider")
   void fix45(int[] nums, int[] expected) {
     assertEquals(expected, a3.fix45(nums));
   }
 
   @ParameterizedTest
-  @MethodSource("by.moiseenko.dataprovider.Array3TestDataProvider#canBalance")
+  @MethodSource("by.moiseenko.dataprovider.Array3TestDataProvider#canBalanceDataProvider")
   void canBalance(int[] nums, boolean expected) {
     assertEquals(expected, a3.canBalance(nums));
   }
 
   @ParameterizedTest
-  @MethodSource("by.moiseenko.dataprovider.Array3TestDataProvider#linearIn")
+  @MethodSource("by.moiseenko.dataprovider.Array3TestDataProvider#linearInDataProvider")
   void linearIn(int[] outer, int[] inner, boolean expected) {
     assertEquals(expected, a3.linearIn(outer, inner));
   }
 
   @ParameterizedTest
-  @MethodSource("by.moiseenko.dataprovider.Array3TestDataProvider#squareUp")
+  @MethodSource("by.moiseenko.dataprovider.Array3TestDataProvider#squareUpDataProvider")
   void squareUp(int n, int[] expected) {
     assertEquals(expected, a3.squareUp(n));
   }
 
   @ParameterizedTest
-  @MethodSource("by.moiseenko.dataprovider.Array3TestDataProvider#seriesUp")
+  @MethodSource("by.moiseenko.dataprovider.Array3TestDataProvider#seriesUpDataProvider")
   void seriesUp(int n, int[] expected) {
     assertEquals(expected, a3.seriesUp(n));
   }
 
   @ParameterizedTest
-  @MethodSource("by.moiseenko.dataprovider.Array3TestDataProvider#maxMirror")
+  @MethodSource("by.moiseenko.dataprovider.Array3TestDataProvider#maxMirrorDataProvider")
   void maxMirror(int[] nums, int expected) {
     assertEquals(expected, a3.maxMirror(nums));
   }
 
   @ParameterizedTest
-  @MethodSource("by.moiseenko.dataprovider.Array3TestDataProvider#countClumps")
+  @MethodSource("by.moiseenko.dataprovider.Array3TestDataProvider#countClumpsDataProvider")
   void countClumps(int[] nums, int expected) {
     assertEquals(expected, a3.countClumps(nums));
   }

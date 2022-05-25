@@ -5,7 +5,7 @@ package by.moiseenko.dataprovider;
  */
 public class Array2TestDataProvider {
 
-  public static Object[][] countEvens() {
+  public static Object[][] countEvensDataProvider() {
     return new Object[][]{
         {new int[]{2, 1, 2, 3, 4}, 3},
         {new int[]{2, 2, 0}, 3},
@@ -18,7 +18,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] bigDiff() {
+  public static Object[][] bigDiffDataProvider() {
     return new Object[][]{
         {new int[]{10, 3, 5, 6}, 7},
         {new int[]{7, 2, 10, 9}, 8},
@@ -35,7 +35,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] centeredAverage() {
+  public static Object[][] centeredAverageDataProvider() {
     return new Object[][]{
         {new int[]{1, 2, 3, 4, 100}, 3},
         {new int[]{1, 1, 5, 5, 10, 8, 7}, 5},
@@ -56,7 +56,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] sum13() {
+  public static Object[][] sum13DataProvider() {
     return new Object[][]{
         {new int[]{1, 2, 2, 1}, 6},
         {new int[]{1, 1}, 2},
@@ -75,7 +75,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] sum67() {
+  public static Object[][] sum67DataProvider() {
     return new Object[][]{
         {new int[]{1, 2, 2}, 5},
         {new int[]{1, 2, 2, 6, 99, 99, 7}, 5},
@@ -94,7 +94,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] has22() {
+  public static Object[][] has22DataProvider() {
     return new Object[][]{
         {new int[]{1, 2, 2}, true},
         {new int[]{1, 2, 1, 2}, false},
@@ -113,7 +113,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] lucky13() {
+  public static Object[][] lucky13DataProvider() {
     return new Object[][]{
         {new int[]{0, 2, 4}, true},
         {new int[]{1, 2, 3}, false},
@@ -130,7 +130,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] sum28() {
+  public static Object[][] sum28DataProvider() {
     return new Object[][]{
         {new int[]{2, 3, 2, 2, 4, 2}, true},
         {new int[]{2, 3, 2, 2, 4, 2, 2}, false},
@@ -147,7 +147,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] more14() {
+  public static Object[][] more14DataProvider() {
     return new Object[][]{
         {new int[]{1, 4, 1}, true},
         {new int[]{1, 4, 1, 4}, false},
@@ -166,7 +166,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] fizzArray() {
+  public static Object[][] fizzArrayDataProvider() {
     return new Object[][]{
         {4, new int[]{0, 1, 2, 3}},
         {1, new int[]{0}},
@@ -177,7 +177,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] only14() {
+  public static Object[][] only14DataProvider() {
     return new Object[][]{
         {new int[]{1, 4, 1, 4}, true},
         {new int[]{1, 4, 2, 4}, false},
@@ -197,7 +197,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] fizzArray2() {
+  public static Object[][] fizzArray2DataProvider() {
     return new Object[][]{
         {4, new String[]{"0", "1", "2", "3"}},
         {10, new String[]{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}},
@@ -210,7 +210,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] no14() {
+  public static Object[][] no14DataProvider() {
     return new Object[][]{
         {new int[]{1, 2, 3}, true},
         {new int[]{1, 2, 3, 4}, false},
@@ -234,7 +234,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] isEverywhere() {
+  public static Object[][] isEverywhereDataProvider() {
     return new Object[][]{
         {new int[]{1, 2, 1, 3}, 1, true},
         {new int[]{1, 2, 1, 3}, 2, false},
@@ -255,7 +255,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] either24() {
+  public static Object[][] either24DataProvider() {
     return new Object[][]{
         {new int[]{1, 2, 2}, true},
         {new int[]{4, 4, 1}, true},
@@ -274,7 +274,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] matchUp() {
+  public static Object[][] matchUpDataProvider() {
     return new Object[][]{
         {new int[]{1, 2, 3}, new int[]{2, 3, 10}, 2},
         {new int[]{1, 2, 3}, new int[]{2, 3, 5}, 3},
@@ -290,7 +290,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] has77() {
+  public static Object[][] has77DataProvider() {
     return new Object[][]{
         {new int[]{1, 7, 7}, true},
         {new int[]{1, 7, 1, 7}, true},
@@ -309,7 +309,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] has12() {
+  public static Object[][] has12DataProvider() {
     return new Object[][]{
         {new int[]{1, 3, 2}, true},
         {new int[]{3, 1, 2}, true},
@@ -331,7 +331,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] modThree() {
+  public static Object[][] modThreeDataProvider() {
     return new Object[][]{
         {new int[]{2, 1, 3, 5}, true},
         {new int[]{2, 1, 2, 5}, false},
@@ -348,7 +348,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] haveThree() {
+  public static Object[][] haveThreeDataProvider() {
     return new Object[][]{
         {new int[]{3, 1, 3, 1, 3}, true},
         {new int[]{3, 1, 3, 3}, false},
@@ -365,7 +365,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] twoTwo() {
+  public static Object[][] twoTwoDataProvider() {
     return new Object[][]{
         {new int[]{4, 2, 2, 3}, true},
         {new int[]{2, 2, 4}, true},
@@ -387,7 +387,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] sameEnds() {
+  public static Object[][] sameEndsDataProvider() {
     return new Object[][]{
         {new int[]{5, 6, 45, 99, 13, 5, 6}, 1, false},
         {new int[]{5, 6, 45, 99, 13, 5, 6}, 2, true},
@@ -406,7 +406,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] tripleUp() {
+  public static Object[][] tripleUpDataProvider() {
     return new Object[][]{
         {new int[]{1, 4, 5, 6, 2}, true},
         {new int[]{1, 2, 3}, true},
@@ -423,7 +423,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] fizzArray3() {
+  public static Object[][] fizzArray3DataProvider() {
     return new Object[][]{
         {5, 10, new int[]{5, 6, 7, 8, 9}},
         {11, 18, new int[]{11, 12, 13, 14, 15, 16, 17}},
@@ -434,7 +434,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] shiftLeft() {
+  public static Object[][] shiftLeftDataProvider() {
     return new Object[][]{
         {new int[]{6, 2, 5, 3}, new int[]{2, 5, 3, 6}},
         {new int[]{1, 2}, new int[]{2, 1}},
@@ -446,7 +446,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] tenRun() {
+  public static Object[][] tenRunDataProvider() {
     return new Object[][]{
         {new int[]{2, 10, 3, 4, 20, 5}, new int[]{2, 10, 10, 10, 20, 20}},
         {new int[]{10, 1, 20, 2}, new int[]{10, 10, 20, 20}},
@@ -462,7 +462,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] pre4() {
+  public static Object[][] pre4DataProvider() {
     return new Object[][]{
         {new int[]{1, 2, 4, 1}, new int[]{1, 2}},
         {new int[]{3, 1, 4}, new int[]{3, 1}},
@@ -477,7 +477,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] post4() {
+  public static Object[][] post4DataProvider() {
     return new Object[][]{
         {new int[]{2, 4, 1, 2}, new int[]{1, 2}},
         {new int[]{4, 1, 4, 2}, new int[]{2}},
@@ -492,7 +492,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] notAlone() {
+  public static Object[][] notAloneDataProvider() {
     return new Object[][]{
         {new int[]{1, 2, 3}, 2, new int[]{1, 3, 3}},
         {new int[]{1, 2, 3, 2, 5, 2}, 2, new int[]{1, 3, 3, 5, 5, 2}},
@@ -507,7 +507,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] zeroFront() {
+  public static Object[][] zeroFrontDataProvider() {
     return new Object[][]{
         {new int[]{1, 0, 0, 1}, new int[]{0, 0, 1, 1}},
         {new int[]{0, 1, 1, 0, 1}, new int[]{0, 0, 1, 1, 1}},
@@ -523,7 +523,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] withoutTen() {
+  public static Object[][] withoutTenDataProvider() {
     return new Object[][]{
         {new int[]{1, 10, 10, 2}, new int[]{1, 2, 0, 0}},
         {new int[]{10, 2, 10}, new int[]{2, 0, 0}},
@@ -538,7 +538,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] zeroMax() {
+  public static Object[][] zeroMaxDataProvider() {
     return new Object[][]{
         {new int[]{0, 5, 0, 3}, new int[]{5, 5, 3, 3}},
         {new int[]{0, 4, 0, 3}, new int[]{3, 4, 3, 3}},
@@ -555,7 +555,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] evenOdd() {
+  public static Object[][] evenOddDataProvider() {
     return new Object[][]{
         {new int[]{1, 0, 1, 0, 0, 1, 1}, new int[]{0, 0, 0, 1, 1, 1, 1}},
         {new int[]{3, 3, 2}, new int[]{2, 3, 3}},
@@ -569,7 +569,7 @@ public class Array2TestDataProvider {
     };
   }
 
-  public static Object[][] fizzBuzz() {
+  public static Object[][] fizzBuzzDataProvider() {
     return new Object[][]{
         {1, 6, new String[]{"1", "2", "Fizz", "4", "Buzz"}},
         {1, 8, new String[]{"1", "2", "Fizz", "4", "Buzz", "Fizz", "7"}},

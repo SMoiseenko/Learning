@@ -5,7 +5,7 @@ package by.moiseenko.dataprovider;
  */
 public class Array3TestDataProvider {
 
-  public static Object[][] maxSpan() {
+  public static Object[][] maxSpanDataProvider() {
     return new Object[][]{
         {new int[]{1, 2, 1, 1, 3}, 4},
         {new int[]{1, 4, 2, 1, 4, 1, 4}, 6},
@@ -20,7 +20,7 @@ public class Array3TestDataProvider {
     };
   }
 
-  public static Object[][] fix34() {
+  public static Object[][] fix34DataProvider() {
     return new Object[][]{
         {new int[]{1, 3, 1, 4}, new int[]{1, 3, 4, 1}},
         {new int[]{1, 3, 1, 4, 4, 3, 1}, new int[]{1, 3, 4, 1, 1, 3, 4}},
@@ -40,7 +40,7 @@ public class Array3TestDataProvider {
     };
   }
 
-  public static Object[][] fix45() {
+  public static Object[][] fix45DataProvider() {
     return new Object[][]{
         {new int[]{5, 4, 9, 4, 9, 5}, new int[]{9, 4, 5, 4, 5, 9}},
         {new int[]{1, 4, 1, 5}, new int[]{1, 4, 5, 1}},
@@ -63,7 +63,7 @@ public class Array3TestDataProvider {
     };
   }
 
-  public static Object[][] canBalance() {
+  public static Object[][] canBalanceDataProvider() {
     return new Object[][]{
         {new int[]{1, 1, 1, 2, 1}, true},
         {new int[]{2, 1, 1, 2, 1}, false},
@@ -79,7 +79,7 @@ public class Array3TestDataProvider {
     };
   }
 
-  public static Object[][] linearIn() {
+  public static Object[][] linearInDataProvider() {
     return new Object[][]{
         {new int[]{1, 2, 4, 6}, new int[]{2, 4}, true},
         {new int[]{1, 2, 4, 6}, new int[]{2, 3, 4}, false},
@@ -97,7 +97,7 @@ public class Array3TestDataProvider {
     };
   }
 
-  public static Object[][] squareUp() {
+  public static Object[][] squareUpDataProvider() {
     return new Object[][]{
         {3, new int[]{0, 0, 1, 0, 2, 1, 3, 2, 1}},
         {2, new int[]{0, 1, 2, 1}},
@@ -109,7 +109,7 @@ public class Array3TestDataProvider {
     };
   }
 
-  public static Object[][] seriesUp() {
+  public static Object[][] seriesUpDataProvider() {
     return new Object[][]{
         {3, new int[]{1, 1, 2, 1, 2, 3}},
         {4, new int[]{1, 1, 2, 1, 2, 3, 1, 2, 3, 4}},
@@ -120,7 +120,7 @@ public class Array3TestDataProvider {
     };
   }
 
-  public static Object[][] maxMirror() {
+  public static Object[][] maxMirrorDataProvider() {
     return new Object[][]{
         {new int[]{1, 2, 3, 8, 9, 3, 2, 1}, 3},
         {new int[]{1, 2, 1, 4}, 3},
@@ -140,7 +140,7 @@ public class Array3TestDataProvider {
     };
   }
 
-  public static Object[][] countClumps() {
+  public static Object[][] countClumpsDataProvider() {
     return new Object[][]{
         {new int[]{1, 2, 2, 3, 4, 4}, 2},
         {new int[]{1, 1, 2, 1, 1}, 2},
