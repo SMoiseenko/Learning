@@ -3,9 +3,7 @@ package by.moiseenko.dataprovider;
 import java.util.List;
 
 /**
- * Default javadoc
- *
- * @author moiseenko-s
+ * Data provider for Functional2Test
  */
 public class Functional2TestDataProvider {
 
