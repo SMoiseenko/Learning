@@ -55,7 +55,7 @@ public class Map1TestDataProvider {
     return new Map[][]{
         {new HashMap<>(Map.of("ice cream", "peanuts")),
             Map.of("bread", "butter", "ice cream", "cherry")},
-        {new HashMap<String, String>(Map.of()), Map.of("bread", "butter")},
+        {new HashMap<String, String>(), Map.of("bread", "butter")},
         {new HashMap<>(Map.of("pancake", "syrup")),
             Map.of("bread", "butter", "pancake", "syrup")},
         {new HashMap<>(Map.of("bread", "dirt", "ice cream", "strawberries")),
@@ -75,7 +75,7 @@ public class Map1TestDataProvider {
         {new HashMap<>(Map.of("yogurt", "salt")), Map.of("yogurt", "salt")},
         {new HashMap<>(Map.of("yogurt", "salt", "bread", "butter")),
             Map.of("yogurt", "salt", "bread", "butter")},
-        {new HashMap<String, String>(Map.of()), Map.of()},
+        {new HashMap<String, String>(), Map.of()},
         {new HashMap<>(Map.of("ice cream", "air", "salad", "oil")),
             Map.of("yogurt", "air", "ice cream", "air", "salad", "oil")},
     };
@@ -93,7 +93,7 @@ public class Map1TestDataProvider {
             Map.of("toast", "butter", "salad", "oil", "potato", "ketchup")),
             Map.of("toast", "butter", "spinach", "oil", "salad", "oil", "potato", "ketchup",
                 "fries", "ketchup")},
-        {new HashMap<String, String>(Map.of()), Map.of()},
+        {new HashMap<String, String>(), Map.of()},
         {new HashMap<>(Map.of("salad", "pepper", "fries", "salt")),
             Map.of("spinach", "pepper", "salad", "pepper", "fries", "salt")},
     };
@@ -110,7 +110,7 @@ public class Map1TestDataProvider {
         {new HashMap<>(Map.of("a", "aaa")), Map.of("a", "aaa")},
         {new HashMap<>(Map.of("b", "bbb")), Map.of("b", "bbb")},
         {new HashMap<>(Map.of("a", "", "b", "", "c", "ccc")), Map.of("c", "ccc")},
-        {new HashMap<String, String>(Map.of()), Map.of()},
+        {new HashMap<String, String>(), Map.of()},
         {new HashMap<>(Map.of("a", "a", "b", "b", "z", "zebra")),
             Map.of("a", "a", "b", "b", "z", "zebra")},
     };
@@ -126,7 +126,7 @@ public class Map1TestDataProvider {
             Map.of("a", "aaa", "b", "bbb", "c", "cake")},
         {new HashMap<>(Map.of("ccc", "ccc")), Map.of("ccc", "ccc")},
         {new HashMap<>(Map.of("c", "a", "d", "b")), Map.of("c", "a", "d", "b")},
-        {new HashMap<String, String>(Map.of()), Map.of()},
+        {new HashMap<String, String>(), Map.of()},
         {new HashMap<>(Map.of("a", "")), Map.of("a", "", "b", "")},
         {new HashMap<>(Map.of("b", "")), Map.of("a", "", "b", "")},
         {new HashMap<>(Map.of("a", "", "b", "")), Map.of("a", "", "b", "")},
@@ -157,7 +157,7 @@ public class Map1TestDataProvider {
             Map.of("c", "cat", "d", "dog")},
         {new HashMap<>(Map.of("ccc", "ccc")), Map.of("ccc", "ccc")},
         {new HashMap<>(Map.of("c", "a", "d", "b")), Map.of("c", "a", "d", "b")},
-        {new HashMap<String, String>(Map.of()), Map.of()},
+        {new HashMap<String, String>(), Map.of()},
         {new HashMap<>(Map.of("a", "", "z", "z")), Map.of("a", "", "z", "z")},
         {new HashMap<>(Map.of("b", "", "z", "z")), Map.of("b", "", "z", "z")},
     };
