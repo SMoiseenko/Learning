@@ -1,5 +1,6 @@
 package by.moiseenko;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import by.moiseenko.impl.AP1Impl;
@@ -53,7 +54,7 @@ class AP1Test {
   @ParameterizedTest
   @MethodSource("by.moiseenko.dataprovider.AP1TestDataProvider#wordsFrontDataProvider")
   void wordsFront(String[] words, int n, String[] expected) {
-    assertEquals(expected, ap1.wordsFront(words, n));
+    assertArrayEquals(expected, ap1.wordsFront(words, n));
   }
 
   @ParameterizedTest
@@ -77,13 +78,13 @@ class AP1Test {
   @ParameterizedTest
   @MethodSource("by.moiseenko.dataprovider.AP1TestDataProvider#copyEvensDataProvider")
   void copyEvens(int[] nums, int count, int[] expected) {
-    assertEquals(expected, ap1.copyEvens(nums, count));
+    assertArrayEquals(expected, ap1.copyEvens(nums, count));
   }
 
   @ParameterizedTest
   @MethodSource("by.moiseenko.dataprovider.AP1TestDataProvider#copyEndyDataProvider")
   void copyEndy(int[] nums, int count, int[] expected) {
-    assertEquals(expected, ap1.copyEndy(nums, count));
+    assertArrayEquals(expected, ap1.copyEndy(nums, count));
   }
 
   @ParameterizedTest
@@ -101,7 +102,7 @@ class AP1Test {
   @ParameterizedTest
   @MethodSource("by.moiseenko.dataprovider.AP1TestDataProvider#wordsWithoutDataProvider")
   void wordsWithout(String[] words, String target, String[] expected) {
-    assertEquals(expected, ap1.wordsWithout(words, target));
+    assertArrayEquals(expected, ap1.wordsWithout(words, target));
   }
 
   @ParameterizedTest
@@ -137,7 +138,7 @@ class AP1Test {
   @ParameterizedTest
   @MethodSource("by.moiseenko.dataprovider.AP1TestDataProvider#mergeTwoDataProvider")
   void mergeTwo(String[] a, String[] b, int n, String[] expected) {
-    assertEquals(expected, ap1.mergeTwo(a, b, n));
+    assertArrayEquals(expected, ap1.mergeTwo(a, b, n));
   }
 
   @ParameterizedTest

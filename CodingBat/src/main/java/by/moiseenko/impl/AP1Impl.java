@@ -1,7 +1,9 @@
 package by.moiseenko.impl;
 
 import by.moiseenko.AP1;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -152,26 +154,44 @@ public class AP1Impl implements AP1 {
 
   @Override
   public int sumHeights2(int[] heights, int start, int end) {
-    return 0;
+    return IntStream.range(start, end).map(
+        i -> (heights[i + 1] > heights[i]) ? Math.abs(heights[i] - heights[i + 1]) * 2
+            : Math.abs(heights[i] - heights[i + 1])).sum();
   }
 
   @Override
   public int bigHeights(int[] heights, int start, int end) {
-    return 0;
+    return
+        (int) IntStream.range(start, end)
+            .map(i -> Math.abs(heights[i] - heights[i + 1]))
+            .filter(n -> n >= 5)
+            .count();
   }
 
   @Override
   public int userCompare(String aName, int aId, String bName, int bId) {
-    return 0;
+    int t1 = aName.compareTo(bName);
+    if (t1 > 0) {
+      return 1;
+    }
+    if (t1 < 0) {
+      return -1;
+    }
+    return Integer.compare(aId, bId);
   }
 
   @Override
   public String[] mergeTwo(String[] a, String[] b, int n) {
-    return new String[0];
+    List<String> arrayList = new ArrayList<>();
+    Collections.addAll(arrayList, a);
+    Collections.addAll(arrayList, b);
+    return arrayList.stream().distinct().sorted().limit(n).toArray(String[]::new);
   }
 
   @Override
   public int commonTwo(String[] a, String[] b) {
-    return 0;
+    List<String> arrayList = Arrays.stream(a).distinct().collect(Collectors.toList());
+    arrayList.addAll(Arrays.stream(b).distinct().toList());
+    return arrayList.size() - arrayList.stream().distinct().toArray().length;
   }
 }
