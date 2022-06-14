@@ -1,5 +1,6 @@
 package by.moiseenko;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import by.moiseenko.impl.Array2Impl;
@@ -76,7 +77,7 @@ class Array2Test {
   @ParameterizedTest
   @MethodSource("by.moiseenko.dataprovider.Array2TestDataProvider#fizzArrayDataProvider")
   void fizzArray(int n, int[] expected) {
-    assertEquals(expected, a2.fizzArray(n));
+    assertArrayEquals(expected, a2.fizzArray(n));
   }
 
   @ParameterizedTest
@@ -88,7 +89,7 @@ class Array2Test {
   @ParameterizedTest
   @MethodSource("by.moiseenko.dataprovider.Array2TestDataProvider#fizzArray2DataProvider")
   void fizzArray2(int n, String[] expected) {
-    assertEquals(expected, a2.fizzArray2(n));
+    assertArrayEquals(expected, a2.fizzArray2(n));
   }
 
   @ParameterizedTest
@@ -160,37 +161,37 @@ class Array2Test {
   @ParameterizedTest
   @MethodSource("by.moiseenko.dataprovider.Array2TestDataProvider#fizzArray3DataProvider")
   void fizzArray3(int start, int end, int[] expected) {
-    assertEquals(expected, a2.fizzArray3(start, end));
+    assertArrayEquals(expected, a2.fizzArray3(start, end));
   }
 
   @ParameterizedTest
   @MethodSource("by.moiseenko.dataprovider.Array2TestDataProvider#shiftLeftDataProvider")
   void shiftLeft(int[] nums, int[] expected) {
-    assertEquals(expected, a2.shiftLeft(nums));
+    assertArrayEquals(expected, a2.shiftLeft(nums));
   }
 
   @ParameterizedTest
   @MethodSource("by.moiseenko.dataprovider.Array2TestDataProvider#tenRunDataProvider")
   void tenRun(int[] nums, int[] expected) {
-    assertEquals(expected, a2.tenRun(nums));
+    assertArrayEquals(expected, a2.tenRun(nums));
   }
 
   @ParameterizedTest
   @MethodSource("by.moiseenko.dataprovider.Array2TestDataProvider#pre4DataProvider")
   void pre4(int[] nums, int[] expected) {
-    assertEquals(expected, a2.pre4(nums));
+    assertArrayEquals(expected, a2.pre4(nums));
   }
 
   @ParameterizedTest
   @MethodSource("by.moiseenko.dataprovider.Array2TestDataProvider#post4DataProvider")
   void post4(int[] nums, int[] expected) {
-    assertEquals(expected, a2.post4(nums));
+    assertArrayEquals(expected, a2.post4(nums));
   }
 
   @ParameterizedTest
   @MethodSource("by.moiseenko.dataprovider.Array2TestDataProvider#notAloneDataProvider")
   void notAlone(int[] nums, int val, int[] expected) {
-    assertEquals(expected, a2.notAlone(nums, val));
+    assertArrayEquals(expected, a2.notAlone(nums, val));
   }
 
   @ParameterizedTest
