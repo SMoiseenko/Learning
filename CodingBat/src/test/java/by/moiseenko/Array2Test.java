@@ -197,30 +197,30 @@ class Array2Test {
   @ParameterizedTest
   @MethodSource("by.moiseenko.dataprovider.Array2TestDataProvider#zeroFrontDataProvider")
   void zeroFront(int[] nums, int[] expected) {
-    assertEquals(expected, a2.zeroFront(nums));
+    assertArrayEquals(expected, a2.zeroFront(nums));
   }
 
   @ParameterizedTest
   @MethodSource("by.moiseenko.dataprovider.Array2TestDataProvider#withoutTenDataProvider")
   void withoutTen(int[] nums, int[] expected) {
-    assertEquals(expected, a2.withoutTen(nums));
+    assertArrayEquals(expected, a2.withoutTen(nums));
   }
 
   @ParameterizedTest
   @MethodSource("by.moiseenko.dataprovider.Array2TestDataProvider#zeroMaxDataProvider")
   void zeroMax(int[] nums, int[] expected) {
-    assertEquals(expected, a2.zeroMax(nums));
+    assertArrayEquals(expected, a2.zeroMax(nums));
   }
 
   @ParameterizedTest
   @MethodSource("by.moiseenko.dataprovider.Array2TestDataProvider#evenOddDataProvider")
   void evenOdd(int[] nums, int[] expected) {
-    assertEquals(expected, a2.evenOdd(nums));
+    assertArrayEquals(expected, a2.evenOdd(nums));
   }
 
   @ParameterizedTest
   @MethodSource("by.moiseenko.dataprovider.Array2TestDataProvider#fizzBuzzDataProvider")
   void fizzBuzz(int start, int end, String[] expected) {
-    assertEquals(expected, a2.fizzBuzz(start, end));
+    assertArrayEquals(expected, a2.fizzBuzz(start, end));
   }
 }
