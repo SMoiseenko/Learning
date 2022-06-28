@@ -1,5 +1,6 @@
 package by.moiseenko;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import by.moiseenko.impl.Array3Impl;
@@ -28,13 +29,13 @@ class Array3Test {
   @ParameterizedTest
   @MethodSource("by.moiseenko.dataprovider.Array3TestDataProvider#fix34DataProvider")
   void fix34(int[] nums, int[] expected) {
-    assertEquals(expected, a3.fix34(nums));
+    assertArrayEquals(expected, a3.fix34(nums));
   }
 
   @ParameterizedTest
   @MethodSource("by.moiseenko.dataprovider.Array3TestDataProvider#fix45DataProvider")
   void fix45(int[] nums, int[] expected) {
-    assertEquals(expected, a3.fix45(nums));
+    assertArrayEquals(expected, a3.fix45(nums));
   }
 
   @ParameterizedTest
@@ -52,13 +53,13 @@ class Array3Test {
   @ParameterizedTest
   @MethodSource("by.moiseenko.dataprovider.Array3TestDataProvider#squareUpDataProvider")
   void squareUp(int n, int[] expected) {
-    assertEquals(expected, a3.squareUp(n));
+    assertArrayEquals(expected, a3.squareUp(n));
   }
 
   @ParameterizedTest
   @MethodSource("by.moiseenko.dataprovider.Array3TestDataProvider#seriesUpDataProvider")
   void seriesUp(int n, int[] expected) {
-    assertEquals(expected, a3.seriesUp(n));
+    assertArrayEquals(expected, a3.seriesUp(n));
   }
 
   @ParameterizedTest
