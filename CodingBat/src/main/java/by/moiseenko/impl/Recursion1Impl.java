@@ -11,97 +11,172 @@ public class Recursion1Impl implements Recursion1 {
 
   @Override
   public int factorial(int n) {
-    return 0;
+    if (n == 1) {
+      return 1;
+    }
+    return n * factorial(n - 1);
   }
 
   @Override
   public int bunnyEars(int bunnies) {
-    return 0;
+    if (bunnies == 0) {
+      return 0;
+    }
+    return 2 + bunnyEars(bunnies - 1);
   }
 
   @Override
   public int fibonacci(int n) {
-    return 0;
+    if (n == 0) {
+      return 0;
+    }
+    if (n == 1) {
+      return 1;
+    }
+    return fibonacci(n - 2) + fibonacci(n - 1);
   }
 
   @Override
   public int bunnyEars2(int bunnies) {
-    return 0;
+    if (bunnies == 0) {
+      return 0;
+    }
+    return ((bunnies % 2 == 0) ? 3 : 2) + bunnyEars2(bunnies - 1);
   }
 
   @Override
   public int triangle(int rows) {
-    return 0;
+    if (rows == 0) {
+      return 0;
+    }
+    return rows + triangle(rows - 1);
   }
 
   @Override
   public int sumDigits(int n) {
-    return 0;
+    if (n == 0) {
+      return 0;
+    }
+    return n % 10 + sumDigits(n / 10);
   }
 
   @Override
   public int count7(int n) {
-    return 0;
+    if (n == 0) {
+      return 0;
+    }
+    return ((n % 10 == 7) ? 1 : 0) + count7(n / 10);
   }
 
   @Override
   public int count8(int n) {
-    return 0;
+    if (n == 0) {
+      return 0;
+    }
+    return ((n % 100 == 88) ? 2 : ((n % 10 == 8) ? 1 : 0)) + count8(n / 10);
   }
 
   @Override
   public int powerN(int base, int n) {
-    return 0;
+    if (n == 1) {
+      return base;
+    }
+    return base * powerN(base, n - 1);
   }
 
   @Override
   public int countX(String str) {
-    return 0;
+    if (str.isEmpty()) {
+      return 0;
+    }
+    return ((str.charAt(str.length() - 1) == 'x') ? 1 : 0) + countX(
+        str.substring(0, str.length() - 1));
   }
 
   @Override
   public int countHi(String str) {
-    return 0;
+    if (str.isEmpty()) {
+      return 0;
+    }
+    return ((str.endsWith("hi")) ? 1 : 0) + countHi(
+        str.substring(0, str.length() - 1));
   }
 
   @Override
   public String changeXY(String str) {
-    return null;
+    if (str.isEmpty()) {
+      return "";
+    }
+    return (str.startsWith("x") ? "y"
+        : str.charAt(0)) + changeXY(str.substring(1));
   }
 
   @Override
   public String changePi(String str) {
-    return null;
+    if (str.isEmpty()) {
+      return "";
+    }
+    return str.startsWith("pi")
+        ? "3.14" + changePi(str.substring(2))
+        : str.charAt(0) + changePi(str.substring(1));
   }
 
   @Override
   public String noX(String str) {
-    return null;
+    if (str.isEmpty()) {
+      return "";
+    }
+    return (str.charAt(0) == 'x'
+        ? ""
+        : str.charAt(0))
+        + noX(str.substring(1));
   }
 
   @Override
   public boolean array6(int[] nums, int index) {
-    return false;
+    if (nums.length == index) {
+      return false;
+    }
+    return nums[index] == 6 || array6(nums, index + 1);
   }
 
   @Override
   public int array11(int[] nums, int index) {
-    return 0;
+    int counter = 0;
+    if (nums.length == index) {
+      return counter;
+    }
+    return (nums[index] == 11 ? ++counter : 0) + array11(nums, index + 1);
   }
 
   @Override
   public boolean array220(int[] nums, int index) {
-    return false;
+    if (nums.length - index < 2) {
+      return false;
+    }
+    return nums[index + 1] == nums[index] * 10 || array220(nums, index + 1);
   }
 
   @Override
   public String allStar(String str) {
-    return null;
+    if (str.length() - 1 < 0) {
+      return "";
+    }
+    return ((str.length() > 1)
+        ? str.charAt(0) + "*"
+        : str.charAt(0))
+        + allStar(str.substring(1));
   }
 
   @Override
   public String pairStar(String str) {
-    return null;
+    if (str.length() == 0) {
+      return "";
+    }
+    return (str.length() > 1 && str.charAt(0) == str.charAt(1)
+        ? str.charAt(0) + "*"
+        : str.charAt(0))
+        + pairStar(str.substring(1));
   }
 
   @Override
