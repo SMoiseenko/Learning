@@ -181,56 +181,120 @@ public class Recursion1Impl implements Recursion1 {
 
   @Override
   public String endX(String str) {
-    return null;
+    if (str.length() == 0 || str.matches("\\bx+\\b")) {
+      return str;
+    }
+    return (str.charAt(0) == 'x')
+        ? endX(str.substring(1) + 'x')
+        : str.charAt(0) + endX(str.substring(1));
   }
 
   @Override
   public int countPairs(String str) {
-    return 0;
+    int counter = 0;
+    if (str.length() < 3) {
+      return counter;
+    }
+    return (str.charAt(0) == str.charAt(2))
+        ? counter + 1 + countPairs(str.substring(1))
+        : countPairs(str.substring(1));
   }
 
   @Override
   public int countAbc(String str) {
-    return 0;
+    int counter = 0;
+    if (str.length() < 3) {
+      return counter;
+    }
+    return (str.startsWith("abc") || str.startsWith("aba"))
+        ? ++counter + countAbc(str.substring(2))
+        : countAbc(str.substring(1));
   }
 
   @Override
   public int count11(String str) {
-    return 0;
+    int counter = 0;
+    if (str.length() < 2) {
+      return counter;
+    }
+    return str.startsWith("11")
+        ? ++counter + count11(str.substring(2))
+        : count11(str.substring(1));
   }
 
   @Override
   public String stringClean(String str) {
-    return null;
+    if (str.length() < 2) {
+      return str;
+    }
+    return (str.charAt(0) == str.charAt(1)
+        ? ""
+        : str.charAt(0))
+        + stringClean(str.substring(1));
   }
 
   @Override
   public int countHi2(String str) {
-    return 0;
+    int counter = 0;
+    if (str.length() < 2) {
+      return counter;
+    }
+    return str.startsWith("xhi")
+        ? countHi2(str.substring(3))
+        : (str.startsWith("hi")
+            ? ++counter + countHi2(str.substring(1))
+            : countHi2(str.substring(1)));
   }
 
   @Override
   public String parenBit(String str) {
-    return null;
+    if (str.startsWith("(") && str.endsWith(")")) {
+      return str;
+    }
+    return str.startsWith("(")
+        ? parenBit(str.substring(0, str.indexOf(")") + 1))
+        : parenBit(str.substring(1));
   }
 
   @Override
   public boolean nestParen(String str) {
-    return false;
+    if (str.length() == 0) {
+      return true;
+    }
+    return str.charAt(0) == '(' && str.charAt(str.length() - 1) == ')' && nestParen(
+        str.substring(1, str.length() - 1));
   }
 
   @Override
   public int strCount(String str, String sub) {
-    return 0;
+    int counter = 0;
+    if (str.length() == 0) {
+      return counter;
+    }
+    return (str.startsWith(sub))
+        ? ++counter + strCount(str.substring(sub.length()), sub)
+        : strCount(str.substring(1), sub);
   }
 
   @Override
   public boolean strCopies(String str, String sub, int n) {
-    return false;
+    if (str.length() == 0) {
+      return n == 0;
+    }
+    return (str.startsWith(sub))
+        ? strCopies(str.substring(1), sub, --n)
+        : strCopies(str.substring(1), sub, n);
   }
 
   @Override
   public int strDist(String str, String sub) {
-    return 0;
+    if (str.isEmpty() || (str.startsWith(sub) && str.endsWith(sub))) {
+      return str.length();
+    }
+    return !str.startsWith(sub)
+        ? strDist(str.substring(1), sub)
+        : (!str.endsWith(sub)
+            ? strDist(str.substring(0, str.length() - 1), sub)
+            : 0);
   }
 }
