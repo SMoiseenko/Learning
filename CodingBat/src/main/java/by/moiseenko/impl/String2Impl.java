@@ -185,6 +185,14 @@ public class String2Impl implements String2 {
 
   @Override
   public String wordEnds(String str, String word) {
-    return null;
+    StringBuilder result = new StringBuilder();
+    for (int i = 0; i <= str.length() - word.length(); i++) {
+      if (str.startsWith(word, i)) {
+        result.append((i == 0) ? "" : str.charAt(i - 1))
+            .append((i == str.length() - word.length()) ? "" : str.charAt(i + word.length()));
+        i += word.length() - 1;
+      }
+    }
+    return result.toString();
   }
 }

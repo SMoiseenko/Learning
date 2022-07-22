@@ -4,14 +4,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import by.moiseenko.impl.Recursion2Impl;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
 /**
  * Change implementation in init() method to your.
  */
-
-
+@Disabled("Until I won't have written an implementation of the Recursion2 interface.")
 class Recursion2Test {
 
   private static Recursion2 r2;
@@ -20,7 +20,6 @@ class Recursion2Test {
   private static void init() {
     r2 = new Recursion2Impl();
   }
-
 
   @ParameterizedTest
   @MethodSource("by.moiseenko.dataprovider.Recursion2TestDataProvider#groupSumDataProvider")
