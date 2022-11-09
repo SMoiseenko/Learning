@@ -6,7 +6,6 @@ import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * Default javadoc
@@ -44,7 +43,6 @@ public class Warehouse implements Iterable<Goods> {
     return this.goods.add(goods);
   }
 
-  @NotNull
   @Override
   public Iterator<Goods> iterator() {
     return goods.iterator();

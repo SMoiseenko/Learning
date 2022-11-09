@@ -15,7 +15,6 @@ public class Task {
   private String answer;
   private int mark;
 
-  @org.jetbrains.annotations.Contract(pure = true)
   public Task(String content) {
     this.content = content;
   }

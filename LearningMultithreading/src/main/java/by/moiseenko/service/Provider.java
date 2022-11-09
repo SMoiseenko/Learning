@@ -1,9 +1,6 @@
 package by.moiseenko.service;
 
-import by.moiseenko.entity.Goods;
 import by.moiseenko.entity.Shop;
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.ReentrantLock;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

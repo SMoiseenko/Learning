@@ -14,11 +14,12 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-    <mcp.version>3.8.0</mcp.version>
-    <testng.version>6.14.3</testng.version>
-    <log4j.version>2.17.1</log4j.version>
-    <java.version>11</java.version>
-    <jackson.version>2.12.6.1</jackson.version>
+    <mcp.version>3.9.0</mcp.version>
+    <junit.version>5.9.0</junit.version>
+    <log4j.version>2.18.0</log4j.version>
+    <java.version>17</java.version>
+    <jackson.version>2.13.3</jackson.version>
+    <lombok.version>1.18.24</lombok.version>
   </properties>
 
   <dependencies>
@@ -28,9 +29,9 @@
       <version>${log4j.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.testng</groupId>
-      <artifactId>testng</artifactId>
-      <version>${testng.version}</version>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -46,10 +47,10 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>org.jetbrains</groupId>
-      <artifactId>annotations</artifactId>
-      <version>17.0.0</version>
-      <scope>compile</scope>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok.version}</version>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
 
@@ -63,30 +64,6 @@
           <source>${java.version}</source>
           <target>${java.version}</target>
         </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-            <configuration>
-              <archive>
-                <manifest>
-                  <mainClass>
-                    by.moiseenko.Runner
-                  </mainClass>
-                </manifest>
-              </archive>
-              <descriptorRefs>
-                <descriptorRef>jar-with-dependencies</descriptorRef>
-              </descriptorRefs>
-            </configuration>
-          </execution>
-        </executions>
       </plugin>
     </plugins>
   </build>

@@ -1,21 +1,28 @@
 package by.moiseenko;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import by.moiseenko.entity.MyThreadClass;
+import lombok.extern.log4j.Log4j2;
+import org.junit.jupiter.api.Test;
 
 /**
  * Default javadoc
  *
  * @author s-moiseenko
  */
+@Log4j2
 public class SimpleTest {
-
-  private static final Logger LOG = LogManager.getLogger(SimpleTest.class.getName());
 
   @Test
   public void simpleTest() {
-    Assert.assertEquals(1, 1);
+    assertEquals(1, 1);
+    log.debug("Hello");
+  }
+
+  @Test
+  public void testMeThreadClass() {
+    Thread thread = new MyThreadClass("say my name");
+    thread.start();
   }
 }

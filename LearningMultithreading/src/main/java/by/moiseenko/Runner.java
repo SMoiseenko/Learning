@@ -1,7 +1,10 @@
 package by.moiseenko;
 
+import by.moiseenko.entity.MyThreadClass;
 import by.moiseenko.service.CatPictureDownloader;
 import by.moiseenko.service.SomeCodeExample;
+import lombok.SneakyThrows;
+import lombok.extern.log4j.Log4j2;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -10,9 +13,10 @@ import org.apache.logging.log4j.Logger;
  *
  * @author s-moiseenko
  */
+@Log4j2
 public class Runner {
-  private static final Logger LOG = LogManager.getLogger(Runner.class.getName());
 
+  @SneakyThrows
   public static void main(String[] args) {
 
     SomeCodeExample.doActionFirst(false);
@@ -37,10 +41,14 @@ public class Runner {
     SomeCodeExample.doActionTwentieth(false);
     SomeCodeExample.doActionTwentyFirst(false);
     SomeCodeExample.doActionTwentySecond(false);
-    SomeCodeExample.doActionTwentyThird(true);
+    SomeCodeExample.doActionTwentyThird(false);
     CatPictureDownloader.giveMeSomeCats(false);
     //    new LelyLicBinAnalyzer().analyze();
-
+    log.debug("Main thread started");
+    Thread t = new MyThreadClass("who is there");
+    t.start();
+    t.join();
+    log.debug("Main thread ended");
     // END IS HERE
   }
 }
