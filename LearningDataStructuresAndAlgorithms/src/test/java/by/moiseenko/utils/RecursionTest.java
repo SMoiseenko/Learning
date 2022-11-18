@@ -12,7 +12,7 @@ class RecursionTest {
   private static Recursion rec;
 
   @BeforeAll
-  private static void init() {
+  public static void init() {
     rec = new Recursion();
   }
 

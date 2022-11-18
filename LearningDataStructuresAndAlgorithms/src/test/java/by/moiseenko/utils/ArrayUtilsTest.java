@@ -42,4 +42,12 @@ class ArrayUtilsTest {
             "Four"));
 
   }
+
+  @Test
+  void fillRawArrayTestArray(){
+    List<String> baseList = Stream.of("One", "Two", "Three").collect(Collectors.toList());
+    List<String> expectedList = Stream.of("Four", "Four", "Four").toList();
+    arrayUtils.fillRawArray(baseList, "Four");
+    assertEquals(baseList, expectedList);
+  }
 }
